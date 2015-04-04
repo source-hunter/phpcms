@@ -29,6 +29,7 @@ class attachments {
 	public function upload() {
 		$grouplist = getcache('grouplist','member');
 		if($this->isadmin==0 && !$grouplist[$this->groupid]['allowattachment']) return false;
+		if($this->isadmin==1) define('IN_ADMIN',true);
 		pc_base::load_sys_class('attachment','',0);
 		$module = trim($_GET['module']);
 		$catid = intval($_GET['catid']);

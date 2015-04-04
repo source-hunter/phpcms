@@ -41,9 +41,10 @@ class phpsso {
 		
 		if(isset($GLOBALS['HTTP_RAW_POST_DATA'])) {
 			$this->data['avatardata'] = $GLOBALS['HTTP_RAW_POST_DATA'];
-			if($this->applist[$this->appid]['authkey'] != $this->data['ps_auth_key']) {
-				exit('0');
-			}
+			//if($this->applist[$this->appid]['authkey'] != $this->data['ps_auth_key']) {
+			//	exit('0');
+			//}
+			
 		}
 
 	}

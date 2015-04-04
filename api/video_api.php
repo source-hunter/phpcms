@@ -7,7 +7,7 @@ defined('IN_PHPCMS') or exit('No permission resources.');
 $video_setting = getcache('video','video');
 
 //新增，跳转完善资料  -- 增加人：wgq
-$pc_hash = $_GET['pc_hash'];
+$pc_hash = htmlspecialchars($_GET['pc_hash']);
 if(!empty($_GET['do_complete']) && !empty($_GET['uid']) && !empty($_GET['snid'])){
 	//验证sndaid
 	$sndaid = intval($_GET['snid']);

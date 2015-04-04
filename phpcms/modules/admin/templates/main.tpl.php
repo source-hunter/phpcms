@@ -93,11 +93,12 @@ function addtext(data) {
 	<h6><?php echo L('main_product_team')?></h6>
 	<div class="content">
 	<?php echo L('main_copyright')?><?php echo $product_copyright?><br />
-	<?php echo L('main_product_planning')?><?php echo $architecture?><br />
 	<?php echo L('main_product_dev')?><?php echo $programmer;?><br />
 	<?php echo L('main_product_ui')?><?php echo $designer;?><br />
 	<?php echo L('main_product_site')?><a href="http://www.phpcms.cn/" target="_blank">http://www.phpcms.cn/</a> <br />
-	<?php echo L('main_product_bbs')?><a href="http://bbs.phpcms.cn/" target="_blank">http://bbs.phpcms.cn/</a> 
+	<?php echo L('main_product_bbs')?><a href="http://bbs.phpcms.cn/" target="_blank">http://bbs.phpcms.cn/</a> <br />
+	<?php echo L('main_product_qq')?>7634000 <br />
+	<?php echo L('main_product_sales')?>1561683312
 	</div>
 </div>
 
