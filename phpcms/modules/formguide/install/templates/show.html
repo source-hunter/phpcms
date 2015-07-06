@@ -4,7 +4,7 @@
 
 <div class="main">
 	<div class="col-left">
-    	<div class="crumbs"><a href="{siteurl($siteid)}">é¦–é¡µ</a><span> &gt; </span><a href="{APP_PATH}index.php?m=formguide&c=index&a=index">è¡¨å•å‘å¯¼</a> <span> &gt; </span> {$name}</div>
+    	<div class="crumbs"><a href="{siteurl($siteid)}">Ê×Ò³</a><span> &gt; </span><a href="{APP_PATH}index.php?m=formguide&c=index&a=index">±íµ¥Ïòµ¼</a> <span> &gt; </span> {$name}</div>
         <div id="Article">
         	<h1>{$name}</h1>
 			<div class="content">
@@ -27,7 +27,7 @@
 {/loop}
 	</tbody>
 </table>
-<input type="submit" name="dosubmit" id="dosubmit" value=" æäº¤ ">&nbsp;<input type="reset" value=" å–æ¶ˆ ">
+<input type="submit" name="dosubmit" id="dosubmit" value=" Ìá½» ">&nbsp;<input type="reset" value=" È¡Ïû ">
 </form>
 			</div>
       </div>
@@ -35,7 +35,7 @@
   </div>
     <div class="col-auto">
         <div class="box">
-            <h5 class="title-2">é¢‘é“æ€»æ’è¡Œ</h5>
+            <h5 class="title-2">ÆµµÀ×ÜÅÅĞĞ</h5>
             <ul class="content digg">
 			{pc:content  action="hits" catid="$catid" num="10" order="views DESC" cache="3600"}
 				{loop $data $r}
@@ -46,7 +46,7 @@
         </div>
         <div class="bk10"></div>
         <div class="box">
-            <h5 class="title-2">é¢‘é“æœ¬æœˆæ’è¡Œ</h5>
+            <h5 class="title-2">ÆµµÀ±¾ÔÂÅÅĞĞ</h5>
             <ul class="content rank">
 			{pc:content action="hits" catid="$catid" num="10" order="monthviews DESC" cache="3600"}
 				{loop $data $r}
@@ -67,16 +67,16 @@
 				function(data){
 				var j = 1;
 				var string = "<div class='point key-float'><div style='position:relative'><div class='arro'></div>";
-				string += "<a href='JavaScript:;' onclick='$(this).parent().parent().remove();' hidefocus='true' class='close'><span>å…³é—­</span></a><div class='contents f12'>";
+				string += "<a href='JavaScript:;' onclick='$(this).parent().parent().remove();' hidefocus='true' class='close'><span>¹Ø±Õ</span></a><div class='contents f12'>";
 				if(data!=0) {
 				  $.each(data, function(i,item){
 					j = i+1;
-					jsonitem += "<a href='"+item.url+"' target='_blank'>"+j+"ã€"+item.title+"</a><BR>";
+					jsonitem += "<a href='"+item.url+"' target='_blank'>"+j+"¡¢"+item.title+"</a><BR>";
 					
 				  });
 					string += jsonitem;
 				} else {
-					string += 'æ²¡æœ‰æ‰¾åˆ°ç›¸å…³çš„ä¿¡æ¯ï¼';
+					string += 'Ã»ÓĞÕÒµ½Ïà¹ØµÄĞÅÏ¢£¡';
 				}
 					string += "</div><span class='o1'></span><span class='o2'></span><span class='o3'></span><span class='o4'></span></div></div>";		
 					$(obj).after(string);
@@ -93,9 +93,9 @@
 	function add_favorite(title) {
 		$.getJSON('{APP_PATH}api.php?op=add_favorite&title='+title+'&url='+encodeURIComponent(location.href)+'&'+Math.random()+'&callback=?', function(data){
 			if(data.status==1)	{
-				$("#favorite").html('æ”¶è—æˆåŠŸ');
+				$("#favorite").html('ÊÕ²Ø³É¹¦');
 			} else {
-				alert('è¯·ç™»å½•');
+				alert('ÇëµÇÂ¼');
 			}
 		});
 	}

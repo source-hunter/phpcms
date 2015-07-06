@@ -41,7 +41,7 @@ endif;
 ?>
 </tbody>
 </table>
-<div class="btn"><label for="check_box"><?php echo L('select_all')?>/<?php echo L('cancel')?></label> <input type="button" class="button" name="dosubmit" value="<?php echo L('sync_agin')?>" onclick="sync_agin()" />ã€€<input type="button" class="button" name="dosubmit" value="<?php echo L('all').L('sync_agin')?>" onclick="window.top.art.dialog({id:'sync',iframe:'?m=release&c=index&a=init&statuses=-1&iniframe=1', title:'<?php echo L('sync_agin')?>', width:'700', height:'500', lock:true},'', function(){window.top.art.dialog({id:'sync'}).close();location.reload()});" /> <input type="submit" class="button" value="<?php echo L("delete")?>" /></div> 
+<div class="btn"><label for="check_box"><?php echo L('select_all')?>/<?php echo L('cancel')?></label> <input type="button" class="button" name="dosubmit" value="<?php echo L('sync_agin')?>" onclick="sync_agin()" />¡¡<input type="button" class="button" name="dosubmit" value="<?php echo L('all').L('sync_agin')?>" onclick="window.top.art.dialog({id:'sync',iframe:'?m=release&c=index&a=init&statuses=-1&iniframe=1', title:'<?php echo L('sync_agin')?>', width:'700', height:'500', lock:true},'', function(){window.top.art.dialog({id:'sync'}).close();location.reload()});" /> <input type="submit" class="button" value="<?php echo L("delete")?>" /></div> 
 </form>
 </div>
 </div>

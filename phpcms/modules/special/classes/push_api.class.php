@@ -1,6 +1,6 @@
 <?php
 /**
- * push_api.class.php ä¸“é¢˜æ¨é€æ¥å£ç±»
+ * push_api.class.php ×¨ÌâÍÆËÍ½Ó¿ÚÀà
  * 
  */
 defined('IN_PHPCMS') or exit('No permission resources.');
@@ -13,10 +13,10 @@ class push_api {
 	}
 	
 	/**
-	 * ä¿¡æ¯æ¨èè‡³ä¸“é¢˜æ¥å£
-	 * @param array $param å±æ€§ è¯·æ±‚æ—¶ï¼Œä¸ºæ¨¡å‹ã€æ ç›®æ•°ç»„ã€‚ ä¾‹ï¼šarray('modelid'=>1, 'catid'=>12); æäº¤æ·»åŠ ä¸ºäºŒç»´ä¿¡æ¯æ•°æ® ã€‚ä¾‹ï¼šarray(1=>array('title'=>'å¤šå‘å‘é€æ–¹æ³•', ....))
-	 * @param array $arr å‚æ•° è¡¨å•æ•°æ®ï¼Œåªåœ¨è¯·æ±‚æ·»åŠ æ—¶ä¼ é€’ã€‚
-	 * @return è¿”å›ä¸“é¢˜çš„ä¸‹æ‹‰åˆ—è¡¨ 
+	 * ĞÅÏ¢ÍÆ¼öÖÁ×¨Ìâ½Ó¿Ú
+	 * @param array $param ÊôĞÔ ÇëÇóÊ±£¬ÎªÄ£ĞÍ¡¢À¸Ä¿Êı×é¡£ Àı£ºarray('modelid'=>1, 'catid'=>12); Ìá½»Ìí¼ÓÎª¶şÎ¬ĞÅÏ¢Êı¾İ ¡£Àı£ºarray(1=>array('title'=>'¶à·¢·¢ËÍ·½·¨', ....))
+	 * @param array $arr ²ÎÊı ±íµ¥Êı¾İ£¬Ö»ÔÚÇëÇóÌí¼ÓÊ±´«µİ¡£
+	 * @return ·µ»Ø×¨ÌâµÄÏÂÀ­ÁĞ±í 
 	 */
 	public function _push_special($param = array(), $arr = array()) {
 		return $this->special_api->_get_special($param, $arr);

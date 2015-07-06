@@ -11,8 +11,8 @@ class comment_setting_model extends model {
 	}
 	
 	/**
-	 * æŒ‰ç«™ç‚¹IDè¿”å›ç«™ç‚¹é…ç½®æƒ…å†µ
-	 * @param integer $siteid ç«™ç‚¹ID
+	 * °´Õ¾µãID·µ»ØÕ¾µãÅäÖÃÇé¿ö
+	 * @param integer $siteid Õ¾µãID
 	 */
 	public function site($siteid) {
 		return $this->get_one(array('siteid'=>$siteid));

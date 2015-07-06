@@ -7,21 +7,21 @@
 <!--
 var js4swf = {
     onInit: function(list){
-        // åˆå§‹åŒ–æ—¶è°ƒç”¨, è‹¥ list.length > 0 ä»£è¡¨æœ‰å¯ç»­ä¼ æ–‡ä»¶
+        // ³õÊ¼»¯Ê±µ÷ÓÃ, Èô list.length > 0 ´ú±íÓĞ¿ÉĞø´«ÎÄ¼ş
         // [{file}, {file}]
 		if(list.length > 0) {
 		    var length = list.length-1;
-			$('#list_name').html("æ–‡ä»¶ï¼šã€Š"+list[length].name+"ã€‹æœªä¸Šä¼ å®Œæˆï¼Œå¦‚éœ€ç»­ä¼ ï¼Œè¯·é‡æ–°é€‰æ‹©è¯¥æ–‡ä»¶");
+			$('#list_name').html("ÎÄ¼ş£º¡¶"+list[length].name+"¡·Î´ÉÏ´«Íê³É£¬ÈçĞèĞø´«£¬ÇëÖØĞÂÑ¡Ôñ¸ÃÎÄ¼ş");
 		}
         this.showMessage('init', list);
     },
     onSelect: function(files){
-        // é€‰ä¸­æ–‡ä»¶åè°ƒç”¨, è¿”å›æ–‡ä»¶åˆ—è¡¨
+        // Ñ¡ÖĞÎÄ¼şºóµ÷ÓÃ, ·µ»ØÎÄ¼şÁĞ±í
         // [{file}, {file}]
         this.showMessage('select', files);
     },
     onSid: function(evt){
-        // è·å¾— sid åè¿”å›, æ›´æ–° sid ç”¨ (key, sid, name, type, size)
+        // »ñµÃ sid ºó·µ»Ø, ¸üĞÂ sid ÓÃ (key, sid, name, type, size)
 		if ($('#title').val()==''){
 			$('#title').val(evt.name);
 		}
@@ -30,33 +30,33 @@ var js4swf = {
         this.showMessage('sid', evt);
     },
     onStart: function(){
-        // å¼€å§‹ä¸Šä¼  (é€‰æ‹©æ–‡ä»¶åè‡ªåŠ¨å¼€å§‹)
+        // ¿ªÊ¼ÉÏ´« (Ñ¡ÔñÎÄ¼şºó×Ô¶¯¿ªÊ¼)
         this.showMessage('start');
     },
     onCancel: function(){
-        // ä¸Šä¼ å–æ¶ˆäº‹ä»¶
+        // ÉÏ´«È¡ÏûÊÂ¼ş
 
         this.showMessage('cancel');
     },
     onProgress: function(evt){
-        // ä¸Šä¼ è¿›åº¦äº‹ä»¶ (bytesLoaded, bytesTotal, speed) m=1 æ—¶æ²¡æœ‰è¿™äº‹ä»¶
+        // ÉÏ´«½ø¶ÈÊÂ¼ş (bytesLoaded, bytesTotal, speed) m=1 Ê±Ã»ÓĞÕâÊÂ¼ş
         this.showMessage('progress', evt);
     },
     onComplete: function(evt){
-        // ä¸Šä¼ å®Œæˆäº‹ä»¶ (åŒ…å«æ–‡ä»¶ä¿¡æ¯å’Œå®Œæˆåè¿”å›æ•°æ®(data))
+        // ÉÏ´«Íê³ÉÊÂ¼ş (°üº¬ÎÄ¼şĞÅÏ¢ºÍÍê³Éºó·µ»ØÊı¾İ(data))
 		$('#vid').val(evt.vid);
 		var title = $('#title').val();
 		var description = $('#description').val();
 		var vid = $('#vid').val();
 		$.get('index.php', {m:'video', c:'video_for_ck', a:'add_f_ckeditor', title:title, userupload:'1', description:description, vid:vid}, function(data){
 			if (data==1) {
-				alert('æ“ä½œå¤±è´¥ï¼Œæ‚¨æ²¡æœ‰é€‰æ‹©è§†é¢‘æˆ–è€…è§†é¢‘æ­£åœ¨ä¸Šä¼ ä¸­...');
+				alert('²Ù×÷Ê§°Ü£¬ÄúÃ»ÓĞÑ¡ÔñÊÓÆµ»òÕßÊÓÆµÕıÔÚÉÏ´«ÖĞ...');
 				return false;
 			} else if(data==2) {
-				alert('è§†é¢‘æ ‡é¢˜ä¸èƒ½ä¸ºç©ºï¼');
+				alert('ÊÓÆµ±êÌâ²»ÄÜÎª¿Õ£¡');
 				return false;
 			} else if(data==3) {
-				alert('è§†é¢‘ä¸Šä¼ å‡ºç°é”™è¯¯ï¼Œè¯·é‡è¯•ï¼');
+				alert('ÊÓÆµÉÏ´«³öÏÖ´íÎó£¬ÇëÖØÊÔ£¡');
 				return false;
 			} else {
 				$('#video_url').val(data);
@@ -66,7 +66,7 @@ var js4swf = {
         
     },
     onWarn: function(evt){
-        // æŠ¥é”™äº‹ä»¶ (key, message)
+        // ±¨´íÊÂ¼ş (key, message)
         //this.showMessage('warn', evt);
 		alert(evt.msg);
     },
@@ -76,11 +76,11 @@ var js4swf = {
 };
 function checkform() {
 	if($('#vid').val()=='0') {
-		alert('æ‚¨æ²¡æœ‰é€‰æ‹©è§†é¢‘ï¼Œæˆ–è€…è§†é¢‘æ­£åœ¨ä¸Šä¼ ä¸­...');
+		alert('ÄúÃ»ÓĞÑ¡ÔñÊÓÆµ£¬»òÕßÊÓÆµÕıÔÚÉÏ´«ÖĞ...');
 		return false;
 	}
 	if($('#title').val()=='') {
-		alert('è¯·å¡«å†™æ ‡é¢˜');
+		alert('ÇëÌîĞ´±êÌâ');
 		$('#title').focus();
 		return false;
 	}
@@ -97,15 +97,15 @@ swfobject.embedSWF("{$flash_info['flashurl']}", "ku6uploader", "450", "45", "10.
 <div class="m_box">
 	<div class="clr h_box">
 		<ul class="clr">
-			<li><a href="#" title="#ct2" >ä¸Šä¼ è§†é¢‘</a></li>
-			<li><a href="#" title="#ct1" class="ac">ä»è§†é¢‘åº“é€‰æ‹©</a></li>
+			<li><a href="#" title="#ct2" >ÉÏ´«ÊÓÆµ</a></li>
+			<li><a href="#" title="#ct1" class="ac">´ÓÊÓÆµ¿âÑ¡Ôñ</a></li>
 		</ul>
 	</div>
     <div class="clr ct" id="ct1">
     	<div class="l">
         	<div class="r1">
            	  <form action="" method="get">
-                	<label style="font-size: 12px;" title="æœ¬ç«™ä¸Šä¼ è§†é¢‘">åŸåˆ›<input type="checkbox" id="userupload" name="userupload" title="æœ¬ç«™ä¸Šä¼ è§†é¢‘"></label> <input name="title" id="title_s" type="text" class="s_ipt"/><input type="button" id="search" value="æœç´¢" class="s_btn" onclick="get_videoes(1);"/>
+                	<label style="font-size: 12px;" title="±¾Õ¾ÉÏ´«ÊÓÆµ">Ô­´´<input type="checkbox" id="userupload" name="userupload" title="±¾Õ¾ÉÏ´«ÊÓÆµ"></label> <input name="title" id="title_s" type="text" class="s_ipt"/><input type="button" id="search" value="ËÑË÷" class="s_btn" onclick="get_videoes(1);"/>
                 </form>
           </div>
         	<div class="r2">
@@ -115,7 +115,7 @@ swfobject.embedSWF("{$flash_info['flashurl']}", "ku6uploader", "450", "45", "10.
                     <li><div class="w9"><a href="javascript:void(0);" title="{$info['title']}" data-vid="{$info['vid']}" onclick="a_click(this);"><span></span><img src="{if $info['picpath']}{$info['picpath']}{else}{IMG_PATH}admin_img/bfqicon1.jpg{/if}" width="90" height="51" /></a><p>{str_cut($info['title'], 18)}</p></div></li>
 				{/loop}
 				{else}
-					&nbsp;&nbsp;&nbsp;&nbsp;è§†é¢‘åº“ä¸­æ²¡æœ‰æ‚¨çš„è§†é¢‘ï¼Œè¯·å…ˆä¸Šä¼ è§†é¢‘ï¼
+					&nbsp;&nbsp;&nbsp;&nbsp;ÊÓÆµ¿âÖĞÃ»ÓĞÄúµÄÊÓÆµ£¬ÇëÏÈÉÏ´«ÊÓÆµ£¡
 				{/if}
                 </ul>
             </div>
@@ -135,16 +135,16 @@ swfobject.embedSWF("{$flash_info['flashurl']}", "ku6uploader", "450", "45", "10.
   <table width="100%" cellspacing="0" class="table_form frm_tb">
     <tbody>
       <tr>
-        <th width="80" class="tbb"> è§†é¢‘ä¸Šä¼  </th>
+        <th width="80" class="tbb"> ÊÓÆµÉÏ´« </th>
         <td class="tbb">
           <div id="ku6uploader"></div><BR><span id="list_name" style="color:red"></span></td>
       </tr>
       <tr>
-        <th width="80">æ ‡é¢˜ </th>
+        <th width="80">±êÌâ </th>
         <td><input type="text" name="title" size="40" value="" id="title"><span id="balance"><span></td>
       </tr>
       <tr>
-        <th width="80"> æ‘˜è¦ </th>
+        <th width="80"> ÕªÒª </th>
         <td><textarea name="description" id="description" style="width:98%;height:46px;"></textarea><input type="hidden" name="vid" id="vid" value="">
           </td>
       </tr>
@@ -196,7 +196,7 @@ function a_click(obj) {
 	var d = '';
 	$.get('index.php', {m:'video', c:'video_for_ck', a:'check_vid', vid:vid}, function(data){
 		if (data==1) {
-			alert('è§†é¢‘åœ°å€é”™è¯¯ï¼');
+			alert('ÊÓÆµµØÖ·´íÎó£¡');
 			vid_msg = false;
 		} else {
 			d = data;

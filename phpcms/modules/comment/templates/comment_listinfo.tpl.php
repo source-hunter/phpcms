@@ -17,7 +17,7 @@ include $this->admin_tpl('header', 'admin');
 		<td>
 		<div class="explain-col">	
 			<?php if($max_table > 1) {?>
-			<?php echo L('choose_database')?>ï¼š<select name="tableid" onchange="show_tbl(this)"><?php for($i=1;$i<=$max_table;$i++) {?><option value="<?php echo $i?>" <?php if($i==$tableid){?>selected<?php }?>><?php echo $this->comment_data_db->db_tablepre?>comment_data_<?php echo $i?></option><?php }?></select>
+			<?php echo L('choose_database')?>£º<select name="tableid" onchange="show_tbl(this)"><?php for($i=1;$i<=$max_table;$i++) {?><option value="<?php echo $i?>" <?php if($i==$tableid){?>selected<?php }?>><?php echo $this->comment_data_db->db_tablepre?>comment_data_<?php echo $i?></option><?php }?></select>
 			<?php }?>
 			<select name="searchtype">
 				<option value='0' <?php if($_GET['searchtype']==0) echo 'selected';?>><?php echo L('original').L('title');?></option>

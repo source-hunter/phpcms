@@ -14,7 +14,7 @@ class search_admin extends admin {
 	public function setting() {
 		$siteid = get_siteid();
 		if(isset($_POST['dosubmit'])) {
-			//åˆå¹¶æ•°æ®åº“ç¼“å­˜ä¸æ–°æäº¤ç¼“å­˜
+			//ºÏ²¢Êı¾İ¿â»º´æÓëĞÂÌá½»»º´æ
 			$r = $this->module_db->get_one(array('module'=>'search'));
 			$search_setting = string2array($r['setting']);
 			
@@ -35,14 +35,14 @@ class search_admin extends admin {
 		}
 	}
 	/**
-	 * åˆ›å»ºç´¢å¼•
+	 * ´´½¨Ë÷Òı
 	 */
 	public function createindex() {
 		if(isset($_GET['dosubmit'])) {
-			//é‡å»ºç´¢å¼•é¦–å…ˆæ¸…ç©ºè¡¨æ‰€æœ‰æ•°æ®ï¼Œç„¶åæ ¹æ®æœç´¢ç±»å‹æ¥å£é‡æ–°å…¨éƒ¨é‡å»ºç´¢å¼•
+			//ÖØ½¨Ë÷ÒıÊ×ÏÈÇå¿Õ±íËùÓĞÊı¾İ£¬È»ºó¸ù¾İËÑË÷ÀàĞÍ½Ó¿ÚÖØĞÂÈ«²¿ÖØ½¨Ë÷Òı
 			if(!isset($_GET['have_truncate'])) {
 				$db_tablepre = $this->db->db_tablepre;
-				//åˆ é™¤è¯¥ç«™ç‚¹å…¨æ–‡ç´¢å¼•
+				//É¾³ı¸ÃÕ¾µãÈ«ÎÄË÷Òı
 				$this->db->delete(array('siteid'=>$this->siteid));
 				
 				$types = $this->type_db->select(array('siteid'=> $this->siteid,'module'=>'search'));
@@ -50,7 +50,7 @@ class search_admin extends admin {
 			} else{
 				$types = getcache('search_types', 'search');
 			}
-			//$key typeid çš„ç´¢å¼•
+			//$key typeid µÄË÷Òı
 			$key = isset($_GET['key']) ? intval($_GET['key']) : 0;
 			foreach ($types as $_k=>$_v) {
 				if($key==$_k) {
@@ -86,13 +86,13 @@ class search_admin extends admin {
 						$this->db->update_search($typeid ,$id, $r['fulltextcontent'],$r['title'],$r['adddate'], 1);
 					}
 					$page++;
-					if($pages>=$page) showmessage("æ­£åœ¨æ›´æ–° <span style='color:#ff0000;font-size:14px;text-decoration:underline;' >{$_v['name']}</span> - æ€»æ•°ï¼š{$total} - å½“å‰ç¬¬ <font color='red'>{$page}</font> é¡µ","?m=search&c=search_admin&a=createindex&menuid=909&page={$page}&total={$total}&key={$key}&pagesize={$pagesize}&have_truncate=1&dosubmit=1");
+					if($pages>=$page) showmessage("ÕıÔÚ¸üĞÂ <span style='color:#ff0000;font-size:14px;text-decoration:underline;' >{$_v['name']}</span> - ×ÜÊı£º{$total} - µ±Ç°µÚ <font color='red'>{$page}</font> Ò³","?m=search&c=search_admin&a=createindex&menuid=909&page={$page}&total={$total}&key={$key}&pagesize={$pagesize}&have_truncate=1&dosubmit=1");
 					$key++;
-					showmessage("å¼€å§‹æ›´æ–°ï¼š <span style='color:#ff0000;font-size:14px;text-decoration:underline;' >{$_v['name']}</span> - æ€»æ•°ï¼š{$total}æ¡","?m=search&c=search_admin&a=createindex&menuid=909&page=1&key={$key}&pagesize={$pagesize}&have_truncate=1&dosubmit=1");
+					showmessage("¿ªÊ¼¸üĞÂ£º <span style='color:#ff0000;font-size:14px;text-decoration:underline;' >{$_v['name']}</span> - ×ÜÊı£º{$total}Ìõ","?m=search&c=search_admin&a=createindex&menuid=909&page=1&key={$key}&pagesize={$pagesize}&have_truncate=1&dosubmit=1");
 				
 				}
 			}
-			showmessage('å…¨ç«™ç´¢å¼•æ›´æ–°å®Œæˆ','blank');
+			showmessage('È«Õ¾Ë÷Òı¸üĞÂÍê³É','blank');
 		} else {
 			$big_menu = array('javascript:window.top.art.dialog({id:\'add\',iframe:\'?m=search&c=search_type&a=add\', title:\''.L('add_search_type').'\', width:\'580\', height:\'240\', lock:true}, function(){var d = window.top.art.dialog({id:\'add\'}).data.iframe;var form = d.document.getElementById(\'dosubmit\');form.click();return false;}, function(){window.top.art.dialog({id:\'add\'}).close()});void(0);', L('add_search_type'));
 			include $this->admin_tpl('createindex');

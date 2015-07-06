@@ -6,7 +6,7 @@ include $this->admin_tpl('header','admin');
 
 <div class="subnav"> 
 <div class="content-menu ib-a blue line-x">
-ã€€<?php if(isset($big_menu)) { foreach($big_menu as $big) { echo '<a class="add fb" href="'.$big[0].'"><em>'.$big[1].'</em></a>ã€€'; } }?>&nbsp;<a class="on" href="?m=special&c=special"><em><?php echo L('special_list')?></em></a></div>
+¡¡<?php if(isset($big_menu)) { foreach($big_menu as $big) { echo '<a class="add fb" href="'.$big[0].'"><em>'.$big[1].'</em></a>¡¡'; } }?>&nbsp;<a class="on" href="?m=special&c=special"><em><?php echo L('special_list')?></em></a></div>
 </div>
 <div class="pad-10">
 <div class="table-list">

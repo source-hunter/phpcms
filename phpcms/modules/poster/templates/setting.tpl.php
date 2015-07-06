@@ -11,11 +11,11 @@ include $this->admin_tpl('header', 'admin');
 	  <input type='radio' name='setting[enablehits]' value='0' <?php if($enablehits == 0) {?>checked<?php }?>> <?php echo L('no')?></td>
 	</tr>
 	<tr>
-		<th><?php echo L('upload_file_ext')?>ï¼š</th>
+		<th><?php echo L('upload_file_ext')?>£º</th>
 		<td><input name='setting[ext]' type='text' id='ext' value='<?php echo $ext?>' size='40' maxlength='70'></td>
 	</tr>
 	<tr>
-		<th><?php echo L('file_size')?>ï¼š</th>
+		<th><?php echo L('file_size')?>£º</th>
 		<td><input name='setting[maxsize]' type='text' id='maxsize' value='<?php echo $maxsize?>' size='12'> M</td>
 	</tr>
 	<tr>

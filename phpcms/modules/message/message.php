@@ -25,7 +25,7 @@ class message extends admin {
 	}
 	
 	/**
- 	 * ç¾¤å‘æ¶ˆæ¯ç®¡ç†  ...
+ 	 * Èº·¢ÏûÏ¢¹ÜÀí  ...
 	 */
 	public function message_group_manage() {
 		$page = isset($_GET['page']) && intval($_GET['page']) ? intval($_GET['page']) : 1;
@@ -35,15 +35,15 @@ class message extends admin {
  		include $this->admin_tpl('message_group_list');
 	}
 	 /*
-	 *åˆ¤æ–­ç”¨æˆ·åæ˜¯å¦å­˜åœ¨ 
+	 *ÅĞ¶ÏÓÃ»§ÃûÊÇ·ñ´æÔÚ 
 	 */
 	 public function public_name() {
 		$tousername = isset($_GET['tousername']) && trim($_GET['tousername']) ? (pc_base::load_config('system', 'charset') == 'gbk' ? iconv('utf-8', 'gbk', trim($_GET['tousername'])) : trim($_GET['tousername'])) : exit('0');
-	 	//ä¸èƒ½å‘ç»™è‡ªå·±
+	 	//²»ÄÜ·¢¸ø×Ô¼º
 		if($tousername == $this->_username){
 				exit('0');
 			}
-		//åˆ¤æ–­ç”¨æˆ·åæ˜¯å¦å­˜åœ¨
+		//ÅĞ¶ÏÓÃ»§ÃûÊÇ·ñ´æÔÚ
 		$member_interface = pc_base::load_app_class('member_interface', 'member');
 		if ($tousername) {
 			$data = $member_interface->get_member_info($tousername, 2);
@@ -58,8 +58,8 @@ class message extends admin {
 	 }
 	
 	/**
-	 * åˆ é™¤çŸ­æ¶ˆæ¯ 
-	 * @param	intval	$sid	çŸ­æ¶ˆæ¯IDï¼Œé€’å½’åˆ é™¤
+	 * É¾³ı¶ÌÏûÏ¢ 
+	 * @param	intval	$sid	¶ÌÏûÏ¢ID£¬µİ¹éÉ¾³ı
 	 */
 	public function delete() {
 		if((!isset($_GET['messageid']) || empty($_GET['messageid'])) && (!isset($_POST['messageid']) || empty($_POST['messageid']))) {
@@ -68,14 +68,14 @@ class message extends admin {
 				
 			if(is_array($_POST['messageid'])){
 				foreach($_POST['messageid'] as $messageid_arr) {
-					//æ‰¹é‡åˆ é™¤å‹æƒ…é“¾æ¥
+					//ÅúÁ¿É¾³ıÓÑÇéÁ´½Ó
 					$this->db->delete(array('messageid'=>$messageid_arr));
 				}
 				showmessage(L('operation_success'),'?m=message&c=message');
 			}else{
 				$messageid = intval($_GET['messageid']);
 				if($messageid < 1) return false;
-				//åˆ é™¤çŸ­æ¶ˆæ¯
+				//É¾³ı¶ÌÏûÏ¢
 				$result = $this->db->delete(array('messageid'=>$messageid));
 				if($result)
 				{
@@ -89,8 +89,8 @@ class message extends admin {
 	}
 	
 	/**
-	 * åˆ é™¤ç³»ç»Ÿ çŸ­æ¶ˆæ¯ 
-	 * @param	intval	$sid	ç¾¤å‘çŸ­æ¶ˆæ¯IDï¼Œé€’å½’åˆ é™¤
+	 * É¾³ıÏµÍ³ ¶ÌÏûÏ¢ 
+	 * @param	intval	$sid	Èº·¢¶ÌÏûÏ¢ID£¬µİ¹éÉ¾³ı
 	 */
 	public function delete_group() {
 		if((!isset($_GET['message_group_id']) || empty($_GET['message_group_id'])) && (!isset($_POST['message_group_id']) || empty($_POST['message_group_id']))) {
@@ -99,14 +99,14 @@ class message extends admin {
 				
 			if(is_array($_POST['message_group_id'])){
 				foreach($_POST['message_group_id'] as $messageid_arr) {
-					//æ‰¹é‡åˆ é™¤ç³»ç»Ÿæ¶ˆæ¯
+					//ÅúÁ¿É¾³ıÏµÍ³ÏûÏ¢
 					$this->group_db->delete(array('id'=>$messageid_arr));
 				}
 				showmessage(L('operation_success'),'?m=message&c=message&a=message_group_manage');
 			}else{
 				$group_id = intval($_GET['message_group_id']);
 				if($group_id < 1) return false;
-				//åˆ é™¤çŸ­æ¶ˆæ¯
+				//É¾³ı¶ÌÏûÏ¢
 				$result = $this->group_db->delete(array('id'=>$group_id));
 				if($result){
 					showmessage(L('operation_success'),'?m=message&c=message&a=message_group_manage');
@@ -119,11 +119,11 @@ class message extends admin {
 	}
 	
 	 /**
-	 * ç®¡ç†æŒ‰ç»„æˆ–è§’è‰² ç¾¤å‘æ¶ˆæ¯
+	 * ¹ÜÀí°´×é»ò½ÇÉ« Èº·¢ÏûÏ¢
 	 */
 	public function message_send() {
 		if(isset($_POST['dosubmit'])) {
-			//æ’å…¥ç¾¤å‘è¡¨
+			//²åÈëÈº·¢±í
 			$group_message = array ();
 			if(empty($_POST['info']['subject'])||empty($_POST['info']['content'])) return false;
 			$group_message['subject'] = $_POST['info']['subject'];
@@ -142,10 +142,10 @@ class message extends admin {
   			showmessage(L('operation_success'),HTTP_REFERER,'', 'add');
  		} else {
 			$show_validator = $show_scroll = $show_header = true;
-			//LOAD ä¼šå‘˜ç»„æ¨¡å‹
+			//LOAD »áÔ±×éÄ£ĞÍ
 			$member_group = pc_base::load_model('member_group_model');
 			$member_group_infos = $member_group->select('','*','',$order = 'groupid ASC');
-			//LOAD ç®¡ç†å‘˜è§’è‰²æ¨¡å‹
+			//LOAD ¹ÜÀíÔ±½ÇÉ«Ä£ĞÍ
 			$role = pc_base::load_model('admin_role_model');
 			$role_infos = $role->select('','*','',$order = 'roleid ASC');
 			include $this->admin_tpl('message_send');
@@ -154,7 +154,7 @@ class message extends admin {
 	} 
 
 	 /**
-	 * å‘æ¶ˆæ¯
+	 * ·¢ÏûÏ¢
 	 */
 	public function send_one() {
 		if(isset($_POST['dosubmit'])) {
@@ -172,7 +172,7 @@ class message extends admin {
 	}
 	
 	/**
-	 * æ”¶ä»¶ç®± 
+	 * ÊÕ¼şÏä 
 	 */
 	public function my_inbox() {
 		$where = array('send_to_id'=>$this->_username,'folder'=>'inbox');
@@ -186,8 +186,8 @@ class message extends admin {
 	}
 	
 	/**
-	 * åˆ é™¤-æ”¶ä»¶ç®±çŸ­æ¶ˆæ¯ 
-	 * @param	intval	$sid	çŸ­æ¶ˆæ¯IDï¼Œé€’å½’åˆ é™¤
+	 * É¾³ı-ÊÕ¼şÏä¶ÌÏûÏ¢ 
+	 * @param	intval	$sid	¶ÌÏûÏ¢ID£¬µİ¹éÉ¾³ı
 	 */
 	public function delete_inbox() {
 		if((!isset($_GET['messageid']) || empty($_GET['messageid'])) && (!isset($_POST['messageid']) || empty($_POST['messageid']))) {
@@ -196,14 +196,14 @@ class message extends admin {
 				
 			if(is_array($_POST['messageid'])){
 				foreach($_POST['messageid'] as $messageid_arr) {
-					//æ‰¹é‡åˆ é™¤çŸ­æ¶ˆæ¯
+					//ÅúÁ¿É¾³ı¶ÌÏûÏ¢
 					$this->db->update(array('folder'=>'outbox'),array('messageid'=>$messageid_arr,'send_to_id'=>$this->_username));
 				}
 				showmessage(L('operation_success'), HTTP_REFERER);
 			}else{
 				$messageid = intval($_GET['messageid']);
 				if($messageid < 1) return false;
-				//åˆ é™¤å•ä¸ªçŸ­æ¶ˆæ¯
+				//É¾³ıµ¥¸ö¶ÌÏûÏ¢
 				$result = $this->db->update(array('folder'=>'outbox'),array('messageid'=>$messageid,'send_to_id'=>$this->_username));
 				showmessage(L('operation_success'), HTTP_REFERER);
 			}
@@ -212,7 +212,7 @@ class message extends admin {
 	}
 	
 	/**
-	 * å‘ä»¶ç®± 
+	 * ·¢¼şÏä 
 	 */
 	public function my_outbox() {
 		
@@ -226,8 +226,8 @@ class message extends admin {
 	}
 	
 	/**
-	 * åˆ é™¤-å‘ä»¶ç®±çŸ­æ¶ˆæ¯ 
-	 * @param	intval	$sid	çŸ­æ¶ˆæ¯IDï¼Œé€’å½’åˆ é™¤
+	 * É¾³ı-·¢¼şÏä¶ÌÏûÏ¢ 
+	 * @param	intval	$sid	¶ÌÏûÏ¢ID£¬µİ¹éÉ¾³ı
 	 */
 	public function delete_outbox() {
 		if((!isset($_GET['messageid']) || empty($_GET['messageid'])) && (!isset($_POST['messageid']) || empty($_POST['messageid']))) {
@@ -236,14 +236,14 @@ class message extends admin {
 				
 			if(is_array($_POST['messageid'])){
 				foreach($_POST['messageid'] as $messageid_arr) {
-					//æ‰¹é‡åˆ é™¤çŸ­æ¶ˆæ¯
+					//ÅúÁ¿É¾³ı¶ÌÏûÏ¢
 					$this->db->update(array('del_type'=>'1'),array('messageid'=>$messageid_arr,'send_from_id'=>$this->_username));
 				}
 				showmessage(L('operation_success'), HTTP_REFERER);
 			}else{
 				$messageid = intval($_GET['messageid']);
 				if($messageid < 1) return false;
-				//åˆ é™¤å•ä¸ªçŸ­æ¶ˆæ¯
+				//É¾³ıµ¥¸ö¶ÌÏûÏ¢
 				$result = $this->db->update(array('del_type'=>'1'),array('messageid'=>$messageid,'send_from_id'=>$this->_username));
 				showmessage(L('operation_success'), HTTP_REFERER);
 			}
@@ -252,7 +252,7 @@ class message extends admin {
 	}
 	
 	/**
-	 * çŸ­æ¶ˆæ¯æœç´¢
+	 * ¶ÌÏûÏ¢ËÑË÷
 	 */
 	public function search_message() {
 		if(isset($_POST['dosubmit'])){
@@ -262,7 +262,7 @@ class message extends admin {
 					$where = "";
 				}
 				if($username){
-					//åˆ¤æ–­æ˜¯æŸ¥è¯¢ç±»å‹,æ”¶ä»¶è¿˜æ˜¯å‘ä»¶è®°å½•
+					//ÅĞ¶ÏÊÇ²éÑ¯ÀàĞÍ,ÊÕ¼ş»¹ÊÇ·¢¼ş¼ÇÂ¼
 					if($status==""){
 						$where .= $where ?  " AND send_from_id='$username' or send_to_id='$username'" : " send_from_id='$username' or send_to_id='$username'";
 					} else {

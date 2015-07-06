@@ -26,7 +26,7 @@
 	
 	<tr>
 		<td  width="120"><?php echo L('video_api_url');?> </td> 
-		<td><?php echo APP_PATH;?>api.php?op=video_api  (鐢ㄤ簬v.ku6vms.com 閰嶇疆<font color="red">杩斿洖鍦板潃</font>浣跨敤)</td>
+		<td><?php echo APP_PATH;?>api.php?op=video_api  (用于v.ku6vms.com 配置<font color="red">返回地址</font>使用)</td>
 	</tr>
 </table>
 </fieldset>

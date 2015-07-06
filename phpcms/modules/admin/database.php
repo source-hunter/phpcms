@@ -13,7 +13,7 @@ class database extends admin {
 		pc_base::load_sys_func('dir');	
 	}
 	/**
-	 * æ•°æ®åº“å¯¼å‡º
+	 * Êı¾İ¿âµ¼³ö
 	 */
 	public function export() {
 		$database = pc_base::load_config('database');
@@ -54,7 +54,7 @@ class database extends admin {
 	}
 	
 	/**
-	 * æ•°æ®åº“å¯¼å…¥
+	 * Êı¾İ¿âµ¼Èë
 	 */
 	public function import() {
 		$database = pc_base::load_config('database');
@@ -83,7 +83,7 @@ class database extends admin {
 				$prepre = '';
 				$info = $infos = $other = $others = array();
 				foreach($sqlfiles as $id=>$sqlfile) {
-					//è€çš„æ•°æ®åº“å¤‡ä»½æ–‡ä»¶è½¬æ¢ä¸ºæ–°æ ¼å¼
+					//ÀÏµÄÊı¾İ¿â±¸·İÎÄ¼ş×ª»»ÎªĞÂ¸ñÊ½
 					if(preg_match("/([phpcmstables_|db_][0-9]{8}_[0-9a-z]{20}_)([0-9]+)\.sql/i",basename($sqlfile),$num)) {
 						list($tem_pre, $temp_date, $temp_string, $temp_end) = explode('_', basename($sqlfile));
 						rename($sqlfile, CACHE_PATH.'bakup/'.$pdoname.'/'.$temp_string.'_'.$tem_pre.'_'.$temp_date.'_'.$temp_end);
@@ -118,7 +118,7 @@ class database extends admin {
 	}
 	
 	/**
-	 * å¤‡ä»½æ–‡ä»¶ä¸‹è½½
+	 * ±¸·İÎÄ¼şÏÂÔØ
 	 */
 	public function public_down() {
 		$admin_founders = explode(',',pc_base::load_config('system','admin_founders'));
@@ -135,7 +135,7 @@ class database extends admin {
 	}
 	
 	/**
-	 * æ•°æ®åº“ä¿®å¤ã€ä¼˜åŒ–
+	 * Êı¾İ¿âĞŞ¸´¡¢ÓÅ»¯
 	 */
 	public function public_repair() {
 		$database = pc_base::load_config('database');
@@ -159,7 +159,7 @@ class database extends admin {
 	}
 	
 	/**
-	 * å¤‡ä»½æ–‡ä»¶åˆ é™¤
+	 * ±¸·İÎÄ¼şÉ¾³ı
 	 */
 	public function delete() {
 		$filenames = $_POST['filenames'];
@@ -184,9 +184,9 @@ class database extends admin {
 		}				
 	}
 	/**
-	 * è·å–æ•°æ®è¡¨
-	 * @param unknown_type æ•°æ®è¡¨æ•°ç»„
-	 * @param unknown_type è¡¨å‰ç¼€
+	 * »ñÈ¡Êı¾İ±í
+	 * @param unknown_type Êı¾İ±íÊı×é
+	 * @param unknown_type ±íÇ°×º
 	 */
 	private function status($tables,$tablepre) {
 		$phpcms = array();
@@ -204,17 +204,17 @@ class database extends admin {
 	}
 	
 	/**
-	 * æ•°æ®åº“å¯¼å‡ºæ–¹æ³•
-	 * @param unknown_type $tables æ•°æ®è¡¨æ•°æ®ç»„
-	 * @param unknown_type $sqlcompat æ•°æ®åº“å…¼å®¹ç±»å‹
-	 * @param unknown_type $sqlcharset æ•°æ®åº“å­—ç¬¦
-	 * @param unknown_type $sizelimit å·å¤§å°
-	 * @param unknown_type $action æ“ä½œ
-	 * @param unknown_type $fileid å·æ ‡
-	 * @param unknown_type $random éšæœºå­—æ®µ
+	 * Êı¾İ¿âµ¼³ö·½·¨
+	 * @param unknown_type $tables Êı¾İ±íÊı¾İ×é
+	 * @param unknown_type $sqlcompat Êı¾İ¿â¼æÈİÀàĞÍ
+	 * @param unknown_type $sqlcharset Êı¾İ¿â×Ö·û
+	 * @param unknown_type $sizelimit ¾í´óĞ¡
+	 * @param unknown_type $action ²Ù×÷
+	 * @param unknown_type $fileid ¾í±ê
+	 * @param unknown_type $random Ëæ»ú×Ö¶Î
 	 * @param unknown_type $tableid 
 	 * @param unknown_type $startfrom 
-	 * @param unknown_type $tabletype å¤‡ä»½æ•°æ®åº“ç±»å‹ ï¼ˆéphpcmsæ•°æ®ä¸phpcmsæ•°æ®ï¼‰
+	 * @param unknown_type $tabletype ±¸·İÊı¾İ¿âÀàĞÍ £¨·ÇphpcmsÊı¾İÓëphpcmsÊı¾İ£©
 	 */
 	private function export_database($tables,$sqlcompat,$sqlcharset,$sizelimit,$action,$fileid,$random,$tableid,$startfrom,$tabletype) {
 		$dumpcharset = $sqlcharset ? $sqlcharset : str_replace('-', '', CHARSET);
@@ -317,7 +317,7 @@ class database extends admin {
 		}
 	}
 	/**
-	 * æ•°æ®åº“æ¢å¤
+	 * Êı¾İ¿â»Ö¸´
 	 * @param unknown_type $filename
 	 */
 	private function import_database($filename) {
@@ -344,7 +344,7 @@ class database extends admin {
 	}
 	
 	/**
-	 * æ‰§è¡ŒSQL
+	 * Ö´ĞĞSQL
 	 * @param unknown_type $sql
 	 */
  	private function sql_execute($sql) {

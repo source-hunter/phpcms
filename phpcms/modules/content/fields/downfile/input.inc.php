@@ -1,5 +1,5 @@
 	function downfile($field, $value) {
-		//鍙栧緱闀滃儚绔欑偣鍒楄〃
+		//取得镜像站点列表
 		$result = '';
 		$server_list = count($_POST[$field.'_servers']) > 0 ? implode(',' ,$_POST[$field.'_servers']) : '';
 		$result = $value.'|'.$server_list;

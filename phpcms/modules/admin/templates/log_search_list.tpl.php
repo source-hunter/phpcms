@@ -11,7 +11,7 @@ include $this->admin_tpl('header','admin');
 <table width="100%" cellspacing="0" class="search-form">
     <tbody>
 		<tr>
-		<td><div class="explain-col"><?php echo L('module')?>: <?php echo form::select($module_arr,'','name="search[module]"',$default)?> ç”¨æˆ·å:  <input type="text" value=<?php echo $_GET['search']['username'];?> class="input-text" name="search[username]" size='10'>  æ—¶ é—´:  <?php echo form::date('search[start_time]',$_GET['search']['start_time'],'1')?> è‡³   <?php echo form::date('search[end_time]',$_GET['search']['end_time'],'1')?>    <input type="submit" value="ç¡®å®šæœç´¢" class="button" name="dosubmit">
+		<td><div class="explain-col"><?php echo L('module')?>: <?php echo form::select($module_arr,'','name="search[module]"',$default)?> ÓÃ»§Ãû:  <input type="text" value=<?php echo $_GET['search']['username'];?> class="input-text" name="search[username]" size='10'>  Ê± ¼ä:  <?php echo form::date('search[start_time]',$_GET['search']['start_time'],'1')?> ÖÁ   <?php echo form::date('search[end_time]',$_GET['search']['end_time'],'1')?>    <input type="submit" value="È·¶¨ËÑË÷" class="button" name="dosubmit">
 		</div>
 		</td>
 		</tr>
@@ -44,7 +44,7 @@ if(is_array($infos)){
         <td align="center"><?php echo $info['module']?></td>
         <td align="left" title="<?php echo $info['querystring']?>"><?php echo str_cut($info['querystring'], 40);?></td>
          <td align="center"><?php echo $info['time'];//echo $info['lastusetime'] ? date('Y-m-d H:i', $info['lastusetime']):''?></td>
-         <td align="center"><?php echo $info['ip']?>ã€€</td> 
+         <td align="center"><?php echo $info['ip']?>¡¡</td> 
     </tr>
 <?php
 	}

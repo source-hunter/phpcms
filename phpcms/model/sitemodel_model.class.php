@@ -50,7 +50,7 @@ class sitemodel_model extends model {
 	}
 
 	/**
-	 * åˆ é™¤è¡¨
+	 * É¾³ý±í
 	 * 
 	 */
 	public function drop_table($tablename) {
@@ -64,7 +64,7 @@ class sitemodel_model extends model {
 	}
 
 	/**
-	 * ä¿®æ”¹memberè¡¨ä¼šå‘˜æ¨¡åž‹
+	 * ÐÞ¸Ämember±í»áÔ±Ä£ÐÍ
 	 * @param unknown_type $tablename
 	 */
 	public function change_member_modelid($from_modelid, $to_modelid) {

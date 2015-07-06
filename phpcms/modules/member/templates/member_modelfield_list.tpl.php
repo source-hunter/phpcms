@@ -63,12 +63,12 @@
 <!--
 function edit(modelid, fieldid, name) {
 	window.top.art.dialog({id:'edit'}).close();
-	window.top.art.dialog({title:'<?php echo L('edit').L('field')?>ã€Š'+name+'ã€‹',id:'edit',iframe:'?m=member&c=member_modelfield&a=edit&modelid='+modelid+'&fieldid='+fieldid,width:'700',height:'500'}, function(){var d = window.top.art.dialog({id:'edit'}).data.iframe;d.document.getElementById('dosubmit').click();return false;}, function(){window.top.art.dialog({id:'edit'}).close()});
+	window.top.art.dialog({title:'<?php echo L('edit').L('field')?>¡¶'+name+'¡·',id:'edit',iframe:'?m=member&c=member_modelfield&a=edit&modelid='+modelid+'&fieldid='+fieldid,width:'700',height:'500'}, function(){var d = window.top.art.dialog({id:'edit'}).data.iframe;d.document.getElementById('dosubmit').click();return false;}, function(){window.top.art.dialog({id:'edit'}).close()});
 }
 
 function move(id, name) {
 	window.top.art.dialog({id:'move'}).close();
-	window.top.art.dialog({title:'<?php echo L('move')?>ã€Š'+name+'ã€‹',id:'move',iframe:'?m=member&c=member_model&a=move&modelid='+id,width:'700',height:'500'}, function(){var d = window.top.art.dialog({id:'move'}).data.iframe;d.document.getElementById('dosubmit').click();return false;}, function(){window.top.art.dialog({id:'move'}).close()});
+	window.top.art.dialog({title:'<?php echo L('move')?>¡¶'+name+'¡·',id:'move',iframe:'?m=member&c=member_model&a=move&modelid='+id,width:'700',height:'500'}, function(){var d = window.top.art.dialog({id:'move'}).data.iframe;d.document.getElementById('dosubmit').click();return false;}, function(){window.top.art.dialog({id:'move'}).close()});
 }
 
 function check() {

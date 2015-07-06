@@ -53,7 +53,7 @@ var pc_hash = '<?php echo $_SESSION['pc_hash']?>'
     <div id="dvLockScreenWin" class="inputpwd">
     <h5><b class="ico ico-info"></b><span id="lock_tips"><?php echo L('lockscreen_status');?></span></h5>
     <div class="input">
-    	<label class="lb"><?php echo L('password')?>ï¼š</label><input type="password" id="lock_password" class="input-text" size="24">
+    	<label class="lb"><?php echo L('password')?>£º</label><input type="password" id="lock_password" class="input-text" size="24">
         <input type="submit" class="submit" value="&nbsp;" name="dosubmit" onclick="check_screenlock();return false;">
     </div></div>
 </div>
@@ -132,7 +132,7 @@ var pc_hash = '<?php echo $_SESSION['pc_hash']?>'
 <?php endforeach;?>
 </ul>
 </div>
-<div class="scroll"><a href="javascript:;" class="per" title="ä½¿ç”¨é¼ æ ‡æ»šè½´æ»šåŠ¨ä¾§æ " onclick="menuScroll(1);"></a><a href="javascript:;" class="next" title="ä½¿ç”¨é¼ æ ‡æ»šè½´æ»šåŠ¨ä¾§æ " onclick="menuScroll(2);"></a></div>
+<div class="scroll"><a href="javascript:;" class="per" title="Ê¹ÓÃÊó±ê¹öÖá¹ö¶¯²àÀ¸" onclick="menuScroll(1);"></a><a href="javascript:;" class="next" title="Ê¹ÓÃÊó±ê¹öÖá¹ö¶¯²àÀ¸" onclick="menuScroll(2);"></a></div>
 <script type="text/javascript"> 
 if(!Array.prototype.map)
 Array.prototype.map = function(fn,scope) {
@@ -163,10 +163,10 @@ window.onload = function (){
 	}
 }
 function wSize(){
-	//è¿™æ˜¯ä¸€å­—ç¬¦ä¸²
+	//ÕâÊÇÒ»×Ö·û´®
 	var str=getWindowSize();
-	var strs= new Array(); //å®šä¹‰ä¸€æ•°ç»„
-	strs=str.toString().split(","); //å­—ç¬¦åˆ†å‰²
+	var strs= new Array(); //¶¨ÒåÒ»Êý×é
+	strs=str.toString().split(","); //×Ö·û·Ö¸î
 	var heights = strs[0]-150,Body = $('body');$('#rightMain').height(heights);   
 	//iframe.height = strs[0]-46;
 	if(strs[1]<980){
@@ -196,7 +196,7 @@ function windowW(){
 	}
 }
 windowW();
-//ç«™ç‚¹ä¸‹æ‹‰èœå•
+//Õ¾µãÏÂÀ­²Ëµ¥
 $(function(){
 	var offset = $(".tab_web").offset();
 	var tab_web_panel = $(".tab-web-panel");
@@ -209,17 +209,17 @@ $(function(){
 		});
 	$(".tab_web span").mouseout(function(){hidden_site_list_1()});
 	$(".tab-web-panel").mouseover(function(){clearh();$('.tab_web a').addClass('on')}).mouseout(function(){hidden_site_list_1();$('.tab_web a').removeClass('on')});
-	//é»˜è®¤è½½å…¥å·¦ä¾§èœå•
+	//Ä¬ÈÏÔØÈë×ó²à²Ëµ¥
 	$("#leftMain").load("?m=admin&c=index&a=public_menu_left&menuid=10");
 
-	//é¢æ¿åˆ‡æ¢
+	//Ãæ°åÇÐ»»
 	$("#btnx").removeClass("btns2");
 	$("#Site_model,#btnx h6").css("display","none");
 	$("#btnx").hover(function(){$("#Site_model,#btnx h6").css("display","block");$(this).addClass("btns2");$(".bg_btn").hide();},function(){$("#Site_model,#btnx h6").css("display","none");$(this).removeClass("btns2");$(".bg_btn").show();});
 	$("#Site_model li").hover(function(){$(this).toggleClass("hvs");},function(){$(this).toggleClass("hvs");});
 	$("#Site_model li").click(function(){$("#Site_model li").removeClass("ac"); $(this).addClass("ac");});
 })
-//ç«™ç‚¹é€‰æ‹©
+//Õ¾µãÑ¡Ôñ
 function site_select(id,name, domain, siteid) {
 	$(".tab_web span").html(name);
 	$.get("?m=admin&c=index&a=public_set_siteid&siteid="+id,function(data){
@@ -232,7 +232,7 @@ function site_select(id,name, domain, siteid) {
 	$('#site_homepage').attr('href', domain);
 	$('#site_search').attr('href', 'index.php?m=search&siteid='+siteid);
 }
-//éšè—ç«™ç‚¹ä¸‹æ‹‰ã€‚
+//Òþ²ØÕ¾µãÏÂÀ­¡£
 var s = 0;
 var h;
 function hidden_site_list() {
@@ -250,7 +250,7 @@ function hidden_site_list_1() {
 	h = setInterval("hidden_site_list()", 1);
 }
 
-//å·¦ä¾§å¼€å…³
+//×ó²à¿ª¹Ø
 $("#openClose").click(function(){
 	if($(this).data('clicknum')==1) {
 		$("html").removeClass("on");
@@ -287,9 +287,9 @@ function _M(menuid,targetUrl) {
 	$.get("?m=admin&c=index&a=public_current_pos&menuid="+menuid, function(data){
 		$("#current_pos").html(data);
 	});
-	//å½“ç‚¹å‡»é¡¶éƒ¨èœå•åŽï¼Œéšè—ä¸­é—´çš„æ¡†æž¶
+	//µ±µã»÷¶¥²¿²Ëµ¥ºó£¬Òþ²ØÖÐ¼äµÄ¿ò¼Ü
 	$('#display_center_id').css('display','none');
-	//æ˜¾ç¤ºå·¦ä¾§èœå•ï¼Œå½“ç‚¹å‡»é¡¶éƒ¨æ—¶ï¼Œå±•å¼€å·¦ä¾§
+	//ÏÔÊ¾×ó²à²Ëµ¥£¬µ±µã»÷¶¥²¿Ê±£¬Õ¹¿ª×ó²à
 	$(".left_menu").removeClass("left_menu_on");
 	$("#openClose").removeClass("close");
 	$("html").removeClass("on");

@@ -9,15 +9,15 @@ class link_tag {
  	}
 	
  	/**
- 	 * å–å‡ºè¯¥åˆ†ç±»çš„è¯¦ç»† ä¿¡æ¯
-  	 * @param $typeid åˆ†ç±»ID 
+ 	 * È¡³ö¸Ã·ÖÀàµÄÏêÏ¸ ĞÅÏ¢
+  	 * @param $typeid ·ÖÀàID 
  	 */
  	  
  	public function get_type($data){
  		$typeid = intval($data['typeid']);
  		if($typeid=='0'){
  			$arr = array();
- 			$arr['name'] = 'é»˜è®¤åˆ†ç±»';
+ 			$arr['name'] = 'Ä¬ÈÏ·ÖÀà';
  			return $arr;
  		}else {
 		$r = $this->type_db->get_one(array('typeid'=>$typeid));
@@ -28,11 +28,11 @@ class link_tag {
  	}
  	
 	/**
-	 * å‹æƒ…é“¾æ¥
+	 * ÓÑÇéÁ´½Ó
 	 * @param  $data 
 	 */
 	public function lists($data) {
-		$typeid = intval($data['typeid']);//åˆ†ç±»ID
+		$typeid = intval($data['typeid']);//·ÖÀàID
  		$linktype = $data['linktype']? $data['linktype'] : 0;
 		$siteid = $data['siteid'];
 		if (empty($siteid)){ 
@@ -48,8 +48,8 @@ class link_tag {
 	}
 	
 	/**
-	 * è¿”å›è¯¥åˆ†ç±»ä¸‹çš„å‹æƒ…é“¾æ¥ ...
-	 * @param  $data ä¼ å…¥æ•°ç»„å‚æ•°
+	 * ·µ»Ø¸Ã·ÖÀàÏÂµÄÓÑÇéÁ´½Ó ...
+	 * @param  $data ´«ÈëÊı×é²ÎÊı
 	 */
 	public function type_list($data) {
  		$siteid = $data['siteid'];
@@ -69,7 +69,7 @@ class link_tag {
 	}
 	
 	/**
-	 * é¦–é¡µ  å‹æƒ…é“¾æ¥åˆ†ç±» å¾ªç¯ .
+	 * Ê×Ò³  ÓÑÇéÁ´½Ó·ÖÀà Ñ­»· .
 	 * @param  $data
 	 */
 	public function type_lists($data) {
@@ -83,8 +83,8 @@ class link_tag {
 	 
 	/**
 	 * 
-	 * ä¼ å…¥çš„ç«™ç‚¹ID,è¯»å–ç«™ç‚¹ä¸‹çš„å‹æƒ…é“¾æ¥åˆ†ç±» ...
-	 * @param $siteid é€‰æ‹©çš„ç«™ç‚¹ID 
+	 * ´«ÈëµÄÕ¾µãID,¶ÁÈ¡Õ¾µãÏÂµÄÓÑÇéÁ´½Ó·ÖÀà ...
+	 * @param $siteid Ñ¡ÔñµÄÕ¾µãID 
 	 */ 
 	public function get_typelist($siteid='1', $value = '', $id = '') {
    			$data = $arr = array();
@@ -99,7 +99,7 @@ class link_tag {
 	
 	public function count($data) {
 		if($data['action'] == 'lists') {
- 			$typeid = intval($data['typeid']);//åˆ†ç±»ID
+ 			$typeid = intval($data['typeid']);//·ÖÀàID
 			$linktype = $data['linktype']? $data['linktype'] : 0;
 			$siteid = $data['siteid'];
 			if (empty($siteid)){ 
@@ -116,7 +116,7 @@ class link_tag {
 
 	
 	/**
-	 * pc æ ‡ç­¾è°ƒç”¨
+	 * pc ±êÇ©µ÷ÓÃ
 	 */
 	public function pc_tag() {
 		$sites = pc_base::load_app_class('sites','admin');

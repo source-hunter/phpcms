@@ -9,5 +9,5 @@ $menu_db->insert(array('name'=>'wap_delete', 'parentid'=>$parentid, 'm'=>'wap', 
 $menu_db->insert(array('name'=>'wap_type_manage', 'parentid'=>$parentid, 'm'=>'wap', 'c'=>'wap_admin', 'a'=>'type_manage', 'data'=>'', 'listorder'=>0, 'display'=>'0'));
 $menu_db->insert(array('name'=>'wap_type_edit', 'parentid'=>$parentid, 'm'=>'wap', 'c'=>'wap_admin', 'a'=>'type_edit', 'data'=>'', 'listorder'=>0, 'display'=>'0'));
 $menu_db->insert(array('name'=>'wap_type_delete', 'parentid'=>$parentid, 'm'=>'wap', 'c'=>'wap_admin', 'a'=>'type_delete', 'data'=>'', 'listorder'=>0, 'display'=>'0'));
-$language = array('wap'=>'鎵嬫満闂ㄦ埛','wap_add'=>'娣诲姞','wap_edit'=>'淇敼','wap_delete'=>'鍒犻櫎','wap_type_manage'=>'鍒嗙被绠＄悊','wap_type_edit'=>'鍒嗙被缂栬緫','wap_type_delete'=>'鍒嗙被鍒犻櫎',);
+$language = array('wap'=>'手机门户','wap_add'=>'添加','wap_edit'=>'修改','wap_delete'=>'删除','wap_type_manage'=>'分类管理','wap_type_edit'=>'分类编辑','wap_type_delete'=>'分类删除',);
 ?>

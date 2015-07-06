@@ -53,7 +53,7 @@ function album_cancel(obj,id,source){
 	} else {
 		var num = parent.window.$('#att-status').html().split('|').length;
 		var file_upload_limit = '<?php echo $file_upload_limit?>';
-		if(num > file_upload_limit) {alert('ä¸èƒ½é€‰æ‹©è¶…è¿‡'+file_upload_limit+'ä¸ªé™„ä»¶'); return false;}
+		if(num > file_upload_limit) {alert('²»ÄÜÑ¡Ôñ³¬¹ý'+file_upload_limit+'¸ö¸½¼þ'); return false;}
 		$(obj).addClass("on");
 		$.get('index.php?m=attachment&c=attachments&a=swfupload_json&aid='+id+'&src='+source);
 		parent.window.$('#att-status').append('|'+src);

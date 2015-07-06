@@ -32,12 +32,12 @@ if (module_exists('special')) {
 	}
 }
 
-//æ›¿æ¢category_videoæ¨¡ç‰ˆæŽ¨èä½å€¼
+//Ìæ»»category_videoÄ£°æÍÆ¼öÎ»Öµ
 $position_db = pc_base::load_model('position_model');
-$position_1 = $position_db->insert(array('modelid'=>'0', 'catid'=>0, 'name'=>'è§†é¢‘é¦–é¡µç„¦ç‚¹å›¾æŽ¨è', 'maxnum'=>20, 'extention'=>'', 'listorder'=>'', 'siteid'=>1),true);
-$position_2 = $position_db->insert(array('modelid'=>'0', 'catid'=>0, 'name'=>'è§†é¢‘é¦–é¡µå¤´æ¡æŽ¨è', 'maxnum'=>20, 'extention'=>'', 'listorder'=>'', 'siteid'=>1),true);
-$position_3 = $position_db->insert(array('modelid'=>'0', 'catid'=>0, 'name'=>'è§†é¢‘é¦–é¡µæ¯æ—¥çƒ­ç‚¹æŽ¨è', 'maxnum'=>20, 'extention'=>'', 'listorder'=>'', 'siteid'=>1),true);
-$position_4 = $position_db->insert(array('modelid'=>'0', 'catid'=>0, 'name'=>'è§†é¢‘æ ç›®ç²¾å½©æŽ¨è', 'maxnum'=>20, 'extention'=>'', 'listorder'=>'', 'siteid'=>1),true);
+$position_1 = $position_db->insert(array('modelid'=>'0', 'catid'=>0, 'name'=>'ÊÓÆµÊ×Ò³½¹µãÍ¼ÍÆ¼ö', 'maxnum'=>20, 'extention'=>'', 'listorder'=>'', 'siteid'=>1),true);
+$position_2 = $position_db->insert(array('modelid'=>'0', 'catid'=>0, 'name'=>'ÊÓÆµÊ×Ò³Í·ÌõÍÆ¼ö', 'maxnum'=>20, 'extention'=>'', 'listorder'=>'', 'siteid'=>1),true);
+$position_3 = $position_db->insert(array('modelid'=>'0', 'catid'=>0, 'name'=>'ÊÓÆµÊ×Ò³Ã¿ÈÕÈÈµãÍÆ¼ö', 'maxnum'=>20, 'extention'=>'', 'listorder'=>'', 'siteid'=>1),true);
+$position_4 = $position_db->insert(array('modelid'=>'0', 'catid'=>0, 'name'=>'ÊÓÆµÀ¸Ä¿¾«²ÊÍÆ¼ö', 'maxnum'=>20, 'extention'=>'', 'listorder'=>'', 'siteid'=>1),true);
 
 $tpl_file = PC_PATH.'templates'.DIRECTORY_SEPARATOR.'default'.DIRECTORY_SEPARATOR.'content'.DIRECTORY_SEPARATOR.'category_video.html';
 if(!file_exists($tpl_file)){
@@ -55,5 +55,5 @@ $content = str_replace('*position4*',$position_4,$content);
 
 file_put_contents($tpl_file,$content);
 
-$language = array('video'=>'è§†é¢‘', 'video_manage'=>'è§†é¢‘åº“ç®¡ç†', 'video_upload'=>'è§†é¢‘ä¸Šä¼ ','video_edit'=>'ä¿®æ”¹è§†é¢‘', 'video_delete'=>'åˆ é™¤è§†é¢‘', 'video_open'=>'ç”³è¯·å¼€é€š', 'video_inputinfo'=>'è§†é¢‘é…ç½®', 'complete_info'=>'å¡«å†™èµ„æ–™', 'subscribe_manage'=>'è®¢é˜…ç®¡ç†', 'sub_delete'=>'åˆ é™¤è®¢é˜…', 'import_ku6_video'=>'å¯¼å…¥ku6è§†é¢‘', 'album_import'=>'è§†é¢‘ä¸“è¾‘å¯¼å…¥', 'video_store'=>'è§†é¢‘åº“', 'video_stat'=>'è§†é¢‘ç»Ÿè®¡', 'player_manage'=>'æ’­æ”¾å™¨ç®¡ç†');
+$language = array('video'=>'ÊÓÆµ', 'video_manage'=>'ÊÓÆµ¿â¹ÜÀí', 'video_upload'=>'ÊÓÆµÉÏ´«','video_edit'=>'ÐÞ¸ÄÊÓÆµ', 'video_delete'=>'É¾³ýÊÓÆµ', 'video_open'=>'ÉêÇë¿ªÍ¨', 'video_inputinfo'=>'ÊÓÆµÅäÖÃ', 'complete_info'=>'ÌîÐ´×ÊÁÏ', 'subscribe_manage'=>'¶©ÔÄ¹ÜÀí', 'sub_delete'=>'É¾³ý¶©ÔÄ', 'import_ku6_video'=>'µ¼Èëku6ÊÓÆµ', 'album_import'=>'ÊÓÆµ×¨¼­µ¼Èë', 'video_store'=>'ÊÓÆµ¿â', 'video_stat'=>'ÊÓÆµÍ³¼Æ', 'player_manage'=>'²¥·ÅÆ÷¹ÜÀí');
 ?>

@@ -8,7 +8,7 @@ include $this->admin_tpl('header', 'admin');
 <div>
 	<table width="100%"  class="table_form">
     <tr>
-    <th width="80"><?php echo L('name')?>ï¼š</th>
+    <th width="80"><?php echo L('name')?>£º</th>
     <td class="y-bg"><input type="text" name="name" id="name" /></td>
   </tr>
 </table>

@@ -18,7 +18,7 @@ class formguide_info extends admin {
 	}
 	
 	/**
-	 * 鐢ㄦ埛鎻愪氦琛ㄥ崟淇℃伅鍒楄〃
+	 * 用户提交表单信息列表
 	 */
 	public function init() {
 		if (!isset($_GET['formid']) || empty($_GET['formid'])) {
@@ -42,7 +42,7 @@ class formguide_info extends admin {
 	}
 	
 	/**
-	 * 鏌ョ湅
+	 * 查看
 	 */
 	public function public_view() {
 		if (!$this->tablename || !isset($_GET['did']) || empty($_GET['did'])) showmessage(L('illegal_operation'), HTTP_REFERER);
@@ -59,7 +59,7 @@ class formguide_info extends admin {
 	}
 	
 	/**
-	 * 鍒犻櫎
+	 * 删除
 	 */
 	public function public_delete() {
 		$formid = intval($_GET['formid']);

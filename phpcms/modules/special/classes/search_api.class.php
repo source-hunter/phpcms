@@ -1,6 +1,6 @@
 <?php
 /**
- * search_api.class.php ä¸“é¢˜æ‰§è¡Œæ¥å£ç±»
+ * search_api.class.php ×¨ÌâÖ´ĞĞ½Ó¿ÚÀà
  * 
  */
 defined('IN_PHPCMS') or exit('No permission resources.');
@@ -14,9 +14,9 @@ class search_api {
 	}
 	
 	/**
-	 * è·å–å†…å®¹æ¥å£
-	 * @param intval $pagesize æ¯é¡µä¸ªæ•°
-	 * @param intval $page å½“å‰é¡µæ•°
+	 * »ñÈ¡ÄÚÈİ½Ó¿Ú
+	 * @param intval $pagesize Ã¿Ò³¸öÊı
+	 * @param intval $page µ±Ç°Ò³Êı
 	 */
 	public function fulltext_api($pagesize = 100, $page = 1) {
 		$result = $r = $data = $tem = array();
@@ -33,7 +33,7 @@ class search_api {
 	}
 	
 	/**
-	 * è®¡ç®—æ€»æ•°æ¥å£
+	 * ¼ÆËã×ÜÊı½Ó¿Ú
 	 */
 	public function total() {
 		$r = $this->db->get_one(array('isdata'=>1), 'COUNT(*) AS num');
@@ -41,8 +41,8 @@ class search_api {
 	}
 	
 	/**
-	 * è·å–ä¸“é¢˜ä¸‹å†…å®¹æ•°æ®
-	 * @param string/intval $ids å¤šä¸ªidç”¨â€œ,â€åˆ†å¼€
+	 * »ñÈ¡×¨ÌâÏÂÄÚÈİÊı¾İ
+	 * @param string/intval $ids ¶à¸öidÓÃ¡°,¡±·Ö¿ª
 	 */
 	public function get_search_data($ids) {
 		$where = to_sqls($ids, '', 'id');

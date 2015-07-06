@@ -40,7 +40,7 @@ include $this->admin_tpl('header','admin');?>
 window.top.$('#display_center_id').css('display','none');
 function edit(id, name) {
 	window.top.art.dialog({id:'edit'}).close();
-	window.top.art.dialog({title:'<?php echo L('edit_model');?>ã€Š'+name+'ã€‹',id:'edit',iframe:'?m=content&c=sitemodel&a=edit&modelid='+id,width:'580',height:'420'}, function(){var d = window.top.art.dialog({id:'edit'}).data.iframe;d.document.getElementById('dosubmit').click();return false;}, function(){window.top.art.dialog({id:'edit'}).close()});
+	window.top.art.dialog({title:'<?php echo L('edit_model');?>¡¶'+name+'¡·',id:'edit',iframe:'?m=content&c=sitemodel&a=edit&modelid='+id,width:'580',height:'420'}, function(){var d = window.top.art.dialog({id:'edit'}).data.iframe;d.document.getElementById('dosubmit').click();return false;}, function(){window.top.art.dialog({id:'edit'}).close()});
 }
 function model_delete(obj,id,name,items){
 	if(items) {

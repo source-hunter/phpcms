@@ -12,7 +12,7 @@ class role extends admin {
 	}
 	
 	/**
-	 * è§’è‰²ç®¡ç†åˆ—è¡¨
+	 * ½ÇÉ«¹ÜÀíÁĞ±í
 	 */
 	public function init() {
 		$infos = $this->db->select($where = '', $data = '*', $limit = '', $order = 'listorder DESC, roleid DESC', $group = '');
@@ -21,7 +21,7 @@ class role extends admin {
 	}
 	
 	/**
-	 * æ·»åŠ è§’è‰²
+	 * Ìí¼Ó½ÇÉ«
 	 */
 	public function add() {
 		if(isset($_POST['dosubmit'])) {
@@ -43,7 +43,7 @@ class role extends admin {
 	}
 	
 	/**
-	 * ç¼–è¾‘è§’è‰²
+	 * ±à¼­½ÇÉ«
 	 */
 	public function edit() {
 		if(isset($_POST['dosubmit'])) {
@@ -62,7 +62,7 @@ class role extends admin {
 	}
 	
 	/**
-	 * åˆ é™¤è§’è‰²
+	 * É¾³ı½ÇÉ«
 	 */
 	public function delete() {
 		$roleid = intval($_GET['roleid']);
@@ -73,7 +73,7 @@ class role extends admin {
 		showmessage(L('role_del_success'));
 	}
 	/**
-	 * æ›´æ–°è§’è‰²æ’åº
+	 * ¸üĞÂ½ÇÉ«ÅÅĞò
 	 */
 	public function listorder() {
 		if(isset($_POST['dosubmit'])) {
@@ -87,7 +87,7 @@ class role extends admin {
 	}
 	
 	/**
-	 * è§’è‰²æƒé™è®¾ç½®
+	 * ½ÇÉ«È¨ÏŞÉèÖÃ
 	 */
 	public function role_priv() {
 		$this->menu_db = pc_base::load_model('menu_model');
@@ -116,10 +116,10 @@ class role extends admin {
 			$roleid = intval($_GET['roleid']);
 			if ($siteid) {
 				$menu = pc_base::load_sys_class('tree');
-				$menu->icon = array('â”‚ ','â”œâ”€ ','â””â”€ ');
+				$menu->icon = array('©¦ ','©À©¤ ','©¸©¤ ');
 				$menu->nbsp = '&nbsp;&nbsp;&nbsp;';
 				$result = $this->menu_db->select();
-				$priv_data = $this->priv_db->select(); //è·å–æƒé™è¡¨æ•°æ®
+				$priv_data = $this->priv_db->select(); //»ñÈ¡È¨ÏŞ±íÊı¾İ
 				$modules = 'admin,system';
 				foreach ($result as $n=>$t) {
 					$result[$n]['cname'] = L($t['name'],'',$modules);
@@ -149,7 +149,7 @@ class role extends admin {
 	}
 
 	/**
-	 * æ›´æ–°è§’è‰²çŠ¶æ€
+	 * ¸üĞÂ½ÇÉ«×´Ì¬
 	 */
 	public function change_status(){
 		$roleid = intval($_GET['roleid']);
@@ -159,7 +159,7 @@ class role extends admin {
 		showmessage(L('operation_success'),'?m=admin&c=role');
 	}
 	/**
-	 * æˆå‘˜ç®¡ç†
+	 * ³ÉÔ±¹ÜÀí
 	 */
 	public function member_manage() {
 		$this->admin_db = pc_base::load_model('admin_model');
@@ -170,7 +170,7 @@ class role extends admin {
 	}
 		
 	/**
-	 * è®¾ç½®æ ç›®æƒé™
+	 * ÉèÖÃÀ¸Ä¿È¨ÏŞ
 	 */
 	public function setting_cat_priv() {
 		$roleid = isset($_GET['roleid']) && intval($_GET['roleid']) ? intval($_GET['roleid']) : showmessage(L('illegal_parameters'), HTTP_REFERER);
@@ -180,9 +180,9 @@ class role extends admin {
 			$siteid = isset($_GET['siteid']) && intval($_GET['siteid']) ? intval($_GET['siteid']) : showmessage(L('illegal_parameters'), HTTP_REFERER);
 			pc_base::load_app_class('role_cat', '', 0);
 			$category = role_cat::get_category($siteid);
-			//è·å–è§’è‰²å½“å‰æƒé™è®¾ç½®
+			//»ñÈ¡½ÇÉ«µ±Ç°È¨ÏŞÉèÖÃ
 			$priv = role_cat::get_roleid($roleid, $siteid);
-			//åŠ è½½tree
+			//¼ÓÔØtree
 			$tree = pc_base::load_sys_class('tree');
 			$categorys = array();
 			foreach ($category as $k=>$v) {
@@ -240,7 +240,7 @@ class role extends admin {
 		}
 	}	
 	/**
-	 * è§’è‰²ç¼“å­˜
+	 * ½ÇÉ«»º´æ
 	 */
 	private function _cache() {
 
@@ -255,7 +255,7 @@ class role extends admin {
 	}
 	
 	/**
-	 * ç¼“å­˜ç«™ç‚¹æ•°æ®
+	 * »º´æÕ¾µãÊı¾İ
 	 */
 	private function _cache_siteid($role) {
 		$sitelist = array();

@@ -3,9 +3,9 @@
 <!--
 $(function(){
 	$.formValidator.initConfig({autotip:true,formid:"myform",onerror:function(msg){}});
-	$("#subject").formValidator({empty:true,onshow:"æ ‡é¢˜ï¼Œå¯ä»¥ä¸ºç©º",onfocus:"è¯·è¾“å…¥æ ‡é¢˜",oncorrect:"è¾“å…¥æ­£ç¡®ï¼",onempty:"ä¸å¡«æ›¿æ ‡é¢˜äº†å—ï¼Ÿ"}).inputValidator({min:1,onerror:"è¯·è¾“å…¥æ ‡é¢˜"});
-	$("#con").formValidator({onshow:"è¯·è¾“å…¥å†…å®¹",onfocus:"å†…å®¹ä¸èƒ½ä¸ºç©º"}).inputValidator({min:1,max:999,onerror:"å†…å®¹ä¸èƒ½ä¸ºç©º"});
-	$("#code").formValidator({onshow:"è¯·è¾“å…¥éªŒè¯ç ",onfocus:"éªŒè¯ç ä¸èƒ½ä¸ºç©º"}).inputValidator({min:1,max:999,onerror:"éªŒè¯ç ä¸èƒ½ä¸ºç©º"}).ajaxValidator({
+	$("#subject").formValidator({empty:true,onshow:"±êÌâ£¬¿ÉÒÔÎª¿Õ",onfocus:"ÇëÊäÈë±êÌâ",oncorrect:"ÊäÈëÕıÈ·£¡",onempty:"²»ÌîÌæ±êÌâÁËÂğ£¿"}).inputValidator({min:1,onerror:"ÇëÊäÈë±êÌâ"});
+	$("#con").formValidator({onshow:"ÇëÊäÈëÄÚÈİ",onfocus:"ÄÚÈİ²»ÄÜÎª¿Õ"}).inputValidator({min:1,max:999,onerror:"ÄÚÈİ²»ÄÜÎª¿Õ"});
+	$("#code").formValidator({onshow:"ÇëÊäÈëÑéÖ¤Âë",onfocus:"ÑéÖ¤Âë²»ÄÜÎª¿Õ"}).inputValidator({min:1,max:999,onerror:"ÑéÖ¤Âë²»ÄÜÎª¿Õ"}).ajaxValidator({
 	    type : "get",
 		url : "",
 		data :"m=pay&c=deposit&a=public_checkcode",
@@ -22,8 +22,8 @@ $(function(){
 			}
 		},
 		buttons: $("#dosubmit"),
-		onerror : "éªŒè¯ç é”™è¯¯",
-		onwait : "éªŒè¯ä¸­"
+		onerror : "ÑéÖ¤Âë´íÎó",
+		onwait : "ÑéÖ¤ÖĞ"
 	});
 })
 //-->
@@ -32,7 +32,7 @@ $(function(){
 {template 'member', 'left'}
 <div class="col-auto">
 <div class="col-1 ">
-<h6 class="title">ä¸  {$infos['send_from_id']} çš„çŸ­æ¶ˆæ¯è®°å½•</h6>
+<h6 class="title">Óë  {$infos['send_from_id']} µÄ¶ÌÏûÏ¢¼ÇÂ¼</h6>
 <div class="content">
 <form name="myform" action="?m=message&c=index&a=reply" method="post" id="myform">
 <table width="100%" cellspacing="0" class="table_form">
@@ -63,30 +63,30 @@ $(function(){
 <div class="bk10"></div>
 {if $infos['send_from_id']!='SYSTEM'}
 <div class="col-1 ">
-<h5 class="title">å›å¤æ­¤æ¶ˆæ¯ </h5>
+<h5 class="title">»Ø¸´´ËÏûÏ¢ </h5>
 <div class="content">
 
 <form name="myform" action="?m=message&c=index&a=reply" method="post" id="myform">
 <table width="100%" cellspacing="0" class="table_form">
 <tr>
-<th>æ ‡ é¢˜ï¼š</th>
+<th>±ê Ìâ£º</th>
 <td><input name="info[subject]" type="text" id="subject" size="30" value="Re: {$infos[subject]}"  class="input-text"/></td>
 </tr> 
 <tr>
-<th>å†… å®¹ï¼š</th>
+<th>ÄÚ Èİ£º</th>
 <td><textarea name="info[content]"  id="con" rows="5" cols="50"></textarea></td>
 </tr>
 <input type="hidden" name="info[replyid]" value="{$infos['messageid']}" /> 
 <input type="hidden" name="info[send_to_id]" value="{$infos['send_from_id']}" /> 
 
 <tr>
-<th>éªŒè¯ç ï¼š</th>
+<th>ÑéÖ¤Âë£º</th>
 <td><input name="code" type="text" id="code" size="10"  class="input-text"/> {form::checkcode('code_img','4','14',110,30)}</td>
 </tr>
 <tr>
 <td></td>
 <td colspan="2"><label>
-<input type="submit" name="dosubmit" id="dosubmit" value="ç¡® å®š" class="button"/>
+<input type="submit" name="dosubmit" id="dosubmit" value="È· ¶¨" class="button"/>
 </label></td>
 </tr>
 </table>

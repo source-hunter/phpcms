@@ -1,5 +1,5 @@
 <?php
-$LANG['reg_msg'] = 'æ‚¨è¿˜çš„ç½‘ç«™è¿˜æ²¡æœ‰ç”³è¯·CNZZç»Ÿè®¡ï¼Œæ˜¯å¦ç°åœ¨ç”³è¯·ï¼Ÿ<br><br><input type="button" onclick="location.href=\'?m=cnzz&c=index&a=public_regcnzz\'" value=" é©¬ ä¸Š å¼€ é€š "> <input type="button" onclick="history.back();" value=" æš‚ ä¸ å¼€ é€š ">';
-$LANG['application_fails'] = 'ç”³è¯·å¤±è´¥ï¼Œè¯·ç¨å€™å†è¯•ã€‚';
-$LANG['donot_connect_server'] = 'æ— æ³•æˆåŠŸè¿æ¥cnzzæœåŠ¡å™¨ã€‚';
-$LANG['has_been_registered'] = 'å·²ç»æ³¨å†Œè¿‡ã€‚';
+$LANG['reg_msg'] = 'Äú»¹µÄÍøÕ¾»¹Ã»ÓĞÉêÇëCNZZÍ³¼Æ£¬ÊÇ·ñÏÖÔÚÉêÇë£¿<br><br><input type="button" onclick="location.href=\'?m=cnzz&c=index&a=public_regcnzz\'" value=" Âí ÉÏ ¿ª Í¨ "> <input type="button" onclick="history.back();" value=" Ôİ ²» ¿ª Í¨ ">';
+$LANG['application_fails'] = 'ÉêÇëÊ§°Ü£¬ÇëÉÔºòÔÙÊÔ¡£';
+$LANG['donot_connect_server'] = 'ÎŞ·¨³É¹¦Á¬½Ócnzz·şÎñÆ÷¡£';
+$LANG['has_been_registered'] = 'ÒÑ¾­×¢²á¹ı¡£';

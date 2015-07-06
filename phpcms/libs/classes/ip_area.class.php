@@ -1,19 +1,19 @@
 <?php 
 /**
- * ip_area.class.php æ ¹æ®ipåœ°å€èŽ·å–ipæ‰€åœ¨åœ°åŒºçš„ç±»
+ * ip_area.class.php ¸ù¾ÝipµØÖ·»ñÈ¡ipËùÔÚµØÇøµÄÀà
  *
  * @copyright			(C) 2005-2010 PHPCMS
  * @license				http://www.phpcms.cn/license/
  * @lastmodify			2010-6-7
  */
 class ip_area {
-	public $fp = NULL;		//å®šä¹‰æ–‡ä»¶æŒ‡é’ˆ
-	public $func;			//å¤„ç†çš„æ–¹æ³•
+	public $fp = NULL;		//¶¨ÒåÎÄ¼þÖ¸Õë
+	public $func;			//´¦ÀíµÄ·½·¨
 	private $offset;		
 	private $index;
 	
 	/**
- 	 * æž„é€ å‡½æ•°
+ 	 * ¹¹Ôìº¯Êý
  	 * 
  	 */
 	public function __construct() {
@@ -32,8 +32,8 @@ class ip_area {
 	}
 
 	/**
- 	 * å–å¾—åœ°åŒºå
- 	 * @param  string $ip IPåœ°å€
+ 	 * È¡µÃµØÇøÃû
+ 	 * @param  string $ip IPµØÖ·
  	 * @ return string/null
  	 */
 	public function get($ip) {
@@ -54,8 +54,8 @@ class ip_area {
 	}
 	
 	/**
-	* é€šè¿‡å¤–éƒ¨æŽ¥å£æ–¹å¼èŽ·å–è¯¦ç»†åœ°å€ä¿¡æ¯
-	* @return $localinfo province çœä»½ cityåŸŽå¸‚  spç½‘ç»œ æä¾›å•†  pinyinæ‹¼éŸ³
+	* Í¨¹ýÍâ²¿½Ó¿Ú·½Ê½»ñÈ¡ÏêÏ¸µØÖ·ÐÅÏ¢
+	* @return $localinfo province Ê¡·Ý city³ÇÊÐ  spÍøÂç Ìá¹©ÉÌ  pinyinÆ´Òô
 	*/
 	public function getcitybyapi($ip) {
 		$api_url = $localinfo = '';
@@ -79,7 +79,7 @@ class ip_area {
 	}
 	
 	/**
-	*èŽ·å–åŸŽå¸‚åç§°
+	*»ñÈ¡³ÇÊÐÃû³Æ
 	*/
 	public function getcity($ip) {
 		$localinfo = '';
@@ -97,8 +97,8 @@ class ip_area {
 		return $localinfo;
 	}
 	/**
- 	 * ä½¿ç”¨mini.Dat ipæ•°æ®åŒ…èŽ·å–åœ°åŒº
- 	 * @param  string $ip IPåœ°å€
+ 	 * Ê¹ÓÃmini.Dat ipÊý¾Ý°ü»ñÈ¡µØÇø
+ 	 * @param  string $ip IPµØÖ·
  	 * @ return string/null
  	 */
 	private function data_mini($ip) {
@@ -124,8 +124,8 @@ class ip_area {
 	}
 	
 	/**
- 	 * ä½¿ç”¨QQWry.Dat ipæ•°æ®åŒ…èŽ·å–åœ°åŒº
- 	 * @param  string $ip IPåœ°å€
+ 	 * Ê¹ÓÃQQWry.Dat ipÊý¾Ý°ü»ñÈ¡µØÇø
+ 	 * @param  string $ip IPµØÖ·
  	 * @ return string/null
  	 */
 	private function data_full($ip) {

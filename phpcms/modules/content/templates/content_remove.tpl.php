@@ -18,8 +18,8 @@ include $this->admin_tpl('header','admin');?>
 <tbody  height="200" class="nHover td-line">
 	<tr> 
       <td align="center" rowspan="6">
-		<input type="radio" name="fromtype" value="0" checked id="fromtype_1" onclick="if(this.checked){$('#frombox_1').show();$('#frombox_2').hide();}">ä»ŽæŒ‡å®šIDï¼š
-		<input type="radio" name="fromtype" value="1"  id="fromtype_2" onclick="if(this.checked){$('#frombox_1').hide();$('#frombox_2').show();}">ä»ŽæŒ‡å®šæ ç›®
+		<input type="radio" name="fromtype" value="0" checked id="fromtype_1" onclick="if(this.checked){$('#frombox_1').show();$('#frombox_2').hide();}">´ÓÖ¸¶¨ID£º
+		<input type="radio" name="fromtype" value="1"  id="fromtype_2" onclick="if(this.checked){$('#frombox_1').hide();$('#frombox_2').show();}">´ÓÖ¸¶¨À¸Ä¿
 		<div id="frombox_1" style="display:;">
 		<textarea name="ids" style="height:280px;width:350px;"><?php echo $ids;?></textarea>
 		<br/>

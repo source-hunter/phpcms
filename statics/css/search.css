@@ -63,7 +63,7 @@ ol, ul{list-style: none;}
 .sr_lists .c li a:hover img{background:#efefef;}
 .sr_lists .c .a2{ margin:10px;}
 /* pages */
-#pages { padding:14px 0 10px; font-family:瀹嬩綋; margin:10px; }
+#pages { padding:14px 0 10px; font-family:宋体; margin:10px; }
 #pages a { display:inline-block; width:26px; height:22px; line-height:22px; background:#fff; border:1px solid #e3e3e3; text-align:center; color:#333}
 #pages a.a1 { background:url(../images/search/admin_img/pages.png) no-repeat 0 5px; width:56px; }
 #pages a:hover { background:#f1f1f1; color:#000; text-decoration:none; }

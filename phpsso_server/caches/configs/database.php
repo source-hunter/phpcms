@@ -3,11 +3,11 @@
 return array (
 	'default' => array (
 		'hostname' => 'localhost',
-		'database' => 'phpcms',
-		'username' => 'root',
-		'password' => 'root',
-		'tablepre' => 'v9_sso_',
-		'charset' => 'utf8',
+		'database' => 'phpsso',
+		'username' => '',
+		'password' => '',
+		'tablepre' => 'ps_',
+		'charset' => 'gbk',
 		'type' => 'mysql',
 		'debug' => true,
 		'pconnect' => 0,

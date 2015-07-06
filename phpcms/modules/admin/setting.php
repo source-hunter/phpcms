@@ -10,7 +10,7 @@ class setting extends admin {
 	}
 	
 	/**
-	 * 閰嶇疆淇℃伅
+	 * 配置信息
 	 */
 	public function init() {
 		$show_validator = true;
@@ -26,7 +26,7 @@ class setting extends admin {
 	}
 	
 	/**
-	 * 淇濆瓨閰嶇疆淇℃伅
+	 * 保存配置信息
 	 */
 	public function save() {
 		
@@ -44,9 +44,9 @@ class setting extends admin {
 		$setting['mail_password'] = trim($_POST['setting']['mail_password']);
 		$setting['errorlog_size'] = trim($_POST['setting']['errorlog_size']);
 		$setting = array2string($setting);
-		$this->db->update(array('setting'=>$setting), array('module'=>'admin')); //瀛樺叆admin妯″潡setting瀛楁
+		$this->db->update(array('setting'=>$setting), array('module'=>'admin')); //存入admin模块setting字段
 		
-		//濡傛灉寮�濮嬬洓澶ч�氳璇佹帴鍏ワ紝鍒ゆ柇鏈嶅姟鍣ㄦ槸鍚︽敮鎸乧url
+		//如果开始盛大通行证接入，判断服务器是否支持curl
 		$snda_error = '';
 		if($_POST['setconfig']['snda_akey'] || $_POST['setconfig']['snda_skey']) {
 			if(function_exists('curl_init') == FALSE) {
@@ -55,13 +55,13 @@ class setting extends admin {
 			}
 		}
 
-		set_config($_POST['setconfig']);	 //淇濆瓨杩沜onfig鏂囦欢
+		set_config($_POST['setconfig']);	 //保存进config文件
 		$this->setcache();
 		showmessage(L('setting_succ').$snda_error, HTTP_REFERER);
 	}
 	
 	/*
-	 * 娴嬭瘯閭欢閰嶇疆
+	 * 测试邮件配置
 	 */
 	public function public_test_mail() {
 		pc_base::load_sys_func('mail');
@@ -88,7 +88,7 @@ class setting extends admin {
 	}
 	
 	/**
-	 * 璁剧疆缂撳瓨
+	 * 设置缓存
 	 * Enter description here ...
 	 */
 	private function setcache() {

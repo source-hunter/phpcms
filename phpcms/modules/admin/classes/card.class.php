@@ -3,7 +3,7 @@ class card {
 	static $server_url = 'http://safe.phpcms.cn/index.php';
 
 	/**
-	 * åˆ°è¿œç¨‹æœåŠ¡å™¨ä¸Šå»å–KEY
+	 * µ½Ô¶³Ì·şÎñÆ÷ÉÏÈ¥È¡KEY
 	 */
 	public static function get_key() {
 		
@@ -15,8 +15,8 @@ class card {
 	}
 	
 	/**
-	 * å¡ç‰‡çš„æ˜¾ç¤ºåœ°å€
-	 * @param $sn å£ä»¤å¡ç¼–å·
+	 * ¿¨Æ¬µÄÏÔÊ¾µØÖ·
+	 * @param $sn ¿ÚÁî¿¨±àºÅ
 	 */
 	public static function get_pic($sn) {
 		$key = self::get_key();
@@ -24,8 +24,8 @@ class card {
 	}
 	
 	/**
-	 * ç”³è¯·æ–°çš„å¡ç‰‡
-	 * @return è¿”å›å¡ç‰‡çš„sn
+	 * ÉêÇëĞÂµÄ¿¨Æ¬
+	 * @return ·µ»Ø¿¨Æ¬µÄsn
 	 */
 	public static function creat_card() {
 		$key = self::get_key();
@@ -33,8 +33,8 @@ class card {
 	}
 	
 	/**
-	 * è§£é™¤å£ä»¤å¡ç»‘å®š
-	 * @param string $sn å£ä»¤å¡ç¼–å·
+	 * ½â³ı¿ÚÁî¿¨°ó¶¨
+	 * @param string $sn ¿ÚÁî¿¨±àºÅ
 	 */
 	public static function remove_card($sn) {
 		$key = self::get_key();
@@ -42,8 +42,8 @@ class card {
 	}
 	
 	/**
-	 * è¯·æ±‚å£ä»¤éªŒè¯ç 
-	 * @param string $sn å£ä»¤å¡ç¼–å·
+	 * ÇëÇó¿ÚÁîÑéÖ¤Âë
+	 * @param string $sn ¿ÚÁî¿¨±àºÅ
 	 */
 	public static function authe_rand($sn) {
 		$key = self::get_key();
@@ -52,10 +52,10 @@ class card {
 	}
 	
 	/**
-	 * éªŒè¯åŠ¨æ€å£ä»¤
-	 * @param string $sn     å£ä»¤å¡ç¼–å·
-	 * @param string $code   ç”¨æˆ·è¾“å…¥å£ä»¤
-	 * @param string $rand   éšæœºç 
+	 * ÑéÖ¤¶¯Ì¬¿ÚÁî
+	 * @param string $sn     ¿ÚÁî¿¨±àºÅ
+	 * @param string $code   ÓÃ»§ÊäÈë¿ÚÁî
+	 * @param string $rand   Ëæ»úÂë
 	 */
 	public static function verification($sn, $code, $rand) {
 		$key = self::get_key();
@@ -63,15 +63,15 @@ class card {
 	} 
 	
 	/**
-	 * è¯·æ±‚è¿œç¨‹æ•°æ®
-	 * @param string $url       éœ€è¦è¯·æ±‚çš„åœ°å€ã€‚
-	 * @param string $backurl   è¿”å›åœ°å€
+	 * ÇëÇóÔ¶³ÌÊı¾İ
+	 * @param string $url       ĞèÒªÇëÇóµÄµØÖ·¡£
+	 * @param string $backurl   ·µ»ØµØÖ·
 	 */
 	private static function _get_data($url, $backurl = '') {
 		if ($data = @file_get_contents(self::$server_url.$url)) {
 			$data = json_decode($data, true);
 			
-			//å¦‚æœç³»ç»Ÿæ˜¯GBKçš„ç³»ç»Ÿï¼ŒæŠŠUTF8è½¬ç ä¸ºGBK
+			//Èç¹ûÏµÍ³ÊÇGBKµÄÏµÍ³£¬°ÑUTF8×ªÂëÎªGBK
 			if (pc_base::load_config('system', 'charset') == 'gbk') {
 				$data =  array_iconv($data, 'utf-8', 'gbk');
 			}

@@ -1,6 +1,6 @@
 <?php
 /**
- *  push_factory.class.php æŽ¨é€ä¿¡æ¯å·¥åŽ‚ç±»
+ *  push_factory.class.php ÍÆËÍÐÅÏ¢¹¤³§Àà
  *
  * @copyright			(C) 2005-2010 PHPCMS
  * @license				http://www.phpcms.cn/license/
@@ -10,17 +10,17 @@
 final class push_factory {
 	
 	/**
-	 *  æŽ¨é€ä¿¡æ¯å·¥åŽ‚ç±»é™æ€å®žä¾‹
+	 *  ÍÆËÍÐÅÏ¢¹¤³§Àà¾²Ì¬ÊµÀý
 	 */
 	private static $push_factory;
 	
 	/**
-	 * æŽ¥å£å®žä¾‹åŒ–åˆ—è¡¨
+	 * ½Ó¿ÚÊµÀý»¯ÁÐ±í
 	 */
 	protected $api_list = array();
 	
 	/**
-	 * è¿”å›žå½“å‰ç»ˆçº§ç±»å¯¹è±¡çš„å®žä¾‹
+	 * ·µ»Øµ±Ç°ÖÕ¼¶Àà¶ÔÏóµÄÊµÀý
 	 * @return object
 	 */
 	public static function get_instance() {
@@ -31,9 +31,9 @@ final class push_factory {
 	}
 	
 	/**
-	 * èŽ·å–apiæ“ä½œå®žä¾‹
-	 * @param string $classname æŽ¥å£è°ƒç”¨çš„ç±»æ–‡ä»¶å
-	 * @param sting  $module	 æ¨¡å—å
+	 * »ñÈ¡api²Ù×÷ÊµÀý
+	 * @param string $classname ½Ó¿Úµ÷ÓÃµÄÀàÎÄ¼þÃû
+	 * @param sting  $module	 Ä£¿éÃû
 	 * @return object	 
 	 */
 	public function get_api($module = 'admin') {

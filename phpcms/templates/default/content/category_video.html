@@ -28,8 +28,8 @@ $('#tag{$r[catid]}').tabs("div.views{$r[catid]} > ul");
           <dd class="title">
             <h3><span class="ico_zt"></span><a target="_blank" href="{$r['url']}">{$r['title']}</a></h3>
           </dd>
-          <dd class="text">{str_cut($r[description],82)}<a target="_blank" href="{$r['url']}">è§†é¢‘è¯¦æƒ…</a>&gt;&gt;&nbsp;&nbsp;<a target="_blank" href="{$r['url']}">è¯„è®º</a>&gt;&gt;</dd>
-          <dd class="info"> <span class="show">æ’­æ”¾:<cite>{get_views('c-'.$CATEGORYS[$r[catid]][modelid].'-'.$r['id'])}</cite></span> <span class="review">è¯„è®º:<cite>{get_comments(id_encode("content_$r[catid]",$r[id],$siteid))}</cite></span> </dd>
+          <dd class="text">{str_cut($r[description],82)}<a target="_blank" href="{$r['url']}">ÊÓÆµÏêÇé</a>&gt;&gt;&nbsp;&nbsp;<a target="_blank" href="{$r['url']}">ÆÀÂÛ</a>&gt;&gt;</dd>
+          <dd class="info"> <span class="show">²¥·Å:<cite>{get_views('c-'.$CATEGORYS[$r[catid]][modelid].'-'.$r['id'])}</cite></span> <span class="review">ÆÀÂÛ:<cite>{get_comments(id_encode("content_$r[catid]",$r[id],$siteid))}</cite></span> </dd>
         </dl>
 		{/loop}
 		{/pc}
@@ -61,7 +61,7 @@ $('#tag{$r[catid]}').tabs("div.views{$r[catid]} > ul");
 <a title="{$r['title']}" target="show_v" href="{$r['url']}" class="pic"><img alt="{$r['title']}" src="{$r['thumb']}"></a> 
 </dt>
 <dd class="text"><span></span><a target="show_v" href="{$r['url']}">{$r['title']}</a></dd>
-<dd class="info"> <span class="show">æ’­æ”¾:<cite>{get_views('c-'.$CATEGORYS[$r[catid]][modelid].'-'.$r['id'])}</cite></span> <span class="review">è¯„è®º:<cite>{get_comments(id_encode("content_$r[catid]",$r[id],$siteid))}</cite></span> </dd>
+<dd class="info"> <span class="show">²¥·Å:<cite>{get_views('c-'.$CATEGORYS[$r[catid]][modelid].'-'.$r['id'])}</cite></span> <span class="review">ÆÀÂÛ:<cite>{get_comments(id_encode("content_$r[catid]",$r[id],$siteid))}</cite></span> </dd>
 </dl>
 </li>
 
@@ -79,11 +79,11 @@ $('#tag{$r[catid]}').tabs("div.views{$r[catid]} > ul");
 	
     <div class="box3">
     	<div class="nav">
-			<span class="more"><a href="{$r[url]}" target="_blank">æ›´å¤š>></a></span>
+			<span class="more"><a href="{$r[url]}" target="_blank">¸ü¶à>></a></span>
         	<h5>{$r[catname]}</h5>
     		<ul class="ulin" id="tab{$r[catid]}">
-                <li><a href="#">ä»Šæ—¥çƒ­ç‚¹</a></li>
-                <li><a href="#">æœ€æ–°è§†é¢‘</a></li>
+                <li><a href="#">½ñÈÕÈÈµã</a></li>
+                <li><a href="#">×îĞÂÊÓÆµ</a></li>
             </ul>
     	</div>
         <div class="clr bct">
@@ -93,7 +93,7 @@ $('#tag{$r[catid]}').tabs("div.views{$r[catid]} > ul");
             	<div class="hots">
                 	<div class="clr"><a href="{$v[url]}" target="_blank"><img src="{$v[thumb]}" width="200" height="155"></a></div>
                     <h5><a href="{$v[url]}" target="_blank">{str_cut($v[title],26)}</a></h5>
-                    <p>{str_cut($v[description],56)} <a href="{$v[url]}#comment_iframe" target="_blank">è¯„è®º>></a></p>
+                    <p>{str_cut($v[description],56)} <a href="{$v[url]}#comment_iframe" target="_blank">ÆÀÂÛ>></a></p>
                 </div>
 		
 			{/loop}	
@@ -111,12 +111,12 @@ $('#tag{$r[catid]}').tabs("div.views{$r[catid]} > ul");
 				
             </div>
 
-			<!--æœ¬æ ç›®æœ€æ–°è§†é¢‘-->
+			<!--±¾À¸Ä¿×îĞÂÊÓÆµ-->
 			<div class="wp pns{$r[catid]}">
             <ul class="clr wp col3">
 			 {pc:content action="lists" catid="$r[catid]" num="6" order="id DESC" return="info"}
 			 {loop $info $v}
-			 <!-- è·å–è§†é¢‘è¯¦ç»†ä¿¡æ¯ -->
+			 <!-- »ñÈ¡ÊÓÆµÏêÏ¸ĞÅÏ¢ -->
 			 {php $video_info = get_vid($v[id], $v[catid], $isspecial = 0);} 
                   <li>
                   <div class="w120">
@@ -125,13 +125,13 @@ $('#tag{$r[catid]}').tabs("div.views{$r[catid]} > ul");
 					  
 					  <a href="{$v[url]}" title="{$v[title]}" target="_blank"><img src="{$v[thumb]}" width="120" height="75"></a></div>
                       <div class="lh21"><a href="{$v[url]}" title="{$v[title]}" target="_blank">{str_cut($v[title],30,false)}</a></div>
-                      <div class="sz"><span class="shows">æ’­æ”¾æ•°ï¼š<cite>{get_views('c-'.$CATEGORYS[$v[catid]][modelid].'-'.$v['id'])}</cite></span><span>è¯„è®ºï¼š<cite>{get_comments(id_encode("content_$v[catid]",$v[id],$siteid))}</cite></span></div>
+                      <div class="sz"><span class="shows">²¥·ÅÊı£º<cite>{get_views('c-'.$CATEGORYS[$v[catid]][modelid].'-'.$v['id'])}</cite></span><span>ÆÀÂÛ£º<cite>{get_comments(id_encode("content_$v[catid]",$v[id],$siteid))}</cite></span></div>
                   </div>
                 </li> 
 			{/loop}
 			{/pc}
             </ul>
-			<!--æœ¬æ ç›®ä»Šæ—¥çƒ­ç‚¹-->
+			<!--±¾À¸Ä¿½ñÈÕÈÈµã-->
             <ul class="clr wp col3 hidden">
 			 {pc:content action="hits" catid="$r[catid]" num="6" order="dayviews DESC" return="info" cache="0"}
 			 {loop $info $v}
@@ -143,7 +143,7 @@ $('#tag{$r[catid]}').tabs("div.views{$r[catid]} > ul");
 					  
 					  <a href="{$v[url]}" title="{$v[title]}" target="_blank"><img src="{$v[thumb]}" width="120" height="75"></a></div>
                       <div class="lh21"><a href="{$v[url]}" title="{$v[title]}" target="_blank">{str_cut($v[title],18,false)}</a></div>
-                      <div class="sz"><span class="shows">æ’­æ”¾æ•°ï¼š<cite>{get_views('c-'.$CATEGORYS[$v[catid]][modelid].'-'.$v['id'])}</cite></span><span>è¯„è®ºï¼š<cite>{get_comments(id_encode("content_$v[catid]",$v[id],$siteid))}</cite></span></div>
+                      <div class="sz"><span class="shows">²¥·ÅÊı£º<cite>{get_views('c-'.$CATEGORYS[$v[catid]][modelid].'-'.$v['id'])}</cite></span><span>ÆÀÂÛ£º<cite>{get_comments(id_encode("content_$v[catid]",$v[id],$siteid))}</cite></span></div>
                   </div>
                 </li> 
 			{/loop}
@@ -155,7 +155,7 @@ $('#tag{$r[catid]}').tabs("div.views{$r[catid]} > ul");
     </div>
 	{if $num%2 ==0}
  	<div class="ad">
-	<a href="http://www.phpcms.cn" title="éšæœºå¹¿å‘Šä½ï¼Œæ¬¢è¿è®¿é—®PHPCMS.CN"><img src="http://www.phpcms.cn/statics/images/video/ad660x90.gif" width="660" height="90"></a>
+	<a href="http://www.phpcms.cn" title="Ëæ»ú¹ã¸æÎ»£¬»¶Ó­·ÃÎÊPHPCMS.CN"><img src="http://www.phpcms.cn/statics/images/video/ad660x90.gif" width="660" height="90"></a>
 	</div>
 	{/if}
 {/loop}	
@@ -165,11 +165,11 @@ $('#tag{$r[catid]}').tabs("div.views{$r[catid]} > ul");
 </div>
   <div class="lyt_2">
   	<div class="r1 tg">
-	<!-- å³é¡¶å¹¿å‘Š -->
-	<a href="http://www.phpcms.cn" title="éšæœºå¹¿å‘Šä½ï¼Œæ¬¢è¿è®¿é—®PHPCMS.CN"><img src="http://www.phpcms.cn/statics/images/video/ad280x66.gif"></a>
+	<!-- ÓÒ¶¥¹ã¸æ -->
+	<a href="http://www.phpcms.cn" title="Ëæ»ú¹ã¸æÎ»£¬»¶Ó­·ÃÎÊPHPCMS.CN"><img src="http://www.phpcms.cn/statics/images/video/ad280x66.gif"></a>
 	</div>
     <div class="box0">
-    	<div class="nav"><h5>ç²¾å½©æ¨è</h5></div>
+    	<div class="nav"><h5>¾«²ÊÍÆ¼ö</h5></div>
         <div class="bct mg10 jctj">
 {php $category_nums = count(subcat($catid,0,0,$siteid));$num=0;} 
 {loop subcat($catid,0,0,$siteid) $r} 
@@ -198,15 +198,15 @@ $('#tag{$r[catid]}').tabs("div.views{$r[catid]} > ul");
     </div>
     <div class="r2 tg">
 	
-<a href="http://www.phpcms.cn" title="éšæœºå¹¿å‘Šä½ï¼Œæ¬¢è¿è®¿é—®PHPCMS.CN"><img src="http://www.phpcms.cn/statics/images/video/ad280x66.gif"></a>
+<a href="http://www.phpcms.cn" title="Ëæ»ú¹ã¸æÎ»£¬»¶Ó­·ÃÎÊPHPCMS.CN"><img src="http://www.phpcms.cn/statics/images/video/ad280x66.gif"></a>
  
 	</div>
      <div class="mgt10 box2">
     	<div class="nav tag3">
         	<ul class="clr col3"  id="tag1">
-                <li><a href="#" class="ac">çƒ­ç‚¹</a></li>
-                <li><a href="#">è¯„è®º</a></li>
-                <li><a href="#">å…³æ³¨</a></li>
+                <li><a href="#" class="ac">ÈÈµã</a></li>
+                <li><a href="#">ÆÀÂÛ</a></li>
+                <li><a href="#">¹Ø×¢</a></li>
             </ul>
         </div>
         <div class="bct tabn1">
@@ -268,7 +268,7 @@ $('#tag{$r[catid]}').tabs("div.views{$r[catid]} > ul");
 	 <div class="mgt10 box2">
     	<div class="nav tag3">
         	<ul class="clr col3">
-                <li><a href="#" class="ac">è§†é¢‘ä¸“è¾‘åˆ—è¡¨</a></li>
+                <li><a href="#" class="ac">ÊÓÆµ×¨¼­ÁĞ±í</a></li>
                 <li></li>
                 <li></li>
             </ul>
@@ -303,8 +303,8 @@ $('#tag{$r[catid]}').tabs("div.views{$r[catid]} > ul");
     	<div class="nav tag3"  id="tag{$r[catid]}">
         	<ul class="clr col3">
                 <li><a href="#" class="ac">{$r[catname]}</a></li>
-                <li><a href="#">å‘¨æ’è¡Œ</a></li>
-                <li><a href="#">æœˆæ’è¡Œ</a></li>
+                <li><a href="#">ÖÜÅÅĞĞ</a></li>
+                <li><a href="#">ÔÂÅÅĞĞ</a></li>
             </ul>
         </div>
         <div class="bct views{$r[catid]}">
@@ -367,7 +367,7 @@ $('#tag{$r[catid]}').tabs("div.views{$r[catid]} > ul");
 	
     <div class="ad">
 	
-	<a href="http://www.phpcms.cn" title="éšæœºå¹¿å‘Šä½ï¼Œæ¬¢è¿è®¿é—®PHPCMS.CN"><img src="http://www.phpcms.cn/statics/images/video/ad280x66.gif"></a>
+	<a href="http://www.phpcms.cn" title="Ëæ»ú¹ã¸æÎ»£¬»¶Ó­·ÃÎÊPHPCMS.CN"><img src="http://www.phpcms.cn/statics/images/video/ad280x66.gif"></a>
 	</div>
   
    
@@ -381,7 +381,7 @@ $(function(){
 })
 
 /*
-*æ”¹å˜åŠ å…¥æ¸…å•çš„å›¾ç‰‡äº‹ä»¶å’Œå›¾ç‰‡æ˜¾ç¤º
+*¸Ä±ä¼ÓÈëÇåµ¥µÄÍ¼Æ¬ÊÂ¼şºÍÍ¼Æ¬ÏÔÊ¾
 */
 function ChangStatus(){
 	var player_list ;
@@ -412,13 +412,13 @@ function toggle(object) {
 		player_list = new_player;
 	} else{
 		var player_list = getcookie('player_list'); 
- 		//åˆ¤æ–­æ˜¯å¦å·²ç»å­˜åœ¨
+ 		//ÅĞ¶ÏÊÇ·ñÒÑ¾­´æÔÚ
  		if(player_list.indexOf(id)!=-1){
-			//å·²ç»åŠ å…¥æ’­æ”¾èœå•åˆ™è®¾ç½®COOKIE,ç›´æ¥è·³è½¬è‡³æ’­æ”¾é¡µé¢
+			//ÒÑ¾­¼ÓÈë²¥·Å²Ëµ¥ÔòÉèÖÃCOOKIE,Ö±½ÓÌø×ªÖÁ²¥·ÅÒ³Ãæ
    			var list_array = player_list.split("|"); 
 			var player=new Array();
 			if(list_array.length>20){
-				alert('ä½ å·²ç»æ·»åŠ 20ä¸ªæ’­æ”¾åˆ—è¡¨ï¼Œæ— æ³•å¢åŠ æ›´å¤šï¼');
+				alert('ÄãÒÑ¾­Ìí¼Ó20¸ö²¥·ÅÁĞ±í£¬ÎŞ·¨Ôö¼Ó¸ü¶à£¡');
 				return false;
 			}
 			for(var i=0;i<list_array.length;i++) {
@@ -433,7 +433,7 @@ function toggle(object) {
 		var new_player = '|'+url+'@'+title+'@'+id+'@'+catid;
 		player_list +=new_player;
 	}
- 	//æ”¹å˜å›¾ç‰‡æ ·å¼ï¼Œå¹¶ä¸”å»æ‰onclickå‡½æ•°
+ 	//¸Ä±äÍ¼Æ¬ÑùÊ½£¬²¢ÇÒÈ¥µôonclickº¯Êı
  	setcookie('player_list',player_list,1); 
 	$("a[contentid='"+id+"']").removeClass("j"); 
 	$("a[contentid='"+id+"']").addClass("j2"); 

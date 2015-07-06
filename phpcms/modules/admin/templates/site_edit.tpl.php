@@ -25,15 +25,15 @@ include $this->admin_tpl('header');
 	<legend><?php echo L('basic_configuration')?></legend>
 	<table width="100%"  class="table_form">
   <tr>
-    <th width="80"><?php echo L('site_name')?>ï¼š</th>
+    <th width="80"><?php echo L('site_name')?>£º</th>
     <td class="y-bg"><input type="text" class="input-text" name="name" id="name" size="30" value="<?php echo $data['name']?>" /></td>
   </tr>
   <tr>
-    <th><?php echo L('site_dirname')?>ï¼š</th>
+    <th><?php echo L('site_dirname')?>£º</th>
     <td class="y-bg"><?php if ($siteid == 1) { echo $data['dirname'];} else {?><input type="text" class="input-text" name="dirname" id="dirname" size="30" value="<?php echo $data['dirname']?>" /><?php }?></td>
   </tr>
     <tr>
-    <th><?php echo L('site_domain')?>ï¼š</th>
+    <th><?php echo L('site_domain')?>£º</th>
     <td class="y-bg"><input type="text" class="input-text" name="domain" id="domain"  size="30" value="<?php echo $data['domain']?>" /></td>
   </tr>
 </table>
@@ -43,15 +43,15 @@ include $this->admin_tpl('header');
 	<legend><?php echo L('seo_configuration')?></legend>
 	<table width="100%"  class="table_form">
   <tr>
-    <th width="80"><?php echo L('site_title')?>ï¼š</th>
+    <th width="80"><?php echo L('site_title')?>£º</th>
     <td class="y-bg"><input type="text" class="input-text" name="site_title" id="site_title" size="30" value="<?php echo $data['site_title']?>" /></td>
   </tr>
   <tr>
-    <th><?php echo L('keyword_name')?>ï¼š</th>
+    <th><?php echo L('keyword_name')?>£º</th>
     <td class="y-bg"><input type="text" class="input-text" name="keywords" id="keywords" size="30" value="<?php echo $data['keywords']?>" /></td>
   </tr>
     <tr>
-    <th><?php echo L('description')?>ï¼š</th>
+    <th><?php echo L('description')?>£º</th>
     <td class="y-bg"><input type="text" class="input-text" name="description" id="description" size="30" value="<?php echo $data['description']?>" /></td>
   </tr>
 </table>
@@ -61,7 +61,7 @@ include $this->admin_tpl('header');
 	<legend><?php echo L('release_point_configuration')?></legend>
 	<table width="100%"  class="table_form">
   <tr>
-    <th width="80" valign="top"><?php echo L('release_point')?>ï¼š</th>
+    <th width="80" valign="top"><?php echo L('release_point')?>£º</th>
     <td> <select name="release_point[]" size="3" id="release_point" multiple title="<?php echo L('ctrl_more_selected')?>">
     <option value='' <?php if(!$data['release_point']) echo 'selected';?>><?php echo L('not_use_the_publishers_some')?></option>
 		  <?php if(is_array($release_point_list) && !empty($release_point_list)): foreach($release_point_list as $v):?>
@@ -76,7 +76,7 @@ include $this->admin_tpl('header');
 	<legend><?php echo L('template_style_configuration')?></legend>
 	<table width="100%"  class="table_form">
   <tr>
-    <th width="80" valign="top"><?php echo L('style_name')?>ï¼š</th>
+    <th width="80" valign="top"><?php echo L('style_name')?>£º</th>
     <td class="y-bg"> <select name="template[]" size="3" id="template" multiple title="<?php echo L('ctrl_more_selected')?>" onchange="default_list()">
     
     	<?php 
@@ -95,7 +95,7 @@ include $this->admin_tpl('header');
 		</select></td>
   </tr>
   <tr>
-    <th width="80" valign="top"><?php echo L('default_style')?>ï¼š<input type="hidden" name="default_style" id="default_style_input" value="<?php echo $data['default_style']?>"></th>
+    <th width="80" valign="top"><?php echo L('default_style')?>£º<input type="hidden" name="default_style" id="default_style_input" value="<?php echo $data['default_style']?>"></th>
     <td class="y-bg"><span id="default_style">
 	<?php 
 		if(is_array($dirname) && !empty($dirname)) foreach ($dirname as $v) {

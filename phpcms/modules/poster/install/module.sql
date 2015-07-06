@@ -1,1 +1,1 @@
-INSERT INTO `phpcms_module` (`module`, `name`, `url`, `iscore`, `version`, `description`, `setting`, `listorder`, `disabled`, `installdate`, `updatedate`) VALUES ('poster', '骞垮憡妯″潡', 'poster/', 0, '1.0', '骞垮憡妯″潡', '', 0, 0, '2010-9-05', '2010-9-05');
+INSERT INTO `phpcms_module` (`module`, `name`, `url`, `iscore`, `version`, `description`, `setting`, `listorder`, `disabled`, `installdate`, `updatedate`) VALUES ('poster', '广告模块', 'poster/', 0, '1.0', '广告模块', '', 0, 0, '2010-9-05', '2010-9-05');

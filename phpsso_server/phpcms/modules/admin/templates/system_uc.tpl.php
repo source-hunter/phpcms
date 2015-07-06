@@ -26,7 +26,7 @@ include $this->admin_tpl('header');
 			<input type="text" class="input-text" name="data[uc_api]" id="uc_api" value="<?php if(isset($data['uc_api'])){echo $data['uc_api'];}?>" size="50"/><?php echo L('uc_host_notice')?></td>
 		</tr>
 		<tr>
-			<th width="140">Ucenter api IPï¼š</th>
+			<th width="140">Ucenter api IP£º</th>
 			<td>
 			<input type="text" class="input-text" name="data[uc_ip]" id="uc_ip" value="<?php if(isset($data['uc_ip'])){echo $data['uc_ip'];}?>" /><?php echo L('uc_ip_notice')?></td>
 		</tr>

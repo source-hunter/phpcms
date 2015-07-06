@@ -11,11 +11,11 @@ include $this->admin_tpl('header', 'admin');
 		<td><input name="announce[title]" id="title" value="<?php echo new_html_special_chars($an_info['title'])?>" class="input-text" type="text" size="50" ></td>
 	</tr>
 	<tr>
-		<th><?php echo L('startdate')?>ï¼š</th>
+		<th><?php echo L('startdate')?>£º</th>
 		<td><?php echo form::date('announce[starttime]', $an_info['starttime'], 1)?></td>
 	</tr>
 	<tr>
-		<th><?php echo L('enddate')?>ï¼š</th>
+		<th><?php echo L('enddate')?>£º</th>
 		<td><?php $an_info['endtime'] = $an_info['endtime']=='0000-00-00' ? '' : $an_info['endtime']; echo form::date('announce[endtime]', $an_info['endtime'], 1);?></td>
 	</tr>
 	<tr>
@@ -26,11 +26,11 @@ include $this->admin_tpl('header', 'admin');
 		</td>
 	</tr>
 	<tr>
-  		<th><strong><?php echo L('available_style')?>ï¼š</strong></th>
+  		<th><strong><?php echo L('available_style')?>£º</strong></th>
         <td><?php echo form::select($template_list, $an_info['style'], 'name="announce[style]" id="style" onchange="load_file_list(this.value)"', L('please_select'))?></td>
 	</tr>
 	<tr>
-		<th><?php echo L('template_select')?>ï¼š</th>
+		<th><?php echo L('template_select')?>£º</th>
 		<td  id="show_template"><?php if ($an_info['style']) echo '<script type="text/javascript">$.getJSON(\'?m=admin&c=category&a=public_tpl_file_list&style='.$an_info['style'].'&id='.$an_info['show_template'].'&module=announce&templates=show&name=announce&pc_hash=\'+pc_hash, function(data){$(\'#show_template\').html(data.show_template);});</script>'?></td>
 	</tr>
 	<tr>
@@ -69,7 +69,7 @@ $(document).ready(function(){
 	$('#endtime').formValidator({onshow:"<?php echo L('select_downdate')?>",onfocus:"<?php echo L('select_downdate')?>",oncorrect:"<?php echo L('right_all')?>"}).defaultPassed();
 	$("#content").formValidator({autotip:true,onshow:"",onfocus:"<?php echo L('announcements_cannot_be_empty')?>"}).functionValidator({
 	    fun:function(val,elem){
-	    //è·å–ç¼–è¾‘å™¨ä¸­çš„å†…å®¹
+	    //»ñÈ¡±à¼­Æ÷ÖĞµÄÄÚÈİ
 		var oEditor = CKEDITOR.instances.content;
 		var data = oEditor.getData();
         if(data==''){

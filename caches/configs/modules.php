@@ -1,13 +1,13 @@
 <?php
 return array (
-  'member' => 'ä¼šå‘˜',
-  'vote' => 'æŠ•ç¥¨',
-  'link' => 'å‹æƒ…é“¾æŽ¥',
-  'message' => 'çŸ­æ¶ˆæ¯',
-  'announce' => 'ç½‘ç«™å…¬å‘Š',
-  'special' => 'ä¸“é¢˜',
-  'content' => 'å†…å®¹æ¨¡å—',
-  'block' => 'ç¢Žç‰‡',
-  'comment' => 'è¯„è®º',
+  'member' => '»áÔ±',
+  'vote' => 'Í¶Æ±',
+  'link' => 'ÓÑÇéÁ´½Ó',
+  'message' => '¶ÌÏûÏ¢',
+  'announce' => 'ÍøÕ¾¹«¸æ',
+  'special' => '×¨Ìâ',
+  'content' => 'ÄÚÈÝÄ£¿é',
+  'block' => 'ËéÆ¬',
+  'comment' => 'ÆÀÂÛ',
 );
 ?>

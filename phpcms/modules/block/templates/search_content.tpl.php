@@ -18,19 +18,19 @@ include $this->admin_tpl('header', 'admin');
 			<td><?php echo form::date('start_time', $start_time ? date('Y-m-d', $start_time) : '')?> - <?php echo form::date('end_time', $end_time ? date('Y-m-d',$end_time) : '')?></td>
 		</tr>
 		<tr>
-			<td><?php echo L('recommend')?>ï¼š</td> 
+			<td><?php echo L('recommend')?>£º</td> 
 			<td>
 			<?php echo form::select(array(''=>L('all'), '1'=>L('recommend'), '2'=>L('not_recommend')), $posids, 'name="posids"')?>
 			</td>
 		</tr>
 		<tr>
-			<td><?php echo L('search_mode')?>ï¼š</td>
+			<td><?php echo L('search_mode')?>£º</td>
 			<td>
 			<?php echo form::select(array('1'=>L('title'), '2'=>L('desc'), '3'=>L('username'), '4'=>'ID'), $searchtype, 'name="searchtype"')?>
 			</td>
 		</tr>
 		<tr>
-			<td><?php echo L('key_word')?>ï¼š</td>
+			<td><?php echo L('key_word')?>£º</td>
 			<td>
 			<input name="keyword" type="text" value="<?php echo $keyword?>" class="input-text" />
 </td>

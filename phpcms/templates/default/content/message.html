@@ -1,9 +1,9 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset={CHARSET}" />
 <meta http-equiv="X-UA-Compatible" content="IE=7" />
-<title>æç¤ºä¿¡æ¯</title>
+<title>ÌáÊ¾ĞÅÏ¢</title>
 
 <style type="text/css">
 *{ padding:0; margin:0; font-size:12px}
@@ -22,16 +22,16 @@ a:hover,a:active{color:#ff6600;text-decoration: underline}
 </head>
 <body>
 <div class="showMsg" style="text-align:center">
-	<h5>æç¤ºä¿¡æ¯</h5>
+	<h5>ÌáÊ¾ĞÅÏ¢</h5>
     <div class="content guery" style="display:inline-block;display:-moz-inline-stack;zoom:1;*display:inline; max-width:280px">{$msg}</div>
     <div class="bottom">
     {if $url_forward=='goback' || $url_forward==''}
-	<a href="javascript:history.back();" >[ç‚¹è¿™é‡Œè¿”å›ä¸Šä¸€é¡µ]</a>
+	<a href="javascript:history.back();" >[µãÕâÀï·µ»ØÉÏÒ»Ò³]</a>
 	{elseif $url_forward=="close"}
-	<input type="button" name="close" value=" å…³é—­ " onClick="window.close();">
+	<input type="button" name="close" value=" ¹Ø±Õ " onClick="window.close();">
 	{elseif $url_forward=="blank"}
 	{elseif $url_forward}
-	<a href="{strip_tags($url_forward)}">å¦‚æœæ‚¨çš„æµè§ˆå™¨æ²¡æœ‰è‡ªåŠ¨è·³è½¬ï¼Œè¯·ç‚¹å‡»è¿™é‡Œ</a>
+	<a href="{strip_tags($url_forward)}">Èç¹ûÄúµÄä¯ÀÀÆ÷Ã»ÓĞ×Ô¶¯Ìø×ª£¬Çëµã»÷ÕâÀï</a>
 	<script language="javascript">setTimeout("redirect('{strip_tags($url_forward)}');",{$ms});</script> 
 	{/if}
 	{if $dialog}<script style="text/javascript">window.top.location.reload();window.top.art.dialog({id:"{$dialog}"}).close();</script>{/if}

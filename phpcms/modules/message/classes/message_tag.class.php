@@ -12,14 +12,14 @@ class message_tag {
  	}
 	
  	/**
- 	 * æ£€æµ‹æ˜¯å¦æœ‰æ–°é‚®ä»¶
-  	 * @param $typeid åˆ†ç±»ID 
+ 	 * ¼ì²âÊÇ·ñÓĞĞÂÓÊ¼ş
+  	 * @param $typeid ·ÖÀàID 
  	 */
 	public function check_new(){
 		$where = array('send_to_id'=>$this->_username,'folder'=>'inbox','status'=>'1');
 		$new_count = $this->message_db->count($where);
- 		//æ£€æŸ¥æ˜¯å¦æœ‰æœªæŸ¥çœ‹çš„æ–°ç³»ç»ŸçŸ­ä¿¡
-		//æ£€æŸ¥è¯¥ä¼šå‘˜æ‰€åœ¨ä¼šå‘˜ç»„ çš„ç³»ç»Ÿå…¬å‘Š,å†æŸ¥è¯¢message_dataè¡¨. æ˜¯å¦æœ‰è®°å½•. æ— åˆ™åŠ å…¥ æœªè¯»NUM. 
+ 		//¼ì²éÊÇ·ñÓĞÎ´²é¿´µÄĞÂÏµÍ³¶ÌĞÅ
+		//¼ì²é¸Ã»áÔ±ËùÔÚ»áÔ±×é µÄÏµÍ³¹«¸æ,ÔÙ²éÑ¯message_data±í. ÊÇ·ñÓĞ¼ÇÂ¼. ÎŞÔò¼ÓÈë Î´¶ÁNUM. 
 		$group_num = 0;
 		$group_where = array('typeid'=>'1','groupid'=>$this->_groupid,'status'=>'1');
 		$group_arr = $this->message_group_db->select($group_where);
@@ -29,7 +29,7 @@ class message_tag {
  			$result = $this->message_data_db->select($where);
  			if(!$result) $group_num++;
  		}
-  		//ç”Ÿæˆä¸€ä¸ªæ–°æ•°ç»„,å¹¶è¿”å›æ­¤æ•°ç»„
+  		//Éú³ÉÒ»¸öĞÂÊı×é,²¢·µ»Ø´ËÊı×é
  		$new_arr = array();
  		$new_arr['new_count'] = $new_count;
  		$new_arr['new_group_count'] = $group_num;

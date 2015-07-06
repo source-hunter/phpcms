@@ -15,12 +15,12 @@ class html {
 	}
 
 	/**
-	 * ç”Ÿæˆå†…å®¹é¡µ
-	 * @param  $file æ–‡ä»¶åœ°å€
-	 * @param  $data æ•°æ®
-	 * @param  $array_merge æ˜¯å¦åˆå¹¶
-	 * @param  $action æ–¹æ³•
-	 * @param  $upgrade æ˜¯å¦æ˜¯å‡çº§æ•°æ®
+	 * Éú³ÉÄÚÈİÒ³
+	 * @param  $file ÎÄ¼şµØÖ·
+	 * @param  $data Êı¾İ
+	 * @param  $array_merge ÊÇ·ñºÏ²¢
+	 * @param  $action ·½·¨
+	 * @param  $upgrade ÊÇ·ñÊÇÉı¼¶Êı¾İ
 	 */
 	public function show($file, $data = '', $array_merge = 1,$action = 'add',$upgrade = 0) {
 		if($upgrade) $file = '/'.ltrim($file,WEB_PATH);
@@ -30,7 +30,7 @@ class html {
 			$data = new_stripslashes($data);
 			$data = array_merge($data['system'],$data['model']);
 		}
-		//é€šè¿‡rsè·å–åŸå§‹å€¼
+		//Í¨¹ırs»ñÈ¡Ô­Ê¼Öµ
 		$rs = $data;
 		if(isset($data['paginationtype'])) {
 			$paginationtype = $data['paginationtype'];
@@ -44,13 +44,13 @@ class html {
 		$CAT['setting'] = string2array($CAT['setting']);
 		define('STYLE',$CAT['setting']['template_list']);
 
-		//æœ€é¡¶çº§æ ç›®ID
+		//×î¶¥¼¶À¸Ä¿ID
 		$arrparentid = explode(',', $CAT['arrparentid']);
 		$top_parentid = $arrparentid[1] ? $arrparentid[1] : $catid;
 		
 		//$file = '/'.$file;
-		//æ·»åŠ åˆ°å‘å¸ƒç‚¹é˜Ÿåˆ—
-		//å½“ç«™ç‚¹ä¸ºéç³»ç»Ÿç«™ç‚¹
+		//Ìí¼Óµ½·¢²¼µã¶ÓÁĞ
+		//µ±Õ¾µãÎª·ÇÏµÍ³Õ¾µã
 		
 		if($this->siteid!=1) {
 			$site_dir = $this->sitelist[$this->siteid]['dirname'];
@@ -71,9 +71,9 @@ class html {
 		}
 		$this->db = pc_base::load_model('content_model');
 		$this->db->set_model($modelid);
-		//ä¸Šä¸€é¡µ
+		//ÉÏÒ»Ò³
 		$previous_page = $this->db->get_one("`catid` = '$catid' AND `id`<'$id' AND `status`=99",'*','id DESC');
-		//ä¸‹ä¸€é¡µ
+		//ÏÂÒ»Ò³
 		$next_page = $this->db->get_one("`catid`= '$catid' AND `id`>'$id' AND `status`=99",'*','id ASC');
 		
 		if(empty($previous_page)) {
@@ -93,17 +93,17 @@ class html {
 		$ishtml = 1;
 		$template = $template ? $template : $CAT['setting']['show_template'];
 		
-		//åˆ†é¡µå¤„ç†
+		//·ÖÒ³´¦Àí
 		$pages = $titles = '';
 		if($paginationtype==1) {
-			//è‡ªåŠ¨åˆ†é¡µ
+			//×Ô¶¯·ÖÒ³
 			if($maxcharperpage < 10) $maxcharperpage = 500;
 			$contentpage = pc_base::load_app_class('contentpage');
 			$content = $contentpage->get_data($content,$maxcharperpage);
 		}
 	
 		if($paginationtype!=0) {
-			//æ‰‹åŠ¨åˆ†é¡µ
+			//ÊÖ¶¯·ÖÒ³
 			$CONTENT_POS = strpos($content, '[page]');
 			if($CONTENT_POS !== false) {
 				$this->url = pc_base::load_app_class('url', 'content');	
@@ -129,10 +129,10 @@ class html {
 						}
 					}
 				}
-				//ç”Ÿæˆåˆ†é¡µ
+				//Éú³É·ÖÒ³
 				foreach ($pageurls as $page=>$urls) {
 					$pages = content_pages($pagenumber,$page, $pageurls);
-					//åˆ¤æ–­[page]å‡ºç°çš„ä½ç½®æ˜¯å¦åœ¨ç¬¬ä¸€ä½ 
+					//ÅĞ¶Ï[page]³öÏÖµÄÎ»ÖÃÊÇ·ñÔÚµÚÒ»Î» 
 					if($CONTENT_POS<7) {
 						$content = $contents[$page];
 					} else {
@@ -165,7 +165,7 @@ class html {
 				return true;
 			}
 		}
-		//åˆ†é¡µå¤„ç†ç»“æŸ
+		//·ÖÒ³´¦Àí½áÊø
 		$file = PHPCMS_PATH.$file;
 		ob_start();
 		include template('content', $template);
@@ -173,9 +173,9 @@ class html {
 	}
 
 	/**
-	 * ç”Ÿæˆæ ç›®åˆ—è¡¨
-	 * @param $catid æ ç›®id
-	 * @param $page å½“å‰é¡µæ•°
+	 * Éú³ÉÀ¸Ä¿ÁĞ±í
+	 * @param $catid À¸Ä¿id
+	 * @param $page µ±Ç°Ò³Êı
 	 */
 	public function category($catid, $page = 0) {
 		$CAT = $this->categorys[$catid];
@@ -194,13 +194,13 @@ class html {
 		$page = intval($page);
 		$parentdir = $CAT['parentdir'];
 		$catdir = $CAT['catdir'];
-		//æ£€æŸ¥æ˜¯å¦ç”Ÿæˆåˆ°æ ¹ç›®å½•
+		//¼ì²éÊÇ·ñÉú³Éµ½¸ùÄ¿Â¼
 		$create_to_html_root = $CAT['sethtml'];
 		//$base_file = $parentdir.$catdir.'/';
-		//ç”Ÿæˆåœ°å€
+		//Éú³ÉµØÖ·
 		if($CAT['create_to_html_root']) $parentdir = '';
 		
-		//è·å–çˆ¶çº§çš„é…ç½®ï¼Œçœ‹æ˜¯å¦ç”Ÿæˆé™æ€ï¼Œå¦‚æœæ˜¯åŠ¨æ€åˆ™ç›´æ¥æŠŠçˆ¶çº§ç›®å½•è°ƒè¿‡æ¥ä¸ºç”Ÿæˆé™æ€ç›®å½•æ‰€ç”¨
+		//»ñÈ¡¸¸¼¶µÄÅäÖÃ£¬¿´ÊÇ·ñÉú³É¾²Ì¬£¬Èç¹ûÊÇ¶¯Ì¬ÔòÖ±½Ó°Ñ¸¸¼¶Ä¿Â¼µ÷¹ıÀ´ÎªÉú³É¾²Ì¬Ä¿Â¼ËùÓÃ
 		$parent_setting = string2array($CATEGORYS[$CAT['parentid']]['setting']);
 		if($parent_setting['ishtml']==0 && $setting['ishtml']==1){
 			$parentdir = $CATEGORYS[$CAT['parentid']]['catdir'].'/';
@@ -209,7 +209,7 @@ class html {
 		$base_file = $this->url->get_list_url($setting['category_ruleid'],$parentdir, $catdir, $catid, $page);
 		$base_file = '/'.$base_file;
 		
-		//éç³»ç»Ÿç«™ç‚¹æ—¶ï¼Œç”Ÿæˆåˆ°æŒ‡å®šç›®å½•
+		//·ÇÏµÍ³Õ¾µãÊ±£¬Éú³Éµ½Ö¸¶¨Ä¿Â¼
 		if($this->siteid!=1) {
 			$site_dir = $this->sitelist[$this->siteid]['dirname'];
 			if($create_to_html_root) {
@@ -218,7 +218,7 @@ class html {
 				$base_file = '/'.$site_dir.$this->html_root.$base_file;
 			}
 		} 
-		//åˆ¤æ–­äºŒçº§åŸŸåæ˜¯å¦ç›´æ¥ç»‘å®šåˆ°è¯¥æ ç›®
+		//ÅĞ¶Ï¶ş¼¶ÓòÃûÊÇ·ñÖ±½Ó°ó¶¨µ½¸ÃÀ¸Ä¿
 		$root_domain = preg_match('/^((http|https):\/\/)([a-z0-9\-\.]+)\/$/',$CAT['url']) ? 1 : 0;
 		$count_number = substr_count($CAT['url'], '/');
 		$urlrules = getcache('urlrules','commons');
@@ -230,9 +230,9 @@ class html {
 			} else {
 				$file = PHPCMS_PATH.substr($this->html_root,1).$base_file;
 			}
-			//æ·»åŠ åˆ°å‘å¸ƒç‚¹é˜Ÿåˆ—
+			//Ìí¼Óµ½·¢²¼µã¶ÓÁĞ
 			$this->queue->add_queue('add',$base_file,$this->siteid);
-			//è¯„è®ºè·¨ç«™è°ƒç”¨æ‰€éœ€çš„JSæ–‡ä»¶
+			//ÆÀÂÛ¿çÕ¾µ÷ÓÃËùĞèµÄJSÎÄ¼ş
 			if(substr($base_file, -10)=='index.html' && $count_number==3) {
 				$copyjs = 1;
 				$this->queue->add_queue('add',$base_file,$this->siteid);
@@ -250,9 +250,9 @@ class html {
 			}
 		} else {
 			$file = PHPCMS_PATH.substr($this->html_root,1).$base_file;
-			//æ·»åŠ åˆ°å‘å¸ƒç‚¹é˜Ÿåˆ—
+			//Ìí¼Óµ½·¢²¼µã¶ÓÁĞ
 			$this->queue->add_queue('add',$this->html_root.$base_file,$this->siteid);
-			//è¯„è®ºè·¨ç«™è°ƒç”¨æ‰€éœ€çš„JSæ–‡ä»¶
+			//ÆÀÂÛ¿çÕ¾µ÷ÓÃËùĞèµÄJSÎÄ¼ş
 			if(substr($base_file, -10)=='index.html' && $count_number==3) {
 				$copyjs = 1;
 				$this->queue->add_queue('add',$this->html_root.$base_file,$this->siteid);
@@ -263,7 +263,7 @@ class html {
 			if($CAT['isdomain']) {
 				$second_domain = 1;
 			} else {
-				$second_domain = 0;//åˆ¤æ–­è¯¥æ ç›®æ˜¯å¦ç»‘å®šäº†äºŒçº§åŸŸåæˆ–è€…ä¸Šçº§æ ç›®ç»‘å®šäº†äºŒçº§åŸŸåï¼Œå­˜åœ¨çš„è¯ï¼Œé‡æ–°æ„é€ åˆ—è¡¨é¡µurlè§„åˆ™
+				$second_domain = 0;//ÅĞ¶Ï¸ÃÀ¸Ä¿ÊÇ·ñ°ó¶¨ÁË¶ş¼¶ÓòÃû»òÕßÉÏ¼¶À¸Ä¿°ó¶¨ÁË¶ş¼¶ÓòÃû£¬´æÔÚµÄ»°£¬ÖØĞÂ¹¹ÔìÁĞ±íÒ³url¹æÔò
 				foreach ($urlrules as $_k=>$_v) {
 					$urlrules[$_k] = $htm_prefix.'/'.$_v;
 				}
@@ -282,11 +282,11 @@ class html {
 				if($arr!=$catid) $array_child[] = $arr;
 			}
 			$arrchildid = implode(',', $array_child);
-			//URLè§„åˆ™
+			//URL¹æÔò
 			$urlrules = implode('~', $urlrules);
 			
 			define('URLRULE', $urlrules);
-			//ç»‘å®šåŸŸåæ—¶ï¼Œè®¾ç½®$catdir ä¸ºç©º
+			//°ó¶¨ÓòÃûÊ±£¬ÉèÖÃ$catdir Îª¿Õ
 			if($root_domain) $parentdir = $catdir = '';
 			if($second_domain) {
 				$parentdir = '';
@@ -295,7 +295,7 @@ class html {
 			
 			$GLOBALS['URL_ARRAY'] = array('categorydir'=>$parentdir, 'catdir'=>$catdir, 'catid'=>$catid);
 		} else {
-		//å•ç½‘é¡µ
+		//µ¥ÍøÒ³
 			$datas = $this->page($catid);
 			if($datas) extract($datas);
 			$template = $setting['page_template'] ? $setting['page_template'] : 'page';
@@ -312,17 +312,17 @@ class html {
 		return $this->createhtml($file, $copyjs);
 	}
 	/**
-	 * æ›´æ–°é¦–é¡µ
+	 * ¸üĞÂÊ×Ò³
 	 */
 	public function index() {
 		if($this->siteid==1) {
 			$file = PHPCMS_PATH.'index.html';
-			//æ·»åŠ åˆ°å‘å¸ƒç‚¹é˜Ÿåˆ—
+			//Ìí¼Óµ½·¢²¼µã¶ÓÁĞ
 			$this->queue->add_queue('edit','/index.html',$this->siteid);
 		} else {
 			$site_dir = $this->sitelist[$this->siteid]['dirname'];
 			$file = $this->html_root.'/'.$site_dir.'/index.html';
-			//æ·»åŠ åˆ°å‘å¸ƒç‚¹é˜Ÿåˆ—
+			//Ìí¼Óµ½·¢²¼µã¶ÓÁĞ
 			$this->queue->add_queue('edit',$file,$this->siteid);
 			$file = PHPCMS_PATH.$file;
 		}
@@ -337,7 +337,7 @@ class html {
 		return $this->createhtml($file, 1);
 	}
 	/**
-	 * å•ç½‘é¡µ
+	 * µ¥ÍøÒ³
 	 * @param $catid
 	 */
 	public function page($catid) {
@@ -346,9 +346,9 @@ class html {
 		return $data;
 	}
 	/**
-	* å†™å…¥æ–‡ä»¶
-	* @param $file æ–‡ä»¶è·¯å¾„
-	* @param $copyjs æ˜¯å¦å¤åˆ¶jsï¼Œè·¨ç«™è°ƒç”¨è¯„è®ºæ—¶ï¼Œéœ€è¦è¯¥js
+	* Ğ´ÈëÎÄ¼ş
+	* @param $file ÎÄ¼şÂ·¾¶
+	* @param $copyjs ÊÇ·ñ¸´ÖÆjs£¬¿çÕ¾µ÷ÓÃÆÀÂÛÊ±£¬ĞèÒª¸Ãjs
 	*/
 	private function createhtml($file, $copyjs = '') {
 		$data = ob_get_contents();
@@ -364,13 +364,13 @@ class html {
 		@chmod($file,0777);
 		if(!is_writable($file)) {
 			$file = str_replace(PHPCMS_PATH,'',$file);
-			showmessage(L('file').'ï¼š'.$file.'<br>'.L('not_writable'));
+			showmessage(L('file').'£º'.$file.'<br>'.L('not_writable'));
 		}
 		return $strlen;
 	}
 
 	/**
-	 * è®¾ç½®å½“å‰ç«™ç‚¹id
+	 * ÉèÖÃµ±Ç°Õ¾µãid
 	 */
 	private function set_siteid() {
 		if(defined('IN_ADMIN')) {
@@ -384,14 +384,14 @@ class html {
 		}
 	}
 	/**
-	* ç”Ÿæˆç›¸å…³æ ç›®åˆ—è¡¨ã€åªç”Ÿæˆå‰5é¡µ
+	* Éú³ÉÏà¹ØÀ¸Ä¿ÁĞ±í¡¢Ö»Éú³ÉÇ°5Ò³
 	* @param $catid
 	*/
 	public function create_relation_html($catid) {
 		for($page = 1; $page < 6; $page++) {
 			$this->category($catid,$page);
 		}
-		//æ£€æŸ¥å½“å‰æ ç›®çš„çˆ¶æ ç›®ï¼Œå¦‚æœå­˜åœ¨åˆ™ç”Ÿæˆ
+		//¼ì²éµ±Ç°À¸Ä¿µÄ¸¸À¸Ä¿£¬Èç¹û´æÔÚÔòÉú³É
 		$arrparentid = $this->categorys[$catid]['arrparentid'];
 		if($arrparentid) {
 			$arrparentid = explode(',', $arrparentid);

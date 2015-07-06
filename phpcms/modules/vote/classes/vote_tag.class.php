@@ -7,11 +7,11 @@ class vote_tag {
 	}
 	
 	/**
-	 * æ˜¾ç¤º
+	 * ÏÔÊ¾
 	 * @param  $data 
 	 */
 	public function show($data) {
-		$subjectid = $data['subjectid'];//æŠ•ç¥¨ID
+		$subjectid = $data['subjectid'];//Í¶Æ±ID
 		if($subjectid){
 			if(is_int($subjectid)) return false;
 			$sql = array('subjectid'=>$subjectid);
@@ -22,7 +22,7 @@ class vote_tag {
 	}
 	
 	/**
-	 * å…¶å®ƒæŠ•ç¥¨
+	 * ÆäËüÍ¶Æ±
 	 * @param  $data 
 	 */
 	public function other_vote($data) {
@@ -32,20 +32,20 @@ class vote_tag {
 	} 
 	
 	/**
-	 * æŠ•ç¥¨çƒ­åº¦æŽ’è¡Œ 
-	 * @param  $data ä¼ å…¥çš„æ•°ç»„å‚æ•°
+	 * Í¶Æ±ÈÈ¶ÈÅÅÐÐ 
+	 * @param  $data ´«ÈëµÄÊý×é²ÎÊý
 	 */
 	public function hits($data) {
 		$siteid = intval($data['siteid']);
-		$enabled = $data['enabled']?$data['enabled'] : 1;//çŠ¶æ€:æ˜¯å¦å¯ç”¨
+		$enabled = $data['enabled']?$data['enabled'] : 1;//×´Ì¬:ÊÇ·ñÆôÓÃ
 		if (empty($siteid)){
 			$siteid = get_siteid();
 		}
 		switch ($enabled) {
-			case all://ä¸é™
+			case all://²»ÏÞ
 				$sql = array('siteid'=>$siteid); 
 				break; 
-			default://é»˜è®¤æŒ‰é€‰æ‹©é¡¹
+			default://Ä¬ÈÏ°´Ñ¡ÔñÏî
 				$sql = array('siteid'=>$siteid,'enabled'=>$enabled); 
 		}
 		return $this->subject_db->select($sql, '*', $data['limit'], 'votenumber '.$data['order']);
@@ -53,28 +53,28 @@ class vote_tag {
 	
 	/**
 	 * 
-	 * æŠ•ç¥¨åˆ—è¡¨
-	 * @param $data æ•°ç»„å‚æ•°
+	 * Í¶Æ±ÁÐ±í
+	 * @param $data Êý×é²ÎÊý
 	 */
 	public function lists($data) {
 		$siteid = intval($data['siteid']);
-		$enabled = $data['enabled']?$data['enabled'] : 1;//çŠ¶æ€:æ˜¯å¦å¯ç”¨
-		$order = $data['order']?$data['order'] : 'subjectid desc';//çŠ¶æ€:æ˜¯å¦å¯ç”¨
+		$enabled = $data['enabled']?$data['enabled'] : 1;//×´Ì¬:ÊÇ·ñÆôÓÃ
+		$order = $data['order']?$data['order'] : 'subjectid desc';//×´Ì¬:ÊÇ·ñÆôÓÃ
 		if (empty($siteid)){
 			$siteid = get_siteid();
 		}
 		switch ($enabled) {
-			case all://ä¸é™
+			case all://²»ÏÞ
 				$sql = array('siteid'=>$siteid); 
 				break; 
-			default://é»˜è®¤æŒ‰é€‰æ‹©é¡¹
+			default://Ä¬ÈÏ°´Ñ¡ÔñÏî
 				$sql = array('siteid'=>$siteid,'enabled'=>$enabled); 
 		}
  		return $this->subject_db->select($sql, '*', $data['limit'], $order);
 	}	
 
 	/**
-	 * æŠ•ç¥¨æ¦‚å†µ
+	 * Í¶Æ±¸Å¿ö
 	 */
 	public function get_vote($data) {
 		$subjectid = intval($data['subjectid']);
@@ -83,22 +83,22 @@ class vote_tag {
 	}
 	
 	/**
-	 * è®¡æ•°
+	 * ¼ÆÊý
 	 */
 	public function count($data) {
 		if(isset($data['where'])) {
 			$sql = $data['where'];
 		} else {
 				$siteid = intval($data['siteid']);
-				$enabled = $data['enabled']?$data['enabled'] : 1;//çŠ¶æ€:æ˜¯å¦å¯ç”¨
+				$enabled = $data['enabled']?$data['enabled'] : 1;//×´Ì¬:ÊÇ·ñÆôÓÃ
 				if (empty($siteid)){
 					$siteid = get_siteid();
 				}
 				switch ($enabled) {
-					case all://ä¸é™
+					case all://²»ÏÞ
 						$sql = array('siteid'=>$siteid); 
 						break; 
-					default://é»˜è®¤æŒ‰é€‰æ‹©é¡¹
+					default://Ä¬ÈÏ°´Ñ¡ÔñÏî
 						$sql = array('siteid'=>$siteid,'enabled'=>$enabled); 
 				}
 		 		return $this->subject_db->count($sql); 
@@ -106,7 +106,7 @@ class vote_tag {
 	}
 	 
 	/**
-	 * pc æ ‡ç­¾è°ƒç”¨
+	 * pc ±êÇ©µ÷ÓÃ
 	 */
 	public function pc_tag() {
 		$sites = pc_base::load_app_class('sites','admin');

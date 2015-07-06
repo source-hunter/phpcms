@@ -1,10 +1,10 @@
 <?php
 defined('IN_ADMIN') or exit('No permission resources.');
 
-$field_type				= 'number'; //å­—æ®µæ•°æ®åº“ç±»åž‹	
-$field_allow_index		= 1; //æ˜¯å¦å…è®¸å»ºç«‹ç´¢å¼•
-$field_minlength		= 0; //å­—ç¬¦é•¿åº¦é»˜è®¤æœ€å°å€¼
-$field_maxlength		= ''; //å­—ç¬¦é•¿åº¦é»˜è®¤æœ€å¤§å€¼
-$field_allow_search		= 1; //ä½œä¸ºæœç´¢æ¡ä»¶
-$field_allow_isunique	= 1; //æ˜¯å¦å…è®¸å€¼å”¯ä¸€
+$field_type				= 'number'; //×Ö¶ÎÊý¾Ý¿âÀàÐÍ	
+$field_allow_index		= 1; //ÊÇ·ñÔÊÐí½¨Á¢Ë÷Òý
+$field_minlength		= 0; //×Ö·û³¤¶ÈÄ¬ÈÏ×îÐ¡Öµ
+$field_maxlength		= ''; //×Ö·û³¤¶ÈÄ¬ÈÏ×î´óÖµ
+$field_allow_search		= 1; //×÷ÎªËÑË÷Ìõ¼þ
+$field_allow_isunique	= 1; //ÊÇ·ñÔÊÐíÖµÎ¨Ò»
 ?>

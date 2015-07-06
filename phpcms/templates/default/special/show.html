@@ -1,18 +1,18 @@
 {template "content","header"}
 <div class="main">
 	<div class="col-left">
-    	<div class="crumbs"><a href="{APP_PATH}">é¦–é¡µ</a><span> &gt; </span> <a href="{APP_PATH}index.php?m=special&c=index&a=special">ä¸“é¢˜</a> <span> &gt; </span> <a href="{$_special['url']}">{$s_info['title']}</a> <span> &gt; </span> {$title}</div>
+    	<div class="crumbs"><a href="{APP_PATH}">Ê×Ò³</a><span> &gt; </span> <a href="{APP_PATH}index.php?m=special&c=index&a=special">×¨Ìâ</a> <span> &gt; </span> <a href="{$_special['url']}">{$s_info['title']}</a> <span> &gt; </span> {$title}</div>
         <div id="Article">
         	<h1>{$title}<br />
-<span>{$inputtime}&nbsp;&nbsp;&nbsp;è¯„è®ºï¼š<a href="#comment_iframe" id="comment">0</a> ç‚¹å‡»ï¼š</span><span id="hits"></span></h1>
+<span>{$inputtime}&nbsp;&nbsp;&nbsp;ÆÀÂÛ£º<a href="#comment_iframe" id="comment">0</a> µã»÷£º</span><span id="hits"></span></h1>
 			<div class="content">
 			{$content}
 			</div>
 {if $titles}
 <fieldset>
-	<legend class="f14">æœ¬æ–‡å¯¼èˆª</legend><ul class="list blue row-2">
+	<legend class="f14">±¾ÎÄµ¼º½</legend><ul class="list blue row-2">
 {loop $titles $r}
-	<li>Â·<a href="{$r[url]}">{$r[title]}</a></li>
+	<li>¡¤<a href="{$r[url]}">{$r[title]}</a></li>
 {/loop}
 </ul>
 </fieldset>
@@ -23,22 +23,22 @@
             <script type="text/javascript" src="{APP_PATH}index.php?m=mood&c=index&a=init&id={id_encode($catid,$id,$siteid)}"></script>
       </div>
       <div class="Article-Tool">
-          <a href="" title="é”™è¯¯æŠ¥å‘Š" class="t">é”™è¯¯æŠ¥å‘Š</a>&nbsp;&nbsp;åˆ†äº«åˆ°ï¼š
-          <script type="text/javascript">document.write('<a href="http://v.t.sina.com.cn/share/share.php?url='+encodeURIComponent(location.href)+'&appkey=3172366919&title='+encodeURIComponent('{new_addslashes($title)}')+'" title="åˆ†äº«åˆ°æ–°æµªå¾®åš" class="t1" target="_blank">&nbsp;</a>');</script>
-		  <script type="text/javascript">document.write('<a href="http://www.douban.com/recommend/?url='+encodeURIComponent(location.href)+'&title='+encodeURIComponent('{new_addslashes($title)}')+'" title="åˆ†äº«åˆ°è±†ç“£" class="t2" target="_blank">&nbsp;</a>');</script>
-		  <script type="text/javascript">document.write('<a href="http://share.renren.com/share/buttonshare.do?link='+encodeURIComponent(location.href)+'&title='+encodeURIComponent('{new_addslashes($title)}')+'" title="åˆ†äº«åˆ°äººäºº" class="t3" target="_blank">&nbsp;</a>');</script>
-		  <script type="text/javascript">document.write('<a href="http://www.kaixin001.com/repaste/share.php?rtitle='+encodeURIComponent('{new_addslashes($title)}')+'&rurl='+encodeURIComponent(location.href)+'&rcontent=" title="åˆ†äº«åˆ°å¼€å¿ƒç½‘" class="t4" target="_blank">&nbsp;</a>');</script>
-		  <script type="text/javascript">document.write('<a href="http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url='+encodeURIComponent(location.href)+'" title="åˆ†äº«åˆ°QQç©ºé—´" class="t5" target="_blank">&nbsp;</a>');</script>
+          <a href="" title="´íÎó±¨¸æ" class="t">´íÎó±¨¸æ</a>&nbsp;&nbsp;·ÖÏíµ½£º
+          <script type="text/javascript">document.write('<a href="http://v.t.sina.com.cn/share/share.php?url='+encodeURIComponent(location.href)+'&appkey=3172366919&title='+encodeURIComponent('{new_addslashes($title)}')+'" title="·ÖÏíµ½ĞÂÀËÎ¢²©" class="t1" target="_blank">&nbsp;</a>');</script>
+		  <script type="text/javascript">document.write('<a href="http://www.douban.com/recommend/?url='+encodeURIComponent(location.href)+'&title='+encodeURIComponent('{new_addslashes($title)}')+'" title="·ÖÏíµ½¶¹°ê" class="t2" target="_blank">&nbsp;</a>');</script>
+		  <script type="text/javascript">document.write('<a href="http://share.renren.com/share/buttonshare.do?link='+encodeURIComponent(location.href)+'&title='+encodeURIComponent('{new_addslashes($title)}')+'" title="·ÖÏíµ½ÈËÈË" class="t3" target="_blank">&nbsp;</a>');</script>
+		  <script type="text/javascript">document.write('<a href="http://www.kaixin001.com/repaste/share.php?rtitle='+encodeURIComponent('{new_addslashes($title)}')+'&rurl='+encodeURIComponent(location.href)+'&rcontent=" title="·ÖÏíµ½¿ªĞÄÍø" class="t4" target="_blank">&nbsp;</a>');</script>
+		  <script type="text/javascript">document.write('<a href="http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url='+encodeURIComponent(location.href)+'" title="·ÖÏíµ½QQ¿Õ¼ä" class="t5" target="_blank">&nbsp;</a>');</script>
       </div>
       <div class="bk10"></div>
 	  {if module_exists('comment')}
       <iframe src="{APP_PATH}index.php?m=comment&c=index&a=init&commentid={id_encode("special_content",$id,$siteid)}&iframe=1" width="100%" height="100%" id="comment_iframe" frameborder="0" scrolling="no"></iframe>
       <div class="box">
-        		<h5>è¯„è®ºæ’è¡Œ<a href="" class="more">æ›´å¤š>></a></h5>
+        		<h5>ÆÀÂÛÅÅĞĞ<a href="" class="more">¸ü¶à>></a></h5>
 				 {pc:comment action="bang" cache="3600"}
             	<ul class="content list blue f14 row-2">
 				{loop $data $r}
-                	<li>Â·<a href="{$r[url]}" target="_blank">{str_cut($r[title], 26)}</a><span>({$r[total]})</span></li>
+                	<li>¡¤<a href="{$r[url]}" target="_blank">{str_cut($r[title], 26)}</a><span>({$r[total]})</span></li>
 					{/loop}
                 </ul>
 				{/pc}
@@ -47,7 +47,7 @@
   </div>
     <div class="col-auto">
         <div class="box">
-            <h5 class="title-2">ç›¸å…³ä¿¡æ¯</h5>
+            <h5 class="title-2">Ïà¹ØĞÅÏ¢</h5>
             <ul class="content digg">
 			{pc:special action="content_list" specialid="$specialid" num="10" order="views DESC"}
 				{loop $data $r}
@@ -68,10 +68,10 @@
 				function(data){
 				var j = 1;
 				var string = "<div class='point key-float'><div style='position:relative'><div class='arro'></div>";
-				string += "<a href='JavaScript:;' onclick='$(this).parent().parent().remove();' hidefocus='true' class='close'><span>å…³é—­</span></a><div class='contents f12'>";
+				string += "<a href='JavaScript:;' onclick='$(this).parent().parent().remove();' hidefocus='true' class='close'><span>¹Ø±Õ</span></a><div class='contents f12'>";
 				  $.each(data, function(i,item){
 					j = i+1;
-					jsonitem += "<a href='"+item.url+"' target='_blank'>"+j+"ã€"+item.title+"</a><BR>";
+					jsonitem += "<a href='"+item.url+"' target='_blank'>"+j+"¡¢"+item.title+"</a><BR>";
 					
 				  });
 					string += jsonitem;

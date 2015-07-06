@@ -1,15 +1,15 @@
 <?php defined('IN_PHPCMS') or exit('No permission resources.');?>
 <table cellpadding="2" cellspacing="1" width="98%">
 	<tr> 
-      <td width="100">Ф√┤Ф°╛Ф║├И∙©Е╨╕</td>
+      <td width="100">нд╠╬©РЁ╓╤х</td>
       <td><input type="text" name="setting[size]" value="<?php echo $setting['size'];?>" size="10" class="input-text"></td>
     </tr>
 	<tr> 
-      <td>И╩≤Х╝╓Е─╪</td>
+      <td>д╛хож╣</td>
       <td><input type="text" name="setting[defaultvalue]" value="<?php echo $setting['defaultvalue'];?>" size="40" class="input-text"></td>
     </tr>
 	<tr> 
-      <td>Ф≤╞Е░╕Д╦╨Е╞├Г═│Ф║├</td>
-      <td><input type="radio" name="setting[ispassword]" value="1" <?php if($setting['ispassword']) echo 'checked';?>> Ф≤╞ <input type="radio" name="setting[ispassword]" value="0" <?php if(!$setting['ispassword']) echo 'checked';?>> Е░╕</td>
+      <td>йг╥Ян╙цэбК©Р</td>
+      <td><input type="radio" name="setting[ispassword]" value="1" <?php if($setting['ispassword']) echo 'checked';?>> йг <input type="radio" name="setting[ispassword]" value="0" <?php if(!$setting['ispassword']) echo 'checked';?>> ╥Я</td>
     </tr>
 </table>

@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset={CHARSET}" />
 <meta http-equiv="X-UA-Compatible" content="IE=7" />
 <title>phpcmsV9 - {L('member','','member').L('manage_center')}</title>
 <link href="{CSS_PATH}reset.css" rel="stylesheet" type="text/css" />
@@ -89,13 +89,13 @@ $(function(){
 <input type="hidden" name="forward" id="forward" value="{$forward}">
     	<h2>{L('member').L('login')}</h2>
     	<div class="input">
-			<label>{L('username')}ï¼š</label><input type="text" id="username" name="username" size="22" class="input-text">
+			<label>{L('username')}£º</label><input type="text" id="username" name="username" size="22" class="input-text">
 		</div>
         <div class="input">
-			<label>{L('password')}ï¼š</label><input type="password" id="password" name="password" size="22" class="input-text">
+			<label>{L('password')}£º</label><input type="password" id="password" name="password" size="22" class="input-text">
 		</div>
         <div class="input">
-			<label>{L('checkcode')}ï¼š</label><input type="text" id="code" name="code" size="8" class="input-text">{form::checkcode('code_img', '5', '14', 120, 26)}
+			<label>{L('checkcode')}£º</label><input type="text" id="code" name="code" size="8" class="input-text">{form::checkcode('code_img', '5', '14', 120, 26)}
 		</div>
         <div class="take">
 		<input type="checkbox" name="cookietime" value="2592000" id="cookietime"> {L('remember')}{L('username')}
@@ -114,17 +114,17 @@ $(function(){
                     <div class="pass-logo">
                     	<ul class="item login-list clear blue">
                         {if $setting['snda_akey'] || $setting['snda_skey']}
-                        	<li style="margin-right:14px;"><a href="javascript:;" onclick="show_login('snda');return false;" style="background-image:url({IMG_PATH}member/logo/snda_16_16.png)">ç››å¤§é€šè¡Œè¯</a></li>
+                        	<li style="margin-right:14px;"><a href="javascript:;" onclick="show_login('snda');return false;" style="background-image:url({IMG_PATH}member/logo/snda_16_16.png)">Ê¢´óÍ¨ĞĞÖ¤</a></li>
                         {/if}
                         {if $setting['sina_akey'] || $setting['sina_skey']}
-                            <li><a href="javascript:;" onclick="show_login('sina');return false;" style="background-image:url({IMG_PATH}member/logo/sina_16_16.png)">æ–°æµªå¾®åšç™»å½•</a></li>
+                            <li><a href="javascript:;" onclick="show_login('sina');return false;" style="background-image:url({IMG_PATH}member/logo/sina_16_16.png)">ĞÂÀËÎ¢²©µÇÂ¼</a></li>
                         {/if}
 
 						{if $setting['qq_akey'] || $setting['qq_skey']}
-                        	<li style="margin-right:14px;"><a href="javascript:;" onclick="show_login('qq');return false;" style="background-image:url({IMG_PATH}member/logo/qq_16_16.png)">è…¾è®¯å¾®åšç™»å½•</a></li>
+                        	<li style="margin-right:14px;"><a href="javascript:;" onclick="show_login('qq');return false;" style="background-image:url({IMG_PATH}member/logo/qq_16_16.png)">ÌÚÑ¶Î¢²©µÇÂ¼</a></li>
 						{/if}
 						{if $setting['qq_appkey'] || $setting['qq_appid']}
-                        	<li style="margin-right:14px;"><a href="{APP_PATH}index.php?m=member&c=index&a=public_qq_loginnew" target="_blank" style="background-image:url({IMG_PATH}member/logo/qq_16_16.png)">è…¾è®¯QQç™»å½•</a></li>
+                        	<li style="margin-right:14px;"><a href="{APP_PATH}index.php?m=member&c=index&a=public_qq_loginnew" target="_blank" style="background-image:url({IMG_PATH}member/logo/qq_16_16.png)">ÌÚÑ¶QQµÇÂ¼</a></li>
 						{/if}
                         </ul>
                         <p>

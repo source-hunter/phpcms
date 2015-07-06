@@ -3,30 +3,30 @@
 {template 'member', 'left'}
 <div class="col-auto">
 <div class="col-1 ">
-<h6 class="title">å‘é€çŸ­æ¶ˆæ¯</h6>
+<h6 class="title">·¢ËÍ¶ÌÏûÏ¢</h6>
 <div class="content">
 <form name="myform" action="{APP_PATH}index.php?m=message&c=index&a=send" method="post" id="myform">
 <table width="100%" cellspacing="0" class="table_form">
     <tr>
-       <th>æ”¶ä¿¡äººï¼š</th>
+       <th>ÊÕĞÅÈË£º</th>
        <td><input name="info[send_to_id]" type="text" id="username" size="30" value=""  class="input-text"/> </td>
      </tr>
      <tr>
-       <th>æ ‡ é¢˜ï¼š</th>
+       <th>±ê Ìâ£º</th>
        <td><input name="info[subject]" type="text" id="subject" size="30" value=""  class="input-text"/></td>
      </tr>  
      <tr>
-       <th>å†… å®¹ï¼š</th>
+       <th>ÄÚ Èİ£º</th>
        <td><textarea name="info[content]"  id="con" rows="5" cols="50"></textarea></td>
      </tr>
      <tr>
-       <th>éªŒè¯ç ï¼š</th>
+       <th>ÑéÖ¤Âë£º</th>
        <td><input name="code" type="text" id="code" size="10"  class="input-text"/> {form::checkcode('code_img','4','14',110,30)}</td>
      </tr>
      <tr>
        <td></td>
        <td colspan="2"><label>
-         <input type="submit" name="dosubmit" id="dosubmit" value="ç¡® å®š" class="button"/>
+         <input type="submit" name="dosubmit" id="dosubmit" value="È· ¶¨" class="button"/>
          </label></td>
      </tr>
    </table>
@@ -40,11 +40,11 @@
 <!--
 $(function(){
 	$.formValidator.initConfig({autotip:true,formid:"myform",onerror:function(msg){}});
-	$("#subject").formValidator({onshow:"è¯·è¾“å…¥æ ‡é¢˜",onfocus:"æ ‡é¢˜ä¸èƒ½ä¸ºç©º"}).inputValidator({min:1,max:999,onerror:"æ ‡é¢˜ä¸èƒ½ä¸ºç©º"});
-	$("#con").formValidator({onshow:"è¯·è¾“å…¥å†…å®¹",onfocus:"å†…å®¹ä¸èƒ½ä¸ºç©º"}).inputValidator({min:1,max:999,onerror:"å†…å®¹ä¸èƒ½ä¸ºç©º"});
-	$("#username").formValidator({onshow:"è¯·å¡«å†™æ”¶ä¿¡äºº",onfocus:"æ”¶ä¿¡äººä¸èƒ½ä¸ºç©º"}).inputValidator({min:1,onerror:"<?php echo L("input").L('touserid')?>"}).ajaxValidator({type : "get",url : "",data :"m=message&c=index&a=public_name",datatype : "html",async:'false',success : function(data){if( data == 1 ){return true;}else{return false;}},buttons: $("#dosubmit"),onerror : "æ²¡æœ‰æ­¤ç”¨æˆ·! ",onwait : "<?php echo L('connecting')?>"});
+	$("#subject").formValidator({onshow:"ÇëÊäÈë±êÌâ",onfocus:"±êÌâ²»ÄÜÎª¿Õ"}).inputValidator({min:1,max:999,onerror:"±êÌâ²»ÄÜÎª¿Õ"});
+	$("#con").formValidator({onshow:"ÇëÊäÈëÄÚÈİ",onfocus:"ÄÚÈİ²»ÄÜÎª¿Õ"}).inputValidator({min:1,max:999,onerror:"ÄÚÈİ²»ÄÜÎª¿Õ"});
+	$("#username").formValidator({onshow:"ÇëÌîĞ´ÊÕĞÅÈË",onfocus:"ÊÕĞÅÈË²»ÄÜÎª¿Õ"}).inputValidator({min:1,onerror:"<?php echo L("input").L('touserid')?>"}).ajaxValidator({type : "get",url : "",data :"m=message&c=index&a=public_name",datatype : "html",async:'false',success : function(data){if( data == 1 ){return true;}else{return false;}},buttons: $("#dosubmit"),onerror : "Ã»ÓĞ´ËÓÃ»§! ",onwait : "<?php echo L('connecting')?>"});
 	
-	$("#code").formValidator({onshow:"è¯·è¾“å…¥éªŒè¯ç ",onfocus:"éªŒè¯ç ä¸èƒ½ä¸ºç©º"}).inputValidator({min:1,max:999,onerror:"éªŒè¯ç ä¸èƒ½ä¸ºç©º"}).ajaxValidator({
+	$("#code").formValidator({onshow:"ÇëÊäÈëÑéÖ¤Âë",onfocus:"ÑéÖ¤Âë²»ÄÜÎª¿Õ"}).inputValidator({min:1,max:999,onerror:"ÑéÖ¤Âë²»ÄÜÎª¿Õ"}).ajaxValidator({
 	    type : "get",
 		url : "",
 		data :"m=pay&c=deposit&a=public_checkcode",
@@ -61,8 +61,8 @@ $(function(){
 			}
 		},
 		buttons: $("#dosubmit"),
-		onerror : "éªŒè¯ç é”™è¯¯",
-		onwait : "éªŒè¯ä¸­"
+		onerror : "ÑéÖ¤Âë´íÎó",
+		onwait : "ÑéÖ¤ÖĞ"
 	});
 })
 

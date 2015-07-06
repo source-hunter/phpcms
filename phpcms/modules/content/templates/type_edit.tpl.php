@@ -16,11 +16,11 @@ include $this->admin_tpl('header','admin');
       <h6><img src="<?php echo IMG_PATH;?>icon/sitemap-application-blue.png" width="16" height="16" /> <?php echo L('edit_type');?></h6>
 <table width="100%"  class="table_form">
   <tr>
-    <th width="80"><?php echo L('type_name')?>ï¼š</th>
+    <th width="80"><?php echo L('type_name')?>£º</th>
     <td class="y-bg"><input type="text" name="info[name]" id="name" class="inputtext" style="width:300px;" value="<?php echo $name;?>"></td>
   </tr>
     <tr>
-    <th><?php echo L('description')?>ï¼š</th>
+    <th><?php echo L('description')?>£º</th>
     <td class="y-bg"><textarea name="info[description]" maxlength="255" style="width:300px;height:60px;"><?php echo $description;?></textarea></td>
   </tr>
 </table>

@@ -1,10 +1,10 @@
 <?php
 /**
- * ç®¡ç†å‘˜åå°ä¼šå‘˜æ¨¡å‹å­—æ®µæ“ä½œç±»
+ * ¹ÜÀíÔ±ºóÌ¨»áÔ±Ä£ĞÍ×Ö¶Î²Ù×÷Àà
  */
 
 defined('IN_PHPCMS') or exit('No permission resources.');
-//æ¨¡å‹åŸå‹å­˜å‚¨è·¯å¾„
+//Ä£ĞÍÔ­ĞÍ´æ´¢Â·¾¶
 define('MODEL_PATH',PC_PATH.'modules'.DIRECTORY_SEPARATOR.'member'.DIRECTORY_SEPARATOR.'fields'.DIRECTORY_SEPARATOR);
 define('CACHE_MODEL_PATH',CACHE_PATH.'caches_model'.DIRECTORY_SEPARATOR.'caches_data'.DIRECTORY_SEPARATOR);
 pc_base::load_app_class('admin', 'admin', 0);
@@ -22,7 +22,7 @@ class member_modelfield extends admin {
 		$modelid = $_GET['modelid'];
 		$datas = $this->cache_field($modelid);
 		$modelinfo = $this->model_db->get_one(array('modelid'=>$modelid));
-		$big_menu = array('javascript:window.top.art.dialog({id:\'add\',iframe:\'?m=member&c=member_modelfield&a=add&modelid='.$modelinfo['modelid'].'\', title:\''.L('member_modelfield_add').' '.L('model_name').'ï¼š'.$modelinfo['name'].'\', width:\'700\', height:\'500\', lock:true}, function(){var d = window.top.art.dialog({id:\'add\'}).data.iframe;var form = d.document.getElementById(\'dosubmit\');form.click();return false;}, function(){window.top.art.dialog({id:\'add\'}).close()});void(0);', L('member_modelfield_add'));
+		$big_menu = array('javascript:window.top.art.dialog({id:\'add\',iframe:\'?m=member&c=member_modelfield&a=add&modelid='.$modelinfo['modelid'].'\', title:\''.L('member_modelfield_add').' '.L('model_name').'£º'.$modelinfo['name'].'\', width:\'700\', height:\'500\', lock:true}, function(){var d = window.top.art.dialog({id:\'add\'}).data.iframe;var form = d.document.getElementById(\'dosubmit\');form.click();return false;}, function(){window.top.art.dialog({id:\'add\'}).close()});void(0);', L('member_modelfield_add'));
 		include $this->admin_tpl('member_modelfield_list');
 	}
 	
@@ -46,7 +46,7 @@ class member_modelfield extends admin {
 			}
 			
 			require MODEL_PATH.'add.sql.php';
-			//é™„åŠ å±æ€§å€¼
+			//¸½¼ÓÊôĞÔÖµ
 			$_POST['info']['setting'] = array2string($_POST['setting']);
 			$_POST['info']['unsetgroupids'] = isset($_POST['unsetgroupids']) ? implode(',',$_POST['unsetgroupids']) : '';
 			$_POST['info']['unsetroleids'] = isset($_POST['unsetroleids']) ? implode(',',$_POST['unsetroleids']) : '';
@@ -60,9 +60,9 @@ class member_modelfield extends admin {
 			require MODEL_PATH.'fields.inc.php'; 
 			$modelid = $_GET['modelid'];
 			
-			//è§’è‰²ç¼“å­˜
+			//½ÇÉ«»º´æ
 			$roles = getcache('role','commons');
-			//ä¼šå‘˜ç»„ç¼“å­˜
+			//»áÔ±×é»º´æ
 			$group_cache = getcache('grouplist','member');
 			foreach($group_cache as $_key=>$_value) {
 				$grouplist[$_key] = $_value['name'];
@@ -74,7 +74,7 @@ class member_modelfield extends admin {
 	}
 	
 	/**
-	 * ä¿®æ”¹
+	 * ĞŞ¸Ä
 	 */
 	public function edit() {
 		if(isset($_POST['dosubmit'])) {
@@ -96,7 +96,7 @@ class member_modelfield extends admin {
 			}
 			$oldfield = $_POST['oldfield'];
 			require MODEL_PATH.'edit.sql.php';
-			//é™„åŠ å±æ€§å€¼
+			//¸½¼ÓÊôĞÔÖµ
 			$_POST['info']['setting'] = array2string($_POST['setting']);
 			$fieldid = intval($_POST['fieldid']);
 			$_POST['info']['unsetgroupids'] = isset($_POST['unsetgroupids']) ? implode(',',$_POST['unsetgroupids']) : '';
@@ -104,7 +104,7 @@ class member_modelfield extends admin {
 			$this->db->update($_POST['info'],array('fieldid'=>$fieldid));
 			$this->cache_field($modelid);
 			
-			//æ›´æ–°æ¨¡å‹ç¼“å­˜
+			//¸üĞÂÄ£ĞÍ»º´æ
 			pc_base::load_app_class('member_cache','','');
 			member_cache::update_cache_model();
 			
@@ -122,10 +122,10 @@ class member_modelfield extends admin {
 			include MODEL_PATH.$formtype.DIRECTORY_SEPARATOR.'field_edit_form.inc.php';
 			$form_data = ob_get_contents();
 			ob_end_clean();
-			//è§’è‰²ç¼“å­˜
+			//½ÇÉ«»º´æ
 			$roles = getcache('role','commons');
 			$grouplist = array();
-			//ä¼šå‘˜ç»„ç¼“å­˜
+			//»áÔ±×é»º´æ
 			$group_cache = getcache('grouplist','member');
 			foreach($group_cache as $_key=>$_value) {
 				$grouplist[$_key] = $_value['name'];
@@ -139,10 +139,10 @@ class member_modelfield extends admin {
 		$fieldid = intval($_GET['fieldid']);
 		$r = $this->db->get_one(array('fieldid'=>$fieldid));
 		
-		//åˆ é™¤æ¨¡å‹å­—æ®µ
+		//É¾³ıÄ£ĞÍ×Ö¶Î
 		$this->db->delete(array('fieldid'=>$fieldid));
 		
-		//åˆ é™¤è¡¨å­—æ®µ
+		//É¾³ı±í×Ö¶Î
 		$model_cache = getcache('member_model', 'commons');
 		
 		$model_table = $model_cache[$r['modelid']]['tablename'];
@@ -153,7 +153,7 @@ class member_modelfield extends admin {
 	}
 	
 	/**
-	 *  ç¦ç”¨å­—æ®µ
+	 *  ½ûÓÃ×Ö¶Î
 	 */
 	public function disable() {
 		$fieldid = intval($_GET['fieldid']);
@@ -163,7 +163,7 @@ class member_modelfield extends admin {
 	}
 	
 	/**
-	 * æ’åº
+	 * ÅÅĞò
 	 */
 	public function sort() {
 		if(isset($_POST['listorders'])) {
@@ -177,7 +177,7 @@ class member_modelfield extends admin {
 	}
 	
 	/**
-	 * æ£€æŸ¥å­—æ®µæ˜¯å¦å­˜åœ¨
+	 * ¼ì²é×Ö¶ÎÊÇ·ñ´æÔÚ
 	 */
 	public function public_checkfield() {
 		$field = strtolower($_GET['field']);
@@ -199,7 +199,7 @@ class member_modelfield extends admin {
 	}
 	
 	/**
-	 * å­—æ®µå±æ€§è®¾ç½®
+	 * ×Ö¶ÎÊôĞÔÉèÖÃ
 	 */
 	public function public_field_setting() {
 		$fieldtype = $_GET['fieldtype'];
@@ -214,9 +214,9 @@ class member_modelfield extends admin {
 	}
 	
 	/**
-	 * æ›´æ–°æŒ‡å®šæ¨¡å‹å­—æ®µç¼“å­˜
+	 * ¸üĞÂÖ¸¶¨Ä£ĞÍ×Ö¶Î»º´æ
 	 * 
-	 * @param $modelid æ¨¡å‹id
+	 * @param $modelid Ä£ĞÍid
 	 */
 	public function cache_field($modelid = 0) {
 		$field_array = array();
@@ -231,7 +231,7 @@ class member_modelfield extends admin {
 	}
 	
 	/**
-	 * é¢„è§ˆæ¨¡å‹
+	 * Ô¤ÀÀÄ£ĞÍ
 	 */
 	public function public_priview() {
 		pc_base::load_sys_class('form','',0);

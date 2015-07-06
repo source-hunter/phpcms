@@ -1,6 +1,6 @@
 <?php 
 /**
- *   plugin.php æ’ä»¶å…¥å£
+ *   plugin.php ²å¼þÈë¿Ú
  *
  * @copyright			(C) 2005-2010 PHPCMS
  * @license				http://www.phpcms.cn/license/
@@ -42,7 +42,7 @@ if(!$cache['disable'] || $filename=='plugin_admin'  || $filename=='hook') {
 
 class plugin_base {
 	/**
-	 * åˆå§‹åŒ–æ’ä»¶
+	 * ³õÊ¼»¯²å¼þ
 	 */
 	public static function creat_app($id,$file,$action) {
 		define('PLUGIN_ID', $id);
@@ -52,7 +52,7 @@ class plugin_base {
 	}
 	
 	/**
-	 * è°ƒç”¨æ’ä»¶æ–¹æ³•
+	 * µ÷ÓÃ²å¼þ·½·¨
 	 */
 	private function plugin_init() {
 		$controller = self::load_controller();
@@ -68,7 +68,7 @@ class plugin_base {
 	}
 	
 	/**
-	 * åŠ è½½æ’ä»¶æŽ§åˆ¶å™¨
+	 * ¼ÓÔØ²å¼þ¿ØÖÆÆ÷
 	 * @param string $filename
 	 * @param string $m
 	 * @return obj
@@ -91,7 +91,7 @@ class plugin_base {
 	}		
 	
 	/**
-	 * åŠ è½½æ’ä»¶æ¨¡æ¿
+	 * ¼ÓÔØ²å¼þÄ£°å
 	 */
 	final public static function plugin_tpl($file, $identification = '') {
 		$identification = empty($identification) && defined('PLUGIN_ID') ? PLUGIN_ID : $identification;

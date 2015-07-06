@@ -40,7 +40,7 @@ class search_type extends admin {
 				$_POST['info']['modelid'] = 0;
 			}
 			
-			//åˆ é™¤é»„é¡µæ¨¡åž‹å˜é‡æ— è¯¥å­—æ®µ
+			//É¾³ý»ÆÒ³Ä£ÐÍ±äÁ¿ÎÞ¸Ã×Ö¶Î
 			unset($_POST['info']['yp_modelid']);
 
 			$this->db->insert($_POST['info']);
@@ -79,7 +79,7 @@ class search_type extends admin {
 				$_POST['info']['modelid'] = 0;
 			}
 				
-			//åˆ é™¤é»„é¡µæ¨¡åž‹å˜é‡æ— è¯¥å­—æ®µ
+			//É¾³ý»ÆÒ³Ä£ÐÍ±äÁ¿ÎÞ¸Ã×Ö¶Î
 			unset($_POST['info']['yp_modelid']);
 	
 			$this->db->update($_POST['info'],array('typeid'=>$typeid));
@@ -110,7 +110,7 @@ class search_type extends admin {
 	}
 	
 	/**
-	 * æŽ’åº
+	 * ÅÅÐò
 	 */
 	public function listorder() {
 		if(isset($_POST['dosubmit'])) {
@@ -143,7 +143,7 @@ class search_type extends admin {
 			$search_model[$_value['typedir']]['name'] = $_value['name'];
 		}
 		setcache('type_module_'.$this->siteid,$datas,'search');
-		//æœç´¢headerå¤´ä¸­ä½¿ç”¨ç±»åž‹ç¼“å­˜
+		//ËÑË÷headerÍ·ÖÐÊ¹ÓÃÀàÐÍ»º´æ
 		setcache('search_model_'.$this->siteid,$search_model,'search');
 		return true;
 	}

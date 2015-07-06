@@ -16,15 +16,15 @@ include $this->admin_tpl('header','admin');
 	<legend><?php echo L('basic_configuration')?></legend>
 	<table width="100%"  class="table_form">
   <tr>
-    <th width="120"><?php echo L('model_name')?>ï¼š</th>
+    <th width="120"><?php echo L('model_name')?>£º</th>
     <td class="y-bg"><input type="text" class="input-text" name="info[name]" id="name" size="30" value="<?php echo $name;?>"/></td>
   </tr>
   <tr>
-    <th><?php echo L('model_tablename')?>ï¼š</th>
+    <th><?php echo L('model_tablename')?>£º</th>
     <td class="y-bg"><input type="text" class="input-text" name="info[tablename]" id="tablename" size="30" value="<?php echo $tablename;?>" disabled/></td>
   </tr>
     <tr>
-    <th><?php echo L('description')?>ï¼š</th>
+    <th><?php echo L('description')?>£º</th>
     <td class="y-bg"><input type="text" class="input-text" name="info[description]" id="description"  size="30" value="<?php echo $description;?>"/></td>
   </tr>
 </table>

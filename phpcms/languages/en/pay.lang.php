@@ -44,7 +44,7 @@ $LANG['order_addtime'] = 'Timestamp';
 $LANG['order_ip'] = 'Client IP address';
 $LANG['payment_type'] = 'Payment type';
 $LANG['order'] = 'Order';
-$LANG['disount_notice'] = 'If you want to reduce your price please input ‚Äú-10‚Äù';
+$LANG['disount_notice'] = 'If you want to reduce your price please input °∞-10°±';
 
 $LANG['discount'] = 'Change order price';
 $LANG['recharge'] = 'Recharge online';
@@ -66,7 +66,7 @@ $LANG['pay_method_rate'] = 'Proportional charges';
 $LANG['pay_method_fix'] = 'Fixed costs';
 $LANG['pay_rate'] = 'Pay rate';
 $LANG['pay_fix'] = 'Amount';
-$LANG['pay_method_rate_desc'] = 'Note: the total amount of orders √ó pay rate = transfer fee';
+$LANG['pay_method_rate_desc'] = 'Note: the total amount of orders °¡ pay rate = transfer fee';
 $LANG['pay_method_fix_desc'] = 'Note: transfer fee per order';
 
 $LANG['parameter_config'] = 'Parameter settings';

@@ -11,21 +11,21 @@
 <!--
 var js4swf = {
     onInit: function(list){
-        // åˆå§‹åŒ–æ—¶è°ƒç”¨, è‹¥ list.length > 0 ä»£è¡¨æœ‰å¯ç»­ä¼ æ–‡ä»¶
+        // ³õÊ¼»¯Ê±µ÷ÓÃ, Èô list.length > 0 ´ú±íÓĞ¿ÉĞø´«ÎÄ¼ş
         // [{file}, {file}]
 		if(list.length > 0) {
 		    var length = list.length-1;
-			$('#list_name').html("æ–‡ä»¶ï¼šã€Š"+list[length].name+"ã€‹æœªä¸Šä¼ å®Œæˆï¼Œå¦‚éœ€ç»­ä¼ ï¼Œè¯·é‡æ–°é€‰æ‹©è¯¥æ–‡ä»¶");
+			$('#list_name').html("ÎÄ¼ş£º¡¶"+list[length].name+"¡·Î´ÉÏ´«Íê³É£¬ÈçĞèĞø´«£¬ÇëÖØĞÂÑ¡Ôñ¸ÃÎÄ¼ş");
 		}
         this.showMessage('init', list);
     },
     onSelect: function(files){
-        // é€‰ä¸­æ–‡ä»¶åè°ƒç”¨, è¿”å›æ–‡ä»¶åˆ—è¡¨
+        // Ñ¡ÖĞÎÄ¼şºóµ÷ÓÃ, ·µ»ØÎÄ¼şÁĞ±í
         // [{file}, {file}]
         this.showMessage('select', files);
     },
     onSid: function(evt){
-        // è·å¾— sid åè¿”å›, æ›´æ–° sid ç”¨ (key, sid, name, type, size)
+        // »ñµÃ sid ºó·µ»Ø, ¸üĞÂ sid ÓÃ (key, sid, name, type, size)
 		if ($('#title').val()=='') {
 			$('#title').val(evt.name);
 		}
@@ -34,27 +34,27 @@ var js4swf = {
         this.showMessage('sid', evt);
     },
     onStart: function(){
-        // å¼€å§‹ä¸Šä¼  (é€‰æ‹©æ–‡ä»¶åè‡ªåŠ¨å¼€å§‹)
+        // ¿ªÊ¼ÉÏ´« (Ñ¡ÔñÎÄ¼şºó×Ô¶¯¿ªÊ¼)
         this.showMessage('start');
     },
     onCancel: function(){
-        // ä¸Šä¼ å–æ¶ˆäº‹ä»¶
+        // ÉÏ´«È¡ÏûÊÂ¼ş
 
         this.showMessage('cancel');
     },
     onProgress: function(evt){
-        // ä¸Šä¼ è¿›åº¦äº‹ä»¶ (bytesLoaded, bytesTotal, speed) m=1 æ—¶æ²¡æœ‰è¿™äº‹ä»¶
+        // ÉÏ´«½ø¶ÈÊÂ¼ş (bytesLoaded, bytesTotal, speed) m=1 Ê±Ã»ÓĞÕâÊÂ¼ş
         this.showMessage('progress', evt);
     },
     onComplete: function(evt){
-        // ä¸Šä¼ å®Œæˆäº‹ä»¶ (åŒ…å«æ–‡ä»¶ä¿¡æ¯å’Œå®Œæˆåè¿”å›æ•°æ®(data))
+        // ÉÏ´«Íê³ÉÊÂ¼ş (°üº¬ÎÄ¼şĞÅÏ¢ºÍÍê³Éºó·µ»ØÊı¾İ(data))
 		$('#vid').val(evt.vid);
 		//document.getElementById('frm').submit();
         this.showMessage('complete', evt);
         
     },
     onWarn: function(evt){
-        // æŠ¥é”™äº‹ä»¶ (key, message)
+        // ±¨´íÊÂ¼ş (key, message)
         //this.showMessage('warn', evt);
 		alert(evt.msg);
     },
@@ -64,11 +64,11 @@ var js4swf = {
 };
 function checkform() {
 	if($('#vid').val()=='0') {
-		alert('æ‚¨æ²¡æœ‰é€‰æ‹©è§†é¢‘ï¼Œæˆ–è€…è§†é¢‘æ­£åœ¨ä¸Šä¼ ä¸­...');
+		alert('ÄúÃ»ÓĞÑ¡ÔñÊÓÆµ£¬»òÕßÊÓÆµÕıÔÚÉÏ´«ÖĞ...');
 		return false;
 	}
 	if($('#title').val()=='') {
-		alert('è¯·å¡«å†™æ ‡é¢˜');
+		alert('ÇëÌîĞ´±êÌâ');
 		$('#title').focus();
 		return false;
 	}
@@ -86,30 +86,30 @@ swfobject.embedSWF("{$flash_info['flashurl']}", "ku6uploader", "450", "45", "10.
 	{template 'member', 'left'}
 	<div class="col-auto">
 		<div class="col-1 ">
-			<h5 class="title">è§†é¢‘å‘å¸ƒ</h5>
+			<h5 class="title">ÊÓÆµ·¢²¼</h5>
 			<div class="content">
 				
 			<form method="post" action="" id="myform" name="myform">
 				<table width="100%" cellspacing="0" class="table_form">
 					<tr>
-						<th> <font color="red">*</font> é€‰æ‹©æ ç›®</th>
+						<th> <font color="red">*</font> Ñ¡ÔñÀ¸Ä¿</th>
 						<td>{$cat_list}</td>
 					</tr>
 					<tr>
-						<th width="120"> <font color="red">*</font> é€‰æ‹©è§†é¢‘</th> 
+						<th width="120"> <font color="red">*</font> Ñ¡ÔñÊÓÆµ</th> 
 						<td><div id="ku6uploader"></div></td>
 					</tr>
 					<tr>
-						<th width="120"> <font color="red">*</font> æ ‡é¢˜</th> 
+						<th width="120"> <font color="red">*</font> ±êÌâ</th> 
 						<td><input type="text" style="width:400px;" name="info[title]" id="title" value="" class="measure-input " onblur="$.post('api.php?op=get_keywords&amp;number=3&amp;sid='+Math.random()*5, {data:$('#title').val()}, function(data){if(data &amp;&amp; $('#keywords').val()=='') $('#keywords').val(data); })" onkeyup="strlen_verify(this, 'title_len', 80);"><span id="balance"><span></td>
 					</tr>
 					<tr>
-						<th width="120">è§†é¢‘ç®€ä»‹</th> 
+						<th width="120">ÊÓÆµ¼ò½é</th> 
 						<td><textarea name="info[description]" id="description" style="width:60%;height:56px;" class="input-focus"></textarea></td>
 					</tr>
 					<tr>
-						<th width="120">æ ‡ç­¾</th> 
-						<td><input type="text" name="info[keywords]" id="keywords" value="" style="width:280px" class="input-text"> å¤šä¸ªç”¨ç©ºæ ¼éš”å¼€</td>
+						<th width="120">±êÇ©</th> 
+						<td><input type="text" name="info[keywords]" id="keywords" value="" style="width:280px" class="input-text"> ¶à¸öÓÃ¿Õ¸ñ¸ô¿ª</td>
 					</tr>
 					<tr>
 						<th></th>
@@ -129,7 +129,7 @@ swfobject.embedSWF("{$flash_info['flashurl']}", "ku6uploader", "450", "45", "10.
 <div class="clear"></div>
 <script type="text/javascript"> 
 <!--
-//åªèƒ½æ”¾åˆ°æœ€ä¸‹é¢
+//Ö»ÄÜ·Åµ½×îÏÂÃæ
 $(function(){
 	$.formValidator.initConfig({formid:"myform",autotip:true,onerror:function(msg,obj){window.top.art.dialog({content:msg,lock:true,width:'200',height:'50'}, 	function(){$(obj).focus();
 	boxid = $(obj).attr('id');

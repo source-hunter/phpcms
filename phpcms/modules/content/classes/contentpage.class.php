@@ -1,6 +1,6 @@
 <?php
 /**
- *  contentpage.class.php æ–‡ç« å†…å®¹é¡µåˆ†é¡µç±»
+ *  contentpage.class.php ÎÄÕÂÄÚÈİÒ³·ÖÒ³Àà
  *  
  * @copyright			(C) 2005-2010 PHPCMS
  * @license				http://www.phpcms.cn/license/
@@ -8,40 +8,40 @@
  */
 
 class contentpage {
-	private $additems = array (); //å®šä¹‰éœ€è¦è¡¥å…¨çš„å¼€å¤´htmlä»£ç 
-	private $bottonitems = array (); //å®šä¹‰éœ€è¦è¡¥å…¨çš„ç»“å°¾HTMLä»£ç 
-	private $html_tag = array (); //HTMLæ ‡è®°æ•°ç»„
-	private $surplus; //å‰©ä½™å­—ç¬¦æ•°
-	public $content; //å®šä¹‰è¿”å›çš„å­—ç¬¦
+	private $additems = array (); //¶¨ÒåĞèÒª²¹È«µÄ¿ªÍ·html´úÂë
+	private $bottonitems = array (); //¶¨ÒåĞèÒª²¹È«µÄ½áÎ²HTML´úÂë
+	private $html_tag = array (); //HTML±ê¼ÇÊı×é
+	private $surplus; //Ê£Óà×Ö·ûÊı
+	public $content; //¶¨Òå·µ»ØµÄ×Ö·û
 	
 	public function __construct() {
-		//å®šä¹‰HTMLæ•°ç»„
+		//¶¨ÒåHTMLÊı×é
 		$this->html_tag = array ('p', 'div', 'h', 'span', 'strong', 'ul', 'ol', 'li', 'table', 'tr', 'tbody', 'dl', 'dt', 'dd');
 		$this->html_end_tag = array ('/p', '/div', '/h', '/span', '/strong', '/ul', '/ol', '/li', '/table', '/tr', '/tbody', '/dl', '/dt', '/dd');
-		$this->content = ''; //ä¸´æ—¶å†…å®¹å­˜å‚¨å™¨
-		$this->data = array(); //å†…å®¹å­˜å‚¨
+		$this->content = ''; //ÁÙÊ±ÄÚÈİ´æ´¢Æ÷
+		$this->data = array(); //ÄÚÈİ´æ´¢
 	}
 	
 	/**
-	 * å¤„ç†å¹¶è¿”å›å­—ç¬¦ä¸²
+	 * ´¦Àí²¢·µ»Ø×Ö·û´®
 	 * 
-	 * @param string $content å¾…å¤„ç†çš„å­—ç¬¦ä¸²
-	 * @param intval $maxwords æ¯é¡µæœ€å¤§å­—ç¬¦æ•°ã€‚å»é™¤HTMLæ ‡è®°åå­—ç¬¦æ•°
-	 * @return å¤„ç†åçš„å­—ç¬¦ä¸²
+	 * @param string $content ´ı´¦ÀíµÄ×Ö·û´®
+	 * @param intval $maxwords Ã¿Ò³×î´ó×Ö·ûÊı¡£È¥³ıHTML±ê¼Çºó×Ö·ûÊı
+	 * @return ´¦ÀíºóµÄ×Ö·û´®
 	 */
 	public function get_data($content = '', $maxwords = 10000) {
 		if (!$content) return '';
 		$this->data = array();
 		$this->content = '';
 		//exit($maxwords);
-		$this->surplus = $maxwords; //å¼€å§‹æ—¶å°†å‰©ä½™å­—ç¬¦è®¾ç½®ä¸ºæœ€å¤§
-		//åˆ¤æ–­æ˜¯å¦å­˜åœ¨htmlæ ‡è®°ï¼Œä¸å­˜åœ¨ç›´æ¥æŒ‰å­—ç¬¦æ•°åˆ†é¡µï¼›å¦‚æœå­˜åœ¨HTMLæ ‡è®°ï¼Œéœ€è¦è¡¥å…¨ç¼ºå¤±çš„HTMLæ ‡è®°
+		$this->surplus = $maxwords; //¿ªÊ¼Ê±½«Ê£Óà×Ö·ûÉèÖÃÎª×î´ó
+		//ÅĞ¶ÏÊÇ·ñ´æÔÚhtml±ê¼Ç£¬²»´æÔÚÖ±½Ó°´×Ö·ûÊı·ÖÒ³£»Èç¹û´æÔÚHTML±ê¼Ç£¬ĞèÒª²¹È«È±Ê§µÄHTML±ê¼Ç
 		if (strpos($content, '<')!==false) {
-			$content_arr = explode('<', $content); //å°†å­—ç¬¦ä¸²æŒ‰â€˜<â€™åˆ†å‰²æˆæ•°ç»„
-			$this->total = count($content_arr); //è®¡ç®—æ•°ç»„å€¼çš„ä¸ªæ•°ï¼Œä¾¿äºè®¡ç®—æ˜¯å¦æ‰§è¡Œåˆ°å­—ç¬¦ä¸²çš„å°¾éƒ¨
+			$content_arr = explode('<', $content); //½«×Ö·û´®°´¡®<¡¯·Ö¸î³ÉÊı×é
+			$this->total = count($content_arr); //¼ÆËãÊı×éÖµµÄ¸öÊı£¬±ãÓÚ¼ÆËãÊÇ·ñÖ´ĞĞµ½×Ö·û´®µÄÎ²²¿
 			foreach ($content_arr as $t => $c) {
 				if ($c) {
-					$s = strtolower($c); //å¤§å°å†™ä¸åŒºåˆ†
+					$s = strtolower($c); //´óĞ¡Ğ´²»Çø·Ö
 					//$isadd = 0;
 					
 					if ((strpos($c, ' ')!==false) && (strpos($c, '>')===false)) {
@@ -56,18 +56,18 @@ class contentpage {
 					//preg_match('/(.*)([^>|\s])/i', $c, $matches);
 					if (in_array(strtolower($find), $this->html_tag)) {
 						$str = '<'.$c;
-						$this->bottonitems[$t] = '</'.$find.'>'; //å±äºå®šä¹‰çš„HTMLèŒƒå›´ï¼Œå°†ç»“æŸæ ‡è®°å­˜å…¥è¡¥å…¨çš„ç»“å°¾æ•°ç»„
+						$this->bottonitems[$t] = '</'.$find.'>'; //ÊôÓÚ¶¨ÒåµÄHTML·¶Î§£¬½«½áÊø±ê¼Ç´æÈë²¹È«µÄ½áÎ²Êı×é
 						if(preg_match('/<'.$find.'(.*)>/i', $str, $match)) {
-							$this->additems[$t] = $match[0]; //åŒ¹é…å‡ºå¼€å§‹æ ‡è®°ï¼Œå­˜å…¥è¡¥å…¨çš„å¼€å§‹æ•°ç»„
+							$this->additems[$t] = $match[0]; //Æ¥Åä³ö¿ªÊ¼±ê¼Ç£¬´æÈë²¹È«µÄ¿ªÊ¼Êı×é
 						}
-						$this->separate_content($str, $maxwords, $match[0], $t); //åŠ å…¥è¿”å›å­—ç¬¦ä¸²ä¸­
-					} elseif (in_array(strtolower($find), $this->html_end_tag)) { //åˆ¤æ–­æ˜¯å¦å±äºå®šä¹‰çš„HTMLç»“å°¾æ ‡è®°
+						$this->separate_content($str, $maxwords, $match[0], $t); //¼ÓÈë·µ»Ø×Ö·û´®ÖĞ
+					} elseif (in_array(strtolower($find), $this->html_end_tag)) { //ÅĞ¶ÏÊÇ·ñÊôÓÚ¶¨ÒåµÄHTML½áÎ²±ê¼Ç
 						ksort($this->bottonitems); 
 						ksort($this->additems);
-						if (is_array($this->bottonitems) && !empty($this->bottonitems)) array_pop($this->bottonitems); //å½“å±äºæ˜¯ï¼Œå°†å¼€å§‹å’Œç»“å°¾çš„è¡¥å…¨æ•°ç»„å–æ¶ˆä¸€ä¸ª
+						if (is_array($this->bottonitems) && !empty($this->bottonitems)) array_pop($this->bottonitems); //µ±ÊôÓÚÊÇ£¬½«¿ªÊ¼ºÍ½áÎ²µÄ²¹È«Êı×éÈ¡ÏûÒ»¸ö
 						if (is_array($this->additems) && !empty($this->additems)) array_pop($this->additems);
 						$str = '<'.$c;
-						$this->separate_content($str, $maxwords, '', $t); //åŠ å…¥è¿”å›å­—ç¬¦ä¸²ä¸­
+						$this->separate_content($str, $maxwords, '', $t); //¼ÓÈë·µ»Ø×Ö·û´®ÖĞ
 					} else {
 						$tag = '<'.$c;
 						if ($this->surplus >= 0) {
@@ -76,8 +76,8 @@ class contentpage {
 								$this->surplus = 0;
 							}
 						}
-						$this->content .= $tag; //ä¸åœ¨å®šä¹‰çš„HTMLæ ‡è®°èŒƒå›´ï¼Œåˆ™å°†å…¶è¿½åŠ åˆ°è¿”å›å­—ç¬¦ä¸²ä¸­
-						if (intval($t+1) == $this->total) { //åˆ¤æ–­æ˜¯å¦è¿˜æœ‰å‰©ä½™å­—ç¬¦
+						$this->content .= $tag; //²»ÔÚ¶¨ÒåµÄHTML±ê¼Ç·¶Î§£¬Ôò½«Æä×·¼Óµ½·µ»Ø×Ö·û´®ÖĞ
+						if (intval($t+1) == $this->total) { //ÅĞ¶ÏÊÇ·ñ»¹ÓĞÊ£Óà×Ö·û
 							$this->content .= $this->bottonitem();
 							$this->data[] = $this->content;
 						}
@@ -85,25 +85,25 @@ class contentpage {
 				}
 			}
 		} else {
-			$this->content .= $this->separate_content($content, $maxwords); //çº¯æ–‡å­—æ—¶
+			$this->content .= $this->separate_content($content, $maxwords); //´¿ÎÄ×ÖÊ±
 		}
 		return implode('[page]', $this->data);
 	}
 	
 	/**
-	 * å¤„ç†æ¯æ¡æ•°æ®
-	 * @param string $str æ¯æ¡æ•°æ®
-	 * @param intval $max æ¯é¡µçš„æœ€å¤§å­—ç¬¦
-	 * @param string $tag HTMLæ ‡è®°
-	 * @param intval $t å¤„ç†ç¬¬å‡ ä¸ªæ•°ç»„,æ–¹ä¾¿åˆ¤æ–­æ˜¯å¦åˆ°å­—ç¬¦ä¸²çš„æœ«å°¾
-	 * @param intval $n å¤„ç†çš„æ¬¡æ•°
-	 * @param intval $total æ€»å…±çš„æ¬¡æ•°ï¼Œé˜²æ­¢æ­»å¾ªç¯
+	 * ´¦ÀíÃ¿ÌõÊı¾İ
+	 * @param string $str Ã¿ÌõÊı¾İ
+	 * @param intval $max Ã¿Ò³µÄ×î´ó×Ö·û
+	 * @param string $tag HTML±ê¼Ç
+	 * @param intval $t ´¦ÀíµÚ¼¸¸öÊı×é,·½±ãÅĞ¶ÏÊÇ·ñµ½×Ö·û´®µÄÄ©Î²
+	 * @param intval $n ´¦ÀíµÄ´ÎÊı
+	 * @param intval $total ×Ü¹²µÄ´ÎÊı£¬·ÀÖ¹ËÀÑ­»·
 	 * @return boolen
 	 */
 	private function separate_content($str = '', $max, $tag = '', $t = 0, $n = 1, $total = 0) {
 		$html = $str;
 		$str = strip_tags($str);
-		if ($str) $str = @str_replace(array('ã€€'), '', $str);
+		if ($str) $str = @str_replace(array('¡¡'), '', $str);
 		if ($str) {
 			if ($n == 1) {
 				$total = ceil((strlen($str)-$this->surplus)/$max)+1;
@@ -113,28 +113,28 @@ class contentpage {
 			} else {
 				$n++;
 			}
-			if (strlen($str)>$this->surplus) { //å½“å‰å­—ç¬¦æ•°è¶…è¿‡æœ€å¤§åˆ†é¡µæ•°æ—¶
+			if (strlen($str)>$this->surplus) { //µ±Ç°×Ö·ûÊı³¬¹ı×î´ó·ÖÒ³ÊıÊ±
 				$remove_str = str_cut($str, $this->surplus, '');
-				$this->content .= $tag.$remove_str; //è¿åŒæ ‡è®°åŠ å…¥è¿”å›å­—ç¬¦ä¸²
-				$this->content .= $this->bottonitem(); //è¡¥å…¨å°¾éƒ¨æ ‡è®°
-				$this->data[] = $this->content; //å°†ä¸´æ—¶çš„å†…å®¹æ”¾å…¥æ•°ç»„ä¸­
-				$this->content = ''; //è®¾ç½®ä¸ºç©º
-				$this->content .= $this->additem(); //è¡¥å…¨å¼€å§‹æ ‡è®°
-				$str = str_replace($remove_str, '', $str); //å»é™¤å·²åŠ å…¥
+				$this->content .= $tag.$remove_str; //Á¬Í¬±ê¼Ç¼ÓÈë·µ»Ø×Ö·û´®
+				$this->content .= $this->bottonitem(); //²¹È«Î²²¿±ê¼Ç
+				$this->data[] = $this->content; //½«ÁÙÊ±µÄÄÚÈİ·ÅÈëÊı×éÖĞ
+				$this->content = ''; //ÉèÖÃÎª¿Õ
+				$this->content .= $this->additem(); //²¹È«¿ªÊ¼±ê¼Ç
+				$str = str_replace($remove_str, '', $str); //È¥³ıÒÑ¼ÓÈë
 				$this->surplus = $max;
-				return $this->separate_content($str, $max, '', $t, $n, $total); //åˆ¤æ–­å‰©ä½™å­—ç¬¦
-			} elseif (strlen($str)==$this->surplus) { //å½“å‰å­—ç¬¦åˆšå¥½ç­‰äºæ—¶(å½©ç¥¨å‡ ç‡)
+				return $this->separate_content($str, $max, '', $t, $n, $total); //ÅĞ¶ÏÊ£Óà×Ö·û
+			} elseif (strlen($str)==$this->surplus) { //µ±Ç°×Ö·û¸ÕºÃµÈÓÚÊ±(²ÊÆ±¼¸ÂÊ)
 				$this->content .= $html;
 				$this->content .= $this->bottonitem();
-				if (intval($t+1) != $this->total) { //åˆ¤æ–­æ˜¯å¦è¿˜æœ‰å‰©ä½™å­—ç¬¦
-					$this->data[] = $this->content; //å°†ä¸´æ—¶çš„å†…å®¹æ”¾å…¥æ•°ç»„ä¸­
-					$this->content = ''; //è®¾ç½®ä¸ºç©º
+				if (intval($t+1) != $this->total) { //ÅĞ¶ÏÊÇ·ñ»¹ÓĞÊ£Óà×Ö·û
+					$this->data[] = $this->content; //½«ÁÙÊ±µÄÄÚÈİ·ÅÈëÊı×éÖĞ
+					$this->content = ''; //ÉèÖÃÎª¿Õ
 					$this->content .= $this->additem();
 				}
 				$this->surplus = $max;
-			} else { //å½“å‰å­—ç¬¦æ•°å°‘äºæœ€å¤§åˆ†é¡µæ•°
+			} else { //µ±Ç°×Ö·ûÊıÉÙÓÚ×î´ó·ÖÒ³Êı
 				$this->content .= $html;
-				if (intval($t+1) == $this->total) { //åˆ¤æ–­æ˜¯å¦è¿˜æœ‰å‰©ä½™å­—ç¬¦
+				if (intval($t+1) == $this->total) { //ÅĞ¶ÏÊÇ·ñ»¹ÓĞÊ£Óà×Ö·û
 					$this->content .= $this->bottonitem();
 					$this->data[] = $this->content;
 				}
@@ -144,9 +144,9 @@ class contentpage {
 			$this->content .= $html;
 			if ($this->surplus == 0) {
 				$this->content .= $this->bottonitem();
-				if (intval($t+1) != $this->total) { //åˆ¤æ–­æ˜¯å¦è¿˜æœ‰å‰©ä½™å­—ç¬¦
-					$this->data[] = $this->content; //å°†ä¸´æ—¶çš„å†…å®¹æ”¾å…¥æ•°ç»„ä¸­
-					$this->content = ''; //è®¾ç½®ä¸ºç©º
+				if (intval($t+1) != $this->total) { //ÅĞ¶ÏÊÇ·ñ»¹ÓĞÊ£Óà×Ö·û
+					$this->data[] = $this->content; //½«ÁÙÊ±µÄÄÚÈİ·ÅÈëÊı×éÖĞ
+					$this->content = ''; //ÉèÖÃÎª¿Õ
 					$this->surplus = $max;
 					$this->content .= $this->additem();
 				}
@@ -162,7 +162,7 @@ class contentpage {
 	}
 	
 	/**
-	 * è¡¥å…¨å¼€å§‹HTMLæ ‡è®°
+	 * ²¹È«¿ªÊ¼HTML±ê¼Ç
 	 */
 	private function additem() {
 		$content = '';
@@ -176,7 +176,7 @@ class contentpage {
 	}
 	
 	/**
-	 * è¡¥å…¨ç»“å°¾HTMLæ ‡è®°
+	 * ²¹È«½áÎ²HTML±ê¼Ç
 	 */
 	private function bottonitem() {
 		$content = '';

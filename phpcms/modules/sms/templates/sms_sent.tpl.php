@@ -20,7 +20,7 @@
 		<tr>
 		<td>
 		<div class="explain-col">		
-			<?php echo L('regtime')?>ï¼š
+			<?php echo L('regtime')?>£º
 			<?php echo form::date('start_time', $start_time)?>-
 			<?php echo form::date('end_time', $end_time)?>
 

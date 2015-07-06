@@ -5,14 +5,14 @@ function confirmurl(url,message) {
 function redirect(url) {
 	location.href = url;
 }
-//æ»šåŠ¨æ¡
+//¹ö¶¯Ìõ
 $(function(){
 	$(":text").addClass('input-text');
 })
 
 /**
- * å…¨é€‰checkbox,æ³¨æ„ï¼šæ ‡è¯†checkbox idå›ºå®šä¸ºä¸ºcheck_box
- * @param string name åˆ—è¡¨checkåç§°,å¦‚ uid[]
+ * È«Ñ¡checkbox,×¢Òâ£º±êÊ¶checkbox id¹Ì¶¨ÎªÎªcheck_box
+ * @param string name ÁĞ±ícheckÃû³Æ,Èç uid[]
  */
 function selectall(name) {
 	if ($("#check_box").attr("checked")=='checked') {
@@ -32,7 +32,7 @@ function openwinx(url,name,w,h) {
 	url = url+'&pc_hash='+pc_hash;
     window.open(url,name,"top=100,left=400,width=" + w + ",height=" + h + ",toolbar=no,menubar=no,scrollbars=yes,resizable=yes,location=no,status=no");
 }
-//å¼¹å‡ºå¯¹è¯æ¡†
+//µ¯³ö¶Ô»°¿ò
 function omnipotent(id,linkurl,title,close_type,w,h) {
 	if(!w) w=700;
 	if(!h) h=500;

@@ -10,23 +10,23 @@ $(function(){
 function copy_text(matter){
 	matter.select();
 	document.execCommand("Copy");
-	alert('å¤åˆ¶æˆåŠŸï¼');
+	alert('¸´ÖÆ³É¹¦£¡');
 }
 
 </script>
 
 <div class="clr ct show_pg">
-	<div class="crumbs"><a href="{APP_PATH}">é¦–é¡µ</a><span> &gt; </span>{catpos($catid)} æ­£æ–‡</div>
+	<div class="crumbs"><a href="{APP_PATH}">Ê×Ò³</a><span> &gt; </span>{catpos($catid)} ÕıÎÄ</div>
 	<div class="ad">
 	
-	<a href="http://www.phpcms.cn" title="éšæœºå¹¿å‘Šä½ï¼Œæ¬¢è¿è®¿é—®PHPCMS.CN"><img src="http://www.phpcms.cn/statics/images/video/ad960x40.gif"></a>
+	<a href="http://www.phpcms.cn" title="Ëæ»ú¹ã¸æÎ»£¬»¶Ó­·ÃÎÊPHPCMS.CN"><img src="http://www.phpcms.cn/statics/images/video/ad960x40.gif"></a>
 	
 	</div>
     <div class="lty1">
     	<div class="clr">
     <div class="zj"><h5>{$title}</h5></div>
     <div class="clr xxg">
-        <div class="clr">æ€»æ’­æ”¾ï¼š<span id="hits"></span>  <span>|</span>  æ›´æ–°æ—¶é—´ï¼š{$inputtime}</div>
+        <div class="clr">×Ü²¥·Å£º<span id="hits"></span>  <span>|</span>  ¸üĞÂÊ±¼ä£º{$inputtime}</div>
     </div>
     </div>
     	<div class="plbox">   
@@ -34,10 +34,10 @@ function copy_text(matter){
 	{if $video[vid]!=""}
 	{player_code('video_player',$video['channelid'],$video['vid'],622,460)}
 	{else}
-	è¯¥è§†é¢‘ä¸å­˜åœ¨ï¼Œè¯·è¿”å›ï¼
+	¸ÃÊÓÆµ²»´æÔÚ£¬Çë·µ»Ø£¡
 	{/if} 		
 {else}
-		<CENTER><a href="{APP_PATH}index.php?m=content&c=readpoint&allow_visitor={$allow_visitor}"><font color="red">é˜…è¯»æ­¤ä¿¡æ¯éœ€è¦æ‚¨æ”¯ä»˜ <B><I>{$readpoint} {if $paytype}å…ƒ{else}ç‚¹{/if}</I></B>ï¼Œç‚¹å‡»è¿™é‡Œæ”¯ä»˜</font></a></CENTER>
+		<CENTER><a href="{APP_PATH}index.php?m=content&c=readpoint&allow_visitor={$allow_visitor}"><font color="red">ÔÄ¶Á´ËĞÅÏ¢ĞèÒªÄúÖ§¸¶ <B><I>{$readpoint} {if $paytype}Ôª{else}µã{/if}</I></B>£¬µã»÷ÕâÀïÖ§¸¶</font></a></CENTER>
 {/if}
 
 
@@ -46,7 +46,7 @@ function copy_text(matter){
 		
         	<ul class="srli">
                <li>
-                 	<strong>åˆ†äº«è§†é¢‘ï¼š</strong><a href="#" title="text" class=""></a>
+                 	<strong>·ÖÏíÊÓÆµ£º</strong><a href="#" title="text" class=""></a>
                     <div class="clr sr_tag wp l">
                      <!-- Baidu Button BEGIN -->
     <div id="bdshare" class="bdshare_b" style="line-height: 12px;"><img src="http://share.baidu.com/static/images/type-button-5.jpg" />
@@ -61,8 +61,8 @@ function copy_text(matter){
                    </div>
                 </li>
                 <li style="clear:both;">
-                <strong>åµŒå…¥ä»£ç ï¼š</strong>
-                <input name="html" id="html" type="text" size="50" class="fz_ipt" style="margin-left:2px;" ><input type="button" class="fz_btn" value="å¤åˆ¶" onclick="copy_text($('#html'));"> (*éIEæµè§ˆå™¨ï¼Œè¯·åŒå‡»å¤åˆ¶å“¦ï¼)
+                <strong>Ç¶Èë´úÂë£º</strong>
+                <input name="html" id="html" type="text" size="50" class="fz_ipt" style="margin-left:2px;" ><input type="button" class="fz_btn" value="¸´ÖÆ" onclick="copy_text($('#html'));"> (*·ÇIEä¯ÀÀÆ÷£¬ÇëË«»÷¸´ÖÆÅ¶£¡)
 				</li> 
             </ul>
         </div>
@@ -79,11 +79,11 @@ function copy_text(matter){
 	  
 	<div class="bk10"></div>
       <div class="box">
-        		<h5>è¯„è®ºæ’è¡Œ</h5>
+        		<h5>ÆÀÂÛÅÅĞĞ</h5>
 				 {pc:comment action="bang" siteid="$siteid" cache="3600"}
             	<ul class="content list blue f14 row-2">
 				{loop $data $r}
-                	<li>Â·<a href="{$r[url]}" target="_blank">{str_cut($r[title], 34)}</a><span>({$r[total]})</span></li>
+                	<li>¡¤<a href="{$r[url]}" target="_blank">{str_cut($r[title], 34)}</a><span>({$r[total]})</span></li>
 					{/loop}
                 </ul>
 				{/pc}
@@ -97,7 +97,7 @@ function copy_text(matter){
   
     <div class="box0">
     	<div class="nav">
-             <h5>ä¸Šå‡æœ€å¿«çš„è§†é¢‘</h5>
+             <h5>ÉÏÉı×î¿ìµÄÊÓÆµ</h5>
         </div>
         <div class="bct">
         	<div class="lbbox nos" >
@@ -109,7 +109,7 @@ function copy_text(matter){
 	<div class="clr h77">
 	<a href="{$r[url]}" ><img src="{$r[thumb]}" width="104" height="65" class="l"></a>
 	<div class="lh21"><a href="{$r[url]}" >{$r[title]}</a></div>
-	<div class="sz"><span>è¯„è®ºï¼š{get_comments(id_encode("content_$r[catid]",$r[id],$siteid))}</span></div>
+	<div class="sz"><span>ÆÀÂÛ£º{get_comments(id_encode("content_$r[catid]",$r[id],$siteid))}</span></div>
 	</div>
 	</li> 
 {/loop}
@@ -123,16 +123,16 @@ function copy_text(matter){
 	
 	
     <div class="ad">
-	<a href="http://www.phpcms.cn" title="éšæœºå¹¿å‘Šä½ï¼Œæ¬¢è¿è®¿é—®PHPCMS.CN"><img src="http://www.phpcms.cn/statics/images/video/ad318x64.gif"></a>
+	<a href="http://www.phpcms.cn" title="Ëæ»ú¹ã¸æÎ»£¬»¶Ó­·ÃÎÊPHPCMS.CN"><img src="http://www.phpcms.cn/statics/images/video/ad318x64.gif"></a>
 	
 	</div> 
 	
 	 <div class="mgt10 box2">
     	<div class="nav tag3">
         	<ul class="clr col3"  id="tag1">
-                <li><a href="#" class="ac">çƒ­ç‚¹</a></li>
-                <li><a href="#">è¯„è®º</a></li>
-                <li><a href="#">å…³æ³¨</a></li>
+                <li><a href="#" class="ac">ÈÈµã</a></li>
+                <li><a href="#">ÆÀÂÛ</a></li>
+                <li><a href="#">¹Ø×¢</a></li>
             </ul>
         </div>
         <div class="bct tabn1">
@@ -195,7 +195,7 @@ function copy_text(matter){
 <script language="JavaScript" src="{APP_PATH}api.php?op=count&id={$id}&modelid={$modelid}"></script>
 <script language="JavaScript">
 <!--
-//åˆ‡æ¢åœ°å€
+//ÇĞ»»µØÖ·
 function show_url(id) {
 	var local_value = $('#url').val();
 	if(id == 1){
@@ -209,9 +209,9 @@ function show_url(id) {
 	var remote_value = $('#'+remote).val();
 	$.get('index.php', {m:'cloudhost', c:'bucket', a:'ChangeBucket', local:local_value,remote:remote_value, id:id, time:Math.random()}, function (data){
 		if(data=='ok'){
-			alert('è®°å½•ä¿®æ”¹æˆåŠŸï¼');
+			alert('¼ÇÂ¼ĞŞ¸Ä³É¹¦£¡');
 		}else{
-			alert('ä¿®æ”¹å¤±è´¥ï¼');
+			alert('ĞŞ¸ÄÊ§°Ü£¡');
 		}
 	});  
 }

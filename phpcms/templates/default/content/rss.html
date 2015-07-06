@@ -5,7 +5,7 @@
 <div class="main">
 	<div class="col-left navlist">
 		<div class="box memu">
-			<h6 class="title-2 f14 text-c">é¢‘é“åˆ—è¡¨</h6>
+			<h6 class="title-2 f14 text-c">ÆµµÀÁĞ±í</h6>
 			<div class="content blue">
 			{pc:content action="category" catid="0" siteid="$this->siteid" order="listorder ASC"}
 			{loop $data $r}
@@ -26,12 +26,12 @@
 		{php $i++}
 		<div class="box" {if $i%2!=0}style="margin-right:10px"{/if}>
 			<h5 class="title-1" ><span class="xml"><a rel="{APP_PATH}{urlencode('index.php?m=content&c=rss&rssid=')}{$r[catid]}" href="{APP_PATH}index.php?m=content&c=rss&rssid={$r[catid]}" class="xmlbut" target="_blank"">xml</a>
-			<div class="rss cu" onclick="RssTab('rss_{$n}')" id="rss_{$n}"><dl><dt>è®¢é˜…åˆ°</dt></dl></div>
+			<div class="rss cu" onclick="RssTab('rss_{$n}')" id="rss_{$n}"><dl><dt>¶©ÔÄµ½</dt></dl></div>
 			</span>{$r[catname]}</h5>
 			<ul class="content list f14 lh24">
 			{pc:content action="lists" catid="$r[catid]" num="5" order="id DESC" return="info"}
 				{loop $info $v}
-					<li>Â·<a href="{if strpos($v[url],'http')===false}{$siteurl}{/if}{$v[url]}">{str_cut($v[title],'40')}</a></li>
+					<li>¡¤<a href="{if strpos($v[url],'http')===false}{$siteurl}{/if}{$v[url]}">{str_cut($v[title],'40')}</a></li>
 				{/loop}
 			{/pc}	
 			</ul>
@@ -56,7 +56,7 @@ memu.toggle(
   }
 );	
 });
-var ppwin='<dl><dt>è®¢é˜…åˆ°</dt><dd><a href="http://reader.youdao.com/b.do?keyfrom=163&url={feedurl}" title="æœ‰é“" target="_blank"><img src="http://img1.cache.netease.com/cnews/css09/rss100121/icon_subshot02_youdao.gif" width="50" height="14" alt="æœ‰é“" /></a></dd><dd><a href="http://fusion.google.com/add?feedurl={feedurl}" title="google" target="_blank"><img src="http://img1.cache.netease.com/cnews/css09/rss100121/icon_subshot02_google.gif" width="50" height="14" alt="google" /></a></dd><dd><a href="http://add.my.yahoo.com/rss?url={feedurl}" title="yahoo" target="_blank"><img src="http://img1.cache.netease.com/cnews/css09/rss100121/icon_subshot02_yahoo.gif" width="50" height="14" alt="yahoo" /></a></dd><dd><a href="http://www.xianguo.com/subscribe.php?url={feedurl}" title="é²œæœ" target="_blank"><img src="http://img1.cache.netease.com/cnews/css09/rss100121/icon_subshot02_xianguo.gif" width="50" height="14" alt="é²œæœ" /></a></dd><dd><a href="http://www.zhuaxia.com/add_channel.php?url={feedurl}" title="æŠ“è™¾" target="_blank"><img src="http://img1.cache.netease.com/cnews/css09/rss100121/icon_subshot02_zhuaxia.gif" width="50" height="14" alt="æŠ“è™¾" /></a></dd><dd><a href="http://mail.qq.com/cgi-bin/feed?u={feedurl}" title="qq" target="_blank"><img src="http://img1.cache.netease.com/cnews/css09/rss100121/icon_subshot02_qq.gif" width="50" height="14" alt="qq" /></a></dd><dd><a href="http://my.msn.com/addtomymsn.armx?id=rss&ut={feedurl}" title="msn" target="_blank"><img src="http://img1.cache.netease.com/cnews/css09/rss100121/msn.jpg" width="44" height="14" alt="msn" /></a></dd></dl>';
+var ppwin='<dl><dt>¶©ÔÄµ½</dt><dd><a href="http://reader.youdao.com/b.do?keyfrom=163&url={feedurl}" title="ÓĞµÀ" target="_blank"><img src="http://img1.cache.netease.com/cnews/css09/rss100121/icon_subshot02_youdao.gif" width="50" height="14" alt="ÓĞµÀ" /></a></dd><dd><a href="http://fusion.google.com/add?feedurl={feedurl}" title="google" target="_blank"><img src="http://img1.cache.netease.com/cnews/css09/rss100121/icon_subshot02_google.gif" width="50" height="14" alt="google" /></a></dd><dd><a href="http://add.my.yahoo.com/rss?url={feedurl}" title="yahoo" target="_blank"><img src="http://img1.cache.netease.com/cnews/css09/rss100121/icon_subshot02_yahoo.gif" width="50" height="14" alt="yahoo" /></a></dd><dd><a href="http://www.xianguo.com/subscribe.php?url={feedurl}" title="ÏÊ¹û" target="_blank"><img src="http://img1.cache.netease.com/cnews/css09/rss100121/icon_subshot02_xianguo.gif" width="50" height="14" alt="ÏÊ¹û" /></a></dd><dd><a href="http://www.zhuaxia.com/add_channel.php?url={feedurl}" title="×¥Ïº" target="_blank"><img src="http://img1.cache.netease.com/cnews/css09/rss100121/icon_subshot02_zhuaxia.gif" width="50" height="14" alt="×¥Ïº" /></a></dd><dd><a href="http://mail.qq.com/cgi-bin/feed?u={feedurl}" title="qq" target="_blank"><img src="http://img1.cache.netease.com/cnews/css09/rss100121/icon_subshot02_qq.gif" width="50" height="14" alt="qq" /></a></dd><dd><a href="http://my.msn.com/addtomymsn.armx?id=rss&ut={feedurl}" title="msn" target="_blank"><img src="http://img1.cache.netease.com/cnews/css09/rss100121/msn.jpg" width="44" height="14" alt="msn" /></a></dd></dl>';
 function RssTab(id){
 	var RssObj=$('span.xml .rss[id='+id+']');
 	var RssObjdl=$('span.xml .rss dl');

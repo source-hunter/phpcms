@@ -4,7 +4,7 @@ include $this->admin_tpl('header','admin');?>
 <div class="subnav">
   <h2 class="title-1 line-x f14 fb blue lh28"><?php echo L('formguide');?>--<?php if ($formid) echo $r['name']; else echo L('public')?><?php echo L('field_manage');?></h2>
 <div class="content-menu ib-a blue line-x"><a class="add fb" href="?m=formguide&c=formguide_field&a=add&formid=<?php echo $formid?>&menuid=<?php echo $_GET['menuid']?>"><em><?php echo L('add_field');?></em></a>
-ã€€<a class="on" href="?m=formguide&c=formguide_field&a=init&formid=<?php echo $formid?>"><em><?php echo L('manage_field');?></em></a><?php if ($formid) {?><span>|</span><a href="?m=formguide&c=formguide&a=public_preview&formid=<?php echo $formid?>&menuid=<?php echo $_GET['menuid']?>"><em><?php echo L('priview_modelfield');?></em></a><?php }?>
+¡¡<a class="on" href="?m=formguide&c=formguide_field&a=init&formid=<?php echo $formid?>"><em><?php echo L('manage_field');?></em></a><?php if ($formid) {?><span>|</span><a href="?m=formguide&c=formguide&a=public_preview&formid=<?php echo $formid?>&menuid=<?php echo $_GET['menuid']?>"><em><?php echo L('priview_modelfield');?></em></a><?php }?>
 </div></div>
 <div class="pad-lr-10">
 <form name="myform" action="?m=formguide&c=formguide_field&a=listorder&formid=<?php echo $formid?>" method="post">

@@ -7,14 +7,14 @@ class foreground {
 	public function __construct() {
 		self::check_ip();
 		$this->db = pc_base::load_model('member_model');
-		//ajaxéªŒè¯ä¿¡æ¯ä¸éœ€è¦ç™»å½•
+		//ajaxÑéÖ¤ÐÅÏ¢²»ÐèÒªµÇÂ¼
 		if(substr(ROUTE_A, 0, 7) != 'public_') {
 			self::check_member();
 		}
 	}
 	
 	/**
-	 * åˆ¤æ–­ç”¨æˆ·æ˜¯å¦å·²ç»ç™»é™†
+	 * ÅÐ¶ÏÓÃ»§ÊÇ·ñÒÑ¾­µÇÂ½
 	 */
 	final public function check_member() {
 		$phpcms_auth = param::get_cookie('auth');
@@ -25,14 +25,14 @@ class foreground {
 				return true;
 			}
 		} else {
-			//åˆ¤æ–­æ˜¯å¦å­˜åœ¨auth cookie
+			//ÅÐ¶ÏÊÇ·ñ´æÔÚauth cookie
 			if ($phpcms_auth) {
 				$auth_key = $auth_key = get_auth_key('login');
 				list($userid, $password) = explode("\t", sys_auth($phpcms_auth, 'DECODE', $auth_key));
-				//éªŒè¯ç”¨æˆ·ï¼ŒèŽ·å–ç”¨æˆ·ä¿¡æ¯
+				//ÑéÖ¤ÓÃ»§£¬»ñÈ¡ÓÃ»§ÐÅÏ¢
 				$this->memberinfo = $this->db->get_one(array('userid'=>$userid));
 				if($this->memberinfo['islock']) exit('<h1>Bad Request!</h1>');
-				//èŽ·å–ç”¨æˆ·æ¨¡åž‹ä¿¡æ¯
+				//»ñÈ¡ÓÃ»§Ä£ÐÍÐÅÏ¢
 				$this->db->set_model($this->memberinfo['modelid']);
 
 				$this->_member_modelinfo = $this->db->get_one(array('userid'=>$userid));
@@ -59,7 +59,7 @@ class foreground {
 						param::set_cookie('_userid', '');
 						param::set_cookie('_groupid', '');
 						
-						//è®¾ç½®å½“å‰ç™»å½•å¾…éªŒè¯è´¦å·COOKIEï¼Œä¸ºé‡å‘é‚®ä»¶æ‰€ç”¨
+						//ÉèÖÃµ±Ç°µÇÂ¼´ýÑéÖ¤ÕËºÅCOOKIE£¬ÎªÖØ·¢ÓÊ¼þËùÓÃ
 						param::set_cookie('_regusername', $this->memberinfo['username']);
 						param::set_cookie('_reguserid', $this->memberinfo['userid']);
 						param::set_cookie('_reguseruid', $this->memberinfo['phpssouid']);
@@ -82,7 +82,7 @@ class foreground {
 	}
 	/**
 	 * 
-	 * IPç¦æ­¢åˆ¤æ–­ ...
+	 * IP½ûÖ¹ÅÐ¶Ï ...
 	 */
 	final private function check_ip(){
 		$this->ipbanned = pc_base::load_model('ipbanned_model');

@@ -21,7 +21,7 @@ include $this->admin_tpl('header');
 	<legend><?php echo L('basic_configuration')?></legend>
 	<table width="100%"  class="table_form">
   <tr>
-    <th width="80"><?php echo L('release_point_name')?>ï¼š</th>
+    <th width="80"><?php echo L('release_point_name')?>£º</th>
     <td class="y-bg"><input type="text" class="input-text" name="name" id="name" size="30" value="<?php echo $data['name']?>" /></td>
   </tr>
 </table>
@@ -31,36 +31,36 @@ include $this->admin_tpl('header');
 	<legend><?php echo L('ftp_server')?></legend>
 	<table width="100%"  class="table_form">
   <tr>
-    <th width="80"><?php echo L('server_address')?>ï¼š</th>
+    <th width="80"><?php echo L('server_address')?>£º</th>
     <td class="y-bg"><input type="text" class="input-text" name="host" id="host" size="30" value="<?php echo $data['host']?>" /></td>
   </tr>
    <tr>
-    <th width="80"><?php echo L("server_port")?>ï¼š</th>
+    <th width="80"><?php echo L("server_port")?>£º</th>
     <td class="y-bg"><input type="text" class="input-text" name="port" id="port" size="30" value="<?php echo $data['port']?>" /></td>
   </tr>
   <tr>
-    <th><?php echo L('username')?>ï¼š</th>
+    <th><?php echo L('username')?>£º</th>
     <td class="y-bg"><input type="text" class="input-text" name="username" id="username" size="30" value="<?php echo $data['username']?>" /></td>
   </tr>
     <tr>
-    <th><?php echo L('password')?>ï¼š</th>
+    <th><?php echo L('password')?>£º</th>
     <td class="y-bg"><input type="password" class="input-text" name="password" id="password" size="30"  value="<?php echo $data['password']?> "/></td>
   </tr>
     <tr>
-    <th><?php echo L('path')?>ï¼š</th>
+    <th><?php echo L('path')?>£º</th>
     <td class="y-bg"><input type="text" class="input-text" name="path" id="path" size="30" value="<?php echo $data['path']?>" /></td>
   </tr>
       <tr>
-    <th><?php echo L('passive_mode')?>ï¼š</th>
+    <th><?php echo L('passive_mode')?>£º</th>
     <td class="y-bg"><label><input type="checkbox" class="inputcheckbox" name="pasv" id="pasv" value="1" size="30"<?php if ($data['pasv']){echo ' checked';}?> /><?php echo L('yes')?></label></td>
   </tr>
     <tr>
-    <th><?php echo L('ssl_connection')?>ï¼š</th>
+    <th><?php echo L('ssl_connection')?>£º</th>
     <td class="y-bg"><label><input type="checkbox" class="inputcheckbox" name="ssl" id="ssl" value="1" size="30"<?php if ($data['ssl']){echo ' checked';}?> <?php if(!$this->ssl){ echo 'disabled';}?> /><?php echo L('yes')?></label> <?php if(!$this->ssl){ echo '<span style="color:red">'.L('your_server_will_not_support_the_ssl_connection').'</a>';}?></td>
   </tr>
     </tr>
     <tr>
-    <th><?php echo L('test_connections')?>ï¼š</th>
+    <th><?php echo L('test_connections')?>£º</th>
     <td class="y-bg"><input type="button" class="button" onclick="ftp_test()" value="<?php echo L('test_connections')?>" /></td>
   </tr>
 </table>

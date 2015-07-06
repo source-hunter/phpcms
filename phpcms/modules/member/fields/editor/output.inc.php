@@ -26,8 +26,8 @@
 		} else {
 			//TODO 
 			$linkdatas = array(
-				0 => array(0=>'ç½‘ç«™',1=>'http://www.phpip.com'),
-				1 => array(0=>'ç™¾åº¦',1=>'http://www.baidu.com'),
+				0 => array(0=>'ÍøÕ¾',1=>'http://www.phpip.com'),
+				1 => array(0=>'°Ù¶È',1=>'http://www.baidu.com'),
 			);
 		}
 		if($linkdatas) {

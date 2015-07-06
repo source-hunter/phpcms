@@ -64,7 +64,7 @@
 <!--
 function edit(id, name) {
 	window.top.art.dialog({id:'edit'}).close();
-	window.top.art.dialog({title:'<?php echo L('edit').L('member_group')?>ã€Š'+name+'ã€‹',id:'edit',iframe:'?m=member&c=member_group&a=edit&groupid='+id,width:'700',height:'500'}, function(){var d = window.top.art.dialog({id:'edit'}).data.iframe;d.document.getElementById('dosubmit').click();return false;}, function(){window.top.art.dialog({id:'edit'}).close()});
+	window.top.art.dialog({title:'<?php echo L('edit').L('member_group')?>¡¶'+name+'¡·',id:'edit',iframe:'?m=member&c=member_group&a=edit&groupid='+id,width:'700',height:'500'}, function(){var d = window.top.art.dialog({id:'edit'}).data.iframe;d.document.getElementById('dosubmit').click();return false;}, function(){window.top.art.dialog({id:'edit'}).close()});
 }
 
 function check() {

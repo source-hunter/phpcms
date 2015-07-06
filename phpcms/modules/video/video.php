@@ -7,13 +7,13 @@ defined('IN_PHPCMS') or exit('No permission resources.');
  * video video class
  * ------------------------------------------
  * 
- * è§†é¢‘åº“ç®¡ç†æ‰©å±•ä¸‹çš„è§†é¢‘ç®¡ç†æ§åˆ¶å™¨  æ§åˆ¶è§†é¢‘æ·»åŠ ã€ä¿®æ”¹ã€åˆ é™¤åŠä»ku6å¯¼å…¥è§†é¢‘ç­‰
- * ç”¨æˆ·åœ¨é…ç½®å¥½ku6vmsè´¦æˆ·åæ‰èƒ½ä½¿ç”¨è¯¥æ¨¡å—ã€‚
- * åœ¨æ­¤æ‰©å±•ä¸‹å¯¹è§†é¢‘çš„æ‰€æœ‰æ“ä½œé€šè¿‡æ¥å£åŒæ­¥åˆ°ku6vmsä¸‹é¢
+ * ÊÓÆµ¿â¹ÜÀíÀ©Õ¹ÏÂµÄÊÓÆµ¹ÜÀí¿ØÖÆÆ÷  ¿ØÖÆÊÓÆµÌí¼Ó¡¢ĞŞ¸Ä¡¢É¾³ı¼°´Óku6µ¼ÈëÊÓÆµµÈ
+ * ÓÃ»§ÔÚÅäÖÃºÃku6vmsÕË»§ºó²ÅÄÜÊ¹ÓÃ¸ÃÄ£¿é¡£
+ * ÔÚ´ËÀ©Õ¹ÏÂ¶ÔÊÓÆµµÄËùÓĞ²Ù×÷Í¨¹ı½Ó¿ÚÍ¬²½µ½ku6vmsÏÂÃæ
  * 
  * @package 	PHPCMS V9.1.16
  * @author		chenxuewang
- * @copyright	CopyRight (c) 2006-2012 ä¸Šæµ·ç››å¤§ç½‘ç»œå‘å±•æœ‰é™å…¬å¸
+ * @copyright	CopyRight (c) 2006-2012 ÉÏº£Ê¢´óÍøÂç·¢Õ¹ÓĞÏŞ¹«Ë¾
  * 
  */
 pc_base::load_app_class('admin', 'admin', 0);
@@ -33,7 +33,7 @@ class video extends admin {
 		pc_base::load_app_class('ku6api', 'video', 0);
 		pc_base::load_app_class('v', 'video', 0);
 		$this->v =  new v($this->db); 
-		//è·å–çŸ­ä¿¡å¹³å°é…ç½®ä¿¡æ¯
+		//»ñÈ¡¶ÌĞÅÆ½Ì¨ÅäÖÃĞÅÏ¢
 		$this->setting = getcache('video');
 		
 		$this->ku6api = new ku6api($this->setting['sn'], $this->setting['skey']);
@@ -41,7 +41,7 @@ class video extends admin {
 	
 	/**
 	 * 
-	 * è§†é¢‘åˆ—è¡¨
+	 * ÊÓÆµÁĞ±í
 	 */
 	public function init() {
 		$where = '';
@@ -74,18 +74,18 @@ class video extends admin {
 	
 	/**
 	 * 
-	 * è§†é¢‘æ·»åŠ æ–¹æ³•
+	 * ÊÓÆµÌí¼Ó·½·¨
 	 */
 	public function add() {
 		if ($_POST['dosubmit']) {
-			//é¦–å…ˆå¤„ç†ï¼Œæäº¤è¿‡æ¥çš„æ•°æ®
+			//Ê×ÏÈ´¦Àí£¬Ìá½»¹ıÀ´µÄÊı¾İ
 			$data['vid'] = safe_replace($_POST['vid']);
 			if (!$data['vid']) showmessage(L('failed_you_video_uploading'), 'index.php?m=video&c=video&a=add');
 			$data['title'] = isset($_POST['title']) && trim($_POST['title']) ? trim($_POST['title']) : showmessage(L('video_title_not_empty'), 'index.php?m=video&c=video&a=add&meunid='.$_GET['meunid']);
 			$data['description'] = trim($_POST['description']);
 			$data['keywords'] = trim(strip_tags($_POST['keywords']));
 			$data['channelid'] = intval($_POST['channelid']);
-			//å…¶æ¬¡å‘vms postæ•°æ®ï¼Œå¹¶å–å¾—è¿”å›å€¼
+			//Æä´ÎÏòvms postÊı¾İ£¬²¢È¡µÃ·µ»ØÖµ
 			$get_data = $this->ku6api->vms_add($data);
 			if (!$get_data) {
 				showmessage($this->ku6api->error_msg);
@@ -115,19 +115,19 @@ class video extends admin {
 	
 	/**
 	 * function edit
-	 * è§†é¢‘ç¼–è¾‘æ§åˆ¶å™¨
+	 * ÊÓÆµ±à¼­¿ØÖÆÆ÷
 	 */
 	public function edit() {
 		$vid = intval($_GET['vid']);
 		if (!$vid) showmessage(L('illegal_parameters'));
 		if (isset($_POST['dosubmit'])) {
-			//é¦–å…ˆå¤„ç†ï¼Œæäº¤è¿‡æ¥çš„æ•°æ®
+			//Ê×ÏÈ´¦Àí£¬Ìá½»¹ıÀ´µÄÊı¾İ
 			$data['vid'] = $_POST['vid'];
 			if (!$data['vid']) showmessage(L('failed_you_video_uploading'), 'index.php?m=video&c=video&a=add');
 			$data['title'] = isset($_POST['title']) && trim($_POST['title']) ? trim($_POST['title']) : showmessage(L('video_title_not_empty'), 'index.php?m=video&c=video&a=add&meunid='.$_GET['meunid']);
 			$data['description'] = trim($_POST['description']);
 			$data['keywords'] = trim(strip_tags($_POST['keywords']));
-			//å…¶æ¬¡å‘vms postæ•°æ®ï¼Œå¹¶å–å¾—è¿”å›å€¼
+			//Æä´ÎÏòvms postÊı¾İ£¬²¢È¡µÃ·µ»ØÖµ
 			if ($this->ku6api->vms_edit($data)) {
 				$return = $this->v->edit($data, $vid);
 				if ($return) showmessage(L('operation_success'), 'index.php?m=video&c=video&a=init');
@@ -144,7 +144,7 @@ class video extends admin {
 	
 	/**
 	 * function delete
-	 * åˆ é™¤è§†é¢‘æ§åˆ¶å™¨
+	 * É¾³ıÊÓÆµ¿ØÖÆÆ÷
 	 */
 	public function delete() {
 		$vid = $_GET['vid'];
@@ -157,8 +157,8 @@ class video extends admin {
 
 	/**
 	 * function delete_all
-	 * æ‰¹é‡åˆ é™¤è§†é¢‘
-	 * @åˆ é™¤è§†é¢‘æ—¶ï¼Œæ³¨æ„åŒæ—¶åˆ é™¤è§†é¢‘åº“å†…å®¹å¯¹åº”å…³ç³»è¡¨ä¸­çš„ç›¸å…³æ•°æ®ï¼Œå› ä¸ºæ“ä½œæ—¶é—´é™åˆ¶ï¼Œæ— æ³•åŒæ—¶æ›´æ–°ç›¸å…³çš„å†…å®¹ã€‚åˆ é™¤å®Œæˆæ—¶éœ€è¦æé†’ç”¨æˆ·
+	 * ÅúÁ¿É¾³ıÊÓÆµ
+	 * @É¾³ıÊÓÆµÊ±£¬×¢ÒâÍ¬Ê±É¾³ıÊÓÆµ¿âÄÚÈİ¶ÔÓ¦¹ØÏµ±íÖĞµÄÏà¹ØÊı¾İ£¬ÒòÎª²Ù×÷Ê±¼äÏŞÖÆ£¬ÎŞ·¨Í¬Ê±¸üĞÂÏà¹ØµÄÄÚÈİ¡£É¾³ıÍê³ÉÊ±ĞèÒªÌáĞÑÓÃ»§
 	 */
 	public function delete_all() {
 		if (isset($_GET['dosubmit'])) {
@@ -179,8 +179,8 @@ class video extends admin {
 	
 	/**
 	 * Function UPDATE_CONTENT
-	 * æ›´æ–°ä¸æ­¤è§†é¢‘å…³è”çš„å†…å®¹æ¨¡å‹
-	 * @param int $vid è§†é¢‘åº“videoidå­—æ®µ
+	 * ¸üĞÂÓë´ËÊÓÆµ¹ØÁªµÄÄÚÈİÄ£ĞÍ
+	 * @param int $vid ÊÓÆµ¿âvideoid×Ö¶Î
 	 */
 	public function public_update_content() {
 		$videoid = intval($_GET['vid']);
@@ -191,7 +191,7 @@ class video extends admin {
 		if (!$result || empty($result)) {
 			showmessage(L('update_complete'), 'index.php?m=video&c=video&a=init&meunid='.$meunid);
 		}
-		//åŠ è½½æ›´æ–°htmlç±»
+		//¼ÓÔØ¸üĞÂhtmlÀà
 		$html = pc_base::load_app_class('html', 'content');
 		$content_db = pc_base::load_model('content_model');
 		$url = pc_base::load_app_class('url', 'content');
@@ -221,8 +221,8 @@ class video extends admin {
 	
 	/**
 	 * Function ISHTML
-	 * åˆ¤æ–­å†…å®¹æ˜¯å¦éœ€è¦ç”Ÿæˆé™æ€
-	 * @param int $catid æ ç›®id
+	 * ÅĞ¶ÏÄÚÈİÊÇ·ñĞèÒªÉú³É¾²Ì¬
+	 * @param int $catid À¸Ä¿id
 	 */
 	private function ishtml($catid = 0) {
 		static $ishtml, $catid_siteid;
@@ -241,7 +241,7 @@ class video extends admin {
 	
 	/**
 	 * 
-	 * é…ç½®è§†é¢‘å‚æ•°ã€‚åŒ…æ‹¬èº«ä»½è¯†åˆ«ç ã€åŠ å¯†å¯†é’¥ã€è°ƒç”¨æ–¹æ¡ˆç¼–å·ç­‰ä¿¡æ¯
+	 * ÅäÖÃÊÓÆµ²ÎÊı¡£°üÀ¨Éí·İÊ¶±ğÂë¡¢¼ÓÃÜÃÜÔ¿¡¢µ÷ÓÃ·½°¸±àºÅµÈĞÅÏ¢
 	 */
 	public function setting() {
 		if(isset($_POST['dosubmit'])) {
@@ -262,12 +262,12 @@ class video extends admin {
 		}
 	}
 	
-	//è·å–SKEY ,SN å†™å…¥ç¼“å­˜
+	//»ñÈ¡SKEY ,SN Ğ´Èë»º´æ
 	public function set_video_setting(){
 		$array['skey'] = $_GET['skey'];
 		$array['sn'] = $_GET['sn'];
 		if(empty($_GET['skey']) || empty($_GET['sn'])){
-			showmessage(L('æ“ä½œå¤±è´¥ï¼æ­£åœ¨è¿”å›ï¼'),'?m=admin');
+			showmessage(L('²Ù×÷Ê§°Ü£¡ÕıÔÚ·µ»Ø£¡'),'?m=admin');
 		}
 		$setting = array2string($array);
 		setcache('video', $array);
@@ -278,8 +278,8 @@ class video extends admin {
 	}
 	
 	/**
-	 * function get_pos è·å–æ¨èä½
-	 * æ ¹æ®æ ç›®è·å–æ¨èä½idï¼Œå¹¶ç”Ÿæˆformçš„selectå½¢å¼
+	 * function get_pos »ñÈ¡ÍÆ¼öÎ»
+	 * ¸ù¾İÀ¸Ä¿»ñÈ¡ÍÆ¼öÎ»id£¬²¢Éú³ÉformµÄselectĞÎÊ½
 	 */
 	public function public_get_pos () {
 		$catid = intval($_GET['catid']);
@@ -300,8 +300,8 @@ class video extends admin {
 	}
 	
 	/**
-	 * Function subscribe_list è·å–è®¢é˜…åˆ—è¡¨
-	 * è·å–è®¢é˜…åˆ—è¡¨
+	 * Function subscribe_list »ñÈ¡¶©ÔÄÁĞ±í
+	 * »ñÈ¡¶©ÔÄÁĞ±í
 	 */
 	public function subscribe_list() {
 		if (isset($_GET['dosubmit'])) {
@@ -325,7 +325,7 @@ class video extends admin {
 			if(!$this->ku6api->testapi()) {
 				header("Location: ".APP_PATH."index.php?m=video&c=video&a=open&meunid=".$_GET['meunid'].'&pc_hash='.$_GET['pc_hash']);
 			}
-			//è·å–ç”¨æˆ·è®¢é˜…ä¿¡æ¯
+			//»ñÈ¡ÓÃ»§¶©ÔÄĞÅÏ¢
 			$v_model_categorys = $this->ku6api->get_categorys(true);
 			$category_list = '<select name="sub[catid]" id="catid" onchange="select_pos(this)"><option value="0">'.L('please_choose_catid').'</option>'.$v_model_categorys.'</select>';
 			$siteid = get_siteid();
@@ -340,8 +340,8 @@ class video extends admin {
 	}
 	
 	/**
-	 * Function Sub_DEl åˆ é™¤è®¢é˜…
-	 * ç”¨æˆ·åˆ é™¤è®¢é˜…æ–¹æ³•
+	 * Function Sub_DEl É¾³ı¶©ÔÄ
+	 * ÓÃ»§É¾³ı¶©ÔÄ·½·¨
 	 */
 	public function sub_del() {
 		$id = intval($_GET['id']);
@@ -351,8 +351,8 @@ class video extends admin {
 	}
 	
 	/**
-	 * Function sub_del åˆ é™¤è®¢é˜…ç”¨æˆ·
-	 * åˆ é™¤è®¢é˜…ç”¨æˆ·æ–¹æ³•
+	 * Function sub_del É¾³ı¶©ÔÄÓÃ»§
+	 * É¾³ı¶©ÔÄÓÃ»§·½·¨
 	 */
 	public function user_sub_del() {
 		$id = intval($_GET['id']);
@@ -363,8 +363,8 @@ class video extends admin {
 	}	
 	
 	/**
-	 * Function video2content è§†é¢‘åº“ä¸­è§†é¢‘
-	 * ç”¨æˆ·é€‰æ‹©åœ¨è§†é¢‘ä¸­é€‰æ‹©å·²ä¸Šä¼ çš„è§†é¢‘åŠ å…¥åˆ°è§†é¢‘å­—æ®µæˆ–ç¼–è¾‘å™¨ä¸­
+	 * Function video2content ÊÓÆµ¿âÖĞÊÓÆµ
+	 * ÓÃ»§Ñ¡ÔñÔÚÊÓÆµÖĞÑ¡ÔñÒÑÉÏ´«µÄÊÓÆµ¼ÓÈëµ½ÊÓÆµ×Ö¶Î»ò±à¼­Æ÷ÖĞ
 	 */
 	public function video2content () {
 		$page = max(intval($_GET['page']), 1);
@@ -393,7 +393,7 @@ class video extends admin {
 	}
 	
 	/**
-	 * è®¾ç½®swfuploadä¸Šä¼ çš„jsonæ ¼å¼cookie
+	 * ÉèÖÃswfuploadÉÏ´«µÄjson¸ñÊ½cookie
 	 */
 	public function swfupload_json() {
 		$arr['id'] = $_GET['id'];
@@ -412,7 +412,7 @@ class video extends admin {
 	}
 	
 	/**
-	 * åˆ é™¤swfuploadä¸Šä¼ çš„jsonæ ¼å¼cookie
+	 * É¾³ıswfuploadÉÏ´«µÄjson¸ñÊ½cookie
 	 */	
 	public function swfupload_json_del() {
 		$arr['aid'] = intval($_GET['aid']);
@@ -426,7 +426,7 @@ class video extends admin {
 	}
 
 	/**
-	* å¯¼å…¥KU6è§†é¢‘
+	* µ¼ÈëKU6ÊÓÆµ
 	*/
 	public function import_ku6video(){
 		if(!$this->ku6api->testapi()) {
@@ -437,10 +437,10 @@ class video extends admin {
 		$ku6url = isset($_GET['ku6url']) ? $_GET['ku6url'] : '';
 		$time = isset($_GET['time']) ? $_GET['time'] : '';
 		$keyword = isset($_GET['keyword']) ? $_GET['keyword'] : '*:*';
-		$len = isset($_GET['len']) ? $_GET['len'] : '';//æ—¶é•¿s:å°äº4åˆ†é’Ÿ I:å¤§äº4åˆ†é’Ÿ
-		$fenlei = isset($_GET['fenlei']) ? $_GET['fenlei'] : '*:*';//æœç´¢åˆ†ç±»
-		$srctype = isset($_GET['srctype']) ? $_GET['srctype'] : 0;//è§†é¢‘è´¨é‡ 
-		$videotime = isset($_GET['videotime']) ? $_GET['videotime'] : 0;//è§†é¢‘æ—¶é•¿ 
+		$len = isset($_GET['len']) ? $_GET['len'] : '';//Ê±³¤s:Ğ¡ÓÚ4·ÖÖÓ I:´óÓÚ4·ÖÖÓ
+		$fenlei = isset($_GET['fenlei']) ? $_GET['fenlei'] : '*:*';//ËÑË÷·ÖÀà
+		$srctype = isset($_GET['srctype']) ? $_GET['srctype'] : 0;//ÊÓÆµÖÊÁ¿ 
+		$videotime = isset($_GET['videotime']) ? $_GET['videotime'] : 0;//ÊÓÆµÊ±³¤ 
  		$page = isset($_GET['page']) ? $_GET['page'] : '1';
 		$pagesize = 20;
  		$list = array();
@@ -453,7 +453,7 @@ class video extends admin {
   		$data = $this->ku6api->Ku6search($keyword,$pagesize,$page,$srctype,$len,$fenlei,$videotime); 
  		$totals = $data['data']['total'];
 		$list = $data['data']['list'];
-		//è·å–è§†é¢‘å¤§å°æ¥å£
+		//»ñÈ¡ÊÓÆµ´óĞ¡½Ó¿Ú
 		if(isset($list) && is_array($list) && count($list) > 0) {
 			foreach ($list as $key=>$v) {
 				$spaceurl = "http://v.ku6.com/fetchVideo4Player/1/$v[vid].html";
@@ -461,25 +461,25 @@ class video extends admin {
 				$space = json_decode($spacejson, 1);	 
 				$list[$key]['size'] = $space['data']['videosize'];
 				$list[$key]['uploadTime']  = substr($v['uploadtime'], 0, 10); 
-				//åˆ¤æ–­é‚£äº›å·²ç»å¯¼å…¥è¿‡æœ¬æœºç³»ç»Ÿ $vidstr .= ',\''.$v['vid'].'\'';
+				//ÅĞ¶ÏÄÇĞ©ÒÑ¾­µ¼Èë¹ı±¾»úÏµÍ³ $vidstr .= ',\''.$v['vid'].'\'';
 			}
 		}   
-		//é€‰æ‹©ç«™ç‚¹å’Œæ ç›®è¿›è¡Œå¯¼å…¥
+		//Ñ¡ÔñÕ¾µãºÍÀ¸Ä¿½øĞĞµ¼Èë
 		$sitelist = getcache('sitelist','commons');
 		
-		//åˆ†ç±»æ•°ç»„
-		$fenlei_array = array('101000'=>'èµ„è®¯','102000'=>'ä½“è‚²','103000'=>'å¨±ä¹','104000'=>'ç”µå½±','105000'=>'åŸåˆ›','106000'=>'å¹¿å‘Š','107000'=>'ç¾å¥³','108000'=>'æç¬‘','109000'=>'æ¸¸æˆ','110000'=>'åŠ¨æ¼«','111000'=>'æ•™è‚²','113000'=>'ç”Ÿæ´»','114000'=>'æ±½è½¦','115000'=>'æˆ¿äº§','116000'=>'éŸ³ä¹','117000'=>'ç”µè§†','118000'=>'ç»¼è‰º','125000'=>'å¥³ç”Ÿ','126000'=>'è®°å½•','127000'=>'ç§‘æŠ€','190000'=>'å…¶å®ƒ');
-		//è§†é¢‘è´¨é‡
-		$srctype_array = array('1'=>'è¶…æ¸…','2'=>'é«˜æ¸…','3'=>'æ ‡æ¸…','4'=>'æµç•…');
- 		$videotime_array = array('1'=>'çŸ­è§†é¢‘','2'=>'æ™®é€šè§†é¢‘','3'=>'ä¸­è§†é¢‘','4'=>'é•¿è§†é¢‘');
+		//·ÖÀàÊı×é
+		$fenlei_array = array('101000'=>'×ÊÑ¶','102000'=>'ÌåÓı','103000'=>'ÓéÀÖ','104000'=>'µçÓ°','105000'=>'Ô­´´','106000'=>'¹ã¸æ','107000'=>'ÃÀÅ®','108000'=>'¸ãĞ¦','109000'=>'ÓÎÏ·','110000'=>'¶¯Âş','111000'=>'½ÌÓı','113000'=>'Éú»î','114000'=>'Æû³µ','115000'=>'·¿²ú','116000'=>'ÒôÀÖ','117000'=>'µçÊÓ','118000'=>'×ÛÒÕ','125000'=>'Å®Éú','126000'=>'¼ÇÂ¼','127000'=>'¿Æ¼¼','190000'=>'ÆäËü');
+		//ÊÓÆµÖÊÁ¿
+		$srctype_array = array('1'=>'³¬Çå','2'=>'¸ßÇå','3'=>'±êÇå','4'=>'Á÷³©');
+ 		$videotime_array = array('1'=>'¶ÌÊÓÆµ','2'=>'ÆÕÍ¨ÊÓÆµ','3'=>'ÖĞÊÓÆµ','4'=>'³¤ÊÓÆµ');
 		
-		//æœ¬æœºè§†é¢‘æ ç›®
+		//±¾»úÊÓÆµÀ¸Ä¿
 		$categoryrr = $this->get_category();
   		include $this->admin_tpl('import_ku6video');   
  	}
 
 	/**
-	* æœç´¢è§†é¢‘æµè§ˆ 
+	* ËÑË÷ÊÓÆµä¯ÀÀ 
 	*/
 	public function preview_ku6video(){
 		$ku6vid = $_GET['ku6vid'];
@@ -488,10 +488,10 @@ class video extends admin {
 	}
 	
 	/**
-	* è·å–ç«™ç‚¹æ ç›®æ•°æ®
+	* »ñÈ¡Õ¾µãÀ¸Ä¿Êı¾İ
 	*/
 	public function get_category(){
-  		$siteid = get_siteid();//ç›´å–SITEIDå€¼
+  		$siteid = get_siteid();//Ö±È¡SITEIDÖµ
 		$sitemodel_field = pc_base::load_model('sitemodel_field_model');
 		$result = $sitemodel_field->select(array('formtype'=>'video', 'siteid'=>$siteid), 'modelid');
 		if (is_array($result)) {
@@ -511,7 +511,7 @@ class video extends admin {
 				$data = $return_data = $categorys = array(); 
 				$tree = pc_base::load_sys_class('tree');//factory::load_class('tree', 'utils');
  				$string = '<select name="select_category" id="select_category" onchange="select_pos(this)">';
-				$string .= "<option value=0>è¯·é€‰æ‹©åˆ†ç±»</option>";
+				$string .= "<option value=0>ÇëÑ¡Ôñ·ÖÀà</option>";
 				foreach ($result as $r) {
 					$r['html_disabled'] = "";
 					if ($r['child']) {
@@ -522,7 +522,7 @@ class video extends admin {
 				$str  = $str2 = "<option value=\$catid \$html_disabled \$selected>\$spacer \$catname</option>"; 			     $tree->init($categorys);
 				$string .= $tree->get_tree_category(0, $str, $str2);
  				$string .= '</select>';
-				return $string;//ä¸ä½¿ç”¨å‰å°jsè°ƒç”¨ï¼Œä½¿ç”¨return ;
+				return $string;//²»Ê¹ÓÃÇ°Ì¨jsµ÷ÓÃ£¬Ê¹ÓÃreturn ;
 			}
  		}
 		return array();
@@ -530,7 +530,7 @@ class video extends admin {
 
 	public function public_view_video() {
 		$id = intval($_GET['id']);
-		if (!$id) showmessage('è¯·é€‰æ‹©è¦æµè§ˆçš„è§†é¢‘ï¼');
+		if (!$id) showmessage('ÇëÑ¡ÔñÒªä¯ÀÀµÄÊÓÆµ£¡');
 		$r = $this->db->get_one(array('videoid'=>$id), 'vid,channelid');
 		$video_cache = $this->setting;
 		$show_header = 1;
@@ -539,7 +539,7 @@ class video extends admin {
 
 	/**
 	 *@ function public_check_status
-	 *@ æ‰‹åŠ¨æ£€æŸ¥è§†é¢‘çŠ¶æ€ 
+	 *@ ÊÖ¶¯¼ì²éÊÓÆµ×´Ì¬ 
 	 */
 	public function public_check_status() {
 		$id = intval($_GET['id']);
@@ -555,13 +555,13 @@ class video extends admin {
 			
 			if ($return['ku6status']==21) {
 				/**
-				 * åŠ è½½è§†é¢‘å†…å®¹å¯¹åº”å…³ç³»æ•°æ®æ¨¡å‹ï¼Œæ£€ç´¢ä¸åˆ é™¤è§†é¢‘ç›¸å…³çš„å†…å®¹ã€‚
-				 * åœ¨å¯¹åº”å…³ç³»è¡¨ä¸­æ‰¾å‡ºå¯¹åº”çš„å†…å®¹idï¼Œå¹¶æ›´æ–°å†…å®¹çš„é™æ€é¡µ
+				 * ¼ÓÔØÊÓÆµÄÚÈİ¶ÔÓ¦¹ØÏµÊı¾İÄ£ĞÍ£¬¼ìË÷ÓëÉ¾³ıÊÓÆµÏà¹ØµÄÄÚÈİ¡£
+				 * ÔÚ¶ÔÓ¦¹ØÏµ±íÖĞÕÒ³ö¶ÔÓ¦µÄÄÚÈİid£¬²¢¸üĞÂÄÚÈİµÄ¾²Ì¬Ò³
 				 */
 				$video_content_db = pc_base::load_model('video_content_model');
 				$result = $video_content_db->select(array('videoid'=>$id));
 				if (is_array($result) && !empty($result)) {
-					//åŠ è½½æ›´æ–°htmlç±»
+					//¼ÓÔØ¸üĞÂhtmlÀà
 					$html = pc_base::load_app_class('html', 'content');
 					$content_db = pc_base::load_model('content_model');
 					$content_check_db = pc_base::load_model('content_check_model');
@@ -580,7 +580,7 @@ class video extends admin {
 						$table_name = $content_db->table_name;
 						$r1 = $content_db->get_one(array('id'=>$contentid));
 						/**
-						 * åˆ¤æ–­å¦‚æœå†…å®¹é¡µç”Ÿæˆäº†é™æ€é¡µï¼Œåˆ™æ›´æ–°é™æ€é¡µ
+						 * ÅĞ¶ÏÈç¹ûÄÚÈİÒ³Éú³ÉÁË¾²Ì¬Ò³£¬Ôò¸üĞÂ¾²Ì¬Ò³
 						 */
 						if (ishtml($r1['catid'])) {
 							$content_db->table_name = $table_name.'_data';
@@ -611,23 +611,23 @@ class video extends admin {
 		exit($msg_r);	
 	}
 	
-	/***********2013.1.15æ·»åŠ **********/
+	/***********2013.1.15Ìí¼Ó**********/
 	
 	/** 
-	 * åå°ç”³è¯·å¼€é€šè§†é¢‘èšåˆåŠŸèƒ½ã€‚æœåŠ¡å™¨è‡ªåŠ¨è¿”å›é…ç½®è§†é¢‘å‚æ•°ã€‚åŒ…æ‹¬èº«ä»½è¯†åˆ«ç ã€åŠ å¯†å¯†é’¥ã€è°ƒç”¨æ–¹æ¡ˆç¼–å·ç­‰ä¿¡æ¯
+	 * ºóÌ¨ÉêÇë¿ªÍ¨ÊÓÆµ¾ÛºÏ¹¦ÄÜ¡£·şÎñÆ÷×Ô¶¯·µ»ØÅäÖÃÊÓÆµ²ÎÊı¡£°üÀ¨Éí·İÊ¶±ğÂë¡¢¼ÓÃÜÃÜÔ¿¡¢µ÷ÓÃ·½°¸±àºÅµÈĞÅÏ¢
 	 */
 	public function open() {   
 		$this->setting = getcache('video');
  		if(empty($this->setting['skey']) || empty($this->setting['sn'])){
-			//é…ç½®ä¸å­˜åœ¨ï¼Œåˆ™å…ˆéªŒè¯åŸŸåæ˜¯å¦å­˜åœ¨ï¼Œå¦‚æœå­˜åœ¨ï¼Œç›´æ¥è·³å»éªŒè¯é¡µé¢
+			//ÅäÖÃ²»´æÔÚ£¬ÔòÏÈÑéÖ¤ÓòÃûÊÇ·ñ´æÔÚ£¬Èç¹û´æÔÚ£¬Ö±½ÓÌøÈ¥ÑéÖ¤Ò³Ãæ
 			$check_user_back = APP_PATH . 'api.php?op=video_api';
 			$return_check = $this->ku6api->check_user_back($check_user_back);
-			if ($return_check==200 && SITE_URL != 'localhost' && !preg_match("/^(127|192|10)\.([1-2]?)([0-9]?)([0-9])\.([1-2]?)([0-9]?)([0-9])\.([1-2]?)([0-9]?)([0-9])/", SITE_URL)) {//å­˜åœ¨åŒåŸŸåè®°å½•ï¼Œè¿›è¡ŒemailéªŒè¯
+			if ($return_check==200 && SITE_URL != 'localhost' && !preg_match("/^(127|192|10)\.([1-2]?)([0-9]?)([0-9])\.([1-2]?)([0-9]?)([0-9])\.([1-2]?)([0-9]?)([0-9])/", SITE_URL)) {//´æÔÚÍ¬ÓòÃû¼ÇÂ¼£¬½øĞĞemailÑéÖ¤
 				header("Location: ".APP_PATH."index.php?m=video&c=video&a=check_user_back&meunid=".$_GET['meunid'].'&pc_hash='.$_GET['pc_hash']);
 				exit;
 			}
 			
-			//é…ç½®ä¸å­˜åœ¨ï¼Œè·³è½¬è‡³ç››å¤§é€šè¡Œè¯ç™»å½•é¡µé¢ 
+			//ÅäÖÃ²»´æÔÚ£¬Ìø×ªÖÁÊ¢´óÍ¨ĞĞÖ¤µÇÂ¼Ò³Ãæ 
 			$user_back = APP_PATH . 'api.php?op=video_api';
 			$user_back = str_replace("/","__",$user_back);
 			$user_back = urlencode(str_replace(".php","@php",$user_back));
@@ -641,14 +641,14 @@ class video extends admin {
 		} 
 	}
 	
-	//å®Œå–„è¯¦ç»†èµ„æ–™ï¼Œé€šè¿‡APIæ¥å£å®Œå–„èµ„æ–™,è·å– SKEY,SN 
+	//ÍêÉÆÏêÏ¸×ÊÁÏ£¬Í¨¹ıAPI½Ó¿ÚÍêÉÆ×ÊÁÏ,»ñÈ¡ SKEY,SN 
 	public function complete_info() { 
  		if(isset($_POST['dosubmit'])) {
-			$info = safe_replace($_POST['info']); //åŒ…å«éšè—çš„uid
+			$info = safe_replace($_POST['info']); //°üº¬Òş²ØµÄuid
 			if (CHARSET == 'gbk') {
 				$info = array_iconv($info);
 			}
-			//æäº¤æ•°æ®ï¼Œè·å–SKEY,SN  
+			//Ìá½»Êı¾İ£¬»ñÈ¡SKEY,SN  
 			$return_skey_sn = $this->ku6api->complete_info($info);
  			if(is_array($return_skey_sn) && !empty($return_skey_sn)){
 				$setting = array2string($return_skey_sn);
@@ -656,17 +656,17 @@ class video extends admin {
 				$this->ku6api->ku6api_skey = $return_skey_sn['skey'];
 				$this->ku6api->ku6api_sn = $return_skey_sn['sn'];
 				$this->module_db->update(array('setting'=>$setting),array('module'=>'video'));
-				showmessage('èµ„æ–™æäº¤æˆåŠŸï¼Œå·²æˆåŠŸå¼€é€šè§†é¢‘åº”ç”¨ï¼Œæ­£åœ¨è¿”å›ï¼','?m=video&c=video&a=open');
+				showmessage('×ÊÁÏÌá½»³É¹¦£¬ÒÑ³É¹¦¿ªÍ¨ÊÓÆµÓ¦ÓÃ£¬ÕıÔÚ·µ»Ø£¡','?m=video&c=video&a=open');
 			}else{
 				echo $return_skey_sn;exit;
-			showmessage('èµ„æ–™æäº¤å¤±è´¥ï¼Œè¯·è”ç³»å•†åŠ¡äººå‘˜å¤„ç†ï¼','?m=video&c=video&a=open');
+			showmessage('×ÊÁÏÌá½»Ê§°Ü£¬ÇëÁªÏµÉÌÎñÈËÔ±´¦Àí£¡','?m=video&c=video&a=open');
 			} 
 		}else{ 
-			//å¦‚æœä¼ é€’uid,snidåˆ™ä¸ºç™»å½•é€šè¡Œè¯æˆåŠŸï¼Œè¿”å›å®Œå–„èµ„æ–™ï¼Œæ²¡æœ‰ä¼ é€’åˆ™ä¸ºè‡ªè¡Œå¡«å†™èµ„æ–™ç”³è¯·å¼€é€šè§†é¢‘åº”ç”¨
+			//Èç¹û´«µİuid,snidÔòÎªµÇÂ¼Í¨ĞĞÖ¤³É¹¦£¬·µ»ØÍêÉÆ×ÊÁÏ£¬Ã»ÓĞ´«µİÔòÎª×ÔĞĞÌîĞ´×ÊÁÏÉêÇë¿ªÍ¨ÊÓÆµÓ¦ÓÃ
 			$uid = intval($_GET['uid']);
 			$snid = $_GET['snid'];
 			
-			//å¦‚æœskey,snå­˜åœ¨ï¼Œé€šè¿‡æ¥å£è°ƒå–ç”¨æˆ·å®Œå–„çš„èµ„æ–™ï¼Œå†æäº¤ä¸ºä¿®æ”¹æ“ä½œ
+			//Èç¹ûskey,sn´æÔÚ£¬Í¨¹ı½Ó¿Úµ÷È¡ÓÃ»§ÍêÉÆµÄ×ÊÁÏ£¬ÔÙÌá½»ÎªĞŞ¸Ä²Ù×÷
 			$skey_sn_array = getcache('video');
 			if(!empty($skey_sn_array['skey']) && !empty($skey_sn_array['sn'])){ 
    				$return_info = $this->ku6api->Get_Complete_Info($skey_sn_array);
@@ -677,11 +677,11 @@ class video extends admin {
 				$uid = $complete_info['uid'];
 				$snid = $complete_info['sndaid'];
 			}else{
-				//æ²¡æœ‰é…ç½®åˆ™åˆ¤æ–­åŸŸååœ¨èšåˆå¹³å°æ˜¯å¦å·²ç»å­˜åœ¨ï¼Œå¦‚æœå­˜åœ¨è¿›è¡ŒéªŒè¯è·å–SKEY
+				//Ã»ÓĞÅäÖÃÔòÅĞ¶ÏÓòÃûÔÚ¾ÛºÏÆ½Ì¨ÊÇ·ñÒÑ¾­´æÔÚ£¬Èç¹û´æÔÚ½øĞĞÑéÖ¤»ñÈ¡SKEY
 				$check_user_back = APP_PATH . 'api.php?op=video_api';
 				$return_check = $this->ku6api->check_user_back($check_user_back);
-				if($return_check==200){//å­˜åœ¨åŒåŸŸåè®°å½•ï¼Œè¿›è¡ŒemailéªŒè¯
-					showmessage('åŸŸåå·²ç»å­˜åœ¨ï¼Œè¯·éªŒè¯å¼€é€šè§†é¢‘åº”ç”¨ï¼','?m=video&c=video&a=check_user_back');
+				if($return_check==200){//´æÔÚÍ¬ÓòÃû¼ÇÂ¼£¬½øĞĞemailÑéÖ¤
+					showmessage('ÓòÃûÒÑ¾­´æÔÚ£¬ÇëÑéÖ¤¿ªÍ¨ÊÓÆµÓ¦ÓÃ£¡','?m=video&c=video&a=check_user_back');
 				}
  				$complete_info = array();	
 			}
@@ -691,7 +691,7 @@ class video extends admin {
 		}
 	}
 	
-	//Email éªŒè¯è€ç½‘ç«™ï¼Œè·å–sn,skey
+	//Email ÑéÖ¤ÀÏÍøÕ¾£¬»ñÈ¡sn,skey
 	public function check_user_back(){
 		if(isset($_POST['dosubmit_new'])) {
 			$data['email'] = $_POST['email'];
@@ -704,9 +704,9 @@ class video extends admin {
 				$this->ku6api->ku6api_skey = $return_skey_sn['skey'];
 				$this->ku6api->ku6api_sn = $return_skey_sn['sn'];
 				$this->module_db->update(array('setting'=>$setting),array('module'=>'video'));
-				showmessage('éªŒè¯æˆåŠŸï¼Œå·²æˆåŠŸå¼€é€šè§†é¢‘åº”ç”¨ï¼Œæ­£åœ¨è¿”å›ï¼','?m=video&c=video&a=open');
+				showmessage('ÑéÖ¤³É¹¦£¬ÒÑ³É¹¦¿ªÍ¨ÊÓÆµÓ¦ÓÃ£¬ÕıÔÚ·µ»Ø£¡','?m=video&c=video&a=open');
 			}else{
-				showmessage('éªŒè¯å¤±è´¥ï¼Œè¯·è¿”å›ï¼',HTTP_REFERER);
+				showmessage('ÑéÖ¤Ê§°Ü£¬Çë·µ»Ø£¡',HTTP_REFERER);
 			}  
 		}else{
 			$show_dialog = 1;
@@ -715,7 +715,7 @@ class video extends admin {
 		}
 	}
 	
-	//ç”±å¹³å°å‘é€éªŒè¯ç åˆ°æŒ‡å®šä¿¡ç®±
+	//ÓÉÆ½Ì¨·¢ËÍÑéÖ¤Âëµ½Ö¸¶¨ĞÅÏä
 	public function send_code(){ 
 		$data['email'] = $_GET['email'];
 		$data['url'] = APP_PATH . 'api.php?op=video_api';
@@ -728,19 +728,19 @@ class video extends admin {
 	}
 	
 	
-	//è·å–ä¼ é€’çš„skey ,sn å†™å…¥ç¼“å­˜
+	//»ñÈ¡´«µİµÄskey ,sn Ğ´Èë»º´æ
 	public function get_skey_sn(){
 		$skey = $_REQUEST['skey'];
 		$sn = $_REQUEST['sn'];
 		if(empty($skey) || empty($sn)){
-			showmessage('è§†é¢‘é…ç½®ä¿¡æ¯ä¸èƒ½ä¸ºç©º',HTTP_REFERER);
+			showmessage('ÊÓÆµÅäÖÃĞÅÏ¢²»ÄÜÎª¿Õ',HTTP_REFERER);
 		}
 		$setting_arr['skey'] = $skey;
 		$setting_arr['sn'] = $sn;
 		$setting = array2string($setting_arr);
-		setcache('video', $setting_arr);//å†™ç¼“å­˜  
-		$this->module_db->update(array('setting'=>$setting),array('module'=>'video'));//æ›´æ–°æ¨¡ç‰ˆæ•°æ®
-		//éªŒè¯é…ç½®
+		setcache('video', $setting_arr);//Ğ´»º´æ  
+		$this->module_db->update(array('setting'=>$setting),array('module'=>'video'));//¸üĞÂÄ£°æÊı¾İ
+		//ÑéÖ¤ÅäÖÃ
 		$this->ku6api->ku6api_skey = $skey;
 		$this->ku6api->ku6api_sn = $sn;
 		if(!$this->ku6api->testapi()) {
@@ -768,7 +768,7 @@ class video extends admin {
 		}
 	}
 	
-	//è·å–useridä¸‹çš„è§†é¢‘
+	//»ñÈ¡useridÏÂµÄÊÓÆµ
 	public function ajax_getuseridvideo(){
 		$userid = intval($_GET['userid']);
 		if (!$userid) exit(0);
@@ -786,7 +786,7 @@ class video extends admin {
 	}
 
 	/**
-	 * è®¢é˜…ç”¨æˆ·è§†é¢‘
+	 * ¶©ÔÄÓÃ»§ÊÓÆµ
 	 */
 	public function subscribe_uservideo() {
 		if (is_array($_GET['sub']) && !empty($_GET['sub'])) {

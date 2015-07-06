@@ -1,10 +1,10 @@
 <?php
-$LANG['member_init'] = 'ç®¡ç†ä¸­å¿ƒ';
-$LANG['account_manage'] = 'è´¦å·ç®¡ç†';
-$LANG['favorite'] = 'æ”¶è—';
-$LANG['pay'] = 'åœ¨çº¿å……å€¼';
-$LANG['business_centre'] = 'å•†åŠ¡ä¸­å¿ƒ';
-$LANG['wanggan'] = 'ä¼šå‘˜æ•°æ®å¯¼å…¥';
-$LANG['business_centre'] = 'å•†åŠ¡ä¸­å¿ƒ';
-$LANG['ask_center'] = 'é—®ç­”ä¸­å¿ƒ';
+$LANG['member_init'] = '¹ÜÀíÖÐÐÄ';
+$LANG['account_manage'] = 'ÕËºÅ¹ÜÀí';
+$LANG['favorite'] = 'ÊÕ²Ø';
+$LANG['pay'] = 'ÔÚÏß³äÖµ';
+$LANG['business_centre'] = 'ÉÌÎñÖÐÐÄ';
+$LANG['wanggan'] = '»áÔ±Êý¾Ýµ¼Èë';
+$LANG['business_centre'] = 'ÉÌÎñÖÐÐÄ';
+$LANG['ask_center'] = 'ÎÊ´ðÖÐÐÄ';
 ?>

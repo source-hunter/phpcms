@@ -1,7 +1,7 @@
 <?php
 defined('IN_PHPCMS') or exit('No permission resources.');
 
-//å®šä¹‰åœ¨åå°
+//¶¨ÒåÔÚºóÌ¨
 define('IN_ADMIN',true);
 class role_op {	
 	public function __construct() {
@@ -9,8 +9,8 @@ class role_op {
 		$this->priv_db = pc_base::load_model('admin_role_priv_model');
 	}
 	/**
-	 * è·å–è§’è‰²ä¸­æ–‡åç§°
-	 * @param int $roleid è§’è‰²ID
+	 * »ñÈ¡½ÇÉ«ÖĞÎÄÃû³Æ
+	 * @param int $roleid ½ÇÉ«ID
 	 */
 	public function get_rolename($roleid) {
 		$roleid = intval($roleid);
@@ -20,8 +20,8 @@ class role_op {
 	}
 		
 	/**
-	 * æ£€æŸ¥è§’è‰²åç§°é‡å¤
-	 * @param $name è§’è‰²ç»„åç§°
+	 * ¼ì²é½ÇÉ«Ãû³ÆÖØ¸´
+	 * @param $name ½ÇÉ«×éÃû³Æ
 	 */
 	public function checkname($name) {
 		$info = $this->db->get_one(array('rolename'=>$name),'roleid');
@@ -32,9 +32,9 @@ class role_op {
 	}
 	
 	/**
-	 * è·å–èœå•è¡¨ä¿¡æ¯
-	 * @param int $menuid èœå•ID
-	 * @param int $menu_info èœå•æ•°æ®
+	 * »ñÈ¡²Ëµ¥±íĞÅÏ¢
+	 * @param int $menuid ²Ëµ¥ID
+	 * @param int $menu_info ²Ëµ¥Êı¾İ
 	 */
 	public function get_menuinfo($menuid,$menu_info) {
 		$menuid = intval($menuid);
@@ -43,9 +43,9 @@ class role_op {
 	}
 	
 	/**
-	 *  æ£€æŸ¥æŒ‡å®šèœå•æ˜¯å¦æœ‰æƒé™
-	 * @param array $data menuè¡¨ä¸­æ•°ç»„
-	 * @param int $roleid éœ€è¦æ£€æŸ¥çš„è§’è‰²ID
+	 *  ¼ì²éÖ¸¶¨²Ëµ¥ÊÇ·ñÓĞÈ¨ÏŞ
+	 * @param array $data menu±íÖĞÊı×é
+	 * @param int $roleid ĞèÒª¼ì²éµÄ½ÇÉ«ID
 	 */
 	public function is_checked($data,$roleid,$siteid,$priv_data) {
 		$priv_arr = array('m','c','a','data');
@@ -64,7 +64,7 @@ class role_op {
 		
 	}
 	/**
-	 * æ˜¯å¦ä¸ºè®¾ç½®çŠ¶æ€
+	 * ÊÇ·ñÎªÉèÖÃ×´Ì¬
 	 */
 	public function is_setting($siteid,$roleid) {
 		$siteid = intval($siteid);
@@ -74,7 +74,7 @@ class role_op {
 		return $result ? true : false;
 	}
 	/**
-	 * è·å–èœå•æ·±åº¦
+	 * »ñÈ¡²Ëµ¥Éî¶È
 	 * @param $id
 	 * @param $array
 	 * @param $i

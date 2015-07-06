@@ -103,7 +103,7 @@ function check_status(id) {
 }
 
 function confirm_delete(){
-	if(confirm('ç¡®è®¤åˆ é™¤å—ï¼Ÿ')) $('#myform').submit();
+	if(confirm('È·ÈÏÉ¾³ıÂğ£¿')) $('#myform').submit();
 }
 
 function show_msg(msg) {

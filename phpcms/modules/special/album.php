@@ -14,10 +14,10 @@ pc_base::load_app_func('global', 'video');
  * 
  * An open source application development framework for PHP 5.0 or newer
  * 
- * This class ä¸»è¦è´Ÿè´£é€šè¿‡vmså°†é…·6çš„ä¸“è¾‘åˆ—è¡¨å‘ˆç°ç»™ç”¨æˆ·ã€‚ç”¨æˆ·å¯ä»¥é€‰æ‹©ä¸“è¾‘å¯¼å…¥åˆ°cmsä¸“é¢˜ï¼Œå¹¶å°†ä¸“è¾‘é‡Œé¢çš„å†…å®¹ä¸€å¹¶å¯¼å…¥è¿‡æ¥
+ * This class Ö÷Òª¸ºÔğÍ¨¹ıvms½«¿á6µÄ×¨¼­ÁĞ±í³ÊÏÖ¸øÓÃ»§¡£ÓÃ»§¿ÉÒÔÑ¡Ôñ×¨¼­µ¼Èëµ½cms×¨Ìâ£¬²¢½«×¨¼­ÀïÃæµÄÄÚÈİÒ»²¢µ¼Èë¹ıÀ´
  * @package	PHPCMS V9.1.16
  * @author		chenxuewang
- * @copyright	CopyRight (c) 2006-2012 ä¸Šæµ·ç››å¤§ç½‘ç»œå‘å±•æœ‰é™å…¬å¸
+ * @copyright	CopyRight (c) 2006-2012 ÉÏº£Ê¢´óÍøÂç·¢Õ¹ÓĞÏŞ¹«Ë¾
  *
  */
 
@@ -27,14 +27,14 @@ class album extends admin {
 	
 	/**
 	 * Function __construct
-	 * åˆå§‹åŒ–æ•°æ®æ¨¡å‹
+	 * ³õÊ¼»¯Êı¾İÄ£ĞÍ
 	 */
 	public function __construct() {
 		parent::__construct();
 		$this->special_api = pc_base::load_app_class('special_api', 'special');
 		$this->db = pc_base::load_model('special_model');
 		pc_base::load_app_func('global', 'video');
-		//è¯»å–è§†é¢‘åº“çš„é…ç½®ä¿¡æ¯
+		//¶ÁÈ¡ÊÓÆµ¿âµÄÅäÖÃĞÅÏ¢
 		$this->setting = getcache('video', 'video');
 		if (!module_exists('video')) {
 			showmessage(L('please_setting_video_info'), 'index.php?m=admin&c=module&a=init');
@@ -46,7 +46,7 @@ class album extends admin {
 	
 	/**
 	 * Function import
-	 * ä¸“è¾‘åˆ—è¡¨
+	 * ×¨¼­ÁĞ±í
 	 */
 	public function import() {
 		$id = $_POST['id'] ? $_POST['id'] : ($_GET['id'] ? intval($_GET['id']) : 0);
@@ -73,7 +73,7 @@ class album extends admin {
 		} else {
 			$page = max(intval($_GET['page']), 1);
 			$pagesize = 6;
-			//åˆ—å‡ºå·²è½½å…¥çš„ä¸“è¾‘
+			//ÁĞ³öÒÑÔØÈëµÄ×¨¼­
 			$res = $this->db->select("`aid`!=0",'`aid`');
 			$imported = array();
 			if (is_array($res) && !empty($res)) {
@@ -92,7 +92,7 @@ class album extends admin {
 	
 	/**
 	 * Function content_list
-	 * æŸä¸“è¾‘ä¸‹çš„è§†é¢‘åˆ—è¡¨
+	 * Ä³×¨¼­ÏÂµÄÊÓÆµÁĞ±í
 	 */
 	public function content_list() {
 		$id = intval($_GET['id']);

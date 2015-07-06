@@ -37,7 +37,7 @@ $(function(){
 		<div class="point" id='announcement'>
 			<a href="javascript:hide_element('announcement');" hidefocus="true" class="close"><span>{L('close')}</span></a>
 			<div class="content">
-				<strong class="title">{L('notice')}ï¼š</strong>
+				<strong class="title">{L('notice')}£º</strong>
 				<p>{L('with_star_must_input')}</p>
 			</div>
 		</div>
@@ -54,7 +54,7 @@ $(function(){
 
 					{loop $forminfos $k $v}
 					<tr>
-						<th width="100">{if $v['isbase']}<font color=red>*</font>{/if} {$v['name']}ï¼š{if $v['tips']}<br />({$v['tips']}){/if}</th> 
+						<th width="100">{if $v['isbase']}<font color=red>*</font>{/if} {$v['name']}£º{if $v['tips']}<br />({$v['tips']}){/if}</th> 
 						<td>{$v['form']}</td>
 					</tr>
 					{/loop}

@@ -1,6 +1,6 @@
 <?php 
 /**
- *  member pcæ ‡ç­¾
+ *  member pc±êÇ©
  *
  * @copyright			(C) 2005-2010 PHPCMS
  * @license				http://www.phpcms.cn/license/
@@ -18,9 +18,9 @@ class member_tag {
 	}
 	
 	/**
-	 * èŽ·å–æ”¶è—åˆ—è¡¨
-	 * @param array $data æ•°æ®ä¿¡æ¯{userid:ç”¨æˆ·id;limit:è¯»å–æ•°;order:æŽ’åºå­—æ®µ}
-	 * @return array æ”¶è—åˆ—è¡¨æ•°ç»„
+	 * »ñÈ¡ÊÕ²ØÁÐ±í
+	 * @param array $data Êý¾ÝÐÅÏ¢{userid:ÓÃ»§id;limit:¶ÁÈ¡Êý;order:ÅÅÐò×Ö¶Î}
+	 * @return array ÊÕ²ØÁÐ±íÊý×é
 	 */
 	public function favoritelist($data) {
 		$userid = intval($data['userid']);
@@ -31,9 +31,9 @@ class member_tag {
 	}
 	
 	/**
-	 * è¯»å–æ”¶è—æ–‡ç« æ•°
-	 * @param array $data æ•°æ®ä¿¡æ¯{userid:ç”¨æˆ·id;limit:è¯»å–æ•°;order:æŽ’åºå­—æ®µ}
-	 * @return int æ”¶è—æ•°
+	 * ¶ÁÈ¡ÊÕ²ØÎÄÕÂÊý
+	 * @param array $data Êý¾ÝÐÅÏ¢{userid:ÓÃ»§id;limit:¶ÁÈ¡Êý;order:ÅÅÐò×Ö¶Î}
+	 * @return int ÊÕ²ØÊý
 	 */
 	public function count($data) {
 		$userid = intval($data['userid']);

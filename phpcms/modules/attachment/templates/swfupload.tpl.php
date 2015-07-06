@@ -28,7 +28,7 @@
                 <div id="nameTip" class="onShow"><?php echo L('upload_up_to')?><font color="red"> <?php echo $file_upload_limit?></font> <?php echo L('attachments')?>,<?php echo L('largest')?> <font color="red"><?php echo $file_size_limit?></font></div>
                 <div class="bk3"></div>
 				
-                <div class="lh24"><?php echo L('supported')?> <font style="font-family: Arial, Helvetica, sans-serif"><?php echo str_replace(array('*.',';'),array('','ã€'),$file_types)?></font> <?php echo L('formats')?></div><input type="checkbox" id="watermark_enable" value="1" <?php if(isset($watermark_enable) &&$watermark_enable == 1) echo 'checked'?> onclick="change_params()"> <?php echo L('watermark_enable')?>
+                <div class="lh24"><?php echo L('supported')?> <font style="font-family: Arial, Helvetica, sans-serif"><?php echo str_replace(array('*.',';'),array('','¡¢'),$file_types)?></font> <?php echo L('formats')?></div><input type="checkbox" id="watermark_enable" value="1" <?php if(isset($watermark_enable) &&$watermark_enable == 1) echo 'checked'?> onclick="change_params()"> <?php echo L('watermark_enable')?>
         	</div> 	
     		<div class="bk10"></div>
         	<fieldset class="blue pad-10" id="swfupload">

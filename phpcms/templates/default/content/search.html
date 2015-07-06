@@ -4,7 +4,7 @@
 <!--
 .linkage-menu{height:200px; overflow-y:auto; padding:0 4px}
 .linkage-menu h6{ border-bottom:1px solid #e2ecee; padding:2px 0 3px; margin-bottom:5px}
-.linkage-menu h6 a.rt{ font-weight:normal; font-family:'å®‹ä½“';color:#377abe}
+.linkage-menu h6 a.rt{ font-weight:normal; font-family:'ËÎÌå';color:#377abe}
 .linkage-menu div.menu a{width:74px; line-height:22px;text-decoration: none; padding-left:4px; overflow:hidden; height:22px}
 .linkage-menu div.menu a:hover{ background:#d9e4ed; color:#377abe}
 div#areaid{border:1px solid #A7A6AA;height:18px;margin:0 5px 0 0;padding:2px 5px 2px;border: 1px solid #d0d0d0;}
@@ -14,20 +14,20 @@ div#areaid{border:1px solid #A7A6AA;height:18px;margin:0 5px 0 0;padding:2px 5px
 <div class="main cat-search">
         
         <div class="col-auto">
-        <div class="crumbs"><a href="{APP_PATH}">é¦–é¡µ</a><span> > </span>{catpos($catid)}æœç´¢</div>
+        <div class="crumbs"><a href="{APP_PATH}">Ê×Ò³</a><span> > </span>{catpos($catid)}ËÑË÷</div>
         <form name="myform" method="get" action="">
         <ul class="search-form">
 {loop $forminfos $field $info}
 {if $info[formtype]=='box'}<li class="bk"></li>{/if}
-<li><label>{$info[name]}</label>{$info[form]}{if $info[formtype]=='datetime'}ä¹‹å{/if}</li>
+<li><label>{$info[name]}</label>{$info[form]}{if $info[formtype]=='datetime'}Ö®ºó{/if}</li>
 {if $info[formtype]=='box'}<li class="bk"></li>{/if}
 {/loop}
 
-<li><label>æ’åºæ–¹å¼</label><select name="orderby" id="orderby"  size="1">
-<option value="a.id DESC" >å‘å¸ƒæ—¶é—´ é™åº</option>
-<option value="a.id ASC" >å‘å¸ƒæ—¶é—´ å‡åº</option>
+<li><label>ÅÅĞò·½Ê½</label><select name="orderby" id="orderby"  size="1">
+<option value="a.id DESC" >·¢²¼Ê±¼ä ½µĞò</option>
+<option value="a.id ASC" >·¢²¼Ê±¼ä ÉıĞò</option>
 </select></li>
-<li><div class="btn"><input type="submit" value="æœç´¢" /></div></li>
+<li><div class="btn"><input type="submit" value="ËÑË÷" /></div></li>
   <input type="hidden" name="m" value="content"> 
   <input type="hidden" name="c" value="search"> 
   <input type="hidden" name="a" value="init"> 
@@ -35,12 +35,12 @@ div#areaid{border:1px solid #A7A6AA;height:18px;margin:0 5px 0 0;padding:2px 5px
   <input type="hidden" name="dosubmit" value="1">
 
         </ul></form>
-        <div class="search-point">å…±æ‰¾åˆ°ç¬¦åˆæ¡ä»¶çš„ç»“æœ <strong class="red">{$total}</strong> æ¡</div>
+        <div class="search-point">¹²ÕÒµ½·ûºÏÌõ¼şµÄ½á¹û <strong class="red">{$total}</strong> Ìõ</div>
           <ul class="search-list">
 			{loop $datas $r}
            	<li style="margin:0">
                 {if $r[thumb]}<a href="{$r[url]}" target="_blank"><img height="60" width="60" src="{$r[thumb]}"></a>{/if}
-                <h5><a href="{$r[url]}" target="_blank" class="blue fn">{$r[title]}</a> - <a href="{if strpos($CATEGORYS[$r[catid]][url],'http://')===false}{$siteurl}{$CATEGORYS[$r[catid]][url]}{else}{$CATEGORYS[$r[catid]][url]}{/if}" class="blue f12 fn">{$CATEGORYS[$r[catid]][catname]}</a> - <span class="green f12 fn">å‘å¸ƒæ—¶é—´ï¼š{date('Y-m-d H:i',$r[updatetime])}</span></h5>
+                <h5><a href="{$r[url]}" target="_blank" class="blue fn">{$r[title]}</a> - <a href="{if strpos($CATEGORYS[$r[catid]][url],'http://')===false}{$siteurl}{$CATEGORYS[$r[catid]][url]}{else}{$CATEGORYS[$r[catid]][url]}{/if}" class="blue f12 fn">{$CATEGORYS[$r[catid]][catname]}</a> - <span class="green f12 fn">·¢²¼Ê±¼ä£º{date('Y-m-d H:i',$r[updatetime])}</span></h5>
                 <p>{$r[description]}</p>
 			</li>
 			{/loop}

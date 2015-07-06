@@ -1,7 +1,7 @@
 <?php
 defined('IN_PHPCMS') or exit('No permission resources.');
 /**
- * çŸ­ä¿¡å‘é€æŽ¥å£
+ * ¶ÌÐÅ·¢ËÍ½Ó¿Ú
  */
 
 $sms_report_db = pc_base::load_model('sms_report_model');
@@ -31,43 +31,43 @@ $posttime = SYS_TIME-86400;
 $where = "`mobile`='$mobile' AND `posttime`>'$posttime'";
 $num = $sms_report_db->count($where);
 if($num > 3) {
-	exit('-1');//å½“æ—¥å‘é€çŸ­ä¿¡æ•°é‡è¶…è¿‡é™åˆ¶ 3 æ¡
+	exit('-1');//µ±ÈÕ·¢ËÍ¶ÌÐÅÊýÁ¿³¬¹ýÏÞÖÆ 3 Ìõ
 }
-//åŒä¸€IP 24å°æ—¶å…è®¸è¯·æ±‚çš„æœ€å¤§æ•°
-$allow_max_ip = 10;//æ­£å¸¸æ³¨å†Œç›¸å½“äºŽ 10 ä¸ªäºº
+//Í¬Ò»IP 24Ð¡Ê±ÔÊÐíÇëÇóµÄ×î´óÊý
+$allow_max_ip = 10;//Õý³£×¢²áÏàµ±ÓÚ 10 ¸öÈË
 $ip = ip();
 $where = "`ip`='$ip' AND `posttime`>'$posttime'";
 $num = $sms_report_db->count($where);
 if($num >= $allow_max_ip) {
-	exit('-3');//å½“æ—¥å•IP å‘é€çŸ­ä¿¡æ•°é‡è¶…è¿‡ $allow_max_ip
+	exit('-3');//µ±ÈÕµ¥IP ·¢ËÍ¶ÌÐÅÊýÁ¿³¬¹ý $allow_max_ip
 }
-if(intval($sms_setting[$siteid]['sms_enable']) == 0) exit('-99'); //çŸ­ä¿¡åŠŸèƒ½å…³é—­
+if(intval($sms_setting[$siteid]['sms_enable']) == 0) exit('-99'); //¶ÌÐÅ¹¦ÄÜ¹Ø±Õ
 
 
-$sms_uid = $sms_setting[$siteid]['userid'];//çŸ­ä¿¡æŽ¥å£ç”¨æˆ·ID
-$sms_pid = $sms_setting[$siteid]['productid'];//äº§å“ID
-$sms_passwd = $sms_setting[$siteid]['sms_key'];//32ä½å¯†ç 
+$sms_uid = $sms_setting[$siteid]['userid'];//¶ÌÐÅ½Ó¿ÚÓÃ»§ID
+$sms_pid = $sms_setting[$siteid]['productid'];//²úÆ·ID
+$sms_passwd = $sms_setting[$siteid]['sms_key'];//32Î»ÃÜÂë
 
 $posttime = SYS_TIME-600;
 $rs = $sms_report_db->get_one("`mobile`='$mobile' AND `posttime`>'$posttime'");
 if($rs['id_code']) {
 	$id_code = $rs['id_code'];
 } else {
-	$id_code = random(6);//å”¯ä¸€å—ï¼Œç”¨äºŽæ‰©å±•éªŒè¯
+	$id_code = random(6);//Î¨Ò»Âð£¬ÓÃÓÚÀ©Õ¹ÑéÖ¤
 }
-//$send_txt = 'å°Šæ•¬çš„ç”¨æˆ·æ‚¨å¥½ï¼Œæ‚¨åœ¨'.$sitename.'çš„æ³¨å†ŒéªŒè¯ç ä¸ºï¼š'.$id_code.'ï¼ŒéªŒè¯ç æœ‰æ•ˆæœŸä¸º5åˆ†é’Ÿã€‚';
+//$send_txt = '×ð¾´µÄÓÃ»§ÄúºÃ£¬ÄúÔÚ'.$sitename.'µÄ×¢²áÑéÖ¤ÂëÎª£º'.$id_code.'£¬ÑéÖ¤ÂëÓÐÐ§ÆÚÎª5·ÖÖÓ¡£';
 $send_txt = $id_code;
 
-$send_userid = intval($_GET['send_userid']);//æ“ä½œè€…id
+$send_userid = intval($_GET['send_userid']);//²Ù×÷Õßid
 
-pc_base::load_app_class('smsapi', 'sms', 0); //å¼•å…¥smsapiç±»
+pc_base::load_app_class('smsapi', 'sms', 0); //ÒýÈësmsapiÀà
 
-$smsapi = new smsapi($sms_uid, $sms_pid, $sms_passwd); //åˆå§‹åŒ–æŽ¥å£ç±»
-//$smsapi->get_price(); //èŽ·å–çŸ­ä¿¡å‰©ä½™æ¡æ•°å’Œé™åˆ¶çŸ­ä¿¡å‘é€çš„ipåœ°å€
+$smsapi = new smsapi($sms_uid, $sms_pid, $sms_passwd); //³õÊ¼»¯½Ó¿ÚÀà
+//$smsapi->get_price(); //»ñÈ¡¶ÌÐÅÊ£ÓàÌõÊýºÍÏÞÖÆ¶ÌÐÅ·¢ËÍµÄipµØÖ·
 $mobile = explode(',',$mobile);
 
 $tplid = 1;
 $sent_time = intval($_POST['sendtype']) == 2 && !empty($_POST['sendtime'])  ? trim($_POST['sendtime']) : date('Y-m-d H:i:s',SYS_TIME);
-$smsapi->send_sms($mobile, $send_txt, $sent_time, CHARSET,$id_code,$tplid); //å‘é€çŸ­ä¿¡
+$smsapi->send_sms($mobile, $send_txt, $sent_time, CHARSET,$id_code,$tplid); //·¢ËÍ¶ÌÐÅ
 echo 0;
 ?>

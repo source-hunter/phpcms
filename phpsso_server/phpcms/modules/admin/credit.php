@@ -7,7 +7,7 @@ class credit extends admin {
 
 	private $db;
 	/**
-	 * 鏋愭瀯鍑芥暟
+	 * 析构函数
 	 */
 	public function __construct() {	
 		parent::__construct();
@@ -15,7 +15,7 @@ class credit extends admin {
 	}
 	
 	/**
-	 * 棣栭〉
+	 * 首页
 	 */
 	public function manage() {
 		$applist = getcache('applist');
@@ -26,7 +26,7 @@ class credit extends admin {
 	}
 	
 	/**
-	 * 棣栭〉
+	 * 首页
 	 */
 	public function delete() {
 		$id = isset($_POST['id']) ? $_POST['id'] : showmessage(L('illegal_parameters'), HTTP_REFERER);
@@ -43,7 +43,7 @@ class credit extends admin {
 	}
 	
 	/**
-	 * 娣诲姞瑙勫垯
+	 * 添加规则
 	 */
 	public function add() {
 		if (isset($_POST['dosubmit'])) {
@@ -68,7 +68,7 @@ class credit extends admin {
 			$creditlist = string2array($creditlistarr['data']);
 			$creditlist[] = $ruledata;
 			$noticedata['creditlist'] = $creditlist;
-			//鍔犲叆娑堟伅闃熷垪
+			//加入消息队列
 			messagequeue::add('credit_update', $noticedata);
 			
 			setcache('creditlist', $creditlist);
@@ -80,7 +80,7 @@ class credit extends admin {
 	}
 	
 	/**
-	 * 鑾峰彇搴旂敤绉垎鍒楄〃
+	 * 获取应用积分列表
 	 */
 	public function creditlist() {
 		$appid = isset($_GET['appid']) ? $_GET['appid'] : exit('0');

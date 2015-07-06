@@ -14,37 +14,37 @@ include $this->admin_tpl('header', 'admin');
 	<table class="table_form" width="100%" cellspacing="0">
 		<tbody>
 			<tr>
-				<th width="200"><?php echo L('special_title')?>ï¼š</th>
+				<th width="200"><?php echo L('special_title')?>£º</th>
 				<td><input name="special[title]" id="title" class="input-text" value="<?php echo new_html_special_chars($info['title']);?>" type="text" size="40"></td>
 			</tr>
 			<tr>
-				<th><?php echo L('special_banner')?>ï¼š</th>
+				<th><?php echo L('special_banner')?>£º</th>
 				<td><?php echo form::images('special[banner]', 'banner', $info['banner'], 'special', '', 40)?></td>
 			</tr>
 			<tr>
-				<th><?php echo L('sepcial_thumb')?>ï¼š</th>
+				<th><?php echo L('sepcial_thumb')?>£º</th>
 				<td><?php echo form::images('special[thumb]', 'thumb', $info['thumb'], 'special', '', 40, '', '', '', array(350, 350))?></td>
 			</tr>
 			<tr>
-				<th><?php echo L('special_intro')?>ï¼š</th>
+				<th><?php echo L('special_intro')?>£º</th>
 				<td><textarea name="special[description]" id="description" cols="50" rows="6"><?php echo $info['description'];?></textarea></td>
 			</tr>
 			<tr>
-		    	<th align="right" valign="top"><?php echo L('ishtml')?>ï¼š</th>
+		    	<th align="right" valign="top"><?php echo L('ishtml')?>£º</th>
 		        <td valign="top"><?php echo form::radio(array('1'=>L('yes'), '0'=>L('no')), $info['ishtml'], 'name="special[ishtml]"');?>
 		        </td>
 		    </tr>
 		    <tr id="file_div" style="display:<?php if($info['ishtml']) {?> <?php } else {?>none<?php }?>;">
-		    	<th align="right" valign="top"><?php echo L('special_filename')?>ï¼š</th>
+		    	<th align="right" valign="top"><?php echo L('special_filename')?>£º</th>
 		        <td valign="top"><input type="text" name="special[filename]" id="filename" class="input-text"<?php if($info['ishtml']) {?> readonly<?php }?> value="<?php echo $info['filename']?>" size="20">
 		        </td>
 		    </tr>
 		    <tr>
-		    	<th width="200"><?php echo L('special_type')?>ï¼š<a href="javascript:addItem()" title="<?php echo L('add')?>"><span style="color:red;" >+</span></a></th>
+		    	<th width="200"><?php echo L('special_type')?>£º<a href="javascript:addItem()" title="<?php echo L('add')?>"><span style="color:red;" >+</span></a></th>
 		        <td valign="top">
 		        <div id="option_list">
 		        <?php if(is_array($types)) { $k = 1; foreach($types as $t) {?>
-		        	<div class="mb6"><span><?php echo L('type_id')?>ï¼š<?php echo $t['typeid']?>&nbsp;&nbsp;<?php echo L('type_name')?>ï¼š<input type="hidden" name="type[<?php echo $k?>][typeid]" value="<?php echo $t['typeid']?>"><input type="text" name="type[<?php echo $k?>][name]" <?php if ($k==1) {?>id="type_name"<?php }?> value="<?php echo new_html_special_chars($t['name'])?>" class="input-text" size="15">&nbsp;&nbsp;<?php echo L('type_path')?>ï¼š<input type="text" name="type[<?php echo $k?>][typedir]" <?php if ($k==1) {?>id="type_path"<?php }?> value="<?php echo $t['typedir']?>" class="input-text" size="15">&nbsp;&nbsp;<?php echo L('listorder')?>ï¼š<input type="text" name="type[<?php echo $k?>][listorder]" value="<?php echo $t['listorder']?>" size="6" class="input-text" ></span>&nbsp;<?php if ($k!=1) {?><a href="javascript:;" onclick="descItem(this, <?php echo $k?>);"><?php echo L('remove')?></a><?php }?></div>
+		        	<div class="mb6"><span><?php echo L('type_id')?>£º<?php echo $t['typeid']?>&nbsp;&nbsp;<?php echo L('type_name')?>£º<input type="hidden" name="type[<?php echo $k?>][typeid]" value="<?php echo $t['typeid']?>"><input type="text" name="type[<?php echo $k?>][name]" <?php if ($k==1) {?>id="type_name"<?php }?> value="<?php echo new_html_special_chars($t['name'])?>" class="input-text" size="15">&nbsp;&nbsp;<?php echo L('type_path')?>£º<input type="text" name="type[<?php echo $k?>][typedir]" <?php if ($k==1) {?>id="type_path"<?php }?> value="<?php echo $t['typedir']?>" class="input-text" size="15">&nbsp;&nbsp;<?php echo L('listorder')?>£º<input type="text" name="type[<?php echo $k?>][listorder]" value="<?php echo $t['listorder']?>" size="6" class="input-text" ></span>&nbsp;<?php if ($k!=1) {?><a href="javascript:;" onclick="descItem(this, <?php echo $k?>);"><?php echo L('remove')?></a><?php }?></div>
 		        <?php $k++; } }?>
 		        </div>
 		        </td>
@@ -55,35 +55,35 @@ include $this->admin_tpl('header', 'admin');
 <div id="div_setting_2" class="contentList pad-10 hidden">
 	<table width="100%" class="table_form ">
 		<tr>
-			<th width="200"><?php echo L('pics_news')?>ï¼š</th>
+			<th width="200"><?php echo L('pics_news')?>£º</th>
 			<td><span id="relation"><?php if ($info['pics']) {?><ul id="relation_relation" class="list-dot"><li><span><?php echo $pics['2']?></span><a onclick="remove_relation('relation', 'pics')" class="close" href="javascript:void(0);"></a></li></ul><?php }?></span><input type="button" value="<?php echo L('choose_pic_news')?>" class="button" onclick="import_info('?m=special&c=special&a=public_get_pics','<?php echo L('choose_pic_news')?>', 'msg_id', 'relation', 'pics');"><input type="hidden" name="special[pics]" value="<?php echo $info['pics']?>" id="pics"><span class="onShow">(<?php echo L('choose_pic_model')?>)</span></td>
 		</tr>
 		<tr>
-			<th><?php echo L('add_vote')?>ï¼š</th>
+			<th><?php echo L('add_vote')?>£º</th>
 			<td><span id="vote_msg"><?php if ($info['voteid']) {?><ul id="relation_vote_msg" class="list-dot"><li><span><?php echo $vote_info['2']?></span><a onclick="remove_relation('vote_msg', 'voteid')" class="close" href="javascript:void(0);"></a></li></ul><?php }?></span><input type="button" class="button" value="<?php echo L('choose_exist_vote')?>" onclick="import_info('?m=vote&c=vote&a=public_get_votelist&from_api=1&target=dialog','<?php echo L('choose_vote')?>', 'msg_id', 'vote_msg', 'voteid');"><input type="hidden" name="special[voteid]" value="<?php echo $info['voteid']?>" id="voteid">&nbsp;<input type="button" class="button" value="<?php echo L('add_new_vote')?>" onclick="import_info('?m=vote&c=vote&a=add&from_api=1&target=dialog','<?php echo L('add_new_vote')?>', 'subject_title', 'vote_msg', 'voteid');"></td>
 		</tr>
 		<tr>
-		    <th align="right"  valign="top"><?php echo L('template_style')?>ï¼š</th>
+		    <th align="right"  valign="top"><?php echo L('template_style')?>£º</th>
 		    <td valign="top"><?php echo form::select($template_list, $info['style'], 'name="special[style]" id="style" onchange="load_file_list(this.value)"', L('please_select'))?><?php if ($info['style']) {?><script type="text/javascript">$.getJSON('?m=admin&c=category&a=public_tpl_file_list&style=<?php echo $info['style']?>&module=special&templates=index|list|show&id=<?php echo $info['index_template']?>|<?php echo $info['list_template']?>|<?php echo $info['show_template']?>&name=special', function(data){$('#index_template').html(data.index_template);$('#list_template').html(data.list_template);$('#show_template').html(data.show_template);});</script><?php }?></td>
 		</tr>
 		<tr>
-			<th align="right"  valign="top"><?php echo L('special_template')?>ï¼š</th>
+			<th align="right"  valign="top"><?php echo L('special_template')?>£º</th>
 			<td valign="top" id="index_template"><?php echo form::select_template('default', 'special', $info['index_template'], 'name="special[index_template]"', 'index');?></td>
 		</tr>
 		<tr>
-			<th align="right"  valign="top"><?php echo L('special_type_template')?>ï¼š</th>
+			<th align="right"  valign="top"><?php echo L('special_type_template')?>£º</th>
 			<td valign="top" id="list_template"><?php echo form::select_template('default', 'special', $info['list_template'], 'name="special[list_template]"', 'list');?></td>
 		</tr>
 		<tr>
-			<th align="right"  valign="top"><?php echo L('special_content_template')?>ï¼š</th>
+			<th align="right"  valign="top"><?php echo L('special_content_template')?>£º</th>
 			<td valign="top" id="show_template"><?php echo form::select_template('default', 'special', $info['show_template'], 'name="special[show_template]"', 'show');?></td>
 		</tr>
 		<tr>
-			<th align="right"  valign="top"><?php echo L('index_page')?>ï¼š</th>
+			<th align="right"  valign="top"><?php echo L('index_page')?>£º</th>
 			<td valign="top"><?php echo form::radio(array('0'=>L('no'), '1'=>L('yes')), $info['ispage'], 'name="special[ispage]"');?></td>
 		</tr>
 		<tr>
-			<th align="right"  valign="top"><?php echo L('special_status')?>ï¼š</th>
+			<th align="right"  valign="top"><?php echo L('special_status')?>£º</th>
 			<td valign="top"><?php echo form::radio(array('0'=>L('open'), '1'=>L('pause')), $info['disabled'], 'name="special[disabled]"');?></td>
 		</tr>
 	</table>
@@ -130,7 +130,7 @@ function load_file_list(id) {
 
 function addItem() {
 	var n = $('#option_list').find('input[type="text"]').length/3+1;
-	var newOption =  '<div class="mb6"><span style="padding-left:76px"><?php echo L('type_name')?>ï¼š<input type="text" name="type['+n+'][name]" class="input-text" size="15">&nbsp;&nbsp;<?php echo L('type_path')?>ï¼š<input type="text" name="type['+n+'][typedir]" class="input-text" size="15">&nbsp;&nbsp;<?php echo L('listorder')?>ï¼š<input type="text" name="type['+n+'][listorder]" value="'+n+'" size="6" class="input-text" ></span>&nbsp;<a href="javascript:;" onclick="descItem(this);"><?php echo L('remove')?></a></div>';
+	var newOption =  '<div class="mb6"><span style="padding-left:76px"><?php echo L('type_name')?>£º<input type="text" name="type['+n+'][name]" class="input-text" size="15">&nbsp;&nbsp;<?php echo L('type_path')?>£º<input type="text" name="type['+n+'][typedir]" class="input-text" size="15">&nbsp;&nbsp;<?php echo L('listorder')?>£º<input type="text" name="type['+n+'][listorder]" value="'+n+'" size="6" class="input-text" ></span>&nbsp;<a href="javascript:;" onclick="descItem(this);"><?php echo L('remove')?></a></div>';
 	$('#option_list').append(newOption);
 }
 

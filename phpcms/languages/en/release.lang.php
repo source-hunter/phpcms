@@ -1,6 +1,6 @@
 <?php
 $LANG['the_site_not_release'] = 'There is no Publishing Point on site';
-$LANG['release_point_connect_failure'] = 'Nodeã€Ž {name} ã€connecting failed';
+$LANG['release_point_connect_failure'] = 'Node¡º {name} ¡»connecting failed';
 $LANG['peed_your_server'] = 'The speed of synchronization is dependent upon the speed of publishing point on your server.';
 $LANG['are_release_ing'] = 'Synchronizing';
 $LANG['done'] = 'Finished';

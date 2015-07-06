@@ -1,9 +1,9 @@
 <?php
 defined('IN_PHPCMS') or exit('No permission resources.'); 
 /**
- * çŸ­ä¿¡å‘é€æŽ¥å£
+ * ¶ÌÐÅ·¢ËÍ½Ó¿Ú
  */
-pc_base::load_app_class('smsapi', 'sms', 0); //å¼•å…¥smsapiç±»
+pc_base::load_app_class('smsapi', 'sms', 0); //ÒýÈësmsapiÀà
 $sms_report_db = pc_base::load_model('sms_report_model');
 $mobile = $_GET['mobile'];
 $siteid = $_REQUEST['siteid'] ? $_REQUEST['siteid'] : 1;
@@ -11,25 +11,25 @@ $sms_setting = getcache('sms','sms');
 $sitelist = getcache('sitelist', 'commons');
 $sitename = $sitelist[$siteid]['name'];
 if(!preg_match('/^1([0-9]{9})/',$mobile)) exit('mobile phone error');
-if(intval($sms_setting[$siteid]['sms_enable']) == 0) exit(1); //çŸ­ä¿¡åŠŸèƒ½å…³é—­
+if(intval($sms_setting[$siteid]['sms_enable']) == 0) exit(1); //¶ÌÐÅ¹¦ÄÜ¹Ø±Õ
 
-//æ£€æŸ¥ä¸€ä¸ªå°æ—¶å†…å‘çŸ­ä¿¡æ¬¡æ•°æ˜¯è¿˜è¶…è¿‡3æ¬¡
+//¼ì²éÒ»¸öÐ¡Ê±ÄÚ·¢¶ÌÐÅ´ÎÊýÊÇ»¹³¬¹ý3´Î
 $posttime = SYS_TIME-3600;
 $where = "`mobile`='$mobile' AND `posttime`>'$posttime'";
 $num = $sms_report_db->count($where);
 if($num > 2) {
-	exit(1);//ä¸€å°æ—¶å†…å‘é€çŸ­ä¿¡æ•°é‡è¶…è¿‡é™åˆ¶ 3 æ¡
+	exit(1);//Ò»Ð¡Ê±ÄÚ·¢ËÍ¶ÌÐÅÊýÁ¿³¬¹ýÏÞÖÆ 3 Ìõ
 }
 
-$sms_uid = $sms_setting[$siteid]['userid'];//çŸ­ä¿¡æŽ¥å£ç”¨æˆ·ID
-$sms_pid = $sms_setting[$siteid]['productid'];//äº§å“ID
-$sms_passwd = $sms_setting[$siteid]['sms_key'];//32ä½å¯†ç 
-$smsapi = new smsapi($sms_uid, $sms_pid, $sms_passwd); //åˆå§‹åŒ–æŽ¥å£ç±»
+$sms_uid = $sms_setting[$siteid]['userid'];//¶ÌÐÅ½Ó¿ÚÓÃ»§ID
+$sms_pid = $sms_setting[$siteid]['productid'];//²úÆ·ID
+$sms_passwd = $sms_setting[$siteid]['sms_key'];//32Î»ÃÜÂë
+$smsapi = new smsapi($sms_uid, $sms_pid, $sms_passwd); //³õÊ¼»¯½Ó¿ÚÀà
 
-$id_code = random(6);//å”¯ä¸€å—ï¼Œç”¨äºŽæ‰©å±•éªŒè¯
-$send_txt = 'å°Šæ•¬çš„ç”¨æˆ·æ‚¨å¥½ï¼Œæ‚¨åœ¨'.$sitename.'çš„æ³¨å†ŒéªŒè¯ç ä¸ºï¼š'.$id_code.'ï¼ŒéªŒè¯ç æœ‰æ•ˆæœŸä¸º5åˆ†é’Ÿã€‚'; 
+$id_code = random(6);//Î¨Ò»Âð£¬ÓÃÓÚÀ©Õ¹ÑéÖ¤
+$send_txt = '×ð¾´µÄÓÃ»§ÄúºÃ£¬ÄúÔÚ'.$sitename.'µÄ×¢²áÑéÖ¤ÂëÎª£º'.$id_code.'£¬ÑéÖ¤ÂëÓÐÐ§ÆÚÎª5·ÖÖÓ¡£'; 
 $content = safe_replace($send_txt);
 $sent_time = intval($_POST['sendtype']) == 2 && !empty($_POST['sendtime'])  ? trim($_POST['sendtime']) : date('Y-m-d H:i:s',SYS_TIME);
-$smsapi->send_sms($mobile, $content, $sent_time, CHARSET,$id_code); //å‘é€çŸ­ä¿¡
+$smsapi->send_sms($mobile, $content, $sent_time, CHARSET,$id_code); //·¢ËÍ¶ÌÐÅ
 exit(1);
 ?>

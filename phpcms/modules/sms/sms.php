@@ -12,7 +12,7 @@ class sms extends admin {
 		$this->module_db = pc_base::load_model('module_model');
 		$this->member_db = pc_base::load_model('member_model');
 		
-		//è·å–çŸ­ä¿¡å¹³å°é…ç½®ä¿¡æ¯
+		//»ñÈ¡¶ÌĞÅÆ½Ì¨ÅäÖÃĞÅÏ¢
 		$siteid = get_siteid();
 		$this->sms_setting_arr = getcache('sms');
 		if(!empty($this->sms_setting_arr[$siteid])) {
@@ -21,17 +21,17 @@ class sms extends admin {
 			$this->sms_setting = array('userid'=>'', 'productid'=>'', 'sms_key'=>'');
 		}
 		
-		//åˆå§‹åŒ–smsapi
+		//³õÊ¼»¯smsapi
 		pc_base::load_app_class('smsapi', '', 0);
 		$this->smsapi = new smsapi($this->sms_setting['userid'], $this->sms_setting['productid'], $this->sms_setting['sms_key']);
 	}
 	
 	public function init() {	
 		$show_pc_hash = 1;
-		//çŸ­ä¿¡å¥—é¤åˆ—è¡¨
+		//¶ÌĞÅÌ×²ÍÁĞ±í
 		$smsprice_arr = $this->smsapi->get_price();
 
-		//å­—ç¬¦è½¬æ¢
+		//×Ö·û×ª»»
 		if(CHARSET != 'utf-8') {
 			if(is_array($smsprice_arr)) {
 				foreach ($smsprice_arr as $k=>$v) {
@@ -41,7 +41,7 @@ class sms extends admin {
 			}
 		}
 		
-		//çŸ­ä¿¡å‰©ä½™æ¡æ•°
+		//¶ÌĞÅÊ£ÓàÌõÊı
 		$smsinfo_arr = $this->smsapi->get_smsinfo();
 
 		include $this->admin_tpl('index');
@@ -49,11 +49,11 @@ class sms extends admin {
 	
 	/**
 	 * 
-	 * çŸ­ä¿¡å……å€¼è®°å½•
+	 * ¶ÌĞÅ³äÖµ¼ÇÂ¼
 	 */
 	public function sms_buy_history() {
 		$payinfo_arr = $this->smsapi->get_buyhistory();	
-		//å­—ç¬¦è½¬æ¢
+		//×Ö·û×ª»»
 		if(CHARSET != 'utf-8') {
 			if(is_array($payinfo_arr)) foreach ($payinfo_arr as $k=>$v) {
 				$payinfo_arr[$k]['name'] = iconv('utf-8', CHARSET, $payinfo_arr[$k]['name']);
@@ -66,7 +66,7 @@ class sms extends admin {
 	
 	/**
 	 * 
-	 * çŸ­ä¿¡æ¶ˆè´¹è®°å½•
+	 * ¶ÌĞÅÏû·Ñ¼ÇÂ¼
 	 */
 	public function sms_pay_history() {
 		
@@ -106,13 +106,13 @@ class sms extends admin {
 		if(empty($this->smsapi->userid)) {
 			showmessage(L('need_band'), 'index.php?m=sms&c=sms&a=sms_setting&menuid='.$_GET[menuid].'&pc_hash='.$_SESSION['pc_hash']);
 		}
-		//æ£€æŸ¥çŸ­ä¿¡ä½™é¢
+		//¼ì²é¶ÌĞÅÓà¶î
 		if($this->sms_setting['sms_key']) {
 			$smsinfo = $this->smsapi->get_smsinfo();
 		}
 
 		if(isset($_POST['dosubmit'])) {
-			//ç»„åˆçŸ­ä¿¡å‚æ•°å†…å®¹
+			//×éºÏ¶ÌĞÅ²ÎÊıÄÚÈİ
 			$content = '';
 			if(is_array($_POST['msg']) && !empty($_POST['msg'])){
 				foreach ($_POST['msg'] as $val) { 
@@ -127,19 +127,19 @@ class sms extends admin {
 			$mobile = explode("\r\n", trim($_POST['mobile'],"\r\n"));
 			$mobile = array_unique($mobile);
 			$tplid = intval($_POST['tplid']);
-			//è¿‡æ»¤éæ‰‹æœºå·ç 
+			//¹ıÂË·ÇÊÖ»úºÅÂë
 			foreach ($mobile as $k=>$v) {
 				if(!preg_match('/^1([0-9]{9})/',$v)) {
 					unset($mobile[$k]);
 				}
 			}
 			
-			//çŸ­ä¿¡ä½™é¢ä¸è¶³
+			//¶ÌĞÅÓà¶î²»×ã
 			if($smsinfo['surplus'] < count($mobile)) {
 				showmessage(L('need_more_surplus'));
 			}
 			
-			//å‘é€çŸ­ä¿¡
+			//·¢ËÍ¶ÌĞÅ
 			$return = $this->smsapi->send_sms($mobile, $content, $_POST['sendtime'], CHARSET,'',$tplid);
 			
 			showmessage($return, HTTP_REFERER,6000);
@@ -155,12 +155,12 @@ class sms extends admin {
 				$grouplist[$k] = $v['name'];
 			}
 			
-			//ä¼šå‘˜æ‰€å±æ¨¡å‹		
+			//»áÔ±ËùÊôÄ£ĞÍ		
 			$modellistarr = getcache('member_model', 'commons');
 			foreach ($modellistarr as $k=>$v) {
 				$modellist[$k] = $v['name'];
 			}
-			//æ˜¾ç¤ºç¾¤å‘
+			//ÏÔÊ¾Èº·¢
 			$show_qf_url = $this->smsapi->show_qf_url();
 			
 			include $this->admin_tpl('sms_sent');
@@ -168,12 +168,12 @@ class sms extends admin {
 	}
 	
 	/*
-	* è·å–çŸ­ä¿¡æ¨¡ç‰ˆ,ajaxå¤„ç†
+	* »ñÈ¡¶ÌĞÅÄ£°æ,ajax´¦Àí
 	*/
 	public function public_get_tpl(){
 		$sceneid = intval($_GET['sceneid']);
 		if(!$sceneid){exit(0);}
-		//è·å–æœåŠ¡å™¨åœºæ™¯ï¼Œç»„æˆè¡¨å•å•é€‰é¡¹
+		//»ñÈ¡·şÎñÆ÷³¡¾°£¬×é³É±íµ¥µ¥Ñ¡Ïî
 		$tpl_arr = $this->smsapi->get_tpl($sceneid);
 		if(!empty($tpl_arr)){
 			exit($tpl_arr);
@@ -182,12 +182,12 @@ class sms extends admin {
 		}
  	}
 	/*
-	* æ˜¾ç¤ºçŸ­ä¿¡å†…å®¹,ajaxå¤„ç†
+	* ÏÔÊ¾¶ÌĞÅÄÚÈİ,ajax´¦Àí
 	*/
 	public function public_show_tpl(){
 		$tplid = intval($_GET['tplid']);
 		if(!$tplid){exit(0);}
-		//è·å–æ¨¡ç‰ˆå†…å®¹
+		//»ñÈ¡Ä£°æÄÚÈİ
 		$tpl_arr = $this->smsapi->show_tpl($tplid);
 		if(!empty($tpl_arr)){
 			exit($tpl_arr);
@@ -204,7 +204,7 @@ class sms extends admin {
 		$groupid = isset($_POST['groupid']) && !empty($_POST['groupid']) ? $_POST['groupid'] : '';
 		$modelid = isset($_POST['modelid']) && !empty($_POST['modelid']) ? $_POST['modelid'] : 10;
 
-		//å¼€å§‹æ—¶é—´å¤§äºç»“æŸæ—¶é—´ï¼Œç½®æ¢å˜é‡
+		//¿ªÊ¼Ê±¼ä´óÓÚ½áÊøÊ±¼ä£¬ÖÃ»»±äÁ¿
 		if($where_start_time > $where_end_time) {
 			$tmp = $where_start_time;
 			$where_start_time = $where_end_time;
@@ -227,7 +227,7 @@ class sms extends admin {
 		
 		$where .= "`regdate` BETWEEN '$where_start_time' AND '$where_end_time'";
 
-		//æ ¹æ®æ¡ä»¶è¯»å–ä¼šå‘˜ä¸»è¡¨
+		//¸ù¾İÌõ¼ş¶ÁÈ¡»áÔ±Ö÷±í
 		$total = $this->member_db->count($where);
 		$str = '';
 		$perpage = 10;
@@ -239,7 +239,7 @@ class sms extends admin {
 				$userid_arr[] = $v['userid']; 
 			}
 			$uids = to_sqls($userid_arr, '', 'userid');
-			//è¯»å–æ¨¡å‹è¡¨ä¸­æ‰‹æœºå·ç å­—æ®µ
+			//¶ÁÈ¡Ä£ĞÍ±íÖĞÊÖ»úºÅÂë×Ö¶Î
 			$this->member_db->set_model($modelid);
 			$data = $this->member_db->select($uids);
 			foreach ($data as $v) {

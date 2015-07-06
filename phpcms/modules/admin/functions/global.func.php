@@ -1,9 +1,9 @@
 <?php 
 	
 	/**
-	 * æ¨¡æ¿é£Žæ ¼åˆ—è¡¨
-	 * @param integer $siteid ç«™ç‚¹IDï¼ŒèŽ·å–å•ä¸ªç«™ç‚¹å¯ä½¿ç”¨çš„æ¨¡æ¿é£Žæ ¼åˆ—è¡¨
-	 * @param integer $disable æ˜¯å¦æ˜¾ç¤ºåœç”¨çš„{1:æ˜¯,0:å¦}
+	 * Ä£°å·ç¸ñÁÐ±í
+	 * @param integer $siteid Õ¾µãID£¬»ñÈ¡µ¥¸öÕ¾µã¿ÉÊ¹ÓÃµÄÄ£°å·ç¸ñÁÐ±í
+	 * @param integer $disable ÊÇ·ñÏÔÊ¾Í£ÓÃµÄ{1:ÊÇ,0:·ñ}
 	 */
 	function template_list($siteid = '', $disable = 0) {
 		$list = glob(PC_PATH.'templates'.DIRECTORY_SEPARATOR.'*', GLOB_ONLYDIR);
@@ -30,9 +30,9 @@
 		return $arr;
 	}
 	/**
-	 * è®¾ç½®configæ–‡ä»¶
-	 * @param $config é…å±žä¿¡æ¯
-	 * @param $filename è¦é…ç½®çš„æ–‡ä»¶åç§°
+	 * ÉèÖÃconfigÎÄ¼þ
+	 * @param $config ÅäÊôÐÅÏ¢
+	 * @param $filename ÒªÅäÖÃµÄÎÄ¼þÃû³Æ
 	 */
 	function set_config($config, $filename="system") {
 		$configfile = CACHE_PATH.'configs'.DIRECTORY_SEPARATOR.$filename.'.php';
@@ -52,7 +52,7 @@
 	}
 	
 	/**
-	 * èŽ·å–ç³»ç»Ÿä¿¡æ¯
+	 * »ñÈ¡ÏµÍ³ÐÅÏ¢
 	 */
 	function get_sysinfo() {
 		$sys_info['os']             = PHP_OS;
@@ -68,8 +68,8 @@
 	}
 
 	/**
-	 * æ£€æŸ¥ç›®å½•å¯å†™æ€§
-	 * @param $dir ç›®å½•è·¯å¾„
+	 * ¼ì²éÄ¿Â¼¿ÉÐ´ÐÔ
+	 * @param $dir Ä¿Â¼Â·¾¶
 	 */
 	function dir_writeable($dir) {
 		$writeable = 0;
@@ -86,7 +86,7 @@
 	}
 	
 	/**
-	 * è¿”å›žé”™è¯¯æ—¥å¿—å¤§å°ï¼Œå•ä½MB
+	 * ·µ»Ø´íÎóÈÕÖ¾´óÐ¡£¬µ¥Î»MB
 	 */
 	function errorlog_size() {
 		$logfile = CACHE_PATH.'error_log.php';

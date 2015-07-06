@@ -53,12 +53,12 @@ if(is_array($infos)){
 <!--
 function setting_role(id, name) {
 
-	window.top.art.dialog({title:'<?php echo L('sys_setting')?>ã€Š'+name+'ã€‹',id:'edit',iframe:'?m=admin&c=role&a=priv_setting&roleid='+id,width:'700',height:'500'});
+	window.top.art.dialog({title:'<?php echo L('sys_setting')?>¡¶'+name+'¡·',id:'edit',iframe:'?m=admin&c=role&a=priv_setting&roleid='+id,width:'700',height:'500'});
 }
 
 function setting_cat_priv(id, name) {
 
-	window.top.art.dialog({title:'<?php echo L('usersandmenus')?>ã€Š'+name+'ã€‹',id:'edit',iframe:'?m=admin&c=role&a=setting_cat_priv&roleid='+id,width:'700',height:'500'});
+	window.top.art.dialog({title:'<?php echo L('usersandmenus')?>¡¶'+name+'¡·',id:'edit',iframe:'?m=admin&c=role&a=setting_cat_priv&roleid='+id,width:'700',height:'500'});
 }
 //-->
 </script>

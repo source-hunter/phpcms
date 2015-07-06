@@ -14,7 +14,7 @@ class formguide extends admin {
 		$this->db = pc_base::load_model('sitemodel_model');
 	}
 	
-	//è¡¨å•å‘å¯¼åˆ—è¡¨
+	//±íµ¥Ïòµ¼ÁĞ±í
 	public function init() {
 		$page = max(intval($_GET['page']), 1);
 		$data = $this->db->listinfo(array('type' => 3, 'siteid'=>$this->get_siteid()), '`modelid` DESC', $page);
@@ -23,7 +23,7 @@ class formguide extends admin {
 	}
 	
 	/**
-	 * æ·»åŠ è¡¨å•å‘å¯¼
+	 * Ìí¼Ó±íµ¥Ïòµ¼
 	 */
 	public function add() {
 		if (isset($_POST['dosubmit'])) {
@@ -73,7 +73,7 @@ class formguide extends admin {
 	}
 	
 	/**
-	 * ç¼–è¾‘è¡¨å•å‘å¯¼
+	 * ±à¼­±íµ¥Ïòµ¼
 	 */
 	public function edit() {
 		if (!isset($_GET['formid']) || empty($_GET['formid'])) {
@@ -111,7 +111,7 @@ class formguide extends admin {
 	}
 	
 	/**
-	 * è¡¨å•å‘å¯¼ç¦ç”¨ã€å¼€å¯
+	 * ±íµ¥Ïòµ¼½ûÓÃ¡¢¿ªÆô
 	 */
 	public function disabled() {
 		if (!isset($_GET['formid']) || empty($_GET['formid'])) {
@@ -124,7 +124,7 @@ class formguide extends admin {
 	}
 	
 	/**
-	 * é¢„è§ˆ
+	 * Ô¤ÀÀ
 	 */
 	public function public_preview() {
 		if (!isset($_GET['formid']) || empty($_GET['formid'])) {
@@ -141,7 +141,7 @@ class formguide extends admin {
 	}
 	
 	/**
-	 * ajax æ£€æµ‹è¡¨æ˜¯é‡å¤
+	 * ajax ¼ì²â±íÊÇÖØ¸´
 	 */
 	public function public_checktable() {
 		if (isset($_GET['formid']) && !empty($_GET['formid'])) {
@@ -158,9 +158,9 @@ class formguide extends admin {
 	}
 	
 	/**
-	 * åˆ¤æ–­è¡¨å•æ•°æ®åˆæ³•æ€§
-	 * @param array $data è¡¨å•æ•°ç»„
-	 * @param intval $formid è¡¨å•id
+	 * ÅĞ¶Ï±íµ¥Êı¾İºÏ·¨ĞÔ
+	 * @param array $data ±íµ¥Êı×é
+	 * @param intval $formid ±íµ¥id
 	 */
 	private function check_info($data = array(), $formid = 0) {
 		if (empty($data) || $data['name']=='') {
@@ -177,7 +177,7 @@ class formguide extends admin {
 	}
 	
 	/**
-	 * åˆ é™¤è¡¨å•å‘å¯¼
+	 * É¾³ı±íµ¥Ïòµ¼
 	 */
 	public function delete() {
 		$siteid = $this->get_siteid();
@@ -208,7 +208,7 @@ class formguide extends admin {
 	}
 	
 	/**
-	 * ç»Ÿè®¡
+	 * Í³¼Æ
 	 */
 	public function stat() {
 		if (!isset($_GET['formid']) || empty($_GET['formid'])) {
@@ -227,16 +227,16 @@ class formguide extends admin {
 	}
 	
 	/**
-	 * æ¨¡å—é…ç½®
+	 * Ä£¿éÅäÖÃ
 	 */
 	public function setting() {
 		if (isset($_POST['dosubmit'])) {
 			$setting = getcache('formguide', 'commons');
 			$setting[$this->get_siteid()] = $_POST['setting'];
-			setcache('formguide', $setting, 'commons'); //è®¾ç½®ç¼“å­˜
-			$m_db = pc_base::load_model('module_model'); //è°ƒç”¨æ¨¡å—æ•°æ®æ¨¡å‹
+			setcache('formguide', $setting, 'commons'); //ÉèÖÃ»º´æ
+			$m_db = pc_base::load_model('module_model'); //µ÷ÓÃÄ£¿éÊı¾İÄ£ĞÍ
 			$setting = array2string($_POST['setting']);  
-			$m_db->update(array('setting'=>$setting), array('module'=>ROUTE_M)); //å°†é…ç½®ä¿¡æ¯å­˜å…¥æ•°æ®è¡¨ä¸­
+			$m_db->update(array('setting'=>$setting), array('module'=>ROUTE_M)); //½«ÅäÖÃĞÅÏ¢´æÈëÊı¾İ±íÖĞ
 			
 			showmessage(L('setting_updates_successful'), HTTP_REFERER, '', 'setting');
 		} else {
@@ -246,8 +246,8 @@ class formguide extends admin {
 	}
 	
 	/**
-	 * æ‰§è¡Œsqlæ–‡ä»¶ï¼Œåˆ›å»ºæ•°æ®è¡¨ç­‰
-	 * @param string $sql sqlè¯­å¥
+	 * Ö´ĞĞsqlÎÄ¼ş£¬´´½¨Êı¾İ±íµÈ
+	 * @param string $sql sqlÓï¾ä
 	 */
 	private function sql_execute($sql) {
 	    $sqls = $this->sql_split($sql);
@@ -265,8 +265,8 @@ class formguide extends admin {
 	}
 	
 	/**
-	 * å¤„ç†sqlè¯­å¥ï¼Œæ‰§è¡Œæ›¿æ¢å‰ç¼€éƒ½åŠŸèƒ½ã€‚
-	 * @param string $sql åŸå§‹çš„sqlï¼Œå°†ä¸€äº›å¤§ä¼—çš„éƒ¨åˆ†æ›¿æ¢æˆç§æœ‰çš„
+	 * ´¦ÀísqlÓï¾ä£¬Ö´ĞĞÌæ»»Ç°×º¶¼¹¦ÄÜ¡£
+	 * @param string $sql Ô­Ê¼µÄsql£¬½«Ò»Ğ©´óÖÚµÄ²¿·ÖÌæ»»³ÉË½ÓĞµÄ
 	 */
 	private function sql_split($sql) {
 		$database = pc_base::load_config('database');

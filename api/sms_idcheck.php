@@ -1,7 +1,7 @@
 <?php
 defined('IN_PHPCMS') or exit('No permission resources.'); 
 /**
- * çŸ­ä¿¡éªŒè¯æŽ¥å£
+ * ¶ÌÐÅÑéÖ¤½Ó¿Ú
  */
  if($_GET['action']=='id_code') {
  	$sms_report_db = pc_base::load_model('sms_report_model');
@@ -14,7 +14,7 @@ defined('IN_PHPCMS') or exit('No permission resources.');
 		$where = "`mobile`='$mobile' AND `posttime`>'$posttime'";
 		$r = $sms_report_db->get_one($where,'id,id_code','id DESC');
 		if($r && $r['id_code']==$mobile_verify) {
-			if($_GET['jscheck']!=1) {//éªŒè¯é€šè¿‡åŽï¼Œå°†éªŒè¯ç ç½®ä¸ºç©ºï¼Œé˜²æ­¢é‡å¤åˆ©ç”¨ï¼
+			if($_GET['jscheck']!=1) {//ÑéÖ¤Í¨¹ýºó£¬½«ÑéÖ¤ÂëÖÃÎª¿Õ£¬·ÀÖ¹ÖØ¸´ÀûÓÃ£¡
 				$sms_report_db->update(array('id_code'=>''),$where);
 			}
 			exit('1');
@@ -22,7 +22,7 @@ defined('IN_PHPCMS') or exit('No permission resources.');
 			exit('0');
 		}
 	}else{
-		/*ç”¨æˆ·è‡ªå‘çŸ­ä¿¡éªŒè¯åˆ¤æ–­ï¼Œä¸å†ä¼ é€’mobileå€¼ï¼Œåªåˆ¤æ–­10åˆ†é’Ÿå†…è¿™ä¸ªéªŒè¯ç æ˜¯å¦å­˜åœ¨ï¼Œå­˜åœ¨å³è®¤ä¸ºæ­¤ç å¯¹åº”çš„æ‰‹æœºå·ä¸ºä½ æ‰€æœ‰*/
+		/*ÓÃ»§×Ô·¢¶ÌÐÅÑéÖ¤ÅÐ¶Ï£¬²»ÔÙ´«µÝmobileÖµ£¬Ö»ÅÐ¶Ï10·ÖÖÓÄÚÕâ¸öÑéÖ¤ÂëÊÇ·ñ´æÔÚ£¬´æÔÚ¼´ÈÏÎª´ËÂë¶ÔÓ¦µÄÊÖ»úºÅÎªÄãËùÓÐ*/
 		$posttime = SYS_TIME-600;
 		$where = "`id_code`='$mobile_verify' AND `posttime`>'$posttime'";
 		$r = $sms_report_db->get_one($where,'id_code','id DESC');

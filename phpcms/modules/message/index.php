@@ -1,6 +1,6 @@
 <?php
 defined('IN_PHPCMS') or exit('No permission resources.');
-pc_base::load_app_class('foreground','member');//åŠ è½½foreground åº”ç”¨ç±». è‡ªåŠ¨åˆ¤æ–­æ˜¯å¦ç™»é™†.
+pc_base::load_app_class('foreground','member');//¼ÓÔØforeground Ó¦ÓÃÀà. ×Ô¶¯ÅĞ¶ÏÊÇ·ñµÇÂ½.
 pc_base::load_sys_class('format', '', 0);
 pc_base::load_sys_class('form', '', 0);
 
@@ -14,7 +14,7 @@ class index extends foreground {
 		$this->_userid = param::get_cookie('_userid');
 		$this->_groupid = get_memberinfo($this->_userid,'groupid');
 		pc_base::load_app_func('global');
-		//å®šä¹‰ç«™ç‚¹IDå¸¸é‡ï¼Œé€‰æ‹©æ¨¡ç‰ˆä½¿ç”¨
+		//¶¨ÒåÕ¾µãID³£Á¿£¬Ñ¡ÔñÄ£°æÊ¹ÓÃ
 		$siteid = isset($_GET['siteid']) ? intval($_GET['siteid']) : get_siteid();
   		define("SITEID",$siteid);
   	}
@@ -30,10 +30,10 @@ class index extends foreground {
 	
 	
 	/**
-	 * å‘é€æ¶ˆæ¯ 
+	 * ·¢ËÍÏûÏ¢ 
 	 */
 	public function send() {
-		//åˆ¤æ–­å½“å‰ä¼šå‘˜ï¼Œæ˜¯å¦å¯å‘ï¼ŒçŸ­æ¶ˆæ¯ï¼
+		//ÅĞ¶Ïµ±Ç°»áÔ±£¬ÊÇ·ñ¿É·¢£¬¶ÌÏûÏ¢£®
 		$this->message_db->messagecheck($this->_userid);
 		if(isset($_POST['dosubmit'])) {
 			$username = $this->_username;
@@ -51,14 +51,14 @@ class index extends foreground {
 	}
 	
 	/*
-	 *åˆ¤æ–­æ”¶ä»¶äººæ˜¯å¦å­˜åœ¨ 
+	 *ÅĞ¶ÏÊÕ¼şÈËÊÇ·ñ´æÔÚ 
 	 */
 	public function public_name() {
 		$username = isset($_GET['username']) && trim($_GET['username']) ? (pc_base::load_config('system', 'charset') == 'gbk' ? iconv('utf-8', 'gbk', trim($_GET['username'])) : trim($_GET['username'])) : exit('0');
 		$member_interface = pc_base::load_app_class('member_interface', 'member');
 		if ($username) {
 			$username = safe_replace($username);
-			//åˆ¤æ–­æ”¶ä»¶äººä¸èƒ½ä¸ºè‡ªå·±
+			//ÅĞ¶ÏÊÕ¼şÈË²»ÄÜÎª×Ô¼º
 			if($username == $this->_username){
 				exit('0');
 			}
@@ -75,7 +75,7 @@ class index extends foreground {
 	}
 	
 	/**
-	 * å‘ä»¶ç®±
+	 * ·¢¼şÏä
 	 */
 	public function outbox() { 
 		$where = array('send_from_id'=>$this->_username,'del_type'=>'0');
@@ -87,7 +87,7 @@ class index extends foreground {
 	}
 	
 	/**
-	 * æ”¶ä»¶ç®±
+	 * ÊÕ¼şÏä
 	 */
 	public function inbox() { 
 		$where = array('send_to_id'=>$this->_username,'folder'=>'inbox');
@@ -105,10 +105,10 @@ class index extends foreground {
 	}
 	
 	/**
-	 * ç¾¤å‘é‚®ä»¶
+	 * Èº·¢ÓÊ¼ş
 	 */
 	public function group() {
-		//æŸ¥è¯¢è‡ªå·±æœ‰æƒé™çœ‹çš„æ¶ˆæ¯
+		//²éÑ¯×Ô¼ºÓĞÈ¨ÏŞ¿´µÄÏûÏ¢
   		$where = array('typeid'=>1,'groupid'=>$this->_groupid,'status'=>1);
 		$page = isset($_GET['page']) && intval($_GET['page']) ? intval($_GET['page']) : 1;
 		$infos = $this->message_group_db->listinfo($where,$order = 'id DESC',$page, $pages = '8');
@@ -118,7 +118,7 @@ class index extends foreground {
 			foreach ($infos as $info){
 				$d = $this->message_data_db->select(array('userid'=>$this->_userid,'group_message_id'=>$info['id']));
 	 			if(!$d){
-	 				$status[$info['id']] = 0;//æœªè¯» çº¢è‰²
+	 				$status[$info['id']] = 0;//Î´¶Á ºìÉ«
 	 			}else {
 	 				$status[$info['id']] = 1;
 	 			}
@@ -129,8 +129,8 @@ class index extends foreground {
 	}
 	
 	/**
-	 * åˆ é™¤æ”¶ä»¶ç®±-çŸ­æ¶ˆæ¯ 
-	 * @param	intval	$sid	çŸ­æ¶ˆæ¯IDï¼Œé€’å½’åˆ é™¤(ä¿®æ”¹çŠ¶æ€ä¸ºoutbox)
+	 * É¾³ıÊÕ¼şÏä-¶ÌÏûÏ¢ 
+	 * @param	intval	$sid	¶ÌÏûÏ¢ID£¬µİ¹éÉ¾³ı(ĞŞ¸Ä×´Ì¬Îªoutbox)
 	 */
 	public function delete() {
 		if((!isset($_GET['messageid']) || empty($_GET['messageid'])) && (!isset($_POST['messageid']) || empty($_POST['messageid']))) {
@@ -147,8 +147,8 @@ class index extends foreground {
 	}
 	
 	/**
-	 * åˆ é™¤å‘ä»¶ç®± - çŸ­æ¶ˆæ¯ 
-	 * @param	intval	$sid	çŸ­æ¶ˆæ¯IDï¼Œé€’å½’åˆ é™¤( ä¿®æ”¹çŠ¶æ€ä¸ºdel_type =1 )
+	 * É¾³ı·¢¼şÏä - ¶ÌÏûÏ¢ 
+	 * @param	intval	$sid	¶ÌÏûÏ¢ID£¬µİ¹éÉ¾³ı( ĞŞ¸Ä×´Ì¬Îªdel_type =1 )
 	 */
 	public function del_type() {
 		if((!isset($_POST['messageid']) || empty($_POST['messageid']))) {
@@ -165,7 +165,7 @@ class index extends foreground {
 	}
 	
 	/**
-	 * æŸ¥çœ‹çŸ­æ¶ˆæ¯ - å¯¹å½“å‰ç”¨æˆ·æ˜¯å¦æœ‰æƒé™æŸ¥çœ‹
+	 * ²é¿´¶ÌÏûÏ¢ - ¶Ôµ±Ç°ÓÃ»§ÊÇ·ñÓĞÈ¨ÏŞ²é¿´
 	 */
 	public function check_user($messageid,$where){
 		$username = $this->_username;
@@ -175,31 +175,31 @@ class index extends foreground {
 		}else{
 			$result = $this->message_db->get_one(array("send_from_id"=>$username,"messageid"=>$messageid));
 		}
- 		if(!$result){//ä¸æ˜¯å½“å‰ç”¨æˆ·çš„æ¶ˆæ¯ï¼Œä¸èƒ½æŸ¥çœ‹
-			showmessage('è¯·å‹¿éæ³•è®¿é—®ï¼', HTTP_REFERER);echo '0';
+ 		if(!$result){//²»ÊÇµ±Ç°ÓÃ»§µÄÏûÏ¢£¬²»ÄÜ²é¿´
+			showmessage('ÇëÎğ·Ç·¨·ÃÎÊ£¡', HTTP_REFERER);echo '0';
  		} 
 	}
 	
 	
 	/**
-	 * æŸ¥çœ‹çŸ­æ¶ˆæ¯
+	 * ²é¿´¶ÌÏûÏ¢
 	 */
 	public function read() { 
 		if((!isset($_GET['messageid']) || empty($_GET['messageid'])) && (!isset($_POST['messageid']) || empty($_POST['messageid']))) return false;
 		$messageid = $_GET['messageid'] ? $_GET['messageid'] : $_POST['messageid'];
 		$messageid = intval($messageid);
-		//åˆ¤æ–­æ˜¯å¦å±äºå½“å‰ç”¨æˆ·
+		//ÅĞ¶ÏÊÇ·ñÊôÓÚµ±Ç°ÓÃ»§
 		$check_user = $this->check_user($messageid,'to'); 
 		
- 		//æŸ¥çœ‹è¿‡ä¿®æ”¹çŠ¶æ€ ä¸º 0 
+ 		//²é¿´¹ıĞŞ¸Ä×´Ì¬ Îª 0 
 		$this->message_db->update(array('status'=>'0'),array('messageid'=>$messageid));
-		//æŸ¥è¯¢æ¶ˆæ¯è¯¦æƒ…
+		//²éÑ¯ÏûÏ¢ÏêÇé
 		$infos = $this->message_db->get_one(array('messageid'=>$messageid));
 		if($infos['send_from_id']!='SYSTEM') $infos = new_html_special_chars($infos);
-		//è¿‡æ»¤ä¸€ä¸‹
+		//¹ıÂËÒ»ÏÂ
 		$info['send_from_id'] = safe_replace($infos['send_from_id']);
 		$info['send_to_id'] = safe_replace($infos['send_to_id']);
-		//æŸ¥è¯¢å›å¤æ¶ˆæ¯
+		//²éÑ¯»Ø¸´ÏûÏ¢
 		$where = array('replyid'=>$infos['messageid']);
 		$reply_infos = $this->message_db->listinfo($where,$order = 'messageid ASC',$page, $pages = '10');
 		$show_validator = $show_scroll = $show_header = true;
@@ -207,21 +207,21 @@ class index extends foreground {
 	}
 	
 	/**
-	 * æŸ¥çœ‹è‡ªå·±å‘çš„çŸ­æ¶ˆæ¯
+	 * ²é¿´×Ô¼º·¢µÄ¶ÌÏûÏ¢
 	 */
 	public function read_only() { 
 		$messageid = $_GET['messageid'] ? $_GET['messageid'] : $_POST['messageid'];
 		$messageid = intval($messageid);
 		if(!$messageid || empty($messageid)){
-			showmessage('è¯·å‹¿éæ³•è®¿é—®ï¼', HTTP_REFERER);
+			showmessage('ÇëÎğ·Ç·¨·ÃÎÊ£¡', HTTP_REFERER);
 		}
-		//åˆ¤æ–­æ˜¯å¦å±äºå½“å‰ç”¨æˆ·
+		//ÅĞ¶ÏÊÇ·ñÊôÓÚµ±Ç°ÓÃ»§
 		$check_user = $this->check_user($messageid,'from'); 
 		
-		//æŸ¥è¯¢æ¶ˆæ¯è¯¦æƒ…
+		//²éÑ¯ÏûÏ¢ÏêÇé
 		$infos = $this->message_db->get_one(array('messageid'=>$messageid));
 		$infos = new_html_special_chars($infos);
-		//æŸ¥è¯¢å›å¤æ¶ˆæ¯
+		//²éÑ¯»Ø¸´ÏûÏ¢
 		$where = array('replyid'=>$infos['messageid']);
 		$reply_infos = $this->message_db->listinfo($where,$order = 'messageid ASC',$page, $pages = '10');
 		$show_validator = $show_scroll = $show_header = true;
@@ -229,15 +229,15 @@ class index extends foreground {
 	}
 	
 	/**
-	 * æŸ¥çœ‹ç³»ç»ŸçŸ­æ¶ˆæ¯
+	 * ²é¿´ÏµÍ³¶ÌÏûÏ¢
 	 */
 	public function read_group(){
 		if((!isset($_GET['group_id']) || empty($_GET['group_id'])) && (!isset($_POST['group_id']) || empty($_POST['group_id']))) return false;
-		//æŸ¥è¯¢æ¶ˆæ¯è¯¦æƒ…
+		//²éÑ¯ÏûÏ¢ÏêÇé
 		$infos = $this->message_group_db->get_one(array('id'=>$_GET['group_id']));
 		$infos = new_html_special_chars($infos);
 		if(!is_array($infos))showmessage(L('message_not_exist'),'blank');
-		//æ£€æŸ¥æŸ¥çœ‹è¡¨æ˜¯å¦æœ‰è®°å½•,æ— åˆ™å‘message_data æ’å…¥æµè§ˆè®°å½•  
+		//¼ì²é²é¿´±íÊÇ·ñÓĞ¼ÇÂ¼,ÎŞÔòÏòmessage_data ²åÈëä¯ÀÀ¼ÇÂ¼  
 		$check = $this->message_data_db->select(array('userid'=>$this->_userid,'group_message_id'=>$_GET['group_id']));
 		if(!$check){
 			$this->message_data_db->insert(array('userid'=>$this->_userid,'group_message_id'=>$_GET['group_id']));
@@ -246,14 +246,14 @@ class index extends foreground {
 	}
 	
 	/**
-	 * å›å¤çŸ­æ¶ˆæ¯ 
+	 * »Ø¸´¶ÌÏûÏ¢ 
 	 */
 	public function reply() {
 		if(isset($_POST['dosubmit'])) {
 			$messageid = intval($_POST['info']['replyid']);
-			//åˆ¤æ–­å½“å‰ä¼šå‘˜ï¼Œæ˜¯å¦å¯å‘ï¼ŒçŸ­æ¶ˆæ¯ï¼
+			//ÅĞ¶Ïµ±Ç°»áÔ±£¬ÊÇ·ñ¿É·¢£¬¶ÌÏûÏ¢£®
 			$this->message_db->messagecheck($this->_userid);
-			//æ£€æŸ¥æ­¤æ¶ˆæ¯æ˜¯å¦æœ‰æƒé™å›å¤ 
+			//¼ì²é´ËÏûÏ¢ÊÇ·ñÓĞÈ¨ÏŞ»Ø¸´ 
 			$this->check_user($messageid,'to');
 			$info = array();
 			
@@ -265,7 +265,7 @@ class index extends foreground {
 			$info['subject'] = safe_replace($_POST['info']['subject']);
 			$info['replyid'] = intval($_POST['info']['replyid']);
 			
-			//å›å¤äººIDè¿›è¡Œå®‰å…¨å¤„ç†
+			//»Ø¸´ÈËID½øĞĞ°²È«´¦Àí
 			$send_to_id = safe_replace($_POST['info']['send_to_id']);
 			if(empty($send_to_id)) {
 				showmessage(L('user_noempty'),HTTP_REFERER);

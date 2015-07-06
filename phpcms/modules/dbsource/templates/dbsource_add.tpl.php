@@ -23,35 +23,35 @@ include $this->admin_tpl('header', 'admin');
 	<legend><?php echo L('configure_the_external_data_source')?></legend>
 	<table width="100%"  class="table_form">
   <tr>
-    <th width="80"><?php echo L('dbsource_name')?>ï¼š</th>
+    <th width="80"><?php echo L('dbsource_name')?>£º</th>
     <td class="y-bg"><input type="text" class="input-text" name="name" id="name" size="30" /></td>
   </tr>
   <tr>
-    <th><?php echo L('server_address')?>ï¼š</th>
+    <th><?php echo L('server_address')?>£º</th>
     <td class="y-bg"><input type="text" class="input-text" name="host" id="host" size="30" /></td>
   </tr>
     <tr>
-    <th><?php echo L('server_port')?>ï¼š</th>
+    <th><?php echo L('server_port')?>£º</th>
     <td class="y-bg"><input type="text" class="input-text" name="port" id="port" value="3306" size="30" /></td>
   </tr>
     <tr>
-    <th><?php echo L('username')?>ï¼š</th>
+    <th><?php echo L('username')?>£º</th>
     <td class="y-bg"><input type="text" class="input-text" name="username" id="username"  size="30"/></td>
   </tr>
       <tr>
-    <th><?php echo L('password')?>ï¼š</th>
+    <th><?php echo L('password')?>£º</th>
     <td class="y-bg"><input type="password" class="input-text" name="password" id="password"  size="30"/></td>
   </tr>
         <tr>
-    <th><?php echo L('database')?>ï¼š</th>
+    <th><?php echo L('database')?>£º</th>
     <td class="y-bg"><input type="text" class="input-text" name="dbname" id="dbname"  size="30"/></td>
   </tr>
   <tr>
-    <th><?php echo L('dbtablepre');?>ï¼š</th>
+    <th><?php echo L('dbtablepre');?>£º</th>
     <td class="y-bg"><input type="text" class="input-text" name="dbtablepre" id="dbtablepre"  size="30"/> </td> 
   </tr>
       <tr>
-    <th><?php echo L('charset')?>ï¼š</th>
+    <th><?php echo L('charset')?>£º</th>
     <td class="y-bg"><?php echo form::select(array('gbk'=>'GBK', 'utf8'=>'UTF-8', 'gb2312'=>'GB2312', 'latin1'=>'Latin1'), '', 'name="charset" id="charset"')?></td>
   </tr>
       <tr>

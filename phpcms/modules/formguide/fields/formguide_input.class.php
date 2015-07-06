@@ -8,7 +8,7 @@ class formguide_input {
 		$this->formid = $formid;
 		$this->fields = getcache('formguide_field_'.$formid, 'model');
 		$this->siteid = get_siteid();
-		//åˆå§‹åŒ–é™„ä»¶ç±»
+		//³õÊ¼»¯¸½¼şÀà
 		pc_base::load_sys_class('attachment','',0);
 		$this->siteid = param::get_cookie('siteid');
 		$this->attachment = new attachment('formguide','0',$this->siteid);
@@ -50,7 +50,7 @@ class formguide_input {
 			$func = $field['formtype'];
 			if(method_exists($this, $func)) $value = $this->$func($field['field'], $value);
 			$info[$field['field']] = $value;
-			//é¢œè‰²é€‰æ‹©ä¸ºéšè—åŸŸ åœ¨è¿™é‡Œè¿›è¡Œå–å€¼
+			//ÑÕÉ«Ñ¡ÔñÎªÒş²ØÓò ÔÚÕâÀï½øĞĞÈ¡Öµ
 			if ($_POST['style_color']) $info['style'] = $_POST['style_color'];
 			if($_POST['style_font_weight']) $info['style'] = $info['style'].';'.strip_tags($_POST['style_font_weight']);
 		}

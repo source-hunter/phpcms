@@ -2,7 +2,7 @@
 defined('IN_PHPCMS') or exit('No permission resources.'); 
 pc_base::load_app_class('admin', 'admin', 0);
 class check extends admin {
-	//æ•°æ®åº“è¿žæŽ¥
+	//Êý¾Ý¿âÁ¬½Ó
 	private $comment_check_db,$comment_db,$comment;
 	function __construct() {
 		$this->comment_data_db = pc_base::load_model('comment_data_model');

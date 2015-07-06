@@ -41,7 +41,7 @@ include $this->admin_tpl('header','admin');
 	</tr>
     
     <tr> 
-    <th width="100"> <?php echo L('vote_option')?>ï¼š</th>
+    <th width="100"> <?php echo L('vote_option')?>£º</th>
     <td>
     <input type="button" id="addItem" value="<?php echo L('add_option')?>" class="button" onclick="add_option()">
     
@@ -72,11 +72,11 @@ include $this->admin_tpl('header','admin');
  
     
     <tr>
-		<th><?php echo L('fromdate')?>ï¼š</th>
+		<th><?php echo L('fromdate')?>£º</th>
 		<td><?php echo form::date('subject[fromdate]',$fromdate)?></td>
 	</tr>
 	<tr>
-		<th><?php echo L('todate')?> ï¼š</th>
+		<th><?php echo L('todate')?> £º</th>
 		<td><?php echo form::date('subject[todate]',$todate)?></td>
 	</tr>
     <tr>  
@@ -86,24 +86,24 @@ include $this->admin_tpl('header','admin');
     
     
     <tr> 
-		<th><?php echo L('allowview')?>ï¼š</th> 
+		<th><?php echo L('allowview')?>£º</th> 
 		<td><input name="subject[allowview]" type="radio" value="1" <?php echo $allowview?'checked':''?>>&nbsp;<?php echo L('allow')?>&nbsp;&nbsp;<input name="subject[allowview]" type="radio" value="0" <?php echo $allowview?'':'checked'?>>&nbsp;<?php echo L('not_allow')?></td> 
 	</tr>
 	<tr> 
-		<th><?php echo L('allowguest')?>ï¼š</th> 
+		<th><?php echo L('allowguest')?>£º</th> 
 		<td><input name="subject[allowguest]" type="radio" value="1" <?php echo $allowguest?'checked':''?>>&nbsp;<?php echo L('yes')?>&nbsp;&nbsp;<input name="subject[allowguest]" type="radio" value="0" <?php echo $allowguest?'':'checked'?>>&nbsp;<?php echo L('no')?></td> 
 	</tr>
 	<tr> 
-		<th><?php echo L('credit')?>ï¼š</th> 
+		<th><?php echo L('credit')?>£º</th> 
 		<td><input type="text" name="subject[credit]" value="<?php echo $credit;?>" size='5' /></td> 
 	</tr>
 	<tr> 
-		<th><?php echo L('interval')?>ï¼š</th> 
-		<td><input type="text" name="subject[interval]" value="<?php echo $interval;?>" size='5' /> <?php echo L('more_ip')?>ï¼Œ<font color=red>0</font> <?php echo L('one_ip')?></td> 
+		<th><?php echo L('interval')?>£º</th> 
+		<td><input type="text" name="subject[interval]" value="<?php echo $interval;?>" size='5' /> <?php echo L('more_ip')?>£¬<font color=red>0</font> <?php echo L('one_ip')?></td> 
 	</tr>
 	
 	<tr>
-		<th><?php echo L('vote_style')?>ï¼š</th>
+		<th><?php echo L('vote_style')?>£º</th>
 		<td>
 		<?php echo form::select($template_list, $info['default_style'], 'name="vote_subject[style]" id="style" onchange="load_file_list(this.value)"', L('please_select'))?>
 		<script type="text/javascript">$.getJSON('?m=admin&c=category&a=public_tpl_file_list&style=<?php echo $info['default_style']?>&module=vote&templates=vote_tp&id=<?php echo $template?>&name=vote_subject&pc_hash='+pc_hash, function(data){$('#show_template').html(data.vote_tp_template);});</script>
@@ -111,14 +111,14 @@ include $this->admin_tpl('header','admin');
 	</tr>
 	
 	<tr>
-		<th><?php echo L('template')?>ï¼š</th>
+		<th><?php echo L('template')?>£º</th>
 		<td id="show_template">
 		<?php echo form::select_template('default', 'vote', $template, 'name="vote_subject[show_template]"', 'vote_tp');?>
 		</td>
 	</tr>
 	
 	<tr> 
-		<th><?php echo L('enabled')?>ï¼š</th> 
+		<th><?php echo L('enabled')?>£º</th> 
 		<td><input name="subject[enabled]" type="radio" value="1" <?php echo $enabled?'checked':''?>>&nbsp;<?php echo L('yes')?>&nbsp;&nbsp;<input name="subject[enabled]" type="radio" value="0" <?php echo $enabled?'':'checked'?>>&nbsp;<?php echo L('no')?></td> 
 	</tr>
 	<tr> 

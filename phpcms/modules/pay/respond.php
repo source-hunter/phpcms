@@ -9,7 +9,7 @@ class respond {
 	}
 	
 	/**
-	 * return_url getå½¢å¼å“åº”
+	 * return_url getĞÎÊ½ÏìÓ¦
 	 */
 	public function respond_get() {
 		if ($_GET['code']){
@@ -35,7 +35,7 @@ class respond {
 	}
 
 	/**
-	 * æœåŠ¡å™¨ç«¯ POSTå½¢å¼å“åº”
+	 * ·şÎñÆ÷¶Ë POSTĞÎÊ½ÏìÓ¦
 	 */
 	public function respond_post() {
 		$_POST['code'] = $_POST['code'] ? $_POST['code'] : $_GET['code'];
@@ -61,9 +61,9 @@ class respond {
 	}
 
 	/**
-	 * æ›´æ–°è®¢å•çŠ¶æ€
-	 * @param unknown_type $trade_sn è®¢å•ID
-	 * @param unknown_type $status è®¢å•çŠ¶æ€
+	 * ¸üĞÂ¶©µ¥×´Ì¬
+	 * @param unknown_type $trade_sn ¶©µ¥ID
+	 * @param unknown_type $status ¶©µ¥×´Ì¬
 	 */
 	private function update_recode_status_by_sn($trade_sn,$status) {
 		$trade_sn = trim($trade_sn);
@@ -76,7 +76,7 @@ class respond {
 	}
 
 	/**
-	 * æ›´æ–°ç”¨æˆ·è´¦æˆ·ä½™é¢
+	 * ¸üĞÂÓÃ»§ÕË»§Óà¶î
 	 * @param unknown_type $trade_sn
 	 */
 	private function update_member_amount_by_sn($trade_sn) {
@@ -96,7 +96,7 @@ class respond {
 	}
 	
 	/**
-	 * é€šè¿‡è®¢å•IDæŠ“å–ç”¨æˆ·ä¿¡æ¯
+	 * Í¨¹ı¶©µ¥ID×¥È¡ÓÃ»§ĞÅÏ¢
 	 * @param unknown_type $trade_sn
 	 */
 	private function get_userinfo_by_sn($trade_sn) {
@@ -108,7 +108,7 @@ class respond {
 	}
 	
 	/**
-	 * é€šè¿‡æ”¯ä»˜ä»£ç è·å–æ”¯ä»˜ä¿¡æ¯
+	 * Í¨¹ıÖ§¸¶´úÂë»ñÈ¡Ö§¸¶ĞÅÏ¢
 	 * @param unknown_type $code
 	 */
 	private function get_by_code($code) {

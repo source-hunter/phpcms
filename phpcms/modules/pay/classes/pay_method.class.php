@@ -7,7 +7,7 @@ class pay_method  {
 	}
 	
 	/**
-	 * è·å–æ”¯ä»˜ç±»å‹åˆ—è¡¨
+	 * »ñÈ¡Ö§¸¶ÀàĞÍÁĞ±í
 	 */
 	public function get_list() {
 		$list = $this->get_payment();
@@ -30,7 +30,7 @@ class pay_method  {
 	 }
 	 		
 	/**
-	 * è·å–æ’ä»¶ç›®å½•ä¿¡æ¯
+	 * »ñÈ¡²å¼şÄ¿Â¼ĞÅÏ¢
 	 * @param unknown_type $code
 	 */
 	public function get_payment( $code = '') {
@@ -71,7 +71,7 @@ class pay_method  {
 	}
 
 	/**
-	 * å–å¾—æ•°æ®åº“ä¸­çš„æ”¯ä»˜åˆ—è¡¨
+	 * È¡µÃÊı¾İ¿âÖĞµÄÖ§¸¶ÁĞ±í
 	 * @param $code
 	 */
 	public function get_intallpayment($code = '')
@@ -91,7 +91,7 @@ class pay_method  {
 	}
 	
 	/**
-	 * è¯»å–æ’ä»¶ç›®å½•ä¸­æ’ä»¶åˆ—è¡¨
+	 * ¶ÁÈ¡²å¼şÄ¿Â¼ÖĞ²å¼şÁĞ±í
 	 * @param unknown_type $directory
 	 */
 	public function read_payment($directory = ".") {

@@ -21,7 +21,7 @@ include $this->admin_tpl('header','attachment');
 <div class="table-list">
 <table width="100%" cellspacing="0" id="imgPreview">
 <tr>
-<td align="left"><?php echo L("local_dir")?>ï¼š<?php echo $local?></td>
+<td align="left"><?php echo L("local_dir")?>£º<?php echo $local?></td>
 </tr>
 <?php if ($dir !='' && $dir != '.'):?>
 <tr>

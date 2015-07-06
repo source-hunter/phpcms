@@ -22,8 +22,8 @@ if(is_array($infos)){
 	<div class="col-auto">  
 		<h2 class="title-1 f14 lh28 mb6 blue" title="<?php echo $info['video']['title'];?>"><?php echo str_cut($info['video']['title'], 26)?></h2>
 		<div class="lh22"><?php echo $info['video']['desc']?></div>
-	<p class="gray4">ä¸Šä¼ æ—¶é—´ï¼š<?php echo format::date(substr(trim($info['video']['uploadTime']), 0, 10), 1)?></p>
-	<p class="gray4">æ’­æ”¾æ¬¡æ•°ï¼š<?php echo $info['video']['videoTime']?></p>
+	<p class="gray4">ÉÏ´«Ê±¼ä£º<?php echo format::date(substr(trim($info['video']['uploadTime']), 0, 10), 1)?></p>
+	<p class="gray4">²¥·Å´ÎÊý£º<?php echo $info['video']['videoTime']?></p>
 	</div>
 	</td>
 	<?php if($n%3==0){?></tr><?php }?>

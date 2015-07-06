@@ -1,8 +1,8 @@
 <?php
 	/**
-	 * è¿”å›žé™„ä»¶ç±»åž‹å›¾æ ‡
-	 * @param $file é™„ä»¶åç§°
-	 * @param $type pngä¸ºå¤§å›¾æ ‡ï¼Œgifä¸ºå°å›¾æ ‡
+	 * ·µ»Ø¸½¼þÀàÐÍÍ¼±ê
+	 * @param $file ¸½¼þÃû³Æ
+	 * @param $type pngÎª´óÍ¼±ê£¬gifÎªÐ¡Í¼±ê
 	 */
 	function file_icon($file,$type = 'png') {
 		$ext_arr = array('doc','docx','ppt','xls','txt','pdf','mdb','jpg','gif','png','bmp','jpeg','rar','zip','swf','flv');
@@ -20,9 +20,9 @@
 	}
 	
 	/**
-	 * é™„ä»¶ç›®å½•åˆ—è¡¨ï¼Œæš‚æ—¶æ²¡ç”¨
-	 * @param $dirpath ç›®å½•è·¯å¾„
-	 * @param $currentdir å½“å‰ç›®å½•
+	 * ¸½¼þÄ¿Â¼ÁÐ±í£¬ÔÝÊ±Ã»ÓÃ
+	 * @param $dirpath Ä¿Â¼Â·¾¶
+	 * @param $currentdir µ±Ç°Ä¿Â¼
 	 */
 	function file_list($dirpath,$currentdir) {
 		$filepath = $dirpath.$currentdir;
@@ -33,14 +33,14 @@
 	}
 	
 	/**
-	 * flashä¸Šä¼ åˆå§‹åŒ–
-	 * åˆå§‹åŒ–swfuploadä¸Šä¼ ä¸­éœ€è¦çš„å‚æ•°
-	 * @param $module æ¨¡å—åç§°
-	 * @param $catid æ ç›®id
-	 * @param $args ä¼ é€’å‚æ•°
-	 * @param $userid ç”¨æˆ·id
-	 * @param $groupid ç”¨æˆ·ç»„id
-	 * @param $isadmin æ˜¯å¦ä¸ºç®¡ç†å‘˜æ¨¡å¼
+	 * flashÉÏ´«³õÊ¼»¯
+	 * ³õÊ¼»¯swfuploadÉÏ´«ÖÐÐèÒªµÄ²ÎÊý
+	 * @param $module Ä£¿éÃû³Æ
+	 * @param $catid À¸Ä¿id
+	 * @param $args ´«µÝ²ÎÊý
+	 * @param $userid ÓÃ»§id
+	 * @param $groupid ÓÃ»§×éid
+	 * @param $isadmin ÊÇ·ñÎª¹ÜÀíÔ±Ä£Ê½
 	 */
 	function initupload($module, $catid,$args, $userid, $groupid = '8', $isadmin = '0',$userid_flash='0'){
 		$grouplist = getcache('grouplist','member');
@@ -89,16 +89,16 @@
 		return $init;
 	}		
 	/**
-	 * èŽ·å–ç«™ç‚¹é…ç½®ä¿¡æ¯
-	 * @param  $siteid ç«™ç‚¹id
+	 * »ñÈ¡Õ¾µãÅäÖÃÐÅÏ¢
+	 * @param  $siteid Õ¾µãid
 	 */
 	function get_site_setting($siteid) {
 		$siteinfo = getcache('sitelist', 'commons');
 		return string2array($siteinfo[$siteid]['setting']);
 	}
 	/**
-	 * è¯»å–swfuploadé…ç½®ç±»åž‹
-	 * @param array $args flashä¸Šä¼ é…ç½®ä¿¡æ¯
+	 * ¶ÁÈ¡swfuploadÅäÖÃÀàÐÍ
+	 * @param array $args flashÉÏ´«ÅäÖÃÐÅÏ¢
 	 */
 	function getswfinit($args) {
 		$siteid = get_siteid();
@@ -122,7 +122,7 @@
 		return $arr;
 	}	
 	/**
-	 * åˆ¤æ–­æ˜¯å¦ä¸ºå›¾ç‰‡
+	 * ÅÐ¶ÏÊÇ·ñÎªÍ¼Æ¬
 	 */
 	function is_image($file) {
 		$ext_arr = array('jpg','gif','png','bmp','jpeg','tiff');
@@ -131,7 +131,7 @@
 	}
 	
 	/**
-	 * åˆ¤æ–­æ˜¯å¦ä¸ºè§†é¢‘
+	 * ÅÐ¶ÏÊÇ·ñÎªÊÓÆµ
 	 */
 	function is_video($file) {
 		$ext_arr = array('rm','mpg','avi','mpeg','wmv','flv','asf','rmvb');

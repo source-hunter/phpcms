@@ -1,5 +1,5 @@
 {template "wap","header"}
-<h2><a href="#" class="cat">ÁÑ¶ÁÇπÊé®Ëçê</a>&nbsp;<span style="color:#999; font-size:12px; font-weight:100;">{date('Y-m-d',SYS_TIME)}</span></h2>
+<h2><a href="#" class="cat">Ωπµ„Õ∆ºˆ</a>&nbsp;<span style="color:#999; font-size:12px; font-weight:100;">{date('Y-m-d',SYS_TIME)}</span></h2>
 <div>
 {pc:wap  action="position" posid="12" order="listorder DESC" num="6"}
  {loop $data $r}
@@ -7,7 +7,7 @@
    {/loop}  
  {/pc} 
 </div>
-<div class="ad1"><a href="#"><img src="{IMG_PATH}wap/ad220x26.gif" alt="phpcmsÊâãÊú∫ÁΩëÂª∫Á´ôÂà©Âô®" width="220" height="26" /></a></div>
+<div class="ad1"><a href="#"><img src="{IMG_PATH}wap/ad220x26.gif" alt="phpcms ÷ª˙Õ¯Ω®’æ¿˚∆˜" width="220" height="26" /></a></div>
 {loop subtype(0) $s}
 	{php $typeid=$s[typeid]}
 	{pc:wap action="lists" typeid="$typeid" num="10" order="id DESC" return="info"}

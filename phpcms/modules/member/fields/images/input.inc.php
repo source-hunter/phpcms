@@ -1,7 +1,7 @@
 	function images($field, $value) {
-		//鍙栧緱鍥剧墖鍒楄〃
+		//取得图片列表
 		$pictures = $_POST[$field.'_url'];
-		//鍙栧緱鍥剧墖璇存槑
+		//取得图片说明
 		$pictures_alt = isset($_POST[$field.'_alt']) ? $_POST[$field.'_alt'] : array();
 		$array = $temp = array();
 		if(!empty($pictures)) {

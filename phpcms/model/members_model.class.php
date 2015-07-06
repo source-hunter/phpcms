@@ -12,8 +12,8 @@ class members_model extends model {
 	}
 
 	/**
-	 * 閲嶇疆妯″瀷鎿嶄綔琛ㄨ〃
-	 * @param string $modelid 妯″瀷id
+	 * 重置模型操作表表
+	 * @param string $modelid 模型id
 	 */
 	public function set_model($modelid = '') {
 		if($modelid) {

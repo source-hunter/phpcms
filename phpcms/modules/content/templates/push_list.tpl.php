@@ -27,12 +27,12 @@ include $this->admin_tpl('header', 'admin');
   if (isset($html) && is_array($html)) {
   foreach ($html as $k => $v) { ?>
   	  <tr>
-    <th width="80"><?php echo $v['name']?>ï¼š</th>
+    <th width="80"><?php echo $v['name']?>£º</th>
     <td class="y-bg"><?php echo creat_form($k, $v)?></td>
   </tr>
   <?php if ($v['ajax']['name']) {?>
   	  <tr>
-  	  	<th width="80"><?php echo $v['ajax']['name']?>ï¼š</th>
+  	  	<th width="80"><?php echo $v['ajax']['name']?>£º</th>
   	  	<td class="y-bg" id="<?php echo $k?>_td"><input type="hidden" name="<?php echo $v['ajax']['id']?>" id="<?php echo $v['ajax']['id']?>"></td>
   	 </tr>
   <?php } ?>

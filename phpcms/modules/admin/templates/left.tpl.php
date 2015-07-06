@@ -6,9 +6,9 @@ foreach($datas as $_value) {
 	echo '<ul>';
 	$sub_array = admin::admin_menu($_value['id']);
 	foreach($sub_array as $_key=>$_m) {
-		//é™„åŠ å‚æ•°
+		//¸½¼Ó²ÎÊı
 		$data = $_m['data'] ? '&'.$_m['data'] : '';
-		if($menuid == 5) { //å·¦ä¾§èœå•ä¸æ˜¾ç¤ºé€‰ä¸­çŠ¶æ€
+		if($menuid == 5) { //×ó²à²Ëµ¥²»ÏÔÊ¾Ñ¡ÖĞ×´Ì¬
 			$classname = 'class="sub_menu"';
 		} else {
 			$classname = 'class="sub_menu"';

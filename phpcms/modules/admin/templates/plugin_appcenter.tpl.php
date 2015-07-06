@@ -69,7 +69,7 @@
 	function get_ajx_detail(id) {
 		$.getJSON('?m=admin&c=plugin&a=public_appcenter_ajx_detail&jsoncallback=?&id='+id+'&pc_hash='+pc_hash,function(a){
 			var isfree = a.isfree == 1 ? '<?php echo L('plugin_free','','plugin')?>' : '<?php echo L('plugin_not_free','','plugin')?>'
-			$("#ibar").html('<div class="lsj"></div><div class="cr r1"> <img src="'+a.thumb+'" width="55" height="55" /></a><h5>'+a.appname+'</h5><span class="grayt">'+isfree+'</span></div><p class="nr">'+a.description+'</p><div class="r2"><div class="jx l"><span class="xx3"></span></div><span class="l">(3)</span><div class="zz"><?php echo L('plugin_author','','plugin')?>ï¼š'+a.username+'</div></div>');
+			$("#ibar").html('<div class="lsj"></div><div class="cr r1"> <img src="'+a.thumb+'" width="55" height="55" /></a><h5>'+a.appname+'</h5><span class="grayt">'+isfree+'</span></div><p class="nr">'+a.description+'</p><div class="r2"><div class="jx l"><span class="xx3"></span></div><span class="l">(3)</span><div class="zz"><?php echo L('plugin_author','','plugin')?>£º'+a.username+'</div></div>');
 		});	
 	}
 

@@ -18,7 +18,7 @@ include $this->admin_tpl('header','admin');
         </thead>
 <tbody>
 <tr>
-<td align="left" colspan="3"><?php echo L("local_dir")?>ï¼š<?php echo $local?></td>
+<td align="left" colspan="3"><?php echo L("local_dir")?>£º<?php echo $local?></td>
 </tr>
 <?php if ($dir !='' && $dir != '.'):?>
 <tr>
@@ -58,7 +58,7 @@ endif;
 <!--
 
 function history_file(name) {
-	window.top.art.dialog({title:'ã€Š'+name+'ã€‹<?php echo L("histroy")?>',id:'history',iframe:'?m=template&c=template_bak&a=init&style=<?php echo $this->style;?>&dir=<?php echo urlencode(stripslashes($dir))?>&filename='+name,width:'700',height:'521'}, function(){var d = window.top.art.dialog({id:'history'}).close();return false;}, function(){window.top.art.dialog({id:'history'}).close()});
+	window.top.art.dialog({title:'¡¶'+name+'¡·<?php echo L("histroy")?>',id:'history',iframe:'?m=template&c=template_bak&a=init&style=<?php echo $this->style;?>&dir=<?php echo urlencode(stripslashes($dir))?>&filename='+name,width:'700',height:'521'}, function(){var d = window.top.art.dialog({id:'history'}).close();return false;}, function(){window.top.art.dialog({id:'history'}).close()});
 }
 
 function add_file() {

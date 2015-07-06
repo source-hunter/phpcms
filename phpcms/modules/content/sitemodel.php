@@ -1,8 +1,8 @@
 <?php
 defined('IN_PHPCMS') or exit('No permission resources.');
-//æ¨¡åž‹åŽŸåž‹å­˜å‚¨è·¯å¾„
+//Ä£ÐÍÔ­ÐÍ´æ´¢Â·¾¶
 define('MODEL_PATH',PC_PATH.'modules'.DIRECTORY_SEPARATOR.'content'.DIRECTORY_SEPARATOR.'fields'.DIRECTORY_SEPARATOR);
-//æ¨¡åž‹ç¼“å­˜è·¯å¾„
+//Ä£ÐÍ»º´æÂ·¾¶
 define('CACHE_MODEL_PATH',CACHE_PATH.'caches_model'.DIRECTORY_SEPARATOR.'caches_data'.DIRECTORY_SEPARATOR);
 pc_base::load_app_class('admin','admin',0);
 class sitemodel extends admin {
@@ -19,7 +19,7 @@ class sitemodel extends admin {
 		$categorys = getcache('category_content_'.$this->siteid,'commons');
 		
 		$datas = $this->db->listinfo(array('siteid'=>$this->siteid,'type'=>0),'',$_GET['page'],30);
-		//æ¨¡åž‹æ–‡ç« æ•°array('æ¨¡åž‹id'=>æ•°é‡);
+		//Ä£ÐÍÎÄÕÂÊýarray('Ä£ÐÍid'=>ÊýÁ¿);
 		$items = array();
 		foreach ($datas as $k=>$r) {
 			foreach ($categorys as $catid=>$cat) {
@@ -63,7 +63,7 @@ class sitemodel extends admin {
 			
 			$this->db->sql_execute($model_sql);
 			$this->cache_field($modelid);
-			//è°ƒç”¨å…¨ç«™æœç´¢ç±»åˆ«æŽ¥å£
+			//µ÷ÓÃÈ«Õ¾ËÑË÷Àà±ð½Ó¿Ú
 			$this->type_db = pc_base::load_model('type_model');
 			$this->type_db->insert(array('name'=>$_POST['info']['name'],'module'=>'search','modelid'=>$modelid,'siteid'=>$this->siteid));
 			$cache_api = pc_base::load_app_class('cache_api','admin');
@@ -124,7 +124,7 @@ class sitemodel extends admin {
 		$this->db->drop_table($model_table.'_data');
 		
 		$this->db->delete(array('modelid'=>$modelid,'siteid'=>$this->siteid));
-		//åˆ é™¤å…¨ç«™æœç´¢æŽ¥å£æ•°æ®
+		//É¾³ýÈ«Õ¾ËÑË÷½Ó¿ÚÊý¾Ý
 		$this->type_db = pc_base::load_model('type_model');
 		$this->type_db->delete(array('module'=>'search','modelid'=>$modelid,'siteid'=>$this->siteid));
 		$cache_api = pc_base::load_app_class('cache_api','admin');
@@ -141,11 +141,11 @@ class sitemodel extends admin {
 		showmessage(L('update_success'), HTTP_REFERER);
 	}
 	/**
-	 * æ›´æ–°æ¨¡åž‹ç¼“å­˜
+	 * ¸üÐÂÄ£ÐÍ»º´æ
 	 */
 	public function public_cache() {
 		require MODEL_PATH.'fields.inc.php';
-		//æ›´æ–°å†…å®¹æ¨¡åž‹ç±»ï¼šè¡¨å•ç”Ÿæˆã€å…¥åº“ã€æ›´æ–°ã€è¾“å‡º
+		//¸üÐÂÄÚÈÝÄ£ÐÍÀà£º±íµ¥Éú³É¡¢Èë¿â¡¢¸üÐÂ¡¢Êä³ö
 		$classtypes = array('form','input','update','output');
 		foreach($classtypes as $classtype) {
 			$cache_data = file_get_contents(MODEL_PATH.'content_'.$classtype.'.class.php');
@@ -159,7 +159,7 @@ class sitemodel extends admin {
 			file_put_contents(CACHE_MODEL_PATH.'content_'.$classtype.'.class.php',$cache_data);
 			@chmod(CACHE_MODEL_PATH.'content_'.$classtype.'.class.php',0777);
 		}
-		//æ›´æ–°æ¨¡åž‹æ•°æ®ç¼“å­˜
+		//¸üÐÂÄ£ÐÍÊý¾Ý»º´æ
 		$model_array = array();
 		$datas = $this->db->select(array('type'=>0));
 		foreach ($datas as $r) {
@@ -169,12 +169,12 @@ class sitemodel extends admin {
 		return true;
 	}
 	/**
-	 * å¯¼å‡ºæ¨¡åž‹
+	 * µ¼³öÄ£ÐÍ
 	 */
 	function export() {
 		$modelid = isset($_GET['modelid']) ? $_GET['modelid'] : showmessage(L('illegal_parameters'), HTTP_REFERER);
 		$modelarr = getcache('model', 'commons');
-		//å®šä¹‰ç³»ç»Ÿå­—æ®µæŽ’é™¤
+		//¶¨ÒåÏµÍ³×Ö¶ÎÅÅ³ý
 		//$system_field = array('id','title','style','catid','url','listorder','status','userid','username','inputtime','updatetime','pages','readpoint','template','groupids_view','posids','content','keywords','description','thumb','typeid','relation','islink','allow_comment');
 		$this->sitemodel_field_db = pc_base::load_model('sitemodel_field_model');
 		$modelinfo = $this->sitemodel_field_db->select(array('modelid'=>$modelid));
@@ -188,15 +188,15 @@ class sitemodel extends admin {
 		echo $res;exit;
 	}
 	/**
-	 * å¯¼å…¥æ¨¡åž‹
+	 * µ¼ÈëÄ£ÐÍ
 	 */
 	function import(){
 		if(isset($_POST['dosubmit'])) {
 			$info = array();
 			$info['name'] = $_POST['info']['modelname'];
-			//ä¸»è¡¨è¡¨å
+			//Ö÷±í±íÃû
 			$basic_table = $info['tablename'] = $_POST['info']['tablename'];
-			//ä»Žè¡¨è¡¨å
+			//´Ó±í±íÃû
 			$table_data = $basic_table.'_data';
 			$info['description'] = $_POST['info']['description'];
 			$info['type'] = 0;
@@ -218,7 +218,7 @@ class sitemodel extends admin {
 			$modelid = $this->db->insert($info, 1);
 			if($modelid){
 				$tablepre = $this->db->db_tablepre;
-				//å»ºç«‹æ•°æ®è¡¨
+				//½¨Á¢Êý¾Ý±í
 				$model_sql = file_get_contents(MODEL_PATH.'model.sql');
 				$model_sql = str_replace('$basic_table', $tablepre.$basic_table, $model_sql);
 				$model_sql = str_replace('$table_data',$tablepre.$table_data, $model_sql);
@@ -241,7 +241,7 @@ class sitemodel extends admin {
 							$this->sitemodel_field_db->update($v,array('modelid'=>$modelid,'field'=>$field));
 						} else {
 							$tablename = $v['issystem'] ? $tablepre.$basic_table : $tablepre.$table_data;
-							//é‡ç»„æ¨¡åž‹è¡¨å­—æ®µå±žæ€§
+							//ÖØ×éÄ£ÐÍ±í×Ö¶ÎÊôÐÔ
 							
 							$minlength = $v['minlength'] ? $v['minlength'] : 0;
 							$maxlength = $v['maxlength'] ? $v['maxlength'] : 0;
@@ -279,16 +279,16 @@ class sitemodel extends admin {
 		}
 	}
 	/**
-	 * æ£€æŸ¥è¡¨æ˜¯å¦å­˜åœ¨
+	 * ¼ì²é±íÊÇ·ñ´æÔÚ
 	 */
 	public function public_check_tablename() {
 		$r = $this->db->table_exists(strip_tags($_GET['tablename']));
 		if(!$r) echo '1';
 	}
 	/**
-	 * æ›´æ–°æŒ‡å®šæ¨¡åž‹å­—æ®µç¼“å­˜
+	 * ¸üÐÂÖ¸¶¨Ä£ÐÍ×Ö¶Î»º´æ
 	 * 
-	 * @param $modelid æ¨¡åž‹id
+	 * @param $modelid Ä£ÐÍid
 	 */
 	public function cache_field($modelid = 0) {
 		$this->field_db = pc_base::load_model('sitemodel_field_model');

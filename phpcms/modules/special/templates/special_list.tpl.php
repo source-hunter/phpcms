@@ -30,7 +30,7 @@ if(is_array($infos)){
 <div class="col-auto">  
     <h2 class="title-1 f14 lh28 mb6 blue"><a href="<?php echo $info['url']?>" target="_blank"><?php echo $info['title']?></a></h2>
     <div class="lh22"><?php echo $info['description']?></div>
-<p class="gray4"><?php echo L('create_man')?>ï¼š<a href="#" class="blue"><?php echo $info['username']?></a>ï¼Œ <?php echo L('create_time')?>ï¼š<?php echo format::date($info['createtime'], 1)?></p>
+<p class="gray4"><?php echo L('create_man')?>£º<a href="#" class="blue"><?php echo $info['username']?></a>£¬ <?php echo L('create_time')?>£º<?php echo format::date($info['createtime'], 1)?></p>
 </div>
 	</td>
 	<td align="center"><span style="height:22"><a href='?m=special&c=content&a=init&specialid=<?php echo $info['id']?>' onclick="javascript:openwinx('?m=special&c=content&a=add&specialid=<?php echo $info['id']?>&pc_hash=<?php echo $_SESSION['pc_hash']?>','')"><?php echo L('add_news')?></a></span> | 
@@ -62,19 +62,19 @@ if(is_array($infos)){
 <!--
 function edit(id, name) {
 	window.top.art.dialog({id:'edit'}).close();
-	window.top.art.dialog({title:'<?php echo L('edit_special')?>--'+name, id:'edit', iframe:'?m=special&c=special&a=edit&specialid='+id ,width:'700px',height:'500px'}, function(){var d = window.top.art.dialog({id:'edit'}).data.iframe;// ä½¿ç”¨å†…ç½®æ¥å£è·å–iframeå¯¹è±¡
+	window.top.art.dialog({title:'<?php echo L('edit_special')?>--'+name, id:'edit', iframe:'?m=special&c=special&a=edit&specialid='+id ,width:'700px',height:'500px'}, function(){var d = window.top.art.dialog({id:'edit'}).data.iframe;// Ê¹ÓÃÄÚÖÃ½Ó¿Ú»ñÈ¡iframe¶ÔÏó
 	var form = d.document.getElementById('dosubmit');form.click();return false;}, function(){window.top.art.dialog({id:'edit'}).close()});
 }
 
 function comment(id, name) {
 	window.top.art.dialog({id:'comment'}).close();
-	window.top.art.dialog({title:'<?php echo L('see_comment')?>ï¼š'+name, id:'comment', iframe:'?m=comment&c=comment_admin&a=lists&show_center_id=1&commentid='+id ,width:'700px',height:'500px'}, function(){var d = window.top.art.dialog({id:'edit'}).data.iframe;// ä½¿ç”¨å†…ç½®æ¥å£è·å–iframeå¯¹è±¡
+	window.top.art.dialog({title:'<?php echo L('see_comment')?>£º'+name, id:'comment', iframe:'?m=comment&c=comment_admin&a=lists&show_center_id=1&commentid='+id ,width:'700px',height:'500px'}, function(){var d = window.top.art.dialog({id:'edit'}).data.iframe;// Ê¹ÓÃÄÚÖÃ½Ó¿Ú»ñÈ¡iframe¶ÔÏó
 	var form = d.document.getElementById('dosubmit');form.click();return false;}, function(){window.top.art.dialog({id:'edit'}).close()});
 }
 
 function import_c(id) {
 	window.top.art.dialog({id:'import'}).close();
-	window.top.art.dialog({title:'<?php echo L('import_news')?>--', id:'import', iframe:'?m=special&c=special&a=import&specialid='+id ,width:'700px',height:'500px'}, function(){var d = window.top.art.dialog({id:'import'}).data.iframe;// ä½¿ç”¨å†…ç½®æ¥å£è·å–iframeå¯¹è±¡
+	window.top.art.dialog({title:'<?php echo L('import_news')?>--', id:'import', iframe:'?m=special&c=special&a=import&specialid='+id ,width:'700px',height:'500px'}, function(){var d = window.top.art.dialog({id:'import'}).data.iframe;// Ê¹ÓÃÄÚÖÃ½Ó¿Ú»ñÈ¡iframe¶ÔÏó
 	var form = d.document.getElementById('dosubmit');form.click();return false;}, function(){window.top.art.dialog({id:'import'}).close()});
 }
 

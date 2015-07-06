@@ -7,7 +7,7 @@ if(param::get_cookie('sys_lang')) {
 } else {
 	define('SYS_STYLE','zh-cn');
 }
-//å®šä¹‰åœ¨åå°
+//¶¨ÒåÔÚºóÌ¨
 define('IN_ADMIN',true);
 class admin {
 	public $userid;
@@ -29,7 +29,7 @@ class admin {
 	}
 	
 	/**
-	 * åˆ¤æ–­ç”¨æˆ·æ˜¯å¦å·²ç»ç™»é™†
+	 * ÅĞ¶ÏÓÃ»§ÊÇ·ñÒÑ¾­µÇÂ½
 	 */
 	final public function check_admin() {
 		if(ROUTE_M =='admin' && ROUTE_C =='index' && in_array(ROUTE_A, array('login', 'public_card'))) {
@@ -41,9 +41,9 @@ class admin {
 	}
 
 	/**
-	 * åŠ è½½åå°æ¨¡æ¿
-	 * @param string $file æ–‡ä»¶å
-	 * @param string $m æ¨¡å‹å
+	 * ¼ÓÔØºóÌ¨Ä£°å
+	 * @param string $file ÎÄ¼şÃû
+	 * @param string $m Ä£ĞÍÃû
 	 */
 	final public static function admin_tpl($file, $m = '') {
 		$m = empty($m) ? ROUTE_M : $m;
@@ -52,9 +52,9 @@ class admin {
 	}
 	
 	/**
-	 * æŒ‰çˆ¶IDæŸ¥æ‰¾èœå•å­é¡¹
-	 * @param integer $parentid   çˆ¶èœå•ID  
-	 * @param integer $with_self  æ˜¯å¦åŒ…æ‹¬ä»–è‡ªå·±
+	 * °´¸¸ID²éÕÒ²Ëµ¥×ÓÏî
+	 * @param integer $parentid   ¸¸²Ëµ¥ID  
+	 * @param integer $with_self  ÊÇ·ñ°üÀ¨Ëû×Ô¼º
 	 */
 	final public static function admin_menu($parentid, $with_self = 0) {
 		$parentid = intval($parentid);
@@ -69,7 +69,7 @@ class admin {
 			$result2[] = $menudb->get_one(array('id'=>$parentid));
 			$result = array_merge($result2,$result);
 		}
-		//æƒé™æ£€æŸ¥
+		//È¨ÏŞ¼ì²é
 		if($_SESSION['roleid'] == 1) return $result;
 		$array = array();
 		$privdb = pc_base::load_model('admin_role_priv_model');
@@ -87,9 +87,9 @@ class admin {
 		return $array;
 	}
 	/**
-	 * è·å–èœå• å¤´éƒ¨èœå•å¯¼èˆª
+	 * »ñÈ¡²Ëµ¥ Í·²¿²Ëµ¥µ¼º½
 	 * 
-	 * @param $parentid èœå•id
+	 * @param $parentid ²Ëµ¥id
 	 */
 	final public static function submenu($parentid = '', $big_menu = false) {
 		if(empty($parentid)) {
@@ -121,9 +121,9 @@ class admin {
 		return $string;
 	}
 	/**
-	 * å½“å‰ä½ç½®
+	 * µ±Ç°Î»ÖÃ
 	 * 
-	 * @param $id èœå•id
+	 * @param $id ²Ëµ¥id
 	 */
 	final public static function current_pos($id) {
 		$menudb = pc_base::load_model('menu_model');
@@ -136,15 +136,15 @@ class admin {
 	}
 	
 	/**
-	 * è·å–å½“å‰çš„ç«™ç‚¹ID
+	 * »ñÈ¡µ±Ç°µÄÕ¾µãID
 	 */
 	final public static function get_siteid() {
 		return get_siteid();
 	}
 	
 	/**
-	 * è·å–å½“å‰ç«™ç‚¹ä¿¡æ¯
-	 * @param integer $siteid ç«™ç‚¹IDå·ï¼Œä¸ºç©ºæ—¶å–å½“å‰ç«™ç‚¹çš„ä¿¡æ¯
+	 * »ñÈ¡µ±Ç°Õ¾µãĞÅÏ¢
+	 * @param integer $siteid Õ¾µãIDºÅ£¬Îª¿ÕÊ±È¡µ±Ç°Õ¾µãµÄĞÅÏ¢
 	 * @return array
 	 */
 	final public static function get_siteinfo($siteid = '') {
@@ -160,7 +160,7 @@ class admin {
 		return current($siteid);
 	}
 	/**
-	 * æƒé™åˆ¤æ–­
+	 * È¨ÏŞÅĞ¶Ï
 	 */
 	final public function check_priv() {
 		if(ROUTE_M =='admin' && ROUTE_C =='index' && in_array(ROUTE_A, array('login', 'init', 'public_card'))) return true;
@@ -173,15 +173,15 @@ class admin {
 			$action = $_match[1];
 		}
 		$r =$privdb->get_one(array('m'=>ROUTE_M,'c'=>ROUTE_C,'a'=>$action,'roleid'=>$_SESSION['roleid'],'siteid'=>$siteid));
-		if(!$r) showmessage('æ‚¨æ²¡æœ‰æƒé™æ“ä½œè¯¥é¡¹','blank');
+		if(!$r) showmessage('ÄúÃ»ÓĞÈ¨ÏŞ²Ù×÷¸ÃÏî','blank');
 	}
 
 	/**
 	 * 
-	 * è®°å½•æ—¥å¿— 
+	 * ¼ÇÂ¼ÈÕÖ¾ 
 	 */
 	final private function manage_log() {
-		//åˆ¤æ–­æ˜¯å¦è®°å½•
+		//ÅĞ¶ÏÊÇ·ñ¼ÇÂ¼
 		$setconfig = pc_base::load_config('system');
 		extract($setconfig);
  		if($admin_log==1){
@@ -202,14 +202,14 @@ class admin {
 	
 	/**
 	 * 
-	 * åå°IPç¦æ­¢åˆ¤æ–­ ...
+	 * ºóÌ¨IP½ûÖ¹ÅĞ¶Ï ...
 	 */
 	final private function check_ip(){
 		$this->ipbanned = pc_base::load_model('ipbanned_model');
 		$this->ipbanned->check_ip();
  	}
  	/**
- 	 * æ£€æŸ¥é”å±çŠ¶æ€
+ 	 * ¼ì²éËøÆÁ×´Ì¬
  	 */
 	final private function lock_screen() {
 		if(isset($_SESSION['lock_screen']) && $_SESSION['lock_screen']==1) {
@@ -219,7 +219,7 @@ class admin {
 	}
 
 	/**
- 	 * æ£€æŸ¥hashå€¼ï¼ŒéªŒè¯ç”¨æˆ·æ•°æ®å®‰å…¨æ€§
+ 	 * ¼ì²éhashÖµ£¬ÑéÖ¤ÓÃ»§Êı¾İ°²È«ĞÔ
  	 */
 	final private function check_hash() {
 		if(preg_match('/^public_/', ROUTE_A) || ROUTE_M =='admin' && ROUTE_C =='index' || in_array(ROUTE_A, array('login'))) {
@@ -235,9 +235,9 @@ class admin {
 	}
 
 	/**
-	 * åå°ä¿¡æ¯åˆ—è¡¨æ¨¡æ¿
-	 * @param string $id è¢«é€‰ä¸­çš„æ¨¡æ¿åç§°
-	 * @param string $str formè¡¨å•ä¸­çš„å±æ€§å
+	 * ºóÌ¨ĞÅÏ¢ÁĞ±íÄ£°å
+	 * @param string $id ±»Ñ¡ÖĞµÄÄ£°åÃû³Æ
+	 * @param string $str form±íµ¥ÖĞµÄÊôĞÔÃû
 	 */
 	final public function admin_list_template($id = '', $str = '') {
 		$templatedir = PC_PATH.DIRECTORY_SEPARATOR.'modules'.DIRECTORY_SEPARATOR.'content'.DIRECTORY_SEPARATOR.'templates'.DIRECTORY_SEPARATOR;

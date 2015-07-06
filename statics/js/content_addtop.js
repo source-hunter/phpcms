@@ -12,7 +12,7 @@ function thumb_images(uploadid,returnid) {
 	var in_content = d.$("#att-status").html().substring(1);
 	if(in_content=='') return false;
 	if(!IsImg(in_content)) {
-		alert('é€‰æ‹©çš„ç±»å‹å¿…é¡»ä¸ºå›¾ç‰‡ç±»å‹');
+		alert('Ñ¡ÔñµÄÀàĞÍ±ØĞëÎªÍ¼Æ¬ÀàĞÍ');
 		return false;
 	}
 	if($('#'+returnid+'_preview').attr('src')) {
@@ -33,7 +33,7 @@ function change_images(uploadid,returnid){
 	$.each( contents, function(i, n) {
 		var ids = parseInt(Math.random() * 10000 + 10*i); 
 		var filename = filenames[i].substr(0,filenames[i].indexOf('.'));
-		str += "<li id='image"+ids+"'><input type='text' name='"+returnid+"_url[]' value='"+n+"' style='width:310px;' ondblclick='image_priview(this.value);' class='input-text'> <input type='text' name='"+returnid+"_alt[]' value='"+filename+"' style='width:160px;' class='input-text' onfocus=\"if(this.value == this.defaultValue) this.value = ''\" onblur=\"if(this.value.replace(' ','') == '') this.value = this.defaultValue;\"> <a href=\"javascript:remove_div('image"+ids+"')\">ç§»é™¤</a> </li>";
+		str += "<li id='image"+ids+"'><input type='text' name='"+returnid+"_url[]' value='"+n+"' style='width:310px;' ondblclick='image_priview(this.value);' class='input-text'> <input type='text' name='"+returnid+"_alt[]' value='"+filename+"' style='width:160px;' class='input-text' onfocus=\"if(this.value == this.defaultValue) this.value = ''\" onblur=\"if(this.value.replace(' ','') == '') this.value = this.defaultValue;\"> <a href=\"javascript:remove_div('image"+ids+"')\">ÒÆ³ı</a> </li>";
 		});
 	
 	$('#'+returnid).html(str);
@@ -61,7 +61,7 @@ function change_videoes(uploadid, returnid) {
 		var ids = parseInt(Math.random() * 10000 + 10*i); 
 		video_num = video_num + 1;
 		var filename = filenames[i];
-		str += "<li id=\"video_"+field+"_"+video_num+"\"><div class=\"r1\"><img src=\""+contents[i]+"\" width=\"132\" height=\"75\"><input type=\"text\" name=\""+field+"_video["+video_num+"][title]\" value=\""+filename+"\" class=\"input-text\"><input type='hidden' name='"+field+"_video["+video_num+"][videoid]' value='"+vids[i]+"'><div class=\"r2\"><span class=\"l\"><label>æ’åº</label><input type='text' name='"+field+"_video["+video_num+"][listorder]' value='"+video_num+"' class=\"input-text\"></span><span class=\"r\"> <a href=\"javascript:remove_div('video_"+field+"_"+video_num+"')\">ç§»é™¤</a></span></li>";
+		str += "<li id=\"video_"+field+"_"+video_num+"\"><div class=\"r1\"><img src=\""+contents[i]+"\" width=\"132\" height=\"75\"><input type=\"text\" name=\""+field+"_video["+video_num+"][title]\" value=\""+filename+"\" class=\"input-text\"><input type='hidden' name='"+field+"_video["+video_num+"][videoid]' value='"+vids[i]+"'><div class=\"r2\"><span class=\"l\"><label>ÅÅĞò</label><input type='text' name='"+field+"_video["+video_num+"][listorder]' value='"+video_num+"' class=\"input-text\"></span><span class=\"r\"> <a href=\"javascript:remove_div('video_"+field+"_"+video_num+"')\">ÒÆ³ı</a></span></li>";
 		});
 	$('#key').val(video_num);
 	$('#'+returnid).html(str);
@@ -79,14 +79,14 @@ function change_multifile(uploadid,returnid){
 	$.each( contents, function(i, n) {
 		var ids = parseInt(Math.random() * 10000 + 10*i); 
 		var filename = filenames[i].substr(0,filenames[i].indexOf('.'));
-		str += "<li id='multifile"+ids+"'><input type='text' name='"+returnid+"_fileurl[]' value='"+n+"' style='width:310px;' class='input-text'> <input type='text' name='"+returnid+"_filename[]' value='"+filename+"' style='width:160px;' class='input-text' onfocus=\"if(this.value == this.defaultValue) this.value = ''\" onblur=\"if(this.value.replace(' ','') == '') this.value = this.defaultValue;\"> <a href=\"javascript:remove_div('multifile"+ids+"')\">ç§»é™¤</a> </li>";
+		str += "<li id='multifile"+ids+"'><input type='text' name='"+returnid+"_fileurl[]' value='"+n+"' style='width:310px;' class='input-text'> <input type='text' name='"+returnid+"_filename[]' value='"+filename+"' style='width:160px;' class='input-text' onfocus=\"if(this.value == this.defaultValue) this.value = ''\" onblur=\"if(this.value.replace(' ','') == '') this.value = this.defaultValue;\"> <a href=\"javascript:remove_div('multifile"+ids+"')\">ÒÆ³ı</a> </li>";
 		});
 	$('#'+returnid).append(str);
 }
 
 function add_multifile(returnid) {
 	var ids = parseInt(Math.random() * 10000); 
-	var str = "<li id='multifile"+ids+"'><input type='text' name='"+returnid+"_fileurl[]' value='' style='width:310px;' class='input-text'> <input type='text' name='"+returnid+"_filename[]' value='é™„ä»¶è¯´æ˜' style='width:160px;' class='input-text'> <a href=\"javascript:remove_div('multifile"+ids+"')\">ç§»é™¤</a> </li>";	
+	var str = "<li id='multifile"+ids+"'><input type='text' name='"+returnid+"_fileurl[]' value='' style='width:310px;' class='input-text'> <input type='text' name='"+returnid+"_filename[]' value='¸½¼şËµÃ÷' style='width:160px;' class='input-text'> <a href=\"javascript:remove_div('multifile"+ids+"')\">ÒÆ³ı</a> </li>";	
 	$('#'+returnid).append(str);
 }
 
@@ -105,7 +105,7 @@ function check_content(obj) {
 }
 
 function image_priview(img) {
-	window.top.art.dialog({title:'å›¾ç‰‡æŸ¥çœ‹',fixed:true, content:'<img src="'+img+'" />',id:'image_priview',time:5});
+	window.top.art.dialog({title:'Í¼Æ¬²é¿´',fixed:true, content:'<img src="'+img+'" />',id:'image_priview',time:5});
 }
 function remove_div(id) {
 	$('#'+id).remove();
@@ -124,7 +124,7 @@ function ruselinkurl() {
         if($('#islink').attr('checked')=='checked') {
                 $('#linkurl').attr('disabled',false); 
                 var oEditor = CKEDITOR.instances.content;
-                oEditor.insertHtml('ã€€');
+                oEditor.insertHtml('¡¡');
                 return false;
         } else {
                 $('#linkurl').attr('disabled','true');
@@ -132,7 +132,7 @@ function ruselinkurl() {
 }
 function close_window() {
 	if($('#title').val() !='') {
-	art.dialog({content:'å†…å®¹å·²ç»å½•å…¥ï¼Œç¡®å®šç¦»å¼€å°†ä¸ä¿å­˜æ•°æ®ï¼', fixed:true,yesText:'æˆ‘è¦å…³é—­',noText:'è¿”å›ä¿å­˜æ•°æ®',style:'confirm', id:'bnt4_test'}, function(){
+	art.dialog({content:'ÄÚÈİÒÑ¾­Â¼Èë£¬È·¶¨Àë¿ª½«²»±£´æÊı¾İ£¡', fixed:true,yesText:'ÎÒÒª¹Ø±Õ',noText:'·µ»Ø±£´æÊı¾İ',style:'confirm', id:'bnt4_test'}, function(){
 				window.close();
 			}, function(){
 				
@@ -158,7 +158,7 @@ function ChangeInput (objSelect,objInput) {
 	}
 }
 
-//ç§»é™¤ç›¸å…³æ–‡ç« 
+//ÒÆ³ıÏà¹ØÎÄÕÂ
 function remove_relation(sid,id) {
 	var relation_ids = $('#relation').val();
 	if(relation_ids !='' ) {
@@ -177,22 +177,22 @@ function remove_relation(sid,id) {
 		$('#relation').val(newrelation_ids);
 	}
 }
-//æ˜¾ç¤ºç›¸å…³æ–‡ç« 
+//ÏÔÊ¾Ïà¹ØÎÄÕÂ
 function show_relation(modelid,id) {
 $.getJSON("?m=content&c=content&a=public_getjson_ids&modelid="+modelid+"&id="+id, function(json){
 	var newrelation_ids = '';
 	if(json==null) {
-		alert('æ²¡æœ‰æ·»åŠ ç›¸å…³æ–‡ç« ');
+		alert('Ã»ÓĞÌí¼ÓÏà¹ØÎÄÕÂ');
 		return false;
 	}
 	$.each(json, function(i, n){
-		newrelation_ids += "<li id='"+n.sid+"'>Â·<span>"+n.title+"</span><a href='javascript:;' class='close' onclick=\"remove_relation('"+n.sid+"',"+n.id+")\"></a></li>";
+		newrelation_ids += "<li id='"+n.sid+"'>¡¤<span>"+n.title+"</span><a href='javascript:;' class='close' onclick=\"remove_relation('"+n.sid+"',"+n.id+")\"></a></li>";
 	});
 
 	$('#relation_text').html(newrelation_ids);
 }); 
 }
-//ç§»é™¤ID
+//ÒÆ³ıID
 function remove_id(id) {
 	$('#'+id).remove();
 }

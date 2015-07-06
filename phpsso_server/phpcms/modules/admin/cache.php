@@ -6,7 +6,7 @@ class cache extends admin {
 
 	private $db, $applications_db;
 	/**
-	 * 鏋愭瀯鍑芥暟
+	 * 析构函数
 	 */
 	public function __construct() {	
 		parent::__construct(1);
@@ -15,7 +15,7 @@ class cache extends admin {
 	}
 	
 	/**
-	 * 棣栭〉
+	 * 首页
 	 */
 	public function init() {
 		$applistinfo = getcacheinfo('applist');
@@ -23,7 +23,7 @@ class cache extends admin {
 	}
 
 	public function ajax_clear() {
-		/*鍐欏叆搴旂敤鍒楄〃缂撳瓨*/
+		/*写入应用列表缓存*/
 		$applist = $this->applications_db->listinfo('', '', 1, 100,'appid');
 		setcache('applist', $applist);
 		

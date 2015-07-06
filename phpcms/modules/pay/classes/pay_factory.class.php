@@ -1,6 +1,6 @@
 <?php
 /*
- * æ”¯ä»˜æ¨¡å—è°ƒç”¨å·¥å‚
+ * Ö§¸¶Ä£¿éµ÷ÓÃ¹¤³§
  */
 class pay_factory  {
 	
@@ -8,9 +8,9 @@ class pay_factory  {
 		$this->set_adapter($adapter_name, $adapter_config);
 	}
 	/**
-	 * æ„é€ é€‚é…å™¨
-	 * @param  $adapter_name æ”¯ä»˜æ¨¡å—code
-	 * @param  $adapter_config æ”¯ä»˜æ¨¡å—é…ç½®
+	 * ¹¹ÔìÊÊÅäÆ÷
+	 * @param  $adapter_name Ö§¸¶Ä£¿écode
+	 * @param  $adapter_config Ö§¸¶Ä£¿éÅäÖÃ
 	 */
 	public function set_adapter($adapter_name, $adapter_config = array()) {
 		if (!is_string($adapter_name)) return false;

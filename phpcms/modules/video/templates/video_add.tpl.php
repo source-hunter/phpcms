@@ -8,7 +8,7 @@
 <!--
 var js4swf = {
     onInit: function(list){
-        // åˆå§‹åŒ–æ—¶è°ƒç”¨, è‹¥ list.length > 0 ä»£è¡¨æœ‰å¯ç»­ä¼ æ–‡ä»¶
+        // ³õÊ¼»¯Ê±µ÷ÓÃ, Èô list.length > 0 ´ú±íÓĞ¿ÉĞø´«ÎÄ¼ş
         // [{file}, {file}]
 		if(list.length > 0) {
 		    var length = list.length-1;
@@ -17,39 +17,39 @@ var js4swf = {
         this.showMessage('init', list);
     },
     onSelect: function(files){
-        // é€‰ä¸­æ–‡ä»¶åè°ƒç”¨, è¿”å›æ–‡ä»¶åˆ—è¡¨
+        // Ñ¡ÖĞÎÄ¼şºóµ÷ÓÃ, ·µ»ØÎÄ¼şÁĞ±í
         // [{file}, {file}]
         this.showMessage('select', files);
     },
     onSid: function(evt){
-        // è·å¾— sid åè¿”å›, æ›´æ–° sid ç”¨ (key, sid, name, type, size)
+        // »ñµÃ sid ºó·µ»Ø, ¸üĞÂ sid ÓÃ (key, sid, name, type, size)
 		$('#title').val(evt.name);
 		var ku6vid = evt.vid;
 		$.get('index.php', {m:'video', c:'vid', a:'check', vid:ku6vid});
         this.showMessage('sid', evt);
     },
     onStart: function(){
-        // å¼€å§‹ä¸Šä¼  (é€‰æ‹©æ–‡ä»¶åè‡ªåŠ¨å¼€å§‹)
+        // ¿ªÊ¼ÉÏ´« (Ñ¡ÔñÎÄ¼şºó×Ô¶¯¿ªÊ¼)
         this.showMessage('start');
     },
     onCancel: function(){
-        // ä¸Šä¼ å–æ¶ˆäº‹ä»¶
+        // ÉÏ´«È¡ÏûÊÂ¼ş
 
         this.showMessage('cancel');
     },
     onProgress: function(evt){
-        // ä¸Šä¼ è¿›åº¦äº‹ä»¶ (bytesLoaded, bytesTotal, speed) m=1 æ—¶æ²¡æœ‰è¿™äº‹ä»¶
+        // ÉÏ´«½ø¶ÈÊÂ¼ş (bytesLoaded, bytesTotal, speed) m=1 Ê±Ã»ÓĞÕâÊÂ¼ş
         this.showMessage('progress', evt);
     },
     onComplete: function(evt){
-        // ä¸Šä¼ å®Œæˆäº‹ä»¶ (åŒ…å«æ–‡ä»¶ä¿¡æ¯å’Œå®Œæˆåè¿”å›æ•°æ®(data))
+        // ÉÏ´«Íê³ÉÊÂ¼ş (°üº¬ÎÄ¼şĞÅÏ¢ºÍÍê³Éºó·µ»ØÊı¾İ(data))
 		$('#vid').val(evt.vid);
 		//document.getElementById('frm').submit();
         this.showMessage('complete', evt);
         
     },
     onWarn: function(evt){
-        // æŠ¥é”™äº‹ä»¶ (key, message)
+        // ±¨´íÊÂ¼ş (key, message)
         //this.showMessage('warn', evt);
 		alert(evt.msg);
     },

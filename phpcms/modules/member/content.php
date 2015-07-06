@@ -1,6 +1,6 @@
 <?php
 /**
- * ä¼šå‘˜å‰å°æŠ•ç¨¿æ“ä½œç±»
+ * »áÔ±Ç°Ì¨Í¶¸å²Ù×÷Àà
  */
 
 defined('IN_PHPCMS') or exit('No permission resources.');
@@ -17,13 +17,13 @@ class content extends foreground {
 	public function publish() {
 		$memberinfo = $this->memberinfo;
 		$grouplist = getcache('grouplist');
-		$priv_db = pc_base::load_model('category_priv_model'); //åŠ è½½æ ç›®æƒé™è¡¨æ•°æ®æ¨¡å‹
+		$priv_db = pc_base::load_model('category_priv_model'); //¼ÓÔØÀ¸Ä¿È¨ÏŞ±íÊı¾İÄ£ĞÍ
 		
-		//åˆ¤æ–­ä¼šå‘˜ç»„æ˜¯å¦å…è®¸æŠ•ç¨¿
+		//ÅĞ¶Ï»áÔ±×éÊÇ·ñÔÊĞíÍ¶¸å
 		if(!$grouplist[$memberinfo['groupid']]['allowpost']) {
 			showmessage(L('member_group').L('publish_deny'), HTTP_REFERER);
 		}
-		//åˆ¤æ–­æ¯æ—¥æŠ•ç¨¿æ•°
+		//ÅĞ¶ÏÃ¿ÈÕÍ¶¸åÊı
 		$this->content_check_db = pc_base::load_model('content_check_model');
 		$todaytime = strtotime(date('y-m-d',SYS_TIME));
 		$_username = $this->memberinfo['username'];
@@ -36,7 +36,7 @@ class content extends foreground {
 		if(isset($_POST['dosubmit'])) {
 			
 			$catid = intval($_POST['info']['catid']);
-			//åˆ¤æ–­æ­¤ç±»å‹ç”¨æˆ·æ˜¯å¦æœ‰æƒé™åœ¨æ­¤æ ç›®ä¸‹æäº¤æŠ•ç¨¿
+			//ÅĞ¶Ï´ËÀàĞÍÓÃ»§ÊÇ·ñÓĞÈ¨ÏŞÔÚ´ËÀ¸Ä¿ÏÂÌá½»Í¶¸å
 			if (!$priv_db->get_one(array('catid'=>$catid, 'roleid'=>$memberinfo['groupid'], 'is_admin'=>0, 'action'=>'add'))) showmessage(L('category').L('publish_deny'), APP_PATH.'index.php?m=member'); 
 			
 			
@@ -69,7 +69,7 @@ class content extends foreground {
 			if($setting['presentpoint'] < 0 && $memberinfo['point'] < abs($setting['presentpoint']))
 			showmessage(L('points_less_than',array('point'=>$memberinfo['point'],'need_point'=>abs($setting['presentpoint']))),APP_PATH.'index.php?m=pay&c=deposit&a=pay&exchange=point',3000);
 			
-			//åˆ¤æ–­ä¼šå‘˜ç»„æŠ•ç¨¿æ˜¯å¦éœ€è¦å®¡æ ¸
+			//ÅĞ¶Ï»áÔ±×éÍ¶¸åÊÇ·ñĞèÒªÉóºË
 			if($grouplist[$memberinfo['groupid']]['allowpostverify'] || !$setting['workflowid']) {
 				$info['status'] = 99;
 			} else {
@@ -80,7 +80,7 @@ class content extends foreground {
 			$this->content_db->siteid = $siteid;
 			
 			$id = $this->content_db->add_content($info);
-			//æ£€æŸ¥æŠ•ç¨¿å¥–åŠ±æˆ–æ‰£é™¤ç§¯åˆ†
+			//¼ì²éÍ¶¸å½±Àø»ò¿Û³ı»ı·Ö
 			if ($info['status']==99) {
 				$flag = $catid.'_'.$id;
 				if($setting['presentpoint']>0) {
@@ -91,7 +91,7 @@ class content extends foreground {
 					spend::point($setting['presentpoint'], L('contribute_del_point'), $memberinfo['userid'], $memberinfo['username'], '', '', $flag);
 				}
 			}
-			//ç¼“å­˜ç»“æœ
+			//»º´æ½á¹û
 			$model_cache = getcache('model','commons');
 			$infos = array();
 			foreach ($model_cache as $modelid=>$model) {
@@ -103,7 +103,7 @@ class content extends foreground {
 				}
 			}
 			setcache('member_'.$memberinfo['userid'].'_'.$siteid, $infos,'content');
-			//ç¼“å­˜ç»“æœ END
+			//»º´æ½á¹û END
 			if($info['status']==99) {
 				showmessage(L('contributors_success'), APP_PATH.'index.php?m=member&c=content&a=published');
 			} else {
@@ -118,7 +118,7 @@ class content extends foreground {
 				include template('member', 'content_publish_select_model');
 				exit;
 			}
-			//è®¾ç½®cookie åœ¨é™„ä»¶æ·»åŠ å¤„è°ƒç”¨
+			//ÉèÖÃcookie ÔÚ¸½¼şÌí¼Ó´¦µ÷ÓÃ
 			param::set_cookie('module', 'content');
 			$siteid = intval($_GET['siteid']);
 			if(!$siteid) $siteid = 1;
@@ -129,7 +129,7 @@ class content extends foreground {
 			$catid = $_GET['catid'] ? intval($_GET['catid']) : $catid;
 			if (!$catid) showmessage(L('category').L('publish_deny'), APP_PATH.'index.php?m=member');
 
-			//åˆ¤æ–­æœ¬æ ç›®æ˜¯å¦å…è®¸æŠ•ç¨¿
+			//ÅĞ¶Ï±¾À¸Ä¿ÊÇ·ñÔÊĞíÍ¶¸å
 			if (!$priv_db->get_one(array('catid'=>$catid, 'roleid'=>$memberinfo['groupid'], 'is_admin'=>0, 'action'=>'add'))) showmessage(L('category').L('publish_deny'), APP_PATH.'index.php?m=member');
 			$category = $CATEGORYS[$catid];
 			if($category['siteid']!=$siteid) showmessage(L('site_no_category'),'?m=member&c=content&a=publish');
@@ -159,7 +159,7 @@ class content extends foreground {
 				$forminfos[$_fk] = $_fv;
 			}
 			$formValidator = $content_form->formValidator;
-			//å»æ‰æ ç›®id
+			//È¥µôÀ¸Ä¿id
 			unset($forminfos['catid']);
 			$workflowid = $setting['workflowid'];
 			header("Cache-control: private");
@@ -201,7 +201,7 @@ class content extends foreground {
 		include template('member', 'content_published');	
 	}
 	/**
-	 * ç¼–è¾‘å†…å®¹
+	 * ±à¼­ÄÚÈİ
 	 */
 	public function edit() {
 		$_username = $this->memberinfo['username'];
@@ -217,7 +217,7 @@ class content extends foreground {
 				$this->content_db = pc_base::load_model('content_model');
 				$modelid = $category['modelid'];
 				$this->content_db->set_model($modelid);
-				//åˆ¤æ–­ä¼šå‘˜ç»„æŠ•ç¨¿æ˜¯å¦éœ€è¦å®¡æ ¸
+				//ÅĞ¶Ï»áÔ±×éÍ¶¸åÊÇ·ñĞèÒªÉóºË
 				$memberinfo = $this->memberinfo;
 				$grouplist = getcache('grouplist');
 				$setting = string2array($category['setting']);
@@ -240,7 +240,7 @@ class content extends foreground {
 		} else {
 			$show_header = $show_dialog = $show_validator = '';
 			$temp_language = L('news','','content');
-			//è®¾ç½®cookie åœ¨é™„ä»¶æ·»åŠ å¤„è°ƒç”¨
+			//ÉèÖÃcookie ÔÚ¸½¼şÌí¼Ó´¦µ÷ÓÃ
 			param::set_cookie('module', 'content');
 			$id = intval($_GET['id']);
 			if(isset($_GET['catid']) && $_GET['catid']) {
@@ -292,14 +292,14 @@ class content extends foreground {
 	
 	/**
 	 * 
-	 * ä¼šå‘˜åˆ é™¤æŠ•ç¨¿ ...
+	 * »áÔ±É¾³ıÍ¶¸å ...
 	 */
 	public function delete(){
 		$id = intval($_GET['id']);
  		if(!$id){
 			return false;
 		}
- 		//åˆ¤æ–­è¯¥æ–‡ç« æ˜¯å¦å¾…å®¡ï¼Œå¹¶ä¸”å±äºè¯¥ä¼šå‘˜
+ 		//ÅĞ¶Ï¸ÃÎÄÕÂÊÇ·ñ´ıÉó£¬²¢ÇÒÊôÓÚ¸Ã»áÔ±
 		$username = param::get_cookie('_username');
 		$userid = param::get_cookie('_userid');
 		$siteid = get_siteid();
@@ -322,8 +322,8 @@ class content extends foreground {
 			$content_db = pc_base::load_model('content_model');
 			$content_db->set_model($modelid);
 			$table_name = $content_db->table_name;
- 			$content_db->delete_content($id); //åˆ é™¤æ–‡ç« 
- 			$check_pushed_db->delete(array('checkid'=>$checkid));//åˆ é™¤å¯¹åº”æŠ•ç¨¿è¡¨
+ 			$content_db->delete_content($id); //É¾³ıÎÄÕÂ
+ 			$check_pushed_db->delete(array('checkid'=>$checkid));//É¾³ı¶ÔÓ¦Í¶¸å±í
 			showmessage(L('operation_success'), HTTP_REFERER); 
 		}
 	}
@@ -332,12 +332,12 @@ class content extends foreground {
 		$memberinfo = $this->memberinfo;
 		$grouplist = getcache('grouplist');
 		$SEO['title'] = L('info_publish','','info');
-		//åˆ¤æ–­ä¼šå‘˜ç»„æ˜¯å¦å…è®¸æŠ•ç¨¿
+		//ÅĞ¶Ï»áÔ±×éÊÇ·ñÔÊĞíÍ¶¸å
 		if(!$grouplist[$memberinfo['groupid']]['allowpost']) {
 			showmessage(L('member_group').L('publish_deny'), HTTP_REFERER);
 		}
 
-		//åˆ¤æ–­æ¯æ—¥æŠ•ç¨¿æ•°
+		//ÅĞ¶ÏÃ¿ÈÕÍ¶¸åÊı
 		$this->content_check_db = pc_base::load_model('content_check_model');
 		$todaytime = strtotime(date('y-m-d',SYS_TIME));
 		$_username = $memberinfo['username'];
@@ -374,7 +374,7 @@ class content extends foreground {
 			if($setting['presentpoint'] < 0 && $memberinfo['point'] < abs($setting['presentpoint']))
 			showmessage(L('points_less_than',array('point'=>$memberinfo['point'],'need_point'=>abs($setting['presentpoint']))),APP_PATH.'index.php?m=pay&c=deposit&a=pay&exchange=point',3000);
 			
-			//åˆ¤æ–­ä¼šå‘˜ç»„æŠ•ç¨¿æ˜¯å¦éœ€è¦å®¡æ ¸
+			//ÅĞ¶Ï»áÔ±×éÍ¶¸åÊÇ·ñĞèÒªÉóºË
 			if($grouplist[$memberinfo['groupid']]['allowpostverify'] || !$setting['workflowid']) {
 				$info['status'] = 99;
 			} else {
@@ -384,7 +384,7 @@ class content extends foreground {
 			$this->content_db->siteid = $siteid;
 
 			$id = $this->content_db->add_content($info);
-			//æ£€æŸ¥æŠ•ç¨¿å¥–åŠ±æˆ–æ‰£é™¤ç§¯åˆ†
+			//¼ì²éÍ¶¸å½±Àø»ò¿Û³ı»ı·Ö
 			$flag = $catid.'_'.$id;
 			if($setting['presentpoint']>0) {
 				pc_base::load_app_class('receipts','pay',0);
@@ -393,7 +393,7 @@ class content extends foreground {
 				pc_base::load_app_class('spend','pay',0);
 				spend::point($setting['presentpoint'], L('contribute_del_point'), $memberinfo['userid'], $memberinfo['username'], '', '', $flag);
 			}
-			//ç¼“å­˜ç»“æœ
+			//»º´æ½á¹û
 			$model_cache = getcache('model','commons');
 			$infos = array();
 			foreach ($model_cache as $modelid=>$model) {
@@ -404,7 +404,7 @@ class content extends foreground {
 				}
 			}
 			setcache('member_'.$memberinfo['userid'].'_'.$siteid, $infos,'content');
-			//ç¼“å­˜ç»“æœ END
+			//»º´æ½á¹û END
 			if($info['status']==99) {
 				showmessage(L('contributors_success'), APP_PATH.'index.php?m=member&c=content&a=info_top&id='.$id.'&catid='.$catid.'&msg=1');
 			} else {
@@ -422,11 +422,11 @@ class content extends foreground {
 				exit;
 			}
 			*/
-			//è®¾ç½®cookie åœ¨é™„ä»¶æ·»åŠ å¤„è°ƒç”¨
+			//ÉèÖÃcookie ÔÚ¸½¼şÌí¼Ó´¦µ÷ÓÃ
 			param::set_cookie('module', 'content');
 			$siteid = intval($_GET['siteid']);
 			
-			//è·å–ä¿¡æ¯æ¨¡å‹ç±»åˆ«ã€åŒºåŸŸã€åŸå¸‚ä¿¡æ¯
+			//»ñÈ¡ĞÅÏ¢Ä£ĞÍÀà±ğ¡¢ÇøÓò¡¢³ÇÊĞĞÅÏ¢
 			$info_linkageid = getinfocache('info_linkageid');
 			$cityid = getcity(trim($_GET['city']),'linkageid');
 			$cityname = getcity(trim($_GET['city']),'name');			
@@ -436,14 +436,14 @@ class content extends foreground {
 			
 			if(!$siteid) $siteid = 1;
 			$CATEGORYS = getcache('category_content_'.$siteid, 'commons');
-			$priv_db = pc_base::load_model('category_priv_model'); //åŠ è½½æ ç›®æƒé™è¡¨æ•°æ®æ¨¡å‹
+			$priv_db = pc_base::load_model('category_priv_model'); //¼ÓÔØÀ¸Ä¿È¨ÏŞ±íÊı¾İÄ£ĞÍ
 			foreach ($CATEGORYS as $catid=>$cat) {
 				if($cat['siteid']==$siteid && $cat['child']==0 && $cat['type']==0 && $priv_db->get_one(array('catid'=>$catid, 'roleid'=>$memberinfo['groupid'], 'is_admin'=>0, 'action'=>'add'))) break;
 			}
 			$catid = $_GET['catid'] ? intval($_GET['catid']) : $catid;
 			if (!$catid) showmessage(L('category').L('publish_deny'), APP_PATH.'index.php?m=member');
 
-			//åˆ¤æ–­æœ¬æ ç›®æ˜¯å¦å…è®¸æŠ•ç¨¿
+			//ÅĞ¶Ï±¾À¸Ä¿ÊÇ·ñÔÊĞíÍ¶¸å
 			if (!$priv_db->get_one(array('catid'=>$catid, 'roleid'=>$memberinfo['groupid'], 'is_admin'=>0, 'action'=>'add'))) showmessage(L('category').L('publish_deny'), APP_PATH.'index.php?m=member');
 			$category = $CATEGORYS[$catid];
 			if($category['siteid']!=$siteid) showmessage(L('site_no_category'),'?m=member&c=content&a=info_publish');
@@ -499,7 +499,7 @@ class content extends foreground {
 				$forminfos[$_fk] = $_fv;
 			}
 			$formValidator = $content_form->formValidator;
-			//å»æ‰æ ç›®id
+			//È¥µôÀ¸Ä¿id
 			unset($forminfos['catid']);
 			
 			
@@ -532,7 +532,7 @@ class content extends foreground {
 				$r = $this->content_db->get_one(array('id'=>$id,'username'=>$_username,'sysadd'=>0));
 				if(!$r) showmessage(L('illegal_operation'));
 
-				//å†æ¬¡é‡æ–°èµ‹å€¼ï¼Œä»¥æ•°æ®åº“ä¸ºå‡†
+				//ÔÙ´ÎÖØĞÂ¸³Öµ£¬ÒÔÊı¾İ¿âÎª×¼
 				$catid = $CATEGORYS[$r['catid']]['catid'];
 				$modelid = $CATEGORYS[$catid]['modelid'];
 				
@@ -542,7 +542,7 @@ class content extends foreground {
 				extract($data);								
 			}
 		}
-		//ç½®é¡¶æ¨èä½æ•°ç»„
+		//ÖÃ¶¥ÍÆ¼öÎ»Êı×é
 			$infos = getcache('info_setting','commons'); 
 		$toptype_posid = array('1'=>$infos['top_city_posid'],
 							   '2'=>$infos['top_zone_posid'],
@@ -562,12 +562,12 @@ class content extends foreground {
 		$_userid = $this->memberinfo['userid'];	
 		$infos = getcache('info_setting','commons');
 		$toptype_arr = array(1,2,3);
-		//ç½®é¡¶ç§¯åˆ†æ•°ç»„
+		//ÖÃ¶¥»ı·ÖÊı×é
 		$toptype_price = array('1'=>$infos['top_city'],
 							   '2'=>$infos['top_zone'],
 							   '3'=>$infos['top_district'],
 							  );
-		//ç½®é¡¶æ¨èä½æ•°ç»„					  
+		//ÖÃ¶¥ÍÆ¼öÎ»Êı×é					  
 		$toptype_posid = array('1'=>$infos['top_city_posid'],
 							   '2'=>$infos['top_zone_posid'],
 							   '3'=>$infos['top_district_posid'],
@@ -581,7 +581,7 @@ class content extends foreground {
 			$flag = $catid.'_'.$id;			
 			$toptime = intval($_POST['toptime']);
 			if($toptime == 0 || empty($_POST['toptype'])) showmessage(L('info_top_not_setting_toptime'));
-			//è®¡ç®—ç½®é¡¶æ‰£è´¹ç§¯åˆ†ï¼Œæ—¶é—´
+			//¼ÆËãÖÃ¶¥¿Û·Ñ»ı·Ö£¬Ê±¼ä
 			if(is_array($_POST['toptype']) && !empty($_POST['toptype'])) {
 				foreach($_POST['toptype'] as $r) {
 					if(is_numeric($r) && in_array($r, $toptype_arr)) {
@@ -591,21 +591,21 @@ class content extends foreground {
 					}				
 				}
 			}
-			//åº”ä»˜æ€»ç§¯åˆ†
+			//Ó¦¸¶×Ü»ı·Ö
 			$amount = $amount * $toptime;
 				
-			//æ‰£é™¤ç½®é¡¶ç‚¹æ•°		
+			//¿Û³ıÖÃ¶¥µãÊı		
 			pc_base::load_app_class('spend','pay',0);
 			$pay_status = spend::point($amount, L('info_top').$msg, $_userid, $_username, '', '', $flag);
 			if($pay_status == false) {
 				$msg = spend::get_msg();
 				showmessage($msg);
 			}
-			//ç½®é¡¶è¿‡æœŸæ—¶é—´
+			//ÖÃ¶¥¹ıÆÚÊ±¼ä
 			//TODO
 			$expiration = SYS_TIME + $toptime * 3600;
 
-			//è·å–ç½®é¡¶æ–‡ç« ä¿¡æ¯å†…å®¹
+			//»ñÈ¡ÖÃ¶¥ÎÄÕÂĞÅÏ¢ÄÚÈİ
 			if(isset($catid) && $catid) {
 				$siteids = getcache('category_content', 'commons');
 				$siteid = $siteids[$catid];
@@ -644,9 +644,9 @@ class content extends foreground {
 		}
 	}		
 	/**
-	 * åˆå§‹åŒ–phpsso
+	 * ³õÊ¼»¯phpsso
 	 * about phpsso, include client and client configure
-	 * @return string phpsso_api_url phpssoåœ°å€
+	 * @return string phpsso_api_url phpssoµØÖ·
 	 */
 	private function _init_phpsso() {
 		pc_base::load_app_class('client', '', 0);
@@ -659,17 +659,17 @@ class content extends foreground {
 	
 	/**
 	 * Function UPLOAD_VIDEO
-	 * ç”¨æˆ·ä¸Šä¼ è§†é¢‘
+	 * ÓÃ»§ÉÏ´«ÊÓÆµ
 	 */
 	public function upload_video() {
 		
 		$memberinfo = $this->memberinfo;
 		$grouplist = getcache('grouplist');
-		//åˆ¤æ–­ä¼šå‘˜ç»„æ˜¯å¦å…è®¸æŠ•ç¨¿
+		//ÅĞ¶Ï»áÔ±×éÊÇ·ñÔÊĞíÍ¶¸å
 		if(!$grouplist[$memberinfo['groupid']]['allowpost']) {
 			showmessage(L('member_group').L('publish_deny'), HTTP_REFERER);
 		}
-		//åˆ¤æ–­æ¯æ—¥æŠ•ç¨¿æ•°
+		//ÅĞ¶ÏÃ¿ÈÕÍ¶¸åÊı
 		$this->content_check_db = pc_base::load_model('content_check_model');
 		$todaytime = strtotime(date('y-m-d',SYS_TIME));
 		$_username = $this->memberinfo['username'];
@@ -677,21 +677,21 @@ class content extends foreground {
 		if($grouplist[$memberinfo['groupid']]['allowpostnum'] > 0 && $allowpostnum >= $grouplist[$memberinfo['groupid']]['allowpostnum']) {
 			showmessage(L('allowpostnum_deny').$grouplist[$memberinfo['groupid']]['allowpostnum'], HTTP_REFERER);
 		}
-		//åŠ è½½è§†é¢‘åº“é…ç½®ä¿¡æ¯ 
+		//¼ÓÔØÊÓÆµ¿âÅäÖÃĞÅÏ¢ 
 		pc_base::load_app_class('ku6api', 'video', 0);
 		$setting = getcache('video', 'video');
 		if(empty($setting)) {
-			showmessage('ä¸Šä¼ åŠŸèƒ½è¿˜åœ¨å¼€å‘ä¸­ï¼Œè¯·ç¨åé‡è¯•ï¼');
+			showmessage('ÉÏ´«¹¦ÄÜ»¹ÔÚ¿ª·¢ÖĞ£¬ÇëÉÔºóÖØÊÔ£¡');
 		}
 		$ku6api = new ku6api($setting['sn'], $setting['skey']);
 		if (isset($_POST['dosubmit'])) {
-			$_POST['info']['catid'] = isset($_POST['info']['catid']) ? intval($_POST['info']['catid']) : showmessage('è¯·é€‰æ‹©æ ç›®ï¼');
-			$_POST['info']['title'] = isset($_POST['info']['title']) ? safe_replace($_POST['info']['title']) : showmessage('æ ‡é¢˜ä¸èƒ½ä¸ºç©ºï¼');
+			$_POST['info']['catid'] = isset($_POST['info']['catid']) ? intval($_POST['info']['catid']) : showmessage('ÇëÑ¡ÔñÀ¸Ä¿£¡');
+			$_POST['info']['title'] = isset($_POST['info']['title']) ? safe_replace($_POST['info']['title']) : showmessage('±êÌâ²»ÄÜÎª¿Õ£¡');
 			$_POST['info']['keywords'] = isset($_POST['info']['keywords']) ? safe_replace($_POST['info']['keywords']) : '';
 			$_POST['info']['description'] = isset($_POST['info']['description']) ? safe_replace($_POST['info']['description']) : '';
-			//æŸ¥è¯¢æ­¤æ¨¡å‹ä¸‹çš„è§†é¢‘å­—æ®µ
+			//²éÑ¯´ËÄ£ĞÍÏÂµÄÊÓÆµ×Ö¶Î
 			$field = get_video_field($_POST['info']['catid']);
-			if (!$field) showmessage('ä¸Šä¼ åŠŸèƒ½è¿˜åœ¨å¼€å‘ä¸­ï¼Œè¯·ç¨åé‡è¯•ï¼');
+			if (!$field) showmessage('ÉÏ´«¹¦ÄÜ»¹ÔÚ¿ª·¢ÖĞ£¬ÇëÉÔºóÖØÊÔ£¡');
 			$_POST['info'][$field] = 1;
 			$_POST[$field.'_video'] = array(1=>array('title'=>$_POST['info']['title'], 'vid' => $_POST['vid'], 'listorder'=>1)); 
 			unset($_POST['vid']);
@@ -700,7 +700,7 @@ class content extends foreground {
 			$categorys = video_categorys();
 			if (is_array($categorys) && !empty($categorys)) {
 				$cat = array();
-				$priv_db = pc_base::load_model('category_priv_model'); //åŠ è½½æ ç›®æƒé™è¡¨æ•°æ®æ¨¡å‹
+				$priv_db = pc_base::load_model('category_priv_model'); //¼ÓÔØÀ¸Ä¿È¨ÏŞ±íÊı¾İÄ£ĞÍ
 				foreach ($categorys as $cid=>$c) {
 					if($c['child']==0 && $c['type']==0 && !$priv_db->get_one(array('catid'=>$cid, 'roleid'=>$memberinfo['groupid'], 'is_admin'=>0, 'action'=>'add'))) unset($categorys[$cid]);
 				}
@@ -720,10 +720,10 @@ class content extends foreground {
 
 					$tree->init($categorys);
 					$string = $tree->get_tree(0, $str);
-					$cat_list = '<select name="info[catid]" id="catid"><option value="0">è¯·é€‰æ‹©æ ç›®</option>'.$string.'</select>';
+					$cat_list = '<select name="info[catid]" id="catid"><option value="0">ÇëÑ¡ÔñÀ¸Ä¿</option>'.$string.'</select>';
 				}
 			}
-			$flash_info = $ku6api->flashuploadparam(); //åŠ è½½è§†é¢‘ä¸Šä¼ å·¥å…·ä¿¡æ¯
+			$flash_info = $ku6api->flashuploadparam(); //¼ÓÔØÊÓÆµÉÏ´«¹¤¾ßĞÅÏ¢
 			
 			include template('member', 'upload_video');
 		}

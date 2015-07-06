@@ -24,12 +24,12 @@ var tits = new Array();
 {loop $pinfo $k $p}
 tits[{intval($k+1)}] ="{$p['setting']['1']['alt']}";
 {/loop}
-var imgwidth = {$width};//å›¾ç‰‡å®½åº¦
-var imgheight = {$height};//å›¾ç‰‡å®½åº¦
+var imgwidth = {$width};//Í¼Æ¬¿í¶È
+var imgheight = {$height};//Í¼Æ¬¿í¶È
 var str = "";
 str += "<span style='position:relative'>";
 str += "<span><a id='dlink' href='" + links[1] + "' target='_blank'><img id='dimg' src='" + imgs[1].src + "' border='0' width='" + imgwidth + "' height='"+imgheight+"' style='filter:Alpha(opacity=100)' onmouseover='Pause(true)' onmouseout='Pause(false)'></a></span>";
-//ä¿®æ”¹ç‚¹1ï¼šå¾ªç¯æ·»åŠ å†…å±‚divå†…å®¹ä»¥å¢åŠ ä¸ªæ•°
+//ĞŞ¸Äµã1£ºÑ­»·Ìí¼ÓÄÚ²ãdivÄÚÈİÒÔÔö¼Ó¸öÊı
 str += "</span>";
 document.write(str);
 var oi = document.getElementById("dimg");

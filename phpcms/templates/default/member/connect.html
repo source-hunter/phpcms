@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset={CHARSET}" />
 <meta http-equiv="X-UA-Compatible" content="IE=7" />
 <title>phpcmsV9 - {L('member','','member').L('manage_center')}</title>
 <link href="{CSS_PATH}reset.css" rel="stylesheet" type="text/css" />
@@ -118,7 +118,7 @@
 </div>
 
 <div id="content">
-	<h2>å®Œå–„èµ„æ–™</h2>
+	<h2>ÍêÉÆ×ÊÁÏ</h2>
 
 {if !isset($_GET['t'])}
 <form method="post" action="index.php?m=member&c=index&a=register" id="myform">
@@ -129,22 +129,22 @@
 
 <div class="point">
     <div class="content">
-        <strong class="title">æç¤º</strong>
-        <p>ç™»å½•æˆåŠŸï¼å®Œå–„ä¸€ä¸‹ä¿¡æ¯ï¼Œç«‹å³å¼€å§‹æµè§ˆ</p>
+        <strong class="title">ÌáÊ¾</strong>
+        <p>µÇÂ¼³É¹¦£¡ÍêÉÆÒ»ÏÂĞÅÏ¢£¬Á¢¼´¿ªÊ¼ä¯ÀÀ</p>
         <p>{$description}</p>
     </div>
     <span class="o1"></span><span class="o2"></span><span class="o3"></span><span class="o4"></span>
 </div>
 
-    	<div class="input"><label>{L('username')}ï¼š</label><input type="text" id="username" name="username" size="36" class="input-text" value="{$connect_username}"></div>
-        <div class="input"><label>{L('password')}ï¼š</label><input type="password" id="password" name="password" size="36" class="input-text"></div>
-        <div class="input"><label>{L('cofirmpwd')}ï¼š</label><input type="password" name="pwdconfirm" id="pwdconfirm" size="36" class="input-text"></div>
-        <div class="input"><label>{L('email')}ï¼š</label><input type="text" id="email" name="email" size="36" class="input-text"></div>
-		<div class="input"><label>{L('nickname')}ï¼š</label><input type="text" id="nickname" name="nickname" size="36" class="input-text" value="{$connect_username}"></div>
+    	<div class="input"><label>{L('username')}£º</label><input type="text" id="username" name="username" size="36" class="input-text" value="{$connect_username}"></div>
+        <div class="input"><label>{L('password')}£º</label><input type="password" id="password" name="password" size="36" class="input-text"></div>
+        <div class="input"><label>{L('cofirmpwd')}£º</label><input type="password" name="pwdconfirm" id="pwdconfirm" size="36" class="input-text"></div>
+        <div class="input"><label>{L('email')}£º</label><input type="text" id="email" name="email" size="36" class="input-text"></div>
+		<div class="input"><label>{L('nickname')}£º</label><input type="text" id="nickname" name="nickname" size="36" class="input-text" value="{$connect_username}"></div>
 	 
 
 			{loop $forminfos $k $v}
-				<div class="input"><label>{if $v['isbase']}<font color=red>*</font>{/if} {$v['name']}ï¼š{if $v['tips']}<br />({$v['tips']}){/if}</label><div class="form" style="width: 500px;">{$v['form']}</div></div>
+				<div class="input"><label>{if $v['isbase']}<font color=red>*</font>{/if} {$v['name']}£º{if $v['tips']}<br />({$v['tips']}){/if}</label><div class="form" style="width: 500px;">{$v['form']}</div></div>
 			{/loop} 
 			
         	<div class="reg">
@@ -156,11 +156,11 @@
 {elseif isset($_GET['t']) && $_GET['t']==2}
 <div class="col-left form-login form-reg">
 {php $emailurl = param::get_cookie('email') ? str_replace('@', '',strstr(param::get_cookie('email'), '@')) : '';}
-{param::get_cookie('_username')} {L('hellow')}ï¼Œ{L('login_email_authentication')} {if $emailurl} {L('please_click')}<a href="http://mail.{$emailurl}">{L('login_email')}</a>{/if}
+{param::get_cookie('_username')} {L('hellow')}£¬{L('login_email_authentication')} {if $emailurl} {L('please_click')}<a href="http://mail.{$emailurl}">{L('login_email')}</a>{/if}
 </div>
 {elseif isset($_GET['t']) && $_GET['t']==3}
 <div class="col-left form-login form-reg">
-{param::get_cookie('_username')} {L('hellow')}ï¼Œ{L('please_wait_administrator_verify')}
+{param::get_cookie('_username')} {L('hellow')}£¬{L('please_wait_administrator_verify')}
 </div>
 {else}
 <script language="JavaScript">
@@ -171,16 +171,16 @@
 {/if}
 
     <div class="col-auto exchange">
-    	<h5>å·²æœ‰äº†è´¦å·?</h5>
+    	<h5>ÒÑÓĞÁËÕËºÅ?</h5>
         <div class="avatar"><IMG src="{IMG_PATH}member/nophoto.gif" class="user" width=48 height=48> <IMG src="{IMG_PATH}member/exchange.gif"> <IMG src="{IMG_PATH}member/logo/{$_GET['a']}.png" width=48 height=48 class="user"> </div>
-        <h5><a href="javascript:;" onclick="show();" class="blue">ä¸æˆ‘çš„è´¦å·ç»‘å®š </a></h5>
+        <h5><a href="javascript:;" onclick="show();" class="blue">ÓëÎÒµÄÕËºÅ°ó¶¨ </a></h5>
         <div id="e-login" style="display:none">
         <form method="post" action="index.php?m=member&c=index&a=login">
             <div class="input">
-                <label>{L('username')}ï¼š</label><input type="text" id="username" name="username" size="22" class="input-text">
+                <label>{L('username')}£º</label><input type="text" id="username" name="username" size="22" class="input-text">
             </div>
             <div class="input">
-                <label>{L('password')}ï¼š</label><input type="password" id="password" name="password" size="22" class="input-text">
+                <label>{L('password')}£º</label><input type="password" id="password" name="password" size="22" class="input-text">
             </div>
             <div class="input">
                 <label>&nbsp;</label><div class="submit"><input type="submit" name="dosubmit" id="dosubmit" value="{L('login')}"></div>

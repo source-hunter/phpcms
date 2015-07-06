@@ -73,7 +73,7 @@ switch($field_type) {
 		$sql = "ALTER TABLE `$tablename` CHANGE `$oldfield` `$field` TIMESTAMP NOT NULL";
 		if (!$unrunsql) $this->db->query($sql);
 	break;
-	//ç‰¹æ®Šè‡ªå®šä¹‰å­—æ®µ
+	//ÌØÊâ×Ô¶¨Òå×Ö¶Î
 	case 'pages':
 		
 	break;

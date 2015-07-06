@@ -3,7 +3,7 @@ defined('IN_ADMIN') or exit('No permission resources.');
 include $this->admin_tpl('header', 'admin');
 ?>
 
-<div style="padding: 10px 0px 0px 10px;"><?php echo L('click_copy_code')?>ï¼š
+<div style="padding: 10px 0px 0px 10px;"><?php echo L('click_copy_code')?>£º
 &nbsp;<br><textarea ondblclick="copy_text(this)" style="width: 96%;height:300px" /><?php echo stripslashes ($tag)?></textarea><div>
 
 <script type="text/javascript">

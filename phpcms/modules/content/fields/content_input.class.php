@@ -9,7 +9,7 @@ class content_input {
 		$this->db_pre = $this->db->db_tablepre;
 		$this->modelid = $modelid;
 		$this->fields = getcache('model_field_'.$modelid,'model');
-		//åˆå§‹åŒ–é™„ä»¶ç±»
+		//³õÊ¼»¯¸½¼şÀà
 		pc_base::load_sys_class('attachment','',0);
 		$this->siteid = param::get_cookie('siteid');
 		$this->attachment = new attachment('content','0',$this->siteid);
@@ -63,7 +63,7 @@ class content_input {
 			} else {
 				$info['model'][$field] = $value;
 			}
-			//é¢œè‰²é€‰æ‹©ä¸ºéšè—åŸŸ åœ¨è¿™é‡Œè¿›è¡Œå–å€¼
+			//ÑÕÉ«Ñ¡ÔñÎªÒş²ØÓò ÔÚÕâÀï½øĞĞÈ¡Öµ
 			$info['system']['style'] = $_POST['style_color'] && preg_match('/^#([0-9a-z]+)/i', $_POST['style_color']) ? $_POST['style_color'] : '';
 			if($_POST['style_font_weight']=='bold') $info['system']['style'] = $info['system']['style'].';'.strip_tags($_POST['style_font_weight']);
 		}

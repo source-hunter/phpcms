@@ -7,8 +7,8 @@ defined('IN_PHPCMS') or exit('No permission resources.');
  * index
  * ------------------------------------------
  * @package 	PHPCMS V9.1.16
- * @author		ç‹å®˜åº†
- * @copyright	CopyRight (c) 2006-2012 ä¸Šæµ·ç››å¤§ç½‘ç»œå‘å±•æœ‰é™å…¬å¸
+ * @author		Íõ¹ÙÇì
+ * @copyright	CopyRight (c) 2006-2012 ÉÏº£Ê¢´óÍøÂç·¢Õ¹ÓĞÏŞ¹«Ë¾
  * 
  */
 
@@ -26,14 +26,14 @@ class index{
 	
 	/**
 	 * 
-	 * è§†é¢‘åˆ—è¡¨
+	 * ÊÓÆµÁĞ±í
 	 */
 	public function init() {
-		 showmessage('æ­£åœ¨è½¬å‘é¦–é¡µ...','index.php');
+		 showmessage('ÕıÔÚ×ªÏòÊ×Ò³...','index.php');
 	}
 	
 	/**
-	* æ’­æ”¾æ¸…å•ï¼Œæ’­æ”¾é¡µ
+	* ²¥·ÅÇåµ¥£¬²¥·ÅÒ³
 	*/
 	public function playlist(){
 		pc_base::load_app_func('util','content');
@@ -51,7 +51,7 @@ class index{
 	} 
 	
 	/**
-	* è§†é¢‘ä¸“è¾‘åˆ—è¡¨é¡µ
+	* ÊÓÆµ×¨¼­ÁĞ±íÒ³
 	* index.php?m=video&c=index&a=album
 	*/
 	public function album(){

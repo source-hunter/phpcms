@@ -1,6 +1,6 @@
 <?php
 /**
- * é‚®ä»¶å‘é€å‡½æ•°
+ * ÓÊ¼ş·¢ËÍº¯Êı
  * @copyright			(C) 2005-2010 PHPCMS
  * @license				http://www.phpcms.cn/license/
  * @lastmodify			2010-6-1
@@ -10,13 +10,13 @@ function runlog($mode = 'SMTP',$b = '',$c = '',$d='') {
 }
 
 /**
- * å‘é€é‚®ä»¶
- * @param $toemail æ”¶ä»¶äººemail
- * @param $subject é‚®ä»¶ä¸»é¢˜
- * @param $message æ­£æ–‡
- * @param $from å‘ä»¶äºº
- * @param $cfg é‚®ä»¶é…ç½®ä¿¡æ¯
- * @param $sitename é‚®ä»¶ç«™ç‚¹åç§°
+ * ·¢ËÍÓÊ¼ş
+ * @param $toemail ÊÕ¼şÈËemail
+ * @param $subject ÓÊ¼şÖ÷Ìâ
+ * @param $message ÕıÎÄ
+ * @param $from ·¢¼şÈË
+ * @param $cfg ÓÊ¼şÅäÖÃĞÅÏ¢
+ * @param $sitename ÓÊ¼şÕ¾µãÃû³Æ
  */
 
 function sendmail($toemail, $subject, $message, $from='',$cfg = array(), $sitename='') {
@@ -29,11 +29,11 @@ function sendmail($toemail, $subject, $message, $from='',$cfg = array(), $sitena
 	if($cfg && is_array($cfg)) {
 		$from = $cfg['from'];
 		$mail = $cfg;
-		$mail_type = $cfg['mail_type']; //é‚®ä»¶å‘é€æ¨¡å¼
+		$mail_type = $cfg['mail_type']; //ÓÊ¼ş·¢ËÍÄ£Ê½
 	} else {
 		$cfg = getcache('common','commons');
 		$from = $cfg['mail_from'];
-		$mail_type = $cfg['mail_type']; //é‚®ä»¶å‘é€æ¨¡å¼
+		$mail_type = $cfg['mail_type']; //ÓÊ¼ş·¢ËÍÄ£Ê½
 		if($cfg['mail_user']=='' || $cfg['mail_password'] ==''){
 			return false;
 		}
@@ -49,7 +49,7 @@ function sendmail($toemail, $subject, $message, $from='',$cfg = array(), $sitena
 			'auth_password' => $cfg['mail_password']
 		);		
 	}
-	//mail å‘é€æ¨¡å¼
+	//mail ·¢ËÍÄ£Ê½
 	if($mail_type==0) {
 		$headers  = 'MIME-Version: 1.0' . "\r\n";
 		$headers .= 'Content-type: text/html; charset='.CHARSET.'' . "\r\n";
@@ -57,15 +57,15 @@ function sendmail($toemail, $subject, $message, $from='',$cfg = array(), $sitena
 		mail($toemail, $subject, $message, $headers);
 		return true;
 	}
-	//é‚®ä»¶å¤´çš„åˆ†éš”ç¬¦
+	//ÓÊ¼şÍ·µÄ·Ö¸ô·û
 	$maildelimiter = $mail['maildelimiter'] == 1 ? "\r\n" : ($mail['maildelimiter'] == 2 ? "\r" : "\n");
-	//æ”¶ä»¶äººåœ°å€ä¸­åŒ…å«ç”¨æˆ·å
+	//ÊÕ¼şÈËµØÖ·ÖĞ°üº¬ÓÃ»§Ãû
 	$mailusername = isset($mail['mailusername']) ? $mail['mailusername'] : 1;
-	//ç«¯å£
+	//¶Ë¿Ú
 	$mail['port'] = $mail['port'] ? $mail['port'] : 25;
 	$mail['mailsend'] = $mail['mailsend'] ? $mail['mailsend'] : 1;
 	
-	//å‘ä¿¡è€…
+	//·¢ĞÅÕß
 	$email_from = $from == '' ? '=?'.CHARSET.'?B?'.base64_encode($sitename)."?= <".$from.">" : (preg_match('/^(.+?) \<(.+?)\>$/',$from, $mats) ? '=?'.CHARSET.'?B?'.base64_encode($mats[1])."?= <$mats[2]>" : $from);
 	
 	$email_to = preg_match('/^(.+?) \<(.+?)\>$/',$toemail, $mats) ? ($mailusername ? '=?'.CHARSET.'?B?'.base64_encode($mats[1])."?= <$mats[2]>" : $mats[2]) : $toemail;;

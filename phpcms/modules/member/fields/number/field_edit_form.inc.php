@@ -1,14 +1,14 @@
 <?php defined('IN_PHPCMS') or exit('No permission resources.');?>
 <table cellpadding="2" cellspacing="1" width="98%">
 	<tr> 
-      <td width="100">取值范围</td>
+      <td width="100">ȡֵ��Χ</td>
       <td><input type="text" name="setting[minnumber]" value="<?php echo $setting['minnumber'];?>" size="5" class="input-text"> - <input type="text" name="setting[maxnumber]" value="<?php echo $setting['maxnumber'];?>" size="5" class="input-text"></td>
     </tr>
 	<tr> 
-      <td>小数位数：</td>
+      <td>С��λ����</td>
       <td>
 	  <select name="setting[decimaldigits]">
-	  <option value="-1" <?php if($setting['decimaldigits']==-1) echo 'selected';?>)>自动</option>
+	  <option value="-1" <?php if($setting['decimaldigits']==-1) echo 'selected';?>)>�Զ�</option>
 	  <option value="0" <?php if($setting['decimaldigits']==0) echo 'selected';?>>0</option>
 	  <option value="1" <?php if($setting['decimaldigits']==1) echo 'selected';?>>1</option>
 	  <option value="2" <?php if($setting['decimaldigits']==2) echo 'selected';?>>2</option>
@@ -19,11 +19,11 @@
     </td>
     </tr>
 	<tr> 
-      <td>输入框长度</td>
+      <td>����򳤶�</td>
       <td><input type="text" name="setting[size]" value="<?php echo $setting['size'];?>" size="3" class="input-text"> px</td>
     </tr>
 	<tr> 
-      <td>默认值</td>
+      <td>Ĭ��ֵ</td>
       <td><input type="text" name="setting[defaultvalue]" value="<?php echo $setting['defaultvalue'];?>" size="40" class="input-text"></td>
     </tr>
 </table>

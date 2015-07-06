@@ -10,16 +10,16 @@ class url{
 	}
 
 	/**
-	 * å†…å®¹é¡µé“¾æ¥
-	 * @param $id å†…å®¹id
-	 * @param $page å½“å‰é¡µ
-	 * @param $catid æ ç›®id
-	 * @param $time æ·»åŠ æ—¶é—´
-	 * @param $prefix å‰ç¼€
-	 * @param $data æ•°æ®
-	 * @param $action æ“ä½œæ–¹æ³•
-	 * @param $upgrade æ˜¯å¦æ˜¯å‡çº§æ•°æ®
-	 * @return array 0=>url , 1=>ç”Ÿæˆè·¯å¾„
+	 * ÄÚÈİÒ³Á´½Ó
+	 * @param $id ÄÚÈİid
+	 * @param $page µ±Ç°Ò³
+	 * @param $catid À¸Ä¿id
+	 * @param $time Ìí¼ÓÊ±¼ä
+	 * @param $prefix Ç°×º
+	 * @param $data Êı¾İ
+	 * @param $action ²Ù×÷·½·¨
+	 * @param $upgrade ÊÇ·ñÊÇÉı¼¶Êı¾İ
+	 * @return array 0=>url , 1=>Éú³ÉÂ·¾¶
 	 */
 	public function show($id, $page = 0, $catid = 0, $time = 0, $prefix = '',$data = '',$action = 'edit',$upgrade = 0) {
 		$page = max($page,1);
@@ -27,7 +27,7 @@ class url{
 		$category = $this->categorys[$catid];
 		$setting = string2array($category['setting']);
 		$content_ishtml = $setting['content_ishtml'];
-		//å½“å†…å®¹ä¸ºè½¬æ¢æˆ–å‡çº§æ—¶
+		//µ±ÄÚÈİÎª×ª»»»òÉı¼¶Ê±
 		if($upgrade || (isset($_POST['upgrade']) && defined('IN_ADMIN') && $_POST['upgrade'])) {
 			if($_POST['upgrade']) $upgrade = $_POST['upgrade'];
 			$upgrade = '/'.ltrim($upgrade,WEB_PATH);
@@ -89,7 +89,7 @@ class url{
 				$url_arr[0] = $url_arr[1] = APP_PATH.$urls;
 			}
 		}
-		//ç”Ÿæˆé™æ€ ,åœ¨æ·»åŠ æ–‡ç« çš„æ—¶å€™ï¼ŒåŒæ—¶ç”Ÿæˆé™æ€ï¼Œä¸åœ¨æ‰¹é‡æ›´æ–°URLå¤„è°ƒç”¨
+		//Éú³É¾²Ì¬ ,ÔÚÌí¼ÓÎÄÕÂµÄÊ±ºò£¬Í¬Ê±Éú³É¾²Ì¬£¬²»ÔÚÅúÁ¿¸üĞÂURL´¦µ÷ÓÃ
 		if($content_ishtml && $data) {
 			$data['id'] = $id;
 			$url_arr['content_ishtml'] = 1;
@@ -99,10 +99,10 @@ class url{
 	}
 	
 	/**
-	 * è·å–æ ç›®çš„è®¿é—®è·¯å¾„
-	 * åœ¨ä¿®å¤æ ç›®è·¯å¾„å¤„é‡å»ºç›®å½•ç»“æ„ç”¨
-	 * @param intval $catid æ ç›®ID
-	 * @param intval $page é¡µæ•°
+	 * »ñÈ¡À¸Ä¿µÄ·ÃÎÊÂ·¾¶
+	 * ÔÚĞŞ¸´À¸Ä¿Â·¾¶´¦ÖØ½¨Ä¿Â¼½á¹¹ÓÃ
+	 * @param intval $catid À¸Ä¿ID
+	 * @param intval $page Ò³Êı
 	 */
 	public function category_url($catid, $page = 1) {
 		$category = $this->categorys[$catid];
@@ -117,39 +117,39 @@ class url{
 		} else {
 			$urlrule = $urlrules_arr[1];
 		}
-		if (!$setting['ishtml']) { //å¦‚æœä¸ç”Ÿæˆé™æ€
+		if (!$setting['ishtml']) { //Èç¹û²»Éú³É¾²Ì¬
 			
 			$url = str_replace(array('{$catid}', '{$page}'), array($catid, $page), $urlrule);
 			if (strpos($url, '\\')!==false) {
 					$url = APP_PATH.str_replace('\\', '/', $url);
 			}
-		}  else { //ç”Ÿæˆé™æ€
+		}  else { //Éú³É¾²Ì¬
 			if ($category['arrparentid']) {
 				$parentids = explode(',', $category['arrparentid']);
 			}
 			$parentids[] = $catid;
 			$domain_dir = '';
-			foreach ($parentids as $pid) { //å¾ªç¯æŸ¥è¯¢çˆ¶æ ç›®æ˜¯å¦è®¾ç½®äº†äºŒçº§åŸŸå
+			foreach ($parentids as $pid) { //Ñ­»·²éÑ¯¸¸À¸Ä¿ÊÇ·ñÉèÖÃÁË¶ş¼¶ÓòÃû
 				$r = $this->categorys[$pid];
 				if (strpos(strtolower($r['url']), '://')!==false && strpos($r['url'], '?')===false) {
-					$r['url'] = preg_replace('/([(http|https):\/\/]{0,})([^\/]*)([\/]{1,})/i', '$1$2/', $r['url'], -1); //å–æ¶ˆæ‰åŒ'/'æƒ…å†µ
-					if (substr_count($r['url'], '/')==3 && substr($r['url'],-1,1)=='/') { //å¦‚æœurlä¸­åŒ…å«â€˜http://â€™å¹¶ä¸”â€˜/â€™åœ¨3ä¸ªåˆ™ä¸ºäºŒçº§åŸŸåè®¾ç½®æ ç›®
+					$r['url'] = preg_replace('/([(http|https):\/\/]{0,})([^\/]*)([\/]{1,})/i', '$1$2/', $r['url'], -1); //È¡ÏûµôË«'/'Çé¿ö
+					if (substr_count($r['url'], '/')==3 && substr($r['url'],-1,1)=='/') { //Èç¹ûurlÖĞ°üº¬¡®http://¡¯²¢ÇÒ¡®/¡¯ÔÚ3¸öÔòÎª¶ş¼¶ÓòÃûÉèÖÃÀ¸Ä¿
 						$url = $r['url'];
-						$domain_dir = $this->get_categorydir($pid).$this->categorys[$pid]['catdir'].'/'; //å¾—åˆ°äºŒçº§åŸŸåçš„ç›®å½•
+						$domain_dir = $this->get_categorydir($pid).$this->categorys[$pid]['catdir'].'/'; //µÃµ½¶ş¼¶ÓòÃûµÄÄ¿Â¼
 					}
 				}
 			}
 			
 			$category_dir = $this->get_categorydir($catid);
 			$urls = str_replace(array('{$categorydir}','{$catdir}','{$catid}','{$page}'),array($category_dir,$category['catdir'],$catid,$page),$urlrule);
-			if ($url && $domain_dir) { //å¦‚æœå­˜åœ¨è®¾ç½®äºŒçº§åŸŸåçš„æƒ…å†µ
+			if ($url && $domain_dir) { //Èç¹û´æÔÚÉèÖÃ¶ş¼¶ÓòÃûµÄÇé¿ö
 				if (strpos($urls, $domain_dir)===0) {
 					$url = str_replace(array($domain_dir, '\\'), array($url, '/'), $urls);
 				} else {
 					$urls = $domain_dir.$urls;
 					$url = str_replace(array($domain_dir, '\\'), array($url, '/'), $urls);
 				}
-			} else { //ä¸å­˜åœ¨äºŒçº§åŸŸåçš„æƒ…å†µ
+			} else { //²»´æÔÚ¶ş¼¶ÓòÃûµÄÇé¿ö
 				$url = $urls;
 			}
 		}
@@ -161,12 +161,12 @@ class url{
 		return $url;
 	}
 	/**
-	 * ç”Ÿæˆåˆ—è¡¨é¡µåˆ†é¡µåœ°å€
-	 * @param $ruleid è§’è‰²id
-	 * @param $categorydir çˆ¶æ ç›®è·¯å¾„
-	 * @param $catdir æ ç›®è·¯å¾„
-	 * @param $catid æ ç›®id
-	 * @param $page å½“å‰é¡µ
+	 * Éú³ÉÁĞ±íÒ³·ÖÒ³µØÖ·
+	 * @param $ruleid ½ÇÉ«id
+	 * @param $categorydir ¸¸À¸Ä¿Â·¾¶
+	 * @param $catdir À¸Ä¿Â·¾¶
+	 * @param $catid À¸Ä¿id
+	 * @param $page µ±Ç°Ò³
 	 */
 	public function get_list_url($ruleid,$categorydir, $catdir, $catid, $page = 1) {
 		$urlrules = $this->urlrules[$ruleid];
@@ -181,7 +181,7 @@ class url{
 	}
 	
 	/**
-	 * è·å–çˆ¶æ ç›®è·¯å¾„
+	 * »ñÈ¡¸¸À¸Ä¿Â·¾¶
 	 * @param $catid
 	 * @param $dir
 	 */
@@ -197,7 +197,7 @@ class url{
 		}
 	}
 	/**
-	 * è®¾ç½®å½“å‰ç«™ç‚¹
+	 * ÉèÖÃµ±Ç°Õ¾µã
 	 */
 	private function set_siteid() {
 		if(defined('IN_ADMIN')) {

@@ -2,7 +2,7 @@
 return array (
   'banner' => 
   array (
-    'name' => 'çŸ©å½¢æ¨ªå¹…',
+    'name' => '¾ØÐÎºá·ù',
     'select' => '0',
     'padding' => '0',
     'size' => '1',
@@ -11,13 +11,13 @@ return array (
     'iscore' => '1',
     'type' => 
     array (
-      'images' => 'å›¾ç‰‡',
-      'flash' => 'åŠ¨ç”»',
+      'images' => 'Í¼Æ¬',
+      'flash' => '¶¯»­',
     ),
   ),
   'fixure' => 
   array (
-    'name' => 'å›ºå®šä½ç½®',
+    'name' => '¹Ì¶¨Î»ÖÃ',
     'align' => 'align',
     'select' => '1',
     'padding' => '1',
@@ -27,13 +27,13 @@ return array (
     'iscore' => '1',
     'type' => 
     array (
-      'images' => 'å›¾ç‰‡',
-      'flash' => 'åŠ¨ç”»',
+      'images' => 'Í¼Æ¬',
+      'flash' => '¶¯»­',
     ),
   ),
   'float' => 
   array (
-    'name' => 'æ¼‚æµ®ç§»åŠ¨',
+    'name' => 'Æ¯¸¡ÒÆ¶¯',
     'select' => '0',
     'padding' => '1',
     'size' => '1',
@@ -42,13 +42,13 @@ return array (
     'iscore' => '1',
     'type' => 
     array (
-      'images' => 'å›¾ç‰‡',
-      'flash' => 'åŠ¨ç”»',
+      'images' => 'Í¼Æ¬',
+      'flash' => '¶¯»­',
     ),
   ),
   'couplet' => 
   array (
-    'name' => 'å¯¹è”å¹¿å‘Š',
+    'name' => '¶ÔÁª¹ã¸æ',
     'align' => 'scroll',
     'select' => '0',
     'padding' => '1',
@@ -58,13 +58,13 @@ return array (
     'iscore' => '1',
     'type' => 
     array (
-      'images' => 'å›¾ç‰‡',
-      'flash' => 'åŠ¨ç”»',
+      'images' => 'Í¼Æ¬',
+      'flash' => '¶¯»­',
     ),
   ),
   'imagechange' => 
   array (
-    'name' => 'å›¾ç‰‡è½®æ¢å¹¿å‘Š',
+    'name' => 'Í¼Æ¬ÂÖ»»¹ã¸æ',
     'select' => '0',
     'padding' => '0',
     'size' => '1',
@@ -73,12 +73,12 @@ return array (
     'iscore' => '1',
     'type' => 
     array (
-      'images' => 'å›¾ç‰‡',
+      'images' => 'Í¼Æ¬',
     ),
   ),
   'imagelist' => 
   array (
-    'name' => 'å›¾ç‰‡åˆ—è¡¨å¹¿å‘Š',
+    'name' => 'Í¼Æ¬ÁÐ±í¹ã¸æ',
     'select' => '0',
     'padding' => '0',
     'size' => '1',
@@ -87,12 +87,12 @@ return array (
     'iscore' => '1',
     'type' => 
     array (
-      'images' => 'å›¾ç‰‡',
+      'images' => 'Í¼Æ¬',
     ),
   ),
   'text' => 
   array (
-    'name' => 'æ–‡å­—å¹¿å‘Š',
+    'name' => 'ÎÄ×Ö¹ã¸æ',
     'select' => '0',
     'padding' => '0',
     'size' => '0',
@@ -101,15 +101,15 @@ return array (
     'iscore' => '1',
     'type' => 
     array (
-      'text' => 'æ–‡å­—',
+      'text' => 'ÎÄ×Ö',
     ),
   ),
   'code' => 
   array (
-    'name' => 'ä»£ç å¹¿å‘Š',
+    'name' => '´úÂë¹ã¸æ',
     'type' => 
     array (
-      'text' => 'ä»£ç ',
+      'text' => '´úÂë',
     ),
     'num' => 1,
     'iscore' => 1,

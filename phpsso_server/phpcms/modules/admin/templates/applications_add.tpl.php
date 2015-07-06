@@ -26,18 +26,18 @@ $(function(){
 <form action="?m=admin&c=applications&a=add" method="post" id="myform">
 <table width="100%"  class="table_form">
   <tr>
-    <th width="80"><?php echo L('application_name')?>ï¼š</th>
+    <th width="80"><?php echo L('application_name')?>£º</th>
     <td class="y-bg"><input type="text" class="input-text" name="name" id="name" /></td>
   </tr><tr>
-    <th><?php echo L('application_url')?>ï¼š</th>
+    <th><?php echo L('application_url')?>£º</th>
     <td class="y-bg"><input type="text" class="input-text" name="url" id="url" size="50"/></td>
   </tr>
   <tr>
-    <th><?php echo L('authkey')?>ï¼š</th>
+    <th><?php echo L('authkey')?>£º</th>
     <td class="y-bg"><input type="text" class="input-text" name="authkey" id="authkey" size="50"/> <input type="button" class="button" name="dosubmit" value="<?php echo L('automatic_generation')?>" onclick="creat_authkey()" /> </td>
   </tr>
    <tr>
-    <th><?php echo L('type')?>ï¼š</th>
+    <th><?php echo L('type')?>£º</th>
     <td class="y-bg"><select name="type" onchange="change_apifile(this.value)">
 	<option value="phpcms_v9">phpcms_v9</option>
     <option value="phpcms_2008_sp4">phpcms_2008_sp4</option>
@@ -45,22 +45,22 @@ $(function(){
     </select></td>
   </tr>
    <tr>
-    <th><?php echo L('application_ip')?>ï¼š</th>
+    <th><?php echo L('application_ip')?>£º</th>
     <td class="y-bg"><input type="text" class="input-text" name="ip" /> <?php echo L('application_ip_msg')?></td>
   </tr>
    <tr>
-    <th><?php echo L('application_apifilename')?>ï¼š</th>
+    <th><?php echo L('application_apifilename')?>£º</th>
     <td class="y-bg"><input type="text" class="input-text" name="apifilename" id="apifilename" value="phpsso.php" size="50"/></td>
   </tr>
    <tr>
-    <th><?php echo L('application_charset')?>ï¼š</th>
+    <th><?php echo L('application_charset')?>£º</th>
     <td class="y-bg"><select name="charset">
     <option value="gbk">GBK</option>
     <option value="utf-8">utf-8</option>
     </select></td>
   </tr>
     <tr>
-    <th><?php echo L('application_synlogin')?>ï¼š</th>
+    <th><?php echo L('application_synlogin')?>£º</th>
     <td class="y-bg"><input type="checkbox" name="synlogin" value="1" /> <?php echo L('yes')?></td>
   </tr>
 </table>

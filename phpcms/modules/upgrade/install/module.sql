@@ -1,1 +1,1 @@
-INSERT INTO `phpcms_module` VALUES ('upgrade', 'Âú®Á∫øÂçáÁ∫ß', '', '0', '1.0', '', '', '0', '0', '2011-05-18', '2011-05-18');
+INSERT INTO `phpcms_module` VALUES ('upgrade', '‘⁄œﬂ…˝º∂', '', '0', '1.0', '', '', '0', '0', '2011-05-18', '2011-05-18');

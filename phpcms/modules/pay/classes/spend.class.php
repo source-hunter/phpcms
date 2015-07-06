@@ -1,36 +1,36 @@
 <?php
 defined('IN_PHPCMS') or exit('No permission resources.'); 
 /**
- * æ¶ˆè´¹è®°å½•ç±»ä½¿ç”¨è¯´æ˜Ž
+ * Ïû·Ñ¼ÇÂ¼ÀàÊ¹ÓÃËµÃ÷
  * @author chenzhouyu
  * 
- * ç›´æŽ¥ä½¿ç”¨pc_base::load_app_class('spend', 'pay', 0);
- * è¿›è¡ŒåŠ è½½ã€‚
- * ä½¿ç”¨spend::amount()è¿›è¡Œé‡‘é’±çš„æ¶ˆè´¹
- * spend::point()è¿›è¡Œç§¯åˆ†æ¶ˆè´¹
- * å½“å‡½æ•°è¿”å›žçš„ç»“æžœä¸ºfalseæ˜¯ï¼Œå¯ä½¿ç”¨spend::get_msg()èŽ·å–é”™è¯¯åŽŸå› 
+ * Ö±½ÓÊ¹ÓÃpc_base::load_app_class('spend', 'pay', 0);
+ * ½øÐÐ¼ÓÔØ¡£
+ * Ê¹ÓÃspend::amount()½øÐÐ½ðÇ®µÄÏû·Ñ
+ * spend::point()½øÐÐ»ý·ÖÏû·Ñ
+ * µ±º¯Êý·µ»ØµÄ½á¹ûÎªfalseÊÇ£¬¿ÉÊ¹ÓÃspend::get_msg()»ñÈ¡´íÎóÔ­Òò
  * 
  */
 class spend {
 	
-	//æ•°æ®åº“è¿žæŽ¥
+	//Êý¾Ý¿âÁ¬½Ó
 	protected static $db;
 	
-	//é”™è¯¯ä»£ç 
+	//´íÎó´úÂë
 	public static $msg;
 	
 	/**
-	 * æ•°æ®åº“è¿žæŽ¥
+	 * Êý¾Ý¿âÁ¬½Ó
 	 */
 	protected  static function connect() {
 		self::$db = pc_base::load_model("pay_spend_model");
 	}
 	
 	/**
-	 * æŒ‰ç”¨æˆ·åã€æ—¶é—´ã€æ ‡è¯†æŸ¥è¯¢æ˜¯å¦æœ‰æ¶ˆè´¹è®°å½•
-	 * @param integer $userid      ç”¨æˆ·å
-	 * @param integer $time        æ—¶é—´ã€‚  ä»ŽæŒ‡å®šæ—¶é—´åˆ°çŽ°åœ¨çš„æ—¶é—´èŒƒå›´å†…ã€‚
-	 * @param string $logo   æ ‡è¯†
+	 * °´ÓÃ»§Ãû¡¢Ê±¼ä¡¢±êÊ¶²éÑ¯ÊÇ·ñÓÐÏû·Ñ¼ÇÂ¼
+	 * @param integer $userid      ÓÃ»§Ãû
+	 * @param integer $time        Ê±¼ä¡£  ´ÓÖ¸¶¨Ê±¼äµ½ÏÖÔÚµÄÊ±¼ä·¶Î§ÄÚ¡£
+	 * @param string $logo   ±êÊ¶
 	 */
 	public static function spend_time($userid, $time, $logo) {
 		if (empty(self::$db)) {
@@ -40,36 +40,36 @@ class spend {
 	}
 	
 	/**
-	 * æ·»åŠ é‡‘é’±æ¶ˆè´¹è®°å½•
-	 * @param integer $value          æ¶ˆè´¹é‡‘é¢
-	 * @param string $msg             æ¶ˆè´¹ä¿¡æ¯
-	 * @param integer $userid         ç”¨æˆ·ID
-	 * @param string $username        ç”¨æˆ·å
-	 * @param integer $op_userid      æ“ä½œäºº
-	 * @param string $op_username     æ“ä½œäººç”¨æˆ·å
-	 * @param string $logo            ç‰¹æ®Šæ ‡è¯†ï¼Œå¦‚æ–‡ç« æ¶ˆè´¹æ—¶ï¼Œå¯ä»¥å¯¹æ–‡ç« è¿›è¡Œæ ‡è¯†ï¼Œä»¥æ»¡è¶³åœ¨ä¸€æ®µæ—¶é—´å†…ï¼Œéƒ½å¯ä»¥å†æ¬¡çš„ä½¿ç”¨
+	 * Ìí¼Ó½ðÇ®Ïû·Ñ¼ÇÂ¼
+	 * @param integer $value          Ïû·Ñ½ð¶î
+	 * @param string $msg             Ïû·ÑÐÅÏ¢
+	 * @param integer $userid         ÓÃ»§ID
+	 * @param string $username        ÓÃ»§Ãû
+	 * @param integer $op_userid      ²Ù×÷ÈË
+	 * @param string $op_username     ²Ù×÷ÈËÓÃ»§Ãû
+	 * @param string $logo            ÌØÊâ±êÊ¶£¬ÈçÎÄÕÂÏû·ÑÊ±£¬¿ÉÒÔ¶ÔÎÄÕÂ½øÐÐ±êÊ¶£¬ÒÔÂú×ãÔÚÒ»¶ÎÊ±¼äÄÚ£¬¶¼¿ÉÒÔÔÙ´ÎµÄÊ¹ÓÃ
 	 */
 	public static function amount($value, $msg, $userid = '', $username = '', $op_userid = '', $op_username = '', $logo = '') {
 		return self::_add(array('username'=>$username, 'userid'=>$userid, 'type'=>1, 'value'=>$value, 'op_userid'=>$op_userid, 'op_username'=>$op_username, 'msg'=>$msg,'logo'=>$logo));
 	}
 	
 	/**
-	 * æ·»åŠ ç§¯åˆ†æ¶ˆè´¹è®°å½•
-	 * @param integer $value          æ¶ˆè´¹é‡‘é¢
-	 * @param string $msg             æ¶ˆè´¹ä¿¡æ¯
-	 * @param integer $userid         ç”¨æˆ·ID
-	 * @param string $username        ç”¨æˆ·å
-	 * @param integer $op_userid      æ“ä½œäºº
-	 * @param string $op_username     æ“ä½œäººç”¨æˆ·å
-	 * @param string $logo            ç‰¹æ®Šæ ‡è¯†ï¼Œå¦‚æ–‡ç« æ¶ˆè´¹æ—¶ï¼Œå¯ä»¥å¯¹æ–‡ç« è¿›è¡Œæ ‡è¯†ï¼Œä»¥æ»¡è¶³åœ¨ä¸€æ®µæ—¶é—´å†…ï¼Œéƒ½å¯ä»¥å†æ¬¡çš„ä½¿ç”¨
+	 * Ìí¼Ó»ý·ÖÏû·Ñ¼ÇÂ¼
+	 * @param integer $value          Ïû·Ñ½ð¶î
+	 * @param string $msg             Ïû·ÑÐÅÏ¢
+	 * @param integer $userid         ÓÃ»§ID
+	 * @param string $username        ÓÃ»§Ãû
+	 * @param integer $op_userid      ²Ù×÷ÈË
+	 * @param string $op_username     ²Ù×÷ÈËÓÃ»§Ãû
+	 * @param string $logo            ÌØÊâ±êÊ¶£¬ÈçÎÄÕÂÏû·ÑÊ±£¬¿ÉÒÔ¶ÔÎÄÕÂ½øÐÐ±êÊ¶£¬ÒÔÂú×ãÔÚÒ»¶ÎÊ±¼äÄÚ£¬¶¼¿ÉÒÔÔÙ´ÎµÄÊ¹ÓÃ
 	 */
 	public static function point($value, $msg, $userid = '', $username = '', $op_userid = '', $op_username = '', $logo = '') {
 		return self::_add(array('username'=>$username, 'userid'=>$userid, 'type'=>2, 'value'=>$value, 'op_userid'=>$op_userid, 'op_username'=>$op_username, 'msg'=>$msg,'logo'=>$logo));
 	}
 	
 	/**
-	 * æ·»åŠ æ¶ˆè´¹è®°å½•
-	 * @param array $data æ·»åŠ æ¶ˆè´¹è®°å½•å‚æ•°
+	 * Ìí¼ÓÏû·Ñ¼ÇÂ¼
+	 * @param array $data Ìí¼ÓÏû·Ñ¼ÇÂ¼²ÎÊý
 	 */
 	private static function _add($data) {
 		$data['userid'] = isset($data['userid']) && intval($data['userid']) ? intval($data['userid']) : 0;
@@ -82,24 +82,24 @@ class spend {
 		$data['logo'] = isset($data['logo']) ? trim($data['logo']) : '';
 		$data['creat_at'] = SYS_TIME;
 		
-		//æ£€å¯Ÿæ¶ˆè´¹ç±»åž‹
+		//¼ì²ìÏû·ÑÀàÐÍ
 		if (!in_array($data['type'], array(1,2))) {
 			return false;
 		}
 		
-		//æ£€å¯Ÿæ¶ˆè´¹æè¿°
+		//¼ì²ìÏû·ÑÃèÊö
 		if (empty($data['msg'])) {
 			self::$msg = 1;
 			return false;
 		}
 		
-		//æ£€å¯Ÿæ¶ˆè´¹é‡‘é¢
+		//¼ì²ìÏû·Ñ½ð¶î
 		if (empty($data['value'])) {
 			self::$msg = 2;
 			return false;
 		}
 		
-		//æ£€å¯Ÿuseridå’Œusernameå¹¶å¿è¯•å†æ¬¡çš„èŽ·å–
+		//¼ì²ìuseridºÍusername²¢³¥ÊÔÔÙ´ÎµÄ»ñÈ¡
 		if (empty($data['userid']) || empty($data['username'])) {
 			if (defined('IN_ADMIN')) {
 				self::$msg = 3;
@@ -113,35 +113,35 @@ class spend {
 			}
 		}
 		
-		//æ£€å¯Ÿop_useridå’Œop_usernameå¹¶å¿è¯•å†æ¬¡çš„èŽ·å–
+		//¼ì²ìop_useridºÍop_username²¢³¥ÊÔÔÙ´ÎµÄ»ñÈ¡
 		if (defined('IN_ADMIN') && (empty($data['op_userid']) || empty($data['op_username']))) {
 			$data['op_username'] = param::get_cookie('admin_username');
 			$data['op_userid'] = param::get_cookie('userid');
 		}
 		
-		//æ•°æ®åº“è¿žæŽ¥
+		//Êý¾Ý¿âÁ¬½Ó
 		if (empty(self::$db)) {
 			self::connect();
 		}
 		$member_db = pc_base::load_model('member_model');
 		
-		//åˆ¤æ–­ç”¨æˆ·çš„é‡‘é’±æˆ–ç§¯åˆ†æ˜¯å¦è¶³å¤Ÿã€‚
+		//ÅÐ¶ÏÓÃ»§µÄ½ðÇ®»ò»ý·ÖÊÇ·ñ×ã¹»¡£
 		if (!self::_check_user($data['userid'], $data['type'], $data['value'], $member_db)) {
 			self::$msg = 6;
 			return false;
 		} 
 				
 		$sql = array();
-		if ($data['type'] == 1) {//é‡‘é’±æ–¹å¼æ¶ˆè´¹
+		if ($data['type'] == 1) {//½ðÇ®·½Ê½Ïû·Ñ
 			$sql = array('amount'=>"-=".$data['value']);
-		} elseif ($data['type'] == 2) { //ç§¯åˆ†æ–¹å¼æ¶ˆè´¹
+		} elseif ($data['type'] == 2) { //»ý·Ö·½Ê½Ïû·Ñ
 			$sql = array('point'=>'-='.$data['value']);
 		} else {
 			self::$msg = 7;
 			return false;
 		}
 		
-		//è¿›å…¥æ•°æ®åº“æ“ä½œ
+		//½øÈëÊý¾Ý¿â²Ù×÷
 		if ($member_db->update($sql, array('userid'=>$data['userid'], 'username'=>$data['username'])) && self::$db->insert($data)) {
 			self::$msg = 0;
 			return true;
@@ -152,21 +152,21 @@ class spend {
 	}
 	
 /**
- * åˆ¤æ–­ç”¨æˆ·çš„é‡‘é’±ã€ç§¯åˆ†æ˜¯å¦è¶³å¤Ÿ
- * @param integer $userid    ç”¨æˆ·ID
- * @param integer $type      åˆ¤æ–­ï¼ˆ1ï¼šé‡‘é’±ï¼Œ2ï¼šç§¯åˆ†ï¼‰
- * @param integer $value     æ•°é‡
- * @param $db                æ•°æ®åº“è¿žæŽ¥
+ * ÅÐ¶ÏÓÃ»§µÄ½ðÇ®¡¢»ý·ÖÊÇ·ñ×ã¹»
+ * @param integer $userid    ÓÃ»§ID
+ * @param integer $type      ÅÐ¶Ï£¨1£º½ðÇ®£¬2£º»ý·Ö£©
+ * @param integer $value     ÊýÁ¿
+ * @param $db                Êý¾Ý¿âÁ¬½Ó
  */
 	private static function _check_user($userid, $type, $value, &$db) {
 		if ($user = $db->get_one(array('userid'=>$userid), '`amount`, `point`')) {
-			if ($type == 1) { //é‡‘é’±æ¶ˆè´¹
+			if ($type == 1) { //½ðÇ®Ïû·Ñ
 				if ($user['amount'] < $value) {
 					return false;
 				} else {
 					return true;
 				}
-			} elseif ($type == 2) { //ç§¯åˆ†
+			} elseif ($type == 2) { //»ý·Ö
 				if ($user['point'] < $value) {
 					return false;
 				} else {
@@ -182,7 +182,7 @@ class spend {
 	
 	/**
 	 * 
-	 * èŽ·å–è¯¦ç»†çš„æŠ¥é”™ä¿¡æ¯
+	 * »ñÈ¡ÏêÏ¸µÄ±¨´íÐÅÏ¢
 	 */
 	public static function get_msg() {
 		$msg = self::$msg;

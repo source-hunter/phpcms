@@ -5,37 +5,37 @@ include $this->admin_tpl('header', 'admin');?>
 <table width="100%" cellpadding="0" cellspacing="1" class="table_form">
  
 	<tr>
-		<th width="200"><?php echo L('vote_style')?>ï¼š</th>
+		<th width="200"><?php echo L('vote_style')?>£º</th>
 		<td>
 		<?php echo form::select($template_list, $default_style, 'name="setting[default_style]" id="style" onchange="load_file_list(this.value)"', L('please_select'))?>
 		 </td>
 	</tr>
 	
 	<tr>
-		<th><?php echo L('template')?>ï¼š</th>
+		<th><?php echo L('template')?>£º</th>
 		<td id="show_template">
 		<?php echo form::select_template($default_style, 'vote', $vote_tp_template, 'name="setting[vote_tp_template]"', 'vote_tp');?>
 		</td>
 	</tr>
 	
 	<tr>
-		<th><?php echo L('default_guest')?>ï¼š</th>
+		<th><?php echo L('default_guest')?>£º</th>
 		<td><input type='radio' name='setting[allowguest]' value='1' <?php if($allowguest == 1) {?>checked<?php }?>> <?php echo L('yes')?>&nbsp;&nbsp;&nbsp;&nbsp;
 	  <input type='radio' name='setting[allowguest]' value='0' <?php if($allowguest == 0) {?>checked<?php }?>> <?php echo L('no')?></td>
 	</tr>
 	<tr>
-		<th><?php echo L('default_enabled')?>ï¼š</th>
+		<th><?php echo L('default_enabled')?>£º</th>
 		<td><input type='radio' name='setting[enabled]' value='1' <?php if($enabled == 1) {?>checked<?php }?>> <?php echo L('yes')?>&nbsp;&nbsp;&nbsp;&nbsp;
 	  <input type='radio' name='setting[enabled]' value='0' <?php if($enabled == 0) {?>checked<?php }?>> <?php echo L('no')?></td>
 	</tr>
 	<tr>
-		<th><?php echo L('interval')?>ï¼š</th>
+		<th><?php echo L('interval')?>£º</th>
 		<td>
-		<input type="text" name="setting[interval]" value="<?php echo $interval;?>" size='5' /> <?php echo L('more_ip')?>ï¼Œ<font color=red>0</font> <?php echo L('one_ip')?>
+		<input type="text" name="setting[interval]" value="<?php echo $interval;?>" size='5' /> <?php echo L('more_ip')?>£¬<font color=red>0</font> <?php echo L('one_ip')?>
 		</td>
 	</tr>
 	<tr>
-		<th><?php echo L('credit')?>ï¼š</th>
+		<th><?php echo L('credit')?>£º</th>
 		<td>
 		<input type="text" name="setting[credit]" value="<?php echo $credit?>" size='5' />
 		</td>

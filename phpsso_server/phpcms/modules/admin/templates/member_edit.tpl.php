@@ -47,7 +47,7 @@ $(function(){
 <input type="hidden" name="uid" value="<?php echo $userinfo['uid']?>">
 	<?php if($userinfo['avatar']) {?>
 		<tr>
-		<th><?php echo L('avatar')?>ï¼š</th>
+		<th><?php echo L('avatar')?>£º</th>
 		<td class="y-bg">
 			<img src="<?php echo ps_getavatar($userinfo['uid']);?>">
 			<input type="checkbox" name="avatar" id="avatar" class="input-text" value="1" ><label for="avatar"><?php echo L('delete').L('avatar')?></label>
@@ -55,15 +55,15 @@ $(function(){
 		</tr>
 	<?php }?>
 	<tr>
-	<th width="80" ><?php echo L('username')?>ï¼š</th>
+	<th width="80" ><?php echo L('username')?>£º</th>
 	<td class="y-bg"><?php echo $userinfo['username']?></td>
 	</tr>
 	<tr>
-	<th><?php echo L('password')?>ï¼š</th>
+	<th><?php echo L('password')?>£º</th>
 	<td class="y-bg"><input type="password" class="input-text" name="password" id="password" value="" /></td>
 	</tr>
 	<tr>
-	<th><?php echo L('email')?>ï¼š</th>
+	<th><?php echo L('email')?>£º</th>
 	<td class="y-bg"><input type="text" name="email" id="email" class="input-text" value="<?php echo $userinfo['email']?>" ></td>
 	</tr>
 </table>

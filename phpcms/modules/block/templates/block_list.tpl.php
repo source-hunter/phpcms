@@ -45,12 +45,12 @@ if(window.top.$("#current_pos").data('clicknum')==1 || window.top.$("#current_po
 
 function block_update(id, name) {
 	window.top.art.dialog({id:'edit'}).close();
-	window.top.art.dialog({title:'<?php echo L('edit')?>ã€Š'+name+'ã€‹',id:'edit',iframe:'?m=block&c=block_admin&a=block_update&id='+id,width:'700',height:'500'}, function(){var d = window.top.art.dialog({id:'edit'}).data.iframe;d.document.getElementById('dosubmit').click();return false;}, function(){window.top.art.dialog({id:'edit'}).close()});
+	window.top.art.dialog({title:'<?php echo L('edit')?>¡¶'+name+'¡·',id:'edit',iframe:'?m=block&c=block_admin&a=block_update&id='+id,width:'700',height:'500'}, function(){var d = window.top.art.dialog({id:'edit'}).data.iframe;d.document.getElementById('dosubmit').click();return false;}, function(){window.top.art.dialog({id:'edit'}).close()});
 }
 
 function edit(id, name) {
 	window.top.art.dialog({id:'edit'}).close();
-	window.top.art.dialog({title:'<?php echo L('edit')?>ã€Š'+name+'ã€‹',id:'edit',iframe:'?m=block&c=block_admin&a=edit&id='+id,width:'700',height:'500'}, function(){var d = window.top.art.dialog({id:'edit'}).data.iframe;d.document.getElementById('dosubmit').click();return false;}, function(){window.top.art.dialog({id:'edit'}).close()});
+	window.top.art.dialog({title:'<?php echo L('edit')?>¡¶'+name+'¡·',id:'edit',iframe:'?m=block&c=block_admin&a=edit&id='+id,width:'700',height:'500'}, function(){var d = window.top.art.dialog({id:'edit'}).data.iframe;d.document.getElementById('dosubmit').click();return false;}, function(){window.top.art.dialog({id:'edit'}).close()});
 }
 //-->
 </script>

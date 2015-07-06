@@ -4,10 +4,10 @@
 <div class="main">
 	<!--left_bar-->
 	<div class="col-left">
-    <div class="crumbs"><a href="#">é¦–é¡µ</a><span> &gt; </span>{catpos($catid)}</div>
-    	<!--æœ€æ–°ä¸‹è½½-->
+    <div class="crumbs"><a href="#">Ê×Ò³</a><span> &gt; </span>{catpos($catid)}</div>
+    	<!--×îĞÂÏÂÔØ-->
     <div class="box mg_b10">
-        		<h5>æœ€æ–°ä¸‹è½½</h5>
+        		<h5>×îĞÂÏÂÔØ</h5>
             <ul class="content news-photo col4">
 			{pc:content action="lists" catid="$catid" num="4"  thumb="1" order="id DESC"}
 			{loop $data $r}
@@ -27,7 +27,7 @@
         	<dl class="down_list sysnews">
               <dt><h5><a target="_blank" href="{$r[url]}" title="{$r[title]}">{$r[title]}</a></h5></dt>
               <dd class="down_txt">{$r[description]}</dd>
-              <dd class="down_attribute align_r"><span class="icon_1">è½¯ä»¶å¤§å°ï¼š{$r[filesize]}</span><span class="icon_3">æ˜Ÿçº§ï¼š{$r[stars]}</span><span class="icon_4">æ›´æ–°æ—¶é—´ï¼š{date('Y-m-d',$r[inputtime])}</span></dd>
+              <dd class="down_attribute align_r"><span class="icon_1">Èí¼ş´óĞ¡£º{$r[filesize]}</span><span class="icon_3">ĞÇ¼¶£º{$r[stars]}</span><span class="icon_4">¸üĞÂÊ±¼ä£º{date('Y-m-d',$r[inputtime])}</span></dd>
             </dl>
 		{/loop}	
         	<!--pages-->
@@ -37,10 +37,10 @@
     </div>
     <!--right_bar-->
     <div class="col-auto">
-    	<!--å¹¿å‘Š228x90-->
+    	<!--¹ã¸æ228x90-->
     	<div class="brd mg_b10"><script language="javascript" src="{APP_PATH}caches/poster_js/5.js"></script></div>
         <div class="box">
-            <h5 class="title-2">ä¸‹è½½æ’è¡Œ</h5>
+            <h5 class="title-2">ÏÂÔØÅÅĞĞ</h5>
             <ul class="content digg">
 			{pc:content action="hits" catid="$catid" num="10" order="views DESC" cache="3600"}
 				{loop $data $r}
@@ -51,7 +51,7 @@
         </div>
         <div class="bk10"></div>
         <div class="box">
-            <h5 class="title-2">æ¨èä¸‹è½½</h5>
+            <h5 class="title-2">ÍÆ¼öÏÂÔØ</h5>
             <ul class="content digg">
             	{pc:content  action="position" posid="5" order="listorder DESC" num="4"}
         	 	{loop $data $r}        

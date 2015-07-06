@@ -9,7 +9,7 @@ if (isset($set_modules) && $set_modules == TRUE)
     $modules[$i]['desc']    = L('transfer', '', 'pay');
     $modules[$i]['is_cod']  = '0';
     $modules[$i]['is_online']  = '0';
-    $modules[$i]['author']  = 'PHPCMSå¼€å‘å›¢é˜Ÿ';
+    $modules[$i]['author']  = 'PHPCMS¿ª·¢ÍÅ¶Ó';
     $modules[$i]['website'] = '';
     $modules[$i]['version'] = '1.0.0';
     $modules[$i]['config']  = array();

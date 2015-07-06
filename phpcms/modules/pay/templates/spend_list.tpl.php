@@ -14,10 +14,10 @@
 		<tr>
 		<td>
 		<div class="explain-col">
-		<?php echo  form::select(array('1'=>L('username'), '2'=>L('userid')), $user_type, 'name="user_type"')?>ï¼š <input type="text" value="<?php echo $username?>" class="input-text" name="username"> 
+		<?php echo  form::select(array('1'=>L('username'), '2'=>L('userid')), $user_type, 'name="user_type"')?>£º <input type="text" value="<?php echo $username?>" class="input-text" name="username"> 
 		<?php echo L('from')?>  <?php echo form::date('starttime',format::date($starttime))?> <?php echo L('to')?>   <?php echo form::date('endtime',format::date($endtime))?> 
 		
-		<?php echo  form::select(array(''=>L('op'), '1'=>L('username'), '2'=>L('userid')), $op_type, 'name="op_type"')?>ï¼š
+		<?php echo  form::select(array(''=>L('op'), '1'=>L('username'), '2'=>L('userid')), $op_type, 'name="op_type"')?>£º
 		<input type="text" value="<?php echo $op?>" class="input-text" name="op"> 
 		<?php echo  form::select(array(''=>L('expenditure_patterns'), '1'=>L('money'), '2'=>L('point')), $type, 'name="type"')?>
 		<input type="submit" value="<?php echo L('search')?>" class="button" name="dosubmit">

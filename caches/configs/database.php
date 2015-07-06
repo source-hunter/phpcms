@@ -3,11 +3,12 @@
 return array (
 	'default' => array (
 		'hostname' => 'localhost',
-		'database' => 'phpcms',
+		'port' => 3306,
+		'database' => 'phpcmsv9',
 		'username' => '',
 		'password' => '',
 		'tablepre' => 'v9_',
-		'charset' => 'utf8',
+		'charset' => 'gbk',
 		'type' => 'mysql',
 		'debug' => true,
 		'pconnect' => 0,

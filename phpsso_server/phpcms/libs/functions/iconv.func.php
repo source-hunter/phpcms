@@ -105,7 +105,7 @@ function big5_to_gbk($Text)
 			$l = ord($Text[$i+1]);
 			if($h==161 && $l==64)
 			{
-				$gbstr = 'ã€€';
+				$gbstr = '¡¡';
 			}
 			else
 			{
@@ -139,7 +139,7 @@ function gbk_to_big5($Text)
 			$l = ord($Text[$i+1]);
 			if($h==161 && $l==64)
 			{
-				$big = 'ã€€';
+				$big = '¡¡';
 			}
 			else
 			{

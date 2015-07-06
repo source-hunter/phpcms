@@ -1,6 +1,6 @@
 <?php
 class wap_tag {
-	//æ•°æ®åº“è¿æ¥
+	//Êı¾İ¿âÁ¬½Ó
 	private $db;
 	
 	public function __construct() {
@@ -8,8 +8,8 @@ class wap_tag {
 		$this->position = pc_base::load_model('position_data_model');
 	}
 	/**
-	 * åˆå§‹åŒ–æ¨¡å‹
-	 * @param $catid æ ç›®id
+	 * ³õÊ¼»¯Ä£ĞÍ
+	 * @param $catid À¸Ä¿id
 	 */
 	public function set_modelid($catid) {
 		$siteids = getcache('category_content','commons');
@@ -21,7 +21,7 @@ class wap_tag {
 	}
 	
 	/**
-	 * åˆ†é¡µç»Ÿè®¡
+	 * ·ÖÒ³Í³¼Æ
 	 * @param $data
 	 */	
 	public function count($data) {
@@ -47,7 +47,7 @@ class wap_tag {
 		}
 	}
 	/**
-	 * åˆ†ç±»æ ‡ç­¾
+	 * ·ÖÀà±êÇ©
 	 * @param $data
 	 */
 	public function type($data) {
@@ -68,7 +68,7 @@ class wap_tag {
 	}
 
 	/**
-	 * åˆ—è¡¨é¡µæ ‡ç­¾
+	 * ÁĞ±íÒ³±êÇ©
 	 * @param $data
 	 */
 	public function lists($data) {
@@ -96,7 +96,7 @@ class wap_tag {
 		$order = $data['order'];
 		$return = $this->db->select($sql, '*', $data['limit'], $order, '', 'id');
 						
-		//è°ƒç”¨å‰¯è¡¨çš„æ•°æ®
+		//µ÷ÓÃ¸±±íµÄÊı¾İ
 		if (isset($data['moreinfo']) && intval($data['moreinfo']) == 1) {
 			$ids = array();
 			foreach ($return as $v) {
@@ -121,7 +121,7 @@ class wap_tag {
 	}
 	
 	/**
-	 * æ¨èä½æ ‡ç­¾
+	 * ÍÆ¼öÎ»±êÇ©
 	 * @param $data
 	 */
 	public function position($data) {

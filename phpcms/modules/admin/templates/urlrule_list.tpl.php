@@ -37,7 +37,7 @@ include $this->admin_tpl('header');?>
 <!--
 function edit(id) {
 	window.top.art.dialog({id:'edit'}).close();
-	window.top.art.dialog({title:'<?php echo L('edit_urlrule');?>ã€Š'+id+'ã€‹',id:'edit',iframe:'?m=admin&c=urlrule&a=edit&urlruleid='+id,width:'750',height:'300'}, function(){var d = window.top.art.dialog({id:'edit'}).data.iframe;d.document.getElementById('dosubmit').click();return false;}, function(){window.top.art.dialog({id:'edit'}).close()});
+	window.top.art.dialog({title:'<?php echo L('edit_urlrule');?>¡¶'+id+'¡·',id:'edit',iframe:'?m=admin&c=urlrule&a=edit&urlruleid='+id,width:'750',height:'300'}, function(){var d = window.top.art.dialog({id:'edit'}).data.iframe;d.document.getElementById('dosubmit').click();return false;}, function(){window.top.art.dialog({id:'edit'}).close()});
 }
 //-->
 </script>

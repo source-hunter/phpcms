@@ -5,71 +5,71 @@ Add a new file(.lang.php) with your module name at /phpcms/languages/
 translation save at the array:$LANG
 */
 
-$LANG['plugin_not_exist'] = 'è¯¥åº”ç”¨ä¸å­˜åœ¨æˆ–è€…æœªå¼€å¯ï¼Œè¯·è”ç³»ç«™é•¿!';
-$LANG['plugin_error_or_not_exist'] = 'Plugin Error:è¯¥åº”ç”¨ä¸å­˜åœ¨æˆ–è€…åº”ç”¨å­˜åœ¨è¯­æ³•é”™è¯¯';
-$LANG['plugin_lacks_uninstall_file'] = 'ç¼ºå°‘å¸è½½æ–‡ä»¶';
-$LANG['plugin_uninstall_success'] = 'åº”ç”¨å¸è½½æˆåŠŸ';
-$LANG['plugin_uninstall_fail'] = 'åº”ç”¨å¸è½½å¤±è´¥';
-$LANG['plugin_allready_exists'] = 'åº”ç”¨å·²å­˜åœ¨';
-$LANG['plugin_configure_success'] = 'åº”ç”¨é…ç½®æˆåŠŸ';
-$LANG['plugin_mkdir_fail'] = 'åˆ›å»ºæ–‡ä»¶å¤¹å¤±è´¥ï¼Œè¯·æ£€æŸ¥Webç›®å½•ç¡®å®špluginæ–‡ä»¶å¤¹æœ‰å†™å…¥æƒé™';
+$LANG['plugin_not_exist'] = '¸ÃÓ¦ÓÃ²»´æÔÚ»òÕßÎ´¿ªÆô£¬ÇëÁªÏµÕ¾³¤!';
+$LANG['plugin_error_or_not_exist'] = 'Plugin Error:¸ÃÓ¦ÓÃ²»´æÔÚ»òÕßÓ¦ÓÃ´æÔÚÓï·¨´íÎó';
+$LANG['plugin_lacks_uninstall_file'] = 'È±ÉÙĞ¶ÔØÎÄ¼ş';
+$LANG['plugin_uninstall_success'] = 'Ó¦ÓÃĞ¶ÔØ³É¹¦';
+$LANG['plugin_uninstall_fail'] = 'Ó¦ÓÃĞ¶ÔØÊ§°Ü';
+$LANG['plugin_allready_exists'] = 'Ó¦ÓÃÒÑ´æÔÚ';
+$LANG['plugin_configure_success'] = 'Ó¦ÓÃÅäÖÃ³É¹¦';
+$LANG['plugin_mkdir_fail'] = '´´½¨ÎÄ¼ş¼ĞÊ§°Ü£¬Çë¼ì²éWebÄ¿Â¼È·¶¨pluginÎÄ¼ş¼ĞÓĞĞ´ÈëÈ¨ÏŞ';
 
-$LANG['plugin_config_not_exist'] = 'åº”ç”¨é…ç½®æ–‡ä»¶ä¸å­˜åœ¨';
-$LANG['plugin_not_exist_or_pending'] = 'åº”ç”¨ä¸å­˜åœ¨æˆ–æœªé€šè¿‡è®¤è¯';
-$LANG['plugin_developing'] = 'åº”ç”¨æ­£åœ¨å¼€å‘ä¸­å°šæœªé€šè¿‡å®¡æ ¸';
-$LANG['plugin_be_locked'] = 'åº”ç”¨è¢«é”å®š,è¯·è”ç³»PHPCMS';
-$LANG['plugin_illegal_id'] = 'ä¸åˆæ³•çš„åº”ç”¨identification';
-$LANG['plugin_illegal_variable'] = 'ä¸åˆæ³•çš„åº”ç”¨å˜é‡åç§°';
-$LANG['plugin_duplication_name'] = 'è¯¥åº”ç”¨å·²ç»å®‰è£…è¿‡æˆ–è€…ä¸å®‰è£…è¿‡çš„åº”ç”¨é‡å';
-$LANG['plugin_incompatible'] = 'è¯¥æ’ä»¶ä¸å…¼å®¹ç›®å‰ç‰ˆæœ¬ï¼Œè¯¥æ’ä»¶åªèƒ½è¿è¡Œåœ¨';
+$LANG['plugin_config_not_exist'] = 'Ó¦ÓÃÅäÖÃÎÄ¼ş²»´æÔÚ';
+$LANG['plugin_not_exist_or_pending'] = 'Ó¦ÓÃ²»´æÔÚ»òÎ´Í¨¹ıÈÏÖ¤';
+$LANG['plugin_developing'] = 'Ó¦ÓÃÕıÔÚ¿ª·¢ÖĞÉĞÎ´Í¨¹ıÉóºË';
+$LANG['plugin_be_locked'] = 'Ó¦ÓÃ±»Ëø¶¨,ÇëÁªÏµPHPCMS';
+$LANG['plugin_illegal_id'] = '²»ºÏ·¨µÄÓ¦ÓÃidentification';
+$LANG['plugin_illegal_variable'] = '²»ºÏ·¨µÄÓ¦ÓÃ±äÁ¿Ãû³Æ';
+$LANG['plugin_duplication_name'] = '¸ÃÓ¦ÓÃÒÑ¾­°²×°¹ı»òÕßÓë°²×°¹ıµÄÓ¦ÓÃÖØÃû';
+$LANG['plugin_incompatible'] = '¸Ã²å¼ş²»¼æÈİÄ¿Ç°°æ±¾£¬¸Ã²å¼şÖ»ÄÜÔËĞĞÔÚ';
 
-$LANG['plugin_install_success'] = 'åº”ç”¨å®‰è£…æˆåŠŸ';
-$LANG['plugin_install_fail'] = 'åº”ç”¨å®‰è£…å¤±è´¥';
-$LANG['plugin_item'] = 'æ¡';
-$LANG['plugin_firstpage'] = 'é¦–é¡µ';
-$LANG['plugin_lastpage'] = 'å°¾é¡µ';
-$LANG['plugin_prepage'] = 'ä¸Šä¸€é¡µ';
-$LANG['plugin_nextpage'] = 'ä¸‹ä¸€é¡µ';
-$LANG['plugin_desc'] = 'ç®€ä»‹';
-$LANG['plugin_config'] = 'é…ç½®';
+$LANG['plugin_install_success'] = 'Ó¦ÓÃ°²×°³É¹¦';
+$LANG['plugin_install_fail'] = 'Ó¦ÓÃ°²×°Ê§°Ü';
+$LANG['plugin_item'] = 'Ìõ';
+$LANG['plugin_firstpage'] = 'Ê×Ò³';
+$LANG['plugin_lastpage'] = 'Î²Ò³';
+$LANG['plugin_prepage'] = 'ÉÏÒ»Ò³';
+$LANG['plugin_nextpage'] = 'ÏÂÒ»Ò³';
+$LANG['plugin_desc'] = '¼ò½é';
+$LANG['plugin_config'] = 'ÅäÖÃ';
 
-$LANG['plugin_uninstall_confirm'] = 'ç¡®è®¤å¸è½½';
-$LANG['plugin_uninstall_cancel'] = 'å–ã€€ã€€æ¶ˆ';
-$LANG['plugin_agree'] = 'æˆ‘ åŒ æ„';
-$LANG['plugin_disagree'] = 'æˆ‘ä¸åŒæ„';
-$LANG['plugin_install_app'] = 'å®‰è£…æ­¤åº”ç”¨';
-
-
-$LANG['plugin_listorder'] = 'æ˜¾ç¤ºé¡ºåº';
-$LANG['plugin_list_name'] = 'åº”ç”¨åç§°';
-$LANG['plugin_list_version'] = 'ç‰ˆæœ¬';
-$LANG['plugin_list_copy'] = 'ç‰ˆæƒä¿¡æ¯';
-$LANG['plugin_list_dir'] = 'åº”ç”¨ç›®å½•';
-$LANG['plugin_close'] = 'å…³é—­';
-$LANG['plugin_open'] = 'å¼€å¯';
-$LANG['plugin_uninstall'] = 'å¸è½½';
-$LANG['plugin_install'] = 'å®‰è£…';
-$LANG['plugin_visit'] = 'è®¿é—®';
-$LANG['plugin_config'] = 'é…ç½®';
-
-$LANG['plugin_app_all'] = 'å…¨éƒ¨';
-$LANG['plugin_free'] = 'å…è´¹';
-$LANG['plugin_not_free'] = 'æ”¶è´¹';
-$LANG['plugin_author'] = 'å¼€å‘è€…';
+$LANG['plugin_uninstall_confirm'] = 'È·ÈÏĞ¶ÔØ';
+$LANG['plugin_uninstall_cancel'] = 'È¡¡¡¡¡Ïû';
+$LANG['plugin_agree'] = 'ÎÒ Í¬ Òâ';
+$LANG['plugin_disagree'] = 'ÎÒ²»Í¬Òâ';
+$LANG['plugin_install_app'] = '°²×°´ËÓ¦ÓÃ';
 
 
-$LANG['plugin_pub'] = 'æ’ä»¶å‘å¸ƒé¡µé¢';
-$LANG['plugin_click_download'] = 'ç‚¹å‡»ä¸‹è½½';
-$LANG['plugin_reg_time'] = 'æ³¨å†Œæ—¶é—´ï¼š';
-$LANG['plugin_copyright'] = 'ç‰ˆæƒå½’å±ï¼š';
-$LANG['plugin_copyright_info'] = '&copy; CopyRight 2005-2014 é…·æºœç½‘ï¼ˆåŒ—äº¬ï¼‰ç§‘æŠ€æœ‰é™å…¬å¸ B2-20040053';
+$LANG['plugin_listorder'] = 'ÏÔÊ¾Ë³Ğò';
+$LANG['plugin_list_name'] = 'Ó¦ÓÃÃû³Æ';
+$LANG['plugin_list_version'] = '°æ±¾';
+$LANG['plugin_list_copy'] = '°æÈ¨ĞÅÏ¢';
+$LANG['plugin_list_dir'] = 'Ó¦ÓÃÄ¿Â¼';
+$LANG['plugin_close'] = '¹Ø±Õ';
+$LANG['plugin_open'] = '¿ªÆô';
+$LANG['plugin_uninstall'] = 'Ğ¶ÔØ';
+$LANG['plugin_install'] = '°²×°';
+$LANG['plugin_visit'] = '·ÃÎÊ';
+$LANG['plugin_config'] = 'ÅäÖÃ';
 
-$LANG['download_fail'] = 'ä¸‹è½½å¤±è´¥ï¼Œè¯·æ‰‹åŠ¨ä¸‹è½½';
-$LANG['download_success'] = 'ä¸‹è½½æˆåŠŸï¼Œæ­£åœ¨å®‰è£…è¯·ç¨å€™';
-$LANG['install_online'] = 'åœ¨çº¿å®‰è£…';
-$LANG['install_plugin'] = 'å®‰è£…åº”ç”¨';
-$LANG['uninstall_plugin'] = 'å¸è½½åº”ç”¨';
-$LANG['plugin_lack_of_necessary_configuration_items'] = 'åº”ç”¨å®‰è£…æ–‡ä»¶ç¼ºå°‘é…ç½®æ‰€éœ€çš„å¿…å¡«é¡¹ç›®ï¼Œè¯·æ£€æŸ¥';
-$LANG['plugin_uninstall_success_no_delete'] = 'æ–‡ä»¶å¸è½½æˆåŠŸï¼Œä½†ç”±äºæƒé™é—®é¢˜ç›®å½•æ— æ³•åˆ é™¤ï¼Œè¯·æ‰‹åŠ¨åˆ é™¤ã€‚';
-$LANG['plugin_debug_tips'] = 'æ‚¨ç›®å‰çš„å¼€å‘æ¨¡å¼ä¸ºè°ƒè¯•æ¨¡å¼ï¼Œå…³é—­è°ƒè¯•æ¨¡å¼è¯·è®¾ç½®configs\system.phpä¸­plugin_debugä¸º0,<a href="http://help.open.phpcms.cn/2011/developer_0530/330.html" target="_blank">è¯¦ç»†>></a>';
+$LANG['plugin_app_all'] = 'È«²¿';
+$LANG['plugin_free'] = 'Ãâ·Ñ';
+$LANG['plugin_not_free'] = 'ÊÕ·Ñ';
+$LANG['plugin_author'] = '¿ª·¢Õß';
+
+
+$LANG['plugin_pub'] = '²å¼ş·¢²¼Ò³Ãæ';
+$LANG['plugin_click_download'] = 'µã»÷ÏÂÔØ';
+$LANG['plugin_reg_time'] = '×¢²áÊ±¼ä£º';
+$LANG['plugin_copyright'] = '°æÈ¨¹éÊô£º';
+$LANG['plugin_copyright_info'] = '&copy; CopyRight 2005-2014 ¿áÁïÍø£¨±±¾©£©¿Æ¼¼ÓĞÏŞ¹«Ë¾ B2-20040053';
+
+$LANG['download_fail'] = 'ÏÂÔØÊ§°Ü£¬ÇëÊÖ¶¯ÏÂÔØ';
+$LANG['download_success'] = 'ÏÂÔØ³É¹¦£¬ÕıÔÚ°²×°ÇëÉÔºò';
+$LANG['install_online'] = 'ÔÚÏß°²×°';
+$LANG['install_plugin'] = '°²×°Ó¦ÓÃ';
+$LANG['uninstall_plugin'] = 'Ğ¶ÔØÓ¦ÓÃ';
+$LANG['plugin_lack_of_necessary_configuration_items'] = 'Ó¦ÓÃ°²×°ÎÄ¼şÈ±ÉÙÅäÖÃËùĞèµÄ±ØÌîÏîÄ¿£¬Çë¼ì²é';
+$LANG['plugin_uninstall_success_no_delete'] = 'ÎÄ¼şĞ¶ÔØ³É¹¦£¬µ«ÓÉÓÚÈ¨ÏŞÎÊÌâÄ¿Â¼ÎŞ·¨É¾³ı£¬ÇëÊÖ¶¯É¾³ı¡£';
+$LANG['plugin_debug_tips'] = 'ÄúÄ¿Ç°µÄ¿ª·¢Ä£Ê½Îªµ÷ÊÔÄ£Ê½£¬¹Ø±Õµ÷ÊÔÄ£Ê½ÇëÉèÖÃconfigs\system.phpÖĞplugin_debugÎª0,<a href="http://help.open.phpcms.cn/2011/developer_0530/330.html" target="_blank">ÏêÏ¸>></a>';
 ?>

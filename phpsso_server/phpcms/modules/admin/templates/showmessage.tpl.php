@@ -31,7 +31,7 @@ a:hover,a:active{color:#ff6600;text-decoration: underline}
     <?php if($url_forward=='goback' || $url_forward=='') {?>
 	<a href="javascript:history.back();" ><?php echo L('go_history')?></a>
 	<?php } elseif($url_forward=="close") {?>
-	<input type="button" name="close" value=" å…³é—­ " onClick="window.close();">
+	<input type="button" name="close" value=" ¹Ø±Õ " onClick="window.close();">
 	<?php } elseif($url_forward=="blank") {?>
 	
 	<?php } elseif($url_forward) { ?>

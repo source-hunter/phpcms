@@ -9,7 +9,7 @@
 			$string = "<div id='mobile_div'><input type='text' name='info[mobile]' id='mobile' value='' size='36' class='input-text' title='".L('sms_tips')."'> 
 			<div class='submit'><button onclick='get_verify()' type='button' class='hqyz'>".L('get_sms_code')."</button></div> <div id='mobileTip' class='onShow'></div>
 			<br>
-			</div><div id='mobile_send_div' style='display:none'>".L('sms_checkcode_send_to')."<span id='mobile_send'></span>ï¼Œ<span id='edit_mobile' style='display:none'><a href='javascript:void();' onclick='edit_mobile()'>".L('sms_edit_mobile')."</a>ï¼Œ</span> ".L('repeat_send')."<br><br>
+			</div><div id='mobile_send_div' style='display:none'>".L('sms_checkcode_send_to')."<span id='mobile_send'></span>£¬<span id='edit_mobile' style='display:none'><a href='javascript:void();' onclick='edit_mobile()'>".L('sms_edit_mobile')."</a>£¬</span> ".L('repeat_send')."<br><br>
 			<div class='submit'><button type='button' id='GetVerify' onclick='get_verify()' class='hqyz'>".L('repeat_sms_code')."</button></div> <BR><BR></div>".L('receive_sms_code')."<input type='text' name='mobile_verify' id='mobile_verify' value='' size='14' class='input-text'>";
 			
 					$this->formValidator .= '$("#'.$field.'").formValidator({onshow:"'.$errortips.'",onfocus:"'.$errortips.'"}).inputValidator({min:1,onerror:"'.$errortips.'"});';

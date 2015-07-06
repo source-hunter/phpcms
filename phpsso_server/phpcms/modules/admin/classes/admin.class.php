@@ -1,14 +1,14 @@
 <?php
 define('IN_ADMIN', true);
 class admin {
-	//æ•°æ®åº“è¿æ¥
+	//Êı¾İ¿âÁ¬½Ó
 	private $db;
-	//é”™è¯¯ä»£ç 
+	//´íÎó´úÂë
 	private $err_code;
 	
 	/**
-	 * æ„é€ å‡½æ•°
-	 * @param integer $issuper æ˜¯å¦ä¸ºè¶…çº§ç®¡ç†å‘˜
+	 * ¹¹Ôìº¯Êı
+	 * @param integer $issuper ÊÇ·ñÎª³¬¼¶¹ÜÀíÔ±
 	 */
 	public function __construct($issuper = 0) {
 		$this->db = pc_base::load_model('admin_model');	
@@ -17,8 +17,8 @@ class admin {
 	}
 	
 	/**
-	 * ç®¡ç†å‘˜æƒé™åˆ¤æ–­
-	 * @param integer $issuper æ˜¯å¦ä¸ºè¶…çº§ç®¡ç†å‘˜
+	 * ¹ÜÀíÔ±È¨ÏŞÅĞ¶Ï
+	 * @param integer $issuper ÊÇ·ñÎª³¬¼¶¹ÜÀíÔ±
 	 */
 	public function check_admin($issuper = 0) {
 		if (ROUTE_C != 'login') {
@@ -37,9 +37,9 @@ class admin {
 	}
 	
 	/**
-	 * ç®¡ç†å‘˜ç™»é™†
-	 * @param string $username ç”¨æˆ·å
-	 * @param string $password å¯†ç 
+	 * ¹ÜÀíÔ±µÇÂ½
+	 * @param string $username ÓÃ»§Ãû
+	 * @param string $password ÃÜÂë
 	 * @return boolean
 	 */
 	public function login($username, $password) {
@@ -71,23 +71,23 @@ class admin {
 	}
 	
 	/**
-	 * è·å–å½“å‰ç”¨æˆ·IDå·
+	 * »ñÈ¡µ±Ç°ÓÃ»§IDºÅ
 	 */
 	public function get_userid() {
 		return param::get_cookie('userid');
 	}
 	
 	/**
-	 * è·å–å½“å‰ç”¨æˆ·å
+	 * »ñÈ¡µ±Ç°ÓÃ»§Ãû
 	 */
 	public function get_username() {
 		return param::get_cookie('username');
 	}
 	
 	/**
-	 * è·å–å½“å‰ç”¨æˆ·ä¿¡æ¯
-	 * @param string $filed è·å–æŒ‡å®šå­—æ®µ
-	 * @param string $enforce å¼ºåˆ¶æ›´æ–°
+	 * »ñÈ¡µ±Ç°ÓÃ»§ĞÅÏ¢
+	 * @param string $filed »ñÈ¡Ö¸¶¨×Ö¶Î
+	 * @param string $enforce Ç¿ÖÆ¸üĞÂ
 	 */
 	public function get_userinfo($filed = '', $enforce = 0) {
 		static $data;
@@ -111,7 +111,7 @@ class admin {
 	}
 	
 	/**
-	 * è·å–é”™è¯¯åŸå› 
+	 * »ñÈ¡´íÎóÔ­Òò
 	 */
 	public function get_err() {
 		$msg = array(
@@ -124,9 +124,9 @@ class admin {
 	}
 
 	/**
-	 * åŠ è½½åå°æ¨¡æ¿
-	 * @param string $file æ–‡ä»¶å
-	 * @param string $m æ¨¡å‹å
+	 * ¼ÓÔØºóÌ¨Ä£°å
+	 * @param string $file ÎÄ¼şÃû
+	 * @param string $m Ä£ĞÍÃû
 	 */
 	public static function admin_tpl($file, $m = '') {
 		$m = empty($m) ? ROUTE_M : $m;

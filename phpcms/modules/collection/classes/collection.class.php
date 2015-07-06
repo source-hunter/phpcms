@@ -6,10 +6,10 @@ class collection {
 	protected static $url,$config;
 	
 	/**
-	 * é‡‡é›†å†…å®¹
-	 * @param string $url    é‡‡é›†åœ°å€
-	 * @param array $config  é…ç½®å‚æ•°
-	 * @param integer $page  åˆ†é¡µé‡‡é›†æ¨¡å¼
+	 * ²É¼¯ÄÚÈİ
+	 * @param string $url    ²É¼¯µØÖ·
+	 * @param array $config  ÅäÖÃ²ÎÊı
+	 * @param integer $page  ·ÖÒ³²É¼¯Ä£Ê½
 	 */
 	public static function get_content($url, $config, $page = 0) {
 		set_time_limit(300);
@@ -17,25 +17,25 @@ class collection {
 		$page = intval($page) ? intval($page) : 0;
 		if ($html = self::get_html($url, $config)) {
 			if (empty($page)) {
-				//è·å–æ ‡é¢˜
+				//»ñÈ¡±êÌâ
 				if ($config['title_rule']) {
 					$title_rule = self::replace_sg($config['title_rule']);
 					$data['title'] = self::replace_item(self::cut_html($html, $title_rule[0], $title_rule[1]), $config['title_html_rule']);
 				}
 				
-				//è·å–ä½œè€…
+				//»ñÈ¡×÷Õß
 				if ($config['author_rule']) {
 					$author_rule =  self::replace_sg($config['author_rule']);
 					$data['author'] = self::replace_item(self::cut_html($html, $author_rule[0], $author_rule[1]), $config['author_html_rule']);
 				}
 				
-				//è·å–æ¥æº
+				//»ñÈ¡À´Ô´
 				if ($config['comeform_rule']) {
 					$comeform_rule =  self::replace_sg($config['comeform_rule']);
 					$data['comeform'] = self::replace_item(self::cut_html($html, $comeform_rule[0], $comeform_rule[1]), $config['comeform_html_rule']);
 				}
 				
-				//è·å–æ—¶é—´
+				//»ñÈ¡Ê±¼ä
 				if ($config['time_rule']) {
 					$time_rule =  self::replace_sg($config['time_rule']);
 					$data['time'] = strtotime(self::replace_item(self::cut_html($html, $time_rule[0], $time_rule[1]), $config['time_html_rule']));
@@ -43,7 +43,7 @@ class collection {
 				
 				if (empty($data['time'])) $data['time'] = SYS_TIME;
 				
-				//å¯¹è‡ªå®šä¹‰æ•°æ®è¿›è¡Œé‡‡é›†
+				//¶Ô×Ô¶¨ÒåÊı¾İ½øĞĞ²É¼¯
 				if ($config['customize_config'] = string2array($config['customize_config'])) {
 					foreach ($config['customize_config'] as $k=>$v) {
 						if (empty($v['rule'])) continue;
@@ -53,19 +53,19 @@ class collection {
 				}
 			}
 			
-			//è·å–å†…å®¹
+			//»ñÈ¡ÄÚÈİ
 			if ($config['content_rule']) {
 				$content_rule =  self::replace_sg($config['content_rule']);
 				$data['content'] = self::replace_item(self::cut_html($html, $content_rule[0], $content_rule[1]), $config['content_html_rule']);
 			}
 
 			
-			//å¤„ç†åˆ†é¡µ
+			//´¦Àí·ÖÒ³
 			if (in_array($page, array(0,2)) && !empty($config['content_page_start']) && !empty($config['content_page_end'])) {
 				$oldurl[] = $url;
 				$tmp[] = $data['content'];
 				$page_html = self::cut_html($html, $config['content_page_start'], $config['content_page_end']);
-				//ä¸Šä¸‹é¡µæ¨¡å¼
+				//ÉÏÏÂÒ³Ä£Ê½
 				if ($config['content_page_rule'] == 2 && in_array($page, array(0,2)) && $page_html) {
 					preg_match_all('/<a[^>]*href=[\'"]?([^>\'" ]*)[\'"]?[^>]*>([^<\/]*)<\/a>/i', $page_html, $out);
 					if (!empty($out[1]) && !empty($out[2])) {
@@ -81,7 +81,7 @@ class collection {
 					}
 				}
 				
-				//å…¨éƒ¨ç½—åˆ—æ¨¡å¼
+				//È«²¿ÂŞÁĞÄ£Ê½
 				if ($config['content_page_rule'] == 1 && $page == 0 && $page_html) {
 					preg_match_all('/<a[^>]*href=[\'"]?([^>\'" ]*)[\'"]?/i', $page_html, $out);
 					if (is_array($out[1]) && !empty($out[1])) {
@@ -104,7 +104,7 @@ class collection {
 				self::$config = $config;
 				$data['content'] = preg_replace('/<img[^>]*src=[\'"]?([^>\'"\s]*)[\'"]?[^>]*>/ie', "self::download_img('$0', '$1')", $data['content']);
 					
-				//ä¸‹è½½å†…å®¹ä¸­çš„å›¾ç‰‡åˆ°æœ¬åœ°
+				//ÏÂÔØÄÚÈİÖĞµÄÍ¼Æ¬µ½±¾µØ
 				if (empty($page) && !empty($data['content']) && $config['down_attachment'] == 1) {
 					
 					pc_base::load_sys_class('attachment','',0);
@@ -117,8 +117,8 @@ class collection {
 	}
 	
 	/**
-	 * è½¬æ¢å›¾ç‰‡åœ°å€ä¸ºç»å¯¹è·¯å¾„ï¼Œä¸ºä¸‹è½½åšå‡†å¤‡ã€‚
-	 * @param array $out å›¾ç‰‡åœ°å€
+	 * ×ª»»Í¼Æ¬µØÖ·Îª¾ø¶ÔÂ·¾¶£¬ÎªÏÂÔØ×ö×¼±¸¡£
+	 * @param array $out Í¼Æ¬µØÖ·
 	 */
 	protected static function download_img($old, $out) {
 		if (!empty($old) && !empty($out) && strpos($out, '://') === false) {
@@ -129,23 +129,23 @@ class collection {
 	}
 	
 	/**
-	 * å¾—åˆ°éœ€è¦é‡‡é›†çš„ç½‘é¡µåˆ—è¡¨é¡µ
-	 * @param array $config é…ç½®å‚æ•°
-	 * @param integer $num  è¿”å›æ•°
+	 * µÃµ½ĞèÒª²É¼¯µÄÍøÒ³ÁĞ±íÒ³
+	 * @param array $config ÅäÖÃ²ÎÊı
+	 * @param integer $num  ·µ»ØÊı
 	 */
 	public static function url_list(&$config, $num = '') {
 		$url = array();
 		switch ($config['sourcetype']) {
-			case '1'://åºåˆ—åŒ–
+			case '1'://ĞòÁĞ»¯
 				$num = empty($num) ? $config['pagesize_end'] : $num;
 				for ($i = $config['pagesize_start']; $i <= $num; $i = $i + $config['par_num']) {
 					$url[$i] = str_replace('(*)', $i, $config['urlpage']);
 				}
 				break;
-			case '2'://å¤šç½‘å€
+			case '2'://¶àÍøÖ·
 				$url = explode("\r\n", $config['urlpage']);
 				break;
-			case '3'://å•ä¸€ç½‘å€
+			case '3'://µ¥Ò»ÍøÖ·
 			case '4'://RSS
 				$url[] = $config['urlpage'];
 				break;
@@ -154,9 +154,9 @@ class collection {
 	}
 	
 	/**
-	 * è·å–æ–‡ç« ç½‘å€
-	 * @param string $url           é‡‡é›†åœ°å€
-	 * @param array $config         é…ç½®
+	 * »ñÈ¡ÎÄÕÂÍøÖ·
+	 * @param string $url           ²É¼¯µØÖ·
+	 * @param array $config         ÅäÖÃ
 	 */
 	public static function get_url_lists($url, &$config) {
 		if ($html = self::get_html($url, $config)) {
@@ -210,9 +210,9 @@ class collection {
 	}
 	
 	/**
-	 * è·å–è¿œç¨‹HTML
-	 * @param string $url    è·å–åœ°å€
-	 * @param array $config  é…ç½®
+	 * »ñÈ¡Ô¶³ÌHTML
+	 * @param string $url    »ñÈ¡µØÖ·
+	 * @param array $config  ÅäÖÃ
 	 */
 	protected static function get_html($url, &$config) {
 		if (!empty($url) && $html = @file_get_contents($url)) {
@@ -227,10 +227,10 @@ class collection {
 	
 	/**
 	 * 
-	 * HTMLåˆ‡å–
-	 * @param string $html    è¦è¿›å…¥åˆ‡å–çš„HTMLä»£ç 
-	 * @param string $start   å¼€å§‹
-	 * @param string $end     ç»“æŸ
+	 * HTMLÇĞÈ¡
+	 * @param string $html    Òª½øÈëÇĞÈ¡µÄHTML´úÂë
+	 * @param string $start   ¿ªÊ¼
+	 * @param string $end     ½áÊø
 	 */
 	protected static function cut_html($html, $start, $end) {
 		if (empty($html)) return false;
@@ -243,9 +243,9 @@ class collection {
 	}
 	
 	/**
-	 * è¿‡æ»¤ä»£ç 
-	 * @param string $html  HTMLä»£ç 
-	 * @param array $config è¿‡æ»¤é…ç½®
+	 * ¹ıÂË´úÂë
+	 * @param string $html  HTML´úÂë
+	 * @param array $config ¹ıÂËÅäÖÃ
 	 */
 	protected static function replace_item($html, $config) {
 		if (empty($config)) return $html;
@@ -263,8 +263,8 @@ class collection {
 	}
 	
 	/**
-	 * æ›¿æ¢é‡‡é›†å†…å®¹
-	 * @param $html é‡‡é›†è§„åˆ™
+	 * Ìæ»»²É¼¯ÄÚÈİ
+	 * @param $html ²É¼¯¹æÔò
 	 */
 	protected static function replace_sg($html) {
 		$list = explode(L('[content]'), $html);
@@ -275,10 +275,10 @@ class collection {
 	}
 	
 	/**
-	 * URLåœ°å€æ£€æŸ¥
-	 * @param string $url      éœ€è¦æ£€æŸ¥çš„URL
-	 * @param string $baseurl  åŸºæœ¬URL
-	 * @param array $config    é…ç½®ä¿¡æ¯
+	 * URLµØÖ·¼ì²é
+	 * @param string $url      ĞèÒª¼ì²éµÄURL
+	 * @param string $baseurl  »ù±¾URL
+	 * @param array $config    ÅäÖÃĞÅÏ¢
 	 */
 	protected static function url_check($url, $baseurl, $config) {
 		$urlinfo = parse_url($baseurl);

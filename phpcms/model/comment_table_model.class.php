@@ -11,17 +11,17 @@ class comment_table_model extends model {
 	}
 	
 	/**
-	 * ä¿®æ”¹è¡¨è®°å½•æ€»æ•°
-	 * @param integer $tableid  è¡¨ID
-	 * @param string $num è¦ä¿®æ”¹çš„æ•°å€¼ï¼ˆå¦‚æœè¦æ·»åŠ è¯·ä½¿ç”¨+=ï¼Œå¦‚æœè¦å‡å°‘è¯·ä½¿ç”¨-=ï¼‰
+	 * ĞŞ¸Ä±í¼ÇÂ¼×ÜÊı
+	 * @param integer $tableid  ±íID
+	 * @param string $num ÒªĞŞ¸ÄµÄÊıÖµ£¨Èç¹ûÒªÌí¼ÓÇëÊ¹ÓÃ+=£¬Èç¹ûÒª¼õÉÙÇëÊ¹ÓÃ-=£©
 	 */
 	public function edit_total($tableid, $num) {
 		return $this->update(array('total'=>$num), array('tableid'=>$tableid));
 	}
 	
 	/**
-	 * åˆ›å»ºæ–°çš„è¯„è®ºæ•°æ®è¡¨
-	 * @param integer $id åˆ›å»ºæ–°çš„è¯„è®ºè¡¨
+	 * ´´½¨ĞÂµÄÆÀÂÛÊı¾İ±í
+	 * @param integer $id ´´½¨ĞÂµÄÆÀÂÛ±í
 	 */
 	public function creat_table($id = '') {
 		if (empty($id)) {

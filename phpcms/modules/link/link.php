@@ -29,7 +29,7 @@ class link extends admin {
 	}
 
 	/*
-	 *åˆ¤æ–­æ ‡é¢˜é‡å¤å’ŒéªŒè¯ 
+	 *ÅĞ¶Ï±êÌâÖØ¸´ºÍÑéÖ¤ 
 	 */
 	public function public_name() {
 		$link_title = isset($_GET['link_name']) && trim($_GET['link_name']) ? (pc_base::load_config('system', 'charset') == 'gbk' ? iconv('utf-8', 'gbk', trim($_GET['link_name'])) : trim($_GET['link_name'])) : exit('0');
@@ -50,7 +50,7 @@ class link extends admin {
 		}
 	}
 	 
-	//æ·»åŠ åˆ†ç±»æ—¶ï¼ŒéªŒè¯åˆ†ç±»åæ˜¯å¦å·²å­˜åœ¨
+	//Ìí¼Ó·ÖÀàÊ±£¬ÑéÖ¤·ÖÀàÃûÊÇ·ñÒÑ´æÔÚ
 	public function public_check_name() {
 		$type_name = isset($_GET['type_name']) && trim($_GET['type_name']) ? (pc_base::load_config('system', 'charset') == 'gbk' ? iconv('utf-8', 'gbk', trim($_GET['type_name'])) : trim($_GET['type_name'])) : exit('0');
 		$type_name = safe_replace($type_name);
@@ -69,7 +69,7 @@ class link extends admin {
 		}
 	}
 	 
-	//æ·»åŠ å‹æƒ…é“¾æ¥
+	//Ìí¼ÓÓÑÇéÁ´½Ó
  	public function add() {
  		if(isset($_POST['dosubmit'])) {
 			$_POST['link']['addtime'] = SYS_TIME;
@@ -86,7 +86,7 @@ class link extends admin {
 			$linkid = $this->db->insert($data,true);
 			if(!$linkid) return FALSE; 
  			$siteid = $this->get_siteid();
-	 		//æ›´æ–°é™„ä»¶çŠ¶æ€
+	 		//¸üĞÂ¸½¼ş×´Ì¬
 			if(pc_base::load_config('system','attachment_stat') & $_POST['link']['logo']) {
 				$this->attachment_db = pc_base::load_model('attachment_model');
 				$this->attachment_db->api_update($_POST['link']['logo'],'link-'.$linkid,1);
@@ -105,7 +105,7 @@ class link extends admin {
 	}
 	
 	/**
-	 * è¯´æ˜:å¼‚æ­¥æ›´æ–°æ’åº 
+	 * ËµÃ÷:Òì²½¸üĞÂÅÅĞò 
 	 * @param  $optionid
 	 */
 	public function listorder_up() {
@@ -117,7 +117,7 @@ class link extends admin {
 		}
 	}
 	
-	//æ›´æ–°æ’åº
+	//¸üĞÂÅÅĞò
  	public function listorder() {
 		if(isset($_POST['dosubmit'])) {
 			foreach($_POST['listorders'] as $linkid => $listorder) {
@@ -128,7 +128,7 @@ class link extends admin {
 		} 
 	}
 	
-	//æ·»åŠ å‹æƒ…é“¾æ¥åˆ†ç±»
+	//Ìí¼ÓÓÑÇéÁ´½Ó·ÖÀà
  	public function add_type() {
 		if(isset($_POST['dosubmit'])) {
 			if(empty($_POST['type']['name'])) {
@@ -149,7 +149,7 @@ class link extends admin {
 	}
 	
 	/**
-	 * åˆ é™¤åˆ†ç±»
+	 * É¾³ı·ÖÀà
 	 */
 	public function delete_type() {
 		if((!isset($_GET['typeid']) || empty($_GET['typeid'])) && (!isset($_POST['typeid']) || empty($_POST['typeid']))) {
@@ -174,7 +174,7 @@ class link extends admin {
 		}
 	}
 	
-	//:åˆ†ç±»ç®¡ç†
+	//:·ÖÀà¹ÜÀí
  	public function list_type() {
 		$this->db2 = pc_base::load_model('type_model');
 		$page = isset($_GET['page']) && intval($_GET['page']) ? intval($_GET['page']) : 1;
@@ -191,7 +191,7 @@ class link extends admin {
 			if(!is_array($_POST['link']) || empty($_POST['link'])) return false;
 			if((!$_POST['link']['name']) || empty($_POST['link']['name'])) return false;
 			$this->db->update($_POST['link'],array('linkid'=>$linkid));
-			//æ›´æ–°é™„ä»¶çŠ¶æ€
+			//¸üĞÂ¸½¼ş×´Ì¬
 			if(pc_base::load_config('system','attachment_stat') & $_POST['link']['logo']) {
 				$this->attachment_db = pc_base::load_model('attachment_model');
 				$this->attachment_db->api_update($_POST['link']['logo'],'link-'.$linkid,1);
@@ -206,7 +206,7 @@ class link extends admin {
 			foreach($types as $typeid=>$type){
 				$type_arr[$type['typeid']] = $type['name'];
 			}
-			//è§£å‡ºé“¾æ¥å†…å®¹
+			//½â³öÁ´½ÓÄÚÈİ
 			$info = $this->db->get_one(array('linkid'=>$_GET['linkid']));
 			if(!$info) showmessage(L('link_exit'));
 			extract($info); 
@@ -216,7 +216,7 @@ class link extends admin {
 	}
 	
 	/**
-	 * ä¿®æ”¹å‹æƒ…é“¾æ¥ åˆ†ç±»
+	 * ĞŞ¸ÄÓÑÇéÁ´½Ó ·ÖÀà
 	 */
 	public function edit_type() {
 		if(isset($_POST['dosubmit'])){ 
@@ -229,7 +229,7 @@ class link extends admin {
 			
 		}else{
  			$show_validator = $show_scroll = $show_header = true;
-			//è§£å‡ºåˆ†ç±»å†…å®¹
+			//½â³ö·ÖÀàÄÚÈİ
 			$info = $this->db2->get_one(array('typeid'=>$_GET['typeid']));
 			if(!$info) showmessage(L('linktype_exit'));
 			extract($info);
@@ -239,8 +239,8 @@ class link extends admin {
 	}
 
 	/**
-	 * åˆ é™¤å‹æƒ…é“¾æ¥  
-	 * @param	intval	$sid	å‹æƒ…é“¾æ¥IDï¼Œé€’å½’åˆ é™¤
+	 * É¾³ıÓÑÇéÁ´½Ó  
+	 * @param	intval	$sid	ÓÑÇéÁ´½ÓID£¬µİ¹éÉ¾³ı
 	 */
 	public function delete() {
   		if((!isset($_GET['linkid']) || empty($_GET['linkid'])) && (!isset($_POST['linkid']) || empty($_POST['linkid']))) {
@@ -248,9 +248,9 @@ class link extends admin {
 		} else {
 			if(is_array($_POST['linkid'])){
 				foreach($_POST['linkid'] as $linkid_arr) {
- 					//æ‰¹é‡åˆ é™¤å‹æƒ…é“¾æ¥
+ 					//ÅúÁ¿É¾³ıÓÑÇéÁ´½Ó
 					$this->db->delete(array('linkid'=>$linkid_arr));
-					//æ›´æ–°é™„ä»¶çŠ¶æ€
+					//¸üĞÂ¸½¼ş×´Ì¬
 					if(pc_base::load_config('system','attachment_stat')) {
 						$this->attachment_db = pc_base::load_model('attachment_model');
 						$this->attachment_db->api_delete('link-'.$linkid_arr);
@@ -260,9 +260,9 @@ class link extends admin {
 			}else{
 				$linkid = intval($_GET['linkid']);
 				if($linkid < 1) return false;
-				//åˆ é™¤å‹æƒ…é“¾æ¥
+				//É¾³ıÓÑÇéÁ´½Ó
 				$result = $this->db->delete(array('linkid'=>$linkid));
-				//æ›´æ–°é™„ä»¶çŠ¶æ€
+				//¸üĞÂ¸½¼ş×´Ì¬
 				if(pc_base::load_config('system','attachment_stat')) {
 					$this->attachment_db = pc_base::load_model('attachment_model');
 					$this->attachment_db->api_delete('link-'.$linkid);
@@ -278,23 +278,23 @@ class link extends admin {
 	}
 	 
 	/**
-	 * æŠ•ç¥¨æ¨¡å—é…ç½®
+	 * Í¶Æ±Ä£¿éÅäÖÃ
 	 */
 	public function setting() {
-		//è¯»å–é…ç½®æ–‡ä»¶
+		//¶ÁÈ¡ÅäÖÃÎÄ¼ş
 		$data = array();
- 		$siteid = $this->get_siteid();//å½“å‰ç«™ç‚¹ 
-		//æ›´æ–°æ¨¡å‹æ•°æ®åº“,é‡è®¾setting æ•°æ®. 
+ 		$siteid = $this->get_siteid();//µ±Ç°Õ¾µã 
+		//¸üĞÂÄ£ĞÍÊı¾İ¿â,ÖØÉèsetting Êı¾İ. 
 		$m_db = pc_base::load_model('module_model');
 		$data = $m_db->select(array('module'=>'link'));
 		$setting = string2array($data[0]['setting']);
-		$now_seting = $setting[$siteid]; //å½“å‰ç«™ç‚¹é…ç½®
+		$now_seting = $setting[$siteid]; //µ±Ç°Õ¾µãÅäÖÃ
 		if(isset($_POST['dosubmit'])) {
-			//å¤šç«™ç‚¹å­˜å‚¨é…ç½®æ–‡ä»¶
+			//¶àÕ¾µã´æ´¢ÅäÖÃÎÄ¼ş
  			$setting[$siteid] = $_POST['setting'];
   			setcache('link', $setting, 'commons');  
-			//æ›´æ–°æ¨¡å‹æ•°æ®åº“,é‡è®¾setting æ•°æ®. 
-  			$m_db = pc_base::load_model('module_model'); //è°ƒç”¨æ¨¡å—æ•°æ®æ¨¡å‹
+			//¸üĞÂÄ£ĞÍÊı¾İ¿â,ÖØÉèsetting Êı¾İ. 
+  			$m_db = pc_base::load_model('module_model'); //µ÷ÓÃÄ£¿éÊı¾İÄ£ĞÍ
 			$set = array2string($setting);
 			$m_db->update(array('setting'=>$set), array('module'=>ROUTE_M));
 			showmessage(L('setting_updates_successful'), '?m=link&c=link&a=init');
@@ -305,18 +305,18 @@ class link extends admin {
 		}
 	}
 	
-  	//æ‰¹é‡å®¡æ ¸ç”³è¯· ...
+  	//ÅúÁ¿ÉóºËÉêÇë ...
  	public function check_register(){
 		if(isset($_POST['dosubmit'])) {
 			if((!isset($_GET['linkid']) || empty($_GET['linkid'])) && (!isset($_POST['linkid']) || empty($_POST['linkid']))) {
 				showmessage(L('illegal_parameters'), HTTP_REFERER);
 			} else {
-				if(is_array($_POST['linkid'])){//æ‰¹é‡å®¡æ ¸
+				if(is_array($_POST['linkid'])){//ÅúÁ¿ÉóºË
 					foreach($_POST['linkid'] as $linkid_arr) {
 						$this->db->update(array('passed'=>1),array('linkid'=>$linkid_arr));
 					}
 					showmessage(L('operation_success'),'?m=link&c=link');
-				}else{//å•ä¸ªå®¡æ ¸
+				}else{//µ¥¸öÉóºË
 					$linkid = intval($_GET['linkid']);
 					if($linkid < 1) return false;
 					$result = $this->db->update(array('passed'=>1),array('linkid'=>$linkid));
@@ -327,7 +327,7 @@ class link extends admin {
 					}
 				}
 			}
-		}else {//è¯»å–æœªå®¡æ ¸åˆ—è¡¨
+		}else {//¶ÁÈ¡Î´ÉóºËÁĞ±í
 			$where = array('siteid'=>$this->get_siteid(),'passed'=>0);
 			$page = isset($_GET['page']) && intval($_GET['page']) ? intval($_GET['page']) : 1;
 			$infos = $this->db->listinfo($where,'linkid DESC',$page, $pages = '9');
@@ -338,14 +338,14 @@ class link extends admin {
 		
 	}
 	
- 	//å•ä¸ªå®¡æ ¸ç”³è¯·
+ 	//µ¥¸öÉóºËÉêÇë
  	public function check(){
 		if((!isset($_GET['linkid']) || empty($_GET['linkid'])) && (!isset($_POST['linkid']) || empty($_POST['linkid']))) {
 			showmessage(L('illegal_parameters'), HTTP_REFERER);
 		} else { 
 			$linkid = intval($_GET['linkid']);
 			if($linkid < 1) return false;
-			//åˆ é™¤å‹æƒ…é“¾æ¥
+			//É¾³ıÓÑÇéÁ´½Ó
 			$result = $this->db->update(array('passed'=>1),array('linkid'=>$linkid));
 			if($result){
 				showmessage(L('operation_success'),'?m=link&c=link');
@@ -359,9 +359,9 @@ class link extends admin {
     
 	
 	/**
-	 * è¯´æ˜:å¯¹å­—ç¬¦ä¸²è¿›è¡Œå¤„ç†
-	 * @param $string å¾…å¤„ç†çš„å­—ç¬¦ä¸²
-	 * @param $isjs æ˜¯å¦ç”ŸæˆJSä»£ç 
+	 * ËµÃ÷:¶Ô×Ö·û´®½øĞĞ´¦Àí
+	 * @param $string ´ı´¦ÀíµÄ×Ö·û´®
+	 * @param $isjs ÊÇ·ñÉú³ÉJS´úÂë
 	 */
 	function format_js($string, $isjs = 1){
 		$string = addslashes(str_replace(array("\r", "\n"), array('', ''), $string));

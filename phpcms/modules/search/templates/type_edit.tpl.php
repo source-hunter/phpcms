@@ -14,7 +14,7 @@ include $this->admin_tpl('header','admin');
 <form action="?m=search&c=search_type&a=edit" method="post" id="myform">
 	<table width="100%"  class="table_form">
 	<tr>
-    <th width="120"><?php echo L('select_module_name')?>ï¼š</th>
+    <th width="120"><?php echo L('select_module_name')?>£º</th>
     <td class="y-bg"><?php
 	if($modelid && $typedir == 'yp') {
 		$module = 'yp';
@@ -29,24 +29,24 @@ include $this->admin_tpl('header','admin');
 
   <?php if($modelid && $typedir != 'yp') {?>
   <tr id="modelid_display">
-    <th width="120"><?php echo L('select_model_name')?>ï¼š</th>
+    <th width="120"><?php echo L('select_model_name')?>£º</th>
     <td class="y-bg"><?php echo form::select($model_data,$modelid,'name="info[modelid]"')?></td>
   </tr>
   <?php }?>
 
   <?php if($modelid && $typedir == 'yp') {?>
   <tr id="yp_modelid_display">
-    <th width="120"><?php echo L('select_model_name')?>ï¼š</th>
+    <th width="120"><?php echo L('select_model_name')?>£º</th>
     <td class="y-bg"><?php echo form::select($yp_model_data,$modelid,'name="info[yp_modelid]"')?></td>
   </tr>
   <?php }?>
 
   <tr>
-    <th width="120"><?php echo L('type_name')?>ï¼š</th>
+    <th width="120"><?php echo L('type_name')?>£º</th>
     <td class="y-bg"><input type="text" class="input-text" name="info[name]" id="name" size="30" value="<?php echo $name?>"/></td>
   </tr>
     <tr>
-    <th><?php echo L('description')?>ï¼š</th>
+    <th><?php echo L('description')?>£º</th>
     <td class="y-bg"><textarea name="info[description]" maxlength="255" style="width:300px;height:60px;"><?php echo $description?></textarea></td>
   </tr>
 </table>

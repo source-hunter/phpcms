@@ -13,7 +13,7 @@ class poster_stat_model extends model {
 	}
 	
 	/**
-	 * æŒ‰æœˆä»½åˆ›å»ºè¡¨
+	 * °´ÔÂ·Ý´´½¨±í
 	 */
 	private function create_table() {
 		$data_info = pc_base::load_config('database', $this->db_setting);
@@ -36,16 +36,16 @@ class poster_stat_model extends model {
 	}
 	
 	/**
-	 * æ ¹æ®æŸ¥è¯¢çš„æ—¥æœŸï¼Œæ”¹å˜æŸ¥è¯¢çš„è¡¨
-	 * @param string $tablename è¡¨å
+	 * ¸ù¾Ý²éÑ¯µÄÈÕÆÚ£¬¸Ä±ä²éÑ¯µÄ±í
+	 * @param string $tablename ±íÃû
 	 */
 	private function change_table($tablename = '') {
 		if ($tablename) $this->table_name = $this->db_tablepre.'poster_'.$tablename;
 	}
 	
 	/**
-	 * èŽ·å–æ‰€æœ‰å¹¿å‘Šç»Ÿè®¡è¡¨ï¼Œå¹¶å½¢æˆä¸‹æ¥æ¡†
-	 * @param string $year æŸ¥è¯¢çš„æœˆä»½
+	 * »ñÈ¡ËùÓÐ¹ã¸æÍ³¼Æ±í£¬²¢ÐÎ³ÉÏÂÀ´¿ò
+	 * @param string $year ²éÑ¯µÄÔÂ·Ý
 	 * @return boolen/string
 	 */
 	public function get_list($year = '') {
@@ -54,8 +54,8 @@ class poster_stat_model extends model {
 			$this->change_table($year);
 		}
 		$this->change_table($year);
-		$diff1 = date('Y', SYS_TIME);		//å½“å‰å¹´ä»½
-		$diff2 = date('m', SYS_TIME);		//å½“å‰æœˆä»½
+		$diff1 = date('Y', SYS_TIME);		//µ±Ç°Äê·Ý
+		$diff2 = date('m', SYS_TIME);		//µ±Ç°ÔÂ·Ý
 		$diff = ($diff1-2010)*12+$diff2;
 		$selectstr = '';
 		for($y=$diff;$y>0;$y--) {

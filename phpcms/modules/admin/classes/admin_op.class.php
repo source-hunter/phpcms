@@ -1,14 +1,14 @@
 <?php
 defined('IN_PHPCMS') or exit('No permission resources.');
 
-//å®šä¹‰åœ¨åå°
+//¶¨ÒåÔÚºóÌ¨
 define('IN_ADMIN',true);
 class admin_op {
 	public function __construct() {
 		$this->db = pc_base::load_model('admin_model');
 	}
 	/*
-	 * ä¿®æ”¹å¯†ç 
+	 * ĞŞ¸ÄÃÜÂë
 	 */
 	public function edit_password($userid, $password){
 		$userid = intval($userid);
@@ -22,7 +22,7 @@ class admin_op {
 		return $this->db->update($passwordinfo,array('userid'=>$userid));
 	}
 	/*
-	 * æ£€æŸ¥ç”¨æˆ·åé‡å
+	 * ¼ì²éÓÃ»§ÃûÖØÃû
 	 */	
 	public function checkname($username) {
 		$username =  trim($username);

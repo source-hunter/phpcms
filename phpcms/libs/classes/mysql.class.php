@@ -1,6 +1,6 @@
 <?php
 /**
- *  mysql.class.php æ•°æ®åº“å®ç°ç±»
+ *  mysql.class.php Êı¾İ¿âÊµÏÖÀà
  *
  * @copyright			(C) 2005-2010 PHPCMS
  * @license				http://www.phpcms.cn/license/
@@ -10,22 +10,22 @@
 final class mysql {
 	
 	/**
-	 * æ•°æ®åº“é…ç½®ä¿¡æ¯
+	 * Êı¾İ¿âÅäÖÃĞÅÏ¢
 	 */
 	private $config = null;
 	
 	/**
-	 * æ•°æ®åº“è¿æ¥èµ„æºå¥æŸ„
+	 * Êı¾İ¿âÁ¬½Ó×ÊÔ´¾ä±ú
 	 */
 	public $link = null;
 	
 	/**
-	 * æœ€è¿‘ä¸€æ¬¡æŸ¥è¯¢èµ„æºå¥æŸ„
+	 * ×î½üÒ»´Î²éÑ¯×ÊÔ´¾ä±ú
 	 */
 	public $lastqueryid = null;
 	
 	/**
-	 *  ç»Ÿè®¡æ•°æ®åº“æŸ¥è¯¢æ¬¡æ•°
+	 *  Í³¼ÆÊı¾İ¿â²éÑ¯´ÎÊı
 	 */
 	public $querycount = 0;
 	
@@ -34,8 +34,8 @@ final class mysql {
 	}
 	
 	/**
-	 * æ‰“å¼€æ•°æ®åº“è¿æ¥,æœ‰å¯èƒ½ä¸çœŸå®è¿æ¥æ•°æ®åº“
-	 * @param $config	æ•°æ®åº“è¿æ¥å‚æ•°
+	 * ´ò¿ªÊı¾İ¿âÁ¬½Ó,ÓĞ¿ÉÄÜ²»ÕæÊµÁ¬½ÓÊı¾İ¿â
+	 * @param $config	Êı¾İ¿âÁ¬½Ó²ÎÊı
 	 * 			
 	 * @return void
 	 */
@@ -47,7 +47,7 @@ final class mysql {
 	}
 
 	/**
-	 * çœŸæ­£å¼€å¯æ•°æ®åº“è¿æ¥
+	 * ÕæÕı¿ªÆôÊı¾İ¿âÁ¬½Ó
 	 * 			
 	 * @return void
 	 */
@@ -74,9 +74,9 @@ final class mysql {
 	}
 
 	/**
-	 * æ•°æ®åº“æŸ¥è¯¢æ‰§è¡Œæ–¹æ³•
-	 * @param $sql è¦æ‰§è¡Œçš„sqlè¯­å¥
-	 * @return æŸ¥è¯¢èµ„æºå¥æŸ„
+	 * Êı¾İ¿â²éÑ¯Ö´ĞĞ·½·¨
+	 * @param $sql ÒªÖ´ĞĞµÄsqlÓï¾ä
+	 * @return ²éÑ¯×ÊÔ´¾ä±ú
 	 */
 	private function execute($sql) {
 		if(!is_resource($this->link)) {
@@ -90,15 +90,15 @@ final class mysql {
 	}
 
 	/**
-	 * æ‰§è¡ŒsqlæŸ¥è¯¢
-	 * @param $data 		éœ€è¦æŸ¥è¯¢çš„å­—æ®µå€¼[ä¾‹`name`,`gender`,`birthday`]
-	 * @param $table 		æ•°æ®è¡¨
-	 * @param $where 		æŸ¥è¯¢æ¡ä»¶[ä¾‹`name`='$name']
-	 * @param $limit 		è¿”å›ç»“æœèŒƒå›´[ä¾‹ï¼š10æˆ–10,10 é»˜è®¤ä¸ºç©º]
-	 * @param $order 		æ’åºæ–¹å¼	[é»˜è®¤æŒ‰æ•°æ®åº“é»˜è®¤æ–¹å¼æ’åº]
-	 * @param $group 		åˆ†ç»„æ–¹å¼	[é»˜è®¤ä¸ºç©º]
-	 * @param $key 			è¿”å›æ•°ç»„æŒ‰é”®åæ’åº
-	 * @return array		æŸ¥è¯¢ç»“æœé›†æ•°ç»„
+	 * Ö´ĞĞsql²éÑ¯
+	 * @param $data 		ĞèÒª²éÑ¯µÄ×Ö¶ÎÖµ[Àı`name`,`gender`,`birthday`]
+	 * @param $table 		Êı¾İ±í
+	 * @param $where 		²éÑ¯Ìõ¼ş[Àı`name`='$name']
+	 * @param $limit 		·µ»Ø½á¹û·¶Î§[Àı£º10»ò10,10 Ä¬ÈÏÎª¿Õ]
+	 * @param $order 		ÅÅĞò·½Ê½	[Ä¬ÈÏ°´Êı¾İ¿âÄ¬ÈÏ·½Ê½ÅÅĞò]
+	 * @param $group 		·Ö×é·½Ê½	[Ä¬ÈÏÎª¿Õ]
+	 * @param $key 			·µ»ØÊı×é°´¼üÃûÅÅĞò
+	 * @return array		²éÑ¯½á¹û¼¯Êı×é
 	 */
 	public function select($data, $table, $where = '', $limit = '', $order = '', $group = '', $key = '') {
 		$where = $where == '' ? '' : ' WHERE '.$where;
@@ -128,13 +128,13 @@ final class mysql {
 	}
 
 	/**
-	 * è·å–å•æ¡è®°å½•æŸ¥è¯¢
-	 * @param $data 		éœ€è¦æŸ¥è¯¢çš„å­—æ®µå€¼[ä¾‹`name`,`gender`,`birthday`]
-	 * @param $table 		æ•°æ®è¡¨
-	 * @param $where 		æŸ¥è¯¢æ¡ä»¶
-	 * @param $order 		æ’åºæ–¹å¼	[é»˜è®¤æŒ‰æ•°æ®åº“é»˜è®¤æ–¹å¼æ’åº]
-	 * @param $group 		åˆ†ç»„æ–¹å¼	[é»˜è®¤ä¸ºç©º]
-	 * @return array/null	æ•°æ®æŸ¥è¯¢ç»“æœé›†,å¦‚æœä¸å­˜åœ¨ï¼Œåˆ™è¿”å›ç©º
+	 * »ñÈ¡µ¥Ìõ¼ÇÂ¼²éÑ¯
+	 * @param $data 		ĞèÒª²éÑ¯µÄ×Ö¶ÎÖµ[Àı`name`,`gender`,`birthday`]
+	 * @param $table 		Êı¾İ±í
+	 * @param $where 		²éÑ¯Ìõ¼ş
+	 * @param $order 		ÅÅĞò·½Ê½	[Ä¬ÈÏ°´Êı¾İ¿âÄ¬ÈÏ·½Ê½ÅÅĞò]
+	 * @param $group 		·Ö×é·½Ê½	[Ä¬ÈÏÎª¿Õ]
+	 * @return array/null	Êı¾İ²éÑ¯½á¹û¼¯,Èç¹û²»´æÔÚ£¬Ôò·µ»Ø¿Õ
 	 */
 	public function get_one($data, $table, $where = '', $order = '', $group = '') {
 		$where = $where == '' ? '' : ' WHERE '.$where;
@@ -153,9 +153,9 @@ final class mysql {
 	}
 	
 	/**
-	 * éå†æŸ¥è¯¢ç»“æœé›†
-	 * @param $type		è¿”å›ç»“æœé›†ç±»å‹	
-	 * 					MYSQL_ASSOCï¼ŒMYSQL_NUM å’Œ MYSQL_BOTH
+	 * ±éÀú²éÑ¯½á¹û¼¯
+	 * @param $type		·µ»Ø½á¹û¼¯ÀàĞÍ	
+	 * 					MYSQL_ASSOC£¬MYSQL_NUM ºÍ MYSQL_BOTH
 	 * @return array
 	 */
 	public function fetch_next($type=MYSQL_ASSOC) {
@@ -167,7 +167,7 @@ final class mysql {
 	}
 	
 	/**
-	 * é‡Šæ”¾æŸ¥è¯¢èµ„æº
+	 * ÊÍ·Å²éÑ¯×ÊÔ´
 	 * @return void
 	 */
 	public function free_result() {
@@ -178,18 +178,18 @@ final class mysql {
 	}
 	
 	/**
-	 * ç›´æ¥æ‰§è¡ŒsqlæŸ¥è¯¢
-	 * @param $sql							æŸ¥è¯¢sqlè¯­å¥
-	 * @return	boolean/query resource		å¦‚æœä¸ºæŸ¥è¯¢è¯­å¥ï¼Œè¿”å›èµ„æºå¥æŸ„ï¼Œå¦åˆ™è¿”å›true/false
+	 * Ö±½ÓÖ´ĞĞsql²éÑ¯
+	 * @param $sql							²éÑ¯sqlÓï¾ä
+	 * @return	boolean/query resource		Èç¹ûÎª²éÑ¯Óï¾ä£¬·µ»Ø×ÊÔ´¾ä±ú£¬·ñÔò·µ»Øtrue/false
 	 */
 	public function query($sql) {
 		return $this->execute($sql);
 	}
 	
 	/**
-	 * æ‰§è¡Œæ·»åŠ è®°å½•æ“ä½œ
-	 * @param $data 		è¦å¢åŠ çš„æ•°æ®ï¼Œå‚æ•°ä¸ºæ•°ç»„ã€‚æ•°ç»„keyä¸ºå­—æ®µå€¼ï¼Œæ•°ç»„å€¼ä¸ºæ•°æ®å–å€¼
-	 * @param $table 		æ•°æ®è¡¨
+	 * Ö´ĞĞÌí¼Ó¼ÇÂ¼²Ù×÷
+	 * @param $data 		ÒªÔö¼ÓµÄÊı¾İ£¬²ÎÊıÎªÊı×é¡£Êı×ékeyÎª×Ö¶ÎÖµ£¬Êı×éÖµÎªÊı¾İÈ¡Öµ
+	 * @param $table 		Êı¾İ±í
 	 * @return boolean
 	 */
 	public function insert($data, $table, $return_insert_id = false, $replace = false) {
@@ -212,7 +212,7 @@ final class mysql {
 	}
 	
 	/**
-	 * è·å–æœ€åä¸€æ¬¡æ·»åŠ è®°å½•çš„ä¸»é”®å·
+	 * »ñÈ¡×îºóÒ»´ÎÌí¼Ó¼ÇÂ¼µÄÖ÷¼üºÅ
 	 * @return int 
 	 */
 	public function insert_id() {
@@ -220,14 +220,14 @@ final class mysql {
 	}
 	
 	/**
-	 * æ‰§è¡Œæ›´æ–°è®°å½•æ“ä½œ
-	 * @param $data 		è¦æ›´æ–°çš„æ•°æ®å†…å®¹ï¼Œå‚æ•°å¯ä»¥ä¸ºæ•°ç»„ä¹Ÿå¯ä»¥ä¸ºå­—ç¬¦ä¸²ï¼Œå»ºè®®æ•°ç»„ã€‚
-	 * 						ä¸ºæ•°ç»„æ—¶æ•°ç»„keyä¸ºå­—æ®µå€¼ï¼Œæ•°ç»„å€¼ä¸ºæ•°æ®å–å€¼
-	 * 						ä¸ºå­—ç¬¦ä¸²æ—¶[ä¾‹ï¼š`name`='phpcms',`hits`=`hits`+1]ã€‚
-	 *						ä¸ºæ•°ç»„æ—¶[ä¾‹: array('name'=>'phpcms','password'=>'123456')]
-	 *						æ•°ç»„å¯ä½¿ç”¨array('name'=>'+=1', 'base'=>'-=1');ç¨‹åºä¼šè‡ªåŠ¨è§£æä¸º`name` = `name` + 1, `base` = `base` - 1
-	 * @param $table 		æ•°æ®è¡¨
-	 * @param $where 		æ›´æ–°æ•°æ®æ—¶çš„æ¡ä»¶
+	 * Ö´ĞĞ¸üĞÂ¼ÇÂ¼²Ù×÷
+	 * @param $data 		Òª¸üĞÂµÄÊı¾İÄÚÈİ£¬²ÎÊı¿ÉÒÔÎªÊı×éÒ²¿ÉÒÔÎª×Ö·û´®£¬½¨ÒéÊı×é¡£
+	 * 						ÎªÊı×éÊ±Êı×ékeyÎª×Ö¶ÎÖµ£¬Êı×éÖµÎªÊı¾İÈ¡Öµ
+	 * 						Îª×Ö·û´®Ê±[Àı£º`name`='phpcms',`hits`=`hits`+1]¡£
+	 *						ÎªÊı×éÊ±[Àı: array('name'=>'phpcms','password'=>'123456')]
+	 *						Êı×é¿ÉÊ¹ÓÃarray('name'=>'+=1', 'base'=>'-=1');³ÌĞò»á×Ô¶¯½âÎöÎª`name` = `name` + 1, `base` = `base` - 1
+	 * @param $table 		Êı¾İ±í
+	 * @param $where 		¸üĞÂÊı¾İÊ±µÄÌõ¼ş
 	 * @return boolean
 	 */
 	public function update($data, $table, $where = '') {
@@ -274,10 +274,10 @@ final class mysql {
 	}
 	
 	/**
-	 * æ‰§è¡Œåˆ é™¤è®°å½•æ“ä½œ
-	 * @param $table 		æ•°æ®è¡¨
-	 * @param $where 		åˆ é™¤æ•°æ®æ¡ä»¶,ä¸å……è®¸ä¸ºç©ºã€‚
-	 * 						å¦‚æœè¦æ¸…ç©ºè¡¨ï¼Œä½¿ç”¨emptyæ–¹æ³•
+	 * Ö´ĞĞÉ¾³ı¼ÇÂ¼²Ù×÷
+	 * @param $table 		Êı¾İ±í
+	 * @param $where 		É¾³ıÊı¾İÌõ¼ş,²»³äĞíÎª¿Õ¡£
+	 * 						Èç¹ûÒªÇå¿Õ±í£¬Ê¹ÓÃempty·½·¨
 	 * @return boolean
 	 */
 	public function delete($table, $where) {
@@ -290,7 +290,7 @@ final class mysql {
 	}
 	
 	/**
-	 * è·å–æœ€åæ•°æ®åº“æ“ä½œå½±å“åˆ°çš„æ¡æ•°
+	 * »ñÈ¡×îºóÊı¾İ¿â²Ù×÷Ó°Ïìµ½µÄÌõÊı
 	 * @return int
 	 */
 	public function affected_rows() {
@@ -298,8 +298,8 @@ final class mysql {
 	}
 	
 	/**
-	 * è·å–æ•°æ®è¡¨ä¸»é”®
-	 * @param $table 		æ•°æ®è¡¨
+	 * »ñÈ¡Êı¾İ±íÖ÷¼ü
+	 * @param $table 		Êı¾İ±í
 	 * @return array
 	 */
 	public function get_primary($table) {
@@ -311,8 +311,8 @@ final class mysql {
 	}
 
 	/**
-	 * è·å–è¡¨å­—æ®µ
-	 * @param $table 		æ•°æ®è¡¨
+	 * »ñÈ¡±í×Ö¶Î
+	 * @param $table 		Êı¾İ±í
 	 * @return array
 	 */
 	public function get_fields($table) {
@@ -325,8 +325,8 @@ final class mysql {
 	}
 
 	/**
-	 * æ£€æŸ¥ä¸å­˜åœ¨çš„å­—æ®µ
-	 * @param $table è¡¨å
+	 * ¼ì²é²»´æÔÚµÄ×Ö¶Î
+	 * @param $table ±íÃû
 	 * @return array
 	 */
 	public function check_fields($table, $array) {
@@ -341,8 +341,8 @@ final class mysql {
 	}
 
 	/**
-	 * æ£€æŸ¥è¡¨æ˜¯å¦å­˜åœ¨
-	 * @param $table è¡¨å
+	 * ¼ì²é±íÊÇ·ñ´æÔÚ
+	 * @param $table ±íÃû
 	 * @return boolean
 	 */
 	public function table_exists($table) {
@@ -360,8 +360,8 @@ final class mysql {
 	}
 
 	/**
-	 * æ£€æŸ¥å­—æ®µæ˜¯å¦å­˜åœ¨
-	 * @param $table è¡¨å
+	 * ¼ì²é×Ö¶ÎÊÇ·ñ´æÔÚ
+	 * @param $table ±íÃû
 	 * @return boolean
 	 */
 	public function field_exists($table, $field) {
@@ -417,12 +417,12 @@ final class mysql {
 	}
 
 	/**
-	 * å¯¹å­—æ®µä¸¤è¾¹åŠ åå¼•å·ï¼Œä»¥ä¿è¯æ•°æ®åº“å®‰å…¨
-	 * @param $value æ•°ç»„å€¼
+	 * ¶Ô×Ö¶ÎÁ½±ß¼Ó·´ÒıºÅ£¬ÒÔ±£Ö¤Êı¾İ¿â°²È«
+	 * @param $value Êı×éÖµ
 	 */
 	public function add_special_char(&$value) {
 		if('*' == $value || false !== strpos($value, '(') || false !== strpos($value, '.') || false !== strpos ( $value, '`')) {
-			//ä¸å¤„ç†åŒ…å«* æˆ–è€… ä½¿ç”¨äº†sqlæ–¹æ³•ã€‚
+			//²»´¦Àí°üº¬* »òÕß Ê¹ÓÃÁËsql·½·¨¡£
 		} else {
 			$value = '`'.trim($value).'`';
 		}
@@ -433,9 +433,9 @@ final class mysql {
 	}
 	
 	/**
-	 * å¯¹å­—æ®µå€¼ä¸¤è¾¹åŠ å¼•å·ï¼Œä»¥ä¿è¯æ•°æ®åº“å®‰å…¨
-	 * @param $value æ•°ç»„å€¼
-	 * @param $key æ•°ç»„key
+	 * ¶Ô×Ö¶ÎÖµÁ½±ß¼ÓÒıºÅ£¬ÒÔ±£Ö¤Êı¾İ¿â°²È«
+	 * @param $value Êı×éÖµ
+	 * @param $key Êı×ékey
 	 * @param $quotation 
 	 */
 	public function escape_string(&$value, $key='', $quotation = 1) {

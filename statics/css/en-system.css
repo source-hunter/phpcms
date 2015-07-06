@@ -31,7 +31,7 @@ body fieldset.blue legend{padding:3px 8px;font-weight:700;color:#347add; backgro
 .vote_bar div{background: url(../images/admin_img/x_bg.png) repeat-x left -194px; float: left; position:relative; height:16px;_height:13px}
 .vote_bar div span{ display:block; position:absolute; left:0; top:0; width:180px; text-align:center; height:16px; font-size:10px; line-height:12px; vertical-align:middle}
 
-/*å¤´éƒ¨*/
+/*Í·²¿*/
 .crumbs,.tab-web-panel li a:hover,.tab-web-panel li.on a{background: url(../images/admin_img/icon_use.png) no-repeat}
 .header {background:#3a6ea5 url(../images/admin_img/h_bg.gif) repeat-x left bottom; height:80px; position:relative}
 .header .logo{float:left;width:136px;height:80px;margin-right:10px;_margin-right:7px;background: url(../images/admin_img/logo_1.gif) no-repeat;}
@@ -71,7 +71,7 @@ body fieldset.blue legend{padding:3px 8px;font-weight:700;color:#347add; backgro
 	#Skin .s2 {background-position:0 -55px}
 	#Skin .s3 {background-position:0 -33px}
 	#Skin .s4 {}
-/*ä¸»ä½“æ ·å¼*/
+/*Ö÷ÌåÑùÊ½*/
 .left_menu{width:215px; position:relative; display:block; padding-top:10px; overflow:hidden; }
 #Scroll{ float:left; width:194px;padding:0 2px 0 10px; overflow:hidden}
 .left_menu_on{ width:10px; padding:0;}
@@ -95,13 +95,13 @@ body fieldset.blue legend{padding:3px 8px;font-weight:700;color:#347add; backgro
 .scroll a:hover{ background-position:left bottom}
 .scroll a.next{background-position:right top}
 .scroll a.next:hover{ background-position:right bottom}
-/*å½“å‰ä½ç½®*/
+/*µ±Ç°Î»ÖÃ*/
 .crumbs{background-position:left -18px; height:22px; padding:6px 0 0 18px;*height:20px;*padding:8px 0 0 18px;}
 .shortcut{ float:right; position:relative; top:-3px;*top:-4px;}
 .shortcut a{ margin-left:6px; padding-left:6px; color:#0364ae}
 .shortcut a,.shortcut a span{background: url(../images/admin_img/bnt_bg.png) no-repeat 0 -83px; height:21px; line-height:21px;*line-height:24px;_line-height:20px; text-align:center;}
 .shortcut a span{background-position: right -83px; padding-right:6px;}
-/*å®¹å™¨æ ·å¼*/
+/*ÈİÆ÷ÑùÊ½*/
 .col-tab{ }
 .col-tab ul.tabBut{height:27px; padding-left:14px;position:relative;bottom:-1px}
 .col-tab ul.tabBut li{float:left; border:1px solid #dce3ed; height:25px; line-height:26px; margin-right:5px;}
@@ -120,10 +120,10 @@ body fieldset.blue legend{padding:3px 8px;font-weight:700;color:#347add; backgro
 .col-2 div.content{ padding:9px 10px}
 
 
-/*æ ç›®èœå•*/
+/*À¸Ä¿²Ëµ¥*/
 .cat-menu{ width:180px; margin:10px 8px 0 0; }
 .cat-menu div.content{padding-left:8px}
-/*æ”¶è—å¯¼èˆª*/
+/*ÊÕ²Øµ¼º½*/
 .fav-nav,.fav-nav span,.fav-nav a{height:28px;line-height:28px;background: url(../images/admin_img/fav-nav-bg.png) repeat-x left top;}
 .fav-nav{padding:0 0 0 12px;position: absolute; left:0;bottom:0px;width:100%;}
 .fav-nav span{background-position: right -78px;position:relative;display:block;float:left;background-repeat: no-repeat; padding-right:2px}
@@ -141,7 +141,7 @@ body fieldset.blue legend{padding:3px 8px;font-weight:700;color:#347add; backgro
 .fav-help a.panel-delete{right:2px; top:5px; margin:0}
 .fav-help a:hover {color:#CC3300;}
 
-/*å†…å®¹èœå•*/
+/*ÄÚÈİ²Ëµ¥*/
 .content-menu{ padding:0 0 6px}
 .content-menu a:hover{text-decoration: none}
 .content-menu a em{display:inline-block;display:-moz-inline-stack;zoom:1;*display:inline;}
@@ -153,22 +153,22 @@ body fieldset.blue legend{padding:3px 8px;font-weight:700;color:#347add; backgro
 .content-menu a.add em{ padding:0 10px 0 5px;color:#fff;background-position: right top}
 .content-menu a.on{background-position: left -40px;*background-position: left -41px;_background-position: left -39px; color:#fff; padding:0 0 0 5px;}
 .content-menu a.on em{background-position: right -40px;*background-position: right -41px;_background-position: right -39px; padding:0 10px 0 5px}
-/*åˆ†é¡µ*/
-#pages { padding:14px 0 10px;font-family:å®‹ä½“; text-align:right}
+/*·ÖÒ³*/
+#pages { padding:14px 0 10px;font-family:ËÎÌå; text-align:right}
 #pages a { display:inline-block; height:22px; line-height:22px; background:#fff; border:1px solid #e3e3e3; text-align:center; color:#333; padding:0 10px}
 #pages a.a1 { background:url(../images/admin_img/pages.png) no-repeat 0 5px; width:56px; padding:0 }
 #pages a:hover { background:#f1f1f1; color:#000; text-decoration:none; }
 #pages span { display:inline-block; height:22px;padding:0 10px; line-height:22px; background:#5a85b2; border:1px solid #5a85b2; color:#fff; text-align:center; }
 .page .noPage { display:inline-block; height:22px; line-height:22px; background:url(../img/icu/titleBg.png) repeat-x 0 -55px ; border:1px solid #e3e3e3; text-align:center; color:#a4a4a4; }
 
-/*å›¾ç‰‡åˆ—è¡¨æ°´å¹³å·¦å³å±…ä¸­*/
+/*Í¼Æ¬ÁĞ±íË®Æ½×óÓÒ¾ÓÖĞ*/
 .img-wrap{border:1px solid #eee;text-align:center;overflow:hidden;background:#fff}
 .img-wrap a{display:table-cell;vertical-align:middle;text-align:center;*display:block;}
 
 #imgPreview td.on{background:#f4f9fe}
 #imgPreview td.on a{background:url("../images/msg_bg.png") no-repeat right -250px;vertical-align:middle; padding-right:70px;display:inline-block;display:-moz-inline-stack;zoom:1;*display:inline; height:16px; line-height:16px}
 
-/*è§’è‰²æƒé™è®¾ç½®*/
+/*½ÇÉ«È¨ÏŞÉèÖÃ*/
 .role-memu{ padding:5px 0}
 .role-memu li a{cursor: hand;!important;cursor: pointer;display:block;color:#2e74d7;text-decoration: none; height:24px; padding:0 6px; overflow:hidden; line-height:24px; vertical-align:middle; background-color:#FFF}
 .role-memu li a em{ width:80px; overflow:hidden; display:block}
@@ -178,7 +178,7 @@ body fieldset.blue legend{padding:3px 8px;font-weight:700;color:#347add; backgro
 .role-but,.role-but span{background: url(../images/admin_img/tbtn.png) no-repeat; height:36px; line-height:36px; vertical-align:middle; padding-left:12px; border:none;display:inline-block;display:-moz-inline-stack;zoom:1;*display:inline;}
 .role-but span{background-position: right top; padding:0 12px 0 0; font-weight:700; font-size:14px; color:#fff}
 
-/*å‘å¸ƒå†…å®¹
+/*·¢²¼ÄÚÈİ
 .addContent{width:960px; margin:0 auto; overflow:hidden;}
 .addContent .col-auto{width:750px;margin-right:6px;_margin-right:5px;}
 .addContent .col-right .content h6{ border-bottom:1px solid #cfdce3; padding:8px 0 3px; margin-bottom:7px}
@@ -200,7 +200,7 @@ body fieldset.blue legend{padding:3px 8px;font-weight:700;color:#347add; backgro
 .addContent .col-right select#template{max-width:188px;*width:188px;_width:188px}
 
 .list-dot{ padding-bottom:10px}
-.list-dot li,.list-dot-othors li{padding:5px 0; border-bottom:1px dotted #c6dde0; font-family:"å®‹ä½“"; color:#bbb; position:relative;_height:22px}
+.list-dot li,.list-dot-othors li{padding:5px 0; border-bottom:1px dotted #c6dde0; font-family:"ËÎÌå"; color:#bbb; position:relative;_height:22px}
 .list-dot li:hover,.list-dot-othors li:hover{ background-color:#d9e5ee}
 .list-dot li span,.list-dot-othors li span{color:#004499}
 .list-dot li a.close span,.list-dot-othors li a.close span{display:none}
@@ -208,7 +208,7 @@ body fieldset.blue legend{padding:3px 8px;font-weight:700;color:#347add; backgro
 .list-dot li a.close:hover,.list-dot-othors li a.close:hover{background-position: left -46px}
 .list-dot-othors li{float:left;width:24%;overflow:hidden;}
 
-/*è¯„è®º*/
+/*ÆÀÂÛ*/
 .comment{ padding:8px 10px}
 .comment .title{ margin-bottom:5px}
 .comment .title span{ position:relative; top:-5px}
@@ -218,7 +218,7 @@ body fieldset.blue legend{padding:3px 8px;font-weight:700;color:#347add; backgro
 .comment_button a{padding:5px; border:solid 1px #C3D4E7; }
 .comment_button a.on{background:#4C7FB6; color:#fff;border:solid 1px #3E73A9}
 
-/*åœ†è§’*/
+/*Ô²½Ç*/
 .fillet{position:relative; border:1px solid #c4d5df; zoom:1;}
 .fillet span.o1,
 	.fillet span.o2,
@@ -229,7 +229,7 @@ body fieldset.blue legend{padding:3px 8px;font-weight:700;color:#347add; backgro
 	.fillet span.o3{background-position: left bottom; bottom:-1px; left:-1px}
 	.fillet span.o4{background-position: right bottom; bottom:-1px; right:-1px;}
 	
-/*å·¥ä½œæµ*/
+/*¹¤×÷Á÷*/
 .workflow{padding:10px 140px 10px 10px;}
 .workflow .col{padding-bottom:20px;background: url(../images/admin_img/arrowhead-y.png) no-repeat 10px bottom;}
 .workflow div.off{padding:0; background:none}
@@ -239,21 +239,21 @@ body fieldset.blue legend{padding:3px 8px;font-weight:700;color:#347add; backgro
 .workflow .fillet{background:#f6f9fb; padding:8px 10px 7px}
 .workflow .name{font-size:14px}
 
-/*é”é¢‘*/
+/*ËøÆµ*/
 .ScreenLock {background-color:#3a6ea5;background-image:url("../images/admin_img/ScreenLock.png")}
 .ScreenLock {background-position:50% 50%;background-repeat:no-repeat;height:100%;left:0;position:absolute;top:0;width:100%;z-index:2000}
 .ScreenLock .inputpwd {font-size:14px;height:134px;left:50%;margin:-102px 0 0 -150px;padding:28px;position:absolute;top:50%;width:280px}
 .ScreenLock h5{ height:60px; line-height:60px; padding-top:10px; padding-left:40px;background:url(../images/msg_img/msg_bg.png) no-repeat 0px -476px;}
-.ScreenLock .input-text{border:1px solid #A7A6AA;height:18px;margin:0 5px 0 0;padding:2px 0 2px 5px;border: 1px solid #d0d0d0;background: #FFF url(../images/admin_img/input.png) repeat-x; font-family: Verdana, Geneva, sans-serif,"å®‹ä½“";font-size:12px;}
+.ScreenLock .input-text{border:1px solid #A7A6AA;height:18px;margin:0 5px 0 0;padding:2px 0 2px 5px;border: 1px solid #d0d0d0;background: #FFF url(../images/admin_img/input.png) repeat-x; font-family: Verdana, Geneva, sans-serif,"ËÎÌå";font-size:12px;}
 .ScreenLock .submit{ background: url(../images/admin_img/ScreenLockBut.png) no-repeat; height:24px; width:55px;cursor:hand;display:inline-block;display:-moz-inline-stack;zoom:1;*display:inline; border:none}
 
-/*ç½‘ç«™åœ°å›¾*/
+/*ÍøÕ¾µØÍ¼*/
 .map-menu ul{margin:4px;width:156px;border:1px solid #A4C0F7;}
 .map-menu ul li.title{background:#EDF2F8;font-weight:bold;padding-left:5px;}
 .map-menu ul li.title2{font-weight:bold;padding-left:10px;}
 .map-menu ul li{padding:4px;padding-left:20px;}
 
-/*é™„ä»¶ æœªä½¿ç”¨-å·²ä½¿ç”¨*/
+/*¸½¼ş Î´Ê¹ÓÃ-ÒÑÊ¹ÓÃ*/
 .tab-use{ position: relative}
 .tab-use .arrows{background: url(../images/admin_img/toggle-collapse-dark.png) no-repeat;  width:16px; height:16px; overflow:hidden; position:absolute; left:0; top:-11px;}
 .tab-use ul{ position:absolute; display:none; top:5px; left:0; width:80px}

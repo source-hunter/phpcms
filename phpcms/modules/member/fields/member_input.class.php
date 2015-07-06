@@ -10,7 +10,7 @@ class member_input {
 		$this->modelid = $modelid;
 		$this->fields = getcache('model_field_'.$modelid,'model');
 
-		//鍒濆鍖栭檮浠剁被
+		//初始化附件类
 		pc_base::load_sys_class('attachment','',0);
 		$this->siteid = param::get_cookie('siteid');
 		$this->attachment = new attachment('content','0',$this->siteid);
@@ -33,17 +33,17 @@ class member_input {
 				$maxlength = $this->fields[$field]['maxlength'];
 				$pattern = $this->fields[$field]['pattern'];
 				$errortips = $this->fields[$field]['errortips'];
-				if(empty($errortips)) $errortips = "$name 涓嶇鍚堣姹傦紒";
+				if(empty($errortips)) $errortips = "$name 不符合要求！";
 				$length = empty($value) ? 0 : strlen($value);
-				if($minlength && $length < $minlength && !$isimport) showmessage("$name 涓嶅緱灏戜簬 $minlength 涓瓧绗︼紒");
-				if (!array_key_exists($field, $this->fields)) showmessage('妯″瀷涓笉瀛樺湪'.$field.'瀛楁');
+				if($minlength && $length < $minlength && !$isimport) showmessage("$name 不得少于 $minlength 个字符！");
+				if (!array_key_exists($field, $this->fields)) showmessage('模型中不存在'.$field.'字段');
 				if($maxlength && $length > $maxlength && !$isimport) {
-					showmessage("$name 涓嶅緱瓒呰繃 $maxlength 涓瓧绗︼紒");
+					showmessage("$name 不得超过 $maxlength 个字符！");
 				} else {
 					str_cut($value, $maxlength);
 				}
 				if($pattern && $length && !preg_match($pattern, $value) && !$isimport) showmessage($errortips);
-	            if($this->fields[$field]['isunique'] && $this->db->get_one(array($field=>$value),$field) && ROUTE_A != 'edit') showmessage("$name 鐨勫�间笉寰楅噸澶嶏紒");
+	            if($this->fields[$field]['isunique'] && $this->db->get_one(array($field=>$value),$field) && ROUTE_A != 'edit') showmessage("$name 的值不得重复！");
 				$func = $this->fields[$field]['formtype'];
 				if(method_exists($this, $func)) $value = $this->$func($field, $value);
 	

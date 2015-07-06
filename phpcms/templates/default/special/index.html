@@ -31,7 +31,7 @@
 			</div>
     </div>
     <div class="col-left img-text" >
-		<div class="box intro"><strong>å¯¼è¯»ï¼š</strong>{$description}</div>
+		<div class="box intro"><strong>µ¼¶Á£º</strong>{$description}</div>
     	<div class="news-hot">
 		{pc:special  action="content_list" specialid="$specialid" listorder="3" num="3"}
 			{loop $data $r}
@@ -44,11 +44,11 @@
         {loop $types $t}
     <div class="bk10"></div>
     <div class="box">
-        		<h5>{$t['name']}<a href="{$t['url']}" class="more">æ›´å¤š>></a></h5>
+        		<h5>{$t['name']}<a href="{$t['url']}" class="more">¸ü¶à>></a></h5>
 			{pc:special action="content_list" specialid="$id" typeid="$t[typeid]" listorder="3" num="10"}
 				<ul class="list f14 lh26 ">
 				{loop $data $r}
-                <li>Â·<a href="{$r['url']}" target="_blank">{str_cut($r['title'], 36)}</a></li>
+                <li>¡¤<a href="{$r['url']}" target="_blank">{str_cut($r['title'], 36)}</a></li>
             {/loop}
             </ul>
 			{/pc}
@@ -76,7 +76,7 @@
 	{if $voteid}
 	<div class="bk10"></div>
     <div class="box vote">
-		<h5 class="title-2">åœ¨çº¿è°ƒæŸ¥</h5>
+		<h5 class="title-2">ÔÚÏßµ÷²é</h5>
 			<script language="javascript" src="{APP_PATH}index.php?m=vote&c=index&a=show&action=js&subjectid={$voteid}&type=3"></script>
 	</div>
 	{/if}
@@ -86,7 +86,7 @@
 	{loop $types $t}
     <div class="bk10"></div>
     <div class="box">
-        		<h5>{$t['name']}<a href="{$t['url']}" class="more">æ›´å¤š>></a></h5>
+        		<h5>{$t['name']}<a href="{$t['url']}" class="more">¸ü¶à>></a></h5>
 				{pc:special action="content_list" specialid="$id" typeid="$t[typeid]" thumb="1" listorder="3" num="6"}
             <ul class="content news-photo picbig">
 			{loop $data $r}
@@ -103,7 +103,7 @@
 			{pc:special action="content_list" specialid="$id" typeid="$t[typeid]" listorder="3" num="10"}
 				<ul class="list f14 lh26 row-2">
 				{loop $data $r}
-                <li>Â·<a href="{$r['url']}" target="_blank">{str_cut($r['title'], 36)}</a></li>
+                <li>¡¤<a href="{$r['url']}" target="_blank">{str_cut($r['title'], 36)}</a></li>
             {/loop}
             </ul>
 			</pc>
@@ -118,8 +118,8 @@
 <script type="text/javascript"> 
 <!--
 $(function(){
-	new slide("#main-slide","cur",290,260,1);//ç„¦ç‚¹å›¾
-	new SwapTab(".SwapTab","span",".tab-content","ul","fb");//æŽ’è¡ŒTAB
+	new slide("#main-slide","cur",290,260,1);//½¹µãÍ¼
+	new SwapTab(".SwapTab","span",".tab-content","ul","fb");//ÅÅÐÐTAB
 })
 //-->
 </script>

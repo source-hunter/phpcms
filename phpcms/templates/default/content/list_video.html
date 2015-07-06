@@ -5,7 +5,7 @@
 <script type="text/javascript" src="{JS_PATH}cookie.js"></script>
 <div class="clr ct lst">
     <div class="lyt_4">
-    	<h5>åˆ†ç±»æ£€ç´¢</h5>
+    	<h5>·ÖÀà¼ìË÷</h5>
         <ul class="tp_lst"> 
 {php $nums = count(subcat($CATEGORYS[$catid]['parentid'],0,0,$siteid));}
 {loop subcat($CATEGORYS[$catid]['parentid'],0,0,$siteid) $r}
@@ -16,19 +16,19 @@
     </div>
      <div class="wp lyt_3">
     	<div class="lstnav">
-    	  <span></span><span>æœ¬é¡µå…±æœ‰<strong id="nums">{$items}</strong>ä¸ªç¬¦åˆæ¡ä»¶çš„å†…å®¹  </span> <h5>{$catname}</h5>
+    	  <span></span><span>±¾Ò³¹²ÓĞ<strong id="nums">{$items}</strong>¸ö·ûºÏÌõ¼şµÄÄÚÈİ  </span> <h5>{$catname}</h5>
     	</div> 
         <ul class="tpli">
-            <li class="clr"><span>æŒ‰ç”»è´¨ï¼š</span> 
+            <li class="clr"><span>°´»­ÖÊ£º</span> 
    			{loop video_filters('vision',$modelid,$vision_rang) $r}
 				{$r[menu]}
 			{/loop}
              </li>
         </ul>
 		<ul class="clr ulitg">
-            <li><a href="{APP_PATH}index.php?m=content&c=index&a=lists&catid={$catid}&b=1" {if $c==1}class="ac"{/if}>æœ€è¿‘æ›´æ–°</a></li>
-             <li><a href="{APP_PATH}index.php?m=content&c=index&a=lists&catid={$catid}&b=2" {if $c==2}class="ac"{/if}>æœ€è¿‘çƒ­æ’­</a></li>
-            <li><a href="{APP_PATH}index.php?m=content&c=index&a=lists&catid={$catid}&b=3" {if $c==3}class="ac"{/if}>æœ€çƒ­è¯„è®º</a></li>
+            <li><a href="{APP_PATH}index.php?m=content&c=index&a=lists&catid={$catid}&b=1" {if $c==1}class="ac"{/if}>×î½ü¸üĞÂ</a></li>
+             <li><a href="{APP_PATH}index.php?m=content&c=index&a=lists&catid={$catid}&b=2" {if $c==2}class="ac"{/if}>×î½üÈÈ²¥</a></li>
+            <li><a href="{APP_PATH}index.php?m=content&c=index&a=lists&catid={$catid}&b=3" {if $c==3}class="ac"{/if}>×îÈÈÆÀÂÛ</a></li>
         </ul>
 		<div class="lstnr">
 		
@@ -40,7 +40,7 @@
  			{pc:content action="lists" where="$sql" catid="$catid" num="15"  order=" listorder desc,id DESC" moreinfo="1" page="$page" urlrule="$urlrule"}
 			{php $nums=count($data)}
  			{loop $data $v}	
-			<!-- è·å–è§†é¢‘è¯¦ç»†ä¿¡æ¯ -->
+			<!-- »ñÈ¡ÊÓÆµÏêÏ¸ĞÅÏ¢ -->
 			{php $video_info = get_vid($v[id], $v[catid], $isspecial = 0);} 
 			
                  <li>
@@ -50,7 +50,7 @@
  						
 						<a href="{$v[url]}" target="_blank"><img src="{$v[thumb]}" width="120" height="75"></a></div>
                         <div class="lh21"><a href="{$v[url]}" target="_blank">{str_cut($v[title],16,false)}</a></div>
-                        <div class="sz"><span class="shows">æ’­æ”¾æ•°ï¼š<cite>{get_views('c-'.$CATEGORYS[$v[catid]][modelid].'-'.$v['id'])}</cite></span><span>è¯„è®ºï¼š<cite>{get_comments(id_encode("content_$v[catid]",$v[id],$siteid))}</cite></span></div>
+                        <div class="sz"><span class="shows">²¥·ÅÊı£º<cite>{get_views('c-'.$CATEGORYS[$v[catid]][modelid].'-'.$v['id'])}</cite></span><span>ÆÀÂÛ£º<cite>{get_comments(id_encode("content_$v[catid]",$v[id],$siteid))}</cite></span></div>
                     </div>
                 </li> 
 			{/loop}
@@ -72,7 +72,7 @@
  			{pc:content action="hits" catid="$catid" num="15" order="views DESC" page="$page" urlrule="$urlrule"}
  			{php $nums=count($data)}
  			{loop $data $v}	
-			<!-- è·å–è§†é¢‘è¯¦ç»†ä¿¡æ¯ -->
+			<!-- »ñÈ¡ÊÓÆµÏêÏ¸ĞÅÏ¢ -->
 			{php $video_info = get_vid($v[id], $v[catid], $isspecial = 0);} 
                 <li>
                 	<div class="w120">
@@ -81,7 +81,7 @@
 						
 						<a href="{$v[url]}" target="_blank"><img src="{$v[thumb]}" width="120" height="75"></a></div>
                         <div class="lh21"><a href="{$v[url]}" target="_blank">{str_cut($v[title],16,false)}</a></div>
-                        <div class="sz"><span class="shows">æ’­æ”¾æ•°ï¼š<cite>{get_views('c-'.$CATEGORYS[$v[catid]][modelid].'-'.$v['id'])}</cite></span><span>è¯„è®ºï¼š<cite>{get_comments(id_encode("content_$v[catid]",$v[id],$siteid))}</cite></span></div>
+                        <div class="sz"><span class="shows">²¥·ÅÊı£º<cite>{get_views('c-'.$CATEGORYS[$v[catid]][modelid].'-'.$v['id'])}</cite></span><span>ÆÀÂÛ£º<cite>{get_comments(id_encode("content_$v[catid]",$v[id],$siteid))}</cite></span></div>
                     </div>
                 </li> 
 			{/loop}
@@ -95,7 +95,7 @@
         </div>
 		{/if}
 		
-		<!-- æœ€å¤šè¯„è®º -->
+		<!-- ×î¶àÆÀÂÛ -->
 		{if $c==3}
         <div class="bct">
         	<ul class="clr col4 col5"> 
@@ -105,7 +105,7 @@
   			{php $nums=count($data)}
  			{loop $data $v}
 			{php $com_arr = explode('_',$v['commentid']);$id_arr = explode('-',$com_arr[1]); $video_array =get_pic($id_arr[1],$id_arr[0]); } 
-			<!-- è·å–è§†é¢‘è¯¦ç»†ä¿¡æ¯ -->
+			<!-- »ñÈ¡ÊÓÆµÏêÏ¸ĞÅÏ¢ -->
 			{php $video_info = get_vid($id_arr[1], $id_arr[0], $isspecial = 0);} 
                 <li>
                 	<div class="w120">
@@ -114,7 +114,7 @@
 						
 						<a href="{$v[url]}" target="_blank"><img src="{$video_array['thumb']}" width="120" height="75"></a></div>
                         <div class="lh21"><a href="{$v[url]}" target="_blank">{str_cut($v[title],16,false)}</a></div>
-                        <div class="sz"><span class="shows">æ’­æ”¾æ•°ï¼š<cite>{get_views('c-'.$CATEGORYS[$id_arr[0]][modelid].'-'.$id_arr[1])}</cite></span><span>è¯„è®ºï¼š<cite>{get_comments(id_encode("content_$id_arr[0]",$id,$siteid))}</cite></span></div>
+                        <div class="sz"><span class="shows">²¥·ÅÊı£º<cite>{get_views('c-'.$CATEGORYS[$id_arr[0]][modelid].'-'.$id_arr[1])}</cite></span><span>ÆÀÂÛ£º<cite>{get_comments(id_encode("content_$id_arr[0]",$id,$siteid))}</cite></span></div>
                     </div>
                 </li> 
 			{/loop}
@@ -140,7 +140,7 @@ $(function(){
 })
 
 /*
-*æ”¹å˜åŠ å…¥æ¸…å•çš„å›¾ç‰‡äº‹ä»¶å’Œå›¾ç‰‡æ˜¾ç¤º
+*¸Ä±ä¼ÓÈëÇåµ¥µÄÍ¼Æ¬ÊÂ¼şºÍÍ¼Æ¬ÏÔÊ¾
 */
 function ChangStatus(){
 	var player_list="";
@@ -160,7 +160,7 @@ function ChangStatus(){
 }
  
 
-//åŠ å…¥åˆ°æ’­æ”¾åˆ—è¡¨
+//¼ÓÈëµ½²¥·ÅÁĞ±í
 function toggle(object) { 
  	var url = $(object).attr("href");
 	var title = $(object).attr("title");
@@ -173,9 +173,9 @@ function toggle(object) {
 		player_list = new_player;
 	} else{
 		var player_list = getcookie('player_list'); 
- 		//åˆ¤æ–­æ˜¯å¦å·²ç»å­˜åœ¨
+ 		//ÅĞ¶ÏÊÇ·ñÒÑ¾­´æÔÚ
  		if(player_list.indexOf(id)!=-1){
-			//å·²ç»åŠ å…¥æ’­æ”¾èœå•åˆ™è®¾ç½®COOKIE,ç›´æ¥è·³è½¬è‡³æ’­æ”¾é¡µé¢
+			//ÒÑ¾­¼ÓÈë²¥·Å²Ëµ¥ÔòÉèÖÃCOOKIE,Ö±½ÓÌø×ªÖÁ²¥·ÅÒ³Ãæ
    			var list_array = player_list.split("|"); 
 			var player=new Array();
 			for(var i=0;i<list_array.length;i++) {
@@ -190,7 +190,7 @@ function toggle(object) {
 		var new_player = '|'+url+'@'+title+'@'+id+'@'+catid;
 		player_list +=new_player;
 	}
- 	//æ”¹å˜å›¾ç‰‡æ ·å¼ï¼Œå¹¶ä¸”å»æ‰onclickå‡½æ•°
+ 	//¸Ä±äÍ¼Æ¬ÑùÊ½£¬²¢ÇÒÈ¥µôonclickº¯Êı
  	setcookie('player_list',player_list,1); 
 	$("a[contentid='"+id+"']").removeClass("j"); 
 	$("a[contentid='"+id+"']").addClass("j2"); 

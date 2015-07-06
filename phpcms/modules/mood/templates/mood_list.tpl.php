@@ -10,9 +10,9 @@
 		<tr>
 		<td>
 		<div class="explain-col">
- 		<?php echo L('category')?>ï¼š<?php echo form::select_category('', $catid, 'name="catid"', L('please_select'), '', 0, 1)?> 
- 		<?php echo L('time')?>ï¼š<?php echo form::select(array('1'=>L('today'), '2'=>L('yesterday'), '3'=>L('this_week'), '4'=>L('this_month'), '5'=>L('all')), $datetype, 'name="datetype"')?> 
- 		<?php echo L('sort')?>ï¼š<?php echo form::select($order_list, $order, 'name="order"')?> 
+ 		<?php echo L('category')?>£º<?php echo form::select_category('', $catid, 'name="catid"', L('please_select'), '', 0, 1)?> 
+ 		<?php echo L('time')?>£º<?php echo form::select(array('1'=>L('today'), '2'=>L('yesterday'), '3'=>L('this_week'), '4'=>L('this_month'), '5'=>L('all')), $datetype, 'name="datetype"')?> 
+ 		<?php echo L('sort')?>£º<?php echo form::select($order_list, $order, 'name="order"')?> 
 				<input type="submit" name="search" class="button" value="<?php echo L('view')?>" />
 	</div>
 		</td>

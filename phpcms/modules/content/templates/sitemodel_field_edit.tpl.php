@@ -87,7 +87,7 @@ $(function(){
 	<?php } ?>
 	<tr> 
       <th><strong><?php echo L('string_size');?></strong><br /><?php echo L('string_size_tips');?></th>
-      <td><?php echo L('minlength');?>ï¼š<input type="text" name="info[minlength]" id="field_minlength" value="<?php echo $minlength;?>" size="5" class="input-text"><?php echo L('maxlength');?>ï¼š<input type="text" name="info[maxlength]" id="field_maxlength" value="<?php echo $maxlength;?>" size="5" class="input-text"></td>
+      <td><?php echo L('minlength');?>£º<input type="text" name="info[minlength]" id="field_minlength" value="<?php echo $minlength;?>" size="5" class="input-text"><?php echo L('maxlength');?>£º<input type="text" name="info[maxlength]" id="field_maxlength" value="<?php echo $maxlength;?>" size="5" class="input-text"></td>
     </tr>
 	<tr> 
       <th><strong><?php echo L('data_preg');?></strong><br /><?php echo L('data_preg_tips');?></th>

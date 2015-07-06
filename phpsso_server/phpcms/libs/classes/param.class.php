@@ -1,6 +1,6 @@
 <?php
 /**
- *  param.class.php	å‚æ•°å¤„ç†ç±»
+ *  param.class.php	²ÎÊı´¦ÀíÀà
  *
  * @copyright			(C) 2005-2012 PHPCMS
  * @license				http://www.phpcms.cn/license/
@@ -8,7 +8,7 @@
  */
 class param {
 
-	//è·¯ç”±é…ç½®
+	//Â·ÓÉÅäÖÃ
 	private $route_config = '';
 	
 	public function __construct() {
@@ -39,7 +39,7 @@ class param {
 	}
 
 	/**
-	 * è·å–æ¨¡å‹
+	 * »ñÈ¡Ä£ĞÍ
 	 */
 	public function route_m() {
 		$m = isset($_GET['m']) && !empty($_GET['m']) ? $_GET['m'] : (isset($_POST['m']) && !empty($_POST['m']) ? $_POST['m'] : '');
@@ -52,7 +52,7 @@ class param {
 	}
 
 	/**
-	 * è·å–æ§åˆ¶å™¨
+	 * »ñÈ¡¿ØÖÆÆ÷
 	 */
 	public function route_c() {
 		$c = isset($_GET['c']) && !empty($_GET['c']) ? $_GET['c'] : (isset($_POST['c']) && !empty($_POST['c']) ? $_POST['c'] : '');
@@ -65,7 +65,7 @@ class param {
 	}
 
 	/**
-	 * è·å–äº‹ä»¶
+	 * »ñÈ¡ÊÂ¼ş
 	 */
 	public function route_a() {
 		$a = isset($_GET['a']) && !empty($_GET['a']) ? $_GET['a'] : (isset($_POST['a']) && !empty($_POST['a']) ? $_POST['a'] : '');
@@ -78,10 +78,10 @@ class param {
 	}
 
 	/**
-	 * è®¾ç½® cookie
-	 * @param string $var     å˜é‡å
-	 * @param string $value   å˜é‡å€¼
-	 * @param int $time    è¿‡æœŸæ—¶é—´
+	 * ÉèÖÃ cookie
+	 * @param string $var     ±äÁ¿Ãû
+	 * @param string $value   ±äÁ¿Öµ
+	 * @param int $time    ¹ıÆÚÊ±¼ä
 	 */
 	public static function set_cookie($var, $value = '', $time = 0) {
 		$time = $time > 0 ? $time : ($value == '' ? SYS_TIME - 3600 : 0);
@@ -98,10 +98,10 @@ class param {
 	}
 
 	/**
-	 * è·å–é€šè¿‡ set_cookie è®¾ç½®çš„ cookie å˜é‡ 
-	 * @param string $var å˜é‡å
-	 * @param string $default é»˜è®¤å€¼ 
-	 * @return mixed æˆåŠŸåˆ™è¿”å›cookie å€¼ï¼Œå¦åˆ™è¿”å› false
+	 * »ñÈ¡Í¨¹ı set_cookie ÉèÖÃµÄ cookie ±äÁ¿ 
+	 * @param string $var ±äÁ¿Ãû
+	 * @param string $default Ä¬ÈÏÖµ 
+	 * @return mixed ³É¹¦Ôò·µ»Øcookie Öµ£¬·ñÔò·µ»Ø false
 	 */
 	public static function get_cookie($var, $default = '') {
 		$var = pc_base::load_config('system','cookie_pre').$var;
@@ -109,8 +109,8 @@ class param {
 	}
 
 	/**
-	 * å®‰å…¨å¤„ç†å‡½æ•°
-	 * å¤„ç†m,a,c
+	 * °²È«´¦Àíº¯Êı
+	 * ´¦Àím,a,c
 	 */
 	private function safe_deal($str) {
 		return str_replace(array('/', '.'), '', $str);

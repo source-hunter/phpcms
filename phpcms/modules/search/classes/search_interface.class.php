@@ -1,22 +1,22 @@
 <?php
 /**
- * æœç´¢æ¥å£
+ * ËÑË÷½Ó¿Ú
  *
  */
 class search_interface {
 	
 	public function __construct() {
-		//åˆå§‹åŒ–sphinx
+		//³õÊ¼»¯sphinx
 		pc_base::load_app_class('sphinxapi', '', 0);
 		$this->cl = new SphinxClient();
 		$siteid = get_siteid();
 		$search_setting = getcache('search');
 		$setting = $search_setting[$siteid];
 		
-		$mode = SPH_MATCH_EXTENDED2;			//åŒ¹é…æ¨¡å¼
-		$host = $setting['sphinxhost'];			//æœåŠ¡ip
-		$port = intval($setting['sphinxport']);	//æœåŠ¡ç«¯å£
-		$ranker = SPH_RANK_PROXIMITY_BM25;		//ç»Ÿè®¡ç›¸å…³åº¦è®¡ç®—æ¨¡å¼ï¼Œä»…ä½¿ç”¨BM25è¯„åˆ†è®¡ç®—
+		$mode = SPH_MATCH_EXTENDED2;			//Æ¥ÅäÄ£Ê½
+		$host = $setting['sphinxhost'];			//·şÎñip
+		$port = intval($setting['sphinxport']);	//·şÎñ¶Ë¿Ú
+		$ranker = SPH_RANK_PROXIMITY_BM25;		//Í³¼ÆÏà¹Ø¶È¼ÆËãÄ£Ê½£¬½öÊ¹ÓÃBM25ÆÀ·Ö¼ÆËã
 
 		$this->cl->SetServer($host, $port);
 		$this->cl->SetConnectTimeout(1);
@@ -26,14 +26,14 @@ class search_interface {
 	}
 	
 	/**
-	 * æœç´¢
-	 * @param string $q			å…³é”®è¯	    	ç±»ä¼¼sql like'%$q%'
-	 * @param array $siteids	ç«™ç‚¹idæ•°ç»„
-	 * @param array $typeids	ç±»å‹ids  		ç±»ä¼¼sql IN('')
-	 * @param array $adddate	æ—¶é—´èŒƒå›´æ•°ç»„ 		ç±»ä¼¼sql between start AND end		 æ ¼å¼:array('start','end');
-	 * @param int $offset 		åç§»é‡
-	 * @param int $limit  		åŒ¹é…é¡¹æ•°ç›®é™åˆ¶	ç±»ä¼¼sql limit $offset, $limit
-	 * @param string $orderby	æ’åºå­—æ®µ		ç±»ä¼¼sql order by $orderby {id:æ–‡ç« id,weight:æƒé‡}
+	 * ËÑË÷
+	 * @param string $q			¹Ø¼ü´Ê	    	ÀàËÆsql like'%$q%'
+	 * @param array $siteids	Õ¾µãidÊı×é
+	 * @param array $typeids	ÀàĞÍids  		ÀàËÆsql IN('')
+	 * @param array $adddate	Ê±¼ä·¶Î§Êı×é 		ÀàËÆsql between start AND end		 ¸ñÊ½:array('start','end');
+	 * @param int $offset 		Æ«ÒÆÁ¿
+	 * @param int $limit  		Æ¥ÅäÏîÊıÄ¿ÏŞÖÆ	ÀàËÆsql limit $offset, $limit
+	 * @param string $orderby	ÅÅĞò×Ö¶Î		ÀàËÆsql order by $orderby {id:ÎÄÕÂid,weight:È¨ÖØ}
 	 */
 	public function search($q, $siteids=array(1), $typeids='', $adddate='', $offset=0, $limit=20, $orderby='@id desc') {
 
@@ -42,24 +42,24 @@ class search_interface {
 		}
 		
 		if($orderby) {
-			//æŒ‰ä¸€ç§ç±»ä¼¼SQLçš„æ–¹å¼å°†åˆ—ç»„åˆèµ·æ¥ï¼Œå‡åºæˆ–é™åºæ’åˆ—ã€‚
+			//°´Ò»ÖÖÀàËÆSQLµÄ·½Ê½½«ÁĞ×éºÏÆğÀ´£¬ÉıĞò»ò½µĞòÅÅÁĞ¡£
 			$this->cl->SetSortMode(SPH_SORT_EXTENDED, $orderby);
 		}
 		if($limit) {
 			$this->cl->SetLimits($offset, $limit, ($limit>1000) ? $limit : 1000);
 		}
 		
-		//è¿‡æ»¤ç±»å‹
+		//¹ıÂËÀàĞÍ
 		if($typeids) {
 			$this->cl->SetFilter('typeid', $typeids);
 		}
 		
-		//è¿‡æ»¤ç«™ç‚¹
+		//¹ıÂËÕ¾µã
 		if($siteids) {
 			$this->cl->SetFilter('siteid', $siteids);
 		}
 		
-		//è¿‡æ»¤æ—¶é—´
+		//¹ıÂËÊ±¼ä
 		if($adddate) {
 			$this->cl->SetFilterRange('adddate', $adddate[0], $adddate[1], false);
 		}

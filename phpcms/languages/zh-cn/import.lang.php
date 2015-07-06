@@ -1,110 +1,110 @@
 <?php
-$LANG['all_import'] 					=	'å…¨éƒ¨';
-$LANG['content_import'] 				=	'ä¿¡æ¯å¯¼å…¥';
-$LANG['member_import'] 					=	'ä¼šå‘˜å¯¼å…¥';
-$LANG['other_import'] 					=	'å…¶å®ƒ';
+$LANG['all_import'] 					=	'È«²¿';
+$LANG['content_import'] 				=	'ĞÅÏ¢µ¼Èë';
+$LANG['member_import'] 					=	'»áÔ±µ¼Èë';
+$LANG['other_import'] 					=	'ÆäËü';
 
-$LANG['import_name'] 					=	'é…ç½®åç§°';
-$LANG['import_desc'] 					=	'é…ç½®è¯´æ˜';
-$LANG['add_time'] 						=	'æ·»åŠ æ—¶é—´';
-$LANG['import_time'] 					=	'å¯¼å…¥æ—¶é—´';
-$LANG['import_type'] 					=	'å¯¼å…¥ç±»å‹';
+$LANG['import_name'] 					=	'ÅäÖÃÃû³Æ';
+$LANG['import_desc'] 					=	'ÅäÖÃËµÃ÷';
+$LANG['add_time'] 						=	'Ìí¼ÓÊ±¼ä';
+$LANG['import_time'] 					=	'µ¼ÈëÊ±¼ä';
+$LANG['import_type'] 					=	'µ¼ÈëÀàĞÍ';
 
-$LANG['do_import'] 						=	'æ‰§è¡Œ';
+$LANG['do_import'] 						=	'Ö´ĞĞ';
 
-$LANG['delete_select'] 					=	'åˆ é™¤é€‰ä¸­';
-$LANG['delete_confirm'] 				=	'æ˜¯å¦ç¡®å®šåˆ é™¤è¯¥è®°å½•ï¼Ÿ';
-/*å…±ç”¨*/
-$LANG['dbtype'] 						=	'æ•°æ®åº“ç±»å‹';
-$LANG['dbhost'] 						=	'æ•°æ®åº“ä¸»æœº';
-$LANG['dbusername'] 					=	'æ•°æ®åº“ç”¨æˆ·å';
-$LANG['dbpassword'] 					=	'æ•°æ®åº“å¯†ç ';
-$LANG['dbcharset'] 						=	'æ•°æ®åº“ç¼–ç ';
-$LANG['dbname'] 						=	'æ•°æ®åº“åç§°';
-$LANG['dbtables'] 						=	'é€‰æ‹©æ•°æ®åº“è¡¨';
-$LANG['test_con'] 						=	'æµ‹è¯•é“¾æ¥';
+$LANG['delete_select'] 					=	'É¾³ıÑ¡ÖĞ';
+$LANG['delete_confirm'] 				=	'ÊÇ·ñÈ·¶¨É¾³ı¸Ã¼ÇÂ¼£¿';
+/*¹²ÓÃ*/
+$LANG['dbtype'] 						=	'Êı¾İ¿âÀàĞÍ';
+$LANG['dbhost'] 						=	'Êı¾İ¿âÖ÷»ú';
+$LANG['dbusername'] 					=	'Êı¾İ¿âÓÃ»§Ãû';
+$LANG['dbpassword'] 					=	'Êı¾İ¿âÃÜÂë';
+$LANG['dbcharset'] 						=	'Êı¾İ¿â±àÂë';
+$LANG['dbname'] 						=	'Êı¾İ¿âÃû³Æ';
+$LANG['dbtables'] 						=	'Ñ¡ÔñÊı¾İ¿â±í';
+$LANG['test_con'] 						=	'²âÊÔÁ´½Ó';
 
-$LANG['show_tables'] 					=	'æ˜¾ç¤ºæ•°æ®è¡¨';
+$LANG['show_tables'] 					=	'ÏÔÊ¾Êı¾İ±í';
 
-$LANG['show_tables_fields'] 			=	'æ˜¾ç¤ºå·²é€‰æ•°æ®è¡¨å­—æ®µ';
+$LANG['show_tables_fields'] 			=	'ÏÔÊ¾ÒÑÑ¡Êı¾İ±í×Ö¶Î';
 
-$LANG['condition'] 						=	'æ•°æ®æå–æ¡ä»¶';
-$LANG['keyid'] 							=	'ä¸»é”®å­—æ®µæŒ‡å®š';
-$LANG['maxid'] 							=	'ä¸Šæ¬¡å¯¼å…¥æœ€å¤§ID';
+$LANG['condition'] 						=	'Êı¾İÌáÈ¡Ìõ¼ş';
+$LANG['keyid'] 							=	'Ö÷¼ü×Ö¶ÎÖ¸¶¨';
+$LANG['maxid'] 							=	'ÉÏ´Îµ¼Èë×î´óID';
 
-$LANG['condition_info'] 				=	'ï¼ˆå¸¸ç”¨äºå¤šè¡¨è”åˆæŸ¥è¯¢æ—¶è®¾ç½®ï¼Œä¾‹ï¼šv9_news.id=v9_news_data.idï¼‰';
-
-
-$LANG['select_localhost_db'] 			=	'è¯·é€‰æ‹©æœ¬æœºæ•°æ®åº“';
-$LANG['pdo_select'] 					=	'é€‰æ‹©æ•°æ®è¡¨';
-$LANG['into_tables'] 					=	'å·²ç»é€‰æ‹©æ•°æ®è¡¨';
-
-$LANG['field_dy'] 						=	'æ•°æ®è¡¨å­—æ®µå¯¹åº”å…³ç³»';
-$LANG['field_name'] 					=	'å­—æ®µå';
-$LANG['field_pdo_name'] 				=	'å¯¹åº”æºæ•°æ®è¡¨å­—æ®µ';
-$LANG['field_values'] 					=	'é»˜è®¤å€¼';
-$LANG['field_func'] 				     	=	'å¤„ç†å‡½æ•°';
-/*å¯¼å…¥é…ç½®*/
-$LANG['import_setting'] 				=	'æ•°æ®å¯¼å…¥æ‰§è¡Œè®¾ç½®';
-$LANG['number'] 						=	'æ¯æ¬¡æå–å¹¶å¯¼å…¥æ•°æ®æ¡æ•°';
-$LANG['expire'] 						=	'phpè„šæœ¬æ‰§è¡Œè¶…æ—¶æ—¶é™'; 
-
-/*å…¶å®ƒ*/
-$LANG['import_type_other'] 				=	'æ•°æ®å¯¼å…¥è§„åˆ™- é€šç”¨å¯¼å…¥';
-
-/*ä¿¡æ¯å¯¼å…¥*/
-$LANG['import_type_content'] 			=	'æ•°æ®å¯¼å…¥è§„åˆ™- å†…å®¹å¯¼å…¥';
-$LANG['defaultcatid'] 					=	'é»˜è®¤å¯¼å…¥æ ç›®';
-$LANG['v9_catid'] 						=	'ç°è¿è¡Œç³»ç»Ÿæ ç›®';
-$LANG['old_catid'] 						=	'åŸç³»ç»Ÿæ ç›®ID';
+$LANG['condition_info'] 				=	'£¨³£ÓÃÓÚ¶à±íÁªºÏ²éÑ¯Ê±ÉèÖÃ£¬Àı£ºv9_news.id=v9_news_data.id£©';
 
 
-/*ä¼šå‘˜å¯¼å…¥*/
-$LANG['import_type_member'] 			=	'æ•°æ®å¯¼å…¥è§„åˆ™- ä¼šå‘˜å¯¼å…¥';
-$LANG['import_lanmu_dy'] 				=	'æ ç›®å¯¹åº”è®¾ç½®';
-$LANG['defaultgroupid'] 				=	'é»˜è®¤å¯¼å…¥åˆ°ç”¨æˆ·ç»„';
-$LANG['v9_group'] 						=	'V9 ä¼šå‘˜ç»„';
-$LANG['old_group'] 						=	'åŸç³»ç»Ÿä¼šå‘˜ç»„ ID';
-$LANG['membercheck'] 					=	'æ˜¯å¦æ£€æŸ¥åŒåå¸å·æˆ–é‚®ä»¶';
-$LANG['keyid_info'] 					=	'ï¼ˆç”¨äºå¤šè¡¨è”åˆæŸ¥è¯¢æ—¶è®¾ç½®ï¼Œä¾‹ï¼šIDï¼‰';
+$LANG['select_localhost_db'] 			=	'ÇëÑ¡Ôñ±¾»úÊı¾İ¿â';
+$LANG['pdo_select'] 					=	'Ñ¡ÔñÊı¾İ±í';
+$LANG['into_tables'] 					=	'ÒÑ¾­Ñ¡ÔñÊı¾İ±í';
 
-/*æ·»åŠ æ£€æµ‹è¯­è¨€åŒ…*/
-$LANG['importname_must'] 				=	'é…ç½®åç§°å¿…å¡«';
-$LANG['input_importname'] 				=	'è¯·è¾“å…¥é…ç½®åç§°';
-$LANG['name_is_exit'] 					=	'å·²æœ‰åŒåé…ç½®ã€‚';
-$LANG['connecting'] 					=	'æ­£åœ¨è¿æ¥ï¼Œè¯·ç¨å€™ã€‚';
-$LANG['dbhost_infos'] 					=	'è¯·è¾“å…¥æ•°æ®åº“ä¸»æœºï¼Œå½“è¿æ¥ä¸ºAccessæ—¶æ­¤å¤„åº”å¡«å†™æ•°æ®åº“ç»å¯¹åœ°å€';
-$LANG['please_check_dbhost'] 			=	'è¯·è¾“å…¥æ•°æ®åº“ä¸»æœº';
-$LANG['input_isok'] 					=	'è¾“å…¥æ­£ç¡®';
+$LANG['field_dy'] 						=	'Êı¾İ±í×Ö¶Î¶ÔÓ¦¹ØÏµ';
+$LANG['field_name'] 					=	'×Ö¶ÎÃû';
+$LANG['field_pdo_name'] 				=	'¶ÔÓ¦Ô´Êı¾İ±í×Ö¶Î';
+$LANG['field_values'] 					=	'Ä¬ÈÏÖµ';
+$LANG['field_func'] 				     	=	'´¦Àíº¯Êı';
+/*µ¼ÈëÅäÖÃ*/
+$LANG['import_setting'] 				=	'Êı¾İµ¼ÈëÖ´ĞĞÉèÖÃ';
+$LANG['number'] 						=	'Ã¿´ÎÌáÈ¡²¢µ¼ÈëÊı¾İÌõÊı';
+$LANG['expire'] 						=	'php½Å±¾Ö´ĞĞ³¬Ê±Ê±ÏŞ'; 
 
-/*æ‰©å±•è¯­è¨€åŒ…*/
-$LANG['access_input_table'] 			=	'(å½“é€‰æ‹©æ•°æ®ç±»å‹ä¸ºaccessæ—¶ï¼Œè¯·ç›´æ¥è¾“å…¥è¡¨å)';
-$LANG['maxid_info'] 					=	'ï¼ˆé˜²æ­¢æ•°æ®é‡å¤å¯¼å…¥ï¼Œéœ€é…åˆ <font color=red>æ•°æ®æå–æ¡ä»¶</font> é€‰é¡¹ä½¿ç”¨ï¼‰';
-$LANG['please_select'] 					=	'è¯·é€‰æ‹©';
+/*ÆäËü*/
+$LANG['import_type_other'] 				=	'Êı¾İµ¼Èë¹æÔò- Í¨ÓÃµ¼Èë';
 
-$LANG['please_select_pdo'] 				=	'è¯·é€‰æ‹©æ•°æ®æº';
+/*ĞÅÏ¢µ¼Èë*/
+$LANG['import_type_content'] 			=	'Êı¾İµ¼Èë¹æÔò- ÄÚÈİµ¼Èë';
+$LANG['defaultcatid'] 					=	'Ä¬ÈÏµ¼ÈëÀ¸Ä¿';
+$LANG['v9_catid'] 						=	'ÏÖÔËĞĞÏµÍ³À¸Ä¿';
+$LANG['old_catid'] 						=	'Ô­ÏµÍ³À¸Ä¿ID';
 
-$LANG['old_catid_info'] 				=	'å¤šä¸ªIDè¯·ç”¨é€—å·åˆ†éš”'; 
 
-$LANG['tiao'] 							=	'æ¡';
-$LANG['miao'] 							=	'ç§’'; 
+/*»áÔ±µ¼Èë*/
+$LANG['import_type_member'] 			=	'Êı¾İµ¼Èë¹æÔò- »áÔ±µ¼Èë';
+$LANG['import_lanmu_dy'] 				=	'À¸Ä¿¶ÔÓ¦ÉèÖÃ';
+$LANG['defaultgroupid'] 				=	'Ä¬ÈÏµ¼Èëµ½ÓÃ»§×é';
+$LANG['v9_group'] 						=	'V9 »áÔ±×é';
+$LANG['old_group'] 						=	'Ô­ÏµÍ³»áÔ±×é ID';
+$LANG['membercheck'] 					=	'ÊÇ·ñ¼ì²éÍ¬ÃûÕÊºÅ»òÓÊ¼ş';
+$LANG['keyid_info'] 					=	'£¨ÓÃÓÚ¶à±íÁªºÏ²éÑ¯Ê±ÉèÖÃ£¬Àı£ºID£©';
 
-$LANG['connect_succeed'] 				=	'é“¾æ¥æˆåŠŸ';
-$LANG['connect_fail'] 					=	'é“¾æ¥å¤±è´¥'; 
+/*Ìí¼Ó¼ì²âÓïÑÔ°ü*/
+$LANG['importname_must'] 				=	'ÅäÖÃÃû³Æ±ØÌî';
+$LANG['input_importname'] 				=	'ÇëÊäÈëÅäÖÃÃû³Æ';
+$LANG['name_is_exit'] 					=	'ÒÑÓĞÍ¬ÃûÅäÖÃ¡£';
+$LANG['connecting'] 					=	'ÕıÔÚÁ¬½Ó£¬ÇëÉÔºò¡£';
+$LANG['dbhost_infos'] 					=	'ÇëÊäÈëÊı¾İ¿âÖ÷»ú£¬µ±Á¬½ÓÎªAccessÊ±´Ë´¦Ó¦ÌîĞ´Êı¾İ¿â¾ø¶ÔµØÖ·';
+$LANG['please_check_dbhost'] 			=	'ÇëÊäÈëÊı¾İ¿âÖ÷»ú';
+$LANG['input_isok'] 					=	'ÊäÈëÕıÈ·';
 
-/*åå°æ¨¡ç‰ˆè¯­è¨€åŒ…*/
-$LANG['change_import_set'] 				=	'ä¿®æ”¹æ•°æ®å¯¼å…¥è§„åˆ™';
-$LANG['select_model'] 					=	'é€‰æ‹©è¦å¯¼å…¥çš„æ¨¡å‹ï¼š'; 
-$LANG['other_model'] 					=	'å…¶å®ƒ (<font color=red>æ²¡æœ‰é™åˆ¶,å¯ä»»æ„æŒ‡å®šæ•°æ®è¡¨</font>)'; 
+/*À©Õ¹ÓïÑÔ°ü*/
+$LANG['access_input_table'] 			=	'(µ±Ñ¡ÔñÊı¾İÀàĞÍÎªaccessÊ±£¬ÇëÖ±½ÓÊäÈë±íÃû)';
+$LANG['maxid_info'] 					=	'£¨·ÀÖ¹Êı¾İÖØ¸´µ¼Èë£¬ĞèÅäºÏ <font color=red>Êı¾İÌáÈ¡Ìõ¼ş</font> Ñ¡ÏîÊ¹ÓÃ£©';
+$LANG['please_select'] 					=	'ÇëÑ¡Ôñ';
 
-$LANG['all_type'] 						=	'æ‰€æœ‰åˆ†ç±»'; 
-$LANG['check_model'] 					=	'å¯¹åº”æ¨¡å‹'; 
+$LANG['please_select_pdo'] 				=	'ÇëÑ¡ÔñÊı¾İÔ´';
 
-$LANG['add_import_setting'] 			=	'æ·»åŠ æ•°æ®å¯¼å…¥è§„åˆ™'; 
-$LANG['no_confie'] 						=	'æ²¡æœ‰é™åˆ¶,å¯ä»»æ„æŒ‡å®šæ•°æ®è¡¨'; 
+$LANG['old_catid_info'] 				=	'¶à¸öIDÇëÓÃ¶ººÅ·Ö¸ô'; 
 
-$LANG['no_data_needimport'] 			=	'æ²¡æœ‰æ–°æ•°æ®éœ€è¦å¯¼å…¥ï¼Œè¯·è¿”å›ï¼'; 
-$LANG['no_keyid'] 						=	'æ²¡æœ‰æŒ‡å®šå…³é”®å­—æ®µï¼Œè¯·è¿”å›ï¼'; 
-$LANG['no_default_groupid'] 			=	'æ²¡æœ‰æŒ‡å®šé»˜è®¤ä¼šå‘˜ç»„'; 
-$LANG['no_default_catid'] 				=	'æ²¡æœ‰é»˜è®¤æ ç›®é…ç½®'; 
+$LANG['tiao'] 							=	'Ìõ';
+$LANG['miao'] 							=	'Ãë'; 
+
+$LANG['connect_succeed'] 				=	'Á´½Ó³É¹¦';
+$LANG['connect_fail'] 					=	'Á´½ÓÊ§°Ü'; 
+
+/*ºóÌ¨Ä£°æÓïÑÔ°ü*/
+$LANG['change_import_set'] 				=	'ĞŞ¸ÄÊı¾İµ¼Èë¹æÔò';
+$LANG['select_model'] 					=	'Ñ¡ÔñÒªµ¼ÈëµÄÄ£ĞÍ£º'; 
+$LANG['other_model'] 					=	'ÆäËü (<font color=red>Ã»ÓĞÏŞÖÆ,¿ÉÈÎÒâÖ¸¶¨Êı¾İ±í</font>)'; 
+
+$LANG['all_type'] 						=	'ËùÓĞ·ÖÀà'; 
+$LANG['check_model'] 					=	'¶ÔÓ¦Ä£ĞÍ'; 
+
+$LANG['add_import_setting'] 			=	'Ìí¼ÓÊı¾İµ¼Èë¹æÔò'; 
+$LANG['no_confie'] 						=	'Ã»ÓĞÏŞÖÆ,¿ÉÈÎÒâÖ¸¶¨Êı¾İ±í'; 
+
+$LANG['no_data_needimport'] 			=	'Ã»ÓĞĞÂÊı¾İĞèÒªµ¼Èë£¬Çë·µ»Ø£¡'; 
+$LANG['no_keyid'] 						=	'Ã»ÓĞÖ¸¶¨¹Ø¼ü×Ö¶Î£¬Çë·µ»Ø£¡'; 
+$LANG['no_default_groupid'] 			=	'Ã»ÓĞÖ¸¶¨Ä¬ÈÏ»áÔ±×é'; 
+$LANG['no_default_catid'] 				=	'Ã»ÓĞÄ¬ÈÏÀ¸Ä¿ÅäÖÃ'; 
 ?>

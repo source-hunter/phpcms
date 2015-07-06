@@ -7,5 +7,5 @@ $menu_db->insert(array('name'=>'delete_message', 'parentid'=>$parentid, 'm'=>'me
 $menu_db->insert(array('name'=>'message_send', 'parentid'=>$parentid, 'm'=>'message', 'c'=>'message', 'a'=>'message_send', 'data'=>'', 'listorder'=>0, 'display'=>'0'));
 $menu_db->insert(array('name'=>'message_group_manage', 'parentid'=>$parentid, 'm'=>'message', 'c'=>'message', 'a'=>'message_group_manage', 'data'=>'', 'listorder'=>0, 'display'=>'1'));
 
-$language = array('message'=>'çŸ­æ¶ˆæ¯', 'send_one'=>'å‘é€æ¶ˆæ¯', 'delete_message'=>'åˆ é™¤çŸ­æ¶ˆæ¯', 'message_send'=>'ç¾¤å‘çŸ­æ¶ˆæ¯', 'message_group_manage'=>'ç¾¤å‘çŸ­æ¶ˆæ¯ç®¡ç†');
+$language = array('message'=>'¶ÌÏûÏ¢', 'send_one'=>'·¢ËÍÏûÏ¢', 'delete_message'=>'É¾³ý¶ÌÏûÏ¢', 'message_send'=>'Èº·¢¶ÌÏûÏ¢', 'message_group_manage'=>'Èº·¢¶ÌÏûÏ¢¹ÜÀí');
 ?>

@@ -1,58 +1,58 @@
 <?php
-$LANG['link'] 							=	'å‹æƒ…é“¾æŽ¥';
-$LANG['link_add'] 						=	'æ·»åŠ å‹æƒ…é“¾æŽ¥';
-$LANG['link_name'] 						= 	'ç½‘ç«™åç§°';
-$LANG['logo'] 							= 	'å›¾ç‰‡LOGO';
-$LANG['url'] 							= 	'ç½‘ç«™ç½‘å€';
-$LANG['link_type'] 						= 	'é“¾æŽ¥ç±»åž‹';
-$LANG['typeid'] 						= 	'æ‰€å±žåˆ†ç±»';
-$LANG['status'] 						= 	'çŠ¶ æ€';
-$LANG['type_id'] 						= 	'åˆ†ç±»ID';
+$LANG['link'] 							=	'ÓÑÇéÁ´½Ó';
+$LANG['link_add'] 						=	'Ìí¼ÓÓÑÇéÁ´½Ó';
+$LANG['link_name'] 						= 	'ÍøÕ¾Ãû³Æ';
+$LANG['logo'] 							= 	'Í¼Æ¬LOGO';
+$LANG['url'] 							= 	'ÍøÕ¾ÍøÖ·';
+$LANG['link_type'] 						= 	'Á´½ÓÀàÐÍ';
+$LANG['typeid'] 						= 	'ËùÊô·ÖÀà';
+$LANG['status'] 						= 	'×´ Ì¬';
+$LANG['type_id'] 						= 	'·ÖÀàID';
 
-$LANG['type_name'] 						= 	'åˆ†ç±»åç§°';
-$LANG['list_type'] 						= 	'åˆ†ç±»ç®¡ç†';
-$LANG['link_type_listorder'] 			=	'æŽ’åºæƒå€¼';
+$LANG['type_name'] 						= 	'·ÖÀàÃû³Æ';
+$LANG['list_type'] 						= 	'·ÖÀà¹ÜÀí';
+$LANG['link_type_listorder'] 			=	'ÅÅÐòÈ¨Öµ';
 
 
-$LANG['web_description'] 				= 	'ç½‘ç«™ä»‹ç»';
-$LANG['type_description'] 				= 	'åˆ†ç±»æè¿°';
+$LANG['web_description'] 				= 	'ÍøÕ¾½éÉÜ';
+$LANG['type_description'] 				= 	'·ÖÀàÃèÊö';
 
-$LANG['username'] 						= 	'ç½‘ç«™è”ç³»äºº';
-$LANG['elite']						 	= 	'æŽ¨ è';
-$LANG['passed'] 						= 	'æ‰¹ å‡†';
+$LANG['username'] 						= 	'ÍøÕ¾ÁªÏµÈË';
+$LANG['elite']						 	= 	'ÍÆ ¼ö';
+$LANG['passed'] 						= 	'Åú ×¼';
 
-$LANG['setting_updates_successful']		=	'é…ç½®æ›´æ–°å®Œæˆ!';
-$LANG['input_not_space'] 				=	'è¾“å…¥å†…å®¹è¯·å‹¿å¸¦ç©ºæ ¼';
-$LANG['remove_all_selected']			=	'åˆ é™¤é€‰ä¸­';
+$LANG['setting_updates_successful']		=	'ÅäÖÃ¸üÐÂÍê³É!';
+$LANG['input_not_space'] 				=	'ÊäÈëÄÚÈÝÇëÎð´ø¿Õ¸ñ';
+$LANG['remove_all_selected']			=	'É¾³ýÑ¡ÖÐ';
 
-$LANG['sitename_noempty']				=	'ç½‘ç«™åç§°ä¸èƒ½ä¸ºç©º';
-$LANG['siteurl_not_empty']				=	'ç½‘ç«™ç½‘å€ä¸èƒ½ä¸ºç©º';
-$LANG['typename_noempty']				=	'åˆ†ç±»åç§°ä¸èƒ½ä¸ºç©º';
-$LANG['add_success']					=	'æäº¤æˆåŠŸ,æ­£åœ¨è¿”å›ž!';
-$LANG['suspend_application']			=	'æš‚åœç”³è¯·,æ­£åœ¨è¿”å›ž!';
+$LANG['sitename_noempty']				=	'ÍøÕ¾Ãû³Æ²»ÄÜÎª¿Õ';
+$LANG['siteurl_not_empty']				=	'ÍøÕ¾ÍøÖ·²»ÄÜÎª¿Õ';
+$LANG['typename_noempty']				=	'·ÖÀàÃû³Æ²»ÄÜÎª¿Õ';
+$LANG['add_success']					=	'Ìá½»³É¹¦,ÕýÔÚ·µ»Ø!';
+$LANG['suspend_application']			=	'ÔÝÍ£ÉêÇë,ÕýÔÚ·µ»Ø!';
 
-$LANG['link_exit']						=	'å‹æƒ…é“¾æŽ¥ä¸å­˜åœ¨';
-$LANG['linktype_exit']					=	'å‹æƒ…é“¾æŽ¥åˆ†ç±»ä¸å­˜åœ¨';
-$LANG['all_linktype']					=	'æ‰€æœ‰åˆ†ç±»';
-$LANG['all']							=	'å…¨éƒ¨';
+$LANG['link_exit']						=	'ÓÑÇéÁ´½Ó²»´æÔÚ';
+$LANG['linktype_exit']					=	'ÓÑÇéÁ´½Ó·ÖÀà²»´æÔÚ';
+$LANG['all_linktype']					=	'ËùÓÐ·ÖÀà';
+$LANG['all']							=	'È«²¿';
 
-$LANG['word_link']						=	'æ–‡å­—é“¾æŽ¥';
-$LANG['logo_link']						=	'LOGOé“¾æŽ¥';
-$LANG['before_select_operations']		=	'è¯·é€‰æ‹©å†æ‰§è¡Œæ“ä½œ';
+$LANG['word_link']						=	'ÎÄ×ÖÁ´½Ó';
+$LANG['logo_link']						=	'LOGOÁ´½Ó';
+$LANG['before_select_operations']		=	'ÇëÑ¡ÔñÔÙÖ´ÐÐ²Ù×÷';
 
-$LANG['yes']							=	'æ˜¯';
-$LANG['no']								=	'å¦';
+$LANG['yes']							=	'ÊÇ';
+$LANG['no']								=	'·ñ';
 
-$LANG['link_list'] 						= 	'å‹æƒ…é“¾æŽ¥åˆ—è¡¨';
-$LANG['go_website']						=	'å‰å¾€ç½‘ç«™';
-$LANG['pass_check']						=	'é€šè¿‡å®¡æ ¸';
-$LANG['pass_or_not']					=	'æ˜¯å¦é€šè¿‡å®¡æ ¸';
-$LANG['audit']							=	'å®¡æ ¸';
-$LANG['passed']							=	'é€šè¿‡';
-$LANG['move_success']					=	'ç§»åŠ¨æˆåŠŸ';
-$LANG['application_or_not']				=	'æ˜¯å¦å…è®¸ç”³è¯·';
-$LANG['code_or_not']					=	'æ˜¯å¦å¼€å¯éªŒè¯ç ';
-$LANG['choose_true_type']				=	'è¯·é€‰æ‹©æ­£ç¡®çš„åˆ†ç±»ï¼';
-$LANG['application_links']				=	'å‹æƒ…é“¾æŽ¥ç”³è¯·';
-$LANG['link_onerror']					=	'æ ¼å¼åº”è¯¥ä¸ºhttp://www.phpcms.cn/';
+$LANG['link_list'] 						= 	'ÓÑÇéÁ´½ÓÁÐ±í';
+$LANG['go_website']						=	'Ç°ÍùÍøÕ¾';
+$LANG['pass_check']						=	'Í¨¹ýÉóºË';
+$LANG['pass_or_not']					=	'ÊÇ·ñÍ¨¹ýÉóºË';
+$LANG['audit']							=	'ÉóºË';
+$LANG['passed']							=	'Í¨¹ý';
+$LANG['move_success']					=	'ÒÆ¶¯³É¹¦';
+$LANG['application_or_not']				=	'ÊÇ·ñÔÊÐíÉêÇë';
+$LANG['code_or_not']					=	'ÊÇ·ñ¿ªÆôÑéÖ¤Âë';
+$LANG['choose_true_type']				=	'ÇëÑ¡ÔñÕýÈ·µÄ·ÖÀà£¡';
+$LANG['application_links']				=	'ÓÑÇéÁ´½ÓÉêÇë';
+$LANG['link_onerror']					=	'¸ñÊ½Ó¦¸ÃÎªhttp://www.phpcms.cn/';
 ?>

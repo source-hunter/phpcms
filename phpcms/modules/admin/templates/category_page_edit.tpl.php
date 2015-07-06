@@ -26,31 +26,31 @@ include $this->admin_tpl('header');?>
 
 <table width="100%" class="table_form ">
       <tr>
-        <th width="200"><?php echo L('parent_category')?>ï¼š</th>
+        <th width="200"><?php echo L('parent_category')?>£º</th>
         <td>
 		<?php echo form::select_category('category_content_'.$this->siteid,$parentid,'name="info[parentid]" id="parentid"',L('please_select_parent_category'),0,-1);?>
 		</td>
       </tr>
       <tr>
-        <th><?php echo L('catname')?>ï¼š</th>
+        <th><?php echo L('catname')?>£º</th>
         <td><input type="text" name="info[catname]" id="catname" class="input-text" value="<?php echo $catname;?>"></td>
       </tr>
 	<tr>
-        <th><?php echo L('catdir')?>ï¼š</th>
+        <th><?php echo L('catdir')?>£º</th>
         <td><input type="text" name="info[catdir]" id="catdir" class="input-text" value="<?php echo $catdir;?>"></td>
       </tr>
 	<tr>
-        <th><?php echo L('catgory_img')?>ï¼š</th>
+        <th><?php echo L('catgory_img')?>£º</th>
         <td><?php echo form::images('info[image]', 'image', $image, 'content');?></td>
       </tr>
 	<tr>
-        <th><?php echo L('description')?>ï¼š</th>
+        <th><?php echo L('description')?>£º</th>
         <td>
 		<textarea name="info[description]" maxlength="255" style="width:300px;height:60px;"><?php echo $description;?></textarea>
 		</td>
       </tr>
 <tr>
-     <th><?php echo L('ismenu');?>ï¼š</th>
+     <th><?php echo L('ismenu');?>£º</th>
       <td>
 	  <input type='radio' name='info[ismenu]' value='1' <?php if($ismenu) echo 'checked';?>> <?php echo L('yes');?>&nbsp;&nbsp;&nbsp;&nbsp;
 	  <input type='radio' name='info[ismenu]' value='0' <?php if(!$ismenu) echo 'checked';?>> <?php echo L('no');?></td>
@@ -61,7 +61,7 @@ include $this->admin_tpl('header');?>
 <div id="div_setting_2" class="contentList pad-10 hidden">
 <table width="100%" class="table_form ">
 		<tr>
-      <th width="200"><?php echo L('html_category');?>ï¼š</th>
+      <th width="200"><?php echo L('html_category');?>£º</th>
       <td>
 	  <input type='radio' name='setting[ishtml]' value='1' <?php if($setting['ishtml']) echo 'checked';?> onClick="$('#category_php_ruleid').css('display','none');$('#category_html_ruleid').css('display','')"> <?php echo L('yes');?>&nbsp;&nbsp;&nbsp;&nbsp;
 	  <input type='radio' name='setting[ishtml]' value='0' <?php if(!$setting['ishtml']) echo 'checked';?>  onClick="$('#category_php_ruleid').css('display','');$('#category_html_ruleid').css('display','none')"> <?php echo L('no');?>
@@ -69,7 +69,7 @@ include $this->admin_tpl('header');?>
     </tr>
 	
 	<tr>
-      <th><?php echo L('urlrule_url');?>ï¼š</th>
+      <th><?php echo L('urlrule_url');?>£º</th>
       <td><div id="category_php_ruleid" style="display:<?php if($setting['ishtml']) echo 'none';?>">
 	<?php
 		echo form::urlrule('content','category',0,$setting['category_ruleid'],'name="category_php_ruleid"');
@@ -87,13 +87,13 @@ include $this->admin_tpl('header');?>
 <div id="div_setting_3" class="contentList pad-10 hidden">
 <table width="100%" class="table_form ">
 <tr>
-  <th width="200"><?php echo L('available_styles');?>ï¼š</th>
+  <th width="200"><?php echo L('available_styles');?>£º</th>
         <td>
 		<?php echo form::select($template_list, $setting['template_list'], 'name="setting[template_list]" id="template_list" onchange="load_file_list(this.value)"', L('please_select'))?> 
 		</td>
 </tr>
 		<tr>
-        <th width="200"><?php echo L('page_templates')?>ï¼š</th>
+        <th width="200"><?php echo L('page_templates')?>£º</th>
         <td  id="page_template">
 		</td>
       </tr>
@@ -118,7 +118,7 @@ include $this->admin_tpl('header');?>
 <div id="div_setting_5" class="contentList pad-10 hidden">
 <table width="100%" >
 		<tr>
-        <th width="200"><?php echo L('role_private')?>ï¼š</th>
+        <th width="200"><?php echo L('role_private')?>£º</th>
         <td>
 			<table width="100%" class="table-list">
 			  <thead>
@@ -147,7 +147,7 @@ include $this->admin_tpl('header');?>
 		</tr>
 
 	  <tr>
-        <th width="200"><?php echo L('group_private')?>ï¼š</th>
+        <th width="200"><?php echo L('group_private')?>£º</th>
         <td>
 			<table width="100%" class="table-list">
 			  <thead>

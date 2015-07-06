@@ -18,11 +18,11 @@ $_CACHE['apps'] = array (
 <root>
 	<item id="template"><![CDATA[<a href="{url}" target="_blank">{subject}</a>]]></item>
 	<item id="fields">
-		<item id="subject"><![CDATA[鏍囬]]></item>
-		<item id="uid"><![CDATA[鐢ㄦ埛 ID]]></item>
-		<item id="username"><![CDATA[鍙戝笘鑰匽]></item>
-		<item id="dateline"><![CDATA[鏃ユ湡]]></item>
-		<item id="url"><![CDATA[涓婚鍦板潃]]></item>
+		<item id="subject"><![CDATA[标题]]></item>
+		<item id="uid"><![CDATA[用户 ID]]></item>
+		<item id="username"><![CDATA[发帖者]]></item>
+		<item id="dateline"><![CDATA[日期]]></item>
+		<item id="url"><![CDATA[主题地址]]></item>
 	</item>
 </root>',
   ),
@@ -49,7 +49,7 @@ $_CACHE['apps'] = array (
   array (
     'appid' => '3',
     'type' => 'UCHOME',
-    'name' => '涓汉瀹跺洯',
+    'name' => '个人家园',
     'url' => 'http://localhost/test/uchome',
     'ip' => '',
     'viewprourl' => '',
@@ -63,12 +63,12 @@ $_CACHE['apps'] = array (
 <root>
 	<item id="template"><![CDATA[<a href="{url}" target="_blank">{subject}</a>]]></item>
 	<item id="fields">
-		<item id="subject"><![CDATA[鏃ュ織鏍囬]]></item>
-		<item id="uid"><![CDATA[鐢ㄦ埛 ID]]></item>
-		<item id="username"><![CDATA[鐢ㄦ埛鍚峕]></item>
-		<item id="dateline"><![CDATA[鏃ユ湡]]></item>
-		<item id="spaceurl"><![CDATA[绌洪棿鍦板潃]]></item>
-		<item id="url"><![CDATA[鏃ュ織鍦板潃]]></item>
+		<item id="subject"><![CDATA[日志标题]]></item>
+		<item id="uid"><![CDATA[用户 ID]]></item>
+		<item id="username"><![CDATA[用户名]]></item>
+		<item id="dateline"><![CDATA[日期]]></item>
+		<item id="spaceurl"><![CDATA[空间地址]]></item>
+		<item id="url"><![CDATA[日志地址]]></item>
 	</item>
 </root>',
   ),

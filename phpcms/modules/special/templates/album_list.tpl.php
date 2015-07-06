@@ -16,11 +16,11 @@ include $this->admin_tpl('header', 'admin');
 		<td>
 		<div class="explain-col">
  
-				æ·»åŠ æ—¶é—´ï¼š
+				Ìí¼ÓÊ±¼ä£º
 				<?php echo form::date('start_time',$_GET['start_time'],0,0,'false');?>- &nbsp;<?php echo form::date('end_time',$_GET['end_time'],0,0,'false');?>
 				
-				<?php echo form::select($ku6channels, $_GET['categoryid'], 'name="categoryid" id="categoryid"', 'è¯·é€‰æ‹©é¢‘é“')?>			
-				æ ‡é¢˜ï¼š
+				<?php echo form::select($ku6channels, $_GET['categoryid'], 'name="categoryid" id="categoryid"', 'ÇëÑ¡ÔñÆµµÀ')?>			
+				±êÌâ£º
 				<input name="keyword" type="text" value="<?php if(isset($_GET['keyword'])) echo $_GET['keyword'];?>" class="input-text" />
 				<input type="submit" name="search" class="button" value="<?php echo L('search');?>" />
 	</div>
@@ -37,7 +37,7 @@ include $this->admin_tpl('header', 'admin');
             <tr>
             <th width="40"><input type="checkbox" value="" id="check_box" onclick="selectall('id[]');"></th>
 			<th width="40" align="center">ID</th>
-			<th >ä¸“è¾‘ä¿¡æ¯</th>
+			<th >×¨¼­ĞÅÏ¢</th>
 			<th width="160"><?php echo L('operations_manage')?></th>
             </tr>
         </thead>
@@ -53,11 +53,11 @@ if(is_array($infos)){
 	<div class="col-auto">  
 		<h2 class="title-1 f14 lh28 mb6 blue"><?php echo $info['title']?></h2>
 		<div class="lh22"><?php echo $info['desc']?></div>
-	<p class="gray4"><?php echo L('create_time')?>ï¼š<?php echo format::date(substr(trim($info['createtime']), 0, 10), 1)?></p>
-	<p class="gray4">æ’­æ”¾æ¬¡æ•°ï¼š<?php echo $info['videocount']?></p>
+	<p class="gray4"><?php echo L('create_time')?>£º<?php echo format::date(substr(trim($info['createtime']), 0, 10), 1)?></p>
+	<p class="gray4">²¥·Å´ÎÊı£º<?php echo $info['videocount']?></p>
 	</div>
 	</td>
-	<td align="center"><span style="height:22"><?php if (!empty($imported) && in_array($info['id'], $imported)){?><font color="red">ä¸“è¾‘å·²è½½å…¥<?php } else {?><a href='?m=special&c=album&a=import&id=<?php echo $info['id']?>&page=<?php echo $_GET['page'];?>&pc_hash=<?php echo $_GET['pc_hash'];?>'>è½½å…¥æ­¤ä¸“è¾‘</a><?php }?></span><br /><span style="height:22"><a href="?m=special&c=album&a=content_list&id=<?php echo $info['id']?>&menuid=<?php echo $_GET['menuid']?>&pc_hash=<?php echo $_GET['pc_hash'];?>">æŸ¥çœ‹ä¸“è¾‘ä¸‹çš„è§†é¢‘</a></span></td>
+	<td align="center"><span style="height:22"><?php if (!empty($imported) && in_array($info['id'], $imported)){?><font color="red">×¨¼­ÒÑÔØÈë<?php } else {?><a href='?m=special&c=album&a=import&id=<?php echo $info['id']?>&page=<?php echo $_GET['page'];?>&pc_hash=<?php echo $_GET['pc_hash'];?>'>ÔØÈë´Ë×¨¼­</a><?php }?></span><br /><span style="height:22"><a href="?m=special&c=album&a=content_list&id=<?php echo $info['id']?>&menuid=<?php echo $_GET['menuid']?>&pc_hash=<?php echo $_GET['pc_hash'];?>">²é¿´×¨¼­ÏÂµÄÊÓÆµ</a></span></td>
 	</tr>
 <?php 
 	}
@@ -67,7 +67,7 @@ if(is_array($infos)){
     </table>
   
     <div class="btn"><label for="check_box"><?php echo L('selected_all')?>/<?php echo L('cancel')?></label>
-        <input name='dosubmit' type='submit' class="button" value='è½½å…¥'>&nbsp;
+        <input name='dosubmit' type='submit' class="button" value='ÔØÈë'>&nbsp;
        </div>
  <div id="pages"><?php echo $pages;?></div><script>window.top.$("#display_center_id").css("display","none");</script>
 </form>

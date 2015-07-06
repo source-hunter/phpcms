@@ -10,17 +10,17 @@ class search_model extends model {
 		parent::__construct();
 	}
 	/**
-	 * æ·»åŠ åˆ°å…¨ç«™æœç´¢ã€ä¿®æ”¹å·²æœ‰å†…å®¹
+	 * Ìí¼Óµ½È«Õ¾ËÑË÷¡¢ĞŞ¸ÄÒÑÓĞÄÚÈİ
 	 * @param $typeid
 	 * @param $id
 	 * @param $data
-	 * @param $text ä¸åˆ†è¯çš„æ–‡æœ¬
-	 * @param $adddate æ·»åŠ æ—¶é—´
-	 * @param $iscreateindex æ˜¯å¦æ˜¯åå°æ›´æ–°å…¨æ–‡ç´¢å¼•
+	 * @param $text ²»·Ö´ÊµÄÎÄ±¾
+	 * @param $adddate Ìí¼ÓÊ±¼ä
+	 * @param $iscreateindex ÊÇ·ñÊÇºóÌ¨¸üĞÂÈ«ÎÄË÷Òı
 	 */
 	public function update_search($typeid ,$id = 0,$data = '',$text = '',$adddate = 0, $iscreateindex=0) {
 		$segment = pc_base::load_sys_class('segment');
-		//åˆ†è¯ç»“æœ
+		//·Ö´Ê½á¹û
 		$fulltext_data = $segment->get_keyword($segment->split_result($data));
 		$fulltext_data = $text.' '.$fulltext_data;
 		if(!$iscreateindex) {
@@ -37,7 +37,7 @@ class search_model extends model {
 		return $searchid;
 	}
 	/*
-	 * åˆ é™¤å…¨ç«™æœç´¢å†…å®¹
+	 * É¾³ıÈ«Õ¾ËÑË÷ÄÚÈİ
 	 */
 	public function delete_search($typeid ,$id) {
 		$this->delete(array('typeid'=>$typeid,'id'=>$id));

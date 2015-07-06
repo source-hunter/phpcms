@@ -12,13 +12,13 @@ $(document).ready(function() {
 <div class="common-form">
 	<table width="100%" class="table_form">
 		<tr>
-			<td width="120"><?php echo L('collect_call')?>ï¼š</td> 
+			<td width="120"><?php echo L('collect_call')?>£º</td> 
 			<td>
 			<input type="text" name="name" id="name"  class="input-text" value="" />
 			</td>
 		</tr>
 		<tr>
-			<td width="120"><?php echo L('cfg')?>ï¼š</td> 
+			<td width="120"><?php echo L('cfg')?>£º</td> 
 			<td>
 			<input type="file" name="file"  class="input-text" value="" /> <br /><?php echo L('only_support_txt_file_upload')?>
 			</td>

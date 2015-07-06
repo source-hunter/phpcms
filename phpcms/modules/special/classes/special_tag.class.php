@@ -1,6 +1,6 @@
 <?php
 /**
- * special_tag.class.php ä¸“é¢˜æ ‡ç­¾è°ƒç”¨ç±»
+ * special_tag.class.php ×¨Ìâ±êÇ©µ÷ÓÃÀà
  * @author 
  *
  */
@@ -13,8 +13,8 @@ class special_tag {
 	}
 	
 	/**
-	 * listsè°ƒç”¨æ–¹æ³•
-	 * @param array $data æ ‡ç­¾é…ç½®ä¼ é€’è¿‡æ¥çš„é…ç½®æ•°ç»„ï¼Œæ ¹æ®é…ç½®ç”Ÿæˆsql
+	 * listsµ÷ÓÃ·½·¨
+	 * @param array $data ±êÇ©ÅäÖÃ´«µİ¹ıÀ´µÄÅäÖÃÊı×é£¬¸ù¾İÅäÖÃÉú³Ésql
 	 */
 	public function lists($data) {
 		$siteid = $data['siteid'] ? intval($data['siteid']) : get_siteid();
@@ -24,15 +24,15 @@ class special_tag {
 		if ($data['disable']) {
 			$where .= " AND `disabled`='".$data['disable']."'";
 		}else{
-			$where .= " AND `disabled`='0'";//é»˜è®¤æ˜¾ç¤ºï¼Œæ­£å¸¸æ˜¾ç¤ºçš„ä¸“é¢˜ã€‚
+			$where .= " AND `disabled`='0'";//Ä¬ÈÏÏÔÊ¾£¬Õı³£ÏÔÊ¾µÄ×¨Ìâ¡£
 		}
 		$listorder = array('`id` ASC', '`id` DESC', '`listorder` ASC, `id` DESC', '`listorder` DESC, `id` DESC');
 		return $this->db->select($where, '*', $data['limit'], $listorder[$data['listorder']]);
 	}
 	
 	/**
-	 * è§†é¢‘ä¸“é¢˜åˆ—è¡¨ video_lists
-	 * @param array $data æ ‡ç­¾é…ç½®ä¼ é€’è¿‡æ¥çš„é…ç½®æ•°ç»„ï¼Œæ ¹æ®é…ç½®ç”Ÿæˆsql
+	 * ÊÓÆµ×¨ÌâÁĞ±í video_lists
+	 * @param array $data ±êÇ©ÅäÖÃ´«µİ¹ıÀ´µÄÅäÖÃÊı×é£¬¸ù¾İÅäÖÃÉú³Ésql
 	 */
 	public function video_lists($data) {
 		$siteid = $data['siteid'] ? intval($data['siteid']) : get_siteid();
@@ -42,7 +42,7 @@ class special_tag {
 		if ($data['disable']) {
 			$where .= " AND `disabled`='".$data['disable']."'";
 		}else{
-			$where .= " AND `disabled`='0'";//é»˜è®¤æ˜¾ç¤ºï¼Œæ­£å¸¸æ˜¾ç¤ºçš„ä¸“é¢˜ã€‚
+			$where .= " AND `disabled`='0'";//Ä¬ÈÏÏÔÊ¾£¬Õı³£ÏÔÊ¾µÄ×¨Ìâ¡£
 		}
 		$where .=" AND `isvideo`='1'";
 		$listorder = array('`id` ASC', '`id` DESC', '`listorder` ASC, `id` DESC', '`listorder` DESC, `id` DESC');
@@ -50,8 +50,8 @@ class special_tag {
 	}
 	
 	/**
-	 * æ ‡ç­¾ä¸­è®¡ç®—åˆ†é¡µçš„æ–¹æ³•
-	 * @param array $data æ ‡ç­¾é…ç½®æ•°ç»„ï¼Œæ ¹æ®æ•°ç»„è®¡ç®—å‡ºåˆ†é¡µ
+	 * ±êÇ©ÖĞ¼ÆËã·ÖÒ³µÄ·½·¨
+	 * @param array $data ±êÇ©ÅäÖÃÊı×é£¬¸ù¾İÊı×é¼ÆËã³ö·ÖÒ³
 	 */
 	public function count($data) {
 		$where = '1';
@@ -86,8 +86,8 @@ class special_tag {
 	}
 	
 	/**
-	 * ç‚¹å‡»æ’è¡Œè°ƒç”¨æ–¹æ³•
-	 * @param array $data æ ‡ç­¾é…ç½®æ•°ç»„
+	 * µã»÷ÅÅĞĞµ÷ÓÃ·½·¨
+	 * @param array $data ±êÇ©ÅäÖÃÊı×é
 	 */
 	public function hits($data) {
 		$hitsid = 'special-c-';
@@ -109,8 +109,8 @@ class special_tag {
 	}
 	
 	/**
-	 * å†…å®¹åˆ—è¡¨è°ƒç”¨æ–¹æ³•
-	 * @param array $data æ ‡ç­¾é…ç½®æ•°ç»„
+	 * ÄÚÈİÁĞ±íµ÷ÓÃ·½·¨
+	 * @param array $data ±êÇ©ÅäÖÃÊı×é
 	 */
 	public function content_list($data) {
 		$where = '1';
@@ -134,10 +134,10 @@ class special_tag {
 	}
 	
 	/**
-	 * è·å–ä¸“é¢˜åˆ†ç±»æ–¹æ³•
-	 * @param intval $specialid ä¸“é¢˜ID
-	 * @param string $value é»˜è®¤é€‰ä¸­å€¼
-	 * @param intval $id onchangeå½±å“HTMLçš„ID
+	 * »ñÈ¡×¨Ìâ·ÖÀà·½·¨
+	 * @param intval $specialid ×¨ÌâID
+	 * @param string $value Ä¬ÈÏÑ¡ÖĞÖµ
+	 * @param intval $id onchangeÓ°ÏìHTMLµÄID
 	 * 
 	 */
 	public function get_type($specialid = 0, $value = '', $id = '') {
@@ -153,10 +153,10 @@ class special_tag {
 	}
 	
 	/**
-	 * æ ‡ç­¾ç”Ÿæˆæ–¹æ³•
+	 * ±êÇ©Éú³É·½·¨
 	 */
 	public function pc_tag() {
-		//è·å–ç«™ç‚¹
+		//»ñÈ¡Õ¾µã
 		$sites = pc_base::load_app_class('sites','admin');
 		$sitelist = $sites->pc_tag_list();
 		

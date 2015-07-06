@@ -41,7 +41,7 @@ if(is_array($subscribes)){
 	<td align="center"><?php echo $CATEGORYS[$info['catid']]['catname'];?></td>
 	<td align="center"><?php echo $position[$info['posid']]['name']?> </a>
 	<td align="center"> 
- 	<a href="javascript:confirmurl('index.php?m=video&c=video&a=sub_del&id=<?php echo $info['sid']?>&meunid=<?php echo $_GET['menuid']?>&type=1', 'æ˜¯å¦åˆ é™¤?')"><?php echo L('delete');?></a></td>
+ 	<a href="javascript:confirmurl('index.php?m=video&c=video&a=sub_del&id=<?php echo $info['sid']?>&meunid=<?php echo $_GET['menuid']?>&type=1', 'ÊÇ·ñÉ¾³ı?')"><?php echo L('delete');?></a></td>
 	</tr>
 <?php 
 	}
@@ -59,7 +59,7 @@ if(is_array($usersubscribes)){
 	<td align="center"><?php echo $CATEGORYS[$val['catid']]['catname'];?></td>
 	<td align="center"><?php echo $position[$val['posid']]['name']?> </a>
 	<td align="center"> 
- 	<a href="javascript:confirmurl('index.php?m=video&c=video&a=user_sub_del&id=<?php echo $val['sid']?>&meunid=<?php echo $_GET['menuid']?>&type=2', 'æ˜¯å¦åˆ é™¤?')"><?php echo L('delete');?></a></td>
+ 	<a href="javascript:confirmurl('index.php?m=video&c=video&a=user_sub_del&id=<?php echo $val['sid']?>&meunid=<?php echo $_GET['menuid']?>&type=2', 'ÊÇ·ñÉ¾³ı?')"><?php echo L('delete');?></a></td>
 	</tr>
 <?php 
 	}

@@ -12,7 +12,7 @@ class googlesitemap extends admin {
 	    $this->baidunews_footer = "</document>";
 		$this->items = array();
 		$this->baidunew_items = array();
-		//ç”Ÿæˆæ ç›®çº§åˆ«é€‰é¡¹
+		//Éú³ÉÀ¸Ä¿¼¶±ğÑ¡Ïî
 		$this->siteid = $this->get_siteid();
 		$this->categorys = getcache('category_content_'.$this->siteid,'commons');
 	}
@@ -48,7 +48,7 @@ class googlesitemap extends admin {
     } 
     /**
      * 
-     * ç™¾åº¦æ–°é—»æ•°ç»„ ç»„æˆ
+     * °Ù¶ÈĞÂÎÅÊı×é ×é³É
      * @param $title
      * @param $link
      * @param $description
@@ -80,7 +80,7 @@ class googlesitemap extends admin {
     }
     
 	function baidunews_build( $file_name = null ,$this_domain,$email,$time) {
-		//ç™¾åº¦å¤´éƒ¨
+		//°Ù¶ÈÍ·²¿
 			$this->baidunews = '';
 			$this->baidunews = "<?xml version=\"1.0\" encoding=\"".CHARSET."\" ?>\n";
 			$this->baidunews .= "<document>\n";
@@ -111,45 +111,45 @@ class googlesitemap extends admin {
 	  
 	/**
 	 * 
-	 * Enter ç”Ÿæˆgoogle sitemap, ç™¾åº¦æ–°é—»åè®®
+	 * Enter Éú³Égoogle sitemap, °Ù¶ÈĞÂÎÅĞ­Òé
 	 */
 	function set () {
 		$hits_db = pc_base::load_model('hits_model');
 		$dosubmit = isset($_POST['dosubmit']) ? $_POST['dosubmit'] : $_GET['dosubmit'];
 		
-		//è¯»ç«™ç‚¹ç¼“å­˜
+		//¶ÁÕ¾µã»º´æ
 		$siteid = $this->siteid;
 		$sitecache = getcache('sitelist','commons');
-		//æ ¹æ®å½“å‰ç«™ç‚¹,å–å¾—æ–‡ä»¶å­˜æ”¾è·¯å¾„
+		//¸ù¾İµ±Ç°Õ¾µã,È¡µÃÎÄ¼ş´æ·ÅÂ·¾¶
   		$systemconfig = pc_base::load_config('system');
  		$html_root = substr($systemconfig['html_root'], 1);
- 		//åˆ¤æ–­å½“å‰ç«™ç‚¹ç›®å½•,æ˜¯PHPCMSåˆ™æŠŠæ–‡ä»¶å†™åˆ°æ ¹ç›®å½•ä¸‹, ä¸æ˜¯åˆ™å†™åˆ°åˆ†ç«™ç›®å½•ä¸‹.(åˆ†ç«™ç›®å½•ç”¨ç”±é™æ€æ–‡ä»¶è·¯ç»html_rootå’Œåˆ†ç«™ç›®å½•dirnameç»„æˆ)
+ 		//ÅĞ¶Ïµ±Ç°Õ¾µãÄ¿Â¼,ÊÇPHPCMSÔò°ÑÎÄ¼şĞ´µ½¸ùÄ¿Â¼ÏÂ, ²»ÊÇÔòĞ´µ½·ÖÕ¾Ä¿Â¼ÏÂ.(·ÖÕ¾Ä¿Â¼ÓÃÓÉ¾²Ì¬ÎÄ¼şÂ·¾­html_rootºÍ·ÖÕ¾Ä¿Â¼dirname×é³É)
  		if($siteid==1){
  			$dir = PHPCMS_PATH;
  		}else {
  			$dir = PHPCMS_PATH.$html_root.DIRECTORY_SEPARATOR.$sitecache[$siteid]['dirname'].DIRECTORY_SEPARATOR;
  		}
- 		//æ¨¡å‹ç¼“å­˜
+ 		//Ä£ĞÍ»º´æ
  		$modelcache = getcache('model','commons');
  		
- 		//è·å–å½“å‰ç«™ç‚¹åŸŸå,ä¸‹é¢ç”ŸæˆURLæ—¶ä¼šç”¨åˆ°.
+ 		//»ñÈ¡µ±Ç°Õ¾µãÓòÃû,ÏÂÃæÉú³ÉURLÊ±»áÓÃµ½.
  		$this_domain = substr($sitecache[$siteid]['domain'], 0,strlen($sitecache[$siteid]['domain'])-1);
    		if($dosubmit) {
-				//ç”Ÿæˆç™¾åº¦æ–°é—»
+				//Éú³É°Ù¶ÈĞÂÎÅ
 				if($_POST['mark']) {
  					$baidunum = $_POST['baidunum'] ? intval($_POST['baidunum']) : 20;
   					if($_POST['catids']=="")showmessage(L('choose_category'), HTTP_REFERER);
   					$catids = $_POST['catids'];
- 					$catid_cache = $this->categorys;//æ ç›®ç¼“å­˜
+ 					$catid_cache = $this->categorys;//À¸Ä¿»º´æ
 					$this->content_db = pc_base::load_model('content_model');
  					foreach ($catids as $catid) {
- 						$modelid = $catid_cache[$catid]['modelid'];//æ ¹æ®æ ç›®IDæŸ¥å‡ºmodelid è¿›è€Œç¡®å®šè¡¨å,å¹¶ç»“åˆæ ç›®ID:catid æ£€ç´¢å‡ºå¯¹åº”æ ç›®ä¸‹çš„æ–°é—»æ¡æ•°
+ 						$modelid = $catid_cache[$catid]['modelid'];//¸ù¾İÀ¸Ä¿ID²é³ömodelid ½ø¶øÈ·¶¨±íÃû,²¢½áºÏÀ¸Ä¿ID:catid ¼ìË÷³ö¶ÔÓ¦À¸Ä¿ÏÂµÄĞÂÎÅÌõÊı
  						$this->content_db->set_model($modelid);
  						$result = $this->content_db->select(array('catid'=>$catid,'status'=>99), '*', $limit = "0,$baidunum", 'id desc');
- 						//é‡è®¾è¡¨å‰ç¼€,forå¾ªç¯æ—¶ç”¨æ¥æŸ¥,æ–‡ç« æ­£æ–‡ 
+ 						//ÖØÉè±íÇ°×º,forÑ­»·Ê±ÓÃÀ´²é,ÎÄÕÂÕıÎÄ 
  						$this->content_db->table_name = $this->content_db->table_name.'_data';
  						foreach ($result as $arr){
- 							//æŠŠæ¯ä¸€æ¡æ•°æ®éƒ½è£…å…¥æ•°ç»„ä¸­
+ 							//°ÑÃ¿Ò»ÌõÊı¾İ¶¼×°ÈëÊı×éÖĞ
  							extract($arr);
  	 						if(!preg_match('/^(http|https):\/\//', $url)){
  								$url = $this_domain.$url;
@@ -159,14 +159,14 @@ class googlesitemap extends admin {
 									$thumb = $this_domain.$thumb;
 								}
 							}
-							//å–å½“å‰æ–°é—»æ¨¡å‹ é™„å±è¡¨ å– æ–°é—»æ­£æ–‡
+							//È¡µ±Ç°ĞÂÎÅÄ£ĞÍ ¸½Êô±í È¡ ĞÂÎÅÕıÎÄ
 							$url = new_html_special_chars($url);
 							$description = new_html_special_chars(strip_tags($description));
-							//æ ¹æ®æœ¬æ¡ID,ä»å¯¹åº”tablename_dataå–å‡ºæ­£æ–‡å†…å®¹
+							//¸ù¾İ±¾ÌõID,´Ó¶ÔÓ¦tablename_dataÈ¡³öÕıÎÄÄÚÈİ
    							$content_arr = $this->content_db->get_one(array('id'=>$id),'content');
    							$content = new_html_special_chars(strip_tags($content_arr['content']));
-   							//ç»„åˆæ•°æ®
-   	 						$smi = $this->baidunews_item($title,$url,$description,$content,$thumb, $keywords,$category,$author,$source,date('Y-m-d', $inputtime));//æ¨èæ–‡ä»¶
+   							//×éºÏÊı¾İ
+   	 						$smi = $this->baidunews_item($title,$url,$description,$content,$thumb, $keywords,$category,$author,$source,date('Y-m-d', $inputtime));//ÍÆ¼öÎÄ¼ş
 							$this->add_baidunews_item($smi);
   						} 
  					}
@@ -176,19 +176,19 @@ class googlesitemap extends admin {
  					$this->baidunews_build($baidunews_file,$this_domain,$_POST['email'],$_POST['time']); 
  			    }
 			    
-				//ç”Ÿæˆç½‘ç«™åœ°å›¾
+				//Éú³ÉÍøÕ¾µØÍ¼
 				$content_priority = $_POST['content_priority'];
 				$content_changefreq = $_POST['content_changefreq']; 
 				$num = $_POST['num'] ? intval($_POST['num']) : 100;
 				
 				$today = date('Y-m-d');
  			    $domain = $this_domain;
- 			    //ç”Ÿæˆåœ°å›¾å¤´éƒ¨ã€€ï¼ç¬¬ä¸€æ¡
+ 			    //Éú³ÉµØÍ¼Í·²¿¡¡£­µÚÒ»Ìõ
 				$smi = $this->google_sitemap_item($domain, $today, 'daily', '1.0');
      			$this->add_item2($smi);
      			
 			    $this->content_db = pc_base::load_model('content_model');
-			    //åªæå–è¯¥ç«™ç‚¹çš„æ¨¡å‹.å†å¾ªç¯å–æ•°æ®,ç”Ÿæˆç«™ç‚¹åœ°å›¾.
+			    //Ö»ÌáÈ¡¸ÃÕ¾µãµÄÄ£ĞÍ.ÔÙÑ­»·È¡Êı¾İ,Éú³ÉÕ¾µãµØÍ¼.
 				$modelcache = getcache('model','commons');
  				$new_model = array();
 				foreach ($modelcache as $modelid => $mod){
@@ -197,8 +197,8 @@ class googlesitemap extends admin {
 						$new_model[$modelid]['name'] = $mod['name'];						
 					}
  				}
-				foreach($new_model as $modelid=>$m) {//æ¯ä¸ªæ¨¡å—å–å‡ºnumæ¡æ•°æ® 
-					$this->content_db->set_model($modelid);// æˆ–è€… $this->conetnt_db->set_model($modelid);
+				foreach($new_model as $modelid=>$m) {//Ã¿¸öÄ£¿éÈ¡³önumÌõÊı¾İ 
+					$this->content_db->set_model($modelid);// »òÕß $this->conetnt_db->set_model($modelid);
 					$result = $this->content_db->select(array('status'=>99), '*', $limit = "0,$num", $order = 'inputtime desc');
 					foreach ($result as $arr){
 						if(substr($arr['url'],0,1)=='/'){
@@ -208,7 +208,7 @@ class googlesitemap extends admin {
 						}
 						$hit_r = $hits_db->get_one(array('hitsid'=>'c-'.$modelid.'-'.$arr['id']));
 						if($hit_r['views']>1000) $content_priority = 0.9;
-						$smi    = $this->google_sitemap_item($url, $today, $content_changefreq, $content_priority);//æ¨èæ–‡ä»¶
+						$smi    = $this->google_sitemap_item($url, $today, $content_changefreq, $content_priority);//ÍÆ¼öÎÄ¼ş
 						$this->add_item2($smi);
 					}
 				}
@@ -219,12 +219,12 @@ class googlesitemap extends admin {
 			     } 
 			} else { 
 				$tree = pc_base::load_sys_class('tree');
-				$tree->icon = array('&nbsp;&nbsp;&nbsp;â”‚ ','&nbsp;&nbsp;&nbsp;â”œâ”€ ','&nbsp;&nbsp;&nbsp;â””â”€ ');
+				$tree->icon = array('&nbsp;&nbsp;&nbsp;©¦ ','&nbsp;&nbsp;&nbsp;©À©¤ ','&nbsp;&nbsp;&nbsp;©¸©¤ ');
 				$tree->nbsp = '&nbsp;&nbsp;&nbsp;';
 				$categorys = array();
 				foreach($this->categorys as $catid=>$r) {
 					if($this->siteid != $r['siteid']) continue;
-					if($r['type'] && $r['child']=='0'){//å¦‚æœæ˜¯å•ç½‘é¡µå¹¶ä¸”ï¼Œæ²¡æœ‰å­ç±»äº†
+					if($r['type'] && $r['child']=='0'){//Èç¹ûÊÇµ¥ÍøÒ³²¢ÇÒ£¬Ã»ÓĞ×ÓÀàÁË
 						continue;
  					}
 					if($modelid && $modelid != $r['modelid']) continue;

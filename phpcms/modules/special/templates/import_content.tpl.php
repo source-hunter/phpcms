@@ -16,9 +16,9 @@ include $this->admin_tpl('header','admin');
 		<tr>
 		<td>
 		<div class="explain-col">
- 			<?php echo $model_form?>&nbsp;&nbsp; <?php echo L('keyword')?>ï¼š<input type='text' name="key" id="key" value="<?php echo $_GET['key'];?>" size="25"> <div class="bk10"></div>
+ 			<?php echo $model_form?>&nbsp;&nbsp; <?php echo L('keyword')?>£º<input type='text' name="key" id="key" value="<?php echo $_GET['key'];?>" size="25"> <div class="bk10"></div>
 <span id="catids"></span>&nbsp;&nbsp; 
-				<?php echo L('input_time')?>ï¼š
+				<?php echo L('input_time')?>£º
 				<?php $start_f = $_GET['start_time'] ? $_GET['start_time'] : format::date(SYS_TIME-2592000);$end_f = $_GET['end_time'] ? $_GET['end_time'] : format::date(SYS_TIME+86400);?>
 				<?php echo form::date('start_time')?> - <?php echo form::date('end_time')?>
 				 <input type="submit" name="search" class="button" value="<?php echo L('search')?>" />

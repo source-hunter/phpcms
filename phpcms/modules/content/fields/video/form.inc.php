@@ -1,14 +1,14 @@
 
 	function video($field, $value, $fieldinfo) {
 		$value_data = '';
-		//è·å–flashä¸Šä¼ å±æ€§
+		//»ñÈ¡flashÉÏ´«ÊôĞÔ
 		pc_base::load_app_class('ku6api', 'video', 0);
 		$setting = getcache('video', 'video');
 		if(empty($setting)) return L('please_input_video_setting');
 		$ku6api = new ku6api($setting['sn'], $setting['skey']);
 		$flash_info = $ku6api->flashuploadparam();
 		
-		//è·å–ä¸Šä¼ çš„è§†é¢‘
+		//»ñÈ¡ÉÏ´«µÄÊÓÆµ
 		$key = 0;
 		$list_str = "<div style='padding:1px'><ul class=\"tbsa\" id=\"video_{$field}_list\">";
 		if($value) {
@@ -23,7 +23,7 @@
 				$videoids = substr($videoids, 0, -1);
 				$result = $video_store_db->select("`videoid` IN($videoids)", '`videoid`, `title`, `picpath`', '', '', '', 'videoid');
 				if (is_array($result)) {
-					//é¦–å…ˆå¯¹$resultæŒ‰ç…§$videosçš„videoidæ’åº
+					//Ê×ÏÈ¶Ô$result°´ÕÕ$videosµÄvideoidÅÅĞò
 					foreach ($videos as $_vid => $v) {
 						$new_result[] = $result[$_vid];
 					}
@@ -52,7 +52,7 @@ var js4swf = {
 
     {
 
-        // åˆå§‹åŒ–æ—¶è°ƒç”¨, è‹¥ list.length > 0 ä»£è¡¨æœ‰å¯ç»­ä¼ æ–‡ä»¶
+        // ³õÊ¼»¯Ê±µ÷ÓÃ, Èô list.length > 0 ´ú±íÓĞ¿ÉĞø´«ÎÄ¼ş
 
         // [{file}, {file}]
 
@@ -72,7 +72,7 @@ $("#list_name").html("'.L('file', '', 'video').'"+list[length].name+"'.L('failed
 
     {
 
-        // é€‰ä¸­æ–‡ä»¶åè°ƒç”¨, è¿”å›æ–‡ä»¶åˆ—è¡¨
+        // Ñ¡ÖĞÎÄ¼şºóµ÷ÓÃ, ·µ»ØÎÄ¼şÁĞ±í
 
         // [{file}, {file}]
 
@@ -84,7 +84,7 @@ $("#list_name").html("'.L('file', '', 'video').'"+list[length].name+"'.L('failed
 
     {
 
-        // è·å¾— sid åè¿”å›, æ›´æ–° sid ç”¨ (key, sid, name, type, size)
+        // »ñµÃ sid ºó·µ»Ø, ¸üĞÂ sid ÓÃ (key, sid, name, type, size)
 
 $("#video_title").val(evt.name);
 		var ku6vid = evt.vid;
@@ -97,7 +97,7 @@ $("#video_title").val(evt.name);
 
     {
 
-        // å¼€å§‹ä¸Šä¼  (é€‰æ‹©æ–‡ä»¶åè‡ªåŠ¨å¼€å§‹)
+        // ¿ªÊ¼ÉÏ´« (Ñ¡ÔñÎÄ¼şºó×Ô¶¯¿ªÊ¼)
 
         this.showMessage("start");
 
@@ -107,7 +107,7 @@ $("#video_title").val(evt.name);
 
     {
 
-        // ä¸Šä¼ å–æ¶ˆäº‹ä»¶
+        // ÉÏ´«È¡ÏûÊÂ¼ş
 
 
 
@@ -119,7 +119,7 @@ $("#video_title").val(evt.name);
 
     {
 
-        // ä¸Šä¼ è¿›åº¦äº‹ä»¶ (bytesLoaded, bytesTotal, speed) m=1 æ—¶æ²¡æœ‰è¿™äº‹ä»¶
+        // ÉÏ´«½ø¶ÈÊÂ¼ş (bytesLoaded, bytesTotal, speed) m=1 Ê±Ã»ÓĞÕâÊÂ¼ş
 
         this.showMessage("progress", evt);
 
@@ -129,7 +129,7 @@ $("#video_title").val(evt.name);
 
     {
 
-        // ä¸Šä¼ å®Œæˆäº‹ä»¶ (åŒ…å«æ–‡ä»¶ä¿¡æ¯å’Œå®Œæˆåè¿”å›æ•°æ®(data))
+        // ÉÏ´«Íê³ÉÊÂ¼ş (°üº¬ÎÄ¼şĞÅÏ¢ºÍÍê³Éºó·µ»ØÊı¾İ(data))
 $("#vid").val(evt.vid);
 var video_num = parseInt($("#key").val()) + 1;
 var title = $("#video_title").val();
@@ -155,7 +155,7 @@ swfobject.embedSWF("'.$flash_info['flashurl'].'", "ku6uploader", "450", "45", "1
 
     {
 
-        // æŠ¥é”™äº‹ä»¶ (key, message)
+        // ±¨´íÊÂ¼ş (key, message)
 
         //this.showMessage("warn", evt);
 

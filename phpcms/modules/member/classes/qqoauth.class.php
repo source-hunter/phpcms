@@ -1,7 +1,7 @@
 <?php 
 
 /* 
- * qqå¾®åšAPP æŽ¥å£ç±»
+ * qqÎ¢²©APP ½Ó¿ÚÀà
  * Code based on: 
  * Abraham Williams (abraham@abrah.am) http://abrah.am 
  */ 
@@ -922,7 +922,7 @@ class OAuthUtil {
 
 
 /** 
- * qqå¾®åšæ“ä½œç±» 
+ * qqÎ¢²©²Ù×÷Àà 
  * 
  * @package sae 
  * @author Easy Chen 
@@ -931,13 +931,13 @@ class OAuthUtil {
 class WeiboClient 
 { 
     /** 
-     * æž„é€ å‡½æ•° 
+     * ¹¹Ôìº¯Êý 
      *  
      * @access public 
-     * @param mixed $akey å¾®åšå¼€æ”¾å¹³å°åº”ç”¨APP KEY 
-     * @param mixed $skey å¾®åšå¼€æ”¾å¹³å°åº”ç”¨APP SECRET 
-     * @param mixed $accecss_token OAuthè®¤è¯è¿”å›žçš„token 
-     * @param mixed $accecss_token_secret OAuthè®¤è¯è¿”å›žçš„token secret 
+     * @param mixed $akey Î¢²©¿ª·ÅÆ½Ì¨Ó¦ÓÃAPP KEY 
+     * @param mixed $skey Î¢²©¿ª·ÅÆ½Ì¨Ó¦ÓÃAPP SECRET 
+     * @param mixed $accecss_token OAuthÈÏÖ¤·µ»ØµÄtoken 
+     * @param mixed $accecss_token_secret OAuthÈÏÖ¤·µ»ØµÄtoken secret 
      * @return void 
      */ 
     function __construct( $akey , $skey , $accecss_token , $accecss_token_secret ) 
@@ -946,7 +946,7 @@ class WeiboClient
     } 
 
     /** 
-     * æœ€æ–°å…¬å…±å¾®åš 
+     * ×îÐÂ¹«¹²Î¢²© 
      *  
      * @access public 
      * @return array 
@@ -957,7 +957,7 @@ class WeiboClient
     } 
 
     /** 
-     * æœ€æ–°å…³æ³¨äººå¾®åš 
+     * ×îÐÂ¹Ø×¢ÈËÎ¢²© 
      *  
      * @access public 
      * @return array 
@@ -968,7 +968,7 @@ class WeiboClient
     } 
 
     /** 
-     * æœ€æ–°å…³æ³¨äººå¾®åš 
+     * ×îÐÂ¹Ø×¢ÈËÎ¢²© 
      *  
      * @access public 
      * @return array 
@@ -979,11 +979,11 @@ class WeiboClient
     } 
 
     /** 
-     * æœ€æ–° @ç”¨æˆ·çš„ 
+     * ×îÐÂ @ÓÃ»§µÄ 
      *  
      * @access public 
-     * @param int $page è¿”å›žç»“æžœçš„é¡µåºå·ã€‚ 
-     * @param int $count æ¯æ¬¡è¿”å›žçš„æœ€å¤§è®°å½•æ•°ï¼ˆå³é¡µé¢å¤§å°ï¼‰ï¼Œä¸å¤§äºŽ200ï¼Œé»˜è®¤ä¸º20ã€‚ 
+     * @param int $page ·µ»Ø½á¹ûµÄÒ³ÐòºÅ¡£ 
+     * @param int $count Ã¿´Î·µ»ØµÄ×î´ó¼ÇÂ¼Êý£¨¼´Ò³Ãæ´óÐ¡£©£¬²»´óÓÚ200£¬Ä¬ÈÏÎª20¡£ 
      * @return array 
      */ 
     function mentions( $page = 1 , $count = 20 ) 
@@ -993,10 +993,10 @@ class WeiboClient
 
 
     /** 
-     * å‘è¡¨å¾®åš 
+     * ·¢±íÎ¢²© 
      *  
      * @access public 
-     * @param mixed $text è¦æ›´æ–°çš„å¾®åšä¿¡æ¯ã€‚ 
+     * @param mixed $text Òª¸üÐÂµÄÎ¢²©ÐÅÏ¢¡£ 
      * @return array 
      */ 
     function update( $text ) 
@@ -1009,11 +1009,11 @@ class WeiboClient
     }
     
     /** 
-     * å‘è¡¨å›¾ç‰‡å¾®åš 
+     * ·¢±íÍ¼Æ¬Î¢²© 
      *  
      * @access public 
-     * @param string $text è¦æ›´æ–°çš„å¾®åšä¿¡æ¯ã€‚ 
-     * @param string $text è¦å‘å¸ƒçš„å›¾ç‰‡è·¯å¾„,æ”¯æŒurlã€‚[åªæ”¯æŒpng/jpg/gifä¸‰ç§æ ¼å¼,å¢žåŠ æ ¼å¼è¯·ä¿®æ”¹get_image_mimeæ–¹æ³•] 
+     * @param string $text Òª¸üÐÂµÄÎ¢²©ÐÅÏ¢¡£ 
+     * @param string $text Òª·¢²¼µÄÍ¼Æ¬Â·¾¶,Ö§³Öurl¡£[Ö»Ö§³Öpng/jpg/gifÈýÖÖ¸ñÊ½,Ôö¼Ó¸ñÊ½ÇëÐÞ¸Äget_image_mime·½·¨] 
      * @return array 
      */ 
     function upload( $text , $pic_path ) 
@@ -1027,10 +1027,10 @@ class WeiboClient
     } 
 
     /** 
-     * èŽ·å–å•æ¡å¾®åš 
+     * »ñÈ¡µ¥ÌõÎ¢²© 
      *  
      * @access public 
-     * @param mixed $sid è¦èŽ·å–å·²å‘è¡¨çš„å¾®åšID 
+     * @param mixed $sid Òª»ñÈ¡ÒÑ·¢±íµÄÎ¢²©ID 
      * @return array 
      */ 
     function show_status( $sid ) 
@@ -1039,10 +1039,10 @@ class WeiboClient
     } 
 
     /** 
-     * åˆ é™¤å¾®åš 
+     * É¾³ýÎ¢²© 
      *  
      * @access public 
-     * @param mixed $sid è¦åˆ é™¤çš„å¾®åšID 
+     * @param mixed $sid ÒªÉ¾³ýµÄÎ¢²©ID 
      * @return array 
      */ 
     function delete( $sid ) 
@@ -1051,10 +1051,10 @@ class WeiboClient
     } 
 
     /** 
-     * åˆ é™¤å¾®åš 
+     * É¾³ýÎ¢²© 
      *  
      * @access public 
-     * @param mixed $sid è¦åˆ é™¤çš„å¾®åšID 
+     * @param mixed $sid ÒªÉ¾³ýµÄÎ¢²©ID 
      * @return array 
      */ 
     function destroy( $sid ) 
@@ -1063,10 +1063,10 @@ class WeiboClient
     } 
 
     /** 
-     * ä¸ªäººèµ„æ–™ 
+     * ¸öÈË×ÊÁÏ 
      *  
      * @access public 
-     * @param mixed $uid_or_name ç”¨æˆ·UIDæˆ–å¾®åšæ˜µç§°ã€‚ 
+     * @param mixed $uid_or_name ÓÃ»§UID»òÎ¢²©êÇ³Æ¡£ 
      * @return array 
      */ 
     function show_user( $uid_or_name = null ) 
@@ -1075,12 +1075,12 @@ class WeiboClient
     } 
 
     /** 
-     * å…³æ³¨äººåˆ—è¡¨ 
+     * ¹Ø×¢ÈËÁÐ±í 
      *  
      * @access public 
-     * @param bool $cursor å•é¡µåªèƒ½åŒ…å«100ä¸ªå…³æ³¨åˆ—è¡¨ï¼Œä¸ºäº†èŽ·å–æ›´å¤šåˆ™cursoré»˜è®¤ä»Ž-1å¼€å§‹ï¼Œé€šè¿‡å¢žåŠ æˆ–å‡å°‘cursoræ¥èŽ·å–æ›´å¤šçš„å…³æ³¨åˆ—è¡¨ 
-     * @param bool $count æ¯æ¬¡è¿”å›žçš„æœ€å¤§è®°å½•æ•°ï¼ˆå³é¡µé¢å¤§å°ï¼‰ï¼Œä¸å¤§äºŽ200,é»˜è®¤è¿”å›ž20 
-     * @param mixed $uid_or_name è¦èŽ·å–çš„ UIDæˆ–å¾®åšæ˜µç§° 
+     * @param bool $cursor µ¥Ò³Ö»ÄÜ°üº¬100¸ö¹Ø×¢ÁÐ±í£¬ÎªÁË»ñÈ¡¸ü¶àÔòcursorÄ¬ÈÏ´Ó-1¿ªÊ¼£¬Í¨¹ýÔö¼Ó»ò¼õÉÙcursorÀ´»ñÈ¡¸ü¶àµÄ¹Ø×¢ÁÐ±í 
+     * @param bool $count Ã¿´Î·µ»ØµÄ×î´ó¼ÇÂ¼Êý£¨¼´Ò³Ãæ´óÐ¡£©£¬²»´óÓÚ200,Ä¬ÈÏ·µ»Ø20 
+     * @param mixed $uid_or_name Òª»ñÈ¡µÄ UID»òÎ¢²©êÇ³Æ 
      * @return array 
      */ 
     function friends( $cursor = false , $count = false , $uid_or_name = null ) 
@@ -1089,12 +1089,12 @@ class WeiboClient
     } 
 
     /** 
-     * ç²‰ä¸åˆ—è¡¨ 
+     * ·ÛË¿ÁÐ±í 
      *  
      * @access public 
-     * @param bool $cursor å•é¡µåªèƒ½åŒ…å«100ä¸ªç²‰ä¸åˆ—è¡¨ï¼Œä¸ºäº†èŽ·å–æ›´å¤šåˆ™cursoré»˜è®¤ä»Ž-1å¼€å§‹ï¼Œé€šè¿‡å¢žåŠ æˆ–å‡å°‘cursoræ¥èŽ·å–æ›´å¤šçš„ç²‰ä¸åˆ—è¡¨ 
-     * @param bool $count æ¯æ¬¡è¿”å›žçš„æœ€å¤§è®°å½•æ•°ï¼ˆå³é¡µé¢å¤§å°ï¼‰ï¼Œä¸å¤§äºŽ200,é»˜è®¤è¿”å›ž20ã€‚ 
-     * @param mixed $uid_or_name  è¦èŽ·å–çš„ UIDæˆ–å¾®åšæ˜µç§° 
+     * @param bool $cursor µ¥Ò³Ö»ÄÜ°üº¬100¸ö·ÛË¿ÁÐ±í£¬ÎªÁË»ñÈ¡¸ü¶àÔòcursorÄ¬ÈÏ´Ó-1¿ªÊ¼£¬Í¨¹ýÔö¼Ó»ò¼õÉÙcursorÀ´»ñÈ¡¸ü¶àµÄ·ÛË¿ÁÐ±í 
+     * @param bool $count Ã¿´Î·µ»ØµÄ×î´ó¼ÇÂ¼Êý£¨¼´Ò³Ãæ´óÐ¡£©£¬²»´óÓÚ200,Ä¬ÈÏ·µ»Ø20¡£ 
+     * @param mixed $uid_or_name  Òª»ñÈ¡µÄ UID»òÎ¢²©êÇ³Æ 
      * @return array 
      */ 
     function followers( $cursor = false , $count = false , $uid_or_name = null ) 
@@ -1103,10 +1103,10 @@ class WeiboClient
     } 
 
     /** 
-     * å…³æ³¨ä¸€ä¸ªç”¨æˆ· 
+     * ¹Ø×¢Ò»¸öÓÃ»§ 
      *  
      * @access public 
-     * @param mixed $uid_or_name è¦å…³æ³¨çš„ç”¨æˆ·UIDæˆ–å¾®åšæ˜µç§° 
+     * @param mixed $uid_or_name Òª¹Ø×¢µÄÓÃ»§UID»òÎ¢²©êÇ³Æ 
      * @return array 
      */ 
     function follow( $uid_or_name ) 
@@ -1115,10 +1115,10 @@ class WeiboClient
     } 
 
     /** 
-     * å–æ¶ˆå…³æ³¨æŸç”¨æˆ· 
+     * È¡Ïû¹Ø×¢Ä³ÓÃ»§ 
      *  
      * @access public 
-     * @param mixed $uid_or_name è¦å–æ¶ˆå…³æ³¨çš„ç”¨æˆ·UIDæˆ–å¾®åšæ˜µç§° 
+     * @param mixed $uid_or_name ÒªÈ¡Ïû¹Ø×¢µÄÓÃ»§UID»òÎ¢²©êÇ³Æ 
      * @return array 
      */ 
     function unfollow( $uid_or_name ) 
@@ -1127,10 +1127,10 @@ class WeiboClient
     } 
 
     /** 
-     * è¿”å›žä¸¤ä¸ªç”¨æˆ·å…³ç³»çš„è¯¦ç»†æƒ…å†µ 
+     * ·µ»ØÁ½¸öÓÃ»§¹ØÏµµÄÏêÏ¸Çé¿ö 
      *  
      * @access public 
-     * @param mixed $uid_or_name è¦åˆ¤æ–­çš„ç”¨æˆ·UID 
+     * @param mixed $uid_or_name ÒªÅÐ¶ÏµÄÓÃ»§UID 
      * @return array 
      */ 
     function is_followed( $uid_or_name ) 
@@ -1143,12 +1143,12 @@ class WeiboClient
     } 
 
     /** 
-     * ç”¨æˆ·å‘è¡¨å¾®åšåˆ—è¡¨ 
+     * ÓÃ»§·¢±íÎ¢²©ÁÐ±í 
      *  
      * @access public 
-     * @param int $page é¡µç  
-     * @param int $count æ¯æ¬¡è¿”å›žçš„æœ€å¤§è®°å½•æ•°ï¼Œæœ€å¤šè¿”å›ž200æ¡ï¼Œé»˜è®¤20ã€‚ 
-     * @param mixed $uid_or_name æŒ‡å®šç”¨æˆ·UIDæˆ–å¾®åšæ˜µç§° 
+     * @param int $page Ò³Âë 
+     * @param int $count Ã¿´Î·µ»ØµÄ×î´ó¼ÇÂ¼Êý£¬×î¶à·µ»Ø200Ìõ£¬Ä¬ÈÏ20¡£ 
+     * @param mixed $uid_or_name Ö¸¶¨ÓÃ»§UID»òÎ¢²©êÇ³Æ 
      * @return array 
      */ 
     function user_timeline( $page = 1 , $count = 20 , $uid_or_name = null ) 
@@ -1160,11 +1160,11 @@ class WeiboClient
     } 
 
     /** 
-     * èŽ·å–ç§ä¿¡åˆ—è¡¨ 
+     * »ñÈ¡Ë½ÐÅÁÐ±í 
      *  
      * @access public 
-     * @param int $page é¡µç  
-     * @param int $count æ¯æ¬¡è¿”å›žçš„æœ€å¤§è®°å½•æ•°ï¼Œæœ€å¤šè¿”å›ž200æ¡ï¼Œé»˜è®¤20ã€‚ 
+     * @param int $page Ò³Âë 
+     * @param int $count Ã¿´Î·µ»ØµÄ×î´ó¼ÇÂ¼Êý£¬×î¶à·µ»Ø200Ìõ£¬Ä¬ÈÏ20¡£ 
      * @return array 
      */ 
     function list_dm( $page = 1 , $count = 20  ) 
@@ -1173,11 +1173,11 @@ class WeiboClient
     } 
 
     /** 
-     * å‘é€çš„ç§ä¿¡åˆ—è¡¨ 
+     * ·¢ËÍµÄË½ÐÅÁÐ±í 
      *  
      * @access public 
-     * @param int $page é¡µç  
-     * @param int $count æ¯æ¬¡è¿”å›žçš„æœ€å¤§è®°å½•æ•°ï¼Œæœ€å¤šè¿”å›ž200æ¡ï¼Œé»˜è®¤20ã€‚ 
+     * @param int $page Ò³Âë 
+     * @param int $count Ã¿´Î·µ»ØµÄ×î´ó¼ÇÂ¼Êý£¬×î¶à·µ»Ø200Ìõ£¬Ä¬ÈÏ20¡£ 
      * @return array 
      */ 
     function list_dm_sent( $page = 1 , $count = 20 ) 
@@ -1186,11 +1186,11 @@ class WeiboClient
     } 
 
     /** 
-     * å‘é€ç§ä¿¡ 
+     * ·¢ËÍË½ÐÅ 
      *  
      * @access public 
-     * @param mixed $uid_or_name UIDæˆ–å¾®åšæ˜µç§° 
-     * @param mixed $text è¦å‘ç”Ÿçš„æ¶ˆæ¯å†…å®¹ï¼Œæ–‡æœ¬å¤§å°å¿…é¡»å°äºŽ300ä¸ªæ±‰å­—ã€‚ 
+     * @param mixed $uid_or_name UID»òÎ¢²©êÇ³Æ 
+     * @param mixed $text Òª·¢ÉúµÄÏûÏ¢ÄÚÈÝ£¬ÎÄ±¾´óÐ¡±ØÐëÐ¡ÓÚ300¸öºº×Ö¡£ 
      * @return array 
      */ 
     function send_dm( $uid_or_name , $text ) 
@@ -1205,10 +1205,10 @@ class WeiboClient
     } 
 
     /** 
-     * åˆ é™¤ä¸€æ¡ç§ä¿¡ 
+     * É¾³ýÒ»ÌõË½ÐÅ 
      *  
      * @access public 
-     * @param mixed $did è¦åˆ é™¤çš„ç§ä¿¡ä¸»é”®ID 
+     * @param mixed $did ÒªÉ¾³ýµÄË½ÐÅÖ÷¼üID 
      * @return array 
      */ 
     function delete_dm( $did ) 
@@ -1217,11 +1217,11 @@ class WeiboClient
     } 
 
     /** 
-     * è½¬å‘ä¸€æ¡å¾®åšä¿¡æ¯ã€‚ 
+     * ×ª·¢Ò»ÌõÎ¢²©ÐÅÏ¢¡£ 
      *  
      * @access public 
-     * @param mixed $sid è½¬å‘çš„å¾®åšID 
-     * @param bool $text æ·»åŠ çš„è½¬å‘ä¿¡æ¯ã€‚ 
+     * @param mixed $sid ×ª·¢µÄÎ¢²©ID 
+     * @param bool $text Ìí¼ÓµÄ×ª·¢ÐÅÏ¢¡£ 
      * @return array 
      */ 
     function repost( $sid , $text = false ) 
@@ -1234,12 +1234,12 @@ class WeiboClient
     } 
 
     /** 
-     * å¯¹ä¸€æ¡å¾®åšä¿¡æ¯è¿›è¡Œè¯„è®º 
+     * ¶ÔÒ»ÌõÎ¢²©ÐÅÏ¢½øÐÐÆÀÂÛ 
      *  
      * @access public 
-     * @param mixed $sid è¦è¯„è®ºçš„å¾®åšid 
-     * @param mixed $text è¯„è®ºå†…å®¹ 
-     * @param bool $cid è¦è¯„è®ºçš„è¯„è®ºid 
+     * @param mixed $sid ÒªÆÀÂÛµÄÎ¢²©id 
+     * @param mixed $text ÆÀÂÛÄÚÈÝ 
+     * @param bool $cid ÒªÆÀÂÛµÄÆÀÂÛid 
      * @return array 
      */ 
     function send_comment( $sid , $text , $cid = false ) 
@@ -1254,11 +1254,11 @@ class WeiboClient
     } 
 
     /** 
-     * å‘å‡ºçš„è¯„è®º 
+     * ·¢³öµÄÆÀÂÛ 
      *  
      * @access public 
-     * @param int $page é¡µç  
-     * @param int $count æ¯æ¬¡è¿”å›žçš„æœ€å¤§è®°å½•æ•°ï¼Œæœ€å¤šè¿”å›ž200æ¡ï¼Œé»˜è®¤20ã€‚ 
+     * @param int $page Ò³Âë 
+     * @param int $count Ã¿´Î·µ»ØµÄ×î´ó¼ÇÂ¼Êý£¬×î¶à·µ»Ø200Ìõ£¬Ä¬ÈÏ20¡£ 
      * @return array 
      */ 
     function comments_by_me( $page = 1 , $count = 20 ) 
@@ -1267,11 +1267,11 @@ class WeiboClient
     } 
 
     /** 
-     * æœ€æ–°è¯„è®º(æŒ‰æ—¶é—´) 
+     * ×îÐÂÆÀÂÛ(°´Ê±¼ä) 
      *  
      * @access public 
-     * @param int $page é¡µç  
-     * @param int $count æ¯æ¬¡è¿”å›žçš„æœ€å¤§è®°å½•æ•°ï¼Œæœ€å¤šè¿”å›ž200æ¡ï¼Œé»˜è®¤20ã€‚ 
+     * @param int $page Ò³Âë 
+     * @param int $count Ã¿´Î·µ»ØµÄ×î´ó¼ÇÂ¼Êý£¬×î¶à·µ»Ø200Ìõ£¬Ä¬ÈÏ20¡£ 
      * @return array 
      */ 
     function comments_timeline( $page = 1 , $count = 20 ) 
@@ -1280,12 +1280,12 @@ class WeiboClient
     } 
 
     /** 
-     * å•æ¡è¯„è®ºåˆ—è¡¨(æŒ‰å¾®åš) 
+     * µ¥ÌõÆÀÂÛÁÐ±í(°´Î¢²©) 
      *  
      * @access public 
-     * @param mixed $sid æŒ‡å®šçš„å¾®åšID 
-     * @param int $page é¡µç  
-     * @param int $count æ¯æ¬¡è¿”å›žçš„æœ€å¤§è®°å½•æ•°ï¼Œæœ€å¤šè¿”å›ž200æ¡ï¼Œé»˜è®¤20ã€‚ 
+     * @param mixed $sid Ö¸¶¨µÄÎ¢²©ID 
+     * @param int $page Ò³Âë 
+     * @param int $count Ã¿´Î·µ»ØµÄ×î´ó¼ÇÂ¼Êý£¬×î¶à·µ»Ø200Ìõ£¬Ä¬ÈÏ20¡£ 
      * @return array 
      */ 
     function get_comments_by_sid( $sid , $page = 1 , $count = 20 ) 
@@ -1300,10 +1300,10 @@ class WeiboClient
     } 
 
     /** 
-     * æ‰¹é‡ç»Ÿè®¡å¾®åšçš„è¯„è®ºæ•°ï¼Œè½¬å‘æ•°ï¼Œä¸€æ¬¡è¯·æ±‚æœ€å¤šèŽ·å–100ä¸ªã€‚ 
+     * ÅúÁ¿Í³¼ÆÎ¢²©µÄÆÀÂÛÊý£¬×ª·¢Êý£¬Ò»´ÎÇëÇó×î¶à»ñÈ¡100¸ö¡£ 
      *  
      * @access public 
-     * @param mixed $sids å¾®åšIDå·åˆ—è¡¨ï¼Œç”¨é€—å·éš”å¼€ 
+     * @param mixed $sids Î¢²©IDºÅÁÐ±í£¬ÓÃ¶ººÅ¸ô¿ª 
      * @return array 
      */ 
     function get_count_info_by_ids( $sids ) 
@@ -1315,12 +1315,12 @@ class WeiboClient
     } 
 
     /** 
-     * å¯¹ä¸€æ¡å¾®åšè¯„è®ºä¿¡æ¯è¿›è¡Œå›žå¤ã€‚ 
+     * ¶ÔÒ»ÌõÎ¢²©ÆÀÂÛÐÅÏ¢½øÐÐ»Ø¸´¡£ 
      *  
      * @access public 
-     * @param mixed $sid å¾®åšid 
-     * @param mixed $text è¯„è®ºå†…å®¹ã€‚ 
-     * @param mixed $cid è¯„è®ºid 
+     * @param mixed $sid Î¢²©id 
+     * @param mixed $text ÆÀÂÛÄÚÈÝ¡£ 
+     * @param mixed $cid ÆÀÂÛid 
      * @return array 
      */ 
     function reply( $sid , $text , $cid ) 
@@ -1335,10 +1335,10 @@ class WeiboClient
     } 
 
     /** 
-     * è¿”å›žç”¨æˆ·çš„å‘å¸ƒçš„æœ€è¿‘20æ¡æ”¶è—ä¿¡æ¯ï¼Œå’Œç”¨æˆ·æ”¶è—é¡µé¢è¿”å›žå†…å®¹æ˜¯ä¸€è‡´çš„ã€‚ 
+     * ·µ»ØÓÃ»§µÄ·¢²¼µÄ×î½ü20ÌõÊÕ²ØÐÅÏ¢£¬ºÍÓÃ»§ÊÕ²ØÒ³Ãæ·µ»ØÄÚÈÝÊÇÒ»ÖÂµÄ¡£ 
      *  
      * @access public 
-     * @param bool $page è¿”å›žç»“æžœçš„é¡µåºå·ã€‚ 
+     * @param bool $page ·µ»Ø½á¹ûµÄÒ³ÐòºÅ¡£ 
      * @return array 
      */ 
     function get_favorites( $page = false ) 
@@ -1350,10 +1350,10 @@ class WeiboClient
     } 
 
     /** 
-     * æ”¶è—ä¸€æ¡å¾®åšä¿¡æ¯ 
+     * ÊÕ²ØÒ»ÌõÎ¢²©ÐÅÏ¢ 
      *  
      * @access public 
-     * @param mixed $sid æ”¶è—çš„å¾®åšid 
+     * @param mixed $sid ÊÕ²ØµÄÎ¢²©id 
      * @return array 
      */ 
     function add_to_favorites( $sid ) 
@@ -1365,10 +1365,10 @@ class WeiboClient
     } 
 
     /** 
-     * åˆ é™¤å¾®åšæ”¶è—ã€‚ 
+     * É¾³ýÎ¢²©ÊÕ²Ø¡£ 
      *  
      * @access public 
-     * @param mixed $sid è¦åˆ é™¤çš„æ”¶è—å¾®åšä¿¡æ¯ID. 
+     * @param mixed $sid ÒªÉ¾³ýµÄÊÕ²ØÎ¢²©ÐÅÏ¢ID. 
      * @return array 
      */ 
     function remove_from_favorites( $sid ) 
@@ -1440,7 +1440,7 @@ class WeiboClient
 } 
 
 /** 
- * qq OAuth è®¤è¯ç±» 
+ * qq OAuth ÈÏÖ¤Àà 
  * 
  * @package sae 
  * @author Easy Chen 

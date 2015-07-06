@@ -6,17 +6,17 @@
 {template 'member', 'left'}
 <div class="col-auto">
 <div class="col-1 ">
-<h6 class="title">å·²å‘æ¶ˆæ¯</h6>
+<h6 class="title">ÒÑ·¢ÏûÏ¢</h6>
 <div class="content"> 
 <form name="myform" id="myform" action="?m=message&c=index&a=del_type" method="post" onsubmit="checkuid();return false;">
 <table width="100%" cellspacing="0"  class="table-list">
         <thead>
             <tr>
             <th width="5%"><input type="checkbox" value="" id="check_box" onclick="selectall('messageid[]');"></th>
-            <th width="35%">æ ‡ é¢˜</th>
-            <th width="8%">å› å¤</th>
-            <th width="15%">æ”¶ä»¶äºº</th>
-            <th width="15%">å‘é€æ—¶é—´</th>
+            <th width="35%">±ê Ìâ</th>
+            <th width="8%">»Ø ¸´</th>
+            <th width="15%">ÊÕ¼şÈË</th>
+            <th width="15%">·¢ËÍÊ±¼ä</th>
             </tr>
         </thead>
     <tbody>
@@ -31,8 +31,8 @@
 	{/loop}
     </tbody>
     </table>
-<div class="btn"><a href="#" onClick="javascript:$('input[type=checkbox]').attr('checked', true)">å…¨é€‰</a>/<a href="#" onClick="javascript:$('input[type=checkbox]').attr('checked', false)">å–æ¶ˆ</a> 
-<input name="submit" type="submit" class="button" value="åˆ é™¤é€‰ä¸­" onClick="return confirm('ç¡®è®¤è¦åˆ é™¤ ã€ é€‰ä¸­ ã€ å—ï¼Ÿ')">&nbsp;&nbsp;</div> 
+<div class="btn"><a href="#" onClick="javascript:$('input[type=checkbox]').attr('checked', true)">È«Ñ¡</a>/<a href="#" onClick="javascript:$('input[type=checkbox]').attr('checked', false)">È¡Ïû</a> 
+<input name="submit" type="submit" class="button" value="É¾³ıÑ¡ÖĞ" onClick="return confirm('È·ÈÏÒªÉ¾³ı ¡º Ñ¡ÖĞ ¡» Âğ£¿')">&nbsp;&nbsp;</div> 
 
 </form>   
 
@@ -46,7 +46,7 @@
 <script type="text/javascript">
 function see_all(id, name) {
 	window.top.art.dialog({id:'sell_all'}).close();
-	window.top.art.dialog({title:'æŸ¥çœ‹è¯¦æƒ…'+name+' ',id:'edit',iframe:'?m=message&c=message&a=see_all&messageid='+id,width:'700',height:'450'}, function(){var d = window.top.art.dialog({id:'see_all'}).data.iframe;var form = d.document.getElementById('dosubmit');form.click();return false;}, function(){window.top.art.dialog({id:'see_all'}).close()});
+	window.top.art.dialog({title:'²é¿´ÏêÇé'+name+' ',id:'edit',iframe:'?m=message&c=message&a=see_all&messageid='+id,width:'700',height:'450'}, function(){var d = window.top.art.dialog({id:'see_all'}).data.iframe;var form = d.document.getElementById('dosubmit');form.click();return false;}, function(){window.top.art.dialog({id:'see_all'}).close()});
 }
 function checkuid() {
 	var ids='';
@@ -54,7 +54,7 @@ function checkuid() {
 		ids += $(n).val() + ',';
 	});
 	if(ids=='') {
-		window.top.art.dialog({content:'è¯·é€‰æ‹©å†æ‰§è¡Œæ“ä½œ',lock:true,width:'200',height:'50',time:1.5},function(){});
+		window.top.art.dialog({content:'ÇëÑ¡ÔñÔÙÖ´ĞĞ²Ù×÷',lock:true,width:'200',height:'50',time:1.5},function(){});
 		return false;
 	} else {
 		myform.submit();

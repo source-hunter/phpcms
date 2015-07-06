@@ -1,6 +1,6 @@
 <?php
 /**
- * èŽ·å–ä¸“é¢˜è¯„è®ºç±»
+ * »ñÈ¡×¨ÌâÆÀÂÛÀà
  */
 
 defined('IN_PHPCMS') or exit('No permission resources.');
@@ -12,10 +12,10 @@ class comment_api {
 	}
 	
 	/**
-	 * èŽ·å–è¯„è®ºä¿¡æ¯
-	 * @param $module      æ¨¡åž‹
-	 * @param $contentid   æ–‡ç« ID
-	 * @param $siteid      ç«™ç‚¹ID
+	 * »ñÈ¡ÆÀÂÛÐÅÏ¢
+	 * @param $module      Ä£ÐÍ
+	 * @param $contentid   ÎÄÕÂID
+	 * @param $siteid      Õ¾µãID
 	 */
 	function get_info($module, $contentid, $siteid) {
 		if ($module=='special') {

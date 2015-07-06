@@ -21,29 +21,29 @@ include $this->admin_tpl('header', 'admin');
 	<legend><?php echo L('the_configuration_data_source')?></legend>
 	<table width="100%"  class="table_form">
     <tr>
-    <th width="80"><?php echo L('stdcall')?>ï¼š</th>
+    <th width="80"><?php echo L('stdcall')?>£º</th>
     <td class="y-bg"><?php echo form::radio(array('0'=>L('model_configuration'), '1'=>L('custom_sql')), $type ? $type : 0, 'name="type" onclick="location.href=\''.get_url().'&type=\'+this.value"')?></td>
   </tr>
   <?php if ($type==0) :?>
     <tr>
-    <th><?php echo L('select_model')?>ï¼š</th>
+    <th><?php echo L('select_model')?>£º</th>
     <td class="y-bg"><?php echo form::select($modules, $module, 'name="module" id="module" onchange="location.href=\''.get_url().'&module=\'+this.value"')?><script type="text/javascript">$(function(){$("#module").formValidator({onshow:"<?php echo L('please_select_model')?>",onfocus:"<?php echo L('please_select_model')?>"}).inputValidator({min:1, onerror:'<?php echo L('please_select_model')?>'});});</script></td>
   </tr>
   <?php if ($module):?>
     <tr>
-    <th><?php echo L('selectingoperation')?>ï¼š</th>
+    <th><?php echo L('selectingoperation')?>£º</th>
     <td class="y-bg"><?php echo form::radio($html['action'], $action, 'name="action" onclick="location.href=\''.get_url().'&action=\'+this.value"')?></td>
   </tr>
   <?php endif;?>
   <?php if(isset($html[$action]) && is_array($html[$action]) && $action)foreach($html[$action] as $k=>$v):?>
       <tr>
-    <th><?php echo $v['name']?>ï¼š</th>
+    <th><?php echo $v['name']?>£º</th>
     <td class="y-bg"><?php echo creat_form($k, $v)?></td>
   </tr>
   <?php endforeach;?>
   <?php else :?>
     <tr>
-    <th valign="top"><?php echo L('custom_sql')?>ï¼š</th>
+    <th valign="top"><?php echo L('custom_sql')?>£º</th>
     <td class="y-bg"><textarea name="data" id="data" style="width:386px;height:178px;"></textarea><script type="text/javascript">$(function(){$("#data").formValidator({onshow:"<?php echo L('please_enter_a_sql')?>",onfocus:"<?php echo L('please_enter_a_sql')?>"}).inputValidator({min:1, onerror:'<?php echo L('please_enter_a_sql')?>'});});</script></td>
   </tr>
   <?php endif;?>
@@ -54,27 +54,27 @@ include $this->admin_tpl('header', 'admin');
 	<legend><?php echo L('vlan')?></legend>
 	<table width="100%"  class="table_form">
 	<tr>
-    <th width="80"><?php echo L('name')?>ï¼š</th>
+    <th width="80"><?php echo L('name')?>£º</th>
     <td class="y-bg"><input type="text" class="input-text" name="name" id="name" size="30" /></td>
   </tr>
   <tr>
-    <th><?php echo L('output_mode')?>ï¼š</th>
+    <th><?php echo L('output_mode')?>£º</th>
     <td class="y-bg"><?php echo form::radio(array('1'=>'json', '2'=>'xml', '3'=>'js'), '1', 'name="dis_type" onclick="showcode(this.value)"')?></td>
   </tr>
   <tbody id="template_code" style="display:none">
     <tr>
-    <th valign="top"><?php echo L('template')?>ï¼š</th>
+    <th valign="top"><?php echo L('template')?>£º</th>
     <td class="y-bg"><textarea name="template" id="template" style="width:386px;height:178px;">{loop $data $k $v}
     <!-- <?php echo L('valgrind')?> -->
 {/loop}</textarea></td>
   </tr>
   </tbody>
   <tr>
-    <th width="80"><?php echo L('buffer_time')?>ï¼š</th>
+    <th width="80"><?php echo L('buffer_time')?>£º</th>
     <td class="y-bg"><input type="text" class="input-text" name="cache" id="cache" size="30" /></td>
   </tr>
   <tr>
-    <th width="80"><?php echo L('num')?>ï¼š</th>
+    <th width="80"><?php echo L('num')?>£º</th>
     <td class="y-bg"><input type="text" class="input-text" name="num" id="num" size="30" /></td>
   </tr>
 </table>

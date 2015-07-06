@@ -7,7 +7,7 @@ include $this->admin_tpl('header', 'admin');
 <h2 class="title-1 f14 lh28">(<?php echo $r['subject'];?>)<?php echo L('vote_call')?></h2>
 <div class="bk10"></div>
 <div class="explain-col">
-<strong><?php echo L('vote_call_info')?>ï¼š</strong><br />
+<strong><?php echo L('vote_call_info')?>£º</strong><br />
 <?php echo L('vote_call_infos')?>
 </div>
 <div class="bk10"></div>

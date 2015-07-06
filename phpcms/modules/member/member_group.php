@@ -1,6 +1,6 @@
 <?php
 /**
- * ç®¡ç†å‘˜åŽå°ä¼šå‘˜ç»„æ“ä½œç±»
+ * ¹ÜÀíÔ±ºóÌ¨»áÔ±×é²Ù×÷Àà
  */
 
 defined('IN_PHPCMS') or exit('No permission resources.');
@@ -16,7 +16,7 @@ class member_group extends admin {
 	}
 
 	/**
-	 * ä¼šå‘˜ç»„é¦–é¡µ
+	 * »áÔ±×éÊ×Ò³
 	 */
 	function init() {
 
@@ -24,13 +24,13 @@ class member_group extends admin {
 	}
 	
 	/**
-	 * ä¼šå‘˜ç»„åˆ—è¡¨
+	 * »áÔ±×éÁÐ±í
 	 */
 	function manage() {
 		$page = isset($_GET['page']) ? intval($_GET['page']) : 1;
 		$member_group_list = $this->db->listinfo('', 'sort ASC', $page, 15);
 		$this->member_db = pc_base::load_model('member_model');
-		//TODO æ­¤å¤„å¾ªçŽ¯ä¸­æ‰§è¡Œsqlï¼Œä¼šä¸¥é‡å½±å“æ•ˆçŽ‡ï¼Œç¨åŽè€ƒè™‘åœ¨memebr_groupè¡¨ä¸­åŠ å…¥ä¼šå‘˜æ•°å­—æ®µå’Œç»Ÿè®¡ä¼šå‘˜æ€»æ•°åŠŸèƒ½è§£å†³ã€‚
+		//TODO ´Ë´¦Ñ­»·ÖÐÖ´ÐÐsql£¬»áÑÏÖØÓ°ÏìÐ§ÂÊ£¬ÉÔºó¿¼ÂÇÔÚmemebr_group±íÖÐ¼ÓÈë»áÔ±Êý×Ö¶ÎºÍÍ³¼Æ»áÔ±×ÜÊý¹¦ÄÜ½â¾ö¡£
 		foreach ($member_group_list as $k=>$v) {
 			$membernum = $this->member_db->count(array('groupid'=>$v['groupid']));
 			$member_group_list[$k]['membernum'] = $membernum;
@@ -42,13 +42,13 @@ class member_group extends admin {
 	}
 			
 	/**
-	 * æ·»åŠ ä¼šå‘˜ç»„
+	 * Ìí¼Ó»áÔ±×é
 	 */
 	function add() {
 		if(isset($_POST['dosubmit'])) {
 			$info = array();
 			if(!$this->_checkname($_POST['info']['name'])){
-				showmessage('ä¼šå‘˜ç»„åç§°å·²ç»å­˜åœ¨');
+				showmessage('»áÔ±×éÃû³ÆÒÑ¾­´æÔÚ');
 			}
 			$info = $_POST['info'];
 			$info['allowpost'] = $info['allowpost'] ? 1 : 0;
@@ -72,7 +72,7 @@ class member_group extends admin {
 	}
 	
 	/**
-	 * ä¿®æ”¹ä¼šå‘˜ç»„
+	 * ÐÞ¸Ä»áÔ±×é
 	 */
 	function edit() {
 		if(isset($_POST['dosubmit'])) {
@@ -101,7 +101,7 @@ class member_group extends admin {
 	}
 	
 	/**
-	 * æŽ’åºä¼šå‘˜ç»„
+	 * ÅÅÐò»áÔ±×é
 	 */
 	function sort() {		
 		if(isset($_POST['sort'])) {
@@ -116,7 +116,7 @@ class member_group extends admin {
 		}
 	}
 	/**
-	 * åˆ é™¤ä¼šå‘˜ç»„
+	 * É¾³ý»áÔ±×é
 	 */
 	function delete() {	
 		$groupidarr = isset($_POST['groupid']) ? $_POST['groupid'] : showmessage(L('illegal_parameters'), HTTP_REFERER);
@@ -130,7 +130,7 @@ class member_group extends admin {
 	}
 
 	/**
-	 * æ£€æŸ¥ç”¨æˆ·åæ˜¯å¦åˆæ³•
+	 * ¼ì²éÓÃ»§ÃûÊÇ·ñºÏ·¨
 	 * @param string $name
 	 */
 	private function _checkname($name = NULL) {
@@ -142,7 +142,7 @@ class member_group extends admin {
 	}
 	
 	/**
-	 * æ›´æ–°ä¼šå‘˜ç»„åˆ—è¡¨ç¼“å­˜
+	 * ¸üÐÂ»áÔ±×éÁÐ±í»º´æ
 	 */
 	private function _updatecache() {
 		$grouplist = $this->db->listinfo('', '', 1, 1000, 'groupid');

@@ -3,7 +3,7 @@ function open_menu(id,name,container,file,path,title,key, func) {
 	returnfile = file;
 	returnname = name;
 	returnfunc = func;
-	var content = '<div class="linkage-menu"><h6><a href="javascript:;"  onclick="get_menu_parent(this,0,\''+path+'\', \''+title+'\', \''+key+'\')" class="rt"><<è¿”å›žä¸»èœå•</a><span>'+name+'</span> <a href="javascript:;" onclick="get_menu_parent(this,\'\',\''+path+'\', \''+title+'\', \''+key+'\')" id="parent_'+id+'" parentid="0"><img src="statics/images/icon/old-edit-redo.png" width="16" height="16" alt="è¿”å›žä¸Šä¸€çº§" /></a></h6><div class="ib-a menu" id="ul_'+id+'">';
+	var content = '<div class="linkage-menu"><h6><a href="javascript:;"  onclick="get_menu_parent(this,0,\''+path+'\', \''+title+'\', \''+key+'\')" class="rt"><<·µ»ØÖ÷²Ëµ¥</a><span>'+name+'</span> <a href="javascript:;" onclick="get_menu_parent(this,\'\',\''+path+'\', \''+title+'\', \''+key+'\')" id="parent_'+id+'" parentid="0"><img src="statics/images/icon/old-edit-redo.png" width="16" height="16" alt="·µ»ØÉÏÒ»¼¶" /></a></h6><div class="ib-a menu" id="ul_'+id+'">';
 	for (i=0; i < container.length; i++)
 	{
 		content += '<a href="javascript:;" onclick="get_menu_child(\''+container[i][0]+'\',\''+container[i][1]+'\',\''+container[i][2]+'\',\''+path+'\',\''+title+'\',\''+key+'\')">'+container[i][1]+'</a>';

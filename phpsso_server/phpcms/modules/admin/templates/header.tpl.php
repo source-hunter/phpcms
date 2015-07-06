@@ -31,8 +31,8 @@ $(function(){
 
 
 /**
- * å…¨é€‰checkbox,æ³¨æ„ï¼šæ ‡è¯†checkbox idå›ºå®šä¸ºä¸ºcheck_box
- * @param string name åˆ—è¡¨checkåç§°,å¦‚ uid[]
+ * È«Ñ¡checkbox,×¢Òâ£º±êÊ¶checkbox id¹Ì¶¨ÎªÎªcheck_box
+ * @param string name ÁĞ±ícheckÃû³Æ,Èç uid[]
  */
 function selectall(name) {
 	if ($("#check_box").attr("checked")==false) {
@@ -46,7 +46,7 @@ function selectall(name) {
 	}
 }
 /**
- * å±è”½jsé”™è¯¯
+ * ÆÁ±Îjs´íÎó
  */
 function killerrors() {
 	return true;

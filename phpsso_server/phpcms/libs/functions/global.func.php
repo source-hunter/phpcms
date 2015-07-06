@@ -1,6 +1,6 @@
 <?php
 /**
- *  global.func.php å…¬å…±å‡½æ•°åº“
+ *  global.func.php ¹«¹²º¯Êı¿â
  *
  * @copyright			(C) 2005-2010 PHPCMS
  * @license				http://www.phpcms.cn/license/
@@ -8,8 +8,8 @@
  */
 
 /**
- * è¿”å›ç»addslasheså¤„ç†è¿‡çš„å­—ç¬¦ä¸²æˆ–æ•°ç»„
- * @param $string éœ€è¦å¤„ç†çš„å­—ç¬¦ä¸²æˆ–æ•°ç»„
+ * ·µ»Ø¾­addslashes´¦Àí¹ıµÄ×Ö·û´®»òÊı×é
+ * @param $string ĞèÒª´¦ÀíµÄ×Ö·û´®»òÊı×é
  * @return mixed
  */
 function new_addslashes($string) {
@@ -19,8 +19,8 @@ function new_addslashes($string) {
 }
 
 /**
- * è¿”å›ç»stripslasheså¤„ç†è¿‡çš„å­—ç¬¦ä¸²æˆ–æ•°ç»„
- * @param $string éœ€è¦å¤„ç†çš„å­—ç¬¦ä¸²æˆ–æ•°ç»„
+ * ·µ»Ø¾­stripslashes´¦Àí¹ıµÄ×Ö·û´®»òÊı×é
+ * @param $string ĞèÒª´¦ÀíµÄ×Ö·û´®»òÊı×é
  * @return mixed
  */
 function new_stripslashes($string) {
@@ -30,8 +30,8 @@ function new_stripslashes($string) {
 }
 
 /**
- * è¿”å›ç»addslasheå¤„ç†è¿‡çš„å­—ç¬¦ä¸²æˆ–æ•°ç»„
- * @param $obj éœ€è¦å¤„ç†çš„å­—ç¬¦ä¸²æˆ–æ•°ç»„
+ * ·µ»Ø¾­addslashe´¦Àí¹ıµÄ×Ö·û´®»òÊı×é
+ * @param $obj ĞèÒª´¦ÀíµÄ×Ö·û´®»òÊı×é
  * @return mixed
  */
 function new_html_special_chars($string) {
@@ -42,7 +42,7 @@ function new_html_special_chars($string) {
 	return $string;
 }
 /**
- * å®‰å…¨è¿‡æ»¤å‡½æ•°
+ * °²È«¹ıÂËº¯Êı
  *
  * @param $string
  * @return string
@@ -67,7 +67,7 @@ function safe_replace($string) {
 
 
 /**
- * è¿‡æ»¤ASCIIç ä»0-28çš„æ§åˆ¶å­—ç¬¦
+ * ¹ıÂËASCIIÂë´Ó0-28µÄ¿ØÖÆ×Ö·û
  * @return String
  */
 function trim_unsafe_control_chars($str) {
@@ -76,9 +76,9 @@ function trim_unsafe_control_chars($str) {
 }
 
 /**
- * æ ¼å¼åŒ–æ–‡æœ¬åŸŸå†…å®¹
+ * ¸ñÊ½»¯ÎÄ±¾ÓòÄÚÈİ
  *
- * @param $string æ–‡æœ¬åŸŸå†…å®¹
+ * @param $string ÎÄ±¾ÓòÄÚÈİ
  * @return string
  */
 function trim_textarea($string) {
@@ -87,10 +87,10 @@ function trim_textarea($string) {
 }
 
 /**
- * å°†æ–‡æœ¬æ ¼å¼æˆé€‚åˆjsè¾“å‡ºçš„å­—ç¬¦ä¸²
- * @param string $string éœ€è¦å¤„ç†çš„å­—ç¬¦ä¸²
- * @param intval $isjs æ˜¯å¦æ‰§è¡Œå­—ç¬¦ä¸²æ ¼å¼åŒ–ï¼Œé»˜è®¤ä¸ºæ‰§è¡Œ
- * @return string å¤„ç†åçš„å­—ç¬¦ä¸²
+ * ½«ÎÄ±¾¸ñÊ½³ÉÊÊºÏjsÊä³öµÄ×Ö·û´®
+ * @param string $string ĞèÒª´¦ÀíµÄ×Ö·û´®
+ * @param intval $isjs ÊÇ·ñÖ´ĞĞ×Ö·û´®¸ñÊ½»¯£¬Ä¬ÈÏÎªÖ´ĞĞ
+ * @return string ´¦ÀíºóµÄ×Ö·û´®
  */
 function format_js($string, $isjs = 1) {
 	$string = addslashes(str_replace(array("\r", "\n"), array('', ''), $string));
@@ -98,7 +98,7 @@ function format_js($string, $isjs = 1) {
 }
 
 /**
- * è½¬ä¹‰ javascript ä»£ç æ ‡è®°
+ * ×ªÒå javascript ´úÂë±ê¼Ç
  *
  * @param $str
  * @return mixed
@@ -111,7 +111,7 @@ function trim_script($str) {
 	return $str;
 }
 /**
- * è·å–å½“å‰é¡µé¢å®Œæ•´URLåœ°å€
+ * »ñÈ¡µ±Ç°Ò³ÃæÍêÕûURLµØÖ·
  */
 function get_url() {
 	$sys_protocal = isset($_SERVER['SERVER_PORT']) && $_SERVER['SERVER_PORT'] == '443' ? 'https://' : 'http://';
@@ -121,7 +121,7 @@ function get_url() {
 	return $sys_protocal.(isset($_SERVER['HTTP_HOST']) ? $_SERVER['HTTP_HOST'] : '').$relate_url;
 }
 /**
- * å­—ç¬¦æˆªå– æ”¯æŒUTF8/GBK
+ * ×Ö·û½ØÈ¡ Ö§³ÖUTF8/GBK
  * @param $string
  * @param $length
  * @param $dot
@@ -129,7 +129,7 @@ function get_url() {
 function str_cut($string, $length, $dot = '...') {
 	$strlen = strlen($string);
 	if($strlen <= $length) return $string;
-	$string = str_replace(array('&nbsp;', '&amp;', '&quot;', '&#039;', '&ldquo;', '&rdquo;', '&mdash;', '&lt;', '&gt;', '&middot;', '&hellip;'), array(' ', '&', '"', "'", 'â€œ', 'â€', 'â€”', '<', '>', 'Â·', 'â€¦'), $string);
+	$string = str_replace(array('&nbsp;', '&amp;', '&quot;', '&#039;', '&ldquo;', '&rdquo;', '&mdash;', '&lt;', '&gt;', '&middot;', '&hellip;'), array(' ', '&', '"', "'", '¡°', '¡±', '¡ª', '<', '>', '¡¤', '¡­'), $string);
 	$strcut = '';
 	if(strtolower(CHARSET) == 'utf-8') {
 		$n = $tn = $noc = 0;
@@ -169,9 +169,9 @@ function str_cut($string, $length, $dot = '...') {
 
 
 /**
- * è·å–è¯·æ±‚ip
+ * »ñÈ¡ÇëÇóip
  *
- * @return ipåœ°å€
+ * @return ipµØÖ·
  */
 function ip() {
 	if(getenv('HTTP_CLIENT_IP') && strcasecmp(getenv('HTTP_CLIENT_IP'), 'unknown')) {
@@ -192,9 +192,9 @@ function get_cost_time() {
 }
 
 /**
- * ç¨‹åºæ‰§è¡Œæ—¶é—´
+ * ³ÌĞòÖ´ĞĞÊ±¼ä
  *
- * @return	int	å•ä½ms
+ * @return	int	µ¥Î»ms
  */
 function execute_time() {
 	$stime = explode ( ' ', SYS_START_TIME );
@@ -203,11 +203,11 @@ function execute_time() {
 }
 
 /**
-* äº§ç”Ÿéšæœºå­—ç¬¦ä¸²
+* ²úÉúËæ»ú×Ö·û´®
 *
-* @param    int        $length  è¾“å‡ºé•¿åº¦ 
-* @param    string     $chars   å¯é€‰çš„ ï¼Œé»˜è®¤ä¸º 0123456789
-* @return   string     å­—ç¬¦ä¸²
+* @param    int        $length  Êä³ö³¤¶È 
+* @param    string     $chars   ¿ÉÑ¡µÄ £¬Ä¬ÈÏÎª 0123456789
+* @return   string     ×Ö·û´®
 */
 function random($length, $chars = '0123456789') {
 	$hash = '';
@@ -219,10 +219,10 @@ function random($length, $chars = '0123456789') {
 }
 
 /**
-* å°†å­—ç¬¦ä¸²è½¬æ¢ä¸ºæ•°ç»„
+* ½«×Ö·û´®×ª»»ÎªÊı×é
 *
-* @param	string	$data	å­—ç¬¦ä¸²
-* @return	array	è¿”å›æ•°ç»„æ ¼å¼ï¼Œå¦‚æœï¼Œdataä¸ºç©ºï¼Œåˆ™è¿”å›ç©ºæ•°ç»„
+* @param	string	$data	×Ö·û´®
+* @return	array	·µ»ØÊı×é¸ñÊ½£¬Èç¹û£¬dataÎª¿Õ£¬Ôò·µ»Ø¿ÕÊı×é
 */
 function string2array($data) {
 	if($data == '') return array();
@@ -231,11 +231,11 @@ function string2array($data) {
 }
 
 /**
-* å°†æ•°ç»„è½¬æ¢ä¸ºå­—ç¬¦ä¸²
+* ½«Êı×é×ª»»Îª×Ö·û´®
 *
-* @param	array	$data		æ•°ç»„
-* @param	bool	$isformdata	å¦‚æœä¸º0ï¼Œåˆ™ä¸ä½¿ç”¨new_stripslasheså¤„ç†ï¼Œå¯é€‰å‚æ•°ï¼Œé»˜è®¤ä¸º1
-* @return	string	è¿”å›å­—ç¬¦ä¸²ï¼Œå¦‚æœï¼Œdataä¸ºç©ºï¼Œåˆ™è¿”å›ç©º
+* @param	array	$data		Êı×é
+* @param	bool	$isformdata	Èç¹ûÎª0£¬Ôò²»Ê¹ÓÃnew_stripslashes´¦Àí£¬¿ÉÑ¡²ÎÊı£¬Ä¬ÈÏÎª1
+* @return	string	·µ»Ø×Ö·û´®£¬Èç¹û£¬dataÎª¿Õ£¬Ôò·µ»Ø¿Õ
 */
 function array2string($data, $isformdata = 1) {
 	if($data == '') return '';
@@ -244,11 +244,11 @@ function array2string($data, $isformdata = 1) {
 }
 
 /**
-* è½¬æ¢å­—èŠ‚æ•°ä¸ºå…¶ä»–å•ä½
+* ×ª»»×Ö½ÚÊıÎªÆäËûµ¥Î»
 *
 *
-* @param	string	$filesize	å­—èŠ‚å¤§å°
-* @return	string	è¿”å›å¤§å°
+* @param	string	$filesize	×Ö½Ú´óĞ¡
+* @return	string	·µ»Ø´óĞ¡
 */
 function sizecount($filesize) {
 	if ($filesize >= 1073741824) {
@@ -264,13 +264,13 @@ function sizecount($filesize) {
 }
 
 /**
-* å­—ç¬¦ä¸²åŠ å¯†ã€è§£å¯†å‡½æ•°
+* ×Ö·û´®¼ÓÃÜ¡¢½âÃÜº¯Êı
 *
 *
-* @param	string	$txt		å­—ç¬¦ä¸²
-* @param	string	$operation	ENCODEä¸ºåŠ å¯†ï¼ŒDECODEä¸ºè§£å¯†ï¼Œå¯é€‰å‚æ•°ï¼Œé»˜è®¤ä¸ºENCODEï¼Œ
-* @param	string	$key		å¯†é’¥ï¼šæ•°å­—ã€å­—æ¯ã€ä¸‹åˆ’çº¿
-* @param	string	$expiry		è¿‡æœŸæ—¶é—´
+* @param	string	$txt		×Ö·û´®
+* @param	string	$operation	ENCODEÎª¼ÓÃÜ£¬DECODEÎª½âÃÜ£¬¿ÉÑ¡²ÎÊı£¬Ä¬ÈÏÎªENCODE£¬
+* @param	string	$key		ÃÜÔ¿£ºÊı×Ö¡¢×ÖÄ¸¡¢ÏÂ»®Ïß
+* @param	string	$expiry		¹ıÆÚÊ±¼ä
 * @return	string
 */
 function sys_auth($string, $operation = 'ENCODE', $key = '', $expiry = 0) {
@@ -322,12 +322,12 @@ function sys_auth($string, $operation = 'ENCODE', $key = '', $expiry = 0) {
 }
 
 /**
-* è¯­è¨€æ–‡ä»¶å¤„ç†
+* ÓïÑÔÎÄ¼ş´¦Àí
 *
-* @param	string		$language	æ ‡ç¤ºç¬¦
-* @param	array		$pars	è½¬ä¹‰çš„æ•°ç»„,äºŒç»´æ•°ç»„ ,'key1'=>'value1','key2'=>'value2',
-* @param	string		$modules å¤šä¸ªæ¨¡å—ä¹‹é—´ç”¨åŠè§’é€—å·éš”å¼€ï¼Œå¦‚ï¼šmember,guestbook
-* @return	string		è¯­è¨€å­—ç¬¦
+* @param	string		$language	±êÊ¾·û
+* @param	array		$pars	×ªÒåµÄÊı×é,¶şÎ¬Êı×é ,'key1'=>'value1','key2'=>'value2',
+* @param	string		$modules ¶à¸öÄ£¿éÖ®¼äÓÃ°ë½Ç¶ººÅ¸ô¿ª£¬Èç£ºmember,guestbook
+* @return	string		ÓïÑÔ×Ö·û
 */
 function L($language = 'no_language',$pars = array(), $modules = '') {
 	static $LANG = array();
@@ -357,7 +357,7 @@ function L($language = 'no_language',$pars = array(), $modules = '') {
 }
 
 /**
- * æ¨¡æ¿è°ƒç”¨
+ * Ä£°åµ÷ÓÃ
  * 
  * @param $module
  * @param $template
@@ -385,13 +385,13 @@ function template($module = 'content', $template = 'index', $style = 'default') 
 }
 
 /**
- * è¾“å‡ºè‡ªå®šä¹‰é”™è¯¯
+ * Êä³ö×Ô¶¨Òå´íÎó
  * 
- * @param $errno é”™è¯¯å·
- * @param $errstr é”™è¯¯æè¿°
- * @param $errfile æŠ¥é”™æ–‡ä»¶åœ°å€
- * @param $errline é”™è¯¯è¡Œå·
- * @return string é”™è¯¯æç¤º
+ * @param $errno ´íÎóºÅ
+ * @param $errstr ´íÎóÃèÊö
+ * @param $errfile ±¨´íÎÄ¼şµØÖ·
+ * @param $errline ´íÎóĞĞºÅ
+ * @return string ´íÎóÌáÊ¾
  */
 
 function my_error_handler($errno, $errstr, $errfile, $errline) {
@@ -406,11 +406,11 @@ function my_error_handler($errno, $errstr, $errfile, $errline) {
 }
 
 /**
- * æç¤ºä¿¡æ¯é¡µé¢è·³è½¬ï¼Œè·³è½¬åœ°å€å¦‚æœä¼ å…¥æ•°ç»„ï¼Œé¡µé¢ä¼šæç¤ºå¤šä¸ªåœ°å€ä¾›ç”¨æˆ·é€‰æ‹©ï¼Œé»˜è®¤è·³è½¬åœ°å€ä¸ºæ•°ç»„çš„ç¬¬ä¸€ä¸ªå€¼ï¼Œæ—¶é—´ä¸º5ç§’ã€‚
- * showmessage('ç™»å½•æˆåŠŸ', array('é»˜è®¤è·³è½¬åœ°å€'=>'http://www.phpcms.cn'));
- * @param string $msg æç¤ºä¿¡æ¯
- * @param mixed(string/array) $url_forward è·³è½¬åœ°å€
- * @param int $ms è·³è½¬ç­‰å¾…æ—¶é—´
+ * ÌáÊ¾ĞÅÏ¢Ò³ÃæÌø×ª£¬Ìø×ªµØÖ·Èç¹û´«ÈëÊı×é£¬Ò³Ãæ»áÌáÊ¾¶à¸öµØÖ·¹©ÓÃ»§Ñ¡Ôñ£¬Ä¬ÈÏÌø×ªµØÖ·ÎªÊı×éµÄµÚÒ»¸öÖµ£¬Ê±¼äÎª5Ãë¡£
+ * showmessage('µÇÂ¼³É¹¦', array('Ä¬ÈÏÌø×ªµØÖ·'=>'http://www.phpcms.cn'));
+ * @param string $msg ÌáÊ¾ĞÅÏ¢
+ * @param mixed(string/array) $url_forward Ìø×ªµØÖ·
+ * @param int $ms Ìø×ªµÈ´ıÊ±¼ä
  */
 function showmessage($msg, $url_forward = 'goback', $ms = 1250, $dialog = '') {
 	if(defined('IN_ADMIN')) {
@@ -422,10 +422,10 @@ function showmessage($msg, $url_forward = 'goback', $ms = 1250, $dialog = '') {
 }
 
 /**
- * æŸ¥è¯¢å­—ç¬¦æ˜¯å¦å­˜åœ¨äºæŸå­—ç¬¦ä¸²
+ * ²éÑ¯×Ö·ûÊÇ·ñ´æÔÚÓÚÄ³×Ö·û´®
  * 
- * @param $haystack å­—ç¬¦ä¸²
- * @param $needle è¦æŸ¥æ‰¾çš„å­—ç¬¦
+ * @param $haystack ×Ö·û´®
+ * @param $needle Òª²éÕÒµÄ×Ö·û
  * @return bool
  */
 function str_exists($haystack, $needle)
@@ -434,19 +434,19 @@ function str_exists($haystack, $needle)
 }
 
 /**
- * å–å¾—æ–‡ä»¶æ‰©å±•
+ * È¡µÃÎÄ¼şÀ©Õ¹
  * 
- * @param $filename æ–‡ä»¶å
- * @return æ‰©å±•å
+ * @param $filename ÎÄ¼şÃû
+ * @return À©Õ¹Ãû
  */
 function fileext($filename) {
 	return strtolower(trim(substr(strrchr($filename, '.'), 1, 10)));
 }
 
 /**
- * åŠ è½½æ¨¡æ¿æ ‡ç­¾ç¼“å­˜
- * @param string $name ç¼“å­˜å
- * @param integer $times ç¼“å­˜æ—¶é—´
+ * ¼ÓÔØÄ£°å±êÇ©»º´æ
+ * @param string $name »º´æÃû
+ * @param integer $times »º´æÊ±¼ä
  */
 function tpl_cache($name,$times = 0) {
 	$filepath = 'tpl_data';
@@ -459,13 +459,13 @@ function tpl_cache($name,$times = 0) {
 }
 
 /**
- * å†™å…¥ç¼“å­˜ï¼Œé»˜è®¤ä¸ºæ–‡ä»¶ç¼“å­˜ï¼Œä¸åŠ è½½ç¼“å­˜é…ç½®ã€‚
- * @param $name ç¼“å­˜åç§°
- * @param $data ç¼“å­˜æ•°æ®
- * @param $filepath æ•°æ®è·¯å¾„ï¼ˆæ¨¡å—åç§°ï¼‰ caches/cache_$filepath/
- * @param $type ç¼“å­˜ç±»å‹[file,memcache,apc]
- * @param $config é…ç½®åç§°
- * @param $timeout è¿‡æœŸæ—¶é—´
+ * Ğ´Èë»º´æ£¬Ä¬ÈÏÎªÎÄ¼ş»º´æ£¬²»¼ÓÔØ»º´æÅäÖÃ¡£
+ * @param $name »º´æÃû³Æ
+ * @param $data »º´æÊı¾İ
+ * @param $filepath Êı¾İÂ·¾¶£¨Ä£¿éÃû³Æ£© caches/cache_$filepath/
+ * @param $type »º´æÀàĞÍ[file,memcache,apc]
+ * @param $config ÅäÖÃÃû³Æ
+ * @param $timeout ¹ıÆÚÊ±¼ä
  */
 function setcache($name, $data, $filepath='', $type='file', $config='', $timeout='') {
 	pc_base::load_sys_class('cache_factory','',0);
@@ -480,10 +480,10 @@ function setcache($name, $data, $filepath='', $type='file', $config='', $timeout
 }
 
 /**
- * è¯»å–ç¼“å­˜ï¼Œé»˜è®¤ä¸ºæ–‡ä»¶ç¼“å­˜ï¼Œä¸åŠ è½½ç¼“å­˜é…ç½®ã€‚
- * @param string $name ç¼“å­˜åç§°
- * @param $filepath æ•°æ®è·¯å¾„ï¼ˆæ¨¡å—åç§°ï¼‰ caches/cache_$filepath/
- * @param string $config é…ç½®åç§°
+ * ¶ÁÈ¡»º´æ£¬Ä¬ÈÏÎªÎÄ¼ş»º´æ£¬²»¼ÓÔØ»º´æÅäÖÃ¡£
+ * @param string $name »º´æÃû³Æ
+ * @param $filepath Êı¾İÂ·¾¶£¨Ä£¿éÃû³Æ£© caches/cache_$filepath/
+ * @param string $config ÅäÖÃÃû³Æ
  */
 function getcache($name, $filepath='', $type='file', $config='') {
 	pc_base::load_sys_class('cache_factory','',0);
@@ -497,11 +497,11 @@ function getcache($name, $filepath='', $type='file', $config='') {
 }
 
 /**
- * åˆ é™¤ç¼“å­˜ï¼Œé»˜è®¤ä¸ºæ–‡ä»¶ç¼“å­˜ï¼Œä¸åŠ è½½ç¼“å­˜é…ç½®ã€‚
- * @param $name ç¼“å­˜åç§°
- * @param $filepath æ•°æ®è·¯å¾„ï¼ˆæ¨¡å—åç§°ï¼‰ caches/cache_$filepath/
- * @param $type ç¼“å­˜ç±»å‹[file,memcache,apc]
- * @param $config é…ç½®åç§°
+ * É¾³ı»º´æ£¬Ä¬ÈÏÎªÎÄ¼ş»º´æ£¬²»¼ÓÔØ»º´æÅäÖÃ¡£
+ * @param $name »º´æÃû³Æ
+ * @param $filepath Êı¾İÂ·¾¶£¨Ä£¿éÃû³Æ£© caches/cache_$filepath/
+ * @param $type »º´æÀàĞÍ[file,memcache,apc]
+ * @param $config ÅäÖÃÃû³Æ
  */
 function delcache($name, $filepath='', $type='file', $config='') {
 	pc_base::load_sys_class('cache_factory','',0);
@@ -515,10 +515,10 @@ function delcache($name, $filepath='', $type='file', $config='') {
 }
 
 /**
- * è¯»å–ç¼“å­˜ï¼Œé»˜è®¤ä¸ºæ–‡ä»¶ç¼“å­˜ï¼Œä¸åŠ è½½ç¼“å­˜é…ç½®ã€‚
- * @param string $name ç¼“å­˜åç§°
- * @param $filepath æ•°æ®è·¯å¾„ï¼ˆæ¨¡å—åç§°ï¼‰ caches/cache_$filepath/
- * @param string $config é…ç½®åç§°
+ * ¶ÁÈ¡»º´æ£¬Ä¬ÈÏÎªÎÄ¼ş»º´æ£¬²»¼ÓÔØ»º´æÅäÖÃ¡£
+ * @param string $name »º´æÃû³Æ
+ * @param $filepath Êı¾İÂ·¾¶£¨Ä£¿éÃû³Æ£© caches/cache_$filepath/
+ * @param string $config ÅäÖÃÃû³Æ
  */
 function getcacheinfo($name, $filepath='', $type='file', $config='') {
 	pc_base::load_sys_class('cache_factory');
@@ -543,10 +543,10 @@ function url($url, $isabs = 0) {
 }
 
 /**
- * ç”Ÿæˆsqlè¯­å¥ï¼Œå¦‚æœä¼ å…¥$in_cloumn ç”Ÿæˆæ ¼å¼ä¸º IN('a', 'b', 'c')
- * @param $data æ¡ä»¶æ•°ç»„æˆ–è€…å­—ç¬¦ä¸²
- * @param $front è¿æ¥ç¬¦
- * @param $in_column å­—æ®µåç§°
+ * Éú³ÉsqlÓï¾ä£¬Èç¹û´«Èë$in_cloumn Éú³É¸ñÊ½Îª IN('a', 'b', 'c')
+ * @param $data Ìõ¼şÊı×é»òÕß×Ö·û´®
+ * @param $front Á¬½Ó·û
+ * @param $in_column ×Ö¶ÎÃû³Æ
  * @return string
  */
 function to_sqls($data, $front = ' AND ', $in_column = false) {
@@ -571,14 +571,14 @@ function to_sqls($data, $front = ' AND ', $in_column = false) {
 }
 
 /**
- * åˆ†é¡µå‡½æ•°
+ * ·ÖÒ³º¯Êı
  * 
- * @param $num ä¿¡æ¯æ€»æ•°
- * @param $curr_page å½“å‰åˆ†é¡µ
- * @param $perpage æ¯é¡µæ˜¾ç¤ºæ•°
- * @param $urlrule URLè§„åˆ™
- * @param $array éœ€è¦ä¼ é€’çš„æ•°ç»„ï¼Œç”¨äºå¢åŠ é¢å¤–çš„æ–¹æ³•
- * @return åˆ†é¡µ
+ * @param $num ĞÅÏ¢×ÜÊı
+ * @param $curr_page µ±Ç°·ÖÒ³
+ * @param $perpage Ã¿Ò³ÏÔÊ¾Êı
+ * @param $urlrule URL¹æÔò
+ * @param $array ĞèÒª´«µİµÄÊı×é£¬ÓÃÓÚÔö¼Ó¶îÍâµÄ·½·¨
+ * @return ·ÖÒ³
  */
 function pages($num, $curr_page, $perpage = 20, $urlrule = '', $array = array()) {
 	if($urlrule == '') $urlrule = url_par('page={$page}');
@@ -637,12 +637,12 @@ function pages($num, $curr_page, $perpage = 20, $urlrule = '', $array = array())
 }
 
 /**
- * è¿”å›åˆ†é¡µè·¯å¾„
+ * ·µ»Ø·ÖÒ³Â·¾¶
  * 
- * @param $urlrule åˆ†é¡µè§„åˆ™
- * @param $page å½“å‰é¡µ
- * @param $array éœ€è¦ä¼ é€’çš„æ•°ç»„ï¼Œç”¨äºå¢åŠ é¢å¤–çš„æ–¹æ³•
- * @return å®Œæ•´çš„URLè·¯å¾„
+ * @param $urlrule ·ÖÒ³¹æÔò
+ * @param $page µ±Ç°Ò³
+ * @param $array ĞèÒª´«µİµÄÊı×é£¬ÓÃÓÚÔö¼Ó¶îÍâµÄ·½·¨
+ * @return ÍêÕûµÄURLÂ·¾¶
  */
 function pageurl($urlrule, $page, $array = array()) {
 	if(strpos($urlrule, '#')) {
@@ -660,10 +660,10 @@ function pageurl($urlrule, $page, $array = array()) {
 }
 
 /**
- * URLè·¯å¾„è§£æï¼Œpages å‡½æ•°çš„è¾…åŠ©å‡½æ•°
+ * URLÂ·¾¶½âÎö£¬pages º¯ÊıµÄ¸¨Öúº¯Êı
  *
- * @param $par ä¼ å…¥éœ€è¦è§£æçš„å˜é‡ é»˜è®¤ä¸ºï¼Œpage={$page}
- * @param $url URLåœ°å€
+ * @param $par ´«ÈëĞèÒª½âÎöµÄ±äÁ¿ Ä¬ÈÏÎª£¬page={$page}
+ * @param $url URLµØÖ·
  * @return URL
  */
 function url_par($par, $url = '') {
@@ -685,7 +685,7 @@ function url_par($par, $url = '') {
 }
 
 /**
- * åˆ¤æ–­emailæ ¼å¼æ˜¯å¦æ­£ç¡®
+ * ÅĞ¶Ïemail¸ñÊ½ÊÇ·ñÕıÈ·
  * @param $email
  */
 function is_email($email) {
@@ -693,7 +693,7 @@ function is_email($email) {
 }
 
 /**
- * iconv ç¼–è¾‘è½¬æ¢
+ * iconv ±à¼­×ª»»
  */
 if (!function_exists('iconv')) {
 	function iconv($in_charset, $out_charset, $str) {
@@ -718,10 +718,10 @@ if (!function_exists('iconv')) {
 }
 
 /**
- * ä»£ç å¹¿å‘Šå±•ç¤ºå‡½æ•°
- * @param intval $siteid æ‰€å±ç«™ç‚¹
- * @param intval $id å¹¿å‘ŠID
- * @return è¿”å›å¹¿å‘Šä»£ç 
+ * ´úÂë¹ã¸æÕ¹Ê¾º¯Êı
+ * @param intval $siteid ËùÊôÕ¾µã
+ * @param intval $id ¹ã¸æID
+ * @return ·µ»Ø¹ã¸æ´úÂë
  */
 function show_ad($siteid, $id) {
 	$siteid = intval($siteid);
@@ -738,7 +738,7 @@ function show_ad($siteid, $id) {
 }
 
 /**
- * è·å–å½“å‰çš„ç«™ç‚¹ID
+ * »ñÈ¡µ±Ç°µÄÕ¾µãID
  */
 function get_siteid() {
 	static $siteid;
@@ -760,7 +760,7 @@ function get_siteid() {
 }
 
 /**
- * è°ƒç”¨å…³è”èœå•
+ * µ÷ÓÃ¹ØÁª²Ëµ¥
  * @param $linkageid
  * @param $id
  * @param $defaultvalue
@@ -802,7 +802,7 @@ function menu_linkage($linkageid = 0, $id = 'linkid', $defaultvalue = 0) {
 }
 
 /**
- * åˆ¤æ–­å­—ç¬¦ä¸²æ˜¯å¦ä¸ºutf8ç¼–ç ï¼Œè‹±æ–‡å’ŒåŠè§’å­—ç¬¦è¿”å›ture
+ * ÅĞ¶Ï×Ö·û´®ÊÇ·ñÎªutf8±àÂë£¬Ó¢ÎÄºÍ°ë½Ç×Ö·û·µ»Øture
  * @param $string
  * @return bool
  */
@@ -820,7 +820,7 @@ function is_utf8($string) {
 }
 
 /**
- * è·å–UCenteræ•°æ®åº“é…ç½®
+ * »ñÈ¡UCenterÊı¾İ¿âÅäÖÃ
  */
 function get_uc_database() {
 	$config = pc_base::load_config('system');

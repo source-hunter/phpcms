@@ -3,23 +3,23 @@
 <link href="{CSS_PATH}vms/vms.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="{JS_PATH}cookie.js"></script>
 <div class="clr ct show_pg">
-	<div class="crumbs"><a href="{APP_PATH}">é¦–é¡µ</a>  <span id="play_title"> > æˆ‘çš„æ’­æ”¾åˆ—è¡¨ > {$title}</span></div>
+	<div class="crumbs"><a href="{APP_PATH}">Ê×Ò³</a>  <span id="play_title"> > ÎÒµÄ²¥·ÅÁĞ±í > {$title}</span></div>
 	<div class="ad">
-	<a href="http://www.phpcms.cn" title="éšæœºå¹¿å‘Šä½ï¼Œæ¬¢è¿è®¿é—®PHPCMS.CN"><img src="http://www.phpcms.cn/statics/images/video/ad960x40.gif"></a>
+	<a href="http://www.phpcms.cn" title="Ëæ»ú¹ã¸æÎ»£¬»¶Ó­·ÃÎÊPHPCMS.CN"><img src="http://www.phpcms.cn/statics/images/video/ad960x40.gif"></a>
 	
 	</div>
     <div class="lty1">
     	<div class="clr">
     <div class="zj"><h5>{$title}</h5></div>
     <div class="clr xxg">
-        <div class="clr">æ€»æ’­æ”¾ï¼š<span id="hits"></span>  <span>|</span>  æ›´æ–°æ—¶é—´ï¼š{$inputtime}</div>
+        <div class="clr">×Ü²¥·Å£º<span id="hits"></span>  <span>|</span>  ¸üĞÂÊ±¼ä£º{$inputtime}</div>
     </div>
     </div>
     	<div class="plbox clr"> 
 {if $video_info[vid]!=""}
 {player_code('video_player',$video_info['channelid'],$video_info['vid'],600,500)}
 {else}
-éå¸¸æŠ±æ­‰ï¼Œè¯¥è§†é¢‘ä¸å­˜åœ¨ï¼Œæˆ–è€…å°šæ²¡æœ‰é€šè¿‡å®¡æ ¸ï¼
+·Ç³£±§Ç¸£¬¸ÃÊÓÆµ²»´æÔÚ£¬»òÕßÉĞÃ»ÓĞÍ¨¹ıÉóºË£¡
 {/if}
 		
 		
@@ -27,7 +27,7 @@
         <div class="sr">
         	<ul class="srli">
                <li>
-                 	<strong>åˆ†äº«è§†é¢‘ï¼š</strong><a href="#" title="text" class=""></a>
+                 	<strong>·ÖÏíÊÓÆµ£º</strong><a href="#" title="text" class=""></a>
                     <div class="clr sr_tag wp">
                      <!-- Baidu Button BEGIN -->
     <div id="bdshare" class="bdshare_b" style="line-height: 12px;"><img src="http://share.baidu.com/static/images/type-button-5.jpg" />
@@ -42,8 +42,8 @@
                    </div>
                 </li>
                 <li>
-                <strong>åµŒå…¥ä»£ç ï¼š</strong>
-                <input name="html" id="html" type="text" size="50" class="fz_ipt" style="margin-left:2px;" ><input type="button" class="fz_btn" value="å¤åˆ¶" onclick="copy_text(html);">
+                <strong>Ç¶Èë´úÂë£º</strong>
+                <input name="html" id="html" type="text" size="50" class="fz_ipt" style="margin-left:2px;" ><input type="button" class="fz_btn" value="¸´ÖÆ" onclick="copy_text(html);">
 				</li> 
             </ul>
         </div>
@@ -59,11 +59,11 @@
       {if $allow_comment && module_exists('comment')}
       <iframe src="{APP_PATH}index.php?m=comment&c=index&a=init&commentid={id_encode("content_$catid",$id,$siteid)}&iframe=1" width="100%" height="100%" id="comment_iframe" frameborder="0" scrolling="no"></iframe>
       <div class="box">
-        		<h5>è¯„è®ºæ’è¡Œ</h5>
+        		<h5>ÆÀÂÛÅÅĞĞ</h5>
 				 {pc:comment action="bang" siteid="$siteid" cache="3600"}
             	<ul class="content list blue f14 row-2">
 				{loop $data $r}
-                	<li>Â·<a href="{$r[url]}" target="_blank">{str_cut($r[title], 40)}</a><span>({$r[total]})</span></li>
+                	<li>¡¤<a href="{$r[url]}" target="_blank">{str_cut($r[title], 40)}</a><span>({$r[total]})</span></li>
 					{/loop}
                 </ul>
 				{/pc}
@@ -75,8 +75,8 @@
 	
 	  <div class="box0">
     	<div class="nav">
-			<span class="more" onclick="delcookie('player_list');alert('å·²ç»æ¸…ç©ºæ’­æ”¾åˆ—è¡¨ï¼');javascript:window.location.href='{APP_PATH}';"><label for="lb">æ¸…ç©ºæ’­æ”¾åˆ—è¡¨</label></span>
-             <h5>ä¸Šå‡æœ€å¿«çš„è§†é¢‘</h5>
+			<span class="more" onclick="delcookie('player_list');alert('ÒÑ¾­Çå¿Õ²¥·ÅÁĞ±í£¡');javascript:window.location.href='{APP_PATH}';"><label for="lb">Çå¿Õ²¥·ÅÁĞ±í</label></span>
+             <h5>ÉÏÉı×î¿ìµÄÊÓÆµ</h5>
         </div>
         <div class="bct">
         	<div class="lbbox">
@@ -91,11 +91,11 @@
 	
     <div class="ad"> 
 	
-	<a href="http://www.phpcms.cn" title="éšæœºå¹¿å‘Šä½ï¼Œæ¬¢è¿è®¿é—®PHPCMS.CN"><img src="http://www.phpcms.cn/statics/images/video/ad318x64.gif"></a>
+	<a href="http://www.phpcms.cn" title="Ëæ»ú¹ã¸æÎ»£¬»¶Ó­·ÃÎÊPHPCMS.CN"><img src="http://www.phpcms.cn/statics/images/video/ad318x64.gif"></a>
 	
 	</div>
      <div class="box0">
-    	<div class="nav"><h5>ç²¾å½©æ¨è</h5></div>
+    	<div class="nav"><h5>¾«²ÊÍÆ¼ö</h5></div>
         <div class="bct">
         	<ul class="c1 c2">
 			{pc:content  action="position" posid="18" catid="$catid" order="listorder DESC" num="6" return="info"}
@@ -104,7 +104,7 @@
                     <div class="clr h77">
                       <a href="{$v[url]}" target="_blank" title="{$v[title]}"><img src="{$v[thumb]}" width="104" height="65" class="l"></a>
                       <div class="lh21"><a href="{$v[url]}" title="{$v[title]}" target="_blank">{str_cut($v[title],22,false)}</a></div>
-                      <div class="sz"><span class="shows">æ’­æ”¾æ¬¡æ•°ï¼š{get_views('c-'.$CATEGORYS[$v[catid]][modelid].'-'.$v['id'])}</span><span>è¯„è®ºï¼š{get_comments(id_encode("content_$v[catid]",$v[id],$siteid))}</span></div>
+                      <div class="sz"><span class="shows">²¥·Å´ÎÊı£º{get_views('c-'.$CATEGORYS[$v[catid]][modelid].'-'.$v['id'])}</span><span>ÆÀÂÛ£º{get_comments(id_encode("content_$v[catid]",$v[id],$siteid))}</span></div>
                     </div>
                 </li>  
 			{/loop}
@@ -126,12 +126,12 @@ $(function(){
 	return false;
 })
 
-//è®¾ç½®COOKIE
+//ÉèÖÃCOOKIE
 function set_cookie(id,title){
 	setcookie('now',id);
 }	
 
-//åˆ‡æ¢åœ°å€ playReady, playFinish.
+//ÇĞ»»µØÖ· playReady, playFinish.
 function playReady() { 
 }
 
@@ -143,15 +143,15 @@ function playFinish(id,vid) {
 		var player=new Array();
 		list_array = player_list.split("|"); 
 		if(now==null){
-			alert('now æ˜¯ç©ºçš„');exit;
+			alert('now ÊÇ¿ÕµÄ');exit;
 			setcookie('now','0');
-			player=list_array[0].split("@");//url@æ ‡é¢˜@vid
+			player=list_array[0].split("@");//url@±êÌâ@vid
  			document.getElementById('video_player').playVideoByVid(player[2]);
 		}else{
  			var new_now = parseInt(now)+1;
       		if(typeof(list_array[new_now])=="undefined"){
 				setcookie('now','0');
-				alert('æ’­å®Œäº†');
+				alert('²¥ÍêÁË');
 				return false;
 			} 
  			setcookie('now',new_now);
@@ -161,7 +161,7 @@ function playFinish(id,vid) {
  	}
  }
 
-// æ•°ç»„å¾ªç¯ 
+// Êı×éÑ­»· 
 function show_playerlist() {
 	var player_list = getcookie('player_list');
 	var now = getcookie('now');
@@ -170,7 +170,7 @@ function show_playerlist() {
 		var list_array=new Array();
 		var player=new Array();
 		list_array = player_list.split("|");
- 		for(var i=0;i<list_array.length;i++) {//è°ƒæ¡è®°å½•å¾ªç¯
+ 		for(var i=0;i<list_array.length;i++) {//µ÷Ìõ¼ÇÂ¼Ñ­»·
 			player=list_array[i].split("@"); 
 			
 			if('{$contentid}'==player[2]){
@@ -181,7 +181,7 @@ function show_playerlist() {
 			content +=("<li class='"+ac+"' id='playid"+i+"'><a href='"+player[0]+"' onclick='set_cookie("+i+");' id='url"+i+"' title='"+player[1]+"'>"+player[1].substring(0,24)+"</a></li>");
 		}
  	}else{
-		content = "<li>æ²¡æœ‰æ’­æ”¾åˆ—è¡¨</li>";
+		content = "<li>Ã»ÓĞ²¥·ÅÁĞ±í</li>";
 	}
 	$('#select_video').html(content);
 }

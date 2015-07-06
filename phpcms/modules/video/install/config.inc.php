@@ -2,8 +2,8 @@
 defined('IN_PHPCMS') or exit('Access Denied');
 defined('INSTALL') or exit('Access Denied');
 $module = 'video';
-$modulename = 'è§†é¢‘åº“ç®¡ç†';
-$introduce = 'è§†é¢‘åº“ç®¡ç†';
+$modulename = 'ÊÓÆµ¿â¹ÜÀí';
+$introduce = 'ÊÓÆµ¿â¹ÜÀí';
 $author = 'phpcms team';
 $authorsite = 'http://www.phpcms.cn';
 $authoremail = 'phpcms@snda.com';

@@ -1,10 +1,10 @@
 <?php
 /**
- * ç®¡ç†å‘˜åå°ä¼šå‘˜æ“ä½œç±»
+ * ¹ÜÀíÔ±ºóÌ¨»áÔ±²Ù×÷Àà
  */
 
 defined('IN_PHPCMS') or exit('No permission resources.');
-//æ¨¡å‹ç¼“å­˜è·¯å¾„
+//Ä£ĞÍ»º´æÂ·¾¶
 define('CACHE_MODEL_PATH',CACHE_PATH.'caches_model'.DIRECTORY_SEPARATOR.'caches_data'.DIRECTORY_SEPARATOR);
 
 pc_base::load_app_class('admin', 'admin', 0);
@@ -30,7 +30,7 @@ class member extends admin {
 		pc_base::load_sys_class('form', '', 0);
 		$this->verify_db = pc_base::load_model('member_verify_model');
 		
-		//æœç´¢æ¡†
+		//ËÑË÷¿ò
 		$keyword = isset($_GET['keyword']) ? $_GET['keyword'] : '';
 		$type = isset($_GET['type']) ? $_GET['type'] : '';
 		$groupid = isset($_GET['groupid']) ? $_GET['groupid'] : '';
@@ -52,17 +52,17 @@ class member extends admin {
 	}
 	
 	/**
-	 * ä¼šå‘˜æœç´¢
+	 * »áÔ±ËÑË÷
 	 */
 	function search() {
 
-		//æœç´¢æ¡†
+		//ËÑË÷¿ò
 		$keyword = isset($_GET['keyword']) ? $_GET['keyword'] : '';
 		$type = isset($_GET['type']) ? $_GET['type'] : '';
 		$groupid = isset($_GET['groupid']) ? $_GET['groupid'] : '';
 		$modelid = isset($_GET['modelid']) ? $_GET['modelid'] : '';
 		
-		//ç«™ç‚¹ä¿¡æ¯
+		//Õ¾µãĞÅÏ¢
 		$sitelistarr = getcache('sitelist', 'commons');
 		$siteid = isset($_GET['siteid']) ? intval($_GET['siteid']) : '0';
 		foreach ($sitelistarr as $k=>$v) {
@@ -81,7 +81,7 @@ class member extends admin {
 		foreach($grouplist as $k=>$v) {
 			$grouplist[$k] = $v['name'];
 		}
-		//ä¼šå‘˜æ‰€å±æ¨¡å‹		
+		//»áÔ±ËùÊôÄ£ĞÍ		
 		$modellistarr = getcache('member_model', 'commons');
 		foreach ($modellistarr as $k=>$v) {
 			$modellist[$k] = $v['name'];
@@ -89,10 +89,10 @@ class member extends admin {
 				
 		if (isset($_GET['search'])) {
 			
-			//é»˜è®¤é€‰å–ä¸€ä¸ªæœˆå†…çš„ç”¨æˆ·ï¼Œé˜²æ­¢ç”¨æˆ·é‡è¿‡å¤§ç»™æ•°æ®é€ æˆç¾éš¾
+			//Ä¬ÈÏÑ¡È¡Ò»¸öÔÂÄÚµÄÓÃ»§£¬·ÀÖ¹ÓÃ»§Á¿¹ı´ó¸øÊı¾İÔì³ÉÔÖÄÑ
 			$where_start_time = strtotime($start_time) ? strtotime($start_time) : 0;
 			$where_end_time = strtotime($end_time) + 86400;
-			//å¼€å§‹æ—¶é—´å¤§äºç»“æŸæ—¶é—´ï¼Œç½®æ¢å˜é‡
+			//¿ªÊ¼Ê±¼ä´óÓÚ½áÊøÊ±¼ä£¬ÖÃ»»±äÁ¿
 			if($where_start_time > $where_end_time) {
 				$tmp = $where_start_time;
 				$where_start_time = $where_end_time;
@@ -107,7 +107,7 @@ class member extends admin {
 			
 			$where = '';
 			
-			//å¦‚æœæ˜¯è¶…çº§ç®¡ç†å‘˜è§’è‰²ï¼Œæ˜¾ç¤ºæ‰€æœ‰ç”¨æˆ·ï¼Œå¦åˆ™æ˜¾ç¤ºå½“å‰ç«™ç‚¹ç”¨æˆ·
+			//Èç¹ûÊÇ³¬¼¶¹ÜÀíÔ±½ÇÉ«£¬ÏÔÊ¾ËùÓĞÓÃ»§£¬·ñÔòÏÔÊ¾µ±Ç°Õ¾µãÓÃ»§
 			if($_SESSION['roleid'] == 1) {
 				if(!empty($siteid)) {
 					$where .= "`siteid` = '$siteid' AND ";
@@ -131,7 +131,7 @@ class member extends admin {
 			}	
 			$where .= "`regdate` BETWEEN '$where_start_time' AND '$where_end_time' AND ";
 
-			//èµ„é‡‘èŒƒå›´
+			//×Ê½ğ·¶Î§
 			if($amount_from) {
 				if($amount_to) {
 					if($amount_from > $amount_to) {
@@ -145,7 +145,7 @@ class member extends admin {
 					$where .= "`amount` > '$amount_from' AND ";
 				}
 			}
-			//ç‚¹æ•°èŒƒå›´
+			//µãÊı·¶Î§
 			if($point_from) {
 				if($point_to) {
 					if($point_from > $point_to) {
@@ -201,7 +201,7 @@ class member extends admin {
 		$groupid = isset($_GET['groupid']) ? intval($_GET['groupid']) : '';
 		$page = isset($_GET['page']) ? intval($_GET['page']) : 1;
 		
-		//å¦‚æœæ˜¯è¶…çº§ç®¡ç†å‘˜è§’è‰²ï¼Œæ˜¾ç¤ºæ‰€æœ‰ç”¨æˆ·ï¼Œå¦åˆ™æ˜¾ç¤ºå½“å‰ç«™ç‚¹ç”¨æˆ·
+		//Èç¹ûÊÇ³¬¼¶¹ÜÀíÔ±½ÇÉ«£¬ÏÔÊ¾ËùÓĞÓÃ»§£¬·ñÔòÏÔÊ¾µ±Ç°Õ¾µãÓÃ»§
 		if($_SESSION['roleid'] == 1) {
 			$where = '';
 		} else {
@@ -212,7 +212,7 @@ class member extends admin {
 		$memberlist_arr = $this->db->listinfo($where, 'userid DESC', $page, 15);
 		$pages = $this->db->pages;
 
-		//æœç´¢æ¡†
+		//ËÑË÷¿ò
 		$keyword = isset($_GET['keyword']) ? $_GET['keyword'] : '';
 		$type = isset($_GET['type']) ? $_GET['type'] : '';
 		$start_time = isset($_GET['start_time']) ? $_GET['start_time'] : '';
@@ -222,13 +222,13 @@ class member extends admin {
 			$grouplist[$k] = $v['name'];
 		}
 		
-		//ä¼šå‘˜æ‰€å±æ¨¡å‹		
+		//»áÔ±ËùÊôÄ£ĞÍ		
 		$modellistarr = getcache('member_model', 'commons');
 		foreach ($modellistarr as $k=>$v) {
 			$modellist[$k] = $v['name'];
 		}
 		
-		//æŸ¥è¯¢ä¼šå‘˜å¤´åƒ
+		//²éÑ¯»áÔ±Í·Ïñ
 		foreach($memberlist_arr as $k=>$v) {
 			$memberlist[$k] = $v;
 			$memberlist[$k]['avatar'] = get_memberavatar($v['phpssouid']);
@@ -260,7 +260,7 @@ class member extends admin {
 			if($status > 0) {
 				unset($info[pwdconfirm]);
 				$info['phpssouid'] = $status;
-				//å–phpssoå¯†ç éšæœºæ•°
+				//È¡phpssoÃÜÂëËæ»úÊı
 				$memberinfo = $this->client->ps_get_member_info($status);
 				$memberinfo = unserialize($memberinfo);
 				$info['encrypt'] = $memberinfo['random'];
@@ -281,12 +281,12 @@ class member extends admin {
 		} else {
 			$show_header = $show_scroll = true;
 			$siteid = get_siteid();
-			//ä¼šå‘˜ç»„ç¼“å­˜
+			//»áÔ±×é»º´æ
 			$group_cache = getcache('grouplist', 'member');
 			foreach($group_cache as $_key=>$_value) {
 				$grouplist[$_key] = $_value['name'];
 			}
-			//ä¼šå‘˜æ¨¡å‹ç¼“å­˜
+			//»áÔ±Ä£ĞÍ»º´æ
 			$member_model_cache = getcache('member_model', 'commons');
 			foreach($member_model_cache as $_key=>$_value) {
 				if($siteid == $_value['siteid']) {
@@ -317,18 +317,18 @@ class member extends admin {
 			$basicinfo['mobile'] = $_POST['info']['mobile'];
 			$basicinfo['overduedate'] = strtotime($_POST['info']['overduedate']);
 
-			//ä¼šå‘˜åŸºæœ¬ä¿¡æ¯
+			//»áÔ±»ù±¾ĞÅÏ¢
 			$info = $this->_checkuserinfo($basicinfo, 1);
 
-			//ä¼šå‘˜æ¨¡å‹ä¿¡æ¯
+			//»áÔ±Ä£ĞÍĞÅÏ¢
 			$modelinfo = array_diff_key($_POST['info'], $info);
-			//è¿‡æ»¤vipè¿‡æœŸæ—¶é—´
+			//¹ıÂËvip¹ıÆÚÊ±¼ä
 			unset($modelinfo['overduedate']);
 			unset($modelinfo['pwdconfirm']);
 
 			$userid = $info['userid'];
 			
-			//å¦‚æœæ˜¯è¶…çº§ç®¡ç†å‘˜è§’è‰²ï¼Œæ˜¾ç¤ºæ‰€æœ‰ç”¨æˆ·ï¼Œå¦åˆ™æ˜¾ç¤ºå½“å‰ç«™ç‚¹ç”¨æˆ·
+			//Èç¹ûÊÇ³¬¼¶¹ÜÀíÔ±½ÇÉ«£¬ÏÔÊ¾ËùÓĞÓÃ»§£¬·ñÔòÏÔÊ¾µ±Ç°Õ¾µãÓÃ»§
 			if($_SESSION['roleid'] == 1) {
 				$where = array('userid'=>$userid);
 			} else {
@@ -342,7 +342,7 @@ class member extends admin {
 				showmessage(L('user_not_exist').L('or').L('no_permission'), HTTP_REFERER);
 			}
 
-			//åˆ é™¤ç”¨æˆ·å¤´åƒ
+			//É¾³ıÓÃ»§Í·Ïñ
 			if(!empty($_POST['delavatar'])) {
 				$this->client->ps_deleteavatar($userinfo['phpssouid']);
 			}
@@ -352,7 +352,7 @@ class member extends admin {
 				unset($info['userid']);
 				unset($info['username']);
 				
-				//å¦‚æœå¯†ç ä¸ä¸ºç©ºï¼Œä¿®æ”¹ç”¨æˆ·å¯†ç ã€‚
+				//Èç¹ûÃÜÂë²»Îª¿Õ£¬ĞŞ¸ÄÓÃ»§ÃÜÂë¡£
 				if(isset($info['password']) && !empty($info['password'])) {
 					$info['password'] = password($info['password'], $userinfo['encrypt']);
 				} else {
@@ -366,7 +366,7 @@ class member extends admin {
 				$member_input = new member_input($basicinfo['modelid']);
 				$modelinfo = $member_input->get($modelinfo);
 
-				//æ›´æ–°æ¨¡å‹è¡¨ï¼Œæ–¹æ³•æ›´æ–°äº†$this->table
+				//¸üĞÂÄ£ĞÍ±í£¬·½·¨¸üĞÂÁË$this->table
 				$this->db->set_model($info['modelid']);
 				$userinfo = $this->db->get_one(array('userid'=>$userid));
 				if($userinfo) {
@@ -385,13 +385,13 @@ class member extends admin {
 			$siteid = get_siteid();
 			$userid = isset($_GET['userid']) ? $_GET['userid'] : showmessage(L('illegal_parameters'), HTTP_REFERER);
 			
-			//ä¼šå‘˜ç»„ç¼“å­˜
+			//»áÔ±×é»º´æ
 			$group_cache = getcache('grouplist', 'member');
 			foreach($group_cache as $_key=>$_value) {
 				$grouplist[$_key] = $_value['name'];
 			}
 
-			//ä¼šå‘˜æ¨¡å‹ç¼“å­˜
+			//»áÔ±Ä£ĞÍ»º´æ
 			$member_model_cache = getcache('member_model', 'commons');
 			foreach($member_model_cache as $_key=>$_value) {
 				if($siteid == $_value['siteid']) {
@@ -399,7 +399,7 @@ class member extends admin {
 				}
 			}
 			
-			//å¦‚æœæ˜¯è¶…çº§ç®¡ç†å‘˜è§’è‰²ï¼Œæ˜¾ç¤ºæ‰€æœ‰ç”¨æˆ·ï¼Œå¦åˆ™æ˜¾ç¤ºå½“å‰ç«™ç‚¹ç”¨æˆ·
+			//Èç¹ûÊÇ³¬¼¶¹ÜÀíÔ±½ÇÉ«£¬ÏÔÊ¾ËùÓĞÓÃ»§£¬·ñÔòÏÔÊ¾µ±Ç°Õ¾µãÓÃ»§
 			if($_SESSION['roleid'] == 1) {
 				$where = array('userid'=>$userid);
 			} else {
@@ -416,7 +416,7 @@ class member extends admin {
 			
 			$modelid = isset($_GET['modelid']) ? $_GET['modelid'] : $memberinfo['modelid'];
 			
-			//è·å–ä¼šå‘˜æ¨¡å‹è¡¨å•
+			//»ñÈ¡»áÔ±Ä£ĞÍ±íµ¥
 			require CACHE_MODEL_PATH.'member_form.class.php';
 			$member_form = new member_form($modelid);
 			
@@ -425,7 +425,7 @@ class member extends admin {
 			$membermodelinfo = $this->db->get_one(array('userid'=>$userid));
 			$forminfos = $forminfos_arr = $member_form->get($membermodelinfo);
 			
-			//ä¸‡èƒ½å­—æ®µè¿‡æ»¤
+			//ÍòÄÜ×Ö¶Î¹ıÂË
 			foreach($forminfos as $field=>$info) {
 				if($info['isomnipotent']) {
 					unset($forminfos[$field]);
@@ -461,7 +461,7 @@ class member extends admin {
 				}
 			}
 		}
-		//æŸ¥è¯¢ç”¨æˆ·ä¿¡æ¯
+		//²éÑ¯ÓÃ»§ĞÅÏ¢
 		$userinfo_arr = $this->db->select($where, "userid, modelid");
 		$userinfo = array();
 		if(is_array($userinfo_arr)) {
@@ -475,7 +475,7 @@ class member extends admin {
 			if($status > 0) {
 				if ($this->db->delete($where)) {
 					
-					//åˆ é™¤ç”¨æˆ·æ¨¡å‹ç”¨æˆ·èµ„æ–™
+					//É¾³ıÓÃ»§Ä£ĞÍÓÃ»§×ÊÁÏ
 					foreach($uidarr as $v) {
 						if(!empty($userinfo[$v])) {
 							$this->db->set_model($userinfo[$v]);
@@ -578,19 +578,19 @@ class member extends admin {
 		$memberinfo['avatar'] = get_memberavatar($memberinfo['phpssouid'], '', 90);
 
 		$grouplist = getcache('grouplist');
-		//ä¼šå‘˜æ¨¡å‹ç¼“å­˜
+		//»áÔ±Ä£ĞÍ»º´æ
 		$modellist = getcache('member_model', 'commons');
 
 		$modelid = !empty($_GET['modelid']) ? intval($_GET['modelid']) : $memberinfo['modelid'];
-		//ç«™ç¾¤ç¼“å­˜
+		//Õ¾Èº»º´æ
 		$sitelist =getcache('sitelist', 'commons');
 
 		$this->db->set_model($modelid);
 		$member_modelinfo = $this->db->get_one(array('userid'=>$userid));
-		//æ¨¡å‹å­—æ®µåç§°
+		//Ä£ĞÍ×Ö¶ÎÃû³Æ
 		$model_fieldinfo = getcache('model_field_'.$modelid, 'model');
 	
-		//å›¾ç‰‡å­—æ®µæ˜¾ç¤ºå›¾ç‰‡
+		//Í¼Æ¬×Ö¶ÎÏÔÊ¾Í¼Æ¬
 		foreach($model_fieldinfo as $k=>$v) {
 			if($v['formtype'] == 'image') {
 				$member_modelinfo[$k] = "<a href='.$member_modelinfo[$k].' target='_blank'><img src='.$member_modelinfo[$k].' height='40' widht='40' onerror=\"this.src='$phpsso_api_url/statics/images/member/nophoto.gif'\"></a>";
@@ -603,7 +603,7 @@ class member extends admin {
 					}
 					unset($tmp);
 				}
-			} elseif($v['formtype'] == 'box') {	//boxå­—æ®µï¼Œè·å–å­—æ®µåç§°å’Œå€¼çš„æ•°ç»„
+			} elseif($v['formtype'] == 'box') {	//box×Ö¶Î£¬»ñÈ¡×Ö¶ÎÃû³ÆºÍÖµµÄÊı×é
 				$tmp = explode("\n",$v['options']);
 				if(is_array($tmp)) {
 					foreach($tmp as $boxv) {
@@ -620,7 +620,7 @@ class member extends admin {
 					$member_modelinfo[$k] = $member_modelinfo_arr[$k];
 				}
 				unset($tmp, $tmp_key, $box_tmp, $box_tmp_arr);
-			} elseif($v['formtype'] == 'linkage') {	//å¦‚æœä¸ºè”åŠ¨èœå•
+			} elseif($v['formtype'] == 'linkage') {	//Èç¹ûÎªÁª¶¯²Ëµ¥
 				$tmp = string2array($v['setting']);
 				$tmpid = $tmp['linageid'];
 				$linkagelist = getcache($tmpid, 'linkage');
@@ -634,7 +634,7 @@ class member extends admin {
 		}
 
 		$member_fieldinfo = array();
-		//äº¤æ¢æ•°ç»„keyå€¼
+		//½»»»Êı×ékeyÖµ
 		foreach($model_fieldinfo as $v) {
 			if(!empty($member_modelinfo) && array_key_exists($v['field'], $member_modelinfo)) {
 				$tmp = $member_modelinfo[$v['field']];
@@ -650,14 +650,14 @@ class member extends admin {
 	}
 
 	/*
-	 * é€šè¿‡linkageidè·å–åå­—è·¯å¾„
+	 * Í¨¹ılinkageid»ñÈ¡Ãû×ÖÂ·¾¶
 	 */
 	private function _get_linkage_fullname($linkageid,  $linkagelist) {
 		$fullname = '';
 		if($linkagelist['data'][$linkageid]['parentid'] != 0) {
 			$fullname = $this->_get_linkage_fullname($linkagelist['data'][$linkageid]['parentid'], $linkagelist);
 		}
-		//æ‰€åœ¨åœ°åŒºåç§°
+		//ËùÔÚµØÇøÃû³Æ
 		$return = $fullname.$linkagelist['data'][$linkageid]['name'].'>';
 		return $return;
 	}
@@ -691,9 +691,9 @@ class member extends admin {
 	}
 	
 	/**
-	 * åˆå§‹åŒ–phpsso
+	 * ³õÊ¼»¯phpsso
 	 * about phpsso, include client and client configure
-	 * @return string phpsso_api_url phpssoåœ°å€
+	 * @return string phpsso_api_url phpssoµØÖ·
 	 */
 	private function _init_phpsso() {
 		pc_base::load_app_class('client', '', 0);
@@ -705,9 +705,9 @@ class member extends admin {
 	}
 	
 	/**
-	 * æ£€æŸ¥ç”¨æˆ·å
-	 * @param string $username	ç”¨æˆ·å
-	 * @return $status {-4ï¼šç”¨æˆ·åç¦æ­¢æ³¨å†Œ;-1:ç”¨æˆ·åå·²ç»å­˜åœ¨ ;1:æˆåŠŸ}
+	 * ¼ì²éÓÃ»§Ãû
+	 * @param string $username	ÓÃ»§Ãû
+	 * @return $status {-4£ºÓÃ»§Ãû½ûÖ¹×¢²á;-1:ÓÃ»§ÃûÒÑ¾­´æÔÚ ;1:³É¹¦}
 	 */
 	public function public_checkname_ajax() {
 		$username = isset($_GET['username']) && trim($_GET['username']) ? trim($_GET['username']) : exit(0);
@@ -727,21 +727,21 @@ class member extends admin {
 	}
 	
 	/**
-	 * æ£€æŸ¥é‚®ç®±
+	 * ¼ì²éÓÊÏä
 	 * @param string $email
-	 * @return $status {-1:emailå·²ç»å­˜åœ¨ ;-5:é‚®ç®±ç¦æ­¢æ³¨å†Œ;1:æˆåŠŸ}
+	 * @return $status {-1:emailÒÑ¾­´æÔÚ ;-5:ÓÊÏä½ûÖ¹×¢²á;1:³É¹¦}
 	 */
 	public function public_checkemail_ajax() {
 		$email = isset($_GET['email']) && trim($_GET['email']) ? trim($_GET['email']) : exit(0);
 		
 		$status = $this->client->ps_checkemail($email);
-		if($status == -5) {	//ç¦æ­¢æ³¨å†Œ
+		if($status == -5) {	//½ûÖ¹×¢²á
 			exit('0');
-		} elseif($status == -1) {	//ç”¨æˆ·åå·²å­˜åœ¨ï¼Œä½†æ˜¯ä¿®æ”¹ç”¨æˆ·çš„æ—¶å€™éœ€è¦åˆ¤æ–­é‚®ç®±æ˜¯å¦æ˜¯å½“å‰ç”¨æˆ·çš„
-			if(isset($_GET['phpssouid'])) {	//ä¿®æ”¹ç”¨æˆ·ä¼ å…¥phpssouid
+		} elseif($status == -1) {	//ÓÃ»§ÃûÒÑ´æÔÚ£¬µ«ÊÇĞŞ¸ÄÓÃ»§µÄÊ±ºòĞèÒªÅĞ¶ÏÓÊÏäÊÇ·ñÊÇµ±Ç°ÓÃ»§µÄ
+			if(isset($_GET['phpssouid'])) {	//ĞŞ¸ÄÓÃ»§´«Èëphpssouid
 				$status = $this->client->ps_get_member_info($email, 3);
 				if($status) {
-					$status = unserialize($status);	//æ¥å£è¿”å›åºåˆ—åŒ–ï¼Œè¿›è¡Œåˆ¤æ–­
+					$status = unserialize($status);	//½Ó¿Ú·µ»ØĞòÁĞ»¯£¬½øĞĞÅĞ¶Ï
 					if (isset($status['uid']) && $status['uid'] == intval($_GET['phpssouid'])) {
 						exit('1');
 					} else {

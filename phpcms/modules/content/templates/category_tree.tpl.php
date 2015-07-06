@@ -53,7 +53,7 @@ function open_list(obj) {
 		<a href="#"></a>
 		<a href="#"></a>
 		</span>
-		<a href="#"><img src="<?php echo IMG_PATH;?>minus.gif" /> <img src="<?php echo IMG_PATH;?>application_side_expand.png" /> å±•å¼€/æ”¶ç¼©</a>
+		<a href="#"><img src="<?php echo IMG_PATH;?>minus.gif" /> <img src="<?php echo IMG_PATH;?>application_side_expand.png" /> Õ¹¿ª/ÊÕËõ</a>
 </div>
 <?php
  if($_GET['from']=='block') {

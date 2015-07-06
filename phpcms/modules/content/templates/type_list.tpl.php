@@ -43,7 +43,7 @@ foreach($datas as $r) {
 window.top.$('#display_center_id').css('display','none');
 function edit(id, name) {
 	window.top.art.dialog({id:'edit'}).close();
-	window.top.art.dialog({title:'<?php echo L('edit_type');?>ã€Š'+name+'ã€‹',id:'edit',iframe:'?m=content&c=type_manage&a=edit&typeid='+id,width:'780',height:'500'}, function(){var d = window.top.art.dialog({id:'edit'}).data.iframe;d.document.getElementById('dosubmit').click();return false;}, function(){window.top.art.dialog({id:'edit'}).close()});
+	window.top.art.dialog({title:'<?php echo L('edit_type');?>¡¶'+name+'¡·',id:'edit',iframe:'?m=content&c=type_manage&a=edit&typeid='+id,width:'780',height:'500'}, function(){var d = window.top.art.dialog({id:'edit'}).data.iframe;d.document.getElementById('dosubmit').click();return false;}, function(){window.top.art.dialog({id:'edit'}).close()});
 }
 function data_delete(obj,id,name){
 	window.top.art.dialog({content:name, fixed:true, style:'confirm', id:'data_delete'}, 

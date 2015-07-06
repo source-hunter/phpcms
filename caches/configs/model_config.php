@@ -1,5 +1,5 @@
 <?php
 
-return array('project1'=>'ç»å…¸æ¨¡å¼');
+return array('project1'=>'¾­µäÄ£Ê½');
 
 ?>

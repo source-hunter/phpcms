@@ -73,7 +73,7 @@ if(is_array($infos)){
     </tbody>
     </table>
 <div class="btn text-r">
-<?php echo L('thispage').L('totalize')?>  <span class="font-fixh green"><?php echo $number?></span> <?php echo L('bi').L('trade')?>(<?php echo L('money')?>ï¼š<span class="font-fixh"><?php echo $num_amount?></span><?php echo L('bi')?>ï¼Œ<?php echo L('point')?>ï¼š<span class="font-fixh"><?php echo $num_point?></span><?php echo L('bi')?>)ï¼Œ<?php echo L('total').L('amount')?>ï¼š<span class="font-fixh green"><?php echo $sum_amount?></span><?php echo L('yuan')?> ,<?php echo L('trade_succ').L('trade')?>ï¼š<span class="font-fixh green"><?php echo $sum_amount_succ?></span><?php echo L('yuan')?> ï¼Œæ€»ç‚¹æ•°ï¼š<span class="font-fixh green"><?php echo $sum_point?></span><?php echo L('dian')?> ,<?php echo L('trade_succ').L('trade')?>ï¼š<span class="font-fixh green"><?php echo $sum_point_succ?></span><?php echo L('dian')?> 
+<?php echo L('thispage').L('totalize')?>  <span class="font-fixh green"><?php echo $number?></span> <?php echo L('bi').L('trade')?>(<?php echo L('money')?>£º<span class="font-fixh"><?php echo $num_amount?></span><?php echo L('bi')?>£¬<?php echo L('point')?>£º<span class="font-fixh"><?php echo $num_point?></span><?php echo L('bi')?>)£¬<?php echo L('total').L('amount')?>£º<span class="font-fixh green"><?php echo $sum_amount?></span><?php echo L('yuan')?> ,<?php echo L('trade_succ').L('trade')?>£º<span class="font-fixh green"><?php echo $sum_amount_succ?></span><?php echo L('yuan')?> £¬×ÜµãÊý£º<span class="font-fixh green"><?php echo $sum_point?></span><?php echo L('dian')?> ,<?php echo L('trade_succ').L('trade')?>£º<span class="font-fixh green"><?php echo $sum_point_succ?></span><?php echo L('dian')?> 
 </div>
  <div id="pages"> <?php echo $pages?></div>
 </div>

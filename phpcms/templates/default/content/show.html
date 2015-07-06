@@ -1,45 +1,45 @@
 {template "content","header"}
 <div class="main">
 	<div class="col-left">
-    	<div class="crumbs"><a href="{siteurl($siteid)}">é¦–é¡µ</a><span> &gt; </span>{catpos($catid)} æ­£æ–‡</div>
+    	<div class="crumbs"><a href="{siteurl($siteid)}">Ê×Ò³</a><span> &gt; </span>{catpos($catid)} ÕıÎÄ</div>
         <div id="Article">
         	<h1>{$title}<br />
-<span>{$inputtime}&nbsp;&nbsp;&nbsp;æ¥æºï¼š{$copyfrom}&nbsp;&nbsp;&nbsp;è¯„è®ºï¼š<a href="#comment_iframe" id="comment">0</a> ç‚¹å‡»ï¼š</span><span id="hits"></span></h1>
+<span>{$inputtime}&nbsp;&nbsp;&nbsp;À´Ô´£º{$copyfrom}&nbsp;&nbsp;&nbsp;ÆÀÂÛ£º<a href="#comment_iframe" id="comment">0</a> µã»÷£º</span><span id="hits"></span></h1>
 			{if $description}<div class="summary" >{$description}</div>{/if}
 			<div class="content">
 			{if $allow_visitor==1}
 				{$content}
-				<!--å†…å®¹å…³è”æŠ•ç¥¨-->
+				<!--ÄÚÈİ¹ØÁªÍ¶Æ±-->
 				{if $voteid}<script language="javascript" src="{APP_PATH}index.php?m=vote&c=index&a=show&action=js&subjectid={$voteid}&type=2"></script>{/if}
                 
 			{else}
-				<CENTER><a href="{APP_PATH}index.php?m=content&c=readpoint&allow_visitor={$allow_visitor}"><font color="red">é˜…è¯»æ­¤ä¿¡æ¯éœ€è¦æ‚¨æ”¯ä»˜ <B><I>{$readpoint} {if $paytype}å…ƒ{else}ç‚¹{/if}</I></B>ï¼Œç‚¹å‡»è¿™é‡Œæ”¯ä»˜</font></a></CENTER>
+				<CENTER><a href="{APP_PATH}index.php?m=content&c=readpoint&allow_visitor={$allow_visitor}"><font color="red">ÔÄ¶Á´ËĞÅÏ¢ĞèÒªÄúÖ§¸¶ <B><I>{$readpoint} {if $paytype}Ôª{else}µã{/if}</I></B>£¬µã»÷ÕâÀïÖ§¸¶</font></a></CENTER>
 			{/if}
 			</div>
 {if $titles}
 <fieldset>
-	<legend class="f14">æœ¬æ–‡å¯¼èˆª</legend><ul class="list blue row-2">
+	<legend class="f14">±¾ÎÄµ¼º½</legend><ul class="list blue row-2">
 {loop $titles $r}
-	<li>{$n}ã€<a href="{$r[url]}">{$r[title]}</a></li>
+	<li>{$n}¡¢<a href="{$r[url]}">{$r[title]}</a></li>
 {/loop}
 </ul>
 </fieldset>
 {/if}
 			<div id="pages" class="text-c">{$pages}</div>
             <p style="margin-bottom:10px">
-            <strong>ç›¸å…³çƒ­è¯æœç´¢ï¼š</strong>{loop $keywords $keyword}<a href="{APP_PATH}index.php?m=content&c=tag&a=lists&tag={urlencode($keyword)}" class="blue">{$keyword}</a> 	{/loop}
+            <strong>Ïà¹ØÈÈ´ÊËÑË÷£º</strong>{loop $keywords $keyword}<a href="{APP_PATH}index.php?m=content&c=tag&a=lists&tag={urlencode($keyword)}" class="blue">{$keyword}</a> 	{/loop}
             </p>
             <p class="f14">
-                <strong>ä¸Šä¸€ç¯‡ï¼š</strong><a href="{$previous_page[url]}">{$previous_page[title]}</a><br />
-                <strong>ä¸‹ä¸€ç¯‡ï¼š</strong><a href="{$next_page[url]}">{$next_page[title]}</a>
+                <strong>ÉÏÒ»Æª£º</strong><a href="{$previous_page[url]}">{$previous_page[title]}</a><br />
+                <strong>ÏÂÒ»Æª£º</strong><a href="{$next_page[url]}">{$next_page[title]}</a>
             </p>
           {pc:content action="relation" relation="$relation" id="$id" catid="$catid" num="5" keywords="$rs[keywords]"}
               {if $data}
                 <div class="related">
-                    <h5 class="blue">å»¶ä¼¸é˜…è¯»ï¼š</h5>
+                    <h5 class="blue">ÑÓÉìÔÄ¶Á£º</h5>
                     <ul class="list blue lh24 f14">
                         {loop $data $r}
-                            <li>Â·<a href="{$r[url]}" target="_blank">{$r[title]}</a><span>({date('Y-m-d',$r[inputtime])})</span></li>
+                            <li>¡¤<a href="{$r[url]}" target="_blank">{$r[title]}</a><span>({date('Y-m-d',$r[inputtime])})</span></li>
                         {/loop}
                     </ul>
                 </div>
@@ -49,8 +49,8 @@
             {if module_exists('mood')}<script type="text/javascript" src="{APP_PATH}index.php?m=mood&c=index&a=init&id={id_encode($catid,$id,$siteid)}"></script>{/if}
       </div>
       <div class="Article-Tool">
-          åˆ†äº«åˆ°ï¼š
-		  <img src="http://v.t.qq.com/share/images/s/weiboicon16.png" style="padding-bottom:3px;" onclick="postToWb();" class="cu" title="åˆ†äº«åˆ°è…¾è®¯å¾®åš"/><script type="text/javascript">
+          ·ÖÏíµ½£º
+		  <img src="http://v.t.qq.com/share/images/s/weiboicon16.png" style="padding-bottom:3px;" onclick="postToWb();" class="cu" title="·ÖÏíµ½ÌÚÑ¶Î¢²©"/><script type="text/javascript">
 	function postToWb(){
 		var _t = encodeURI(document.title);
 		var _url = encodeURIComponent(document.location);
@@ -61,14 +61,14 @@
 		window.open( _u,'', 'width=700, height=680, top=0, left=0, toolbar=no, menubar=no, scrollbars=no, location=yes, resizable=no, status=no' );
 	}
 </script>
-          <script type="text/javascript">document.write('<a href="http://v.t.sina.com.cn/share/share.php?url='+encodeURIComponent(location.href)+'&appkey=3172366919&title='+encodeURIComponent('{new_addslashes($title)}')+'" title="åˆ†äº«åˆ°æ–°æµªå¾®åš" class="t1" target="_blank">&nbsp;</a>');</script>
-		  <script type="text/javascript">document.write('<a href="http://www.douban.com/recommend/?url='+encodeURIComponent(location.href)+'&title='+encodeURIComponent('{new_addslashes($title)}')+'" title="åˆ†äº«åˆ°è±†ç“£" class="t2" target="_blank">&nbsp;</a>');</script>
-		  <script type="text/javascript">document.write('<a href="http://share.renren.com/share/buttonshare.do?link='+encodeURIComponent(location.href)+'&title='+encodeURIComponent('{new_addslashes($title)}')+'" title="åˆ†äº«åˆ°äººäºº" class="t3" target="_blank">&nbsp;</a>');</script>
-		  <script type="text/javascript">document.write('<a href="http://www.kaixin001.com/repaste/share.php?rtitle='+encodeURIComponent('{new_addslashes($title)}')+'&rurl='+encodeURIComponent(location.href)+'&rcontent=" title="åˆ†äº«åˆ°å¼€å¿ƒç½‘" class="t4" target="_blank">&nbsp;</a>');</script>
-		  <script type="text/javascript">document.write('<a href="http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url='+encodeURIComponent(location.href)+'" title="åˆ†äº«åˆ°QQç©ºé—´" class="t5" target="_blank">&nbsp;</a>');</script>
+          <script type="text/javascript">document.write('<a href="http://v.t.sina.com.cn/share/share.php?url='+encodeURIComponent(location.href)+'&appkey=3172366919&title='+encodeURIComponent('{new_addslashes($title)}')+'" title="·ÖÏíµ½ĞÂÀËÎ¢²©" class="t1" target="_blank">&nbsp;</a>');</script>
+		  <script type="text/javascript">document.write('<a href="http://www.douban.com/recommend/?url='+encodeURIComponent(location.href)+'&title='+encodeURIComponent('{new_addslashes($title)}')+'" title="·ÖÏíµ½¶¹°ê" class="t2" target="_blank">&nbsp;</a>');</script>
+		  <script type="text/javascript">document.write('<a href="http://share.renren.com/share/buttonshare.do?link='+encodeURIComponent(location.href)+'&title='+encodeURIComponent('{new_addslashes($title)}')+'" title="·ÖÏíµ½ÈËÈË" class="t3" target="_blank">&nbsp;</a>');</script>
+		  <script type="text/javascript">document.write('<a href="http://www.kaixin001.com/repaste/share.php?rtitle='+encodeURIComponent('{new_addslashes($title)}')+'&rurl='+encodeURIComponent(location.href)+'&rcontent=" title="·ÖÏíµ½¿ªĞÄÍø" class="t4" target="_blank">&nbsp;</a>');</script>
+		  <script type="text/javascript">document.write('<a href="http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url='+encodeURIComponent(location.href)+'" title="·ÖÏíµ½QQ¿Õ¼ä" class="t5" target="_blank">&nbsp;</a>');</script>
       
 	  <span id='favorite'>
-		<a href="javascript:;" onclick="add_favorite('{addslashes($title)}');" class="t6">æ”¶è—</a>
+		<a href="javascript:;" onclick="add_favorite('{addslashes($title)}');" class="t6">ÊÕ²Ø</a>
 	  </span>
 
 	  </div>
@@ -76,11 +76,11 @@
       {if $allow_comment && module_exists('comment')}
       <iframe src="{APP_PATH}index.php?m=comment&c=index&a=init&commentid={id_encode("content_$catid",$id,$siteid)}&iframe=1" width="100%" height="100%" id="comment_iframe" frameborder="0" scrolling="no"></iframe>
       <div class="box">
-        		<h5>è¯„è®ºæ’è¡Œ</h5>
+        		<h5>ÆÀÂÛÅÅĞĞ</h5>
 				 {pc:comment action="bang" siteid="$siteid" cache="3600"}
             	<ul class="content list blue f14 row-2">
 				{loop $data $r}
-                	<li>Â·<a href="{$r[url]}" target="_blank">{str_cut($r[title], 40)}</a><span>({$r[total]})</span></li>
+                	<li>¡¤<a href="{$r[url]}" target="_blank">{str_cut($r[title], 40)}</a><span>({$r[total]})</span></li>
 					{/loop}
                 </ul>
 				{/pc}
@@ -89,7 +89,7 @@
   </div>
     <div class="col-auto">
         <div class="box">
-            <h5 class="title-2">é¢‘é“æ€»æ’è¡Œ</h5>
+            <h5 class="title-2">ÆµµÀ×ÜÅÅĞĞ</h5>
             <ul class="content digg">
 			{pc:content  action="hits" catid="$catid" num="10" order="views DESC" cache="3600"}
 				{loop $data $r}
@@ -100,7 +100,7 @@
         </div>
         <div class="bk10"></div>
         <div class="box">
-            <h5 class="title-2">é¢‘é“æœ¬æœˆæ’è¡Œ</h5>
+            <h5 class="title-2">ÆµµÀ±¾ÔÂÅÅĞĞ</h5>
             <ul class="content rank">
 			{pc:content action="hits" catid="$catid" num="10" order="monthviews DESC" cache="3600"}
 				{loop $data $r}
@@ -121,16 +121,16 @@
 				function(data){
 				var j = 1;
 				var string = "<div class='point key-float'><div style='position:relative'><div class='arro'></div>";
-				string += "<a href='JavaScript:;' onclick='$(this).parent().parent().remove();' hidefocus='true' class='close'><span>å…³é—­</span></a><div class='contents f12'>";
+				string += "<a href='JavaScript:;' onclick='$(this).parent().parent().remove();' hidefocus='true' class='close'><span>¹Ø±Õ</span></a><div class='contents f12'>";
 				if(data!=0) {
 				  $.each(data, function(i,item){
 					j = i+1;
-					jsonitem += "<a href='"+item.url+"' target='_blank'>"+j+"ã€"+item.title+"</a><BR>";
+					jsonitem += "<a href='"+item.url+"' target='_blank'>"+j+"¡¢"+item.title+"</a><BR>";
 					
 				  });
 					string += jsonitem;
 				} else {
-					string += 'æ²¡æœ‰æ‰¾åˆ°ç›¸å…³çš„ä¿¡æ¯ï¼';
+					string += 'Ã»ÓĞÕÒµ½Ïà¹ØµÄĞÅÏ¢£¡';
 				}
 					string += "</div><span class='o1'></span><span class='o2'></span><span class='o3'></span><span class='o4'></span></div></div>";		
 					$(obj).after(string);
@@ -147,9 +147,9 @@
 	function add_favorite(title) {
 		$.getJSON('{APP_PATH}api.php?op=add_favorite&title='+encodeURIComponent(title)+'&url='+encodeURIComponent(location.href)+'&'+Math.random()+'&callback=?', function(data){
 			if(data.status==1)	{
-				$("#favorite").html('æ”¶è—æˆåŠŸ');
+				$("#favorite").html('ÊÕ²Ø³É¹¦');
 			} else {
-				alert('è¯·ç™»å½•');
+				alert('ÇëµÇÂ¼');
 			}
 		});
 	}

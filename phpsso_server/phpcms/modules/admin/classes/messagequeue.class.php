@@ -9,7 +9,7 @@ class messagequeue {
 	}
 	
 	/**
-	 * æ·»åŠ é˜Ÿåˆ—ä¿¡æ¯
+	 * Ìí¼Ó¶ÓÁĞĞÅÏ¢
 	 */
 	public static function add($operation, $noticedata_send) {
 		$db = self::get_db();
@@ -25,16 +25,16 @@ class messagequeue {
 	}
 
 	/**
-	 * é€šçŸ¥åº”ç”¨
+	 * Í¨ÖªÓ¦ÓÃ
 	 */
 	public static function notice($operation, $noticedata, $noticeid) {
 		$db = self::get_db();
 		$applist = getcache('applist', 'admin');
 		foreach($applist as $k=>$v) {
-			//ç”±äºç¼–ç è½¬æ¢ä¼šæ”¹å˜notice_sendçš„å€¼ï¼Œæ‰€ä»¥æ¯æ¬¡å¾ªç¯éœ€è¦é‡æ–°èµ‹å€¼noticedate_send
+			//ÓÉÓÚ±àÂë×ª»»»á¸Ä±änotice_sendµÄÖµ£¬ËùÒÔÃ¿´ÎÑ­»·ĞèÒªÖØĞÂ¸³Öµnoticedate_send
 			$noticedata_send = $noticedata;
 			
-			//åº”ç”¨æ·»åŠ ç”¨æˆ·æ—¶ä¸é‡å¤é€šçŸ¥è¯¥åº”ç”¨
+			//Ó¦ÓÃÌí¼ÓÓÃ»§Ê±²»ÖØ¸´Í¨Öª¸ÃÓ¦ÓÃ
 			if(isset($noticedata_send['appname']) && $noticedata_send['appname'] == $v['name']) {
 				$appstatus[$k] = 1;
 				continue;
@@ -44,8 +44,8 @@ class messagequeue {
 
 			if (CHARSET != $v['charset'] && isset($noticedata_send['action']) && $noticedata_send['action'] == 'member_add') {
 				if(isset($noticedata_send['username']) && !empty($noticedata_send['username'])) {
-					if(CHARSET == 'utf-8') {	//åˆ¤æ–­phpssoå­—ç¬¦é›†æ˜¯å¦ä¸ºutf-8ç¼–ç 
-						//åº”ç”¨å­—ç¬¦é›†å¦‚æœæ˜¯utf-8ï¼Œå¹¶ä¸”ç”¨æˆ·åæ˜¯utf-8ç¼–ç ï¼Œè½¬æ¢ç”¨æˆ·åä¸ºphpssoå­—ç¬¦é›†ï¼Œå¦‚æœä¸ºè‹±æ–‡ï¼Œis_utf8è¿”å›falseï¼Œä¸è¿›è¡Œè½¬æ¢
+					if(CHARSET == 'utf-8') {	//ÅĞ¶Ïphpsso×Ö·û¼¯ÊÇ·ñÎªutf-8±àÂë
+						//Ó¦ÓÃ×Ö·û¼¯Èç¹ûÊÇutf-8£¬²¢ÇÒÓÃ»§ÃûÊÇutf-8±àÂë£¬×ª»»ÓÃ»§ÃûÎªphpsso×Ö·û¼¯£¬Èç¹ûÎªÓ¢ÎÄ£¬is_utf8·µ»Øfalse£¬²»½øĞĞ×ª»»
 						if(!is_utf8($noticedata_send['username'])) {
 							$noticedata_send['username'] = iconv(CHARSET, $v['charset'], $noticedata_send['username']);
 						}

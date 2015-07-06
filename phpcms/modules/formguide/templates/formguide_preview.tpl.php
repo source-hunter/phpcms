@@ -9,7 +9,7 @@ include $this->admin_tpl('header', 'admin');
 <div class="subnav">
   <h2 class="title-1 line-x f14 fb blue lh28"><?php echo $f_info['name']?>--<?php echo L('form_preview')?></h2>  
 <div class="content-menu ib-a blue line-x">
-ã€€ <?php if(isset($big_menu)) echo '<a class="add fb" href="'.$big_menu[0].'"><em>'.$big_menu[1].'</em></a>ã€€';?><a class="on" href="?m=formguide&c=formguide&a=init"><em><?php echo L('return_list')?></em></a></div>
+¡¡ <?php if(isset($big_menu)) echo '<a class="add fb" href="'.$big_menu[0].'"><em>'.$big_menu[1].'</em></a>¡¡';?><a class="on" href="?m=formguide&c=formguide&a=init"><em><?php echo L('return_list')?></em></a></div>
 </div>
 <div class="pad-10">
 <table class="table_form" width="100%" cellspacing="0">

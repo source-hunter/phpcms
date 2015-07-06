@@ -30,11 +30,11 @@
 		$str .='
 		function drawPoints(){
 			var markerOption = new MMarkerOptions();
-			var tipOption=new MTipOptions();//娣诲姞淇℃伅绐楀彛 
+			var tipOption=new MTipOptions();//添加信息窗口 
 			var address = "'.$address.'";
-			tipOption.tipType = MConstants.HTML_BUBBLE_TIP;//淇℃伅绐楀彛鏍囬  
-			tipOption.title = address;//淇℃伅绐楀彛鏍囬  
-			tipOption.content = address;//淇℃伅绐楀彛鍐呭     
+			tipOption.tipType = MConstants.HTML_BUBBLE_TIP;//信息窗口标题  
+			tipOption.title = address;//信息窗口标题  
+			tipOption.content = address;//信息窗口内容     
 			var markerOption = new MMarkerOptions(); 		
 			markerOption.imageUrl="'.IMG_PATH.'icon/mak.png";		
 			markerOption.picAgent=false;   

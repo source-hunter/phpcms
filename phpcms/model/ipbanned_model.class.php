@@ -12,9 +12,9 @@ class ipbanned_model extends model {
 	
   	/**
  	 * 
- 	 * æŠŠIPè¿›è¡Œæ ¼å¼åŒ–ï¼Œç»Ÿä¸€ä¸ºIPV4ï¼Œ å‚æ•°ï¼š$op --æ“ä½œç±»åž‹ max è¡¨ç¤ºæ ¼å¼ä¸ºè¯¥æ®µçš„æœ€å¤§å€¼ï¼Œæ¯”å¦‚ï¼š192.168.1.* æ ¼å¼åŒ–ä¸ºï¼š192.168.1.255 ï¼Œå…¶å®ƒä»»æ„å€¼è¡¨ç¤ºæ ¼å¼åŒ–æœ€å°å€¼ï¼š 192.168.1.1
- 	 * @param $op	æ“ä½œç±»åž‹,å€¼ä¸º(min,max)
- 	 * @param $ip	è¦å¤„ç†çš„IPæ®µ(127.0.0.*) æˆ–è€…IPå€¼ (127.0.0.5)
+ 	 * °ÑIP½øÐÐ¸ñÊ½»¯£¬Í³Ò»ÎªIPV4£¬ ²ÎÊý£º$op --²Ù×÷ÀàÐÍ max ±íÊ¾¸ñÊ½Îª¸Ã¶ÎµÄ×î´óÖµ£¬±ÈÈç£º192.168.1.* ¸ñÊ½»¯Îª£º192.168.1.255 £¬ÆäËüÈÎÒâÖµ±íÊ¾¸ñÊ½»¯×îÐ¡Öµ£º 192.168.1.1
+ 	 * @param $op	²Ù×÷ÀàÐÍ,ÖµÎª(min,max)
+ 	 * @param $ip	Òª´¦ÀíµÄIP¶Î(127.0.0.*) »òÕßIPÖµ (127.0.0.5)
  	 */
 	public function convert_ip($op,$ip){
 		  $arr_ip = explode(".",$ip); 
@@ -39,10 +39,10 @@ class ipbanned_model extends model {
 	
 	/**
 	 * 
-	 * åˆ¤æ–­IPæ˜¯å¦è¢«é™å¹¶è¿”å›ž
-	 * @param $ip		å½“å‰IP	
-	 * @param $ip_from	å¼€å§‹IPæ®µ
-	 * @param $ip_to	ç»“æŸIPæ®µ
+	 * ÅÐ¶ÏIPÊÇ·ñ±»ÏÞ²¢·µ»Ø
+	 * @param $ip		µ±Ç°IP	
+	 * @param $ip_from	¿ªÊ¼IP¶Î
+	 * @param $ip_to	½áÊøIP¶Î
 	 */
 	public function ipforbidden($ip,$ip_from,$ip_to){ 
 		$from = strcmp($ip,$ip_from); 
@@ -56,30 +56,30 @@ class ipbanned_model extends model {
 	
 	/**
 	 * 
-	 * IPç¦æ­¢åˆ¤æ–­æŽ¥å£,ä¾›å¤–éƒ¨è°ƒç”¨ ...
+	 * IP½ûÖ¹ÅÐ¶Ï½Ó¿Ú,¹©Íâ²¿µ÷ÓÃ ...
 	 */
 	public function check_ip(){
 		$ip_array = array();
-		//å½“å‰IP
+		//µ±Ç°IP
 		$ip = ip();
- 		//åŠ è½½IPç¦æ­¢ç¼“å­˜
+ 		//¼ÓÔØIP½ûÖ¹»º´æ
 		$ipbanned_cache = getcache('ipbanned','commons');
 		if(!empty($ipbanned_cache)) {
 			foreach($ipbanned_cache as $data){
 				$ip_array[$data['ip']] = $data['ip'];
-				//æ˜¯å¦æ˜¯IPæ®µ
+				//ÊÇ·ñÊÇIP¶Î
 				if(strpos($data['ip'],'*')){
 					$ip_min = $this->convert_ip("min",$data['ip']);
 					$ip_max = $this->convert_ip("max",$data['ip']);
 					$result = $this->ipforbidden($ip,$ip_min,$ip_max);
 					if($result==0 && $data['expires']>SYS_TIME){
-						//è¢«å°
-						showmessage('ä½ åœ¨IPç¦æ­¢æ®µå†…,æ‰€ä»¥ç¦æ­¢ä½ è®¿é—®');
+						//±»·â
+						showmessage('ÄãÔÚIP½ûÖ¹¶ÎÄÚ,ËùÒÔ½ûÖ¹Äã·ÃÎÊ');
 					}
 				} else {
-					//ä¸æ˜¯IPæ®µ,ç”¨ç»å¯¹åŒ¹é…
+					//²»ÊÇIP¶Î,ÓÃ¾ø¶ÔÆ¥Åä
 					if($ip==$data['ip']&& $data['expires']>SYS_TIME){
-						showmessage('IPåœ°å€ç»å¯¹åŒ¹é…,ç¦æ­¢ä½ è®¿é—®');
+						showmessage('IPµØÖ·¾ø¶ÔÆ¥Åä,½ûÖ¹Äã·ÃÎÊ');
 					}
 				}
 			}

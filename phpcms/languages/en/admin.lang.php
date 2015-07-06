@@ -29,7 +29,7 @@ $LANG['background_map'] = 'Sitemap';
 $LANG['user_not_exist'] = 'The administrator does not exist';
 $LANG['password_error'] = 'Incorrect Password, you have {times} tries to log in!';
 $LANG['password_error_lock'] = 'Incorrect Password, you have';
-$LANG['password_error_lock2'] = 'tries to log inÔºÅ';
+$LANG['password_error_lock2'] = 'tries to log in£°';
 $LANG['wait_1_hour'] = 'You have entered an incorrect password too many times. To work around this issue, wait for {minute} minutes, and then try to sign in again.';
 $LANG['wait_1_hour_lock'] = 'You have entered an incorrect password too many times';
 $LANG['logout_success'] = 'You have successfully logged out.';
@@ -63,8 +63,8 @@ $LANG['main_product_dev'] = 'Development Support Team: ';
 $LANG['main_product_ui'] = 'UI design: ';
 $LANG['main_product_site'] = 'Official site: ';
 $LANG['main_product_bbs'] = 'Official forum: ';
-$LANG['main_product_qq'] = 'Official QQ groupÔºö';
-$LANG['main_product_sales'] = 'Official sales QQÔºö';
+$LANG['main_product_qq'] = 'Official QQ group£∫';
+$LANG['main_product_sales'] = 'Official sales QQ£∫';
 $LANG['main_license'] = 'License Info';
 $LANG['main_support'] = 'IT Support and Services';
 $LANG['main_license_type'] = 'License Type: ';
@@ -210,12 +210,12 @@ $LANG['mail_test_send'] = 'Send test';
 $LANG['mail_auth_close'] = 'Close';
 
 $LANG['setting_input'] = 'Please input ';
-$LANG['setting_end_with_x'] = 'must end up with ‚Äú/‚Äù';
+$LANG['setting_end_with_x'] = 'must end up with °∞/°±';
 $LANG['setting_input_error'] = 'Invalid input';
 $LANG['setting_errorlog_hint'] = 'Backend homepage will show a error message if error log file exceeds size limit';
 $LANG['setting_errorlog_size'] = 'Please input error log file size';
 $LANG['setting_errorlog_type'] = 'It can be positive number or decimal';
-$LANG['setting_phpsso_type'] = 'Please input interface address. Format is [http://www.phpsso.cn] without ‚Äú/‚Äù.';
+$LANG['setting_phpsso_type'] = 'Please input interface address. Format is [http://www.phpsso.cn] without °∞/°±.';
 $LANG['setting_errorlog_hint'] = 'Please input error log file size';
 //admin_manage.php
 
@@ -329,7 +329,7 @@ $LANG['site_select'] = 'Select site';
 $LANG['linkage_not_empty'] = ' is Required';
 $LANG['linkage_tips'] = 'Note: please go to [Linkage menu -> Update cache] after [add linkage menu].';
 
-////IPÁ¶ÅÊ≠¢
+////IPΩ˚÷π
 $LANG['deblocking_time'] = 'Unlocked time';
 $LANG['time_isok']						=	'Valid date';
 $LANG['time_ismust']					=	'date is required';
@@ -344,7 +344,7 @@ $LANG['quote_num'] = 'Times cited';
 $LANG['last_quote'] = 'Last cited'; 
 $LANG['click_num'] = 'Clicks'; 
 $LANG['last_vistor'] = 'Last visit'; 
-////ÊïèÊÑüËØç
+////√Ù∏–¥ 
 $LANG['badword_name'] = 'Word censorship';
 $LANG['badword_replacename'] = 'Replacement';
 $LANG['badword_level'] = 'Rank';
@@ -367,7 +367,7 @@ $LANG['badword_import_infos']	= '1. One word item per line<br>
 2. Please use a comma to seperate parameters<br>
 3. Word censorship rank (1 for normal, 2 for Dangerous)<br>';
 
-//Êñ∞ÈóªÂçèËÆÆ
+//–¬Œ≈–≠“È
 $LANG['google_info']			= 'About Sitemaps/ Internet news open protocol';
 $LANG['google_rate']			= 'Update frequency';
 $LANG['google_nums']			= 'Num of generations';
@@ -407,7 +407,7 @@ More info about Internet news open protocol, please go to http://news.baidu.com/
 //category
 
 $LANG['catname'] = 'Column name';
-$LANG['please_select_parent_category'] = '‚â° Parent Column ‚â°';
+$LANG['please_select_parent_category'] = '°‘ Parent Column °‘';
 $LANG['parent_category'] = 'Parent column';
 $LANG['category_manage'] = 'Manage column';
 $LANG['add_category'] = 'Add';
@@ -442,7 +442,7 @@ $LANG['enter_the_correct_catname'] = 'ONLY contain letters, digits, underscores 
 $LANG['catname_have_exists'] = 'Directory has already exist.';
 $LANG['follow_catname_have_exists'] =  '<br>The following columns have already exist. Failed to add ';
 $LANG['domain_name_format'] = 'Domain name is optional. Format is http://www.phpcms.cn/';
-$LANG['domain_end_string'] = 'Format should be as follows, http://www.phpcms.cn/, ends up with ‚Äò/‚Äô';
+$LANG['domain_end_string'] = 'Format should be as follows, http://www.phpcms.cn/, ends up with °Æ/°Ø';
 $LANG['template_setting'] = 'Please go to Template Settings to change template';
 $LANG['catgory_basic'] = 'Basic options';
 $LANG['catgory_createhtml'] = 'Generate HTML settings';
@@ -516,7 +516,7 @@ $LANG['template_style_configuration'] = 'Template settings';
 $LANG['style_name'] = 'Styple name';
 $LANG['site_dirname_err_msg'] = 'ONLY contain letters, digits or underscores';
 $LANG['site_domain_ex'] = 'Please fill in the domain name. For example, http://www.phpcms.cn/';
-$LANG['site_domain_ex2'] = 'Format should be as follows, http://www.phpcms.cn/, ends up with ‚Äò/‚Äô';
+$LANG['site_domain_ex2'] = 'Format should be as follows, http://www.phpcms.cn/, ends up with °Æ/°Ø';
 $LANG['style_name_point'] = 'Please select style (at least 1)';
 $LANG['select_at_least_1'] = 'At least select 1 style';
 $LANG['please_select_a_style'] = 'Please select template style';
@@ -619,7 +619,7 @@ $LANG['module_istall'] = 'Module installation';
 $LANG['module_unistall'] = 'Module uninstallation';
 $LANG['model_file_no_exists'] = 'Data model does not exist, please upload the file under model directory';
 
-//Êõ¥Êñ∞ÂÖ®Á´ôÁºìÂ≠ò
+//∏¸–¬»´’æª∫¥Ê
 $LANG['downservers'] = 'Download';
 $LANG['ipbanned'] = 'IP filters';
 $LANG['keylink'] = 'Related link';
@@ -718,7 +718,7 @@ $LANG['input_siteurl'] = 'Please input website URL';
 $LANG['keylink_name'] = 'Related Link name';
 $LANG['keylink_url'] = 'Related link URL';
 $LANG['category_does_not_allow_delete'] = 'The content already exists in the column, it is not allowed to delete.';
-$LANG['category_batch_tips'] = 'Hint: Hold Alt and press left mouse button to select. Direction keys ‚Üê ‚Üí to move HScrollbar';
+$LANG['category_batch_tips'] = 'Hint: Hold Alt and press left mouse button to select. Direction keys °˚ °˙ to move HScrollbar';
 $LANG['please_select_category'] = 'The selected column is empty, please reselect';
 $LANG['modelid_edit_tips'] = ' <img src="./statics/images/icon/help.gif" title="You are able to change model when the column data is 0">';
 $LANG['add_category_types'] = 'Type';

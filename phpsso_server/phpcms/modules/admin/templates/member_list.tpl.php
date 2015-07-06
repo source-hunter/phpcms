@@ -8,7 +8,7 @@ include $this->admin_tpl('header');
 	<div class="content-menu ib-a blue line-x">
     <div class="rt">
 			<form action="index.php" method="get" name="form_member_search">
-				<?php echo L('regtime')?>ï¼š
+				<?php echo L('regtime')?>£º
 				<?php echo form::date('start_time', $start_time)?>
 				<?php echo form::date('end_time', $end_time)?>
 				<select name="type">

@@ -4,50 +4,50 @@
 Add a new file(.lang.php) with your module name at /phpcms/languages/
 translation save at the array:$LANG
 */
-$LANG['product_name'] =	'å¥—é¤åç§°';
-$LANG['productid'] =	'äº§å“id';
-$LANG['product_description'] =	'å¥—é¤ä»‹ç»';
-$LANG['product_price'] =	'å¥—é¤ä»·æ ¼';
-$LANG['buy'] =	'è´­ä¹°';
-$LANG['account'] =	'å·²ç»‘å®šç”¨æˆ·ID';
-$LANG['smsnumber'] =	'çŸ­ä¿¡ä½™é¢';
-$LANG['open'] =	'å¼€å¯';
-$LANG['sms_enable'] =	'å¹³å°çŠ¶æ€';
-$LANG['item'] =	'æ¡';
-$LANG['sms_key'] =	'å¯†é’¥';
-$LANG['iplimit'] =	'ipé™åˆ¶';
-$LANG['iplimit_notice'] =	'çŸ­ä¿¡å‘é€æœåŠ¡å™¨ipé™åˆ¶ï¼Œåªæœ‰è¯¥åˆ—è¡¨ä¸­çš„æœåŠ¡å™¨æ‰èƒ½ä½¿ç”¨çŸ­ä¿¡å‘é€åŠŸèƒ½';
-$LANG['userid'] =	'ç”¨æˆ·id';
-$LANG['product_id'] =	'äº§å“id';
-$LANG['totalnum'] =	'æ€»å…±æ¡æ•°';
-$LANG['give_away'] =	'èµ é€æ¡æ•°';
-$LANG['yuan'] =	'ï¼ˆå…ƒï¼‰';
-$LANG['recharge_time'] = 'è´­ä¹°æ—¶é—´';
-$LANG['mobile'] =	'æ‰‹æœºå·';
+$LANG['product_name'] =	'Ì×²ÍÃû³Æ';
+$LANG['productid'] =	'²úÆ·id';
+$LANG['product_description'] =	'Ì×²Í½éÉÜ';
+$LANG['product_price'] =	'Ì×²Í¼Û¸ñ';
+$LANG['buy'] =	'¹ºÂò';
+$LANG['account'] =	'ÒÑ°ó¶¨ÓÃ»§ID';
+$LANG['smsnumber'] =	'¶ÌĞÅÓà¶î';
+$LANG['open'] =	'¿ªÆô';
+$LANG['sms_enable'] =	'Æ½Ì¨×´Ì¬';
+$LANG['item'] =	'Ìõ';
+$LANG['sms_key'] =	'ÃÜÔ¿';
+$LANG['iplimit'] =	'ipÏŞÖÆ';
+$LANG['iplimit_notice'] =	'¶ÌĞÅ·¢ËÍ·şÎñÆ÷ipÏŞÖÆ£¬Ö»ÓĞ¸ÃÁĞ±íÖĞµÄ·şÎñÆ÷²ÅÄÜÊ¹ÓÃ¶ÌĞÅ·¢ËÍ¹¦ÄÜ';
+$LANG['userid'] =	'ÓÃ»§id';
+$LANG['product_id'] =	'²úÆ·id';
+$LANG['totalnum'] =	'×Ü¹²ÌõÊı';
+$LANG['give_away'] =	'ÔùËÍÌõÊı';
+$LANG['yuan'] =	'£¨Ôª£©';
+$LANG['recharge_time'] = '¹ºÂòÊ±¼ä';
+$LANG['mobile'] =	'ÊÖ»úºÅ';
 $LANG['id'] =	'ID';
-$LANG['posttime'] =	'å‘é€æ—¶é—´';
-$LANG['return_id'] =	'è¿”å›æ•°æ®';
-$LANG['ip'] =	'ipåœ°å€';
-$LANG['id_code'] =	'éªŒè¯ç ';
-$LANG['msg'] =	'å‘é€å†…å®¹';
-$LANG['send_userid'] =	'å‘é€ç”¨æˆ·';
-$LANG['one_msg'] =	'æ¯è¡Œå¡«å†™ä¸€ä¸ª';
-$LANG['need_band'] =	'è¯·é…ç½®ç”¨æˆ·idã€äº§å“idä¸å¯†é’¥';
-$LANG['need_more_surplus'] =	'æ‚¨çš„çŸ­ä½™é¢ä¸è¶³è¯·å……å€¼';
-$LANG['regtime'] =	'æ³¨å†Œæ—¶é—´';
-$LANG['exportmobile'] =	'å¯¼å‡ºæ‰‹æœºå·ç ';
-$LANG['member_group'] =	'ä¼šå‘˜ç»„';
-$LANG['sendtime'] =	'å‘é€æ—¶é—´';
-$LANG['this_server_does_not_allow_send_sms'] =	'å½“å‰æœåŠ¡å™¨æ‰€åœ¨IPä¸å…è®¸å‘é€çŸ­ä¿¡';
-$LANG['please_open_sms_platform_status'] =	'æ‚¨æ²¡æœ‰å¼€å¯çŸ­ä¿¡å¹³å°ï¼Œè¯·åœ¨å¹³å°è®¾ç½®-å°†å¹³å°çŠ¶æ€è®¾ç½®ä¸ºï¼šå¼€å¯';
+$LANG['posttime'] =	'·¢ËÍÊ±¼ä';
+$LANG['return_id'] =	'·µ»ØÊı¾İ';
+$LANG['ip'] =	'ipµØÖ·';
+$LANG['id_code'] =	'ÑéÖ¤Âë';
+$LANG['msg'] =	'·¢ËÍÄÚÈİ';
+$LANG['send_userid'] =	'·¢ËÍÓÃ»§';
+$LANG['one_msg'] =	'Ã¿ĞĞÌîĞ´Ò»¸ö';
+$LANG['need_band'] =	'ÇëÅäÖÃÓÃ»§id¡¢²úÆ·idÓëÃÜÔ¿';
+$LANG['need_more_surplus'] =	'ÄúµÄ¶ÌÓà¶î²»×ãÇë³äÖµ';
+$LANG['regtime'] =	'×¢²áÊ±¼ä';
+$LANG['exportmobile'] =	'µ¼³öÊÖ»úºÅÂë';
+$LANG['member_group'] =	'»áÔ±×é';
+$LANG['sendtime'] =	'·¢ËÍÊ±¼ä';
+$LANG['this_server_does_not_allow_send_sms'] =	'µ±Ç°·şÎñÆ÷ËùÔÚIP²»ÔÊĞí·¢ËÍ¶ÌĞÅ';
+$LANG['please_open_sms_platform_status'] =	'ÄúÃ»ÓĞ¿ªÆô¶ÌĞÅÆ½Ì¨£¬ÇëÔÚÆ½Ì¨ÉèÖÃ-½«Æ½Ì¨×´Ì¬ÉèÖÃÎª£º¿ªÆô';
 
 
-$LANG['select_scene'] =	'è¯·é€‰æ‹©ä½¿ç”¨åœºæ™¯';
-$LANG['tpl_case'] =	'çŸ­ä¿¡æ¨¡ç‰ˆ';
-$LANG['tpl_remind'] =	'è¯·é€‰æ‹©çŸ­ä¿¡æ¨¡ç‰ˆ ( å¦‚æœä½ æ˜¯å•†ä¸šå®šåˆ¶ç”¨æˆ·ï¼Œå‘ç°æ²¡æœ‰åˆé€‚çš„æ¨¡ç‰ˆè¯·è”ç³»PHPCMSå•†åŠ¡äººå‘˜ï¼ )';
-$LANG['msg_content'] =	'çŸ­ä¿¡å†…å®¹';
-$LANG['select_tpl'] =	'é€‰æ‹©çŸ­ä¿¡æ¨¡ç‰ˆ';
-$LANG['sms_remind'] =	'æ³¨æ„ï¼šç¾¤å‘100æ¡ä»¥ä¸Šçš„çŸ­ä¿¡ï¼Œå»ºè®®å…ˆæµ‹è¯•å‘é€å†…å®¹ï¼Œä»¥é˜²æœ‰éæ³•å†…å®¹è¢«å±è”½ã€‚';
+$LANG['select_scene'] =	'ÇëÑ¡ÔñÊ¹ÓÃ³¡¾°';
+$LANG['tpl_case'] =	'¶ÌĞÅÄ£°æ';
+$LANG['tpl_remind'] =	'ÇëÑ¡Ôñ¶ÌĞÅÄ£°æ ( Èç¹ûÄãÊÇÉÌÒµ¶¨ÖÆÓÃ»§£¬·¢ÏÖÃ»ÓĞºÏÊÊµÄÄ£°æÇëÁªÏµPHPCMSÉÌÎñÈËÔ±£¡ )';
+$LANG['msg_content'] =	'¶ÌĞÅÄÚÈİ';
+$LANG['select_tpl'] =	'Ñ¡Ôñ¶ÌĞÅÄ£°æ';
+$LANG['sms_remind'] =	'×¢Òâ£ºÈº·¢100ÌõÒÔÉÏµÄ¶ÌĞÅ£¬½¨ÒéÏÈ²âÊÔ·¢ËÍÄÚÈİ£¬ÒÔ·ÀÓĞ·Ç·¨ÄÚÈİ±»ÆÁ±Î¡£';
 
 
 

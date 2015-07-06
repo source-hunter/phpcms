@@ -8,8 +8,8 @@
 		<tr>
 			<td width="120"><?php echo L('member_statistics')?></td> 
 			<td>
-				<?php echo L('member_totalnum')?>ï¼š<?php echo $memberinfo['totalnum']?>
-				<?php echo L('member_todaynum')?>ï¼š<?php echo $memberinfo['today_member']?>
+				<?php echo L('member_totalnum')?>£º<?php echo $memberinfo['totalnum']?>
+				<?php echo L('member_todaynum')?>£º<?php echo $memberinfo['today_member']?>
 			</td>
 		</tr>
 		<tr>

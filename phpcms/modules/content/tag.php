@@ -1,6 +1,6 @@
 <?php
 defined('IN_PHPCMS') or exit('No permission resources.');
-//妯″瀷缂撳瓨璺緞
+//模型缓存路径
 define('CACHE_MODEL_PATH',CACHE_PATH.'caches_model'.DIRECTORY_SEPARATOR.'caches_data'.DIRECTORY_SEPARATOR);
 
 pc_base::load_app_func('util','content');
@@ -23,15 +23,15 @@ class tag {
 	}
 
 	/**
-	 * 鎸夌収妯″瀷鎼滅储
+	 * 按照模型搜索
 	 */
 	public function lists() {
 		
 		$tag = safe_replace(addslashes($_GET['tag']));
 		$keyword_data_db = pc_base::load_model('keyword_data_model');
-		//鑾峰彇鏍囩id
+		//获取标签id
 		$r = $this->keyword_db->get_one(array('keyword'=>$tag, 'siteid'=>$this->siteid), 'id');
-		if (!$r['id']) showmessage('涓嶅瓨鍦ㄦ鍏抽敭瀛楋紒');
+		if (!$r['id']) showmessage('不存在此关键字！');
 		$tagid = intval($r['id']);
 
 		$page = max($_GET['page'], 1);

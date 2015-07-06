@@ -1,7 +1,7 @@
 <?php
 
 /**
- *  sphinxæœç´¢æŽ¥å£ç±»
+ *  sphinxËÑË÷½Ó¿ÚÀà
  */
 //
 // $Id: sphinxapi.php 2055 2009-11-06 23:09:58Z shodan $

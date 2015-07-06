@@ -1,1 +1,1 @@
-INSERT INTO `phpcms_module` VALUES ('message', 'Áü≠Ê∂àÊÅØ', '', '0', '1.0', '', '', '0', '0', '2010-09-06', '2010-09-06');
+INSERT INTO `phpcms_module` VALUES ('message', '∂Ãœ˚œ¢', '', '0', '1.0', '', '', '0', '0', '2010-09-06', '2010-09-06');

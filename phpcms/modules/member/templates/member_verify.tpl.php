@@ -45,7 +45,7 @@
 
 <input type="submit" class="button" name="dosubmit" value="<?php echo L('ignore')?>" onclick="document.myform.action='?m=member&c=member_verify&a=ignore'"/>
 
-<?php echo L('verify_message')?>ï¼š<input type="text" name="message"><input type="checkbox" value=1 name="sendemail" checked/><?php echo L('sendemail')?>
+<?php echo L('verify_message')?>£º<input type="text" name="message"><input type="checkbox" value=1 name="sendemail" checked/><?php echo L('sendemail')?>
 </div> 
 <div id="pages"><?php echo $pages?></div>
 </div>

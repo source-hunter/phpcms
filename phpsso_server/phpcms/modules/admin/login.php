@@ -7,14 +7,14 @@ pc_base::load_sys_class($session_storage);
 class login extends admin {
 	
 	/**
-	 * åˆå§‹åŒ–é¡µé¢
+	 * ³õÊ¼»¯Ò³Ãæ
 	 */
 	public function init() {
 		include $this->admin_tpl('login');
 	}
 	
 	/**
-	 * ç™»é™†
+	 * µÇÂ½
 	 */
 	public function logind() {
 		header('P3P: CP="CURa ADMa DEVa PSAo PSDo OUR BUS UNI PUR INT DEM STA PRE COM NAV OTC NOI DSP COR"');	
@@ -34,7 +34,7 @@ class login extends admin {
 	}
 	
 	/**
-	 * é€€å‡ºç™»å½•
+	 * ÍË³öµÇÂ¼
 	 */
 	public function logout() {
 		$this->log_out();

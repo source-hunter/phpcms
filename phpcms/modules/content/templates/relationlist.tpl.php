@@ -82,7 +82,7 @@ include $this->admin_tpl('header','admin');
 			}
 		} else {
 			$(obj).attr('class','line_ff9966');
-			var str = "<li id='"+sid+"'>Â·<span>"+title+"</span><a href='javascript:;' class='close' onclick=\"remove_relation('"+sid+"',"+id+")\"></a></li>";
+			var str = "<li id='"+sid+"'>¡¤<span>"+title+"</span><a href='javascript:;' class='close' onclick=\"remove_relation('"+sid+"',"+id+")\"></a></li>";
 			window.top.$('#relation_text').append(str);
 			if(relation_ids =='' ) {
 				window.top.$('#relation').val(id);

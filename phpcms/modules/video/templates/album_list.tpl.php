@@ -13,7 +13,7 @@
 <table width="100%" cellspacing="0" class="search-form">
     <tbody>
 		<tr>
-		<td><div class="explain-col"> <?php echo L('video_title');?>  <input type="text" value="<?php echo $title?>" class="input-text" name="name">  <?php echo L('upload_time');?> <?php echo form::date('starttime',$_GET['starttime'])?>- <?php echo form::date('endtime',$_GET['endtime'])?> <label title="<?php echo L('site_upload');?>"><?php echo L('original');?> <input type="checkbox" name="userupload" value="1" id="userupload"<?php if($userupload){ ?> checked<?php }?>></label> 每页显示数：<select name="pagesize" id="pagesize"><option value="8"<?php if ($pagesize==8) {?> selected<?php }?>>8</option><option value="24"<?php if ($pagesize==24) {?> selected<?php }?>>24</option><option value="40"<?php if ($pagesize==40) {?> selected<?php }?>>40</option><option value="100"<?php if ($pagesize==100) {?> selected<?php }?>>100</option> <input type="submit" value="<?php echo L('search')?>" class="button" name="dosubmit">
+		<td><div class="explain-col"> <?php echo L('video_title');?>  <input type="text" value="<?php echo $title?>" class="input-text" name="name">  <?php echo L('upload_time');?> <?php echo form::date('starttime',$_GET['starttime'])?>- <?php echo form::date('endtime',$_GET['endtime'])?> <label title="<?php echo L('site_upload');?>"><?php echo L('original');?> <input type="checkbox" name="userupload" value="1" id="userupload"<?php if($userupload){ ?> checked<?php }?>></label> ÿҳ��ʾ����<select name="pagesize" id="pagesize"><option value="8"<?php if ($pagesize==8) {?> selected<?php }?>>8</option><option value="24"<?php if ($pagesize==24) {?> selected<?php }?>>24</option><option value="40"<?php if ($pagesize==40) {?> selected<?php }?>>40</option><option value="100"<?php if ($pagesize==100) {?> selected<?php }?>>100</option> <input type="submit" value="<?php echo L('search')?>" class="button" name="dosubmit">
 		</div>
 		</td>
 		</tr>
@@ -32,7 +32,7 @@
 </li>
 <?php } ?>
 </ul>
-<div id="pages" class="text-c"> <label class="cu" onclick="Selectd(1);">全选</label>/<label class="cu" onclick="Selectd(0);">取消</label> <?php echo $pages?></div>
+<div id="pages" class="text-c"> <label class="cu" onclick="Selectd(1);">ȫѡ</label>/<label class="cu" onclick="Selectd(0);">ȡ��</label> <?php echo $pages?></div>
 <div id="video-paths" class="hidden"></div>
 <div id="video-ids" class="hidden"></div>
 <div id="video-status-del" class="hidden"></div>

@@ -3,40 +3,40 @@
 {template 'member', 'left'}
 <div class="col-auto">
 <div class="col-1 ">
-<h5 class="title">æ”¯ä»˜ç¡®è®¤</h5>
+<h5 class="title">Ö§¸¶È·ÈÏ</h5>
 <div class="content">
 <table width="100%" cellspacing="0" class="table-list nHover">
 <tr>
-<td  width="120">è´¹ç”¨ï¼š</td> 
-<td>{$factory_info['money']}å…ƒ</td>
+<td  width="120">·ÑÓÃ£º</td> 
+<td>{$factory_info['money']}Ôª</td>
 </tr>
 
 {if $logistics_fee}
 <tr>
-<td  width="120">é…é€è´¹ç”¨ï¼š</td> 
-<td>{$logistics_fee} å…ƒ</td>
+<td  width="120">ÅäËÍ·ÑÓÃ£º</td> 
+<td>{$logistics_fee} Ôª</td>
 </tr>
 {/if}
 {if $discount>0}
 <tr>
-<td  width="120">æŠ˜æ‰£/æ¶¨ä»·ï¼š</td> 
-<td>{$discount} å…ƒ</td>
+<td  width="120">ÕÛ¿Û/ÕÇ¼Û£º</td> 
+<td>{$discount} Ôª</td>
 </tr>
 {/if}
 
 {if $pay_fee}
 <tr>
-<td  width="120">æ‰‹ç»­è´¹ï¼š</td> 
-<td>{$pay_fee}å…ƒ</td>
+<td  width="120">ÊÖĞø·Ñ£º</td> 
+<td>{$pay_fee}Ôª</td>
 </tr>
 {/if}
 <tr>
-<td  width="120">åˆè®¡ï¼š</td> 
-<td><font style="color:#F00; font-size:22px;font-family:Georgia,Arial; font-weight:700">{$factory_info['price']}</font>  å…ƒ</td>
+<td  width="120">ºÏ¼Æ£º</td> 
+<td><font style="color:#F00; font-size:22px;font-family:Georgia,Arial; font-weight:700">{$factory_info['price']}</font>  Ôª</td>
 </tr>
 
 <tr>
-<td  width="120">æ”¯ä»˜æ–¹å¼ï¼š</td> 
+<td  width="120">Ö§¸¶·½Ê½£º</td> 
 <td>{$factory_info['payment']}</td>
 </tr>
 </table>

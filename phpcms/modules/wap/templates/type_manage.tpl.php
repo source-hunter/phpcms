@@ -44,7 +44,7 @@ include $this->admin_tpl('header','admin');?>
 </html>
 <script type="text/javascript">
 	function add_tr(obj,parentid,siteid) {
-		$(obj).parent().parent().after('<tr><td width="5%" align="center"></td><td width="10%" align="center"><input type="text" class="input-text" value="0" size="3" name="addorder['+parentid+']"></td><td width="10%" align="center"></td><td width="" align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;â”œâ”€ <input type="text" value="" class="input-text" name="addtype['+parentid+'][]" size="10" ></td><td width="20%" align="center" id="td_'+parentid+'"></td></tr>');
+		$(obj).parent().parent().after('<tr><td width="5%" align="center"></td><td width="10%" align="center"><input type="text" class="input-text" value="0" size="3" name="addorder['+parentid+']"></td><td width="10%" align="center"></td><td width="" align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;©À©¤ <input type="text" value="" class="input-text" name="addtype['+parentid+'][]" size="10" ></td><td width="20%" align="center" id="td_'+parentid+'"></td></tr>');
 		$("#td_"+parentid).load('?m=wap&c=wap_admin&a=public_show_cat_ajx&parentid='+parentid+'&siteid='+siteid);
 	};
 	function confirm_delete(){

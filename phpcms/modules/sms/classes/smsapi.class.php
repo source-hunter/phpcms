@@ -1,6 +1,6 @@
 <?php 
 /**
- * çŸ­ä¿¡å¹³å°APIæ¥å£ç±»
+ * ¶ÌĞÅÆ½Ì¨API½Ó¿ÚÀà
  */
 
 class smsapi {
@@ -10,10 +10,10 @@ class smsapi {
 	
 	/**
 	 * 
-	 * åˆå§‹åŒ–æ¥å£ç±»
-	 * @param int $userid ç”¨æˆ·id
-	 * @param int $productid äº§å“id
-	 * @param string $sms_key å¯†é’¥
+	 * ³õÊ¼»¯½Ó¿ÚÀà
+	 * @param int $userid ÓÃ»§id
+	 * @param int $productid ²úÆ·id
+	 * @param string $sms_key ÃÜÔ¿
 	 */
 	public function __construct($userid = '', $productid = '', $sms_key = '') {
 		$this->smsapi_url = 'http://sms.phpip.com/api.php?';
@@ -24,7 +24,7 @@ class smsapi {
 		
 	/**
 	 * 
-	 * è·å–çŸ­ä¿¡äº§å“åˆ—è¡¨ä¿¡æ¯
+	 * »ñÈ¡¶ÌĞÅ²úÆ·ÁĞ±íĞÅÏ¢
 	 */
 	public function get_price() {
 		$this->param = array('op'=>'sms_get_productlist');
@@ -35,7 +35,7 @@ class smsapi {
 	
 	/**
 	 * 
-	 * è·å–çŸ­ä¿¡äº§å“è´­ä¹°åœ°å€
+	 * »ñÈ¡¶ÌĞÅ²úÆ·¹ºÂòµØÖ·
 	 */
 	public function get_buyurl($productid = 0) {
 		return 'http://sms.phpip.com/index.php?m=sms_service&c=center&a=buy&sms_pid='.$this->productid.'&productid='.$productid;
@@ -44,7 +44,7 @@ class smsapi {
 		return $this->smsapi_url.'op=sms_qf_url&sms_uid='.$this->userid.'&sms_pid='.$this->productid.'&sms_key='.$this->sms_key;
 	}
 	/**
-	 * è·å–çŸ­ä¿¡å‰©ä½™æ¡æ•°å’Œé™åˆ¶çŸ­ä¿¡å‘é€ip
+	 * »ñÈ¡¶ÌĞÅÊ£ÓàÌõÊıºÍÏŞÖÆ¶ÌĞÅ·¢ËÍip
 	 */
 	public function get_smsinfo() {
 		$this->param = array('op'=>'sms_get_info');
@@ -53,7 +53,7 @@ class smsapi {
 	}	
 
 	/**
-	 * è·å–å……å€¼è®°å½•
+	 * »ñÈ¡³äÖµ¼ÇÂ¼
 	 */
 	public function get_buyhistory() {
 		$this->param = array('op'=>'sms_get_paylist');
@@ -62,8 +62,8 @@ class smsapi {
 	}
 
 	/**
-	 * è·å–æ¶ˆè´¹è®°å½•
-	 * @param int $page é¡µç 
+	 * »ñÈ¡Ïû·Ñ¼ÇÂ¼
+	 * @param int $page Ò³Âë
 	 */
 	public function get_payhistory($page=1) {
 		$this->param = array('op'=>'sms_get_report','page'=>$page);
@@ -72,7 +72,7 @@ class smsapi {
 	}
 
 	/**
-	 * è·å–çŸ­ä¿¡apiå¸®åŠ©
+	 * »ñÈ¡¶ÌĞÅapi°ïÖú
 	 */
 	public function get_sms_help() {
 		$this->param = array('op'=>'sms_help','page'=>$page);
@@ -82,22 +82,22 @@ class smsapi {
 	
 	/**
 	 * 
-	 * æ‰¹é‡å‘é€çŸ­ä¿¡
-	 * @param array $mobile æ‰‹æœºå·ç 
-	 * @param string $content çŸ­ä¿¡å†…å®¹
-	 * @param datetime $send_time å‘é€æ—¶é—´
-	 * @param string $charset çŸ­ä¿¡å­—ç¬¦ç±»å‹ gbk / utf-8
-	 * @param string $id_code å”¯ä¸€å€¼ ã€å¯ç”¨äºéªŒè¯ç 
+	 * ÅúÁ¿·¢ËÍ¶ÌĞÅ
+	 * @param array $mobile ÊÖ»úºÅÂë
+	 * @param string $content ¶ÌĞÅÄÚÈİ
+	 * @param datetime $send_time ·¢ËÍÊ±¼ä
+	 * @param string $charset ¶ÌĞÅ×Ö·ûÀàĞÍ gbk / utf-8
+	 * @param string $id_code Î¨Ò»Öµ ¡¢¿ÉÓÃÓÚÑéÖ¤Âë
 	 */
 	public function send_sms($mobile='', $content='', $send_time='', $charset='gbk',$id_code = '',$tplid = '',$return_code = 0) {
-		//çŸ­ä¿¡å‘é€çŠ¶æ€
+		//¶ÌĞÅ·¢ËÍ×´Ì¬
 		$status = $this->_sms_status();
 		if(is_array($mobile)){
 			$mobile = implode(",", $mobile);
 		}
 		$content = safe_replace($content);
 		if(strtolower($charset)=='utf-8') {
-			$send_content = iconv('utf-8','gbk',$content);//å®˜ç½‘IS GBK
+			$send_content = iconv('utf-8','gbk',$content);//¹ÙÍøIS GBK
 		}else{
 			$send_content = $content;
 		}
@@ -122,7 +122,7 @@ class smsapi {
 		$return = $this->_post($smsapi_senturl, 0, $post);
 		$arr = explode('#',$return);
 		$this->statuscode = $arr[0];
-		//å¢åŠ åˆ°æœ¬åœ°æ•°æ®åº“
+		//Ôö¼Óµ½±¾µØÊı¾İ¿â
 		$sms_report_db = pc_base::load_model('sms_report_model');
 		$send_userid = param::get_cookie('_userid') ? intval(param::get_cookie('_userid')) : 0;
 		$ip = ip();
@@ -136,7 +136,7 @@ class smsapi {
 		if($this->statuscode==0) {
 			$barr = explode(':',$arr[1]);
 			if($barr[0]=='KEY') {
-				return 'çŸ­ä¿¡å·²æäº¤ï¼Œè¯·ç­‰å¾…å®¡æ‰¹ï¼å®¡æ‰¹æ—¶é—´ä¸ºï¼š9:00-18:00ã€‚ æ³•å®šå‡æ—¥ä¸å®¡æ‰¹ï¼å¦‚éœ€å¸®åŠ©ï¼Œè¯·è”ç³»phpcms.cnå®˜ç½‘ï¼';
+				return '¶ÌĞÅÒÑÌá½»£¬ÇëµÈ´ıÉóÅú£¡ÉóÅúÊ±¼äÎª£º9:00-18:00¡£ ·¨¶¨¼ÙÈÕ²»ÉóÅú£¡ÈçĞè°ïÖú£¬ÇëÁªÏµphpcms.cn¹ÙÍø£¡';
 			}
 		}
 		//end
@@ -149,8 +149,8 @@ class smsapi {
 		
 	/**
 	 * 
-	 * è·å–è¿œç¨‹å†…å®¹
-	 * @param $timeout è¶…æ—¶æ—¶é—´
+	 * »ñÈ¡Ô¶³ÌÄÚÈİ
+	 * @param $timeout ³¬Ê±Ê±¼ä
 	 */
 	public function pc_file_get_contents($timeout=30) {
 		
@@ -168,15 +168,15 @@ class smsapi {
 	}
 	
 	/**
-	 *  postæ•°æ®
-	 *  @param string $url		postçš„url
-	 *  @param int $limit		è¿”å›çš„æ•°æ®çš„é•¿åº¦
-	 *  @param string $post		postæ•°æ®ï¼Œå­—ç¬¦ä¸²å½¢å¼username='dalarge'&password='123456'
-	 *  @param string $cookie	æ¨¡æ‹Ÿ cookieï¼Œå­—ç¬¦ä¸²å½¢å¼username='dalarge'&password='123456'
-	 *  @param string $ip		ipåœ°å€
-	 *  @param int $timeout		è¿æ¥è¶…æ—¶æ—¶é—´
-	 *  @param bool $block		æ˜¯å¦ä¸ºé˜»å¡æ¨¡å¼
-	 *  @return string			è¿”å›å­—ç¬¦ä¸²
+	 *  postÊı¾İ
+	 *  @param string $url		postµÄurl
+	 *  @param int $limit		·µ»ØµÄÊı¾İµÄ³¤¶È
+	 *  @param string $post		postÊı¾İ£¬×Ö·û´®ĞÎÊ½username='dalarge'&password='123456'
+	 *  @param string $cookie	Ä£Äâ cookie£¬×Ö·û´®ĞÎÊ½username='dalarge'&password='123456'
+	 *  @param string $ip		ipµØÖ·
+	 *  @param int $timeout		Á¬½Ó³¬Ê±Ê±¼ä
+	 *  @param bool $block		ÊÇ·ñÎª×èÈûÄ£Ê½
+	 *  @return string			·µ»Ø×Ö·û´®
 	 */
 	
 	private function _post($url, $limit = 0, $post = '', $cookie = '', $ip = '', $timeout = 30, $block = true) {
@@ -233,7 +233,7 @@ class smsapi {
 		}
 		@fclose($fp);
 		
-		//éƒ¨åˆ†è™šæ‹Ÿä¸»æœºè¿”å›æ•°å€¼æœ‰è¯¯ï¼Œæš‚ä¸ç¡®å®šåŸå› ï¼Œè¿‡æ»¤è¿”å›æ•°æ®æ ¼å¼
+		//²¿·ÖĞéÄâÖ÷»ú·µ»ØÊıÖµÓĞÎó£¬Ôİ²»È·¶¨Ô­Òò£¬¹ıÂË·µ»ØÊı¾İ¸ñÊ½
 		$return_arr = explode("\n", $return);
 		if(isset($return_arr[1])) {
 			$return = trim($return_arr[1]);
@@ -244,7 +244,7 @@ class smsapi {
 	}
 
 	/**
-	 * è·å–å½“å‰é¡µé¢å®Œæ•´URLåœ°å€
+	 * »ñÈ¡µ±Ç°Ò³ÃæÍêÕûURLµØÖ·
 	 */
 	private function _get_url() {
 		$sys_protocal = isset($_SERVER['SERVER_PORT']) && $_SERVER['SERVER_PORT'] == '443' ? 'https://' : 'http://';
@@ -255,7 +255,7 @@ class smsapi {
 	}
 	
 	/**
-	 * å®‰å…¨è¿‡æ»¤å‡½æ•°
+	 * °²È«¹ıÂËº¯Êı
 	 *
 	 * @param $string
 	 * @return string
@@ -279,7 +279,7 @@ class smsapi {
 	
 	/**
 	 * 
-	 * æ¥å£çŸ­ä¿¡çŠ¶æ€
+	 * ½Ó¿Ú¶ÌĞÅ×´Ì¬
 	 */
 	private function _sms_status() {
 		pc_base::load_app_func('global','sms');

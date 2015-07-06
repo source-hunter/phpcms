@@ -1,13 +1,13 @@
 <?php 
 /**
- * ç”Ÿæˆæµæ°´å·
+ * Éú³ÉÁ÷Ë®ºÅ
  */
 function create_sn(){
 	mt_srand((double )microtime() * 1000000 );
 	return date("YmdHis" ).str_pad( mt_rand( 1, 99999 ), 5, "0", STR_PAD_LEFT );
 }
 /**
- * è¿”å›å“åº”åœ°å€
+ * ·µ»ØÏìÓ¦µØÖ·
  */
 function return_url($code, $is_api = 0){
 	if($is_api){
@@ -31,17 +31,17 @@ function unserialize_config($cfg){
 	}
 }
 /**
- * è¿”å›è®¢å•çŠ¶æ€
+ * ·µ»Ø¶©µ¥×´Ì¬
  */
 function return_status($status) {
 	$trade_status = array('0'=>'succ', '1'=>'failed', '2'=>'timeout', '3'=>'progress', '4'=>'unpay', '5'=>'cancel','6'=>'error');
 	return $trade_status[$status];
 }
 /**
- * è¿”å›è®¢å•æ‰‹ç»­è´¹
- * @param  $amount è®¢å•ä»·æ ¼
- * @param  $fee æ‰‹ç»­è´¹æ¯”ç‡
- * @param  $method æ‰‹ç»­è´¹æ–¹å¼
+ * ·µ»Ø¶©µ¥ÊÖĞø·Ñ
+ * @param  $amount ¶©µ¥¼Û¸ñ
+ * @param  $fee ÊÖĞø·Ñ±ÈÂÊ
+ * @param  $method ÊÖĞø·Ñ·½Ê½
  */
 function pay_fee($amount, $fee=0, $method=0) {
     $pay_fee = 0;
@@ -55,10 +55,10 @@ function pay_fee($amount, $fee=0, $method=0) {
 }
 
 /**
- * ç”Ÿæˆæ”¯ä»˜æŒ‰é’®
- * @param $data æŒ‰é’®æ•°æ®
- * @param $attr æŒ‰é’®å±æ€§ å¦‚æ ·å¼ç­‰
- * @param $ishow æ˜¯å¦æ˜¾ç¤ºæè¿°
+ * Éú³ÉÖ§¸¶°´Å¥
+ * @param $data °´Å¥Êı¾İ
+ * @param $attr °´Å¥ÊôĞÔ ÈçÑùÊ½µÈ
+ * @param $ishow ÊÇ·ñÏÔÊ¾ÃèÊö
  */
 function mk_pay_btn($data,$attr='class="payment-show"',$ishow='1') {
 	$pay_type = '';

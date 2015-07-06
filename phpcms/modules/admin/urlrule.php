@@ -23,7 +23,7 @@ class urlrule extends admin {
 			$_POST['info']['urlrule'] = rtrim(trim($_POST['info']['urlrule']),'.php');
 			$_POST['info']['urlrule'] = $this->url_replace($_POST['info']['urlrule']);
 			if($this->url_ifok($_POST['info']['urlrule'])==false){
-				showmessage('urlè§„åˆ™é‡Œå«æœ‰éæ³•phpå­—ç¬¦');
+				showmessage('url¹æÔòÀïº¬ÓĞ·Ç·¨php×Ö·û');
 			}
 			$this->db->insert($_POST['info']);
 			$this->public_cache_urlrule();
@@ -53,7 +53,7 @@ class urlrule extends admin {
 			$_POST['info']['urlrule'] = rtrim(trim($_POST['info']['urlrule']),'.php');
 			$_POST['info']['urlrule'] = $this->url_replace($_POST['info']['urlrule']);
 			if($this->url_ifok($_POST['info']['urlrule'])==false){
-				showmessage('urlè§„åˆ™é‡Œå«æœ‰éæ³•phpå­—ç¬¦');
+				showmessage('url¹æÔòÀïº¬ÓĞ·Ç·¨php×Ö·û');
 			}			
 			$this->db->update($_POST['info'],array('urlruleid'=>$urlruleid));
 			$this->public_cache_urlrule();
@@ -73,7 +73,7 @@ class urlrule extends admin {
 		}
 	}
 	/**
-	 * æ›´æ–°URLè§„åˆ™
+	 * ¸üĞÂURL¹æÔò
 	 */
 	public function public_cache_urlrule() {
 		$datas = $this->db->select('','*','','','','urlruleid');
@@ -85,7 +85,7 @@ class urlrule extends admin {
 		setcache('urlrules',$basic_data,'commons');
 	}
 	/*
-	*urlè§„åˆ™æ›¿æ¢
+	*url¹æÔòÌæ»»
 	**/
 	public function url_replace($url){
 		$urldb = explode("|",$url);
@@ -102,7 +102,7 @@ class urlrule extends admin {
 		return implode("|",$urldb);
 	}
 	/*
-	*urlè§„åˆ™ åˆ¤æ–­ã€‚
+	*url¹æÔò ÅĞ¶Ï¡£
 	**/
 	public function url_ifok($url){
 		$urldb = explode("|",$url);

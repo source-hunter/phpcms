@@ -1,6 +1,6 @@
 <?php
 /**
- *  position_api.class.php æ¨èè‡³æ¨èä½æ¥å£ç±»
+ *  position_api.class.php ÍÆ¼öÖÁÍÆ¼öÎ»½Ó¿ÚÀà
  *
  * @copyright			(C) 2005-2010 PHPCMS
  * @license				http://www.phpcms.cn/license/
@@ -10,25 +10,25 @@
 defined('IN_PHPCMS') or exit('No permission resources.');
 
 class push_api {
- 	private $db, $pos_data; //æ•°æ®è°ƒç”¨å±æ€§
+ 	private $db, $pos_data; //Êı¾İµ÷ÓÃÊôĞÔ
 
 	public function __construct() {
-		$this->db = pc_base::load_model('position_model');  //åŠ è½½æ•°æ®æ¨¡å‹
+		$this->db = pc_base::load_model('position_model');  //¼ÓÔØÊı¾İÄ£ĞÍ
 	}
 
 	/**
-	 * æ¨èä½æ¨é€ä¿®æ”¹æ¥å£
-	 * é€‚åˆåœ¨æ–‡ç« å‘å¸ƒã€ä¿®æ”¹æ—¶è°ƒç”¨
-	 * @param int $id æ¨èæ–‡ç« ID
-	 * @param int $modelid æ¨¡å‹ID
-	 * @param array $posid æ¨é€åˆ°çš„æ¨èä½ID
-	 * @param array $data æ¨é€æ•°æ®
-	 * @param int $expiration è¿‡æœŸæ—¶é—´è®¾ç½®
-	 * @param int $undel æ˜¯å¦åˆ¤æ–­æ¨èä½å»é™¤æƒ…å†µ
-	 * @param string $model è°ƒå–çš„æ•°æ®æ¨¡å‹
-	 * è°ƒç”¨æ–¹å¼
+	 * ÍÆ¼öÎ»ÍÆËÍĞŞ¸Ä½Ó¿Ú
+	 * ÊÊºÏÔÚÎÄÕÂ·¢²¼¡¢ĞŞ¸ÄÊ±µ÷ÓÃ
+	 * @param int $id ÍÆ¼öÎÄÕÂID
+	 * @param int $modelid Ä£ĞÍID
+	 * @param array $posid ÍÆËÍµ½µÄÍÆ¼öÎ»ID
+	 * @param array $data ÍÆËÍÊı¾İ
+	 * @param int $expiration ¹ıÆÚÊ±¼äÉèÖÃ
+	 * @param int $undel ÊÇ·ñÅĞ¶ÏÍÆ¼öÎ»È¥³ıÇé¿ö
+	 * @param string $model µ÷È¡µÄÊı¾İÄ£ĞÍ
+	 * µ÷ÓÃ·½Ê½
 	 * $push = pc_base::load_app_class('push_api','admin');
-	 * $push->position_update(323, 25, 45, array(20,21), array('title'=>'æ–‡ç« æ ‡é¢˜','thumb'=>'ç¼©ç•¥å›¾è·¯å¾„','inputtime'='æ—¶é—´æˆ³'));
+	 * $push->position_update(323, 25, 45, array(20,21), array('title'=>'ÎÄÕÂ±êÌâ','thumb'=>'ËõÂÔÍ¼Â·¾¶','inputtime'='Ê±¼ä´Á'));
 	 */
 	public function position_update($id, $modelid, $catid, $posid, $data, $expiration = 0, $undel = 0, $model = 'content_model') {
 		$arr = $param = array();
@@ -37,13 +37,13 @@ class push_api {
 		$modelid = intval($modelid);
 		$data['inputtime'] = $data['inputtime'] ? $data['inputtime'] : SYS_TIME;
 
-		//ç»„è£…å±æ€§å‚æ•°
+		//×é×°ÊôĞÔ²ÎÊı
 		$arr['modelid'] = $modelid;
 		$arr['catid'] =  $catid;
 		$arr['posid'] =  $posid;
 		$arr['dosubmit'] =  '1';
 
-		//ç»„è£…æ•°æ®
+		//×é×°Êı¾İ
 		$param[0] = $data;
 		$param[0]['id'] = $id;
 		if ($undel==0) $pos_info = $this->position_del($catid, $id, $posid);
@@ -51,22 +51,22 @@ class push_api {
 	}
 
 	/**
-	 * æ¨èä½åˆ é™¤è®¡ç®—
+	 * ÍÆ¼öÎ»É¾³ı¼ÆËã
 	 * Enter description here ...
-	 * @param int $catid æ ç›®ID
-	 * @param int $id æ–‡ç« id
-	 * @param array $input_posid ä¼ å…¥æ¨èä½æ•°ç»„
+	 * @param int $catid À¸Ä¿ID
+	 * @param int $id ÎÄÕÂid
+	 * @param array $input_posid ´«ÈëÍÆ¼öÎ»Êı×é
 	 */
 	private function position_del($catid,$id,$input_posid) {
 		$array = array();
 		$pos_data = pc_base::load_model('position_data_model');
 
-		//æŸ¥æ‰¾å·²å­˜åœ¨æ¨èä½
+		//²éÕÒÒÑ´æÔÚÍÆ¼öÎ»
 		$r = $pos_data->select(array('id'=>$id,'catid'=>$catid),'posid');
 		if(!$r) return false;
 		foreach ($r as $v) $array[] = $v['posid'];
 
-		//å·®é›†è®¡ç®—ï¼Œéœ€è¦åˆ é™¤çš„æ¨è
+		//²î¼¯¼ÆËã£¬ĞèÒªÉ¾³ıµÄÍÆ¼ö
 		$real_posid = implode(',', array_diff($array,$input_posid));
 
 		if (!$real_posid) return false;
@@ -76,7 +76,7 @@ class push_api {
 	}
 
 	/**
-	 * åˆ¤æ–­æ–‡ç« æ˜¯å¦è¢«æ¨è
+	 * ÅĞ¶ÏÎÄÕÂÊÇ·ñ±»ÍÆ¼ö
 	 * @param $id
 	 * @param $modelid
 	 */
@@ -95,11 +95,11 @@ class push_api {
 	}
 
 	/**
-	 * æ¥å£å¤„ç†æ–¹æ³•
-	 * @param array $param å±æ€§ è¯·æ±‚æ—¶ï¼Œä¸ºæ¨¡å‹ã€æ ç›®æ•°ç»„ã€‚æäº¤æ·»åŠ ä¸ºäºŒç»´ä¿¡æ¯æ•°æ® ã€‚ä¾‹ï¼šarray(1=>array('title'=>'å¤šå‘å‘é€æ–¹æ³•', ....))
-	 * @param array $arr å‚æ•° è¡¨å•æ•°æ®ï¼Œåªåœ¨è¯·æ±‚æ·»åŠ æ—¶ä¼ é€’ã€‚ ä¾‹ï¼šarray('modelid'=>1, 'catid'=>12);
-	 * @param int $expiration è¿‡æœŸæ—¶é—´è®¾ç½®
-	 * @param string $model è°ƒå–çš„æ•°æ®åº“å‹åç§°
+	 * ½Ó¿Ú´¦Àí·½·¨
+	 * @param array $param ÊôĞÔ ÇëÇóÊ±£¬ÎªÄ£ĞÍ¡¢À¸Ä¿Êı×é¡£Ìá½»Ìí¼ÓÎª¶şÎ¬ĞÅÏ¢Êı¾İ ¡£Àı£ºarray(1=>array('title'=>'¶à·¢·¢ËÍ·½·¨', ....))
+	 * @param array $arr ²ÎÊı ±íµ¥Êı¾İ£¬Ö»ÔÚÇëÇóÌí¼ÓÊ±´«µİ¡£ Àı£ºarray('modelid'=>1, 'catid'=>12);
+	 * @param int $expiration ¹ıÆÚÊ±¼äÉèÖÃ
+	 * @param string $model µ÷È¡µÄÊı¾İ¿âĞÍÃû³Æ
 	 */
 	public function position_list($param = array(), $arr = array(), $expiration = 0, $model = 'content_model') {
 		if ($arr['dosubmit']) {
@@ -120,7 +120,7 @@ class push_api {
 			if (is_array($arr['posid']) && !empty($arr['posid']) && is_array($param) && !empty($param)) {
 				foreach ($arr['posid'] as $pid) {
 					$ext = $func_char = '';
-					$r = $this->db->get_one(array('posid'=>$pid), 'extention'); //æ£€æŸ¥æ¨èä½æ˜¯å¦å¯ç”¨äº†æ‰©å±•å­—æ®µ
+					$r = $this->db->get_one(array('posid'=>$pid), 'extention'); //¼ì²éÍÆ¼öÎ»ÊÇ·ñÆôÓÃÁËÀ©Õ¹×Ö¶Î
 					$ext = $r['extention'] ? $r['extention'] : '';
 					if ($ext) {
 						$ext = str_replace(array('\'', '"', ' '), '', $ext);
@@ -165,7 +165,7 @@ class push_api {
 								$info['extention'] = $d[$ext];
 							}
 						}
-						//é¢œè‰²é€‰æ‹©ä¸ºéšè—åŸŸ åœ¨è¿™é‡Œè¿›è¡Œå–å€¼
+						//ÑÕÉ«Ñ¡ÔñÎªÒş²ØÓò ÔÚÕâÀï½øĞĞÈ¡Öµ
 						$info['data']['style'] = $d['style'];
 						$info['thumb'] = $info['data']['thumb'] ? 1 : 0;
 						$info['siteid'] = get_siteid();
@@ -204,7 +204,7 @@ class push_api {
 			if(!empty($positions)) {
 				foreach ($positions as $pid => $p) {
 					//if ($p['catid']) $catids = array_keys((array)subcat($p['catid'], 0, 1));
-					//è·å–æ ç›®ä¸‹æ‰€æœ‰å­æ ç›®
+					//»ñÈ¡À¸Ä¿ÏÂËùÓĞ×ÓÀ¸Ä¿
 					if ($p['catid']) $catids = explode(',',$category[$p['catid']]['arrchildid']);
 					if (($p['siteid']==0 || $p['siteid']==$siteid) && ($p['modelid']==0 || $p['modelid']==$param['modelid']) && ($p['catid']==0 || in_array($param['catid'], $catids))) {
 						$info[$pid] = $p['name'];

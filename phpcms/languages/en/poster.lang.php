@@ -90,7 +90,7 @@ $LANG['stat']							=	'Statistics';
 $LANG['edit_ads']						=	'Edit ads';
 $LANG['ads_module']						=	'Advertising module';
 
-//骞垮憡缁熻
+//广告统计
 $LANG['hits_stat']						=	'Click to calculate';
 $LANG['show_stat']						=	'Show result';
 $LANG['listorder_f_area']				=	'By area';
@@ -127,7 +127,7 @@ $LANG['input_width_height']				=	'Enter width and height';
 $LANG['three_numeric']					=	'No more than 3 digits';
 $LANG['get_code_space']					=	'Call ads section';
 
-//璋冪敤浠ｇ爜
+//调用代码
 $LANG['explain']						=	'Call descriptions';
 $LANG['notice']							=	'1. Method 1, no server environment is required. It is able to calculate the number of ads displays and also automatically justify whether ads is expired or not. However, method 1 consumes too much server resources and the user visits a website with slow rate. In addition, it does not support JS advertisement codes such as Google JS codes<br />2. Method 2, no server environment is required. It allows to visit ads fast , while almost no consumption of server resources to deal witha lot of good customers here but it is unable to automatically justify whether ads is expired or not which is required to update JS frequently. In addition, it does not support JS advertisement codes such as Google JS codes.<br />3. If you want to call advertisement codes such as google, baidu It only can have one way. Please update advertising in the static pages after altering ads codes when website uses static page.<br />4. Please select one calling method according to own situations and then copy codes to template that we want to display. After then, it is necessary to update related sites.';
 $LANG['one_way']						=	'Method 1';
@@ -145,7 +145,7 @@ $LANG['module_setting']					=	'Module settings';
 $LANG['update_js_success']				=	'Update JS successfully';
 $LANG['update_js']						=	'Update JS successfully';
 
-//妯℃澘璁剧疆
+//模板设置
 $LANG['template_name']					=	'Template name';
 $LANG['setting_success']				=	'Configuration successful';
 $LANG['check_template']					=	'View';

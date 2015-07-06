@@ -1,19 +1,19 @@
 <?php
 /**
-* é€šç”¨çš„æ ‘å‹ç±»ï¼Œå¯ä»¥ç”Ÿæˆä»»ä½•æ ‘å‹ç»“æ„
+* Í¨ÓÃµÄÊ÷ĞÍÀà£¬¿ÉÒÔÉú³ÉÈÎºÎÊ÷ĞÍ½á¹¹
 */
 class tree {
 	/**
-	* ç”Ÿæˆæ ‘å‹ç»“æ„æ‰€éœ€è¦çš„2ç»´æ•°ç»„
+	* Éú³ÉÊ÷ĞÍ½á¹¹ËùĞèÒªµÄ2Î¬Êı×é
 	* @var array
 	*/
 	public $arr = array();
 
 	/**
-	* ç”Ÿæˆæ ‘å‹ç»“æ„æ‰€éœ€ä¿®é¥°ç¬¦å·ï¼Œå¯ä»¥æ¢æˆå›¾ç‰‡
+	* Éú³ÉÊ÷ĞÍ½á¹¹ËùĞèĞŞÊÎ·ûºÅ£¬¿ÉÒÔ»»³ÉÍ¼Æ¬
 	* @var array
 	*/
-	public $icon = array('â”‚','â”œ','â””');
+	public $icon = array('©¦','©À','©¸');
 
 	/**
 	* @access private
@@ -21,16 +21,16 @@ class tree {
 	public $ret = '';
 
 	/**
-	* æ„é€ å‡½æ•°ï¼Œåˆå§‹åŒ–ç±»
-	* @param array 2ç»´æ•°ç»„ï¼Œä¾‹å¦‚ï¼š
+	* ¹¹Ôìº¯Êı£¬³õÊ¼»¯Àà
+	* @param array 2Î¬Êı×é£¬ÀıÈç£º
 	* array(
-	*      1 => array('id'=>'1','parentid'=>0,'name'=>'ä¸€çº§æ ç›®ä¸€'),
-	*      2 => array('id'=>'2','parentid'=>0,'name'=>'ä¸€çº§æ ç›®äºŒ'),
-	*      3 => array('id'=>'3','parentid'=>1,'name'=>'äºŒçº§æ ç›®ä¸€'),
-	*      4 => array('id'=>'4','parentid'=>1,'name'=>'äºŒçº§æ ç›®äºŒ'),
-	*      5 => array('id'=>'5','parentid'=>2,'name'=>'äºŒçº§æ ç›®ä¸‰'),
-	*      6 => array('id'=>'6','parentid'=>3,'name'=>'ä¸‰çº§æ ç›®ä¸€'),
-	*      7 => array('id'=>'7','parentid'=>3,'name'=>'ä¸‰çº§æ ç›®äºŒ')
+	*      1 => array('id'=>'1','parentid'=>0,'name'=>'Ò»¼¶À¸Ä¿Ò»'),
+	*      2 => array('id'=>'2','parentid'=>0,'name'=>'Ò»¼¶À¸Ä¿¶ş'),
+	*      3 => array('id'=>'3','parentid'=>1,'name'=>'¶ş¼¶À¸Ä¿Ò»'),
+	*      4 => array('id'=>'4','parentid'=>1,'name'=>'¶ş¼¶À¸Ä¿¶ş'),
+	*      5 => array('id'=>'5','parentid'=>2,'name'=>'¶ş¼¶À¸Ä¿Èı'),
+	*      6 => array('id'=>'6','parentid'=>3,'name'=>'Èı¼¶À¸Ä¿Ò»'),
+	*      7 => array('id'=>'7','parentid'=>3,'name'=>'Èı¼¶À¸Ä¿¶ş')
 	*      )
 	*/
 	public function init($arr=array()){
@@ -40,7 +40,7 @@ class tree {
 	}
 
     /**
-	* å¾—åˆ°çˆ¶çº§æ•°ç»„
+	* µÃµ½¸¸¼¶Êı×é
 	* @param int
 	* @return array
 	*/
@@ -58,7 +58,7 @@ class tree {
 	}
 
     /**
-	* å¾—åˆ°å­çº§æ•°ç»„
+	* µÃµ½×Ó¼¶Êı×é
 	* @param int
 	* @return array
 	*/
@@ -73,7 +73,7 @@ class tree {
 	}
 
     /**
-	* å¾—åˆ°å½“å‰ä½ç½®æ•°ç»„
+	* µÃµ½µ±Ç°Î»ÖÃÊı×é
 	* @param int
 	* @return array
 	*/
@@ -95,10 +95,10 @@ class tree {
 	}
 
     /**
-	* å¾—åˆ°æ ‘å‹ç»“æ„
-	* @param int IDï¼Œè¡¨ç¤ºè·å¾—è¿™ä¸ªIDä¸‹çš„æ‰€æœ‰å­çº§
-	* @param string ç”Ÿæˆæ ‘å‹ç»“æ„çš„åŸºæœ¬ä»£ç ï¼Œä¾‹å¦‚ï¼š"<option value=\$id \$selected>\$spacer\$name</option>"
-	* @param int è¢«é€‰ä¸­çš„IDï¼Œæ¯”å¦‚åœ¨åšæ ‘å‹ä¸‹æ‹‰æ¡†çš„æ—¶å€™éœ€è¦ç”¨åˆ°
+	* µÃµ½Ê÷ĞÍ½á¹¹
+	* @param int ID£¬±íÊ¾»ñµÃÕâ¸öIDÏÂµÄËùÓĞ×Ó¼¶
+	* @param string Éú³ÉÊ÷ĞÍ½á¹¹µÄ»ù±¾´úÂë£¬ÀıÈç£º"<option value=\$id \$selected>\$spacer\$name</option>"
+	* @param int ±»Ñ¡ÖĞµÄID£¬±ÈÈçÔÚ×öÊ÷ĞÍÏÂÀ­¿òµÄÊ±ºòĞèÒªÓÃµ½
 	* @return string
 	*/
 	public function get_tree($myid, $str, $sid = 0, $adds = '', $str_group = ''){
@@ -126,7 +126,7 @@ class tree {
 		return $this->ret;
 	}
     /**
-	* åŒä¸Šä¸€æ–¹æ³•ç±»ä¼¼,ä½†å…è®¸å¤šé€‰
+	* Í¬ÉÏÒ»·½·¨ÀàËÆ,µ«ÔÊĞí¶àÑ¡
 	*/
 	public function get_tree_multi($myid, $str, $sid = 0, $adds = ''){
 		$number=1;

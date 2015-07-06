@@ -22,22 +22,22 @@ include $this->admin_tpl('header');?>
 
 <table width="100%" class="table_form ">
 	<tr>
-        <th width="200"><?php echo L('parent_category')?>ï¼š</th>
+        <th width="200"><?php echo L('parent_category')?>£º</th>
         <td>
 		<?php echo form::select_category('category_content_'.$this->siteid,$parentid,'name="info[parentid]"',L('please_select_parent_category'),0,-1);?>
 		</td>
       </tr>
       <tr>
-        <th><?php echo L('catname')?>ï¼š</th>
+        <th><?php echo L('catname')?>£º</th>
         <td><input type="text" name="info[catname]" id="catname" class="input-text" value="<?php echo $catname;?>"></td>
       </tr>
 
 	<tr>
-        <th><?php echo L('catgory_img')?>ï¼š</th>
+        <th><?php echo L('catgory_img')?>£º</th>
         <td><?php echo form::images('info[image]', 'image', $image, 'content');?></td>
       </tr>
 		<tr>
-        <th><?php echo L('link_url')?>ï¼š</th>
+        <th><?php echo L('link_url')?>£º</th>
         <td><input type="text" name="info[url]" id="url" size="50" class="input-text" value="<?php echo $url;?>"></td>
       </tr>
 </table>

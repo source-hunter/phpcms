@@ -262,7 +262,7 @@ $LANG['filedtype'] = 'Field type';
 $LANG['input_correct'] = 'Correct';
 $LANG['filed_nickname_need'] = 'Please input your nickname';
 $LANG['move_member_model_alert'] = 'This operation will delete all users info from original model. You cannot undo this.';
-$LANG['move_member_model_index_alert'] = '1. Please carefully delete model. Please use ‚ÄúMove‚Äù function to move user model when there are users in model.<br />2. This operation will delete all users info from original model. You cannot undo this.';
+$LANG['move_member_model_index_alert'] = '1. Please carefully delete model. Please use °∞Move°± function to move user model when there are users in model.<br />2. This operation will delete all users info from original model. You cannot undo this.';
 $LANG['create_new_model_can_empty'] = '(new model is empty)';
 
 $LANG['main_table_filed'] = 'As primary table field';
@@ -362,7 +362,7 @@ $LANG['select_site'] = 'Select site';
 $LANG['please_select_category'] = 'Please select column';
 $LANG['member_group_permission'] = 'User permissions';
 $LANG['no_permission'] = 'No permissions';
-$LANG['copyfrom_tips'] = '‚â°Please select‚â°';
+$LANG['copyfrom_tips'] = '°‘Please select°‘';
 $LANG['goback'] = 'Back to';
 $LANG['allowattachment'] = 'Allow to upload attachment';
 

@@ -1,6 +1,6 @@
 <?php
 /**
- * å›¾åƒå¤„ç†
+ * Í¼Ïñ´¦Àí
  */
 class image {
 	var $w_pct = 100;
@@ -101,8 +101,8 @@ class image {
 		else
 			imagecopyresized($thumbimg, $srcimg, 0, 0, $psrc_x, $psrc_y, $width, $height,  $srcwidth, $srcheight); 
 		if($type=='gif' || $type=='png') {
-			$background_color  =  imagecolorallocate($thumbimg,  0, 255, 0);  //  æŒ‡æ´¾ä¸€ä¸ªç»¿è‰²  
-			imagecolortransparent($thumbimg, $background_color);  //  è®¾ç½®ä¸ºé€æ˜Žè‰²ï¼Œè‹¥æ³¨é‡ŠæŽ‰è¯¥è¡Œåˆ™è¾“å‡ºç»¿è‰²çš„å›¾ 
+			$background_color  =  imagecolorallocate($thumbimg,  0, 255, 0);  //  Ö¸ÅÉÒ»¸öÂÌÉ«  
+			imagecolortransparent($thumbimg, $background_color);  //  ÉèÖÃÎªÍ¸Ã÷É«£¬Èô×¢ÊÍµô¸ÃÐÐÔòÊä³öÂÌÉ«µÄÍ¼ 
 		}
 		if($type=='jpg' || $type=='jpeg') imageinterlace($thumbimg, $this->interlace);
 		$imagefun = 'image'.($type=='jpg' ? 'jpeg' : $type);

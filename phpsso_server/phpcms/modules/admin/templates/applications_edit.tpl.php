@@ -26,18 +26,18 @@ $(function(){
 <form action="?m=admin&c=applications&a=edit&appid=<?php echo $appid?>" method="post" id="myform">
 <table width="100%"  class="table_form">
   <tr>
-    <th width="80"><?php echo L('application_name')?>ï¼š</th>
+    <th width="80"><?php echo L('application_name')?>£º</th>
     <td class="y-bg"><input type="text" class="input-text" name="name" value="<?php echo $data['name']?>" id="name" /></td>
   </tr><tr>
-    <th><?php echo L('application_url')?>ï¼š</th>
+    <th><?php echo L('application_url')?>£º</th>
     <td class="y-bg"><input type="text" class="input-text" name="url"  value="<?php echo $data['url']?>" id="url" size="50"/> </td>
   </tr>
   <tr>
-    <th><?php echo L('authkey')?>ï¼š</th>
+    <th><?php echo L('authkey')?>£º</th>
     <td class="y-bg"><input type="text" class="input-text" name="authkey" id="authkey"  value="<?php echo $data['authkey']?>" size="50"/> <input type="button" class="button" name="dosubmit" value="<?php echo L('automatic_generation')?>" onclick="creat_authkey()" /></td>
   </tr>
    <tr>
-    <th><?php echo L('type')?>ï¼š</th>
+    <th><?php echo L('type')?>£º</th>
     <td class="y-bg"><select name="type" onchange="change_apifile(this.value)">
 	<option value="phpcms_v9"<?php if ($data['type']=='phpcms_v9'){echo ' selected';}?>>phpcms_v9</option>
     <option value="phpcms_2008_sp4"<?php if ($data['type']=='phpcms_2008_sp4'){echo ' selected';}?>>phpcms_2008_sp4</option>
@@ -45,22 +45,22 @@ $(function(){
     </select></td>
   </tr>
    <tr>
-    <th><?php echo L('application_ip')?>ï¼š</th>
+    <th><?php echo L('application_ip')?>£º</th>
     <td class="y-bg"><input type="text" class="input-text" name="ip" value="<?php echo $data['ip']?>" /> <?php echo L('application_ip_msg')?></td>
   </tr>
    <tr>
-    <th><?php echo L('application_apifilename')?>ï¼š</th>
+    <th><?php echo L('application_apifilename')?>£º</th>
     <td class="y-bg"><input type="text" class="input-text" name="apifilename" id="apifilename" value="<?php echo $data['apifilename']?>" size="50"/></td>
   </tr>
    <tr>
-    <th><?php echo L('application_charset')?>ï¼š</th>
+    <th><?php echo L('application_charset')?>£º</th>
     <td class="y-bg"><select name="charset">
     <option value="gbk"<?php if ($data['charset']=='gbk'){echo ' selected';}?>>GBK</option>
     <option value="utf-8"<?php if ($data['charset']=='utf-8'){echo ' selected';}?>>utf-8</option>
     </select></td>
   </tr>
     <tr>
-    <th><?php echo L('application_synlogin')?>ï¼š</th>
+    <th><?php echo L('application_synlogin')?>£º</th>
     <td class="y-bg"><input type="checkbox" name="synlogin" value="1"<?php if ($data['synlogin']){echo ' checked';}?> /> <?php echo L('yes')?></td>
   </tr>
 </table>

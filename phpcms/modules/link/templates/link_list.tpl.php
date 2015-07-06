@@ -9,7 +9,7 @@ include $this->admin_tpl('header', 'admin');
 		<tr>
 		<td><div class="explain-col"> 
 		<?php echo L('all_linktype')?>: &nbsp;&nbsp; <a href="?m=link&c=link"><?php echo L('all')?></a> &nbsp;&nbsp;
-		<a href="?m=link&c=link&typeid=0">榛樿鍒嗙被</a>&nbsp;
+		<a href="?m=link&c=link&typeid=0">默认分类</a>&nbsp;
 		<?php
 	if(is_array($type_arr)){
 	foreach($type_arr as $typeid => $type){
@@ -88,7 +88,7 @@ function checkuid() {
 		myform.submit();
 	}
 }
-//鍚戜笅绉诲姩
+//向下移动
 function listorder_up(id) {
 	$.get('?m=link&c=link&a=listorder_up&linkid='+id,null,function (msg) { 
 	if (msg==1) { 

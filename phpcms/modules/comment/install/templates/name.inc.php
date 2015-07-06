@@ -2,7 +2,7 @@
 defined('IN_PHPCMS') or exit('Access Denied');
 defined('INSTALL') or exit('Access Denied');
 return array (
-      'show_list.html' => 'å†…å®¹é¡µè¯„è®ºåˆ—è¡¨',
-      'list.html' => 'è¯„è®ºåˆ—è¡¨',
+      'show_list.html' => 'ÄÚÈÝÒ³ÆÀÂÛÁÐ±í',
+      'list.html' => 'ÆÀÂÛÁÐ±í',
     );
 ?>

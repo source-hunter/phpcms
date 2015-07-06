@@ -21,9 +21,9 @@ include $this->admin_tpl('header', 'admin');
 		<td align="center" width="35"><input type="checkbox"
 			name="typeid[]" value="<?php echo $info['typeid']?>" disabled></td>
 		<td align="center"><input name='listorders[<?php echo $info['typeid']?>]' type='text' size='3' value='<?php echo $info['listorder']?>' class="input_center"></td> 
-		<td>榛樿鍒嗙被</td>
+		<td>默认分类</td>
 		<td align="center" width="12%"> 0</td>
-		 <td align="center" width="20%" style="color: #999"> 淇敼  |  鍒犻櫎</td>
+		 <td align="center" width="20%" style="color: #999"> 修改  |  删除</td>
 	</tr>
 <?php
 if(is_array($infos)){

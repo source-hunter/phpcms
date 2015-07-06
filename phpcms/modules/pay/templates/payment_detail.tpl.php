@@ -14,23 +14,23 @@ $(function(){
 <div class="common-form">
 <form name="myform" action="?m=pay&c=payment&a=<?php echo $_GET['a']?>" method="post" id="myform">
 <fieldset>
-<legend><?php echo L('说明')?></legend>
-<?php if($pay_name =='支付宝'){?>
+<legend><?php echo L('˵��')?></legend>
+<?php if($pay_name =='֧����'){?>
 <table width="100%" class="table_form" id="taobao">
 <tr><td>
-<img src="<?php echo IMG_PATH;?>taobao_log.png">支付宝为国内领先的支付平台!<br>
-<a href="https://www.alipay.com/" style="color:red;" target="_blank">了解详情</a>  <a href="http://help.alipay.com/support/help_detail.htm?help_id=241435" style="color:red;" target="_blank">如何签约</a><br><br>
-已经签约的用户，可直接在下方填写相关账号信息即可。
+<img src="<?php echo IMG_PATH;?>taobao_log.png">֧����Ϊ�������ȵ�֧��ƽ̨!<br>
+<a href="https://www.alipay.com/" style="color:red;" target="_blank">�˽�����</a>  <a href="http://help.alipay.com/support/help_detail.htm?help_id=241435" style="color:red;" target="_blank">���ǩԼ</a><br><br>
+�Ѿ�ǩԼ���û�����ֱ�����·���д����˺���Ϣ���ɡ�
 </td></tr>
 </table>
 <?php }?>
 
-<?php if($pay_name =='盛付通'){?>
+<?php if($pay_name =='ʢ��ͨ'){?>
 <table width="100%" class="table_form" id="taobao">
 <tr><td>
-<img src="<?php echo IMG_PATH;?>snda_log.jpg">盛付通是盛大网络创办的中国领先的在线支付平台，致力于为互联网用户和企业提供便捷、安全的支付服务。通过与各大银行、通信服务商等签约合作，提供具备相当实力和信誉保障的支付服务！<a href="http://zhuanye.shengpay.com/SP/Business/quicklygather.aspx" style="color:red;" target="_blank">前往了解详情！</a><br><br> 
-<a href="http://zhuanye.shengpay.com/ProLogin.aspx" target="_blank" title="点击申请"><img src="<?php echo IMG_PATH;?>taobao_sq.jpg"></a><br><br>
-已经签约的用户，可直接在下方填写相关账号信息即可。
+<img src="<?php echo IMG_PATH;?>snda_log.jpg">ʢ��ͨ��ʢ�����紴����й����ȵ�����֧��ƽ̨��������Ϊ�������û�����ҵ�ṩ��ݡ���ȫ��֧������ͨ����������С�ͨ�ŷ����̵�ǩԼ�������ṩ�߱��൱ʵ�����������ϵ�֧������<a href="http://zhuanye.shengpay.com/SP/Business/quicklygather.aspx" style="color:red;" target="_blank">ǰ���˽����飡</a><br><br> 
+<a href="http://zhuanye.shengpay.com/ProLogin.aspx" target="_blank" title="�������"><img src="<?php echo IMG_PATH;?>taobao_sq.jpg"></a><br><br>
+�Ѿ�ǩԼ���û�����ֱ�����·���д����˺���Ϣ���ɡ�
 </td></tr>
 </table>
 <?php }?>
@@ -83,7 +83,7 @@ $(function(){
 <td><?php echo $is_online ? L('yes'):L('no')?></td>
 </tr>
 <tr>
-<td  width="120"><?php echo L('pay_factorage')?>：</td> 
+<td  width="120"><?php echo L('pay_factorage')?>��</td> 
 <td id="paymethod"><input name="pay_method" value="0" type="radio" <?php echo ($pay_method == 1) ? '': 'checked'?>> <?php echo L('pay_method_rate')?>&nbsp;&nbsp;&nbsp;<input name="pay_method" value="1" type="radio" <?php echo ($pay_method == 0) ? '': 'checked'?>> <?php echo L('pay_method_fix')?>&nbsp;&nbsp;&nbsp; </td>
 </tr>
 <tr><td></td>

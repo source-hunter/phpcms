@@ -1,9 +1,9 @@
 <?php 
 
 /**
- * ç”Ÿæˆéšæœºå­—ç¬¦ä¸²
- * @param string $lenth é•¿åº¦
- * @return string å­—ç¬¦ä¸²
+ * Éú³ÉËæ»ú×Ö·û´®
+ * @param string $lenth ³¤¶È
+ * @return string ×Ö·û´®
  */
 function create_randomstr($lenth = 6) {
 	return random($lenth, '123456789abcdefghijklmnpqrstuvwxyzABCDEFGHIJKLMNPQRSTUVWXYZ');
@@ -11,8 +11,8 @@ function create_randomstr($lenth = 6) {
 
 /**
  * 
- * @param $password å¯†ç 
- * @param $random éšæœºæ•°
+ * @param $password ÃÜÂë
+ * @param $random Ëæ»úÊý
  */
 function create_password($password='', $random='') {
 	if(empty($random)) {

@@ -3,27 +3,27 @@
 {template 'member', 'left'}
 <div class="col-auto">
 <div class="col-1 ">
-<h6 class="title">æ”¯ä»˜è®°å½•</h6>
+<h6 class="title">Ö§¸¶¼ÇÂ¼</h6>
 <div class="content">
 <form name="searchform" action="{APP_PATH}index.php?m=pay&c=deposit" method="get" >
 <input type="hidden" value="pay" name="m">
 <input type="hidden" value="deposit" name="c">
 <input type="hidden" value="init" name="a">
 		<div class="search">
-		è®¢å•æ—¶é—´  {form::date('info[start_addtime]',$start_addtime)} åˆ°   {form::date('info[end_addtime]',$end_addtime)}
+		¶©µ¥Ê±¼ä  {form::date('info[start_addtime]',$start_addtime)} µ½   {form::date('info[end_addtime]',$end_addtime)}
 		{form::select($trade_status,$status,'name="info[status]"', L('all_status'))}  
-		<input type="submit" value="æŸ¥è¯¢" class="button" name="dosubmit">
+		<input type="submit" value="²éÑ¯" class="button" name="dosubmit">
 		</div>
 </form>
 <table width="100%" cellspacing="0"  class="table-list">
         <thead>
             <tr>
-            <th width="20%">æ”¯ä»˜å•å·</th>
-            <th width="20%">æ—¶é—´</th>
-            <th width="15%">æ”¯ä»˜æ–¹å¼</th>
-            <th width="8%">å­˜å…¥é‡‘é¢</th>
-            <th width="15%">æ”¯ä»˜çŠ¶æ€</th>
-            <th width="8%">æ“ä½œ</th>
+            <th width="20%">Ö§¸¶µ¥ºÅ</th>
+            <th width="20%">Ê±¼ä</th>
+            <th width="15%">Ö§¸¶·½Ê½</th>
+            <th width="8%">´æÈë½ğ¶î</th>
+            <th width="15%">Ö§¸¶×´Ì¬</th>
+            <th width="8%">²Ù×÷</th>
             </tr>
         </thead>
     <tbody>
@@ -32,7 +32,7 @@
 	<td width="20%" align="center">{$info['trade_sn']}</td>
 	<td  width="20%" align="center">{date('Y-m-d H:i:s',$info['addtime'])}</td>
 	<td width="15%" align="center">{$info['payment']}</td>
-	<td width="8%" align="center">{$info['money']} {php echo $info['type']==1 ? 'å…ƒ':'ç‚¹'}</td>
+	<td width="8%" align="center">{$info['money']} {php echo $info['type']==1 ? 'Ôª':'µã'}</td>
 	<td width="15%" align="center">{L($info['status'])} </a>
 	<td width="8%" align="center">{$info['pay_btn']}</td>
 	</tr>

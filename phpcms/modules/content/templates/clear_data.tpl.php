@@ -31,7 +31,7 @@ include $this->admin_tpl('header','admin');?>
 </tr>
 <tr>
 	<td align="center" width="100"><input name="tables[]" type="checkbox" value="comment" class="input-text-c input-text"></td>
-	<td><?php echo L('comment')?>ï¼ˆ<span style="color:#d55"><?php echo L('can_not_recovered')?></span>ï¼‰</td>
+	<td><?php echo L('comment')?>£¨<span style="color:#d55"><?php echo L('can_not_recovered')?></span>£©</td>
 </tr>
 <tr>
 	<td align="center"></td>

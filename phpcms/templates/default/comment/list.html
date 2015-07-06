@@ -3,16 +3,16 @@
 {php $comment = $data;}
 {/pc}
 <div class="main">
-        <h2 class="comment-title blue"><a href="{if $comment[url]}{$comment[url]}{else}{$url}{/if}">{if $comment[title]}{$comment[title]}{else}{$title}{/if}</a> <a href="#comment" class="f12 fn"><font color="#FF0000">[æˆ‘æ¥è¯´ä¸¤å¥]</font></a></h2>
-        <div class="comment_button"><a href="{APP_PATH}index.php?m=comment&c=index&a=init&commentid={$commentid}&title={urlencode(($comment[title] ? $comment[title] : $title))}&url={urlencode(($comment[url] ? $comment[url] : $url))}&hot=0"{if empty($hot)} class="on"{/if}>æœ€æ–°</a> <a href="{APP_PATH}index.php?m=comment&c=index&a=init&commentid={$commentid}&title={urlencode(($comment[title] ? $comment[title] : $title))}&url={urlencode(($comment[url] ? $comment[url] : $url))}&hot=1"{if $hot} class="on"{/if}>æœ€çƒ­</a></div> 	
+        <h2 class="comment-title blue"><a href="{if $comment[url]}{$comment[url]}{else}{$url}{/if}">{if $comment[title]}{$comment[title]}{else}{$title}{/if}</a> <a href="#comment" class="f12 fn"><font color="#FF0000">[ÎÒÀ´ËµÁ½¾ä]</font></a></h2>
+        <div class="comment_button"><a href="{APP_PATH}index.php?m=comment&c=index&a=init&commentid={$commentid}&title={urlencode(($comment[title] ? $comment[title] : $title))}&url={urlencode(($comment[url] ? $comment[url] : $url))}&hot=0"{if empty($hot)} class="on"{/if}>×îĞÂ</a> <a href="{APP_PATH}index.php?m=comment&c=index&a=init&commentid={$commentid}&title={urlencode(($comment[title] ? $comment[title] : $title))}&url={urlencode(($comment[url] ? $comment[url] : $url))}&hot=1"{if $hot} class="on"{/if}>×îÈÈ</a></div> 	
 	<div class="col-left">
        <div class="comment">
-       <h4 class="f14">è¯„è®ºåˆ—è¡¨<span class="f12 fn">ï¼ˆè¯„è®º <font color="red">{if $comment[total]}{$comment[total]}{else}0{/if}</font>ï¼‰ä»¥ä¸‹ç½‘å‹è¯„è®ºåªä»£è¡¨ç½‘å‹ä¸ªäººè§‚ç‚¹ï¼Œä¸ä»£è¡¨æœ¬ç«™è§‚ç‚¹ã€‚</span></h4>
+       <h4 class="f14">ÆÀÂÛÁĞ±í<span class="f12 fn">£¨ÆÀÂÛ <font color="red">{if $comment[total]}{$comment[total]}{else}0{/if}</font>£©ÒÔÏÂÍøÓÑÆÀÂÛÖ»´ú±íÍøÓÑ¸öÈË¹Ûµã£¬²»´ú±í±¾Õ¾¹Ûµã¡£</span></h4>
 {pc:comment action="lists" commentid="$commentid" siteid="$siteid" page="$_GET[page]" hot="$hot" num="20"}
 {loop $data $r}
     <h5 class="title fn">{direction($r[direction])} <font color="#FF0000">{format::date($r[creat_at], 1)}</font> {if $r[userid]}{get_nickname($r[userid])}{else}{$r[username]}{/if} </h5>
     <div class="content">{stripcslashes($r[content])}
-	<div class="rt"><a href="javascript:void(0)" onclick="reply({$r[id]}, '{$commentid}')">å›å¤</a>  <a href="javascript:void(0)" onclick="support({$r[id]}, '{$commentid}')">æ”¯æŒ</a>ï¼ˆ<font id="support_{$r[id]}">{$r[support]}</font>ï¼‰
+	<div class="rt"><a href="javascript:void(0)" onclick="reply({$r[id]}, '{$commentid}')">»Ø¸´</a>  <a href="javascript:void(0)" onclick="support({$r[id]}, '{$commentid}')">Ö§³Ö</a>£¨<font id="support_{$r[id]}">{$r[support]}</font>£©
 	</div>
 	<div id="reply_{$r[id]}" style="display:none"></div>
 	</div>
@@ -29,42 +29,42 @@
 <input type="hidden" name="title" value="{urlencode(($comment[title] ? $comment[title] : $title))}">
 <input type="hidden" name="url" value="{urlencode(($comment[url] ? $comment[url] : $url))}">
       <a name="comment"></a>
-      	<h5><strong>æˆ‘æ¥è¯´ä¸¤å¥</strong></h5>
-        <div class="posn">æˆ‘çš„æ€åº¦ï¼š<input type="radio" name="direction" value="1" /> <img src="{IMG_PATH}icon/zheng.png" /> <input type="radio" name="direction" value="2" /> <img src="{IMG_PATH}icon/fan.png" /> <input type="radio" name="direction" value="3"  /> <img src="{IMG_PATH}icon/zhong.png" />
+      	<h5><strong>ÎÒÀ´ËµÁ½¾ä</strong></h5>
+        <div class="posn">ÎÒµÄÌ¬¶È£º<input type="radio" name="direction" value="1" /> <img src="{IMG_PATH}icon/zheng.png" /> <input type="radio" name="direction" value="2" /> <img src="{IMG_PATH}icon/fan.png" /> <input type="radio" name="direction" value="3"  /> <img src="{IMG_PATH}icon/zhong.png" />
 </div>
         <textarea rows="8" cols="80" name="content"></textarea><br>
 		{if $setting[code]}
 		
-		  <label>éªŒè¯ç ï¼š<input type="text" name="code"  class="input-text" id="yzmText" onfocus="var offset = $(this).offset();$('#yzm').css({'left': +offset.left-8, 'top': +offset.top-$('#yzm').height()});$('#yzm').show();$('#yzmText').data('hide', 1)" onblur='$("#yzmText").data("hide", 0);setTimeout("hide_code()", 3000)' /></label>
-		  <div id="yzm" class="yzm">{form::checkcode()}<br />ç‚¹å‡»å›¾ç‰‡æ›´æ¢</a></div>
+		  <label>ÑéÖ¤Âë£º<input type="text" name="code"  class="input-text" id="yzmText" onfocus="var offset = $(this).offset();$('#yzm').css({'left': +offset.left-8, 'top': +offset.top-$('#yzm').height()});$('#yzm').show();$('#yzmText').data('hide', 1)" onblur='$("#yzmText").data("hide", 0);setTimeout("hide_code()", 3000)' /></label>
+		  <div id="yzm" class="yzm">{form::checkcode()}<br />µã»÷Í¼Æ¬¸ü»»</a></div>
         <div class="bk10"></div>
 		{/if}
-        <div class="btn"><input type="submit" value="å‘è¡¨è¯„è®º" /></div>&nbsp;&nbsp;&nbsp;&nbsp;{if $userid}{get_nickname()} <a href="{APP_PATH}index.php?m=member&c=index&a=logout&forward={urlencode(get_url())}">é€€å‡º</a>{else}<a href="{APP_PATH}index.php?m=member&c=index&a=login&forward={urlencode(get_url())}" class="blue">ç™»å½•</a><span> | </span><a href="{APP_PATH}index.php?m=member&c=index&a=register" class="blue">æ³¨å†Œ</a>  {if !$setting[guest]}<span style="color:red">éœ€è¦ç™»é™†æ‰å¯å‘å¸ƒè¯„è®º</span>{/if}{/if}
+        <div class="btn"><input type="submit" value="·¢±íÆÀÂÛ" /></div>&nbsp;&nbsp;&nbsp;&nbsp;{if $userid}{get_nickname()} <a href="{APP_PATH}index.php?m=member&c=index&a=logout&forward={urlencode(get_url())}">ÍË³ö</a>{else}<a href="{APP_PATH}index.php?m=member&c=index&a=login&forward={urlencode(get_url())}" class="blue">µÇÂ¼</a><span> | </span><a href="{APP_PATH}index.php?m=member&c=index&a=register" class="blue">×¢²á</a>  {if !$setting[guest]}<span style="color:red">ĞèÒªµÇÂ½²Å¿É·¢²¼ÆÀÂÛ</span>{/if}{/if}
 	</form>
 <style type="text/css">
 .look-content{ padding:10px;border:1px dashed #ffbf7a; background:#fffced; margin:10px auto}
 .look-content ul{ color:#666}
 </style>
             <div class="look-content">
-            <h6>è¯·æ‚¨æ³¨æ„ï¼š</h6>
+            <h6>ÇëÄú×¢Òâ£º</h6>
                 <ul>
-                    <li>è‡ªè§‰éµå®ˆï¼šçˆ±å›½ã€å®ˆæ³•ã€è‡ªå¾‹ã€çœŸå®ã€æ–‡æ˜çš„åŸåˆ™</li>
-                    <li>å°Šé‡ç½‘ä¸Šé“å¾·ï¼Œéµå®ˆã€Šå…¨å›½äººå¤§å¸¸å§”ä¼šå…³äºç»´æŠ¤äº’è”ç½‘å®‰å…¨çš„å†³å®šã€‹åŠä¸­åäººæ°‘å…±å’Œå›½å…¶ä»–å„é¡¹æœ‰å…³æ³•å¾‹æ³•è§„</li>
-                    <li>ä¸¥ç¦å‘è¡¨å±å®³å›½å®¶å®‰å…¨ï¼Œç ´åæ°‘æ—å›¢ç»“ã€å›½å®¶å®—æ•™æ”¿ç­–å’Œç¤¾ä¼šç¨³å®šï¼Œå«ä¾®è¾±ã€è¯½è°¤ã€æ•™å”†ã€æ·«ç§½ç­‰å†…å®¹çš„ä½œå“</li>
-                    <li>æ‰¿æ‹…ä¸€åˆ‡å› æ‚¨çš„è¡Œä¸ºè€Œç›´æ¥æˆ–é—´æ¥å¯¼è‡´çš„æ°‘äº‹æˆ–åˆ‘äº‹æ³•å¾‹è´£ä»»</li>
-                    <li>æ‚¨åœ¨æœ¬ç«™è¯„è®ºå‘è¡¨çš„ä½œå“ï¼Œæœ¬ç«™æœ‰æƒåœ¨ç½‘ç«™å†…ä¿ç•™ã€è½¬è½½ã€å¼•ç”¨æˆ–è€…åˆ é™¤</li>
-                    <li>å‚ä¸æœ¬è¯„è®ºå³è¡¨æ˜æ‚¨å·²ç»é˜…è¯»å¹¶æ¥å—ä¸Šè¿°æ¡æ¬¾</li>
+                    <li>×Ô¾õ×ñÊØ£º°®¹ú¡¢ÊØ·¨¡¢×ÔÂÉ¡¢ÕæÊµ¡¢ÎÄÃ÷µÄÔ­Ôò</li>
+                    <li>×ğÖØÍøÉÏµÀµÂ£¬×ñÊØ¡¶È«¹úÈË´ó³£Î¯»á¹ØÓÚÎ¬»¤»¥ÁªÍø°²È«µÄ¾ö¶¨¡·¼°ÖĞ»ªÈËÃñ¹²ºÍ¹úÆäËû¸÷ÏîÓĞ¹Ø·¨ÂÉ·¨¹æ</li>
+                    <li>ÑÏ½û·¢±íÎ£º¦¹ú¼Ò°²È«£¬ÆÆ»µÃñ×åÍÅ½á¡¢¹ú¼Ò×Ú½ÌÕş²ßºÍÉç»áÎÈ¶¨£¬º¬ÎêÈè¡¢·Ì°ù¡¢½ÌËô¡¢Òù»àµÈÄÚÈİµÄ×÷Æ·</li>
+                    <li>³Ğµ£Ò»ÇĞÒòÄúµÄĞĞÎª¶øÖ±½Ó»ò¼ä½Óµ¼ÖÂµÄÃñÊÂ»òĞÌÊÂ·¨ÂÉÔğÈÎ</li>
+                    <li>ÄúÔÚ±¾Õ¾ÆÀÂÛ·¢±íµÄ×÷Æ·£¬±¾Õ¾ÓĞÈ¨ÔÚÍøÕ¾ÄÚ±£Áô¡¢×ªÔØ¡¢ÒıÓÃ»òÕßÉ¾³ı</li>
+                    <li>²ÎÓë±¾ÆÀÂÛ¼´±íÃ÷ÄúÒÑ¾­ÔÄ¶Á²¢½ÓÊÜÉÏÊöÌõ¿î</li>
                 </ul>
             </div>
       </div>
   </div>
     <div class="col-auto">
         <div class="box">
-            <h5 class="title-2">è¯„è®ºæ’è¡Œ</h5>
+            <h5 class="title-2">ÆÀÂÛÅÅĞĞ</h5>
             {pc:comment action="bang" cache="3600"}
             <ul class="content list f12 lh22">
 				{loop $data $r}
-                <li>Â·<a href="{$r[url]}" title="{$r[title]}">{str_cut($r[title], 26)}</a>({$r[total]})</li>
+                <li>¡¤<a href="{$r[url]}" title="{$r[title]}">{str_cut($r[title], 26)}</a>({$r[total]})</li>
 				{/loop}
             </ul>
             {/pc}
@@ -84,7 +84,7 @@ function support(id, commentid) {
 }
 
 function reply(id,commentid) {
-	var str = '<form action="{APP_PATH}index.php?m=comment&c=index&a=post&commentid='+commentid+'&id='+id+'" method="post"><textarea rows="10" style="width:100%" name="content"></textarea>{if $setting[code]}<label>éªŒè¯ç ï¼š<input type="text" name="code"  class="input-text" onfocus="var offset = $(this).offset();$(\'#yzm\').css({\'left\': +offset.left-8, \'top\': +offset.top-$(\'#yzm\').height()});$(\'#yzm\').show();$(\'#yzmText\').data(\'hide\', 1)" onblur=\'$("#yzmText").data("hide", 0);setTimeout("hide_code()", 3000)\' /></label>{/if}  <div class="btn"><input type="submit" value="å‘è¡¨è¯„è®º" /></div>&nbsp;&nbsp;&nbsp;&nbsp;{if $userid}{get_nickname()} <a href="{APP_PATH}index.php?m=member&c=index&a=logout&forward={urlencode(get_url())}">é€€å‡º</a>{else}<a href="{APP_PATH}index.php?m=member&c=index&a=login&forward={urlencode(get_url())}" class="blue">ç™»å½•</a> | <a href="{APP_PATH}index.php?m=member&c=index&a=register" class="blue">æ³¨å†Œ</a>  {if !$setting[guest]}<span style="color:red">éœ€è¦ç™»é™†æ‰å¯å‘å¸ƒè¯„è®º</span>{/if}{/if}</form>';
+	var str = '<form action="{APP_PATH}index.php?m=comment&c=index&a=post&commentid='+commentid+'&id='+id+'" method="post"><textarea rows="10" style="width:100%" name="content"></textarea>{if $setting[code]}<label>ÑéÖ¤Âë£º<input type="text" name="code"  class="input-text" onfocus="var offset = $(this).offset();$(\'#yzm\').css({\'left\': +offset.left-8, \'top\': +offset.top-$(\'#yzm\').height()});$(\'#yzm\').show();$(\'#yzmText\').data(\'hide\', 1)" onblur=\'$("#yzmText").data("hide", 0);setTimeout("hide_code()", 3000)\' /></label>{/if}  <div class="btn"><input type="submit" value="·¢±íÆÀÂÛ" /></div>&nbsp;&nbsp;&nbsp;&nbsp;{if $userid}{get_nickname()} <a href="{APP_PATH}index.php?m=member&c=index&a=logout&forward={urlencode(get_url())}">ÍË³ö</a>{else}<a href="{APP_PATH}index.php?m=member&c=index&a=login&forward={urlencode(get_url())}" class="blue">µÇÂ¼</a> | <a href="{APP_PATH}index.php?m=member&c=index&a=register" class="blue">×¢²á</a>  {if !$setting[guest]}<span style="color:red">ĞèÒªµÇÂ½²Å¿É·¢²¼ÆÀÂÛ</span>{/if}{/if}</form>';
 	$('#reply_'+id).html(str).toggle();
 }
 

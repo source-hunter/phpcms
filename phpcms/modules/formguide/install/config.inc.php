@@ -3,8 +3,8 @@ defined('IN_PHPCMS') or exit('Access Denied');
 defined('INSTALL') or exit('Access Denied');
 
 $module = 'formguide';
-$modulename = '琛ㄥ崟鍚戝妯″潡';
-$introduce = '鐙珛妯″潡';
+$modulename = '表单向导模块';
+$introduce = '独立模块';
 $author = 'phpcms Team';
 $authorsite = 'http://www.phpcms.cn';
 $authoremail = '';

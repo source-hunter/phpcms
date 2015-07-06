@@ -11,8 +11,8 @@ class comment_data_model extends model {
 	}
 	
 	/**
-	 * è®¾ç½®è¯„è®ºæ•°æ®è¡¨
-	 * @param integer $id æ•°æ®è¡¨ID
+	 * ÉèÖÃÆÀÂÛÊı¾İ±í
+	 * @param integer $id Êı¾İ±íID
 	 */
 	public function table_name($id) {
 		$this->table_name = $this->db_config[$this->db_setting]['tablepre'].'comment_data_'.$id;

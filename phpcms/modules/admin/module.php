@@ -30,7 +30,7 @@ class module extends admin {
 	}
 	
 	/**
-	 * 妯″潡瀹夎
+	 * 模块安装
 	 */
 	public function install() {
 		$this->module = $_POST['module'] ? $_POST['module'] : $_GET['module'];
@@ -46,7 +46,7 @@ class module extends admin {
 	}
 	
 	/**
-	 * 妯″潡鍗歌浇
+	 * 模块卸载
 	 */
 	public function uninstall() {
 		if(!isset($_GET['module']) || empty($_GET['module'])) showmessage(L('illegal_parameters'));
@@ -57,7 +57,7 @@ class module extends admin {
 	}
 	
 	/**
-	 * 鏇存柊妯″潡缂撳瓨
+	 * 更新模块缓存
 	 */
 	public function cache() {
 		echo '<script type="text/javascript">parent.right.location.href = \'?m=admin&c=cache_all&a=init&pc_hash='.$_SESSION['pc_hash'].'\';window.top.art.dialog({id:\'install\'}).close();</script>';

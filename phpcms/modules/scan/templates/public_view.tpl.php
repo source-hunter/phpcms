@@ -7,7 +7,7 @@ include $this->admin_tpl('header', 'admin');
 <table width="100%" height="400" class="table_form">
 <?php if (isset($func)) :?>
  	<tr>
-    <td><?php echo L('characteristic_function')?>ï¼š<?php
+    <td><?php echo L('characteristic_function')?>£º<?php
  if ($func) {
  	 foreach ($func as $val) {
 	 	if($val) {
@@ -20,7 +20,7 @@ include $this->admin_tpl('header', 'admin');
 <?php endif;?>
 <?php if (isset($code)) :?>
  	<tr>
-    <td><?php echo L('characteristic_key')?>ï¼š<?php
+    <td><?php echo L('characteristic_key')?>£º<?php
  if($code) {
 	 foreach ($code as $val) {
 	 	if($val) {

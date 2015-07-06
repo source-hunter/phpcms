@@ -11,11 +11,11 @@ class badword_model extends model {
 	}
 	
 	/**
-	 * æ•æ„Ÿè¯å¤„ç†æ¥å£
-	 * å¯¹ä¼ é€’çš„æ•°æ®è¿›è¡Œå¤„ç†,å¹¶è¿”å› 
+	 * Ãô¸Ğ´Ê´¦Àí½Ó¿Ú
+	 * ¶Ô´«µİµÄÊı¾İ½øĞĞ´¦Àí,²¢·µ»Ø 
 	 */
 	function replace_badword($str) {
-		//è¯»å–æ•æ„Ÿè¯ç¼“å­˜
+		//¶ÁÈ¡Ãô¸Ğ´Ê»º´æ
 		$badword_cache = getcache('badword','commons');
 		foreach($badword_cache as $data){
  			if($data['replaceword'] == ''){

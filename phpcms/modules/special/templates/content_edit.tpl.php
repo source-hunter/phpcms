@@ -61,7 +61,7 @@ html,body{background:#e2e9ea}
     </tr>
 	<tr>
       <th width="60"> <?php echo L('description')?>	  </th>
-      <td><textarea name="info[description]" id="description" style='width:98%;height:46px;' onkeyup="strlen_verify(this, 'description_len', 255)"><?php echo $info['description']?></textarea> è¿˜å¯è¾“å…¥<B><span id="description_len"><?php echo 255-strlen($info['description'])?></span></B> ä¸ªå­—ç¬¦  </td>
+      <td><textarea name="info[description]" id="description" style='width:98%;height:46px;' onkeyup="strlen_verify(this, 'description_len', 255)"><?php echo $info['description']?></textarea> »¹¿ÉÊäÈë<B><span id="description_len"><?php echo 255-strlen($info['description'])?></span></B> ¸ö×Ö·û  </td>
     </tr>
 	<tr>
       <th width="60"> <font color="red">*</font> <?php echo L('content')?>	  </th>
@@ -100,7 +100,7 @@ function load_file_list(id) {
 </html>
 <script type="text/javascript"> 
 <!--
-//åªèƒ½æ”¾åˆ°æœ€ä¸‹é¢
+//Ö»ÄÜ·Åµ½×îÏÂÃæ
 $(function(){
 	$.formValidator.initConfig({formid:"myform",autotip:true,onerror:function(msg,obj){window.top.art.dialog({content:msg,lock:true,width:'200',height:'50'}, 	function(){$(obj).focus();
 	boxid = $(obj).attr('id');
@@ -112,7 +112,7 @@ $(function(){
 	$("#title").formValidator({autotip:true,onshow:"<?php echo L('please_input_title')?>",onfocus:"<?php echo L('please_input_title')?>"}).inputValidator({min:1,onerror:"<?php echo L('please_input_title')?>"}).defaultPassed();
 	$("#content").formValidator({autotip:true,onshow:"",onfocus:"<?php echo L('content_empty')?>"}).functionValidator({
 	    fun:function(val,elem){
-	    //è·å–ç¼–è¾‘å™¨ä¸­çš„å†…å®¹
+	    //»ñÈ¡±à¼­Æ÷ÖĞµÄÄÚÈİ
 		var oEditor = CKEDITOR.instances.content;
 		var data = oEditor.getData();
 		
@@ -124,7 +124,7 @@ $(function(){
 	}
 	}).defaultPassed();	
 /*
- * åŠ è½½ç¦ç”¨å¤–è¾¹é“¾æ¥
+ * ¼ÓÔØ½ûÓÃÍâ±ßÁ´½Ó
  */
 <?php if($info['islink']==0) {?>
 	$('#linkurl').attr('disabled',true);
@@ -132,7 +132,7 @@ $(function(){
 	<?php }?>
 	$('.edit_content').hide();
 });
-document.title='ç¼–è¾‘ï¼š<?php echo $info['title']?>';
+document.title='±à¼­£º<?php echo $info['title']?>';
 self.moveTo(0, 0);
 function refersh_window() {
 	setcookie('refersh_time', 1);

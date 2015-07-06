@@ -13,7 +13,7 @@ a:hover{text-decoration:underline;}
 .button{background:#ddd;height:24px; border-top:0;border-left:0; border-bottom:1px solid #666; border-right:1px solid #666; padding:3px 6px; margin-right:5px}
 .subnav{ padding:10px}
 .subnav h2{ margin-bottom:6px}
-/*æç¤ºæ¡†*/
+/*ÌáÊ¾¿ò*/
 .msg .error, .msg .stop, .msg .alert, .msg .attention, .msg .tips, .msg .ok, .msg .notice, .msg .question, .msg .help, .msg .small-help {
 background:url("../images/msg_bg.png") no-repeat scroll 0 0 transparent;border:1px solid #DDD;color:#444;float:left;line-height:18px;
 padding:2px 10px 2px 23px;}
@@ -23,7 +23,7 @@ background-position:3px -147px;
 border-color:#40B3FF; float:left
 }
 
-/*å¤´éƒ¨*/
+/*Í·²¿*/
 .header .nav li.tab_web a span,.crumbs,.tab-web-panel li a{background: url(../images/icon_use.png) no-repeat}
 .header {background:#3a6ea5 url(../images/h_bg.gif) repeat-x left bottom; height:80px}
 .header .logo{float:left;width:176px;height:80px;margin-right:10px;_margin-right:7px;background: url(../images/logo_1.gif) no-repeat;}
@@ -37,7 +37,7 @@ border-color:#40B3FF; float:left
 	#Skin .s2 {background-position:0 -55px}
 	#Skin .s3 {background-position:0 -33px}
 	#Skin .s4 {}
-/*ä¸»ä½“æ ·å¼*/
+/*Ö÷ÌåÑùÊ½*/
 .left_menu{ margin-right:10px}
 .left_menu{padding:12px;_padding:12px 0 12px 12px;width:150px; position:relative; display:block}
 .left_menu_on{ width:0; padding:0;}
@@ -58,16 +58,16 @@ border-color:#40B3FF; float:left
 .left_menu a.open:hover,.left_menu a.close:hover{ background-color:#d6e1e4}
 .left_menu a.close{background-position:right center}
 
-/*å½“å‰ä½ç½®*/
+/*µ±Ç°Î»ÖÃ*/
 .crumbs{background-position:left -18px; height:22px; padding:6px 0 0 18px;*height:20px;*padding:8px 0 0 18px;}
-/*å®¹å™¨1 è“ç™½è‰²è¾¹æ¡†*/
+/*ÈİÆ÷1 À¶°×É«±ß¿ò*/
 .col-1{ border:1px solid #f4f6f5;zoom:1; background:#fff}
 .col-1 div.content{border:1px solid #c2d1d8;zoom:1;}
-/*æ ç›®èœå•*/
+/*À¸Ä¿²Ëµ¥*/
 .cat-menu{ width:180px; margin:10px 10px 0 0}
-/*æ”¶è—å¯¼èˆª*/
+/*ÊÕ²Øµ¼º½*/
 .fav-nav{height:28px;line-height:28px;position:fixed;bottom:0px;width:100%;background: url(../images/fav-nav-bg.png) repeat-x left top;padding:0 0 0 12px}
-/*å†…å®¹èœå•*/
+/*ÄÚÈİ²Ëµ¥*/
 .content-menu{ padding-bottom:6px}
 .content-menu a.add,.content-menu a.add em,
 	.content-menu a.on,.content-menu a.on em{background: url(../images/bnt_bg.png) no-repeat;height:28px; line-height:26px;*line-height:28px}
@@ -79,18 +79,18 @@ border-color:#40B3FF; float:left
 .content-menu a.on{background-position: left -40px;*background-position: left -41px; color:#fff; padding:0 0 0 5px}
 .content-menu a.on em{background-position: right -40px;*background-position: right -41px; padding:0 10px 0 5px}
 
-/*æ ‡é¢˜*/
+/*±êÌâ*/
 .line-x{border-bottom:1px solid #eee;}
 .title-1{border-bottom:1px solid #eee; padding-left:5px}
 .title-2{text-align:left;height:34px;*height:33px;font:18px/31px "MicroSoft YaHei","SimHei";color:#333;*line-height:33px; margin:0; padding:8px 0 3px 20px}
 
-/*æ•°æ®åˆ—è¡¨*/
+/*Êı¾İÁĞ±í*/
 .table-list thead th{ height:30px; background:#eef3f7; border-bottom:1px solid #d5dfe8; font-weight:normal}
 .table-list tbody td,.table-list .btn{border-bottom: #eee 1px solid; height:28px;border-collapse:show  }
 .table-list .btn{background:#f6f6f6; padding:6px 0 0 12px; height:30px;}
 .table-list .wrap tr:hover{ background:#fbffe4}
 
-/*é€šç”¨è¡¨å•*/
+/*Í¨ÓÃ±íµ¥*/
 .common-form{padding-left:20px}
 .common-form ul.content{ padding-right:20px}
 .common-form ul li{color:#444; clear:both;}
@@ -103,8 +103,8 @@ border-color:#40B3FF; float:left
 .common-form .set table td input{ background-image:none; height:18px; font-size:12px}
 .input-text{border:1px solid #A7A6AA;font-size:14px;height:20px;margin:0 5px 0 0;padding:2px;border: 1px solid #d0d0d0;background: #FFF url(../images/input.png) repeat-x}
 
-/*åˆ†é¡µ*/
-#pages { padding:14px 0; text-align: right; font-family:å®‹ä½“ }
+/*·ÖÒ³*/
+#pages { padding:14px 0; text-align: right; font-family:ËÎÌå }
 #pages a { display:inline-block; width:26px; height:22px; line-height:22px; background:#fff; border:1px solid #e3e3e3; text-align:center; color:#333}
 #pages a.a1 { background:url(../images/pages.png) no-repeat 0 5px; width:56px; }
 #pages a:hover { background:#f1f1f1; color:#000; text-decoration:none; }

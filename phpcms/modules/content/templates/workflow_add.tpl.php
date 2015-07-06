@@ -14,15 +14,15 @@ include $this->admin_tpl('header','admin');
 <form action="?m=content&c=workflow&a=add" method="post" id="myform">
 	<table width="100%"  class="table_form">
   <tr>
-    <th width="200"><?php echo L('workflow_name')?>Ôºö</th>
+    <th width="200"><?php echo L('workflow_name')?>£∫</th>
     <td class="y-bg"><input type="text" class="input-text" name="info[workname]" id="workname" size="30" /></td>
   </tr>
     <tr>
-    <th><?php echo L('description')?>Ôºö</th>
+    <th><?php echo L('description')?>£∫</th>
     <td class="y-bg"><textarea name="info[description]" maxlength="255" style="width:300px;height:60px;"></textarea></td>
   </tr>
 	<tr>
-    <th><?php echo L('steps')?>Ôºö</th>
+    <th><?php echo L('steps')?>£∫</th>
     <td class="y-bg">
 	<select name="info[steps]" onchange="select_steps(this.value)">
 	<option value='1' selected><?php echo L('steps_1');?></option>
@@ -32,40 +32,40 @@ include $this->admin_tpl('header','admin');
 	</select></td>
   </tr>
    <tr id="step1">
-    <th><?php echo L('steps_1');?> <?php echo L('admin_users')?>Ôºö</th>
+    <th><?php echo L('steps_1');?> <?php echo L('admin_users')?>£∫</th>
     <td class="y-bg">
 	<?php echo form::checkbox($admin_data,'','name="checkadmin1[]"','',120);?>
 	</td>
   </tr>
    <tr id="step2" style="display:none">
-    <th><?php echo L('steps_2');?> <?php echo L('admin_users')?>Ôºö</th>
+    <th><?php echo L('steps_2');?> <?php echo L('admin_users')?>£∫</th>
     <td class="y-bg">
 		<?php echo form::checkbox($admin_data,'','name="checkadmin2[]"','',120);?>
 	</td>
   </tr>
    <tr id="step3" style="display:none">
-    <th><?php echo L('steps_3');?> <?php echo L('admin_users')?>Ôºö</th>
+    <th><?php echo L('steps_3');?> <?php echo L('admin_users')?>£∫</th>
     <td class="y-bg">
 		<?php echo form::checkbox($admin_data,'','name="checkadmin3[]"','',120);?>
 	</td>
   </tr>
    <tr id="step4" style="display:none">
-    <th><?php echo L('steps_4');?><?php echo L('admin_users')?>Ôºö</th>
+    <th><?php echo L('steps_4');?><?php echo L('admin_users')?>£∫</th>
     <td class="y-bg">
 		<?php echo form::checkbox($admin_data,'','name="checkadmin4[]"','',120);?>
 	</td>
   </tr>
   <tr>
-    <th><B><?php echo L('nocheck_users')?></B>Ôºö</th>
+    <th><B><?php echo L('nocheck_users')?></B>£∫</th>
     <td class="y-bg">
 		<?php echo form::checkbox($admin_data,'','name="nocheck_users[]"','',120);?>
 	</td>
   </tr>
   <tr>
-    <th><?php echo L('checkstatus_flag')?>Ôºö</th>
+    <th><?php echo L('checkstatus_flag')?>£∫</th>
     <td class="y-bg">
-		<input type="radio" name="info[flag]" value="1" > ÊòØ 
-		<input type="radio" name="info[flag]" value="0" checked> Âê¶
+		<input type="radio" name="info[flag]" value="1" >  « 
+		<input type="radio" name="info[flag]" value="0" checked> ∑Ò
 	</td>
   </tr>
 </table>

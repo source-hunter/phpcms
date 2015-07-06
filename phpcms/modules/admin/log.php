@@ -7,15 +7,15 @@ class log extends admin {
 		parent::__construct();
 		$this->db = pc_base::load_model('log_model');
 		pc_base::load_sys_class('form');
-		$admin_username = param::get_cookie('admin_username');//ç®¡ç†å‘˜COOKIE
-		$userid = $_SESSION['userid'];//ç™»é™†USERIDã€€
+		$admin_username = param::get_cookie('admin_username');//¹ÜÀíÔ±COOKIE
+		$userid = $_SESSION['userid'];//µÇÂ½USERID¡¡
 	}
 	
 	function init () {
 		$page = isset($_GET['page']) && intval($_GET['page']) ? intval($_GET['page']) : 1;
 		$infos = $this->db->listinfo($where = '',$order = 'logid DESC',$page, $pages = '13');
 		$pages = $this->db->pages;
-		//æ¨¡å—æ•°ç»„
+		//Ä£¿éÊı×é
 		$module_arr = array();
 		$modules = getcache('modules','commons');
 		$default = L('open_module');
@@ -24,7 +24,7 @@ class log extends admin {
 	}
 		
 	/**
-	 * æ“ä½œæ—¥å¿—åˆ é™¤ åŒ…å«æ‰¹é‡åˆ é™¤ å•ä¸ªåˆ é™¤
+	 * ²Ù×÷ÈÕÖ¾É¾³ı °üº¬ÅúÁ¿É¾³ı µ¥¸öÉ¾³ı
 	 */
 	function delete() {
 		$week = intval($_GET['week']);
@@ -44,7 +44,7 @@ class log extends admin {
  		
  	
 	/**
-	 * æ—¥å¿—æœç´¢
+	 * ÈÕÖ¾ËÑË÷
 	 */
 	public function search_log() {
  		$where = '';
@@ -64,10 +64,10 @@ class log extends admin {
 		$page = isset($_GET['page']) && intval($_GET['page']) ? intval($_GET['page']) : 1; 
 		$infos = $this->db->listinfo($where,$order = 'logid DESC',$page, $pages = '12'); 
  		$pages = $this->db->pages;
- 		//æ¨¡å—æ•°ç»„
+ 		//Ä£¿éÊı×é
 		$module_arr = array();
 		$modules = getcache('modules','commons');
-		$default = $module ? $module : L('open_module');//æœªè®¾å®šåˆ™æ˜¾ç¤º ä¸é™æ¨¡å— ï¼Œè®¾å®šåˆ™æ˜¾ç¤ºæŒ‡å®šçš„
+		$default = $module ? $module : L('open_module');//Î´Éè¶¨ÔòÏÔÊ¾ ²»ÏŞÄ£¿é £¬Éè¶¨ÔòÏÔÊ¾Ö¸¶¨µÄ
  		foreach($modules as $module=>$m) $module_arr[$m['module']] = $m['module'];
 		
  		include $this->admin_tpl('log_search_list');

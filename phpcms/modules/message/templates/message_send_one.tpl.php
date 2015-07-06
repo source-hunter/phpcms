@@ -18,19 +18,19 @@ $(function(){
 <table cellpadding="2" cellspacing="1" class="table_form" width="100%">
 
 	<tr>
-		<th width="100"><?php echo L('subject')?>ï¼š</th>
+		<th width="100"><?php echo L('subject')?>£º</th>
 		<td><input type="text" name="info[subject]" id="subject"
 			size="30" class="input-text"></td>
 	</tr>
 	
 	<tr>
-		<th width="100"><?php echo L('touserid')?>ï¼š</th>
+		<th width="100"><?php echo L('touserid')?>£º</th>
 		<td><input type="text" name="info[send_to_id]" id="tousername"
 			size="20" class="input-text" value=""></td>
 	</tr>
 	
 	<tr>
-		<th><?php echo L('content')?>ï¼š</th>
+		<th><?php echo L('content')?>£º</th>
 		<td><textarea name="info[content]" id="con" cols="50"
 			rows="6"></textarea></td>
 	</tr>

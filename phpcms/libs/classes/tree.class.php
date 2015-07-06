@@ -1,19 +1,19 @@
 <?php
 /**
-* é€šç”¨çš„æ ‘å‹ç±»ï¼Œå¯ä»¥ç”Ÿæˆä»»ä½•æ ‘å‹ç»“æ„
+* Í¨ÓÃµÄÊ÷ĞÍÀà£¬¿ÉÒÔÉú³ÉÈÎºÎÊ÷ĞÍ½á¹¹
 */
 class tree {
 	/**
-	* ç”Ÿæˆæ ‘å‹ç»“æ„æ‰€éœ€è¦çš„2ç»´æ•°ç»„
+	* Éú³ÉÊ÷ĞÍ½á¹¹ËùĞèÒªµÄ2Î¬Êı×é
 	* @var array
 	*/
 	public $arr = array();
 
 	/**
-	* ç”Ÿæˆæ ‘å‹ç»“æ„æ‰€éœ€ä¿®é¥°ç¬¦å·ï¼Œå¯ä»¥æ¢æˆå›¾ç‰‡
+	* Éú³ÉÊ÷ĞÍ½á¹¹ËùĞèĞŞÊÎ·ûºÅ£¬¿ÉÒÔ»»³ÉÍ¼Æ¬
 	* @var array
 	*/
-	public $icon = array('â”‚','â”œ','â””');
+	public $icon = array('©¦','©À','©¸');
 	public $nbsp = "&nbsp;";
 
 	/**
@@ -22,16 +22,16 @@ class tree {
 	public $ret = '';
 
 	/**
-	* æ„é€ å‡½æ•°ï¼Œåˆå§‹åŒ–ç±»
-	* @param array 2ç»´æ•°ç»„ï¼Œä¾‹å¦‚ï¼š
+	* ¹¹Ôìº¯Êı£¬³õÊ¼»¯Àà
+	* @param array 2Î¬Êı×é£¬ÀıÈç£º
 	* array(
-	*      1 => array('id'=>'1','parentid'=>0,'name'=>'ä¸€çº§æ ç›®ä¸€'),
-	*      2 => array('id'=>'2','parentid'=>0,'name'=>'ä¸€çº§æ ç›®äºŒ'),
-	*      3 => array('id'=>'3','parentid'=>1,'name'=>'äºŒçº§æ ç›®ä¸€'),
-	*      4 => array('id'=>'4','parentid'=>1,'name'=>'äºŒçº§æ ç›®äºŒ'),
-	*      5 => array('id'=>'5','parentid'=>2,'name'=>'äºŒçº§æ ç›®ä¸‰'),
-	*      6 => array('id'=>'6','parentid'=>3,'name'=>'ä¸‰çº§æ ç›®ä¸€'),
-	*      7 => array('id'=>'7','parentid'=>3,'name'=>'ä¸‰çº§æ ç›®äºŒ')
+	*      1 => array('id'=>'1','parentid'=>0,'name'=>'Ò»¼¶À¸Ä¿Ò»'),
+	*      2 => array('id'=>'2','parentid'=>0,'name'=>'Ò»¼¶À¸Ä¿¶ş'),
+	*      3 => array('id'=>'3','parentid'=>1,'name'=>'¶ş¼¶À¸Ä¿Ò»'),
+	*      4 => array('id'=>'4','parentid'=>1,'name'=>'¶ş¼¶À¸Ä¿¶ş'),
+	*      5 => array('id'=>'5','parentid'=>2,'name'=>'¶ş¼¶À¸Ä¿Èı'),
+	*      6 => array('id'=>'6','parentid'=>3,'name'=>'Èı¼¶À¸Ä¿Ò»'),
+	*      7 => array('id'=>'7','parentid'=>3,'name'=>'Èı¼¶À¸Ä¿¶ş')
 	*      )
 	*/
 	public function init($arr=array()){
@@ -41,7 +41,7 @@ class tree {
 	}
 
     /**
-	* å¾—åˆ°çˆ¶çº§æ•°ç»„
+	* µÃµ½¸¸¼¶Êı×é
 	* @param int
 	* @return array
 	*/
@@ -59,7 +59,7 @@ class tree {
 	}
 
     /**
-	* å¾—åˆ°å­çº§æ•°ç»„
+	* µÃµ½×Ó¼¶Êı×é
 	* @param int
 	* @return array
 	*/
@@ -74,7 +74,7 @@ class tree {
 	}
 
     /**
-	* å¾—åˆ°å½“å‰ä½ç½®æ•°ç»„
+	* µÃµ½µ±Ç°Î»ÖÃÊı×é
 	* @param int
 	* @return array
 	*/
@@ -96,10 +96,10 @@ class tree {
 	}
 
     /**
-	* å¾—åˆ°æ ‘å‹ç»“æ„
-	* @param int IDï¼Œè¡¨ç¤ºè·å¾—è¿™ä¸ªIDä¸‹çš„æ‰€æœ‰å­çº§
-	* @param string ç”Ÿæˆæ ‘å‹ç»“æ„çš„åŸºæœ¬ä»£ç ï¼Œä¾‹å¦‚ï¼š"<option value=\$id \$selected>\$spacer\$name</option>"
-	* @param int è¢«é€‰ä¸­çš„IDï¼Œæ¯”å¦‚åœ¨åšæ ‘å‹ä¸‹æ‹‰æ¡†çš„æ—¶å€™éœ€è¦ç”¨åˆ°
+	* µÃµ½Ê÷ĞÍ½á¹¹
+	* @param int ID£¬±íÊ¾»ñµÃÕâ¸öIDÏÂµÄËùÓĞ×Ó¼¶
+	* @param string Éú³ÉÊ÷ĞÍ½á¹¹µÄ»ù±¾´úÂë£¬ÀıÈç£º"<option value=\$id \$selected>\$spacer\$name</option>"
+	* @param int ±»Ñ¡ÖĞµÄID£¬±ÈÈçÔÚ×öÊ÷ĞÍÏÂÀ­¿òµÄÊ±ºòĞèÒªÓÃµ½
 	* @return string
 	*/
 	public function get_tree($myid, $str, $sid = 0, $adds = '', $str_group = ''){
@@ -128,7 +128,7 @@ class tree {
 		return $this->ret;
 	}
     /**
-	* åŒä¸Šä¸€æ–¹æ³•ç±»ä¼¼,ä½†å…è®¸å¤šé€‰
+	* Í¬ÉÏÒ»·½·¨ÀàËÆ,µ«ÔÊĞí¶àÑ¡
 	*/
 	public function get_tree_multi($myid, $str, $sid = 0, $adds = ''){
 		$number=1;
@@ -156,11 +156,11 @@ class tree {
 		return $this->ret;
 	}
 	 /**
-	* @param integer $myid è¦æŸ¥è¯¢çš„ID
-	* @param string $str   ç¬¬ä¸€ç§HTMLä»£ç æ–¹å¼
-	* @param string $str2  ç¬¬äºŒç§HTMLä»£ç æ–¹å¼
-	* @param integer $sid  é»˜è®¤é€‰ä¸­
-	* @param integer $adds å‰ç¼€
+	* @param integer $myid Òª²éÑ¯µÄID
+	* @param string $str   µÚÒ»ÖÖHTML´úÂë·½Ê½
+	* @param string $str2  µÚ¶şÖÖHTML´úÂë·½Ê½
+	* @param integer $sid  Ä¬ÈÏÑ¡ÖĞ
+	* @param integer $adds Ç°×º
 	*/
 	public function get_tree_category($myid, $str, $str2, $sid = 0, $adds = ''){
 		$number=1;
@@ -193,15 +193,15 @@ class tree {
 	}
 	
 	/**
-	 * åŒä¸Šä¸€ç±»æ–¹æ³•ï¼Œjquery treeview é£æ ¼ï¼Œå¯ä¼¸ç¼©æ ·å¼ï¼ˆéœ€è¦treeviewæ’ä»¶æ”¯æŒï¼‰
-	 * @param $myid è¡¨ç¤ºè·å¾—è¿™ä¸ªIDä¸‹çš„æ‰€æœ‰å­çº§
-	 * @param $effected_id éœ€è¦ç”Ÿæˆtreeviewç›®å½•æ•°çš„id
-	 * @param $str æœ«çº§æ ·å¼
-	 * @param $str2 ç›®å½•çº§åˆ«æ ·å¼
-	 * @param $showlevel ç›´æ¥æ˜¾ç¤ºå±‚çº§æ•°ï¼Œå…¶ä½™ä¸ºå¼‚æ­¥æ˜¾ç¤ºï¼Œ0ä¸ºå…¨éƒ¨é™åˆ¶
-	 * @param $style ç›®å½•æ ·å¼ é»˜è®¤ filetree å¯å¢åŠ å…¶ä»–æ ·å¼å¦‚'filetree treeview-famfamfam'
-	 * @param $currentlevel è®¡ç®—å½“å‰å±‚çº§ï¼Œé€’å½’ä½¿ç”¨ é€‚ç”¨æ”¹å‡½æ•°æ—¶ä¸éœ€è¦ç”¨è¯¥å‚æ•°
-	 * @param $recursion é€’å½’ä½¿ç”¨ å¤–éƒ¨è°ƒç”¨æ—¶ä¸ºFALSE
+	 * Í¬ÉÏÒ»Àà·½·¨£¬jquery treeview ·ç¸ñ£¬¿ÉÉìËõÑùÊ½£¨ĞèÒªtreeview²å¼şÖ§³Ö£©
+	 * @param $myid ±íÊ¾»ñµÃÕâ¸öIDÏÂµÄËùÓĞ×Ó¼¶
+	 * @param $effected_id ĞèÒªÉú³ÉtreeviewÄ¿Â¼ÊıµÄid
+	 * @param $str Ä©¼¶ÑùÊ½
+	 * @param $str2 Ä¿Â¼¼¶±ğÑùÊ½
+	 * @param $showlevel Ö±½ÓÏÔÊ¾²ã¼¶Êı£¬ÆäÓàÎªÒì²½ÏÔÊ¾£¬0ÎªÈ«²¿ÏŞÖÆ
+	 * @param $style Ä¿Â¼ÑùÊ½ Ä¬ÈÏ filetree ¿ÉÔö¼ÓÆäËûÑùÊ½Èç'filetree treeview-famfamfam'
+	 * @param $currentlevel ¼ÆËãµ±Ç°²ã¼¶£¬µİ¹éÊ¹ÓÃ ÊÊÓÃ¸Äº¯ÊıÊ±²»ĞèÒªÓÃ¸Ã²ÎÊı
+	 * @param $recursion µİ¹éÊ¹ÓÃ Íâ²¿µ÷ÓÃÊ±ÎªFALSE
 	 */
     function get_treeview($myid,$effected_id='example',$str="<span class='file'>\$name</span>", $str2="<span class='folder'>\$name</span>" ,$showlevel = 0 ,$style='filetree ' , $currentlevel = 1,$recursion=FALSE) {
         $child = $this->get_child($myid);
@@ -216,7 +216,7 @@ class tree {
         foreach($child as $id=>$a) {
 
         	@extract($a);
-			if($showlevel > 0 && $showlevel == $currentlevel && $this->get_child($id)) $folder = 'hasChildren'; //å¦‚è®¾ç½®æ˜¾ç¤ºå±‚çº§æ¨¡å¼@2011.07.01
+			if($showlevel > 0 && $showlevel == $currentlevel && $this->get_child($id)) $folder = 'hasChildren'; //ÈçÉèÖÃÏÔÊ¾²ã¼¶Ä£Ê½@2011.07.01
         	$floder_status = isset($folder) ? ' class="'.$folder.'"' : '';		
             $this->str .= $recursion ? '<ul><li'.$floder_status.' id=\''.$id.'\'>' : '<li'.$floder_status.' id=\''.$id.'\'>';
             $recursion = FALSE;
@@ -239,7 +239,7 @@ class tree {
     }
 	
 	/**
-	 * è·å–å­æ ç›®json
+	 * »ñÈ¡×ÓÀ¸Ä¿json
 	 * Enter description here ...
 	 * @param unknown_type $myid
 	 */

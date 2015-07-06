@@ -4,13 +4,13 @@ pc_base::load_app_class('admin', 'admin', 0);
 pc_base::load_sys_class('form', '', 0);
 pc_base::load_sys_class('format', '', 0);
 class file extends admin {
-	//æ¨¡æ¿æ–‡ä»¶å¤¹
+	//Ä£°åÎÄ¼ş¼Ğ
 	private $filepath;
-	//é£æ ¼å
+	//·ç¸ñÃû
 	private $style;
-	//é£æ ¼å±æ€§
+	//·ç¸ñÊôĞÔ
 	private $style_info;
-	//æ˜¯å¦å…è®¸åœ¨çº¿ç¼–è¾‘æ¨¡æ¿
+	//ÊÇ·ñÔÊĞíÔÚÏß±à¼­Ä£°å
 	private $tpl_edit;
 	
 	public function __construct() {
@@ -70,7 +70,7 @@ class file extends admin {
 		}
 		if ($_POST['dosubmit']) {
 			$code = isset($_POST['code']) ? stripslashes($_POST['code']) : showmessage(L('illegal_operation'), HTTP_REFERER);
-			$code = str_replace(array('<?','{php'),array('<ï¼Ÿ','{ php'),$code);
+			$code = str_replace(array('<?','{php'),array('<£¿','{ php'),$code);
 			if ($is_write == 1) {
 				pc_base::load_app_func('global');
 				creat_template_bak($filepath, $this->style, $dir);

@@ -1,15 +1,15 @@
 <?php
 class form {
 	/**
-	 * ç¼–è¾‘å™¨
+	 * ±à¼­Æ÷
 	 * @param int $textareaid
 	 * @param int $toolbar 
-	 * @param string $module æ¨¡å—åç§°
-	 * @param int $catid æ ç›®id
-	 * @param int $color ç¼–è¾‘å™¨é¢œè‰²
-	 * @param boole $allowupload  æ˜¯å¦å…è®¸ä¸Šä¼ 
-	 * @param boole $allowbrowser æ˜¯å¦å…è®¸æµè§ˆæ–‡ä»¶
-	 * @param string $alowuploadexts å…è®¸ä¸Šä¼ ç±»å‹
+	 * @param string $module Ä£¿éÃû³Æ
+	 * @param int $catid À¸Ä¿id
+	 * @param int $color ±à¼­Æ÷ÑÕÉ«
+	 * @param boole $allowupload  ÊÇ·ñÔÊĞíÉÏ´«
+	 * @param boole $allowbrowser ÊÇ·ñÔÊĞíä¯ÀÀÎÄ¼ş
+	 * @param string $alowuploadexts ÔÊĞíÉÏ´«ÀàĞÍ
 	 */
 	public static function editor($textareaid = 'content', $toolbar = 'basic', $module='', $catid='', $color = '', $allowupload = 0, $allowbrowser = 1,$alowuploadexts = '') {
 		$str ='';
@@ -62,7 +62,7 @@ class form {
 		}
 		$ext_str .= "<div id='page_title_div'>
 		<table cellpadding='0' cellspacing='1' border='0'><tr><td class='title'>".L('paging')."<span id='msg_page_title_value'></span></td><td>
-		<a class='close' href='javascript:;' onclick='javascript:$(\"#page_title_div\").hide();'><span>Ã—</span></a></td>
+		<a class='close' href='javascript:;' onclick='javascript:$(\"#page_title_div\").hide();'><span>¡Á</span></a></td>
 		<tr><td colspan='2'><input name='page_title_value' id='page_title_value' class='input-text' value='' size='40'>&nbsp;<input type='button' class='button' value='".L('submit')."' onclick=insert_page_title(\"$textareaid\",1)></td></tr>
 		</table></div>";
 		$ext_str .= "<div id=\"MM_file_list_".$textareaid."\" style=\"text-align:left\"></div><div id='FilePreview' style='Z-INDEX: 1000; LEFT: 0px; WIDTH: 10px; POSITION: absolute; TOP: 0px; HEIGHT: 10px; display: none;'></div><div id='".$textareaid."_save'></div>";
@@ -72,16 +72,16 @@ class form {
 	}
 	
 	/**
-	 * å›¾ç‰‡ä¸Šä¼ 
-	 * @param $name è¡¨å•åç§°
-	 * @param $id   è¡¨å•ID
-	 * @param $value è¡¨å•å€¼
-	 * @param $size è¡¨å•size
-	 * @param $class è¡¨å•é£æ ¼
-	 * @param $ext è¡¨å•æ‰©å±•
+	 * Í¼Æ¬ÉÏ´«
+	 * @param $name ±íµ¥Ãû³Æ
+	 * @param $id   ±íµ¥ID
+	 * @param $value ±íµ¥Öµ
+	 * @param $size ±íµ¥size
+	 * @param $class ±íµ¥·ç¸ñ
+	 * @param $ext ±íµ¥À©Õ¹
 	 * @param $modelid 
 	 * @param $fieldid
-	 * @param $alowexts å…è®¸é™„ä»¶ç±»å‹
+	 * @param $alowexts ÔÊĞí¸½¼şÀàĞÍ
 	 */
 	public static function images($name, $id = '', $value = '', $moudle='', $catid='', $size = 50, $class = '', $ext = '', $alowexts = '') {
 		if(!$id) $id = $name;
@@ -91,7 +91,7 @@ class form {
 			$str = '<script type="text/javascript" src="statics/js/swfupload/swf2ckeditor.js"></script>';
 			define('IMAGES_INIT', 1);
 		}
-		return $str."<input type=\"text\" name=\"$name\" id=\"$id\" value=\"$value\" size=\"$size\" class=\"$class\" $ext/>  <input type=\"button\" class=\"button\" onclick=\"javascript:flashupload('{$id}_images', 'é™„ä»¶ä¸Šä¼ ','{$id}',submit_images,'1,{$alowexts}','{$moudle}','{$catid}')\"/ value=\"ä¸Šä¼ å›¾ç‰‡\">";
+		return $str."<input type=\"text\" name=\"$name\" id=\"$id\" value=\"$value\" size=\"$size\" class=\"$class\" $ext/>  <input type=\"button\" class=\"button\" onclick=\"javascript:flashupload('{$id}_images', '¸½¼şÉÏ´«','{$id}',submit_images,'1,{$alowexts}','{$moudle}','{$catid}')\"/ value=\"ÉÏ´«Í¼Æ¬\">";
 	}
 	
 	public static function date($name, $value = '', $isdatetime = 0) {
@@ -126,27 +126,27 @@ class form {
 	}
 
 	/**
-	 * éªŒè¯ç 
-	 * @param string $id            ç”Ÿæˆçš„éªŒè¯ç ID
-	 * @param integer $code_len     ç”Ÿæˆå¤šå°‘ä½éªŒè¯ç 
-	 * @param integer $font_size    éªŒè¯ç å­—ä½“å¤§å°
-	 * @param integer $width        éªŒè¯å›¾ç‰‡çš„å®½
-	 * @param integer $height       éªŒè¯ç å›¾ç‰‡çš„é«˜
-	 * @param string $font          ä½¿ç”¨ä»€ä¹ˆå­—ä½“ï¼Œè®¾ç½®å­—ä½“çš„URL
-	 * @param string $font_color    å­—ä½“ä½¿ç”¨ä»€ä¹ˆé¢œè‰²
-	 * @param string $background    èƒŒæ™¯ä½¿ç”¨ä»€ä¹ˆé¢œè‰²
+	 * ÑéÖ¤Âë
+	 * @param string $id            Éú³ÉµÄÑéÖ¤ÂëID
+	 * @param integer $code_len     Éú³É¶àÉÙÎ»ÑéÖ¤Âë
+	 * @param integer $font_size    ÑéÖ¤Âë×ÖÌå´óĞ¡
+	 * @param integer $width        ÑéÖ¤Í¼Æ¬µÄ¿í
+	 * @param integer $height       ÑéÖ¤ÂëÍ¼Æ¬µÄ¸ß
+	 * @param string $font          Ê¹ÓÃÊ²Ã´×ÖÌå£¬ÉèÖÃ×ÖÌåµÄURL
+	 * @param string $font_color    ×ÖÌåÊ¹ÓÃÊ²Ã´ÑÕÉ«
+	 * @param string $background    ±³¾°Ê¹ÓÃÊ²Ã´ÑÕÉ«
 	 */
 	public static function checkcode($id = 'checkcode',$code_len = 4, $font_size = 20, $width = 130, $height = 50, $font = '', $font_color = '', $background = '') {
 		return "<img id='$id' onclick='this.src=this.src+\"&\"+Math.random()' src='".APP_PATH."api.php?op=checkcode&code_len=$code_len&font_size=$font_size&width=$width&height=$height&font=".urlencode($font)."&font_color=".urlencode($font_color)."&background=".urlencode($background)."'>";
 	}
 	
 	/**
-	 * æ ç›®é€‰æ‹©
-	 * @param string $file æ ç›®ç¼“å­˜æ–‡ä»¶å
-	 * @param intval/array $catid åˆ«é€‰ä¸­çš„IDï¼Œå¤šé€‰æ˜¯å¯ä»¥æ˜¯æ•°ç»„
-	 * @param string $str å±æ€§
-	 * @param string $default_option é»˜è®¤é€‰é¡¹
-	 * @param intval $modelid æŒ‰æ‰€å±æ¨¡å‹ç­›é€‰
+	 * À¸Ä¿Ñ¡Ôñ
+	 * @param string $file À¸Ä¿»º´æÎÄ¼şÃû
+	 * @param intval/array $catid ±ğÑ¡ÖĞµÄID£¬¶àÑ¡ÊÇ¿ÉÒÔÊÇÊı×é
+	 * @param string $str ÊôĞÔ
+	 * @param string $default_option Ä¬ÈÏÑ¡Ïî
+	 * @param intval $modelid °´ËùÊôÄ£ĞÍÉ¸Ñ¡
 	 */
 	public static function select_category($file = 'category_content',$catid = 0, $str = '', $default_option = '', $modelid = 0) {
 		$tree = pc_base::load_sys_class('tree');
@@ -191,7 +191,7 @@ class form {
 		return $string;
 	}
 	/**
-	 * ä¸‹æ‹‰é€‰æ‹©æ¡†
+	 * ÏÂÀ­Ñ¡Ôñ¿ò
 	 */
 	public static function select($array = array(), $id = 0, $str = '', $default_option = '') {
 		$string = '<select '.$str.'>';
@@ -206,13 +206,13 @@ class form {
 	}
 	
 	/**
-	 * å¤é€‰æ¡†
+	 * ¸´Ñ¡¿ò
 	 * 
-	 * @param $array é€‰é¡¹ äºŒç»´æ•°ç»„
-	 * @param $id é»˜è®¤é€‰ä¸­å€¼ï¼Œå¤šä¸ªç”¨ 'é€—å·'åˆ†å‰²
-	 * @param $str å±æ€§
-	 * @param $defaultvalue æ˜¯å¦å¢åŠ é»˜è®¤å€¼ é»˜è®¤å€¼ä¸º -99
-	 * @param $width å®½åº¦
+	 * @param $array Ñ¡Ïî ¶şÎ¬Êı×é
+	 * @param $id Ä¬ÈÏÑ¡ÖĞÖµ£¬¶à¸öÓÃ '¶ººÅ'·Ö¸î
+	 * @param $str ÊôĞÔ
+	 * @param $defaultvalue ÊÇ·ñÔö¼ÓÄ¬ÈÏÖµ Ä¬ÈÏÖµÎª -99
+	 * @param $width ¿í¶È
 	 */
 	public static function checkbox($array = array(), $id = '', $str = '', $defaultvalue = '', $width = 0) {
 		$string = '';
@@ -228,11 +228,11 @@ class form {
 	}
 
 	/**
-	 * å•é€‰æ¡†
+	 * µ¥Ñ¡¿ò
 	 * 
-	 * @param $array é€‰é¡¹ äºŒç»´æ•°ç»„
-	 * @param $id é»˜è®¤é€‰ä¸­å€¼
-	 * @param $str å±æ€§
+	 * @param $array Ñ¡Ïî ¶şÎ¬Êı×é
+	 * @param $id Ä¬ÈÏÑ¡ÖĞÖµ
+	 * @param $str ÊôĞÔ
 	 */
 	public static function radio($array = array(), $id = 0, $str = '') {
 		$string = '';
@@ -243,12 +243,12 @@ class form {
 		return $string;
 	}
 	/**
-	 * æ¨¡æ¿é€‰æ‹©
+	 * Ä£°åÑ¡Ôñ
 	 * 
-	 * @param $module æ¨¡å—
-	 * @param $id é»˜è®¤é€‰ä¸­å€¼
-	 * @param $str å±æ€§
-	 * @param $pre æ¨¡æ¿å‰ç¼€
+	 * @param $module Ä£¿é
+	 * @param $id Ä¬ÈÏÑ¡ÖĞÖµ
+	 * @param $str ÊôĞÔ
+	 * @param $pre Ä£°åÇ°×º
 	 */
 	public static function select_template($module, $id = '', $str = '', $pre = '') {
 		if(!$id) $id = $name;

@@ -13,7 +13,7 @@ class special extends admin {
 	}
 	
 	/**
-	 * ä¸“é¢˜åˆ—è¡¨
+	 * ×¨ÌâÁĞ±í
 	 */
 	public function init() {
 		$page = max(intval($_GET['page']), 1);
@@ -23,7 +23,7 @@ class special extends admin {
 	}
 	
 	/**
-	 * æ·»åŠ ä¸“é¢˜
+	 * Ìí¼Ó×¨Ìâ
 	 */
 	public function add() {
 		if (isset($_POST['dosubmit']) && !empty($_POST['dosubmit'])) {
@@ -45,12 +45,12 @@ class special extends admin {
 				}
 				$this->db->update(array('url'=>$url), array('id'=>$id, 'siteid'=>$this->get_siteid()));
 				
-				//è°ƒç”¨ç”Ÿæˆé™æ€ç±»
+				//µ÷ÓÃÉú³É¾²Ì¬Àà
 				if ($special['ishtml']) {
 					$html = pc_base::load_app_class('html', 'special'); 
 					$html->_index($id, 20, 5);
 				}
-				//æ›´æ–°é™„ä»¶çŠ¶æ€
+				//¸üĞÂ¸½¼ş×´Ì¬
 				if(pc_base::load_config('system','attachment_stat')) {
 					$this->attachment_db = pc_base::load_model('attachment_model');
 					$this->attachment_db->api_update(array($special['thumb'], $special['banner']),'special-'.$id, 1);
@@ -59,7 +59,7 @@ class special extends admin {
 			}
 			showmessage(L('add_special_success'), HTTP_REFERER);
 		} else {
-			//è·å–ç«™ç‚¹æ¨¡æ¿ä¿¡æ¯
+			//»ñÈ¡Õ¾µãÄ£°åĞÅÏ¢
 			pc_base::load_app_func('global', 'admin');
 			$siteid = $this->get_siteid();
 			$template_list = template_list($siteid, 0);
@@ -74,7 +74,7 @@ class special extends admin {
 	}
 	
 	/**
-	 * ä¸“é¢˜ä¿®æ”¹
+	 * ×¨ÌâĞŞ¸Ä
 	 */
 	public function edit() {
 		if (!isset($_GET['specialid']) || empty($_GET['specialid'])) {
@@ -103,12 +103,12 @@ class special extends admin {
 			$this->db->update($special, array('id'=>$_GET['specialid'], 'siteid'=>$this->get_siteid()));
 			$this->special_api->_update_type($_GET['specialid'], $_POST['type'], 'edit');
 			
-			//è°ƒç”¨ç”Ÿæˆé™æ€ç±»
+			//µ÷ÓÃÉú³É¾²Ì¬Àà
 			if ($special['ishtml']) {
 				$html = pc_base::load_app_class('html', 'special'); 
 				$html->_index($_GET['specialid'], 20, 5);
 			}
-			//æ›´æ–°é™„ä»¶çŠ¶æ€
+			//¸üĞÂ¸½¼ş×´Ì¬
 			if(pc_base::load_config('system','attachment_stat')) {
 				$this->attachment_db = pc_base::load_model('attachment_model');
 				$this->attachment_db->api_update(array($special['thumb'], $special['banner']),'special-'.$_GET['specialid'], 1);
@@ -117,7 +117,7 @@ class special extends admin {
 			showmessage(L('edit_special_success'), HTTP_REFERER);
 		} else {
 			$info = $this->db->get_one(array('id'=>$_GET['specialid'], 'siteid'=>$this->get_siteid()));
-			//è·å–ç«™ç‚¹æ¨¡æ¿ä¿¡æ¯
+			//»ñÈ¡Õ¾µãÄ£°åĞÅÏ¢
 			pc_base::load_app_func('global', 'admin');
 			$template_list = template_list($this->siteid, 0);
 			foreach ($template_list as $k=>$v) {
@@ -137,7 +137,7 @@ class special extends admin {
 	}
 	
 	/**
-	 * ä¿¡æ¯å¯¼å…¥ä¸“é¢˜
+	 * ĞÅÏ¢µ¼Èë×¨Ìâ
 	 */
 	public function import() {
 		if(isset($_POST['dosubmit']) || isset($_GET['dosubmit'])) {
@@ -236,7 +236,7 @@ class special extends admin {
 	}
 	
 	/**
-	 * ä¸“é¢˜æ’åº
+	 * ×¨ÌâÅÅĞò
 	 */
 	public function listorder() {
 		if(isset($_POST['dosubmit'])) {
@@ -252,7 +252,7 @@ class special extends admin {
 		}
 	}
 	
-	//ç”Ÿæˆä¸“é¢˜é¦–é¡µæ§åˆ¶ä¸­å¿ƒ
+	//Éú³É×¨ÌâÊ×Ò³¿ØÖÆÖĞĞÄ
 	public function public_create_html() {
 		
 		$specials = getcache('create_specials', 'commons');
@@ -266,7 +266,7 @@ class special extends admin {
 		}
 	}
 	
-	//ç”ŸæˆæŸä¸“é¢˜é¦–é¡µ
+	//Éú³ÉÄ³×¨ÌâÊ×Ò³
 	private function create_index($specialid) {
 		$info = $this->db->get_one(array('id'=>$specialid));
 		if (!$info['ishtml']) {
@@ -277,7 +277,7 @@ class special extends admin {
 		showmessage($info['title'].L('index_update_success'), '?m=special&c=special&a=public_create_type&specialid='.$specialid);
 	}
 	
-	//ç”Ÿæˆä¸“é¢˜é‡Œåˆ—è¡¨é¡µ
+	//Éú³É×¨ÌâÀïÁĞ±íÒ³
 	public function public_create_type() {
 		$specialid = $_GET['specialid'] ? intval($_GET['specialid']) : 0;
 		if (!$specialid) showmessage(L('illegal_action'));
@@ -328,7 +328,7 @@ class special extends admin {
 		}
 	}
 	
-	//ç”Ÿæˆå†…å®¹é¡µ
+	//Éú³ÉÄÚÈİÒ³
 	public function public_create_content() {
 		$specialid = $_GET['specialid'] ? intval($_GET['specialid']) : 0;
 		if (!$specialid) showmessage(L('illegal_action'));
@@ -356,7 +356,7 @@ class special extends admin {
 	}
 	
 	/**
-	 * æ¨èä¸“é¢˜
+	 * ÍÆ¼ö×¨Ìâ
 	 */
 	public function elite() {
 		if(!isset($_GET['id']) || empty($_GET['id'])) {
@@ -368,7 +368,7 @@ class special extends admin {
 	}
 	
 	/**
-	 * åˆ é™¤ä¸“é¢˜ æœªæ‰§è¡Œåˆ é™¤æ“ä½œï¼Œä»…è¿›è¡Œé€’å½’å¾ªç¯
+	 * É¾³ı×¨Ìâ Î´Ö´ĞĞÉ¾³ı²Ù×÷£¬½ö½øĞĞµİ¹éÑ­»·
 	 */
 	public function delete($id = 0) {
 		if((!isset($_GET['id']) || empty($_GET['id'])) && (!isset($_POST['id']) || empty($_POST['id'])) && !$id) {
@@ -390,7 +390,7 @@ class special extends admin {
 	}
 	
 	/**
-	 * ä¸“é¢˜ç¼“å­˜
+	 * ×¨Ìâ»º´æ
 	 */
 	private function special_cache() {
 		$specials = array();
@@ -403,10 +403,10 @@ class special extends admin {
 	}
 	
 	/**
-	 * è·å–ä¸“é¢˜çš„åˆ†ç±» 
+	 * »ñÈ¡×¨ÌâµÄ·ÖÀà 
 	 * 
-	 * @param intval $specialid ä¸“é¢˜ID
-	 * @return è¿”å›æ­¤ä¸“é¢˜åˆ†ç±»çš„ä¸‹æ‹‰åˆ—è¡¨
+	 * @param intval $specialid ×¨ÌâID
+	 * @return ·µ»Ø´Ë×¨Ìâ·ÖÀàµÄÏÂÀ­ÁĞ±í
 	 */
 	public function public_get_type() {
 		$_GET['specialid'] = intval($_GET['specialid']);
@@ -416,7 +416,7 @@ class special extends admin {
 	}
 	
 	/**
-	 * æŒ‰æ¨¡å‹IDåˆ—å‡ºæ¨¡å‹ä¸‹çš„æ ç›®
+	 * °´Ä£ĞÍIDÁĞ³öÄ£ĞÍÏÂµÄÀ¸Ä¿
 	 */
 	public function public_categorys_list() {
 		if(!isset($_GET['modelid']) || empty($_GET['modelid'])) exit('');
@@ -425,7 +425,7 @@ class special extends admin {
 	}
 	
 	/**
-	 * ajaxéªŒè¯ä¸“é¢˜æ˜¯å¦å·²å­˜åœ¨
+	 * ajaxÑéÖ¤×¨ÌâÊÇ·ñÒÑ´æÔÚ
 	 */
 	public function public_check_special() {
 		if(!$_GET['title']) exit(0);
@@ -449,7 +449,7 @@ class special extends admin {
 	}
 	
 	/**
-	 * ajaxæ£€éªŒä¸“é¢˜é™æ€æ–‡ä»¶åæ˜¯å¦å­˜åœ¨ï¼Œé¿å…ä¸“é¢˜é¡µè¦†ç›–
+	 * ajax¼ìÑé×¨Ìâ¾²Ì¬ÎÄ¼şÃûÊÇ·ñ´æÔÚ£¬±ÜÃâ×¨ÌâÒ³¸²¸Ç
 	 */
 	public function public_check_dir() {
 		if(!$_GET['filename']) exit(1);
@@ -469,9 +469,9 @@ class special extends admin {
 	}
 	
 	/**
-	 * è¡¨å•éªŒè¯
-	 * @param array $data è¡¨å•ä¼ é€’çš„å€¼
-	 * @param string $a add/editæ·»åŠ æ“ä½œæ—¶ï¼Œè‡ªåŠ¨åŠ ä¸Šé»˜è®¤å€¼
+	 * ±íµ¥ÑéÖ¤
+	 * @param array $data ±íµ¥´«µİµÄÖµ
+	 * @param string $a add/editÌí¼Ó²Ù×÷Ê±£¬×Ô¶¯¼ÓÉÏÄ¬ÈÏÖµ
 	 */
 	private function check($data, $a = 'add') {
 		if(!$data['title']) showmessage(L('title_cannot_empty'), HTTP_REFERER);

@@ -13,7 +13,7 @@ if(extension_loaded('gd') && $txt ) {
 	$fontcolor_b = hexdec(substr($fontcolor,4,2));
 	if(file_exists($fontfile)){
 	
-		//è®¡ç®—æ–‡æœ¬å†™å…¥åçš„å®½åº¦ï¼Œå³ä¸‹è§’ X ä½ç½®-å·¦ä¸‹è§’ X ä½ç½®
+		//¼ÆËãÎÄ±¾Ğ´ÈëºóµÄ¿í¶È£¬ÓÒÏÂ½Ç X Î»ÖÃ-×óÏÂ½Ç X Î»ÖÃ
 		$image_info = imagettfbbox($fontsize,0,$fontfile,$txt);
 		$imageX = $image_info[2]-$image_info[0]+10;
 		$imageY = $image_info[1]-$image_info[7]+5;
@@ -21,7 +21,7 @@ if(extension_loaded('gd') && $txt ) {
 		$im = @imagecreatetruecolor ($imageX, $imageY) or die ("Cannot Initialize new GD image stream");
 		$white= imagecolorallocate($im, 255, 255, 255);
 		$font_color= imagecolorallocate($im,$fontcolor_r,$fontcolor_g,$fontcolor_b);
-		if(intval($_GET['transparent']) == 1) imagecolortransparent($im,$white); //èƒŒæ™¯é€æ˜
+		if(intval($_GET['transparent']) == 1) imagecolortransparent($im,$white); //±³¾°Í¸Ã÷
 		imagefilledrectangle($im, 0, 0, $imageX, $imageY, $white);
 		$txt = iconv(CHARSET,"UTF-8",$txt);
 		imagettftext($im, $fontsize, 0, 5, $imageY-5, $font_color, $fontfile, $txt);

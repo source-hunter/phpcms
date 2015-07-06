@@ -13,7 +13,7 @@ class linkage extends admin {
 	}
 	
 	/**
-	 * è”åŠ¨èœå•åˆ—è¡¨
+	 * Áª¶¯²Ëµ¥ÁĞ±í
 	 */
 	public function init() {
 		$where = array('keyid'=>0);
@@ -23,7 +23,7 @@ class linkage extends admin {
 	}
 	
 	/**
-	 * æ·»åŠ è”åŠ¨èœå•
+	 * Ìí¼ÓÁª¶¯²Ëµ¥
 	 */
 	function add() {
 		if(isset($_POST['dosubmit'])) {
@@ -49,7 +49,7 @@ class linkage extends admin {
 
 	}
 	/**
-	 * ç¼–è¾‘è”åŠ¨èœå•
+	 * ±à¼­Áª¶¯²Ëµ¥
 	 */
 	public function edit() {
 		if(isset($_POST['dosubmit'])) {
@@ -81,7 +81,7 @@ class linkage extends admin {
 		
 	}
 	/**
-	 * åˆ é™¤èœå•
+	 * É¾³ı²Ëµ¥
 	 */
 	public function delete() {
 		$linkageid = intval($_GET['linkageid']);
@@ -104,7 +104,7 @@ class linkage extends admin {
 		showmessage(L('operation_success'));
 	}
 	/**
-	 * èœå•æ’åº
+	 * ²Ëµ¥ÅÅĞò
 	 */
 	public function public_listorder() {
 		if(!is_array($_POST['listorders'])) return FALSE;
@@ -118,12 +118,12 @@ class linkage extends admin {
 	}
 
 	/**
-	 * ç®¡ç†è”åŠ¨èœå•å­èœå•
+	 * ¹ÜÀíÁª¶¯²Ëµ¥×Ó²Ëµ¥
 	 */
 	public function public_manage_submenu() {
 		$keyid = isset($_GET['keyid']) && trim($_GET['keyid']) ? trim($_GET['keyid']) : showmessage(L('linkage_parameter_error'));
 		$tree = pc_base::load_sys_class('tree');
-		$tree->icon = array('&nbsp;&nbsp;&nbsp;â”‚ ','&nbsp;&nbsp;&nbsp;â”œâ”€ ','&nbsp;&nbsp;&nbsp;â””â”€ ');
+		$tree->icon = array('&nbsp;&nbsp;&nbsp;©¦ ','&nbsp;&nbsp;&nbsp;©À©¤ ','&nbsp;&nbsp;&nbsp;©¸©¤ ');
 		$tree->nbsp = '&nbsp;&nbsp;&nbsp;';
 		$sum = $this->db->count(array('keyid'=>$keyid));
 		$sql_parentid = $_GET['parentid'] ? trim($_GET['parentid']) : 0;
@@ -150,7 +150,7 @@ class linkage extends admin {
 	}
 	
 	/**
-	 * å­èœå•æ·»åŠ 
+	 * ×Ó²Ëµ¥Ìí¼Ó
 	 */
 	public function public_sub_add() {		
 		if(isset($_POST['dosubmit'])) {
@@ -199,7 +199,7 @@ class linkage extends admin {
 		}
 	}
 	/**
-	 * ç”Ÿæˆè”åŠ¨èœå•ç¼“å­˜
+	 * Éú³ÉÁª¶¯²Ëµ¥»º´æ
 	 * @param init $linkageid
 	 */
 	private function _cache($linkageid) {
@@ -216,7 +216,7 @@ class linkage extends admin {
 	}
 	
 	/**
-	 * åˆ é™¤è”åŠ¨èœå•ç¼“å­˜æ–‡ä»¶
+	 * É¾³ıÁª¶¯²Ëµ¥»º´æÎÄ¼ş
 	 * @param init $linkageid
 	 */
 	private function _dlecache($linkageid) {
@@ -224,7 +224,7 @@ class linkage extends admin {
 	}
 	
 	/**
-	 * å­èœå•åˆ—è¡¨
+	 * ×Ó²Ëµ¥ÁĞ±í
 	 * @param unknown_type $keyid
 	 */
 	private function submenulist($keyid=0) {
@@ -244,7 +244,7 @@ class linkage extends admin {
 	}
 	
 	/**
-	 * è·å–æ‰€å±ç«™ç‚¹
+	 * »ñÈ¡ËùÊôÕ¾µã
 	 * @param unknown_type $keyid
 	 */
 	private function _get_belong_siteid($keyid) {
@@ -255,7 +255,7 @@ class linkage extends admin {
 
 	
 	/**
-	 * è·å–è”åŠ¨èœå•å­èŠ‚ç‚¹
+	 * »ñÈ¡Áª¶¯²Ëµ¥×Ó½Úµã
 	 * @param int $linkageid
 	 */
 	private function _get_childnode($linkageid) {
@@ -274,7 +274,7 @@ class linkage extends admin {
 		return $result ? true : false;
 	}	
 	/**
-	 * è¿”å›èœå•ID
+	 * ·µ»Ø²Ëµ¥ID
 	 */
 	public function public_get_list() {
 		$where = array('keyid'=>0);
@@ -283,8 +283,8 @@ class linkage extends admin {
 	}
 	
 	/**
-	 * è·å–å­èœå•IDåˆ—è¡¨
-	 * @param $linkageid è”åŠ¨èœå•id
+	 * »ñÈ¡×Ó²Ëµ¥IDÁĞ±í
+	 * @param $linkageid Áª¶¯²Ëµ¥id
 	 * @param $linkageinfo
 	 */
 	private function get_arrchildid($linkageid,$linkageinfo) {

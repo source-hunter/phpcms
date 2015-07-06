@@ -12,6 +12,6 @@
 {/if}
 <label><input type={if $ischeckbox=='0'}"radio"{else}"checkbox"{/if} name="radio[]" id="radio" value="{$r['optionid']}" {$check_status}/>{$r['option']}</label>
 {/loop}
-<div class="btn" style="{$display}"><input type="submit" value="鎻愪氦"></div><a href="{APP_PATH}index.php?m=vote&c=index&a=result&subjectid={$subjectid}&siteid={$siteid}">[鏌ョ湅缁撴灉]</a>
+<div class="btn" style="{$display}"><input type="submit" value="提交"></div><a href="{APP_PATH}index.php?m=vote&c=index&a=result&subjectid={$subjectid}&siteid={$siteid}">[查看结果]</a>
 </form>
 </div>

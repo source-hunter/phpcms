@@ -7,23 +7,23 @@ include $this->admin_tpl('header', 'admin');
 <form action="?m=template&c=file&a=edit_pc_tag&style=<?php echo $this->style?>&dir=<?php echo $dir?>&file=<?php echo urlencode($file)?>&op=<?php echo $op?>&tag_md5=<?php echo $_GET['tag_md5']?>" method="post" id="myform">
 	<table width="100%"  class="table_form">
 	  <tr>
-    <th width="80"><?php echo L("toolbox_type")?>ï¼š</th>
+    <th width="80"><?php echo L("toolbox_type")?>£º</th>
     <td class="y-bg"><?php echo $op?></td>
   </tr>
     <tr>
-    <th width="80">SQLï¼š</th>
+    <th width="80">SQL£º</th>
     <td class="y-bg"><textarea name="sql" id="sql" style="width:386px;height:178px;"><?php echo $_GET['sql']?></textarea></td>
   </tr>
    <tr>
-    <th width="80"><?php echo L('dbsource')?>ï¼š</th>
+    <th width="80"><?php echo L('dbsource')?>£º</th>
     <td class="y-bg"><?php echo form::select($dbsource_list, $_GET['dbsource'], 'name="dbsource" id="dbsource"')?></td>
   </tr>
      <tr>
-    <th width="80"><?php echo L("check")?>ï¼š</th>
+    <th width="80"><?php echo L("check")?>£º</th>
     <td class="y-bg"><input type="text" name="return" id="return" size="30" value="<?php echo $_GET['return']?>" /> </td>
   </tr>
    <tr>
-    <th width="80"><?php echo L("buffer_time")?>ï¼š</th>
+    <th width="80"><?php echo L("buffer_time")?>£º</th>
     <td class="y-bg"><input type="text" name="cache" id="cache" size="30" value="<?php echo $_GET['cache']?>" /> </td>
   </tr>
 </table>

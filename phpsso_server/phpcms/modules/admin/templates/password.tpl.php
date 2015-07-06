@@ -23,15 +23,15 @@ $(function(){
 <form action="?m=admin&c=password&a=init" method="post">
 <table width="100%" class="table_form">
 <tr>
-<th width="100"><?php echo L('current_password')?>ï¼š</th>
+<th width="100"><?php echo L('current_password')?>£º</th>
 <td><input type="password" class="input-text" name="password" id="password" value="" /></td>
 </tr>
 <tr>
-<th width="100" align="right"><?php echo L('new_password')?>ï¼š</th>
+<th width="100" align="right"><?php echo L('new_password')?>£º</th>
 <td><input type="password" class="input-text" name="newpassword"  id="newpassword" value="" /></td>
 </tr>
 <tr>
-<th width="100" align="right"><?php echo L('bootos_x')?>ï¼š</th>
+<th width="100" align="right"><?php echo L('bootos_x')?>£º</th>
 <td><input type="password" class="input-text" name="newpassword2" id="newpassword2" value="" /></td>
 </tr>
 </table>

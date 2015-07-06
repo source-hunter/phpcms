@@ -17,7 +17,7 @@ include $this->admin_tpl('header', 'admin');
 <input type="button" class="button pt" onClick="javascript:insertText('{JS_PATH}')" value="{JS_PATH}" title="<?php echo L('click_into')?>"/><br />
 <input type="button" class="button pt" onClick="javascript:insertText('{IMG_PATH}')" value="{IMG_PATH}" title="<?php echo L('click_into')?>"/><br />
 <input type="button" class="button pt" onClick="javascript:insertText('{APP_PATH}')" value="{APP_PATH}" title="<?php echo L('click_into')?>"/><br />
-<input type="button" class="button pt" onClick="javascript:insertText('{get_siteid()}')" value="{get_siteid()}" title="è·å–ç«™ç‚¹ID"/><br />
+<input type="button" class="button pt" onClick="javascript:insertText('{get_siteid()}')" value="{get_siteid()}" title="»ñÈ¡Õ¾µãID"/><br />
 <input type="button" class="button pt" onClick="javascript:insertText('{loop $data $n $r}')" value="{loop $data $n $r}" title="<?php echo L('click_into')?>"/><br />
 <input type="button" class="button pt" onClick="javascript:insertText('{$r[\'url\']}')" value="{$r['url']}" title="<?php echo L('click_into')?>"/><br />
 <input type="button" class="button pt" onClick="javascript:insertText('{$r[\'title\']}')" value="{$r['title']}" title="<?php echo L('click_into')?>"/><br />
@@ -94,10 +94,10 @@ function fnNext(){
 
 function check_form() {
 	if(findInPage("{php")) {
-		alert("åœ¨çº¿æ¨¡æ¿ç¼–è¾‘ç¦æ­¢æäº¤å«æœ‰{php çš„æ ‡ç­¾ã€‚");
+		alert("ÔÚÏßÄ£°å±à¼­½ûÖ¹Ìá½»º¬ÓĞ{php µÄ±êÇ©¡£");
 		return false;
 	} else if(findInPage("<\?php")) {
-		alert('åœ¨çº¿æ¨¡æ¿ç¼–è¾‘ç¦æ­¢æäº¤å«æœ‰<\?php çš„æ ‡ç­¾ã€‚');
+		alert('ÔÚÏßÄ£°å±à¼­½ûÖ¹Ìá½»º¬ÓĞ<\?php µÄ±êÇ©¡£');
 		return false;
 	} else {
 		myform.submit();

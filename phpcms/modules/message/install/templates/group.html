@@ -6,13 +6,13 @@
 {template 'member', 'left'}
 <div class="col-auto">
 <div class="col-1 ">
-<h6 class="title">ç³»ç»Ÿæ¶ˆæ¯</h6>
+<h6 class="title">ÏµÍ³ÏûÏ¢</h6>
 <div class="content"> 
  <table width="100%" cellspacing="0"  class="table-list">
         <thead>
             <tr>
-             <th>æ ‡ é¢˜</th>
-             <th width="20%">å‘é€æ—¶é—´</th>
+             <th>±ê Ìâ</th>
+             <th width="20%">·¢ËÍÊ±¼ä</th>
             </tr>
         </thead>
     <tbody>
@@ -35,7 +35,7 @@
 <script type="text/javascript">
 function read(id, name) {
 	window.top.art.dialog({id:'sell_all'}).close();
-	window.top.art.dialog({title:'æŸ¥çœ‹è¯¦æƒ…'+name+' ',id:'edit',iframe:'?m=message&c=index&a=read&messageid='+id,width:'700',height:'450'}, function(){var d = window.top.art.dialog({id:'see_all'}).data.iframe;var form = d.document.getElementById('dosubmit');form.click();return false;}, function(){window.top.art.dialog({id:'see_all'}).close()});
+	window.top.art.dialog({title:'²é¿´ÏêÇé'+name+' ',id:'edit',iframe:'?m=message&c=index&a=read&messageid='+id,width:'700',height:'450'}, function(){var d = window.top.art.dialog({id:'see_all'}).data.iframe;var form = d.document.getElementById('dosubmit');form.click();return false;}, function(){window.top.art.dialog({id:'see_all'}).close()});
 }
 function checkuid() {
 	var ids='';
@@ -43,7 +43,7 @@ function checkuid() {
 		ids += $(n).val() + ',';
 	});
 	if(ids=='') {
-		window.top.art.dialog({content:'è¯·é€‰æ‹©å†æ‰§è¡Œæ“ä½œ',lock:true,width:'200',height:'50',time:1.5},function(){});
+		window.top.art.dialog({content:'ÇëÑ¡ÔñÔÙÖ´ĞĞ²Ù×÷',lock:true,width:'200',height:'50',time:1.5},function(){});
 		return false;
 	} else {
 		myform.submit();

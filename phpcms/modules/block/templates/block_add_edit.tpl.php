@@ -19,15 +19,15 @@ include $this->admin_tpl('header', 'admin');
 	<legend><?php echo L('block_configuration')?></legend>
 	<table width="100%"  class="table_form">
     <tr>
-    <th width="80"><?php echo L('name')?>ï¼š</th>
+    <th width="80"><?php echo L('name')?>£º</th>
     <td class="y-bg"><input type="text" name="name" id="name" size="30" value="<?php echo isset($data['name']) ?  $data['name'] : '';?>" /></td>
   	</tr>
     <tr>
-    <th width="80"><?php echo L('display_position')?>ï¼š</th>
+    <th width="80"><?php echo L('display_position')?>£º</th>
     <td class="y-bg"> <?php echo isset($data['pos']) ?  $data['pos'] : $_GET['pos'];?></td>
   	</tr>
   	<tr>
-    <th width="80"><?php echo L('type')?>ï¼š</th>
+    <th width="80"><?php echo L('type')?>£º</th>
     <td class="y-bg"><?php echo form::radio(array('1'=>L('code'), '2'=>L('table_style')), (isset($data['type']) ? $data['type'] : 1), 'name="type"'.(ROUTE_A=='edit' ? ' disabled = "disabled"' : ''))?></td>
   	</tr>
 </table>
@@ -37,7 +37,7 @@ include $this->admin_tpl('header', 'admin');
 	<legend><?php echo L('permission_configuration')?></legend>
 	<table width="100%"  class="table_form">
     <tr>
-    <th width="80"><?php echo L('role')?>ï¼š</th>
+    <th width="80"><?php echo L('role')?>£º</th>
     <td class="y-bg"><?php echo form::checkbox($administrator, (isset($priv_list) ? implode(',', $priv_list) : ''), 'name="priv[]"')?></td>
   	</tr>
 </table>

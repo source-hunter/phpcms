@@ -1,7 +1,7 @@
 <?php
 defined('IN_PHPCMS') or exit('No permission resources.'); 
 /**
- * 鐐瑰嚮缁熻
+ * 点击统计
  */
 $db = '';
 $db = pc_base::load_model('hits_model');
@@ -29,7 +29,7 @@ if($_GET['modelid'] && $_GET['id']) {
 
 
 /**
- * 鑾峰彇鐐瑰嚮鏁伴噺
+ * 获取点击数量
  * @param $hitsid
  */
 function get_count($hitsid) {
@@ -40,7 +40,7 @@ function get_count($hitsid) {
 }
 
 /**
- * 鐐瑰嚮娆℃暟缁熻
+ * 点击次数统计
  * @param $contentid
  */
 function hits($hitsid) {

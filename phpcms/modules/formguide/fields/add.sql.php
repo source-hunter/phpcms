@@ -1,7 +1,7 @@
 <?php
 defined('IN_ADMIN') or exit('No permission resources.');
 $defaultvalue = isset($_POST['setting']['defaultvalue']) ? $_POST['setting']['defaultvalue'] : '';
-//æ­£æ•´æ•° UNSIGNED && SIGNED
+//ÕýÕûÊý UNSIGNED && SIGNED
 $minnumber = isset($_POST['setting']['minnumber']) ? $_POST['setting']['minnumber'] : 1;
 $decimaldigits = isset($_POST['setting']['decimaldigits']) ? $_POST['setting']['decimaldigits'] : '';
 
@@ -72,7 +72,7 @@ switch($field_type) {
 		$sql = "ALTER TABLE `$tablename` ADD `$field` TIMESTAMP NOT NULL";
 		if (!$unrunsql) $this->db->query($sql);
 	break;
-	//ç‰¹æ®Šè‡ªå®šä¹‰å­—æ®µ
+	//ÌØÊâ×Ô¶¨Òå×Ö¶Î
 	case 'pages':
 		$this->db->query("ALTER TABLE `$tablename` ADD `paginationtype` TINYINT( 1 ) NOT NULL DEFAULT '0'");
 		$this->db->query("ALTER TABLE `$tablename` ADD `maxcharperpage` MEDIUMINT( 6 ) NOT NULL DEFAULT '0'");

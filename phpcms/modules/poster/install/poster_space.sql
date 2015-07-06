@@ -16,22 +16,22 @@ CREATE TABLE IF NOT EXISTS `phpcms_poster_space` (
 ) TYPE=MyISAM ;
 
 INSERT INTO `phpcms_poster_space` (`siteid`, `spaceid`, `name`, `type`, `path`, `width`, `height`, `setting`, `description`, `items`, `disabled`) VALUES
-(1, 1, 'é¡¶éƒ¨æœç´¢å³ä¾§å¹¿å‘Šä½', 'banner', 'poster_js/1.js', 430, 63, 'array (\n  ''paddleft'' => '''',\n  ''paddtop'' => '''',\n)', '', 1, 0);
+(1, 1, '¶¥²¿ËÑË÷ÓÒ²à¹ã¸æÎ»', 'banner', 'poster_js/1.js', 430, 63, 'array (\n  ''paddleft'' => '''',\n  ''paddtop'' => '''',\n)', '', 1, 0);
 INSERT INTO `phpcms_poster_space` (`siteid`, `spaceid`, `name`, `type`, `path`, `width`, `height`, `setting`, `description`, `items`, `disabled`) VALUES
-(1, 2, 'ä¼šå‘˜ç™»é™†é¡µå¹¿å‘Š', 'banner', 'poster_js/2.js', 310, 304, 'array (\n  ''paddleft'' => '''',\n  ''paddtop'' => '''',\n)', 'ä¼šå‘˜ç™»é™†é¡µå¹¿å‘Šå³ä¾§ä»£æ›¿å¤–éƒ¨é€šè¡Œè¯å¹¿å‘Š', 1, 0);
+(1, 2, '»áÔ±µÇÂ½Ò³¹ã¸æ', 'banner', 'poster_js/2.js', 310, 304, 'array (\n  ''paddleft'' => '''',\n  ''paddtop'' => '''',\n)', '»áÔ±µÇÂ½Ò³¹ã¸æÓÒ²à´úÌæÍâ²¿Í¨ÐÐÖ¤¹ã¸æ', 1, 0);
 INSERT INTO `phpcms_poster_space` (`siteid`, `spaceid`, `name`, `type`, `path`, `width`, `height`, `setting`, `description`, `items`, `disabled`) VALUES
-(1, 3, 'å›¾ç‰‡é¢‘é“å›¾ç‰‡æŽ’è¡Œä¸‹æ–¹', 'banner', 'poster_js/3.js', 249, 87, 'array (\n  ''paddleft'' => '''',\n  ''paddtop'' => '''',\n)', '', 1, 0);
+(1, 3, 'Í¼Æ¬ÆµµÀÍ¼Æ¬ÅÅÐÐÏÂ·½', 'banner', 'poster_js/3.js', 249, 87, 'array (\n  ''paddleft'' => '''',\n  ''paddtop'' => '''',\n)', '', 1, 0);
 INSERT INTO `phpcms_poster_space` (`siteid`, `spaceid`, `name`, `type`, `path`, `width`, `height`, `setting`, `description`, `items`, `disabled`) VALUES
-(1, 4, 'æ–°é—»ä¸­å¿ƒæŽ¨èé“¾æŽ¥å·¦ä¾§', 'banner', 'poster_js/4.js', 748, 91, 'array (\n  ''paddleft'' => '''',\n  ''paddtop'' => '''',\n)', '', 1, 0);
+(1, 4, 'ÐÂÎÅÖÐÐÄÍÆ¼öÁ´½Ó×ó²à', 'banner', 'poster_js/4.js', 748, 91, 'array (\n  ''paddleft'' => '''',\n  ''paddtop'' => '''',\n)', '', 1, 0);
 INSERT INTO `phpcms_poster_space` (`siteid`, `spaceid`, `name`, `type`, `path`, `width`, `height`, `setting`, `description`, `items`, `disabled`) VALUES
-(1, 5, 'ä¸‹è½½åˆ—è¡¨é¡µå³ä¾§é¡¶éƒ¨', 'banner', 'poster_js/5.js', 248, 162, 'array (\n  ''paddleft'' => '''',\n  ''paddtop'' => '''',\n)', '', 1, 0);
+(1, 5, 'ÏÂÔØÁÐ±íÒ³ÓÒ²à¶¥²¿', 'banner', 'poster_js/5.js', 248, 162, 'array (\n  ''paddleft'' => '''',\n  ''paddtop'' => '''',\n)', '', 1, 0);
 INSERT INTO `phpcms_poster_space` (`siteid`, `spaceid`, `name`, `type`, `path`, `width`, `height`, `setting`, `description`, `items`, `disabled`) VALUES
-(1, 6, 'ä¸‹è½½è¯¦æƒ…é¡µå³ä¾§é¡¶éƒ¨', 'banner', 'poster_js/6.js', 248, 162, 'array (\n  ''paddleft'' => '''',\n  ''paddtop'' => '''',\n)', '', 1, 0);
+(1, 6, 'ÏÂÔØÏêÇéÒ³ÓÒ²à¶¥²¿', 'banner', 'poster_js/6.js', 248, 162, 'array (\n  ''paddleft'' => '''',\n  ''paddtop'' => '''',\n)', '', 1, 0);
 INSERT INTO `phpcms_poster_space` (`siteid`, `spaceid`, `name`, `type`, `path`, `width`, `height`, `setting`, `description`, `items`, `disabled`) VALUES
-(1, 7, 'ä¸‹è½½è¯¦æƒ…é¡µå³ä¾§ä¸‹éƒ¨', 'banner', 'poster_js/7.js', 248, 162, 'array (\n  ''paddleft'' => '''',\n  ''paddtop'' => '''',\n)', '', 1, 0);
+(1, 7, 'ÏÂÔØÏêÇéÒ³ÓÒ²àÏÂ²¿', 'banner', 'poster_js/7.js', 248, 162, 'array (\n  ''paddleft'' => '''',\n  ''paddtop'' => '''',\n)', '', 1, 0);
 INSERT INTO `phpcms_poster_space` (`siteid`, `spaceid`, `name`, `type`, `path`, `width`, `height`, `setting`, `description`, `items`, `disabled`) VALUES
-(1, 8, 'ä¸‹è½½é¢‘é“é¦–é¡µ', 'banner', 'poster_js/8.js', 698, 80, 'array (\n  ''paddleft'' => '''',\n  ''paddtop'' => '''',\n)', '', 1, 0);
+(1, 8, 'ÏÂÔØÆµµÀÊ×Ò³', 'banner', 'poster_js/8.js', 698, 80, 'array (\n  ''paddleft'' => '''',\n  ''paddtop'' => '''',\n)', '', 1, 0);
 INSERT INTO `phpcms_poster_space` (`siteid`, `spaceid`, `name`, `type`, `path`, `width`, `height`, `setting`, `description`, `items`, `disabled`) VALUES
-(1, 9, 'ä¸‹è½½è¯¦æƒ…é¡µåœ°å€åˆ—è¡¨å³ä¾§', 'banner', 'poster_js/12.js', 330, 50, 'array (\n  ''paddleft'' => '''',\n  ''paddtop'' => '''',\n)', '', 1, 0);
+(1, 9, 'ÏÂÔØÏêÇéÒ³µØÖ·ÁÐ±íÓÒ²à', 'banner', 'poster_js/12.js', 330, 50, 'array (\n  ''paddleft'' => '''',\n  ''paddtop'' => '''',\n)', '', 1, 0);
 INSERT INTO `phpcms_poster_space` (`siteid`, `spaceid`, `name`, `type`, `path`, `width`, `height`, `setting`, `description`, `items`, `disabled`) VALUES
-(1, 10, 'é¦–é¡µå…³æ³¨ä¸‹æ–¹å¹¿å‘Š', 'banner', 'poster_js/10.js', 307, 60, 'array (\n  ''paddleft'' => '''',\n  ''paddtop'' => '''',\n)', '', 1, 0);
+(1, 10, 'Ê×Ò³¹Ø×¢ÏÂ·½¹ã¸æ', 'banner', 'poster_js/10.js', 307, 60, 'array (\n  ''paddleft'' => '''',\n  ''paddtop'' => '''',\n)', '', 1, 0);

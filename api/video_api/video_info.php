@@ -3,25 +3,25 @@ defined('IN_PHPCMS') or exit('No permission resources.');
 
 /**
  * 
- * 视频状态接收接口 vms系统收到ku6系统中视频状态改变时post到cms系统中，此接口负责接收数据改变视频库中视频的状态
+ * ��Ƶ״̬���սӿ� vmsϵͳ�յ�ku6ϵͳ����Ƶ״̬�ı�ʱpost��cmsϵͳ�У��˽ӿڸ���������ݸı���Ƶ������Ƶ��״̬
  * 
  * @author				chenxuewang
  * @link				http://www.phpcms.cn http://www.ku6.cn
- * @copyright			CopyRight (c) 2006-2012 酷溜网（北京）科技有限公司
+ * @copyright			CopyRight (c) 2006-2012 ���������������Ƽ����޹�˾
  * @license			http://www.phpcms.cn/license/
  * ---------------------------------------------------------------------
- * 参数说明
+ * ����˵��
  * vid, picpath, size, timelen, status
  * 
- * vid，视频vid，视频的唯一的标示符。区分视频
+ * vid����Ƶvid����Ƶ��Ψһ�ı�ʾ����������Ƶ
  * 
- * picpath 视频缩略图
+ * picpath ��Ƶ����ͼ
  * 
- * size 视频大小
+ * size ��Ƶ��С
  * 
- * timelen 视频播放时长
+ * timelen ��Ƶ����ʱ��
  * 
- * status 视频目前的状态
+ * status ��ƵĿǰ��״̬
  */
 
 $video_setting = getcache('video');

@@ -10,7 +10,7 @@
 		$usable_array = array();
 		if($usable_type) $usable_array = explode(',',$usable_type);
 		
-		//è·å–ç«™ç‚¹ID
+		//»ñÈ¡Õ¾µãID
 		if(intval($_GET['siteid'])){
 			$siteid = intval($_GET['siteid']);
 		}else{

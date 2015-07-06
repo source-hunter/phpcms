@@ -3,25 +3,25 @@
 {template 'member', 'left'}
 <div class="col-auto">
 <div class="col-1 ">
-<h6 class="title">æ¶ˆè´¹è®°å½•</h6>
+<h6 class="title">Ïû·Ñ¼ÇÂ¼</h6>
 <div class="content">
 <form name="searchform" action="{APP_PATH}index.php?m=pay&c=spend_list&a=init" method="get" >
 <input type="hidden" value="pay" name="m">
 <input type="hidden" value="spend_list" name="c">
 <input type="hidden" value="init" name="a">
 		<div class="search">
-		è®¢å•æ—¶é—´  {form::date('starttime',format::date($starttime))} åˆ°   {form::date('endtime',format::date($endtime))}
-		{form::select(array(''=>'æ¶ˆè´¹ç±»å‹', '1'=>'é‡‘é’±', '2'=>'ç§¯åˆ†'),$type,'name="type"')}  
-		<input type="submit" value="æŸ¥è¯¢" class="button" name="dosubmit">
+		¶©µ¥Ê±¼ä  {form::date('starttime',format::date($starttime))} µ½   {form::date('endtime',format::date($endtime))}
+		{form::select(array(''=>'Ïû·ÑÀàĞÍ', '1'=>'½ğÇ®', '2'=>'»ı·Ö'),$type,'name="type"')}  
+		<input type="submit" value="²éÑ¯" class="button" name="dosubmit">
 		</div>
 </form>
 <table width="100%" cellspacing="0"  class="table-list">
         <thead>
             <tr>
-            <th width="20%">æ¶ˆè´¹å†…å®¹</th>
-            <th width="20%">æ—¶é—´</th>
-            <th width="15%">æ¶ˆè´¹ç±»å‹</th>
-            <th width="8%">æ•°é‡</th>
+            <th width="20%">Ïû·ÑÄÚÈİ</th>
+            <th width="20%">Ê±¼ä</th>
+            <th width="15%">Ïû·ÑÀàĞÍ</th>
+            <th width="8%">ÊıÁ¿</th>
             </tr>
         </thead>
     <tbody>
@@ -29,7 +29,7 @@
 	<tr>
 	<td width="20%" align="center">{$info['msg']}</td>
 	<td  width="20%" align="center">{format::date($info['creat_at'], 1)}</td>
-	<td width="15%" align="center">{if $info[type]==1}é‡‘é’±{elseif $info[type]==2}ç§¯åˆ†{/if}</td>
+	<td width="15%" align="center">{if $info[type]==1}½ğÇ®{elseif $info[type]==2}»ı·Ö{/if}</td>
 	<td width="8%" align="center">{$info['value']}</td>
 	</tr>
 	{/loop}

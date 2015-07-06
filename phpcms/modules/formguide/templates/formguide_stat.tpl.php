@@ -32,7 +32,7 @@ if(is_array($options)){
 		}
 ?>
 	<tr>
-		<td> <?php echo intval($_k+1).' ã€ '.$_key;?> </td>
+		<td> <?php echo intval($_k+1).' ¡¢ '.$_key;?> </td>
 		<td align="center"><?php
 						$number = 0;
 						foreach ($datas AS $__k=>$__v) {

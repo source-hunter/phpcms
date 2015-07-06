@@ -15,7 +15,7 @@ function submit_images(uploadid,returnid){
 	var d = window.top.art.dialog({id:uploadid}).data.iframe;
 	var in_content = d.$("#att-status").html().substring(1);
 	var in_content = in_content.split('|');
-	IsImg(in_content[0]) ? $('#'+returnid).attr("value",in_content[0]) : alert('閫夋嫨鐨勭被鍨嬪繀椤讳负鍥剧墖绫诲瀷');
+	IsImg(in_content[0]) ? $('#'+returnid).attr("value",in_content[0]) : alert('选择的类型必须为图片类型');
 }
 
 

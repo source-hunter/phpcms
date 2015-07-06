@@ -39,7 +39,7 @@ endif;
 <!--
 function edit(id, name) {
 	window.top.art.dialog({id:'edit'}).close();
-	window.top.art.dialog({title:'<?php echo L('release_point_edit')?>ã€Š'+name+'ã€‹',id:'edit',iframe:'?m=admin&c=release_point&a=edit&id='+id,width:'700',height:'500'}, function(){var d = window.top.art.dialog({id:'edit'}).data.iframe;var form = d.document.getElementById('dosubmit');form.click();return false;}, function(){window.top.art.dialog({id:'edit'}).close()});
+	window.top.art.dialog({title:'<?php echo L('release_point_edit')?>¡¶'+name+'¡·',id:'edit',iframe:'?m=admin&c=release_point&a=edit&id='+id,width:'700',height:'500'}, function(){var d = window.top.art.dialog({id:'edit'}).data.iframe;var form = d.document.getElementById('dosubmit');form.click();return false;}, function(){window.top.art.dialog({id:'edit'}).close()});
 }
 //-->
 </script>

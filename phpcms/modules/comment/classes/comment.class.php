@@ -1,11 +1,11 @@
 <?php
 /**
- * è¯„è®ºæ“ä½œç±»
+ * ÆÀÂÛ²Ù×÷Àà
  * @author chenzhouyu
  *
  */
 class comment {
-	//æ•°æ®åº“è¿žæŽ¥
+	//Êý¾Ý¿âÁ¬½Ó
 	private $comment_db, $comment_setting_db, $comment_data_db, $comment_table_db, $comment_check_db;
 	
 	public $msg_code = 0;
@@ -19,29 +19,29 @@ class comment {
 	}
 	
 	/**
-	 * æ·»åŠ è¯„è®º
-	 * @param string $commentid è¯„è®ºID
-	 * @param integer $siteid ç«™ç‚¹ID
-	 * @param array $data å†…å®¹æ•°ç»„åº”è¯¥åŒ…æ‹¬array('userid'=>ç”¨æˆ·IDï¼Œ'username'=>ç”¨æˆ·å,'content'=>å†…å®¹,'direction'=>æ–¹å‘ï¼ˆ0:æ²¡æœ‰æ–¹å‘ ,1:æ­£æ–¹,2:åæ–¹,3:ä¸­ç«‹ï¼‰)
-	 * @param string $id å›žå¤è¯„è®ºçš„å†…å®¹
-	 * @param string $title æ–‡ç« æ ‡é¢˜
-	 * @param string $url æ–‡ç« URLåœ°å€
+	 * Ìí¼ÓÆÀÂÛ
+	 * @param string $commentid ÆÀÂÛID
+	 * @param integer $siteid Õ¾µãID
+	 * @param array $data ÄÚÈÝÊý×éÓ¦¸Ã°üÀ¨array('userid'=>ÓÃ»§ID£¬'username'=>ÓÃ»§Ãû,'content'=>ÄÚÈÝ,'direction'=>·½Ïò£¨0:Ã»ÓÐ·½Ïò ,1:Õý·½,2:·´·½,3:ÖÐÁ¢£©)
+	 * @param string $id »Ø¸´ÆÀÂÛµÄÄÚÈÝ
+	 * @param string $title ÎÄÕÂ±êÌâ
+	 * @param string $url ÎÄÕÂURLµØÖ·
 	 */
 	public function add($commentid, $siteid, $data, $id = '', $title = '', $url = '') {
-		//å¼€å§‹æŸ¥è¯¢è¯„è®ºè¿™æ¡è¯„è®ºæ˜¯å¦å­˜åœ¨ã€‚
+		//¿ªÊ¼²éÑ¯ÆÀÂÛÕâÌõÆÀÂÛÊÇ·ñ´æÔÚ¡£
 		$title = new_addslashes($title);
-		if (!$comment = $this->comment_db->get_one(array('commentid'=>$commentid, 'siteid'=>$siteid), 'tableid, commentid')) { //è¯„è®ºä¸å­˜åœ¨
-			//å–å¾—å½“å‰å¯ä»¥ä½¿ç”¨çš„å†…å®¹æ•°æ®è¡¨
+		if (!$comment = $this->comment_db->get_one(array('commentid'=>$commentid, 'siteid'=>$siteid), 'tableid, commentid')) { //ÆÀÂÛ²»´æÔÚ
+			//È¡µÃµ±Ç°¿ÉÒÔÊ¹ÓÃµÄÄÚÈÝÊý¾Ý±í
 			$r = $this->comment_table_db->get_one('', 'tableid, total', 'tableid desc');
 			$tableid = $r['tableid'];
 			if ($r['total'] >= 1000000) {
-				//å½“ä¸Šä¸€å¼ æ•°æ®è¡¨å­˜çš„æ•°æ®å·²ç»è¾¾åˆ°1000000æ—¶ï¼Œåˆ›å»ºæ–°çš„æ•°æ®å­˜å‚¨è¡¨ï¼Œå­˜å‚¨æ•°æ®ã€‚
+				//µ±ÉÏÒ»ÕÅÊý¾Ý±í´æµÄÊý¾ÝÒÑ¾­´ïµ½1000000Ê±£¬´´½¨ÐÂµÄÊý¾Ý´æ´¢±í£¬´æ´¢Êý¾Ý¡£
 				if (!$tableid = $this->comment_table_db->creat_table()) {
 					$this->msg_code = 4;
 					return false;
 				}
 			}
-			//æ–°å»ºè¯„è®ºåˆ°è¯„è®ºæ€»è¡¨ä¸­ã€‚
+			//ÐÂ½¨ÆÀÂÛµ½ÆÀÂÛ×Ü±íÖÐ¡£
 			$comment_data = array('commentid'=>$commentid, 'siteid'=>$siteid, 'tableid'=>$tableid, 'display_type'=>($data['direction']>0 ? 1 : 0));
 			if (!empty($title)) $comment_data['title'] = $title;
 			if (!empty($url)) $comment_data['url'] = $url;
@@ -49,30 +49,30 @@ class comment {
 				$this->msg_code = 5;
 				return false;
 			}
-		} else {//è¯„è®ºå­˜åœ¨æ—¶
+		} else {//ÆÀÂÛ´æÔÚÊ±
 			$tableid = $comment['tableid'];
 		}
 		if (empty($tableid)) {
 			$this->msg_code = 1;
 			return false;
 		}
-		//ä¸ºæ•°æ®å­˜å‚¨æ•°æ®æ¨¡åž‹è®¾ç½® æ•°æ®è¡¨åã€‚
+		//ÎªÊý¾Ý´æ´¢Êý¾ÝÄ£ÐÍÉèÖÃ Êý¾Ý±íÃû¡£
 		$this->comment_data_db->table_name($tableid);
-		//æ£€æŸ¥æ•°æ®å­˜å‚¨è¡¨ã€‚
+		//¼ì²éÊý¾Ý´æ´¢±í¡£
 		if (!$this->comment_data_db->table_exists('comment_data_'.$tableid)) {
-			//å½“å­˜å‚¨æ•°æ®è¡¨ä¸å­˜æ—¶ï¼Œå°è¯•åˆ›å»ºæ•°æ®è¡¨ã€‚
+			//µ±´æ´¢Êý¾Ý±í²»´æÊ±£¬³¢ÊÔ´´½¨Êý¾Ý±í¡£
 			if (!$tableid = $this->comment_table_db->creat_table($tableid)) {
 				$this->msg_code = 2;
 				return false;
 			}
 		}
-		//å‘æ•°æ®å­˜å‚¨è¡¨ä¸­å†™å…¥æ•°æ®ã€‚	
+		//ÏòÊý¾Ý´æ´¢±íÖÐÐ´ÈëÊý¾Ý¡£	
 		$data['commentid'] = $commentid;
 		$data['siteid'] = $siteid;
 		$data['ip'] = ip();
 		$data['status'] = 1;
 		$data['creat_at'] = SYS_TIME;
-		//å¯¹è¯„è®ºçš„å†…å®¹è¿›è¡Œå…³é”®è¯è¿‡æ»¤ã€‚
+		//¶ÔÆÀÂÛµÄÄÚÈÝ½øÐÐ¹Ø¼ü´Ê¹ýÂË¡£
 		$data['content'] = strip_tags($data['content']);
 		$badword = pc_base::load_model('badword_model');
 		$data['content'] = $badword->replace_badword($data['content']);
@@ -88,35 +88,35 @@ class comment {
 				$data['reply'] = 1;
 			}
 		}
-		//åˆ¤æ–­å½“å‰ç«™ç‚¹æ˜¯å¦éœ€è¦å®¡æ ¸
+		//ÅÐ¶Ïµ±Ç°Õ¾µãÊÇ·ñÐèÒªÉóºË
 		$site = $this->comment_setting_db->site($siteid);
 		if ($site['check']) {
 			$data['status'] = 0;
 		}
 		$data['content'] = addslashes($data['content']);
 		if ($comment_data_id = $this->comment_data_db->insert($data, true)) {
-			//éœ€è¦å®¡æ ¸ï¼Œæ’å…¥åˆ°å®¡æ ¸è¡¨
+			//ÐèÒªÉóºË£¬²åÈëµ½ÉóºË±í
 			if ($data['status']==0) {
 				$this->comment_check_db->insert(array('comment_data_id'=>$comment_data_id, 'siteid'=>$siteid,'tableid'=>$tableid));
-			} elseif (!empty($data['userid']) && !empty($site['add_point']) && module_exists('pay')) { //ä¸éœ€è¦å®¡æ ¸ç›´æŽ¥ç»™ç”¨æˆ·æ·»åŠ ç§¯åˆ†
+			} elseif (!empty($data['userid']) && !empty($site['add_point']) && module_exists('pay')) { //²»ÐèÒªÉóºËÖ±½Ó¸øÓÃ»§Ìí¼Ó»ý·Ö
 				pc_base::load_app_class('receipts', 'pay', 0);
 				receipts::point($site['add_point'], $data['userid'], $data['username'], '', 'selfincome', 'Comment');
 			}
-			//å¼€å§‹æ›´æ–°æ•°æ®å­˜å‚¨è¡¨æ•°æ®æ€»æ¡æ•°
+			//¿ªÊ¼¸üÐÂÊý¾Ý´æ´¢±íÊý¾Ý×ÜÌõÊý
 			$this->comment_table_db->edit_total($tableid, '+=1');
-			//å¼€å§‹æ›´æ–°è¯„è®ºæ€»è¡¨æ•°æ®æ€»æ•°
+			//¿ªÊ¼¸üÐÂÆÀÂÛ×Ü±íÊý¾Ý×ÜÊý
 			$sql['lastupdate'] = SYS_TIME;
-			//åªæœ‰åœ¨è¯„è®ºé€šè¿‡çš„æ—¶å€™æ‰æ›´æ–°è¯„è®ºä¸»è¡¨çš„è¯„è®ºæ•°
+			//Ö»ÓÐÔÚÆÀÂÛÍ¨¹ýµÄÊ±ºò²Å¸üÐÂÆÀÂÛÖ÷±íµÄÆÀÂÛÊý
 			if ($data['status'] == 1) {
 				$sql['total'] = '+=1';
 				switch ($data['direction']) {
-					case 1: //æ­£æ–¹
+					case 1: //Õý·½
 						$sql['square'] = '+=1';
 						break;
-					case 2://åæ–¹
+					case 2://·´·½
 						$sql['anti'] = '+=1';
 						break;
-					case 3://ä¸­ç«‹æ–¹
+					case 3://ÖÐÁ¢·½
 						$sql['neutral'] = '+=1';
 						break;
 				}
@@ -135,9 +135,9 @@ class comment {
 	}
 	
 	/**
-	 * æ”¯æŒè¯„è®º
-	 * @param integer $commentid    è¯„è®ºID
-	 * @param integer $id           å†…å®¹ID
+	 * Ö§³ÖÆÀÂÛ
+	 * @param integer $commentid    ÆÀÂÛID
+	 * @param integer $id           ÄÚÈÝID
 	 */
 	public function support($commentid, $id) {
 		if ($data = $this->comment_db->get_one(array('commentid'=>$commentid), 'tableid')) {
@@ -156,10 +156,10 @@ class comment {
 	}
 	
 	/**
-	 * æ›´æ–°è¯„è®ºçš„çŠ¶æ€
-	 * @param string $commentid      è¯„è®ºID 
-	 * @param integer $id            å†…å®¹ID
-	 * @param integer $status        çŠ¶æ€{1:é€šè¿‡ ,0:æœªå®¡æ ¸ï¼Œ -1:ä¸é€šè¿‡,å°†åšåˆ é™¤æ“ä½œ}
+	 * ¸üÐÂÆÀÂÛµÄ×´Ì¬
+	 * @param string $commentid      ÆÀÂÛID 
+	 * @param integer $id            ÄÚÈÝID
+	 * @param integer $status        ×´Ì¬{1:Í¨¹ý ,0:Î´ÉóºË£¬ -1:²»Í¨¹ý,½«×öÉ¾³ý²Ù×÷}
 	 */
 	public function status($commentid, $id, $status = -1) {
 		if (!$comment = $this->comment_db->get_one(array('commentid'=>$commentid), 'tableid, commentid')) {
@@ -167,66 +167,66 @@ class comment {
 			return false;
 		}
 		
-		//ä¸ºæ•°æ®å­˜å‚¨æ•°æ®æ¨¡åž‹è®¾ç½® æ•°æ®è¡¨åã€‚
+		//ÎªÊý¾Ý´æ´¢Êý¾ÝÄ£ÐÍÉèÖÃ Êý¾Ý±íÃû¡£
 		$this->comment_data_db->table_name($comment['tableid']);
 		if (!$comment_data = $this->comment_data_db->get_one(array('id'=>$id, 'commentid'=>$commentid))) {
 			$this->msg_code = 6;
 			return false;
 		}
 		
-		//è¯»å–è¯„è®ºçš„ç«™ç‚¹é…ç½®ä¿¡æ¯
+		//¶ÁÈ¡ÆÀÂÛµÄÕ¾µãÅäÖÃÐÅÏ¢
 		$site = $this->comment_setting_db->get_one(array('siteid'=>$comment_data['siteid']));
 		
 		
-		if ($status == 1) {//é€šè¿‡çš„æ—¶å€™
+		if ($status == 1) {//Í¨¹ýµÄÊ±ºò
 			$sql['total'] = '+=1';
 			switch ($comment_data['direction']) {
-				case 1: //æ­£æ–¹
+				case 1: //Õý·½
 					$sql['square'] = '+=1';
 					break;
-				case 2://åæ–¹
+				case 2://·´·½
 					$sql['anti'] = '+=1';
 					break;
-				case 3://ä¸­ç«‹æ–¹
+				case 3://ÖÐÁ¢·½
 					$sql['neutral'] = '+=1';
 					break;
 			}
 			
-			//å½“è¯„è®ºè¢«è®¾ç½®ä¸ºé€šè¿‡çš„æ—¶å€™ï¼Œæ›´æ–°è¯„è®ºæ€»è¡¨çš„æ•°é‡ã€‚
+			//µ±ÆÀÂÛ±»ÉèÖÃÎªÍ¨¹ýµÄÊ±ºò£¬¸üÐÂÆÀÂÛ×Ü±íµÄÊýÁ¿¡£
 			$this->comment_db->update($sql, array('commentid'=>$comment['commentid']));
-			//æ›´æ–°è¯„è®ºå†…å®¹çŠ¶æ€
+			//¸üÐÂÆÀÂÛÄÚÈÝ×´Ì¬
 			$this->comment_data_db->update(array('status'=>$status), array('id'=>$id, 'commentid'=>$commentid));
 			
-			//å½“è¯„è®ºç”¨æˆ·IDä¸ä¸ºç©ºï¼Œè€Œä¸”ç«™ç‚¹é…ç½®äº†ç§¯åˆ†æ·»åŠ é¡¹ï¼Œæ”¯ä»˜æ¨¡å—ä¹Ÿå­˜åœ¨çš„æ—¶å€™ï¼Œä¸ºç”¨æˆ·æ·»åŠ ç§¯åˆ†ã€‚
+			//µ±ÆÀÂÛÓÃ»§ID²»Îª¿Õ£¬¶øÇÒÕ¾µãÅäÖÃÁË»ý·ÖÌí¼ÓÏî£¬Ö§¸¶Ä£¿éÒ²´æÔÚµÄÊ±ºò£¬ÎªÓÃ»§Ìí¼Ó»ý·Ö¡£
 			if (!empty($comment_data['userid']) && !empty($site['add_point']) && module_exists('pay')) {
 				pc_base::load_app_class('receipts', 'pay', 0);
 				receipts::point($site['add_point'], $comment_data['userid'], $comment_data['username'], '', 'selfincome', 'Comment');
 			}
 			
-		} elseif ($status == -1) { //åˆ é™¤æ•°æ®
-			//å¦‚æžœæ•°æ®åŽŸæœ‰çŠ¶æ€ä¸ºå·²ç»é€šè¿‡ï¼Œéœ€è¦åˆ é™¤è¯„è®ºæ€»è¡¨ä¸­çš„æ€»æ•°
+		} elseif ($status == -1) { //É¾³ýÊý¾Ý
+			//Èç¹ûÊý¾ÝÔ­ÓÐ×´Ì¬ÎªÒÑ¾­Í¨¹ý£¬ÐèÒªÉ¾³ýÆÀÂÛ×Ü±íÖÐµÄ×ÜÊý
 			if ($comment_data['status'] == 1) {
 				$sql['total'] = '-=1';
 				switch ($comment_data['direction']) {
-					case '1': //æ­£æ–¹
+					case '1': //Õý·½
 						$sql['square'] = '-=1';
 						break;
-					case '2'://åæ–¹
+					case '2'://·´·½
 						$sql['anti'] = '-=1';
 						break;
-					case '3'://ä¸­ç«‹æ–¹
+					case '3'://ÖÐÁ¢·½
 						$sql['neutral'] = '-=1';
 						break;
 				}
 				$this->comment_db->update($sql, array('commentid'=>$comment['commentid']));
 			}
 			
-			//åˆ é™¤å­˜å‚¨è¡¨çš„æ•°æ®
+			//É¾³ý´æ´¢±íµÄÊý¾Ý
 			$this->comment_data_db->delete(array('id'=>$id, 'commentid'=>$commentid));
-			//åˆ é™¤å­˜å‚¨è¡¨æ€»æ•°è®°å½•,åˆ¤æ–­æ€»æ•°æ˜¯å¦ä¸º0ï¼Œå¦åˆ™ä¸èƒ½å†åˆ é™¤äº†ã€‚
+			//É¾³ý´æ´¢±í×ÜÊý¼ÇÂ¼,ÅÐ¶Ï×ÜÊýÊÇ·ñÎª0£¬·ñÔò²»ÄÜÔÙÉ¾³ýÁË¡£
 			$this->comment_table_db->edit_total($comment['tableid'], '-=1');
 			
-			//å½“è¯„è®ºIDä¸ä¸ºç©ºï¼Œç«™ç‚¹é…ç½®äº†åˆ é™¤çš„ç‚¹æ•°ï¼Œæ”¯ä»˜æ¨¡å—å­˜åœ¨çš„æ—¶å€™ï¼Œåˆ é™¤ç”¨æˆ·çš„ç‚¹æ•°ã€‚
+			//µ±ÆÀÂÛID²»Îª¿Õ£¬Õ¾µãÅäÖÃÁËÉ¾³ýµÄµãÊý£¬Ö§¸¶Ä£¿é´æÔÚµÄÊ±ºò£¬É¾³ýÓÃ»§µÄµãÊý¡£
 			if (!empty($comment_data['userid']) && !empty($site['del_point']) && module_exists('pay')) {
 				pc_base::load_app_class('spend', 'pay', 0);
 				$op_userid = param::get_cookie('userid');
@@ -235,7 +235,7 @@ class comment {
 			}
 		}
 		
-		//åˆ é™¤å®¡æ ¸è¡¨ä¸­çš„æ•°æ®
+		//É¾³ýÉóºË±íÖÐµÄÊý¾Ý
 		$this->comment_check_db->delete(array('comment_data_id'=>$id));
 		
 		$this->msg_code = 0;
@@ -244,31 +244,31 @@ class comment {
 	
 	/**
 	 * 
-	 * åˆ é™¤è¯„è®º
-	 * @param string $commentid è¯„è®ºID
-	 * @param intval $siteid ç«™ç‚¹ID
-	 * @param intval $id å†…å®¹ID
-	 * @param intval $catid æ ç›®ID
+	 * É¾³ýÆÀÂÛ
+	 * @param string $commentid ÆÀÂÛID
+	 * @param intval $siteid Õ¾µãID
+	 * @param intval $id ÄÚÈÝID
+	 * @param intval $catid À¸Ä¿ID
 	 */
 	public function del($commentid, $siteid, $id, $catid) {
 		if ($commentid != id_encode('content_'.$catid, $id, $siteid)) return false;
-		//å¾ªçŽ¯è¯„è®ºå†…å®¹è¡¨åˆ é™¤commentidçš„è¯„è®ºå†…å®¹
+		//Ñ­»·ÆÀÂÛÄÚÈÝ±íÉ¾³ýcommentidµÄÆÀÂÛÄÚÈÝ
 		for ($i=1; ;$i++) {
-			$table = 'comment_data_'.$i; //æž„å»ºè¯„è®ºå†…å®¹å­˜å‚¨è¡¨å
-			if ($this->comment_data_db->table_exists($table)) { //æ£€æŸ¥æž„å»ºçš„è¡¨åæ˜¯å¦å­˜åœ¨ï¼Œå¦‚æžœå­˜åœ¨æ‰§è¡Œåˆ é™¤æ“ä½œ
+			$table = 'comment_data_'.$i; //¹¹½¨ÆÀÂÛÄÚÈÝ´æ´¢±íÃû
+			if ($this->comment_data_db->table_exists($table)) { //¼ì²é¹¹½¨µÄ±íÃûÊÇ·ñ´æÔÚ£¬Èç¹û´æÔÚÖ´ÐÐÉ¾³ý²Ù×÷
 				$this->comment_data_db->table_name($i);
 				$this->comment_data_db->delete(array('commentid'=>$commentid));
-			} else { //ä¸å­˜åœ¨ï¼Œåˆ™é€€å‡ºå¾ªçŽ¯
+			} else { //²»´æÔÚ£¬ÔòÍË³öÑ­»·
 				break;
 			}
 		}
-		$this->comment_db->delete(array('commentid'=>$commentid)); //åˆ é™¤è¯„è®ºä¸»è¡¨çš„å†…å®¹
+		$this->comment_db->delete(array('commentid'=>$commentid)); //É¾³ýÆÀÂÛÖ÷±íµÄÄÚÈÝ
 		return true;
 	}
 	
 	/**
 	 * 
-	 * èŽ·å–æŠ¥é”™çš„è¯¦ç»†ä¿¡æ¯ã€‚
+	 * »ñÈ¡±¨´íµÄÏêÏ¸ÐÅÏ¢¡£
 	 */
 	public function get_error() {
 		$msg = array('0'=>L('operation_success'),

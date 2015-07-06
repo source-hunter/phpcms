@@ -1,9 +1,9 @@
 
 	function keyword ($field, $value) {
-		//è·å–postè¿‡æ¥çš„å…³é”®å­—ï¼Œå…³é”®å­—ç”¨ç©ºæ ¼æˆ–è€…â€˜,â€™åˆ†å‰²çš„
+		//»ñÈ¡post¹ıÀ´µÄ¹Ø¼ü×Ö£¬¹Ø¼ü×ÖÓÃ¿Õ¸ñ»òÕß¡®,¡¯·Ö¸îµÄ
 		$data = array();
 		$data = split('[ ,]', $value);
-		//åŠ è½½å…³é”®å­—çš„æ•°æ®æ¨¡å‹
+		//¼ÓÔØ¹Ø¼ü×ÖµÄÊı¾İÄ£ĞÍ
 		$keyword_db = pc_base::load_model('keyword_model');
 		$keyword_data_db = pc_base::load_model('keyword_data_model');
 		pc_base::load_sys_func('iconv');

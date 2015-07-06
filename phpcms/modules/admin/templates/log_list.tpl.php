@@ -40,7 +40,7 @@ if(is_array($infos)){
         <td align="center"><?php echo $info['module']?></td>
         <td align="left" title="<?php echo $info['querystring']?>"><?php echo str_cut($info['querystring'], 40);?></td>
          <td align="center"><?php echo $info['time'];//echo $info['lastusetime'] ? date('Y-m-d H:i', $info['lastusetime']):''?></td>
-         <td align="center"><?php echo $info['ip']?>ã€€</td> 
+         <td align="center"><?php echo $info['ip']?>¡¡</td> 
     </tr>
 <?php
 	}

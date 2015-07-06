@@ -37,7 +37,7 @@ endif;
 <!--
 function edit(id, name) {
 	window.top.art.dialog({id:'edit'}).close();
-	window.top.art.dialog({title:'<?php echo L('edit_dbsource')?>ã€Š'+name+'ã€‹',id:'edit',iframe:'?m=dbsource&c=dbsource_admin&a=edit&id='+id,width:'700',height:'500'}, function(){var d = window.top.art.dialog({id:'edit'}).data.iframe;d.document.getElementById('dosubmit').click();return false;}, function(){window.top.art.dialog({id:'edit'}).close()});
+	window.top.art.dialog({title:'<?php echo L('edit_dbsource')?>¡¶'+name+'¡·',id:'edit',iframe:'?m=dbsource&c=dbsource_admin&a=edit&id='+id,width:'700',height:'500'}, function(){var d = window.top.art.dialog({id:'edit'}).data.iframe;d.document.getElementById('dosubmit').click();return false;}, function(){window.top.art.dialog({id:'edit'}).close()});
 }
 //-->
 </script>

@@ -24,7 +24,7 @@ class create_html extends admin {
 
 			$modelid = intval($_POST['modelid']);
 			if($modelid) {
-				//è®¾ç½®æ¨¡åž‹æ•°æ®è¡¨å
+				//ÉèÖÃÄ£ÐÍÊý¾Ý±íÃû
 				$this->db->set_model($modelid);
 				$table_name = $this->db->table_name;
 
@@ -83,7 +83,7 @@ class create_html extends admin {
 				$data = $this->db->fetch_array($rs);
 				foreach($data as $r) {
 					if($r['islink'] || $r['upgrade']) continue;
-					//æ›´æ–°URLé“¾æŽ¥
+					//¸üÐÂURLÁ´½Ó
 					$this->urls($r['id'], $r['catid'], $r['inputtime'], $r['prefix']);
 
 				}
@@ -103,7 +103,7 @@ class create_html extends admin {
 				}
 				showmessage($message,$forward,200);
 			} else {
-				//å½“æ²¡æœ‰é€‰æ‹©æ¨¡åž‹æ—¶ï¼Œéœ€è¦æŒ‰ç…§æ ç›®æ¥æ›´æ–°
+				//µ±Ã»ÓÐÑ¡ÔñÄ£ÐÍÊ±£¬ÐèÒª°´ÕÕÀ¸Ä¿À´¸üÐÂ
 				if(!isset($set_catid)) {
 					if($catids[0] != 0) {
 						$update_url_catids = $catids;
@@ -124,7 +124,7 @@ class create_html extends admin {
 				$catid = $catid_arr[$autoid];
 
 				$modelid = $this->categorys[$catid]['modelid'];
-				//è®¾ç½®æ¨¡åž‹æ•°æ®è¡¨å
+				//ÉèÖÃÄ£ÐÍÊý¾Ý±íÃû
 				$this->db->set_model($modelid);
 				$table_name = $this->db->table_name;
 
@@ -144,7 +144,7 @@ class create_html extends admin {
 				$data = $this->db->fetch_array($rs);
 				foreach($data as $r) {
 					if($r['islink'] || $r['upgrade']) continue;
-					//æ›´æ–°URLé“¾æŽ¥
+					//¸üÐÂURLÁ´½Ó
 					$this->urls($r['id'], $r['catid'], $r['inputtime'], $r['prefix']);
 				}
 				if($pages > $page) {
@@ -152,7 +152,7 @@ class create_html extends admin {
 					$http_url = get_url();
 					$creatednum = $offset + count($data);
 					$percent = round($creatednum/$total, 2)*100;
-					$message = 'ã€'.$this->categorys[$catid]['catname'].'ã€‘ '.L('have_update_items',array('total'=>$total,'creatednum'=>$creatednum,'percent'=>$percent));
+					$message = '¡¾'.$this->categorys[$catid]['catname'].'¡¿ '.L('have_update_items',array('total'=>$total,'creatednum'=>$creatednum,'percent'=>$percent));
 					$forward = $start ? "?m=content&c=create_html&a=update_urls&type=$type&dosubmit=1&first=$first&fromid=$fromid&toid=$toid&fromdate=$fromdate&todate=$todate&pagesize=$pagesize&page=$page&pages=$pages&total=$total&autoid=$autoid&set_catid=1" : preg_replace("/&page=([0-9]+)&pages=([0-9]+)&total=([0-9]+)/", "&page=$page&pages=$pages&total=$total", $http_url);
 				} else {
 					$autoid++;
@@ -168,7 +168,7 @@ class create_html extends admin {
 			$modelid = isset($_GET['modelid']) ? intval($_GET['modelid']) : 0;
 			
 			$tree = pc_base::load_sys_class('tree');
-			$tree->icon = array('&nbsp;&nbsp;&nbsp;â”‚ ','&nbsp;&nbsp;&nbsp;â”œâ”€ ','&nbsp;&nbsp;&nbsp;â””â”€ ');
+			$tree->icon = array('&nbsp;&nbsp;&nbsp;©¦ ','&nbsp;&nbsp;&nbsp;©À©¤ ','&nbsp;&nbsp;&nbsp;©¸©¤ ');
 			$tree->nbsp = '&nbsp;&nbsp;&nbsp;';
 			$categorys = array();
 			if(!empty($this->categorys)) {
@@ -189,14 +189,14 @@ class create_html extends admin {
 
 	private function urls($id, $catid= 0, $inputtime = 0, $prefix = ''){
 		$urls = $this->url->show($id, 0, $catid, $inputtime, $prefix,'','edit');
-		//æ›´æ–°åˆ°æ•°æ®åº“
+		//¸üÐÂµ½Êý¾Ý¿â
 		$url = $urls[0];
 		$this->db->update(array('url'=>$url),array('id'=>$id));
 		//echo $id; echo "|";
 		return $urls;
 	}
 	/**
-	* ç”Ÿæˆå†…å®¹é¡µ
+	* Éú³ÉÄÚÈÝÒ³
 	*/
 	public function show() {
 		if(isset($_POST['dosubmit'])) {
@@ -205,7 +205,7 @@ class create_html extends admin {
 
 			$modelid = intval($_POST['modelid']);
 			if($modelid) {
-				//è®¾ç½®æ¨¡åž‹æ•°æ®è¡¨å
+				//ÉèÖÃÄ£ÐÍÊý¾Ý±íÃû
 				$this->db->set_model($modelid);
 				$table_name = $this->db->table_name;
 
@@ -306,7 +306,7 @@ class create_html extends admin {
 				}
 				showmessage($message,$forward,200);
 			} else {
-				//å½“æ²¡æœ‰é€‰æ‹©æ¨¡åž‹æ—¶ï¼Œéœ€è¦æŒ‰ç…§æ ç›®æ¥æ›´æ–°
+				//µ±Ã»ÓÐÑ¡ÔñÄ£ÐÍÊ±£¬ÐèÒª°´ÕÕÀ¸Ä¿À´¸üÐÂ
 				if(!isset($set_catid)) {
 					if($catids[0] != 0) {
 						$update_url_catids = $catids;
@@ -334,7 +334,7 @@ class create_html extends admin {
 				$catid = $catid_arr[$autoid];
 				
 				$modelid = $this->categorys[$catid]['modelid'];
-				//è®¾ç½®æ¨¡åž‹æ•°æ®è¡¨å
+				//ÉèÖÃÄ£ÐÍÊý¾Ý±íÃû
 				$this->db->set_model($modelid);
 				$table_name = $this->db->table_name;
 
@@ -356,7 +356,7 @@ class create_html extends admin {
 				$this->url = pc_base::load_app_class('url');
 				foreach($data as $r) {
 					if($r['islink']) continue;
-					//å†™å…¥æ–‡ä»¶
+					//Ð´ÈëÎÄ¼þ
 					$this->db->table_name = $tablename;
 					$r2 = $this->db->get_one(array('id'=>$r['id']));
 					if($r2) $r = array_merge($r,$r2);
@@ -372,7 +372,7 @@ class create_html extends admin {
 					$http_url = get_url();
 					$creatednum = $offset + count($data);
 					$percent = round($creatednum/$total, 2)*100;
-					$message = 'ã€'.$this->categorys[$catid]['catname'].'ã€‘ '.L('have_update_items',array('total'=>$total,'creatednum'=>$creatednum,'percent'=>$percent));
+					$message = '¡¾'.$this->categorys[$catid]['catname'].'¡¿ '.L('have_update_items',array('total'=>$total,'creatednum'=>$creatednum,'percent'=>$percent));
 					$forward = $start ? "?m=content&c=create_html&a=show&type=$type&dosubmit=1&first=$first&fromid=$fromid&toid=$toid&fromdate=$fromdate&todate=$todate&pagesize=$pagesize&page=$page&pages=$pages&total=$total&autoid=$autoid&set_catid=1" : preg_replace("/&page=([0-9]+)&pages=([0-9]+)&total=([0-9]+)/", "&page=$page&pages=$pages&total=$total", $http_url);
 				} else {
 					$autoid++;
@@ -388,7 +388,7 @@ class create_html extends admin {
 			$modelid = isset($_GET['modelid']) ? intval($_GET['modelid']) : 0;
 			
 			$tree = pc_base::load_sys_class('tree');
-			$tree->icon = array('&nbsp;&nbsp;&nbsp;â”‚ ','&nbsp;&nbsp;&nbsp;â”œâ”€ ','&nbsp;&nbsp;&nbsp;â””â”€ ');
+			$tree->icon = array('&nbsp;&nbsp;&nbsp;©¦ ','&nbsp;&nbsp;&nbsp;©À©¤ ','&nbsp;&nbsp;&nbsp;©¸©¤ ');
 			$tree->nbsp = '&nbsp;&nbsp;&nbsp;';
 			$categorys = array();
 			if(!empty($this->categorys)) {
@@ -412,7 +412,7 @@ class create_html extends admin {
 
 	}
 	/**
-	* ç”Ÿæˆæ ç›®é¡µ
+	* Éú³ÉÀ¸Ä¿Ò³
 	*/
 	public function category() {
 		if(isset($_POST['dosubmit'])) {
@@ -474,7 +474,7 @@ class create_html extends admin {
 			$modelid = isset($_GET['modelid']) ? intval($_GET['modelid']) : 0;
 			
 			$tree = pc_base::load_sys_class('tree');
-			$tree->icon = array('&nbsp;&nbsp;&nbsp;â”‚ ','&nbsp;&nbsp;&nbsp;â”œâ”€ ','&nbsp;&nbsp;&nbsp;â””â”€ ');
+			$tree->icon = array('&nbsp;&nbsp;&nbsp;©¦ ','&nbsp;&nbsp;&nbsp;©À©¤ ','&nbsp;&nbsp;&nbsp;©¸©¤ ');
 			$tree->nbsp = '&nbsp;&nbsp;&nbsp;';
 			$categorys = array();
 			if(!empty($this->categorys)) {
@@ -495,14 +495,14 @@ class create_html extends admin {
 		}
 
 	}
-	//ç”Ÿæˆé¦–é¡µ
+	//Éú³ÉÊ×Ò³
 	public function public_index() {
 		$this->html = pc_base::load_app_class('html');
 		$size = $this->html->index();
 		showmessage(L('index_create_finish',array('size'=>sizecount($size))));
 	}
 	/**
-	* æ‰¹é‡ç”Ÿæˆå†…å®¹é¡µ
+	* ÅúÁ¿Éú³ÉÄÚÈÝÒ³
 	*/
 	public function batch_show() {
 		if(isset($_POST['dosubmit'])) {
@@ -524,7 +524,7 @@ class create_html extends admin {
 					$this->db->table_name = $tablename;
 					$r2 = $this->db->get_one(array('id'=>$r['id']));
 					if($r2) $r = array_merge($r,$r2);
-					//åˆ¤æ–­æ˜¯å¦ä¸ºå‡çº§æˆ–è½¬æ¢è¿‡æ¥çš„æ•°æ®
+					//ÅÐ¶ÏÊÇ·ñÎªÉý¼¶»ò×ª»»¹ýÀ´µÄÊý¾Ý
 					if(!$r['upgrade']) {
 						$urls = $this->url->show($r['id'], '', $r['catid'],$r['inputtime']);
 					} else {

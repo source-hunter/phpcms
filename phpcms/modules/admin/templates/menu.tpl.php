@@ -44,42 +44,42 @@ include $this->admin_tpl('header');?>
 <form name="myform" id="myform" action="?m=admin&c=menu&a=add" method="post">
 <table width="100%" class="table_form contentWrap">
       <tr>
-        <th width="200"><?php echo L('menu_parentid')?>ï¼š</th>
+        <th width="200"><?php echo L('menu_parentid')?>£º</th>
         <td><select name="info[parentid]" >
         <option value="0"><?php echo L('no_parent_menu')?></option>
 <?php echo $select_categorys;?>
 </select></td>
       </tr>
       <tr>
-        <th > <?php echo L('chinese_name')?>ï¼š</th>
+        <th > <?php echo L('chinese_name')?>£º</th>
         <td><input type="text" name="language" id="language" class="input-text" ></td>
       </tr>
       <tr>
-        <th><?php echo L('menu_name')?>ï¼š</th>
+        <th><?php echo L('menu_name')?>£º</th>
         <td><input type="text" name="info[name]" id="name" class="input-text" ></td>
       </tr>
 	<tr>
-        <th><?php echo L('module_name')?>ï¼š</th>
+        <th><?php echo L('module_name')?>£º</th>
         <td><input type="text" name="info[m]" id="m" class="input-text" ></td>
       </tr>
 	<tr>
-        <th><?php echo L('file_name')?>ï¼š</th>
+        <th><?php echo L('file_name')?>£º</th>
         <td><input type="text" name="info[c]" id="c" class="input-text" ></td>
       </tr>
 	<tr>
-        <th><?php echo L('action_name')?>ï¼š</th>
+        <th><?php echo L('action_name')?>£º</th>
         <td><input type="text" name="info[a]" id="a" class="input-text" > <span id="a_tip"></span><?php echo L('ajax_tip')?></td>
       </tr>
 	<tr>
-        <th><?php echo L('att_data')?>ï¼š</th>
+        <th><?php echo L('att_data')?>£º</th>
         <td><input type="text" name="info[data]" class="input-text" ></td>
       </tr>
 	<tr>
-        <th><?php echo L('menu_display')?>ï¼š</th>
+        <th><?php echo L('menu_display')?>£º</th>
         <td><input type="radio" name="info[display]" value="1" checked> <?php echo L('yes')?><input type="radio" name="info[display]" value="0"> <?php echo L('no')?></td>
       </tr>
 	  <tr>
-        <th><?php echo L('show_in_model')?>ï¼š</th>
+        <th><?php echo L('show_in_model')?>£º</th>
         <td><?php foreach($models as $_k => $_m) {?><input type="checkbox" name="info[<?php echo $_k?>]" value="1"> <?php echo $_m?><?php }?></td>
       </tr>
 </table>
@@ -108,42 +108,42 @@ include $this->admin_tpl('header');?>
 <form name="myform" id="myform" action="?m=admin&c=menu&a=edit" method="post">
 <table width="100%" class="table_form contentWrap">
       <tr>
-        <th width="200"><?php echo L('menu_parentid')?>ï¼š</th>
+        <th width="200"><?php echo L('menu_parentid')?>£º</th>
         <td><select name="info[parentid]" style="width:200px;">
  <option value="0"><?php echo L('no_parent_menu')?></option>
 <?php echo $select_categorys;?>
 </select></td>
       </tr>
       <tr>
-        <th> <?php echo L('for_chinese_lan')?>ï¼š</th>
+        <th> <?php echo L('for_chinese_lan')?>£º</th>
         <td><input type="text" name="language" id="language" class="input-text" value="<?php echo L($name,'','',1)?>"></td>
       </tr>
       <tr>
-        <th><?php echo L('menu_name')?>ï¼š</th>
+        <th><?php echo L('menu_name')?>£º</th>
         <td><input type="text" name="info[name]" id="name" class="input-text" value="<?php echo $name?>"></td>
       </tr>
 	<tr>
-        <th><?php echo L('module_name')?>ï¼š</th>
+        <th><?php echo L('module_name')?>£º</th>
         <td><input type="text" name="info[m]" id="m" class="input-text" value="<?php echo $m?>"></td>
       </tr>
 	<tr>
-        <th><?php echo L('file_name')?>ï¼š</th>
+        <th><?php echo L('file_name')?>£º</th>
         <td><input type="text" name="info[c]" id="c" class="input-text" value="<?php echo $c?>"></td>
       </tr>
 	<tr>
-        <th><?php echo L('action_name')?>ï¼š</th>
+        <th><?php echo L('action_name')?>£º</th>
         <td><input type="text" name="info[a]" id="a" class="input-text" value="<?php echo $a?>">  <span id="a_tip"></span><?php echo L('ajax_tip')?></td>
       </tr>
 	<tr>
-        <th><?php echo L('att_data')?>ï¼š</th>
+        <th><?php echo L('att_data')?>£º</th>
         <td><input type="text" name="info[data]" class="input-text" value="<?php echo $data?>"></td>
       </tr>
 	<tr>
-        <th><?php echo L('menu_display')?>ï¼š</th>
+        <th><?php echo L('menu_display')?>£º</th>
         <td><input type="radio" name="info[display]" value="1" <?php if($display) echo 'checked';?>> <?php echo L('yes')?><input type="radio" name="info[display]" value="0" <?php if(!$display) echo 'checked';?>> <?php echo L('no')?></td>
       </tr>
 	<tr>
-        <th><?php echo L('show_in_model')?>ï¼š</th>
+        <th><?php echo L('show_in_model')?>£º</th>
         <td><?php foreach($models as $_k => $_m) {?><input type="checkbox" name="info[<?php echo $_k?>]" value="1"<?php if (${$_k}) {?> checked<?php }?>> <?php echo $_m?><?php }?></td>
       </tr>
 

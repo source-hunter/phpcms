@@ -28,7 +28,7 @@ $(function(){
 {pc:special action="lists" siteid="$siteid" elite="1" listorder="3"}
 <ul class="list row-2 f14 lh24">
 	{loop $data $r}
-    <li>Â·<a href="{$r['url']}" target="_blank">{str_cut($r['title'], 42)}</a></li>
+    <li>¡¤<a href="{$r['url']}" target="_blank">{str_cut($r['title'], 42)}</a></li>
    {/loop}
 </ul>
 
@@ -37,12 +37,12 @@ $(function(){
         </div>
         <div class="bk10"></div>
         <div class="box">
-        		<h5>ä¸“é¢˜</h5>
+        		<h5>×¨Ìâ</h5>
 <div class="pad-lr-10">
 {pc:special action="lists" siteid="$siteid" listorder="3" page="$page" num="20"}
     <ul class="list row-2 f14 lh24">
 	{loop $data $r}
-		<li>Â·<a href="{$r['url']}" target="_blank">{str_cut($r['title'], 42)}</a></li>
+		<li>¡¤<a href="{$r['url']}" target="_blank">{str_cut($r['title'], 42)}</a></li>
 
 	{/loop}
     </ul>
@@ -54,7 +54,7 @@ $(function(){
 <div class="col-auto">
 
     <div class="box">
-            <h5 class="title-2">ä¸€å‘¨ç‚¹å‡»æŽ’è¡Œ</h5>
+            <h5 class="title-2">Ò»ÖÜµã»÷ÅÅÐÐ</h5>
 			{pc:special action="hits" num="10" order="views DESC"}
             <ul class="content digg">
 				{loop $data $r}
@@ -65,7 +65,7 @@ $(function(){
     </div>
     <div class="bk10"></div>
     <div class="box">
-            <h5 class="title-2">ä¸€å‘¨è¯„è®ºæŽ’è¡Œ</h5>
+            <h5 class="title-2">Ò»ÖÜÆÀÂÛÅÅÐÐ</h5>
 			{pc:comment action="bang" cache="3600"}
             <ul class="content digg">
 				{loop $data $r}

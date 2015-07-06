@@ -1,12 +1,12 @@
 <?php
 /**
- * æ–‡ä»¶æ‰«æ
- * @param $filepath     ç›®å½•
- * @param $subdir       æ˜¯å¦æœç´¢å­ç›®å½•
- * @param $ex           æœç´¢æ‰©å±•
- * @param $isdir        æ˜¯å¦åªæœç´¢ç›®å½•
- * @param $md5			æ˜¯å¦ç”ŸæˆMD5éªŒè¯ç 
- * @param $enforcement  å¼ºåˆ¶æ›´æ–°ç¼“å­˜
+ * ÎÄ¼þÉ¨Ãè
+ * @param $filepath     Ä¿Â¼
+ * @param $subdir       ÊÇ·ñËÑË÷×ÓÄ¿Â¼
+ * @param $ex           ËÑË÷À©Õ¹
+ * @param $isdir        ÊÇ·ñÖ»ËÑË÷Ä¿Â¼
+ * @param $md5			ÊÇ·ñÉú³ÉMD5ÑéÖ¤Âë
+ * @param $enforcement  Ç¿ÖÆ¸üÐÂ»º´æ
  */
 function scan_file_lists($filepath, $subdir = 1, $ex = '', $isdir = 0, $md5 = 0, $enforcement = 0) {
 	static $file_list = array();

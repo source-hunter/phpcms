@@ -3,9 +3,9 @@
 <!--
 $(function(){
 	$.formValidator.initConfig({autotip:true,formid:"myform",onerror:function(msg){}});
-	$("#subject").formValidator({empty:true,onshow:"æ ‡é¢˜ï¼Œå¯ä»¥ä¸ºç©º",onfocus:"è¯·è¾“å…¥æ ‡é¢˜",oncorrect:"è¾“å…¥æ­£ç¡®ï¼",onempty:"ä¸å¡«æ›¿æ ‡é¢˜äº†å—ï¼Ÿ"}).inputValidator({min:1,onerror:"è¯·è¾“å…¥æ ‡é¢˜"});
-	$("#con").formValidator({onshow:"è¯·è¾“å…¥å†…å®¹",onfocus:"å†…å®¹ä¸èƒ½ä¸ºç©º"}).inputValidator({min:1,max:999,onerror:"å†…å®¹ä¸èƒ½ä¸ºç©º"});
-	$("#code").formValidator({onshow:"è¯·è¾“å…¥éªŒè¯ç ",onfocus:"éªŒè¯ç ä¸èƒ½ä¸ºç©º"}).inputValidator({min:1,max:999,onerror:"éªŒè¯ç ä¸èƒ½ä¸ºç©º"}).ajaxValidator({
+	$("#subject").formValidator({empty:true,onshow:"±êÌâ£¬¿ÉÒÔÎª¿Õ",onfocus:"ÇëÊäÈë±êÌâ",oncorrect:"ÊäÈëÕıÈ·£¡",onempty:"²»ÌîÌæ±êÌâÁËÂğ£¿"}).inputValidator({min:1,onerror:"ÇëÊäÈë±êÌâ"});
+	$("#con").formValidator({onshow:"ÇëÊäÈëÄÚÈİ",onfocus:"ÄÚÈİ²»ÄÜÎª¿Õ"}).inputValidator({min:1,max:999,onerror:"ÄÚÈİ²»ÄÜÎª¿Õ"});
+	$("#code").formValidator({onshow:"ÇëÊäÈëÑéÖ¤Âë",onfocus:"ÑéÖ¤Âë²»ÄÜÎª¿Õ"}).inputValidator({min:1,max:999,onerror:"ÑéÖ¤Âë²»ÄÜÎª¿Õ"}).ajaxValidator({
 	    type : "get",
 		url : "",
 		data :"m=pay&c=deposit&a=public_checkcode",
@@ -22,8 +22,8 @@ $(function(){
 			}
 		},
 		buttons: $("#dosubmit"),
-		onerror : "éªŒè¯ç é”™è¯¯",
-		onwait : "éªŒè¯ä¸­"
+		onerror : "ÑéÖ¤Âë´íÎó",
+		onwait : "ÑéÖ¤ÖĞ"
 	});
 })
 //-->
@@ -32,7 +32,7 @@ $(function(){
 {template 'member', 'left'}
 <div class="col-auto">
 <div class="col-1 ">
-<h6 class="title">ç³»ç»ŸçŸ­æ¶ˆæ¯è®°å½•</h6>
+<h6 class="title">ÏµÍ³¶ÌÏûÏ¢¼ÇÂ¼</h6>
 <div class="content">
  <table width="100%" cellspacing="0" class="table_form">
  

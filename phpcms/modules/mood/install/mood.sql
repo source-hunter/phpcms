@@ -1,10 +1,10 @@
 DROP TABLE IF EXISTS `phpcms_mood`;
 CREATE TABLE IF NOT EXISTS `phpcms_mood` (
   `id` int(10) unsigned NOT NULL auto_increment,
-  `catid` int(10) unsigned NOT NULL default '0' COMMENT 'æ ç›®id',
-  `siteid` mediumint(6) unsigned NOT NULL default '0' COMMENT 'ç«™ç‚¹ID',
-  `contentid` int(10) unsigned NOT NULL default '0' COMMENT 'æ–‡ç« id',
-  `total` int(10) unsigned NOT NULL default '0' COMMENT 'æ€»æ•°',
+  `catid` int(10) unsigned NOT NULL default '0' COMMENT 'À¸Ä¿id',
+  `siteid` mediumint(6) unsigned NOT NULL default '0' COMMENT 'Õ¾µãID',
+  `contentid` int(10) unsigned NOT NULL default '0' COMMENT 'ÎÄÕÂid',
+  `total` int(10) unsigned NOT NULL default '0' COMMENT '×ÜÊı',
   `n1` int(10) unsigned NOT NULL default '0',
   `n2` int(10) unsigned NOT NULL default '0',
   `n3` int(10) unsigned NOT NULL default '0',
@@ -15,7 +15,7 @@ CREATE TABLE IF NOT EXISTS `phpcms_mood` (
   `n8` int(10) unsigned NOT NULL default '0',
   `n9` int(10) unsigned NOT NULL default '0',
   `n10` int(10) unsigned NOT NULL default '0',
-  `lastupdate` int(10) unsigned NOT NULL default '0' COMMENT 'æœ€åæ›´æ–°æ—¶é—´',
+  `lastupdate` int(10) unsigned NOT NULL default '0' COMMENT '×îºó¸üĞÂÊ±¼ä',
   PRIMARY KEY  (`id`),
   KEY `total` (`total`),
   KEY `lastupdate` (`lastupdate`),

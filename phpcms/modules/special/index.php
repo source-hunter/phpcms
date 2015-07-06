@@ -11,7 +11,7 @@ class index {
 	}
 	
 	/**
-	 * ä¸“é¢˜åˆ—è¡¨ 
+	 * ×¨ÌâÁĞ±í 
 	 */
 	public function special() {
 		$siteid = $_GET['siteid'] ? intval($_GET['siteid']) : (get_siteid() ? get_siteid() : 1);
@@ -20,7 +20,7 @@ class index {
 	}
 	
 	/**
-	 * ä¸“é¢˜é¦–é¡µ
+	 * ×¨ÌâÊ×Ò³
 	 */
 	public function init() {
 		$specialid = $_GET['id'] ? intval($_GET['id']) : ($_GET['specialid'] ? intval($_GET['specialid']) : 0);
@@ -50,7 +50,7 @@ class index {
 	}
 	
 	/**
-	 * ä¸“é¢˜åˆ†ç±»
+	 * ×¨Ìâ·ÖÀà
 	 */
 	public function type() {
 		$typeid = intval($_GET['typeid']);
@@ -70,7 +70,7 @@ class index {
 	}
 	
 	/**
-	 * ä¸“é¢˜å±•ç¤º
+	 * ×¨ÌâÕ¹Ê¾
 	 */
 	public function show() {
 		$id = intval($_GET['id']);
@@ -87,7 +87,7 @@ class index {
 			if (is_array($arr_content)) extract($arr_content);
 		}
 		$siteid = get_siteid();
-		if ($paginationtype) { 			//æ–‡ç« ä½¿ç”¨åˆ†é¡µæ—¶
+		if ($paginationtype) { 			//ÎÄÕÂÊ¹ÓÃ·ÖÒ³Ê±
 			if($paginationtype==1) {
 				if (strpos($content, '[/page]')!==false) {
 					$content = preg_replace("|\[page\](.*)\[/page\]|U", '', $content);
@@ -95,8 +95,8 @@ class index {
 				if (strpos($content, '[page]')!==false) {
 					$content = str_replace('[page]', '', $content);
 				}
-				$contentpage = pc_base::load_app_class('contentpage', 'content'); //è°ƒç”¨è‡ªåŠ¨åˆ†é¡µç±»
-				$content = $contentpage->get_data($content, $maxcharperpage); //è‡ªåŠ¨åˆ†é¡µï¼Œè‡ªåŠ¨æ·»åŠ ä¸Š[page]
+				$contentpage = pc_base::load_app_class('contentpage', 'content'); //µ÷ÓÃ×Ô¶¯·ÖÒ³Àà
+				$content = $contentpage->get_data($content, $maxcharperpage); //×Ô¶¯·ÖÒ³£¬×Ô¶¯Ìí¼ÓÉÏ[page]
 			} 
 		} else {
 			if (strpos($content, '[/page]')!==false) {
@@ -106,7 +106,7 @@ class index {
 				$content = str_replace('[page]', '', $content);
 			}
 		}
-		$template = $show_template ? $show_template : 'show'; //è°ƒç”¨æ¨¡æ¿
+		$template = $show_template ? $show_template : 'show'; //µ÷ÓÃÄ£°å
 		$CONTENT_POS = strpos($content, '[page]');
 		if ($CONTENT_POS !== false) {
 			$contents = array_filter(explode('[page]', $content));
@@ -130,7 +130,7 @@ class index {
 					}
 				}
 			}
-			//åˆ¤æ–­[page]å‡ºç°çš„ä½ç½®æ˜¯å¦åœ¨ç¬¬ä¸€ä½ 
+			//ÅĞ¶Ï[page]³öÏÖµÄÎ»ÖÃÊÇ·ñÔÚµÚÒ»Î» 
 			if($CONTENT_POS<7) {
 				$content = $contents[$page];
 			} else {

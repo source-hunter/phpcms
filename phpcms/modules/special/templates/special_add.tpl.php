@@ -14,35 +14,35 @@ include $this->admin_tpl('header', 'admin');
 	<table width="100%" class="table_form ">
 		<tbody>
 		<tr>
-			<th width="200"><?php echo L('special_title')?>ï¼š</th>
+			<th width="200"><?php echo L('special_title')?>£º</th>
 			<td><input name="special[title]" id="title" class="input-text" type="text" size="40"></td>
 		</tr>
 		<tr>
-			<th><?php echo L('special_banner')?>ï¼š</th>
+			<th><?php echo L('special_banner')?>£º</th>
 			<td><?php echo form::images('special[banner]', 'banner', '', 'special', '', 40)?></td>
 		</tr>
 		<tr>
-			<th><?php echo L('sepcial_thumb')?>ï¼š</th>
+			<th><?php echo L('sepcial_thumb')?>£º</th>
 			<td><?php echo form::images('special[thumb]', 'thumb', '', 'special', '', 40, '', '', '', array(350, 350))?></td>
 		</tr>
 		<tr>
-			<th><?php echo L('special_intro')?>ï¼š</th>
+			<th><?php echo L('special_intro')?>£º</th>
 			<td><textarea name="special[description]" id="description" cols="50" rows="6"></textarea></td>
 		</tr>
 		<tr>
-	    	<th align="right"  valign="top"><?php echo L('ishtml')?>ï¼š</th>
+	    	<th align="right"  valign="top"><?php echo L('ishtml')?>£º</th>
 	        <td valign="top"><?php echo form::radio(array('1'=>L('yes'), '0'=>L('no')),'1', 'name="special[ishtml]"');?>
 	        </td>
 	    </tr>
 	    <tr id="file_div" style="display:'block';">
-	    	<th align="right" valign="top"><?php echo L('special_filename')?>ï¼š<br /><span style="font-size:9px;color:#ff4400"><?php echo L('submit_no_edit')?></span></th>
+	    	<th align="right" valign="top"><?php echo L('special_filename')?>£º<br /><span style="font-size:9px;color:#ff4400"><?php echo L('submit_no_edit')?></span></th>
 	        <td valign="top"><input type="text" name="special[filename]" id="filename" class="input-text" value="<?php echo $info['filename']?>" size="20">
 	        </td>
 	    </tr>
 	    <tr>
-	    	<th><?php echo L('special_type')?>ï¼š<a href="javascript:addItem()" title="<?php echo L('add')?>"><span style="color:red;" >+</span></a></th>
+	    	<th><?php echo L('special_type')?>£º<a href="javascript:addItem()" title="<?php echo L('add')?>"><span style="color:red;" >+</span></a></th>
 	        <td valign="top"><div id="option_list">
-	        	<div class="mb6"><span><?php echo L('type_name')?>ï¼š<input type="text" id="type_name" name="type[1][name]" class="input-text" size="15">&nbsp;&nbsp;<?php echo L('type_path')?>ï¼š<input type="text" name="type[1][typedir]" id="type_path" class="input-text" size="15">&nbsp;&nbsp;<?php echo L('listorder')?>ï¼š<input type="text" name="type[<?php echo $k?>][listorder]" value="1" size="6" class="input-text" ></span>&nbsp;<span id="typeTip"></span></div>
+	        	<div class="mb6"><span><?php echo L('type_name')?>£º<input type="text" id="type_name" name="type[1][name]" class="input-text" size="15">&nbsp;&nbsp;<?php echo L('type_path')?>£º<input type="text" name="type[1][typedir]" id="type_path" class="input-text" size="15">&nbsp;&nbsp;<?php echo L('listorder')?>£º<input type="text" name="type[<?php echo $k?>][listorder]" value="1" size="6" class="input-text" ></span>&nbsp;<span id="typeTip"></span></div>
 	        </div>
 	        </td>
 	    </tr>
@@ -52,41 +52,41 @@ include $this->admin_tpl('header', 'admin');
 <div id="div_setting_2" class="contentList pad-10 hidden">
 <table width="100%" class="table_form ">
 	<tr>
-		<th width="200"><?php echo L('pics_news')?>ï¼š</th>
+		<th width="200"><?php echo L('pics_news')?>£º</th>
 		<td><span id="relation"></span><input type="button" class="button" value="<?php echo L('choose_pic_news')?>" onclick="import_info('?m=special&c=special&a=public_get_pics','<?php echo L('choose_pic_news')?>', 'msg_id', 'relation', 'pics');"><input type="hidden" name="special[pics]" value="" id="pics"><span class="onShow">(<?php echo L('choose_pic_model')?>)</span></td>
 	</tr>
 	<tr>
-		<th><?php echo L('add_vote')?>ï¼š</th>
+		<th><?php echo L('add_vote')?>£º</th>
 		<td><span id="vote_msg"></span><input type="button" class="button" value="<?php echo L('choose_exist_vote')?>" onclick="import_info('?m=vote&c=vote&a=public_get_votelist&from_api=1&target=dialog','<?php echo L('choose_vote')?>', 'msg_id', 'vote_msg', 'voteid');"><input type="hidden" name="special[voteid]" value="" id="voteid">&nbsp;<input type="button" class="button" value="<?php echo L('add_new_vote')?>" onclick="import_info('?m=vote&c=vote&a=add&from_api=1&target=dialog','<?php echo L('add_new_vote')?>', 'subject_title', 'vote_msg', 'voteid');"></td>
 	</tr>
 	<tr>
-    	<th align="right"  valign="top"><?php echo L('index_page')?>ï¼š</th>
+    	<th align="right"  valign="top"><?php echo L('index_page')?>£º</th>
         <td valign="top"><?php echo form::radio(array('0'=>L('no'), '1'=>L('yes')), '0', 'name="special[ispage]"');?>
         </td>
     </tr>
     <tr>
-    	<th align="right"  valign="top"><?php echo L('special_status')?>ï¼š</th>
+    	<th align="right"  valign="top"><?php echo L('special_status')?>£º</th>
         <td valign="top"><?php echo form::radio(array('0'=>L('open'), '1'=>L('pause')), '0', 'name="special[disabled]"');?>
         </td>
     </tr>
     <tr>
-    	<th align="right"  valign="top"><?php echo L('template_style')?>ï¼š</th>
+    	<th align="right"  valign="top"><?php echo L('template_style')?>£º</th>
     	<td valign="top"><?php echo form::select($template_list, $info['default_style'], 'name="special[style]" id="style" onchange="load_file_list(this.value)"', L('please_select'))?>
     	<script type="text/javascript">$.getJSON('?m=admin&c=category&a=public_tpl_file_list&style=<?php echo $info['default_style']?>&module=special&templates=index|list|show&name=special', function(data){$('#index_template').html(data.index_template);$('#list_template').html(data.list_template);$('#show_template').html(data.show_template);});</script>
         </td>
     </tr>
 	<tr>
-    	<th align="right"  valign="top"><?php echo L('special_template')?>ï¼š</th>
+    	<th align="right"  valign="top"><?php echo L('special_template')?>£º</th>
         <td valign="top" id="index_template"><?php echo form::select_template('default', 'special', '', 'name="special[index_template]"', 'index');?>
         </td>
     </tr>
     <tr>
-    	<th align="right" valign="top"><?php echo L('special_type_template')?>ï¼š</th>
+    	<th align="right" valign="top"><?php echo L('special_type_template')?>£º</th>
         <td valign="top" id="list_template"><?php echo form::select_template('default', 'special', '', 'name="special[list_template]"', 'list');?>
         </td>
     </tr>
     <tr>
-    	<th align="right"  valign="top"><?php echo L('special_content_template')?>ï¼š</th>
+    	<th align="right"  valign="top"><?php echo L('special_content_template')?>£º</th>
         <td valign="top" id="show_template"><?php echo form::select_template('default', 'special', '', 'name="special[show_template]"', 'show');?>
         </td>
     </tr>
@@ -133,7 +133,7 @@ function remove_relation(htmlID, valID) {
 
 function addItem() {
 	var n = $('#option_list').find('input[name]').length/3+1;
-	var newOption =  '<div class="mb6"><span><?php echo L('type_name')?>ï¼š<input type="text" name="type['+n+'][name]" class="input-text" size="15">&nbsp;&nbsp;<?php echo L('type_path')?>ï¼š<input type="text" name="type['+n+'][typedir]" class="input-text" size="15">&nbsp;&nbsp;<?php echo L('listorder')?>ï¼š<input type="text" name="type['+n+'][listorder]" value="'+n+'" size="6" class="input-text" ></span>&nbsp;<a href="javascript:;" onclick="descItem(this, '+n+');"><?php echo L('remove')?></a></div>';
+	var newOption =  '<div class="mb6"><span><?php echo L('type_name')?>£º<input type="text" name="type['+n+'][name]" class="input-text" size="15">&nbsp;&nbsp;<?php echo L('type_path')?>£º<input type="text" name="type['+n+'][typedir]" class="input-text" size="15">&nbsp;&nbsp;<?php echo L('listorder')?>£º<input type="text" name="type['+n+'][listorder]" value="'+n+'" size="6" class="input-text" ></span>&nbsp;<a href="javascript:;" onclick="descItem(this, '+n+');"><?php echo L('remove')?></a></div>';
 	$('#option_list').append(newOption);
 }
 

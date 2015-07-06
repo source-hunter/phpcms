@@ -72,7 +72,7 @@ $.fn.inputlimiter = function () {
     $(this).each(function (i) {
         /*
 		if ($(this).nextAll('div.textlimit').size() == 0) {
-            $(this).after('<div class="textlimit">è¿˜å¯è¾“å…¥ n å­—ç¬¦</div>');
+            $(this).after('<div class="textlimit">»¹¿ÉÊäÈë n ×Ö·û</div>');
         }
 		*/
         $(this).bind('propertychange focus keyup input paste', function () {
@@ -86,7 +86,7 @@ $.fn.inputlimiter = function () {
             _width = $(this).width();
             _height = $(this).height();
 
-            $(this).nextAll('div.textlimit').html('è¿˜å¯è¾“å…¥ ' + (_max-_length) + ' å­—ç¬¦');
+            $(this).nextAll('div.textlimit').html('»¹¿ÉÊäÈë ' + (_max-_length) + ' ×Ö·û');
             $(this).nextAll('div.textlimit').css({
                 'left': _left + _width + 15,
                 'top': _top + _height - 12
@@ -128,7 +128,7 @@ $(document).ready(function(){
 </SCRIPT>
 <div class="pad-10">
 <div class="content-menu ib-a blue line-x">
-<a class="add fb" href="javascript:;" onclick=javascript:openwinx('?m=content&c=content&a=add&menuid=&catid=<?php echo $catid;?>&pc_hash=<?php echo $_SESSION['pc_hash'];?>','')><em><?php echo L('add_content');?></em></a>ã€€
+<a class="add fb" href="javascript:;" onclick=javascript:openwinx('?m=content&c=content&a=add&menuid=&catid=<?php echo $catid;?>&pc_hash=<?php echo $_SESSION['pc_hash'];?>','')><em><?php echo L('add_content');?></em></a>¡¡
 <a href="?m=content&c=content&a=init&catid=<?php echo $catid;?>&pc_hash=<?php echo $pc_hash;?>" <?php if($steps==0 && !isset($_GET['reject'])) echo 'class=on';?>><em><?php echo L('check_passed');?></em></a><span>|</span>
 <?php echo $workflow_menu;?> <a href="javascript:;" onclick="javascript:$('#searchid').css('display','');"><em><?php echo L('search');?></em></a> 
 <?php if($category['ishtml']) {?>
@@ -150,7 +150,7 @@ $(document).ready(function(){
 		<td>
 		<div class="explain-col">
  
-				<?php echo L('addtime');?>ï¼š
+				<?php echo L('addtime');?>£º
 				<?php echo form::date('start_time',$_GET['start_time'],0,0,'false');?>- &nbsp;<?php echo form::date('end_time',$_GET['end_time'],0,0,'false');?>
 				
 				<select name="posids"><option value='' <?php if($_GET['posids']=='') echo 'selected';?>><?php echo L('all');?></option>
@@ -221,7 +221,7 @@ $(document).ready(function(){
 		<textarea name="description" cols="96%" rows="3" id="description_<?php echo $r['id'];?>" max="255" class="cps_ipt"><?php echo $r['description']?></textarea>
 		</div>
 		</td>
-		<td align='center' title="<?php echo L('today_hits');?>ï¼š<?php echo $hits_r['dayviews'];?>&#10;<?php echo L('yestoday_hits');?>ï¼š<?php echo $hits_r['yestodayviews'];?>&#10;<?php echo L('week_hits');?>ï¼š<?php echo $hits_r['weekviews'];?>&#10;<?php echo L('month_hits');?>ï¼š<?php echo $hits_r['monthviews'];?>"><?php echo $hits_r['views'];?></td>
+		<td align='center' title="<?php echo L('today_hits');?>£º<?php echo $hits_r['dayviews'];?>&#10;<?php echo L('yestoday_hits');?>£º<?php echo $hits_r['yestodayviews'];?>&#10;<?php echo L('week_hits');?>£º<?php echo $hits_r['weekviews'];?>&#10;<?php echo L('month_hits');?>£º<?php echo $hits_r['monthviews'];?>"><?php echo $hits_r['views'];?></td>
 		<td align='center'>
 		<?php
 		if($r['sysadd']==0) {
@@ -283,7 +283,7 @@ function push() {
 		return false;
 	}
 	window.top.art.dialog({id:'push'}).close();
-	window.top.art.dialog({title:'<?php echo L('push');?>ï¼š',id:'push',iframe:'?m=content&c=push&action=position_list&catid=<?php echo $catid?>&modelid=<?php echo $modelid?>&id='+id,width:'800',height:'500'}, function(){var d = window.top.art.dialog({id:'push'}).data.iframe;// ä½¿ç”¨å†…ç½®æ¥å£è·å–iframeå¯¹è±¡
+	window.top.art.dialog({title:'<?php echo L('push');?>£º',id:'push',iframe:'?m=content&c=push&action=position_list&catid=<?php echo $catid?>&modelid=<?php echo $modelid?>&id='+id,width:'800',height:'500'}, function(){var d = window.top.art.dialog({id:'push'}).data.iframe;// Ê¹ÓÃÄÚÖÃ½Ó¿Ú»ñÈ¡iframe¶ÔÏó
 	var form = d.document.getElementById('dosubmit');form.click();return false;}, function(){window.top.art.dialog({id:'push'}).close()});
 }
 function confirm_delete(){
@@ -291,7 +291,7 @@ function confirm_delete(){
 }
 function view_comment(id, name) {
 	window.top.art.dialog({id:'view_comment'}).close();
-	window.top.art.dialog({yesText:'<?php echo L('dialog_close');?>',title:'<?php echo L('view_comment');?>ï¼š'+name,id:'view_comment',iframe:'index.php?m=comment&c=comment_admin&a=lists&show_center_id=1&commentid='+id,width:'800',height:'500'}, function(){window.top.art.dialog({id:'edit'}).close()});
+	window.top.art.dialog({yesText:'<?php echo L('dialog_close');?>',title:'<?php echo L('view_comment');?>£º'+name,id:'view_comment',iframe:'index.php?m=comment&c=comment_admin&a=lists&show_center_id=1&commentid='+id,width:'800',height:'500'}, function(){window.top.art.dialog({id:'edit'}).close()});
 }
 function reject_check(type) {
 	if(type==1) {
@@ -330,12 +330,12 @@ function update_param(fid, obj) {
 }
 
 function upthumb(fid) {
-	window.top.art.dialog({title:'æ›´æ¢ç¼©ç•¥å›¾',id:'update_thumb',iframe:'index.php?m=attachment&c=attachments&a=swfupload&args=<?php echo $args;?>&module=content&catid=<?php echo $catid;?>&authkey=<?php echo $authkey;?>',width:'500',height:'420'}, function(){ var d = window.top.art.dialog({id:'update_thumb'}).data.iframe;var did = d.document.getElementById('att-status');var content = $(did).html();
+	window.top.art.dialog({title:'¸ü»»ËõÂÔÍ¼',id:'update_thumb',iframe:'index.php?m=attachment&c=attachments&a=swfupload&args=<?php echo $args;?>&module=content&catid=<?php echo $catid;?>&authkey=<?php echo $authkey;?>',width:'500',height:'420'}, function(){ var d = window.top.art.dialog({id:'update_thumb'}).data.iframe;var did = d.document.getElementById('att-status');var content = $(did).html();
 	var content_arr = new Array(); content_arr = content.split('|');var value = content_arr[1];if (value){var thumb_old = $('#thumb_images_'+fid).attr('src');$.ajaxSettings.async = false;$.get('index.php', {m:'content', c:'content', a:'update_param', field:'thumb', id:fid, value:value, modelid:'<?php echo $modelid;?>', pc_hash:'<?php echo $_SESSION['pc_hash'];?>'}, function (data){
 		if (data==200){
             $('#thumb_images_'+fid).attr('src', value);
 		}
-	});window.top.art.dialog({id:'update_thumb'}).close();} else {alert('è¯·å…ˆé€‰æ‹©ç¼©ç•¥å›¾ï¼');return false;}}, function(){window.top.art.dialog({id:'update_thumb'}).close()});
+	});window.top.art.dialog({id:'update_thumb'}).close();} else {alert('ÇëÏÈÑ¡ÔñËõÂÔÍ¼£¡');return false;}}, function(){window.top.art.dialog({id:'update_thumb'}).close()});
 }
 
 setcookie('refersh_time', 0);

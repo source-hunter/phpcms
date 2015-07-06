@@ -7,7 +7,7 @@
 <?php echo L('subscribe_notic');?>
 </div>
 <link href="<?php echo CSS_PATH?>snda_css/snda_login.css" rel="stylesheet" type="text/css" />
-<!--增加盛大通行证登录-->
+<!--����ʢ��ͨ��֤��¼-->
 <div id="content">
 <div class="wrapper">
 <div id="login">
@@ -43,8 +43,8 @@
 <div class="btn-close" onclick="login.hide_layer();">
 </div>
 <div class="text">
-老账号和子帐号找回密码，<br>
-请 &nbsp; <a href="#" id="online">联系在线客服</a>
+���˺ź����ʺ��һ����룬<br>
+�� &nbsp; <a href="#" id="online">��ϵ���߿ͷ�</a>
 </div>
 </div>
 </div>

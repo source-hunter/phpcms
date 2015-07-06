@@ -72,7 +72,7 @@ $LANG['filename_exist']						=	'the filename already exists';
 $LANG['input_type_name']					=	'Please input category name';
 $LANG['input_type_path']					=	'Please input category path';
 
-//æ‰¹é‡æ›´æ–°
+//ÅúÁ¿¸üĞÂ
 $LANG['update_special_success']				=	'Topic updated successfully';
 $LANG['update_success']						=	'Updated successfully';
 $LANG['index_update_success']				=	'Homepage updated successfully';
@@ -84,7 +84,7 @@ $LANG['content_update_success']				=	'Content page updated successfully';
 $LANG['content_from']						=	'Content from';
 $LANG['index_create_finish']				=	'Topic page updated successfully';
 
-//æ·»åŠ ã€ä¿®æ”¹ä¿¡æ¯
+//Ìí¼Ó¡¢ĞŞ¸ÄĞÅÏ¢
 $LANG['pos_info']							=	'Current location: Topic> Content manage system> Add information';
 $LANG['for_type']							=	'Category';
 $LANG['cancel_thumb']						=	'Delete image';
@@ -94,7 +94,7 @@ $LANG['check_exist']						=	'Checking for duplicate';
 $LANG['title_exist']						=	'Duplicate title';
 $LANG['title_no_exist']						=	'No-repeat title';
 $LANG['keywords']							=	'Key words';
-$LANG['more_keywords_with_blanks']			=	'Multiple words should be separated with space or â€œ,â€';
+$LANG['more_keywords_with_blanks']			=	'Multiple words should be separated with space or ¡°,¡±';
 $LANG['description']						=	'Summary';
 $LANG['content']							=	'Content';
 $LANG['iscutcontent']						=	'Capture content?';
@@ -122,7 +122,7 @@ $LANG['please_input_title']					=	'Please input title';
 $LANG['content_empty']						=	'Content is required';
 $LANG['edit_pos_info']						=	'Current location: Topic> Content manage system> Edit information';
 
-//æ–‡ç« åˆ—è¡¨
+//ÎÄÕÂÁĞ±í
 $LANG['listorder']							=	'Ordering';
 $LANG['hits']								=	'Hits';
 $LANG['inputman']							=	'Publisher';
@@ -132,11 +132,11 @@ $LANG['special_list']						=	'List of topic';
 $LANG['input_time']							=	'Published Time';
 $LANG['search']								=	'Search';
 
-//ä¿¡æ¯å¯¼å…¥
+//ĞÅÏ¢µ¼Èë
 $LANG['import']								=	'Import';
 $LANG['choose_news']						=	'Please select import data';
 
-//ä¸“é¢˜åˆ—è¡¨
+//×¨ÌâÁĞ±í
 $LANG['special_info']						=	'Topic info';
 $LANG['create_man']							=	'Created by';
 $LANG['create_time']						=	'Created Time';
@@ -152,7 +152,7 @@ $LANG['del_special']						=	'delete topic';
 $LANG['update']								=	'Update';
 $LANG['see_comment']						=	'View comments';
 
-//ç»´æŠ¤æ¨¡æ¿
+//Î¬»¤Ä£°å
 $LANG['quit_diy']							=	'Quit';
 $LANG['save_edit']							=	'Save';
 $LANG['preview_diy']						=	'Preview Effect';

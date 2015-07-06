@@ -83,7 +83,7 @@ body fieldset.blue legend{padding:3px 8px;font-weight:700;color:#347add; backgro
 .member-info div.content .col-auto{_height:74px; overflow:hidden}
 
 .title-list{}
-.title-list li{ position: relative; font-family:"å®‹ä½“"; color:#999; line-height:22px}
+.title-list li{ position: relative; font-family:"ËÎÌå"; color:#999; line-height:22px}
 .title-list li a{ color:#333}
 .title-list li em{ font-size:10px; font-family:Arial, Helvetica, sans-serif; color:#999; padding-left:8px}
 .title-list li span{ position:absolute; right:30px}
@@ -91,7 +91,7 @@ body fieldset.blue legend{padding:3px 8px;font-weight:700;color:#347add; backgro
 #footer{color:#666; line-height:24px;text-align:center; padding:12px 0; margin-top:30px; border-top:1px solid #e5e5e5}
 #footer a{color:#666;}
 
-/*æŠ•ç¨¿*/
+/*Í¶¸å*/
 .addContent{width:1003px; margin:auto; overflow:hidden}
 .addContent .col-left{width:798px}
 .addContent .col-auto .content h6{ border-bottom:1px solid #cfdce3; padding:8px 0 3px; margin-bottom:7px}
@@ -99,13 +99,13 @@ body fieldset.blue legend{padding:3px 8px;font-weight:700;color:#347add; backgro
 .addContent .col-auto .content .upload-pic a{display:table-cell;vertical-align:middle;width:180px;height:145px;text-align:center;*display:block;*font-size:105px}
 .addContent .col-auto .content .upload-pic{ background:#eef2f2; border:1px solid #dce6ea; zoom:1; padding:1px;}
 	.list-dot{ padding-bottom:10px}
-	.list-dot li{padding:5px 0; border-bottom:1px dotted #c6dde0; font-family:"å®‹ä½“"; color:#bbb; position:relative}
+	.list-dot li{padding:5px 0; border-bottom:1px dotted #c6dde0; font-family:"ËÎÌå"; color:#bbb; position:relative}
 	.list-dot li:hover{ background-color:#d9e5ee}
 	.list-dot li span{color:#004499}
 	.list-dot li a.close span{display:none}
 	.list-dot li a.close{background: url(../images/cross.png) no-repeat left 3px; display:block; width:16px; height:16px;position: absolute; right:5px; bottom:5px;outline:none;}
 	.list-dot li a.close:hover{background-position: left -46px}
-/*è´¢åŠ¡æ¨¡å—*/
+/*²ÆÎñÄ£¿é*/
 .payment-show{ border:#dae6ed solid 1px; padding:10px; margin-bottom:10px; display:block}
 .payment-show-on{background:#f0f5f8}
 .payment-show em{ font-size:14px; }
@@ -127,15 +127,15 @@ body fieldset.blue legend{padding:3px 8px;font-weight:700;color:#347add; backgro
 .member-por-row li{width:60px;display:inline-block;zoom:1;*display:inline; vertical-align:top}
 .member-por-row li div{ width:50px; margin:auto; text-align:center; padding:5px 0}
 .member-por-row li div img{margin:0 0 3px;border:1px solid #e6e9ea}
-/*åˆ†é¡µ*/
-#pages { padding:14px 0 10px; text-align: right; font-family:å®‹ä½“ }
+/*·ÖÒ³*/
+#pages { padding:14px 0 10px; text-align: right; font-family:ËÎÌå }
 #pages a { display:inline-block; width:26px; height:22px; line-height:22px; background:#fff; border:1px solid #e3e3e3; text-align:center; color:#333}
 #pages a.a1 { background:url(../images/admin_img/pages.png) no-repeat 0 5px; width:56px; }
 #pages a:hover { background:#f1f1f1; color:#000; text-decoration:none; }
 #pages span { display:inline-block; width:26px; height:22px; line-height:22px; background:#5a85b2; border:1px solid #5a85b2; color:#fff; text-align:center; }
 .page .noPage { display:inline-block; width:56px; height:22px; line-height:22px; background:url(../img/icu/titleBg.png) repeat-x 0 -55px ; border:1px solid #e3e3e3; text-align:center; color:#a4a4a4; }
 
-/*ä»¥ä¸‹é»„é¡µå¢åŠ çš„æ ·å¼ tab*/
+/*ÒÔÏÂ»ÆÒ³Ôö¼ÓµÄÑùÊ½ tab*/
 .tab-but{ border-bottom:1px solid #c4d5df; padding:0 10px; margin:14px 10px 10px}
 .tab-but a,.tab-but a span{ color:#1975c8;display:inline-block;zoom:1;*display:inline; height:25px; line-height:100%;background:url(../images/member/tab_bg.png) no-repeat}
 .tab-but a{padding-left:14px; margin-right:5px; background-color:#f7fafb; }
@@ -145,14 +145,14 @@ body fieldset.blue legend{padding:3px 8px;font-weight:700;color:#347add; backgro
 .left-info li a{ background:url(../images/member/left_icon.png) no-repeat left center; padding-left:8px}
 .left-info li a.add{ background-image:none; padding:0}
 
-/*æ¨¡æ¿åˆ—è¡¨*/
+/*Ä£°åÁĞ±í*/
 .temp-list{float:left; width:215px; margin-right:14px; padding:5px; margin-bottom:16px}
 .temp-list a.img{ display:block; float:left;height: 98px;padding: 1px;width: 98px;border: 1px solid #EAEAEA; margin-right:8px}
 .temp-list a.img:hover{ border-style: dashed; border-color:#999}
 .temp-list ul{ overflow:hidden;_float:left;zoom:1}
 .temp-list ul li{border-bottom: 1px dashed #DDDDDD; height:25px; line-height:25px}
 
-/*é™„åŠ å‚æ•°*/
+/*¸½¼Ó²ÎÊı*/
 #addition_param { padding-top:16px}
 #addition_param h5{border-bottom: 1px solid #E7E7E7;color: #383838; padding-bottom:6px}
 

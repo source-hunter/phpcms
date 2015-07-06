@@ -4,7 +4,7 @@ include $this->admin_tpl('header', 'admin');
 ?>
 <div class="pad_10">
 <div class="subnav">
-  <h1 class="title-2"><?php echo L('comment_check')?> (<?php echo L('for_audit_several')?>ï¼š<span id="wait" style="color:red"><?php echo $total?></span>)</h1>
+  <h1 class="title-2"><?php echo L('comment_check')?> (<?php echo L('for_audit_several')?>£º<span id="wait" style="color:red"><?php echo $total?></span>)</h1>
 </div>
 </div>
 <div class="pad-lr-10">

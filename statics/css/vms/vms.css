@@ -10,7 +10,7 @@ abbr,acronym{border:0; font-variant:normal;}
 table{border-collapse:collapse;border-spacing:0;}caption,th {text-align:left;}
 blockquote,q {quotes: none;}blockquote:before, blockquote:after,q:before, q:after {content:'';content: none;}
 sup,sub {font-size: 100%;vertical-align: baseline;}
-h1{font-size:34px;}h2{font-size:26px;}h3{font-size:18px; }h4{font-size:16px;}h5{font-size:14px;}h6{font-size:12px;}h1,h2,h3{font-family:microsoft yahei, "é»‘ä½“",Arial,Simsun,"Arial Unicode MS",Mingliu,Helvetica;}
+h1{font-size:34px;}h2{font-size:26px;}h3{font-size:18px; }h4{font-size:16px;}h5{font-size:14px;}h6{font-size:12px;}h1,h2,h3{font-family:microsoft yahei, "ºÚÌå",Arial,Simsun,"Arial Unicode MS",Mingliu,Helvetica;}
 article, aside, dialog, figure, footer, header, legend, nav, section{display:block;}
 
 /*public*/

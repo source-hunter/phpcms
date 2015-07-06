@@ -295,9 +295,9 @@ this.title.style.cursor = "move";
 hh("&#x00d7;", 1, 200).ttip = Calendar._TT["CLOSE"];
 }row = Calendar.createElement("tr", thead);
 row.className = "headrow";this._nav_py = hh("&#x00ab;", 1, -2);
-this._nav_py.ttip = Calendar._TT["PREV_YEAR"];this._nav_pm = hh("â€¹", 1, -1);
+this._nav_py.ttip = Calendar._TT["PREV_YEAR"];this._nav_pm = hh("&#x2039;", 1, -1);
 this._nav_pm.ttip = Calendar._TT["PREV_MONTH"];this._nav_now = hh(Calendar._TT["TODAY"], this.weekNumbers ? 4 : 3, 0);
-this._nav_now.ttip = Calendar._TT["GO_TODAY"];this._nav_nm = hh("â€º", 1, 1);
+this._nav_now.ttip = Calendar._TT["GO_TODAY"];this._nav_nm = hh("&#x203a;", 1, 1);
 this._nav_nm.ttip = Calendar._TT["NEXT_MONTH"];this._nav_ny = hh("&#x00bb;", 1, 2);
 this._nav_ny.ttip = Calendar._TT["NEXT_YEAR"];
 row = Calendar.createElement("tr", thead);
@@ -1106,43 +1106,43 @@ this.__msh_oldSetFullYear(y);
 
 
 Calendar._DN = new Array
-("æ˜ŸæœŸæ—¥","æ˜ŸæœŸä¸€","æ˜ŸæœŸäºŒ","æ˜ŸæœŸä¸‰","æ˜ŸæœŸå››","æ˜ŸæœŸäº”","æ˜ŸæœŸå…­","æ˜ŸæœŸæ—¥");
+("ĞÇÆÚÈÕ","ĞÇÆÚÒ»","ĞÇÆÚ¶ş","ĞÇÆÚÈı","ĞÇÆÚËÄ","ĞÇÆÚÎå","ĞÇÆÚÁù","ĞÇÆÚÈÕ");
 Calendar._SDN = new Array
-("æ—¥","ä¸€","äºŒ","ä¸‰","å››","äº”","å…­","æ—¥");
+("ÈÕ","Ò»","¶ş","Èı","ËÄ","Îå","Áù","ÈÕ");
 Calendar._FD = 0;
 Calendar._MN = new Array
-("ä¸€æœˆ","äºŒæœˆ","ä¸‰æœˆ","å››æœˆ","äº”æœˆ","å…­æœˆ","ä¸ƒæœˆ","å…«æœˆ","ä¹æœˆ","åæœˆ","åä¸€æœˆ","åäºŒæœˆ");
+("Ò»ÔÂ","¶şÔÂ","ÈıÔÂ","ËÄÔÂ","ÎåÔÂ","ÁùÔÂ","ÆßÔÂ","°ËÔÂ","¾ÅÔÂ","Ê®ÔÂ","Ê®Ò»ÔÂ","Ê®¶şÔÂ");
 Calendar._SMN = new Array
-("ä¸€æœˆ","äºŒæœˆ","ä¸‰æœˆ","å››æœˆ","äº”æœˆ","å…­æœˆ","ä¸ƒæœˆ","å…«æœˆ","ä¹æœˆ","åæœˆ","åä¸€æœˆ","åäºŒæœˆ");
+("Ò»ÔÂ","¶şÔÂ","ÈıÔÂ","ËÄÔÂ","ÎåÔÂ","ÁùÔÂ","ÆßÔÂ","°ËÔÂ","¾ÅÔÂ","Ê®ÔÂ","Ê®Ò»ÔÂ","Ê®¶şÔÂ");
 Calendar._TT = {};
-Calendar._TT["INFO"] = "å¸®åŠ©";
+Calendar._TT["INFO"] = "°ïÖú";
 Calendar._TT["ABOUT"] =
-"é€‰æ‹©æ—¥æœŸ:\n" +
-"- ç‚¹å‡» \xab, \xbb æŒ‰é’®é€‰æ‹©å¹´ä»½\n" +
-"- ç‚¹å‡» " + String.fromCharCode(0x2039) + ", " + String.fromCharCode(0x203a) + " æŒ‰é’®é€‰æ‹©æœˆä»½\n" +
-"- é•¿æŒ‰ä»¥ä¸ŠæŒ‰é’®å¯ä»èœå•ä¸­å¿«é€Ÿé€‰æ‹©å¹´ä»½æˆ–æœˆä»½";
+"Ñ¡ÔñÈÕÆÚ:\n" +
+"- µã»÷ \xab, \xbb °´Å¥Ñ¡ÔñÄê·İ\n" +
+"- µã»÷ " + String.fromCharCode(0x2039) + ", " + String.fromCharCode(0x203a) + " °´Å¥Ñ¡ÔñÔÂ·İ\n" +
+"- ³¤°´ÒÔÉÏ°´Å¥¿É´Ó²Ëµ¥ÖĞ¿ìËÙÑ¡ÔñÄê·İ»òÔÂ·İ";
 Calendar._TT["ABOUT_TIME"] = "\n\n" +
-"é€‰æ‹©æ—¶é—´:\n" +
-"- ç‚¹å‡»å°æ—¶æˆ–åˆ†é’Ÿå¯ä½¿æ”¹æ•°å€¼åŠ ä¸€\n" +
-"- æŒ‰ä½Shifté”®ç‚¹å‡»å°æ—¶æˆ–åˆ†é’Ÿå¯ä½¿æ”¹æ•°å€¼å‡ä¸€\n" +
-"- ç‚¹å‡»æ‹–åŠ¨é¼ æ ‡å¯è¿›è¡Œå¿«é€Ÿé€‰æ‹©";
-Calendar._TT["PREV_YEAR"] = "ä¸Šä¸€å¹´ (æŒ‰ä½å‡ºèœå•)";
-Calendar._TT["PREV_MONTH"] = "ä¸Šä¸€æœˆ (æŒ‰ä½å‡ºèœå•)";
-Calendar._TT["GO_TODAY"] = "è½¬åˆ°ä»Šæ—¥";
-Calendar._TT["NEXT_MONTH"] = "ä¸‹ä¸€æœˆ (æŒ‰ä½å‡ºèœå•)";
-Calendar._TT["NEXT_YEAR"] = "ä¸‹ä¸€å¹´ (æŒ‰ä½å‡ºèœå•)";
-Calendar._TT["SEL_DATE"] = "é€‰æ‹©æ—¥æœŸ";
-Calendar._TT["DRAG_TO_MOVE"] = "æ‹–åŠ¨";
-Calendar._TT["PART_TODAY"] = " (ä»Šæ—¥)";
-Calendar._TT["DAY_FIRST"] = "æœ€å·¦è¾¹æ˜¾ç¤º%s";
+"Ñ¡ÔñÊ±¼ä:\n" +
+"- µã»÷Ğ¡Ê±»ò·ÖÖÓ¿ÉÊ¹¸ÄÊıÖµ¼ÓÒ»\n" +
+"- °´×¡Shift¼üµã»÷Ğ¡Ê±»ò·ÖÖÓ¿ÉÊ¹¸ÄÊıÖµ¼õÒ»\n" +
+"- µã»÷ÍÏ¶¯Êó±ê¿É½øĞĞ¿ìËÙÑ¡Ôñ";
+Calendar._TT["PREV_YEAR"] = "ÉÏÒ»Äê (°´×¡³ö²Ëµ¥)";
+Calendar._TT["PREV_MONTH"] = "ÉÏÒ»ÔÂ (°´×¡³ö²Ëµ¥)";
+Calendar._TT["GO_TODAY"] = "×ªµ½½ñÈÕ";
+Calendar._TT["NEXT_MONTH"] = "ÏÂÒ»ÔÂ (°´×¡³ö²Ëµ¥)";
+Calendar._TT["NEXT_YEAR"] = "ÏÂÒ»Äê (°´×¡³ö²Ëµ¥)";
+Calendar._TT["SEL_DATE"] = "Ñ¡ÔñÈÕÆÚ";
+Calendar._TT["DRAG_TO_MOVE"] = "ÍÏ¶¯";
+Calendar._TT["PART_TODAY"] = " (½ñÈÕ)";
+Calendar._TT["DAY_FIRST"] = "×î×ó±ßÏÔÊ¾%s";
 Calendar._TT["WEEKEND"] = "0,6";
-Calendar._TT["CLOSE"] = "å…³é—­";
-Calendar._TT["TODAY"] = "ä»Šæ—¥";
-Calendar._TT["TIME_PART"] = "(Shift-)ç‚¹å‡»é¼ æ ‡æˆ–æ‹–åŠ¨æ”¹å˜å€¼";
+Calendar._TT["CLOSE"] = "¹Ø±Õ";
+Calendar._TT["TODAY"] = "½ñÈÕ";
+Calendar._TT["TIME_PART"] = "(Shift-)µã»÷Êó±ê»òÍÏ¶¯¸Ä±äÖµ";
 Calendar._TT["DEF_DATE_FORMAT"] = "%Y-%m-%d";
-Calendar._TT["TT_DATE_FORMAT"] = "%A, %b %eæ—¥";
-Calendar._TT["WK"] = "å‘¨";
-Calendar._TT["TIME"] = "æ—¶é—´:";
+Calendar._TT["TT_DATE_FORMAT"] = "%A, %b %eÈÕ";
+Calendar._TT["WK"] = "ÖÜ";
+Calendar._TT["TIME"] = "Ê±¼ä:";
 
 
 Calendar.setup = function (params) {

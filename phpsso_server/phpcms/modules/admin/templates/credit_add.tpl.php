@@ -17,7 +17,7 @@ include $this->admin_tpl('header');
 <form method=post action="?m=admin&c=credit&a=add">
 <table width="100%"  class="table_form">
 	<tr>
-	<th width="80" ><?php echo L('change_position')?>ï¼š</th>
+	<th width="80" ><?php echo L('change_position')?>£º</th>
 	<td class="y-bg">
 		<select name="fromid" style="width:160px" onchange="showcredit('from', this.value)">
 			<option value='0' ><?php echo L('pleace_select')?></option>
@@ -37,7 +37,7 @@ include $this->admin_tpl('header');
 		</td>
 	</tr>
 	<tr>
-	<th><?php echo L('change_rate')?>ï¼š</th>
+	<th><?php echo L('change_rate')?>£º</th>
 	<td class="y-bg"><input type="text" class="input-text" name="fromrate" value="" /> :
 		<input type="text" class="input-text" name="torate" value="" /></td>
 	</tr>

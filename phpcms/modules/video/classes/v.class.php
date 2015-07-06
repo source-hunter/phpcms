@@ -7,10 +7,10 @@
  * 
  * An open source application development framework for PHP 5.0 or newer
  * 
- * è¿™ä¸ªç±»ï¼Œä¸»è¦è´Ÿè´£è§†é¢‘æ¨¡å‹æ•°æ®å¤„ç†
+ * Õâ¸öÀà£¬Ö÷Òª¸ºÔğÊÓÆµÄ£ĞÍÊı¾İ´¦Àí
  * @package	PHPCMS V9.1.16
  * @author		chenxuewang
- * @copyright	CopyRight (c) 2006-2012 ä¸Šæµ·ç››å¤§ç½‘ç»œå‘å±•æœ‰é™å…¬å¸
+ * @copyright	CopyRight (c) 2006-2012 ÉÏº£Ê¢´óÍøÂç·¢Õ¹ÓĞÏŞ¹«Ë¾
  *
  */
 
@@ -24,8 +24,8 @@ class v {
 	
 	/**
 	 * 
-	 * add æ·»åŠ è§†é¢‘æ–¹æ³•ï¼Œå°†è§†é¢‘å…¥åº“åˆ°è§†é¢‘åº“ä¸­
-	 * @param array $data è§†é¢‘ä¿¡æ¯æ•°æ®
+	 * add Ìí¼ÓÊÓÆµ·½·¨£¬½«ÊÓÆµÈë¿âµ½ÊÓÆµ¿âÖĞ
+	 * @param array $data ÊÓÆµĞÅÏ¢Êı¾İ
 	 */
 	public function add($data = array()) {
 		if (is_array($data) && !empty($data)) {
@@ -41,9 +41,9 @@ class v {
 	
 	/**
 	 * function edit 
-	 * ç¼–è¾‘è§†é¢‘æ–¹æ³•ï¼Œç”¨æˆ·é‡æ–°ç¼–è¾‘å·²ä¸Šä¼ çš„è§†é¢‘
-	 * @param array $data è§†é¢‘è§†é¢‘ä¿¡æ¯æ•°ç»„ åŒ…æ‹¬title description tag vid ç­‰ä¿¡æ¯
-	 * @param int $vid è§†é¢‘åº“ä¸­è§†é¢‘çš„ä¸»é”®
+	 * ±à¼­ÊÓÆµ·½·¨£¬ÓÃ»§ÖØĞÂ±à¼­ÒÑÉÏ´«µÄÊÓÆµ
+	 * @param array $data ÊÓÆµÊÓÆµĞÅÏ¢Êı×é °üÀ¨title description tag vid µÈĞÅÏ¢
+	 * @param int $vid ÊÓÆµ¿âÖĞÊÓÆµµÄÖ÷¼ü
 	 */
 	public function edit($data = array(), $vid = 0) {
 		if (is_array($data) && !empty($data)) {
@@ -59,13 +59,13 @@ class v {
 	
 	/**
 	 * function del_video
-	 * åˆ é™¤è§†é¢‘åº“ä¸­çš„è§†é¢‘
-	 * @param int $vid è§†é¢‘ID
+	 * É¾³ıÊÓÆµ¿âÖĞµÄÊÓÆµ
+	 * @param int $vid ÊÓÆµID
 	 */
 	public function del_video($vid = 0) {
 		$vid = intval($vid);
 		if (!$vid) return false;
-		//åˆ é™¤è§†é¢‘å…³è”çš„å†…å®¹ï¼Œå¹¶æ›´æ–°å†…å®¹é¡µ
+		//É¾³ıÊÓÆµ¹ØÁªµÄÄÚÈİ£¬²¢¸üĞÂÄÚÈİÒ³
 		$this->db->delete(array('videoid'=>$vid));
 		return true;
 	}

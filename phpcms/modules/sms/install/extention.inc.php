@@ -9,11 +9,11 @@ $menu_db->insert(array('name'=>'sms_api', 'parentid'=>$parentid, 'm'=>'sms', 'c'
 $menu_db->insert(array('name'=>'sms_sent', 'parentid'=>$parentid, 'm'=>'sms', 'c'=>'sms', 'a'=>'sms_sent', 'data'=>'', 'listorder'=>0, 'display'=>'1'));
 
 $language = array(
-				'sms'=>'çŸ­ä¿¡å¹³å°',
-				'sms_setting'=>'å¹³å°è®¾ç½®',
-				'sms_pay_history'=>'æ¶ˆè´¹è®°å½•',
-				'sms_buy_history'=>'å……å€¼è®°å½•',
-				'sms_api'=>'çŸ­ä¿¡API',
-				'sms_sent'=>'çŸ­ä¿¡ç¾¤å‘',
+				'sms'=>'¶ÌÐÅÆ½Ì¨',
+				'sms_setting'=>'Æ½Ì¨ÉèÖÃ',
+				'sms_pay_history'=>'Ïû·Ñ¼ÇÂ¼',
+				'sms_buy_history'=>'³äÖµ¼ÇÂ¼',
+				'sms_api'=>'¶ÌÐÅAPI',
+				'sms_sent'=>'¶ÌÐÅÈº·¢',
 				);
 ?>

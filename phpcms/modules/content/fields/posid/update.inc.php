@@ -30,7 +30,7 @@
 						$textcontent[$_key] = $this->data[$_key];
 					}
 				}
-				//é¢œè‰²é€‰æ‹©ä¸ºéšè—åŸŸ åœ¨è¿™é‡Œè¿›è¡Œå–å€¼
+				//ÑÕÉ«Ñ¡ÔñÎªÒş²ØÓò ÔÚÕâÀï½øĞĞÈ¡Öµ
 				$textcontent['style'] = $_POST['style_color'] ? strip_tags($_POST['style_color']) : '';
 				$textcontent['inputtime'] = strtotime($textcontent['inputtime']);
 				if($_POST['style_font_weight']) $textcontent['style'] = $textcontent['style'].';'.strip_tags($_POST['style_font_weight']);

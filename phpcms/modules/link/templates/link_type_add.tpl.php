@@ -16,19 +16,19 @@ include $this->admin_tpl('header','admin');
 <table cellpadding="2" cellspacing="1" class="table_form" width="100%">
 
 	<tr>
-		<th width="100"><?php echo L('type_name')?>ï¼š</th>
+		<th width="100"><?php echo L('type_name')?>£º</th>
 		<td><input type="text" name="type[name]" id="type_name"
 			size="30" class="input-text"></td>
 	</tr>
 	
 	<tr>
-		<th width="100"><?php echo L('link_type_listorder')?>ï¼š</th>
+		<th width="100"><?php echo L('link_type_listorder')?>£º</th>
 		<td><input type="text" name="type[listorder]" id="listorder"
 			size="5" class="input-text" value="0"></td>
 	</tr>
 	
 	<tr>
-		<th><?php echo L('type_description')?>ï¼š</th>
+		<th><?php echo L('type_description')?>£º</th>
 		<td><textarea name="type[description]" id="description" cols="50"
 			rows="6"></textarea></td>
 	</tr>

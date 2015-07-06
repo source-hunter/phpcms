@@ -22,17 +22,17 @@
 					<a title="{L('modify').L('avatar')}" href="index.php?m=member&c=index&a=account_manage_avatar&t=1"><img src="{$avatar[90]}" width="60" height="60" onerror="this.src='{$phpsso_api_url}/statics/images/member/nophoto.gif'"></a>
 					</div>
                   <div class="col-auto">
-                   	<h5>{if $memberinfo['vip']}<img src="{IMG_PATH}icon/vip.gif">{elseif $memberinfo['overduedate']}<img src="{IMG_PATH}icon/vip-expired.gif" title="{L('overdue')}ï¼Œ{L('overduedate')}ï¼š{format::date($memberinfo['overduedate'],1)}">{/if}
+                   	<h5>{if $memberinfo['vip']}<img src="{IMG_PATH}icon/vip.gif">{elseif $memberinfo['overduedate']}<img src="{IMG_PATH}icon/vip-expired.gif" title="{L('overdue')}£¬{L('overduedate')}£º{format::date($memberinfo['overduedate'],1)}">{/if}
 					{if $memberinfo['from']}<img src="{IMG_PATH}member/logo/{$memberinfo['from']}_16_16.png">{/if}
 					<font color="{$grouplist[$memberinfo[groupid]]['usernamecolor']}">
 					{if $memberinfo['nickname']} {$memberinfo['nickname']} {else} {$memberinfo['username']}{/if}
 					</font>
-					{if $memberinfo['email']}ï¼ˆ{$memberinfo['email']}ï¼‰{/if}
+					{if $memberinfo['email']}£¨{$memberinfo['email']}£©{/if}
 					</h5>
                     <p class="blue">
-					  {L('member_group')}ï¼š{$memberinfo['groupname']}ï¼Œ
-                      {L('account_remain')}ï¼š<font style="color:#F00; font-size:22px;font-family:Georgia,Arial; font-weight:700">{$memberinfo[amount]}</font> {L('unit_yuan')}ï¼Œ
-					{L('point')}ï¼š<font style="color:#F00; font-size:12px;font-family:Georgia,Arial; font-weight:700">{$memberinfo[point]}</font> {L('unit_point')} {if $memberinfo['vip']}ï¼Œvip{L('overduedate')}ï¼š<font style="color:#F00; font-size:12px;font-family:Georgia,Arial; font-weight:700">{format::date($memberinfo['overduedate'])}</font>{/if}
+					  {L('member_group')}£º{$memberinfo['groupname']}£¬
+                      {L('account_remain')}£º<font style="color:#F00; font-size:22px;font-family:Georgia,Arial; font-weight:700">{$memberinfo[amount]}</font> {L('unit_yuan')}£¬
+					{L('point')}£º<font style="color:#F00; font-size:12px;font-family:Georgia,Arial; font-weight:700">{$memberinfo[point]}</font> {L('unit_point')} {if $memberinfo['vip']}£¬vip{L('overduedate')}£º<font style="color:#F00; font-size:12px;font-family:Georgia,Arial; font-weight:700">{format::date($memberinfo['overduedate'])}</font>{/if}
                       </p>
                     </div>
            	  </div>
@@ -47,7 +47,7 @@
 					{pc:member  action="favoritelist" userid="$memberinfo[userid]" num="10"}	
                     <ul class="title-list">
 					{loop $data $k $v}
-                    	<li>Â·<a href="{$v['url']}" target="_blank">{$v['title']}</a><span><em>{format::date($v['adddate'], 1)}</em> <a href="index.php?m=member&c=index&a=favorite&id={$v['id']}">{L('delete')}</a></span></li>
+                    	<li>¡¤<a href="{$v['url']}" target="_blank">{$v['title']}</a><span><em>{format::date($v['adddate'], 1)}</em> <a href="index.php?m=member&c=index&a=favorite&id={$v['id']}">{L('delete')}</a></span></li>
                     {/loop}
                     </ul>
 					{$pages}

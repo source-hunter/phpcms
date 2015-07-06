@@ -1,9 +1,9 @@
 {template "content","header"}
 <link href="{CSS_PATH}vms/vms.css" rel="stylesheet" type="text/css" />
 <div class="clr ct zt_pg tp_pg">
-	<div class="crumbs"><a href="{APP_PATH}">棣栭〉</a><span> &gt; </span><a href="#">瑙嗛涓績</a> &gt; 瑙嗛涓撹緫鍒楄〃</div>
+	<div class="crumbs"><a href="{APP_PATH}">首页</a><span> &gt; </span><a href="#">视频中心</a> &gt; 视频专辑列表</div>
 	<div class="mgt10 w960 bnr">
-	<a href="http://www.phpcms.cn" title="闅忔満骞垮憡浣嶏紝娆㈣繋璁块棶PHPCMS.CN"><img src="http://www.phpcms.cn/statics/images/video/ad960x40.gif"></a>
+	<a href="http://www.phpcms.cn" title="随机广告位，欢迎访问PHPCMS.CN"><img src="http://www.phpcms.cn/statics/images/video/ad960x40.gif"></a>
 	</div>
  
 	<div class="clr">
@@ -35,7 +35,7 @@
 	
 	</div>
     <div class="box0">
-    	<div class="nav"><h5>鎺ㄨ崘瑙嗛涓撻</h5></div>
+    	<div class="nav"><h5>推荐视频专题</h5></div>
         <div class="bct">
         	<ul class="c1 c2">
                 
@@ -45,7 +45,7 @@
 		<div class="clr h77">
 		  <a href="{$r[url]}" ><img src="{$r[thumb]}" width="104" height="65" class="l"></a>
 		  <div class="lh21"><a href="{$r[url]}" >{$r[title]}</a></div>
-		  <div class="sz"><span>璇勮锛歿get_comments(id_encode("content_$r[catid]",$r[id],$siteid))}</span></div>
+		  <div class="sz"><span>评论：{get_comments(id_encode("content_$r[catid]",$r[id],$siteid))}</span></div>
 		</div>
 	</li> 
 {/loop}

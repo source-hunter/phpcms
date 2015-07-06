@@ -1,25 +1,25 @@
 <?php
 function sms_status($status = 0,$return_array = 0) {
 	$array = array(
-			'0'=>'å‘é€æˆåŠŸ',
-			'1'=>'æ‰‹æœºå·ç éæ³•',
-			'2'=>'ç”¨æˆ·å­˜åœ¨äºé»‘åå•åˆ—è¡¨',
-			'3'=>'æ¥å…¥ç”¨æˆ·åæˆ–å¯†ç é”™è¯¯',
-			'4'=>'äº§å“ä»£ç ä¸å­˜åœ¨',
-			'5'=>'IPéæ³•',
-			'6 '=>'æºå·ç é”™è¯¯',
-			'7'=>'è°ƒç”¨ç½‘å…³é”™è¯¯',
-			'8'=>'æ¶ˆæ¯é•¿åº¦è¶…è¿‡60',
-			'9'=>'å‘é€çŸ­ä¿¡å†…å®¹å‚æ•°ä¸ºç©º',
-			'10'=>'ç”¨æˆ·å·²ä¸»åŠ¨æš‚åœè¯¥ä¸šåŠ¡',
-			'11'=>'wapé“¾æ¥åœ°å€æˆ–åŸŸåéæ³•',
-			'12'=>'5åˆ†é’Ÿå†…ç»™åŒä¸€ä¸ªå·ç å‘é€çŸ­ä¿¡è¶…è¿‡10æ¡',
-			'13'=>'çŸ­ä¿¡æ¨¡ç‰ˆIDä¸ºç©º',
-			'14'=>'ç¦æ­¢å‘é€è¯¥æ¶ˆæ¯',
-			'-1'=>'æ¯åˆ†é’Ÿå‘ç»™è¯¥æ‰‹æœºå·çš„çŸ­ä¿¡æ•°ä¸èƒ½è¶…è¿‡3æ¡',
-			'-2'=>'æ‰‹æœºå·ç é”™è¯¯',
-			'-11'=>'å¸å·éªŒè¯å¤±è´¥',
-			'-10'=>'æ¥å£æ²¡æœ‰è¿”å›ç»“æœ',
+			'0'=>'·¢ËÍ³É¹¦',
+			'1'=>'ÊÖ»úºÅÂë·Ç·¨',
+			'2'=>'ÓÃ»§´æÔÚÓÚºÚÃûµ¥ÁĞ±í',
+			'3'=>'½ÓÈëÓÃ»§Ãû»òÃÜÂë´íÎó',
+			'4'=>'²úÆ·´úÂë²»´æÔÚ',
+			'5'=>'IP·Ç·¨',
+			'6 '=>'Ô´ºÅÂë´íÎó',
+			'7'=>'µ÷ÓÃÍø¹Ø´íÎó',
+			'8'=>'ÏûÏ¢³¤¶È³¬¹ı60',
+			'9'=>'·¢ËÍ¶ÌĞÅÄÚÈİ²ÎÊıÎª¿Õ',
+			'10'=>'ÓÃ»§ÒÑÖ÷¶¯ÔİÍ£¸ÃÒµÎñ',
+			'11'=>'wapÁ´½ÓµØÖ·»òÓòÃû·Ç·¨',
+			'12'=>'5·ÖÖÓÄÚ¸øÍ¬Ò»¸öºÅÂë·¢ËÍ¶ÌĞÅ³¬¹ı10Ìõ',
+			'13'=>'¶ÌĞÅÄ£°æIDÎª¿Õ',
+			'14'=>'½ûÖ¹·¢ËÍ¸ÃÏûÏ¢',
+			'-1'=>'Ã¿·ÖÖÓ·¢¸ø¸ÃÊÖ»úºÅµÄ¶ÌĞÅÊı²»ÄÜ³¬¹ı3Ìõ',
+			'-2'=>'ÊÖ»úºÅÂë´íÎó',
+			'-11'=>'ÕÊºÅÑéÖ¤Ê§°Ü',
+			'-10'=>'½Ó¿ÚÃ»ÓĞ·µ»Ø½á¹û',
 		);
 	return $return_array ? $array : $array[$status];
 }
@@ -52,21 +52,21 @@ function get_smsnotice($type = '') {
 			return strtolower(CHARSET)=='gbk' ?iconv('utf-8','gbk',$content['msg']) : $content['msg'];
 		}
 	}
-	return '<font color="red">çŸ­ä¿¡é€šæœåŠ¡å™¨æ— æ³•è®¿é—®ï¼æ‚¨å°†æ— æ³•ä½¿ç”¨çŸ­ä¿¡é€šæœåŠ¡ï¼</font>';
+	return '<font color="red">¶ÌĞÅÍ¨·şÎñÆ÷ÎŞ·¨·ÃÎÊ£¡Äú½«ÎŞ·¨Ê¹ÓÃ¶ÌĞÅÍ¨·şÎñ£¡</font>';
 }
 
 function sendsms($mobile, $send_txt, $tplid = 1, $id_code = '', $siteid=1) {
 
-	pc_base::load_app_class('smsapi', 'sms', 0); //å¼•å…¥smsapiç±»
+	pc_base::load_app_class('smsapi', 'sms', 0); //ÒıÈësmsapiÀà
 	$sms_setting = getcache('sms','sms');
-	$sms_uid = $sms_setting[$siteid]['userid'];//çŸ­ä¿¡æ¥å£ç”¨æˆ·ID
-	$sms_pid = $sms_setting[$siteid]['productid'];//äº§å“ID
-	$sms_passwd = $sms_setting[$siteid]['sms_key'];//32ä½å¯†ç 
+	$sms_uid = $sms_setting[$siteid]['userid'];//¶ÌĞÅ½Ó¿ÚÓÃ»§ID
+	$sms_pid = $sms_setting[$siteid]['productid'];//²úÆ·ID
+	$sms_passwd = $sms_setting[$siteid]['sms_key'];//32Î»ÃÜÂë
 
-	$smsapi = new smsapi($sms_uid, $sms_pid, $sms_passwd); //åˆå§‹åŒ–æ¥å£ç±»
+	$smsapi = new smsapi($sms_uid, $sms_pid, $sms_passwd); //³õÊ¼»¯½Ó¿ÚÀà
 	$mobile = explode(',',$mobile);
 	
-	$code = $smsapi->send_sms($mobile, $send_txt, 0, CHARSET,$id_code,$tplid,1); //å‘é€çŸ­ä¿¡
+	$code = $smsapi->send_sms($mobile, $send_txt, 0, CHARSET,$id_code,$tplid,1); //·¢ËÍ¶ÌĞÅ
 	if($code==0) {
 		return 0;
 	} else {

@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
 <title><?php echo L('preview')?></title>
 </head>
 <body>

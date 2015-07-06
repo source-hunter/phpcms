@@ -1,46 +1,46 @@
 <?php
 return array(
-//ç½‘ç«™è·¯å¾„
-'web_path' => '/phpcms/phpsso_server/',
-//Sessioné…ç½®
+//ÍøÕ¾Â·¾¶
+'web_path' => '/',
+//SessionÅäÖÃ
 'session_storage' => 'mysql',
 'session_ttl' => 1800,
 'session_savepath' => CACHE_PATH.'sessions/',
 'session_n' => 0,
 
-//Cookieé…ç½®
-'cookie_domain' => '', //Cookie ä½œç”¨åŸŸ
-'cookie_path' => '/', //Cookie ä½œç”¨è·¯å¾„
-'cookie_pre' => 'WsTOW_', //Cookie å‰ç¼€ï¼ŒåŒä¸€åŸŸåä¸‹å®‰è£…å¤šå¥—ç³»ç»Ÿæ—¶ï¼Œè¯·ä¿®æ”¹Cookieå‰ç¼€
-'cookie_ttl' => 0, //Cookie ç”Ÿå‘½å‘¨æœŸï¼Œ0 è¡¨ç¤ºéšæµè§ˆå™¨è¿›ç¨‹
+//CookieÅäÖÃ
+'cookie_domain' => '', //Cookie ×÷ÓÃÓò
+'cookie_path' => '/', //Cookie ×÷ÓÃÂ·¾¶
+'cookie_pre' => '', //Cookie Ç°×º£¬Í¬Ò»ÓòÃûÏÂ°²×°¶àÌ×ÏµÍ³Ê±£¬ÇëÐÞ¸ÄCookieÇ°×º
+'cookie_ttl' => 0, //Cookie ÉúÃüÖÜÆÚ£¬0 ±íÊ¾Ëæä¯ÀÀÆ÷½ø³Ì
 
-'js_path' => 'http://localhost/phpcms/phpsso_server/statics/js/', //CDN JS
-'css_path' => 'http://localhost/phpcms/phpsso_server/statics/css/', //CDN CSS
-'img_path' => 'http://localhost/phpcms/phpsso_server/statics/images/', //CDN img
-'upload_path' => PHPCMS_PATH.'uploadfile/', //ä¸Šä¼ æ–‡ä»¶è·¯å¾„
-'app_path' => 'http://localhost/phpcms/phpsso_server/',//åŠ¨æ€åŸŸåé…ç½®åœ°å€
+'js_path' => '/statics/js/', //CDN JS
+'css_path' => '/statics/css/', //CDN CSS
+'img_path' => '/statics/images/', //CDN img
+'upload_path' => PHPCMS_PATH.'uploadfile/', //ÉÏ´«ÎÄ¼þÂ·¾¶
+'app_path' => '',//¶¯Ì¬ÓòÃûÅäÖÃµØÖ·
 
-'charset' => 'utf-8', //ç½‘ç«™å­—ç¬¦é›†
-'timezone' => 'Etc/GMT-8', //ç½‘ç«™æ—¶åŒºï¼ˆåªå¯¹php 5.1ä»¥ä¸Šç‰ˆæœ¬æœ‰æ•ˆï¼‰ï¼ŒEtc/GMT-8 å®žé™…è¡¨ç¤ºçš„æ˜¯ GMT+8
-'debug' => 1, //æ˜¯å¦æ˜¾ç¤ºè°ƒè¯•ä¿¡æ¯
-'admin_log' => 0, //æ˜¯å¦è®°å½•åŽå°æ“ä½œæ—¥å¿—
-'errorlog' => 0, //æ˜¯å¦ä¿å­˜é”™è¯¯æ—¥å¿—
-'gzip' => 1, //æ˜¯å¦GzipåŽ‹ç¼©åŽè¾“å‡º
-'auth_key' => 'ZQge1dx4FFSVLpDSDz80', // //Cookieå¯†é’¥
-'lang' => 'zh-cn',  //ç½‘ç«™è¯­è¨€åŒ…
-'admin_founders' => '1', //ç½‘ç«™åˆ›å§‹äººIDï¼Œå¤šä¸ªIDé€—å·åˆ†éš”
+'charset' => 'gbk', //ÍøÕ¾×Ö·û¼¯
+'timezone' => 'Etc/GMT-8', //ÍøÕ¾Ê±Çø£¨Ö»¶Ôphp 5.1ÒÔÉÏ°æ±¾ÓÐÐ§£©£¬Etc/GMT-8 Êµ¼Ê±íÊ¾µÄÊÇ GMT+8
+'debug' => 1, //ÊÇ·ñÏÔÊ¾µ÷ÊÔÐÅÏ¢
+'admin_log' => 0, //ÊÇ·ñ¼ÇÂ¼ºóÌ¨²Ù×÷ÈÕÖ¾
+'errorlog' => 1, //ÊÇ·ñ±£´æ´íÎóÈÕÖ¾
+'gzip' => 1, //ÊÇ·ñGzipÑ¹ËõºóÊä³ö
+'auth_key' => '', // //CookieÃÜÔ¿
+'lang' => 'zh-cn',  //ÍøÕ¾ÓïÑÔ°ü
+'admin_founders' => '1', //ÍøÕ¾´´Ê¼ÈËID£¬¶à¸öID¶ººÅ·Ö¸ô
 'execution_sql' => 0, //EXECUTION_SQL
-//UCenteré…ç½®å¼€å§‹
-'ucuse'=>'0',//æ˜¯å¦å¼€å¯UC
-'uc_api'=>'http://localhost/comsenz/uc',//Ucenter api åœ°å€
+//UCenterÅäÖÃ¿ªÊ¼
+'ucuse'=>'0',//ÊÇ·ñ¿ªÆôUC
+'uc_api'=>'http://localhost/comsenz/uc',//Ucenter api µØÖ·
 'uc_ip'=>'',//Ucenter api IP
-'uc_dbhost'=>'localhost',//Ucenter æ•°æ®åº“ä¸»æœºå
-'uc_dbuser'=>'root',//Ucenter æ•°æ®åº“ç”¨æˆ·å
-'uc_dbpw'=>'root',//Ucenter æ•°æ®åº“å¯†ç 
-'uc_dbname'=>'ucenter',//Ucenter æ•°æ®åº“å
-'uc_dbtablepre'=>'uc_',//Ucenter æ•°æ®åº“è¡¨å‰ç¼€
-'uc_dbcharset'=>'gbk',//Ucenter æ•°æ®åº“å­—ç¬¦é›†
-'uc_appid'=>'',//åº”ç”¨id(APP ID)
-'uc_key'=>'',//Ucenter é€šä¿¡å¯†é’¥
+'uc_dbhost'=>'localhost',//Ucenter Êý¾Ý¿âÖ÷»úÃû
+'uc_dbuser'=>'root',//Ucenter Êý¾Ý¿âÓÃ»§Ãû
+'uc_dbpw'=>'root',//Ucenter Êý¾Ý¿âÃÜÂë
+'uc_dbname'=>'ucenter',//Ucenter Êý¾Ý¿âÃû
+'uc_dbtablepre'=>'uc_',//Ucenter Êý¾Ý¿â±íÇ°×º
+'uc_dbcharset'=>'gbk',//Ucenter Êý¾Ý¿â×Ö·û¼¯
+'uc_appid'=>'',//Ó¦ÓÃid(APP ID)
+'uc_key'=>'',//Ucenter Í¨ÐÅÃÜÔ¿
 );
 ?>

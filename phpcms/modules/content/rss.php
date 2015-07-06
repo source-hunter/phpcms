@@ -27,7 +27,7 @@ class rss {
 			$CAT = $CATEGORYS[$this->rssid];
 			if(count($CAT) == 0) showmessage(L('missing_part_parameters'),'blank');
 			$siteid = $CAT['siteid'];
-			$sitedomain = $SITEINFO[$siteid]['domain'];  //鑾峰彇绔欑偣鍩熷悕
+			$sitedomain = $SITEINFO[$siteid]['domain'];  //获取站点域名
 			$MODEL = getcache('model','commons');
 			$modelid = $CAT['modelid'];		
 		    $encoding   =  CHARSET;
@@ -54,7 +54,7 @@ class rss {
 			$info = $this->db->select($sql,'`title`, `description`, `url`, `inputtime`, `thumb`, `keywords`','0,20','id DESC');
 		
 			foreach ($info as $r) {
-			    //娣诲姞椤圭洰
+			    //添加项目
 			    if(!empty($r['thumb'])) $img = "<img src=".thumb($r['thumb'], 150, 150)." border='0' /><br />";else $img = '';
 		        $about          =  $link = (strpos($r['url'], 'http://') !== FALSE || strpos($r['url'], 'https://') !== FALSE) ? "<![CDATA[".$r['url']."]]> " : (($content_html == 1) ? "<![CDATA[".substr($sitedomain,0,-1).$r['url']."]]> " : "<![CDATA[".substr(APP_PATH,0,-1).$r['url']."]]> ");
 		        $title          =   "<![CDATA[".$r['title']."]]> ";
@@ -62,7 +62,7 @@ class rss {
 		        $subject        =  '';
 		        $date           =  date('Y-m-d H:i:s' , $r['inputtime']);
 		        $author         =  $PHPCMS['sitename'].' '.SITE_PROTOCOL.SITE_URL;
-		        $comments       =  '';//娉ㄩ噴;
+		        $comments       =  '';//注释;
 	
 		        $rssfile->addItem($about, $title, $link, $description, $subject, $date,	$author, $comments, $image);
 			}	

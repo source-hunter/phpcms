@@ -1,5 +1,5 @@
 <?php
-//æ¨¡å‹åŸå‹å­˜å‚¨è·¯å¾„
+//Ä£ĞÍÔ­ĞÍ´æ´¢Â·¾¶
 define('MODEL_PATH',PC_PATH.'modules'.DIRECTORY_SEPARATOR.'formguide'.DIRECTORY_SEPARATOR.'fields'.DIRECTORY_SEPARATOR);
 define('CACHE_MODEL_PATH',PHPCMS_PATH.'caches'.DIRECTORY_SEPARATOR.'caches_model'.DIRECTORY_SEPARATOR.'caches_data'.DIRECTORY_SEPARATOR);
 pc_base::load_app_class('admin','admin',0);
@@ -34,7 +34,7 @@ class formguide_field extends admin {
 	}
 	
 	/**
-	 * æ·»åŠ å­—æ®µï¼Œå½“æ²¡æœ‰formidæ—¶ä¸ºæ·»åŠ å…¬ç”¨å­—æ®µ
+	 * Ìí¼Ó×Ö¶Î£¬µ±Ã»ÓĞformidÊ±ÎªÌí¼Ó¹«ÓÃ×Ö¶Î
 	 */
 	public function add() {
 		if(isset($_POST['dosubmit'])) {
@@ -42,7 +42,7 @@ class formguide_field extends admin {
 			$minlength = $_POST['info']['minlength'] ? $_POST['info']['minlength'] : 0;
 			$maxlength = $_POST['info']['maxlength'] ? $_POST['info']['maxlength'] : 0;
 			$field_type = $_POST['info']['formtype'];
-			//é™„åŠ å±æ€§å€¼
+			//¸½¼ÓÊôĞÔÖµ
 			$_POST['info']['setting'] = array2string($_POST['setting']);
 			$_POST['info']['siteid'] = $this->siteid;
 			$_POST['info']['unsetgroupids'] = isset($_POST['unsetgroupids']) ? implode(',',$_POST['unsetgroupids']) : '';
@@ -92,7 +92,7 @@ class formguide_field extends admin {
 			}
 
 			$grouplist = array();
-			//ä¼šå‘˜ç»„ç¼“å­˜
+			//»áÔ±×é»º´æ
 			$group_cache = getcache('grouplist','member');
 			foreach($group_cache as $_key=>$_value) {
 				$grouplist[$_key] = $_value['name'];
@@ -109,7 +109,7 @@ class formguide_field extends admin {
 			$maxlength = $_POST['info']['maxlength'] ? $_POST['info']['maxlength'] : 0;
 			$field_type = $_POST['info']['formtype'];
 			
-			//é™„åŠ å±æ€§å€¼
+			//¸½¼ÓÊôĞÔÖµ
 			$_POST['info']['setting'] = array2string($_POST['setting']);
 			$_POST['info']['siteid'] = $this->siteid;
 			$_POST['info']['unsetgroupids'] = isset($_POST['unsetgroupids']) ? implode(',',$_POST['unsetgroupids']) : '';
@@ -192,7 +192,7 @@ class formguide_field extends admin {
 			include MODEL_PATH.$formtype.DIRECTORY_SEPARATOR.'field_edit_form.inc.php';
 			$form_data = ob_get_contents();
 			ob_end_clean();
-			//ä¼šå‘˜ç»„ç¼“å­˜
+			//»áÔ±×é»º´æ
 			$group_cache = getcache('grouplist','member');
 			foreach($group_cache as $_key=>$_value) {
 				$grouplist[$_key] = $_value['name'];
@@ -203,7 +203,7 @@ class formguide_field extends admin {
 	}
 	
 	/**
-	 * ç¦ç”¨ã€å¼€å¯å­—æ®µ
+	 * ½ûÓÃ¡¢¿ªÆô×Ö¶Î
 	 */
 	public function disabled() {
 		$fieldid = intval($_GET['fieldid']);
@@ -213,7 +213,7 @@ class formguide_field extends admin {
 	}
 	
 	/**
-	 * åˆ é™¤å­—æ®µ
+	 * É¾³ı×Ö¶Î
 	 */
 	public function delete() {
 		if (isset($_GET['formid']) && !empty($_GET['formid']) && isset($_GET['fieldid']) && !empty($_GET['fieldid'])) {
@@ -240,7 +240,7 @@ class formguide_field extends admin {
 	}
 	
 	/**
-	 * æ’åº
+	 * ÅÅĞò
 	 */
 	public function listorder() {
 		if(isset($_POST['dosubmit'])) {
@@ -266,7 +266,7 @@ class formguide_field extends admin {
 	}
 	
 	/**
-	 * æ£€æŸ¥å­—æ®µæ˜¯å¦å­˜åœ¨
+	 * ¼ì²é×Ö¶ÎÊÇ·ñ´æÔÚ
 	 */
 	public function public_checkfield() {
 		$field = strtolower($_GET['field']);
@@ -293,7 +293,7 @@ class formguide_field extends admin {
 	}
 	
 	/**
-	 * å­—æ®µå±æ€§è®¾ç½®
+	 * ×Ö¶ÎÊôĞÔÉèÖÃ
 	 */
 	public function public_field_setting() {
 		$fieldtype = $_GET['fieldtype'];
@@ -309,10 +309,10 @@ class formguide_field extends admin {
 	}
 	
 	/**
-	 * æ›´æ–°æŒ‡å®šè¡¨å•å‘å¯¼çš„å­—æ®µç¼“å­˜
+	 * ¸üĞÂÖ¸¶¨±íµ¥Ïòµ¼µÄ×Ö¶Î»º´æ
 	 * 
-	 * @param $formid è¡¨å•å‘å¯¼id
-	 * @param $disabled å­—æ®µçŠ¶æ€
+	 * @param $formid ±íµ¥Ïòµ¼id
+	 * @param $disabled ×Ö¶Î×´Ì¬
 	 */
 	public function cache_field($formid = 0, $disabled = 0) {
 		$field_array = array();

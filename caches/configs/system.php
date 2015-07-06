@@ -1,70 +1,70 @@
 <?php
 return array(
-//ç½‘ç«™è·¯å¾„
+//ÍøÕ¾Â·¾¶
 'web_path' => '/',
-//Sessioné…ç½®
+//SessionÅäÖÃ
 'session_storage' => 'mysql',
 'session_ttl' => 1800,
 'session_savepath' => CACHE_PATH.'sessions/',
 'session_n' => 0,
-//Cookieé…ç½®
-'cookie_domain' => '', //Cookie ä½œç”¨åŸŸ
-'cookie_path' => '', //Cookie ä½œç”¨è·¯å¾„
-'cookie_pre' => 'CMPkO_', //Cookie å‰ç¼€ï¼ŒåŒä¸€åŸŸåä¸‹å®‰è£…å¤šå¥—ç³»ç»Ÿæ—¶ï¼Œè¯·ä¿®æ”¹Cookieå‰ç¼€
-'cookie_ttl' => 0, //Cookie ç”Ÿå‘½å‘¨æœŸï¼Œ0 è¡¨ç¤ºéšæµè§ˆå™¨è¿›ç¨‹
-//æ¨¡æ¿ç›¸å…³é…ç½®
-'tpl_root' => 'templates/', //æ¨¡æ¿ä¿å­˜ç‰©ç†è·¯å¾„
-'tpl_name' => 'default', //å½“å‰æ¨¡æ¿æ–¹æ¡ˆç›®å½•
-'tpl_css' => 'default', //å½“å‰æ ·å¼ç›®å½•
+//CookieÅäÖÃ
+'cookie_domain' => '', //Cookie ×÷ÓÃÓò
+'cookie_path' => '', //Cookie ×÷ÓÃÂ·¾¶
+'cookie_pre' => 'CMPkO_', //Cookie Ç°×º£¬Í¬Ò»ÓòÃûÏÂ°²×°¶àÌ×ÏµÍ³Ê±£¬ÇëÐÞ¸ÄCookieÇ°×º
+'cookie_ttl' => 0, //Cookie ÉúÃüÖÜÆÚ£¬0 ±íÊ¾Ëæä¯ÀÀÆ÷½ø³Ì
+//Ä£°åÏà¹ØÅäÖÃ
+'tpl_root' => 'templates/', //Ä£°å±£´æÎïÀíÂ·¾¶
+'tpl_name' => 'default', //µ±Ç°Ä£°å·½°¸Ä¿Â¼
+'tpl_css' => 'default', //µ±Ç°ÑùÊ½Ä¿Â¼
 'tpl_referesh' => 1,
-'tpl_edit'=> 0,//æ˜¯å¦å…è®¸åœ¨çº¿ç¼–è¾‘æ¨¡æ¿
+'tpl_edit'=> 0,//ÊÇ·ñÔÊÐíÔÚÏß±à¼­Ä£°å
 
-//é™„ä»¶ç›¸å…³é…ç½®
+//¸½¼þÏà¹ØÅäÖÃ
 'upload_path' => PHPCMS_PATH.'uploadfile/',
-'upload_url' => 'http://v9.phpcms.cn/uploadfile/', //é™„ä»¶è·¯å¾„
-'attachment_stat' => '1',//æ˜¯å¦è®°å½•é™„ä»¶ä½¿ç”¨çŠ¶æ€ 0 ç»Ÿè®¡ 1 ç»Ÿè®¡ï¼Œ æ³¨æ„: æœ¬åŠŸèƒ½ä¼šåŠ é‡æœåŠ¡å™¨è´Ÿæ‹…
+'upload_url' => 'http://v9.phpcms.cn/uploadfile/', //¸½¼þÂ·¾¶
+'attachment_stat' => '1',//ÊÇ·ñ¼ÇÂ¼¸½¼þÊ¹ÓÃ×´Ì¬ 0 Í³¼Æ 1 Í³¼Æ£¬ ×¢Òâ: ±¾¹¦ÄÜ»á¼ÓÖØ·þÎñÆ÷¸ºµ£
 
 'js_path' => 'http://v9.phpcms.cn/statics/js/', //CDN JS
 'css_path' => 'http://v9.phpcms.cn/statics/css/', //CDN CSS
 'img_path' => 'http://v9.phpcms.cn/statics/images/', //CDN img
-'app_path' => 'http://v9.phpcms.cn/',//åŠ¨æ€åŸŸåé…ç½®åœ°å€
+'app_path' => 'http://v9.phpcms.cn/',//¶¯Ì¬ÓòÃûÅäÖÃµØÖ·
 
-'charset' => 'utf-8', //ç½‘ç«™å­—ç¬¦é›†
-'timezone' => 'Etc/GMT-8', //ç½‘ç«™æ—¶åŒºï¼ˆåªå¯¹php 5.1ä»¥ä¸Šç‰ˆæœ¬æœ‰æ•ˆï¼‰ï¼ŒEtc/GMT-8 å®žé™…è¡¨ç¤ºçš„æ˜¯ GMT+8
-'debug' => 0, //æ˜¯å¦æ˜¾ç¤ºè°ƒè¯•ä¿¡æ¯
-'admin_log' => 1, //æ˜¯å¦è®°å½•åŽå°æ“ä½œæ—¥å¿—
-'errorlog' => 1, //1ã€ä¿å­˜é”™è¯¯æ—¥å¿—åˆ° cache/error_log.php | 0ã€åœ¨é¡µé¢ç›´æŽ¥æ˜¾ç¤º
-'gzip' => 1, //æ˜¯å¦GzipåŽ‹ç¼©åŽè¾“å‡º
-'auth_key' => '7SLahrT8anWkl7LfOBhW', //å¯†é’¥
-'lang' => 'zh-cn',  //ç½‘ç«™è¯­è¨€åŒ…
-'lock_ex' => '1',  //å†™å…¥ç¼“å­˜æ—¶æ˜¯å¦å»ºç«‹æ–‡ä»¶äº’æ–¥é”å®šï¼ˆå¦‚æžœä½¿ç”¨nfså»ºè®®å…³é—­ï¼‰
+'charset' => 'gbk', //ÍøÕ¾×Ö·û¼¯
+'timezone' => 'Etc/GMT-8', //ÍøÕ¾Ê±Çø£¨Ö»¶Ôphp 5.1ÒÔÉÏ°æ±¾ÓÐÐ§£©£¬Etc/GMT-8 Êµ¼Ê±íÊ¾µÄÊÇ GMT+8
+'debug' => 0, //ÊÇ·ñÏÔÊ¾µ÷ÊÔÐÅÏ¢
+'admin_log' => 1, //ÊÇ·ñ¼ÇÂ¼ºóÌ¨²Ù×÷ÈÕÖ¾
+'errorlog' => 1, //1¡¢±£´æ´íÎóÈÕÖ¾µ½ cache/error_log.php | 0¡¢ÔÚÒ³ÃæÖ±½ÓÏÔÊ¾
+'gzip' => 1, //ÊÇ·ñGzipÑ¹ËõºóÊä³ö
+'auth_key' => '7SLahrT8anWkl7LfOBhW', //ÃÜÔ¿
+'lang' => 'zh-cn',  //ÍøÕ¾ÓïÑÔ°ü
+'lock_ex' => '1',  //Ð´Èë»º´æÊ±ÊÇ·ñ½¨Á¢ÎÄ¼þ»¥³âËø¶¨£¨Èç¹ûÊ¹ÓÃnfs½¨Òé¹Ø±Õ£©
 
-'admin_founders' => '1', //ç½‘ç«™åˆ›å§‹äººIDï¼Œå¤šä¸ªIDé€—å·åˆ†éš”
+'admin_founders' => '1', //ÍøÕ¾´´Ê¼ÈËID£¬¶à¸öID¶ººÅ·Ö¸ô
 'execution_sql' => 0, //EXECUTION_SQL
 
-'phpsso' => '1',	//æ˜¯å¦ä½¿ç”¨phpsso
-'phpsso_appid' => '1',	//åº”ç”¨id	
-'phpsso_api_url' => 'http://v9.phpcms.cn/phpsso_server',	//æŽ¥å£åœ°å€
-'phpsso_auth_key' => 'vGIDD0t8UGqkUGfHLQepqciq96vhwEQ0', //åŠ å¯†å¯†é’¥
-'phpsso_version' => '1', //phpssoç‰ˆæœ¬
+'phpsso' => '1',	//ÊÇ·ñÊ¹ÓÃphpsso
+'phpsso_appid' => '1',	//Ó¦ÓÃid	
+'phpsso_api_url' => 'http://v9.phpcms.cn/phpsso_server',	//½Ó¿ÚµØÖ·
+'phpsso_auth_key' => 'vGIDD0t8UGqkUGfHLQepqciq96vhwEQ0', //¼ÓÃÜÃÜÔ¿
+'phpsso_version' => '1', //phpsso°æ±¾
 
-'html_root' => '/html',//ç”Ÿæˆé™æ€æ–‡ä»¶è·¯å¾„
-'safe_card'=>'1',//æ˜¯å¦å¯ç”¨å£ä»¤å¡
+'html_root' => '/html',//Éú³É¾²Ì¬ÎÄ¼þÂ·¾¶
+'safe_card'=>'1',//ÊÇ·ñÆôÓÃ¿ÚÁî¿¨
 
-'connect_enable' => '1',	//æ˜¯å¦å¼€å¯å¤–éƒ¨é€šè¡Œè¯
+'connect_enable' => '1',	//ÊÇ·ñ¿ªÆôÍâ²¿Í¨ÐÐÖ¤
 'sina_akey' => '',	//sina AKEY
 'sina_skey' => '',	//sina SKEY
 
-'snda_akey' => '',	//ç››å¤§é€šè¡Œè¯ akey
-'snda_skey' => '',	//ç››å¤§é€šè¡Œè¯ skey
+'snda_akey' => '',	//Ê¢´óÍ¨ÐÐÖ¤ akey
+'snda_skey' => '',	//Ê¢´óÍ¨ÐÐÖ¤ skey
 
 'qq_akey' => '',	//qq skey
 'qq_skey' => '',	//qq skey
 
-'qq_appkey' => '',	//QQå·ç ç™»å½• appkey
-'qq_appid' => '',	//QQå·ç ç™»å½• appid
-'qq_callback' => '',	//QQå·ç ç™»å½• callback
+'qq_appkey' => '',	//QQºÅÂëµÇÂ¼ appkey
+'qq_appid' => '',	//QQºÅÂëµÇÂ¼ appid
+'qq_callback' => '',	//QQºÅÂëµÇÂ¼ callback
 
-'admin_url' => '',	//å…è®¸è®¿é—®åŽå°çš„åŸŸå
+'admin_url' => '',	//ÔÊÐí·ÃÎÊºóÌ¨µÄÓòÃû
 );
 ?>

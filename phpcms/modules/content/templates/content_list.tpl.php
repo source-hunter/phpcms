@@ -13,7 +13,7 @@ include $this->admin_tpl('header','admin');?>
 </SCRIPT>
 <div class="pad-10">
 <div class="content-menu ib-a blue line-x">
-<a class="add fb" href="javascript:;" onclick=javascript:openwinx('?m=content&c=content&a=add&menuid=&catid=<?php echo $catid;?>&pc_hash=<?php echo $_SESSION['pc_hash'];?>','')><em><?php echo L('add_content');?></em></a>„ÄÄ
+<a class="add fb" href="javascript:;" onclick=javascript:openwinx('?m=content&c=content&a=add&menuid=&catid=<?php echo $catid;?>&pc_hash=<?php echo $_SESSION['pc_hash'];?>','')><em><?php echo L('add_content');?></em></a>°°
 <a href="?m=content&c=content&a=init&catid=<?php echo $catid;?>&pc_hash=<?php echo $pc_hash;?>" <?php if($steps==0 && !isset($_GET['reject'])) echo 'class=on';?>><em><?php echo L('check_passed');?></em></a><span>|</span>
 <?php echo $workflow_menu;?> <a href="javascript:;" onclick="javascript:$('#searchid').css('display','');"><em><?php echo L('search');?></em></a> 
 <?php if($category['ishtml']) {?>
@@ -35,7 +35,7 @@ include $this->admin_tpl('header','admin');?>
 		<td>
 		<div class="explain-col">
  
-				<?php echo L('addtime');?>Ôºö
+				<?php echo L('addtime');?>£∫
 				<?php echo form::date('start_time',$_GET['start_time'],0,0,'false');?>- &nbsp;<?php echo form::date('end_time',$_GET['end_time'],0,0,'false');?>
 				
 				<select name="posids"><option value='' <?php if($_GET['posids']=='') echo 'selected';?>><?php echo L('all');?></option>
@@ -102,7 +102,7 @@ include $this->admin_tpl('header','admin');?>
 		} else {
 			echo '<a href="javascript:;" onclick=\'window.open("?m=content&c=content&a=public_preview&steps='.$steps.'&catid='.$catid.'&id='.$r['id'].'","manage")\'>';
 		}?><span<?php echo title_style($r['style'])?>><?php echo $r['title'];?></span></a> <?php if($r['thumb']!='') {echo '<img src="'.IMG_PATH.'icon/small_img.gif" title="'.L('thumb').'">'; } if($r['posids']) {echo '<img src="'.IMG_PATH.'icon/small_elite.gif" title="'.L('elite').'">';} if($r['islink']) {echo ' <img src="'.IMG_PATH.'icon/link.png" title="'.L('islink_url').'">';}?></td>
-		<td align='center' title="<?php echo L('today_hits');?>Ôºö<?php echo $hits_r['dayviews'];?>&#10;<?php echo L('yestoday_hits');?>Ôºö<?php echo $hits_r['yesterdayviews'];?>&#10;<?php echo L('week_hits');?>Ôºö<?php echo $hits_r['weekviews'];?>&#10;<?php echo L('month_hits');?>Ôºö<?php echo $hits_r['monthviews'];?>"><?php echo $hits_r['views'];?></td>
+		<td align='center' title="<?php echo L('today_hits');?>£∫<?php echo $hits_r['dayviews'];?>&#10;<?php echo L('yestoday_hits');?>£∫<?php echo $hits_r['yesterdayviews'];?>&#10;<?php echo L('week_hits');?>£∫<?php echo $hits_r['weekviews'];?>&#10;<?php echo L('month_hits');?>£∫<?php echo $hits_r['monthviews'];?>"><?php echo $hits_r['views'];?></td>
 		<td align='center'>
 		<?php
 		if($r['sysadd']==0) {
@@ -163,7 +163,7 @@ function push() {
 		return false;
 	}
 	window.top.art.dialog({id:'push'}).close();
-	window.top.art.dialog({title:'<?php echo L('push');?>Ôºö',id:'push',iframe:'?m=content&c=push&action=position_list&catid=<?php echo $catid?>&modelid=<?php echo $modelid?>&id='+id,width:'800',height:'500'}, function(){var d = window.top.art.dialog({id:'push'}).data.iframe;// ‰ΩøÁî®ÂÜÖÁΩÆÊé•Âè£Ëé∑ÂèñiframeÂØπË±°
+	window.top.art.dialog({title:'<?php echo L('push');?>£∫',id:'push',iframe:'?m=content&c=push&action=position_list&catid=<?php echo $catid?>&modelid=<?php echo $modelid?>&id='+id,width:'800',height:'500'}, function(){var d = window.top.art.dialog({id:'push'}).data.iframe;//  π”√ƒ⁄÷√Ω”ø⁄ªÒ»°iframe∂‘œÛ
 	var form = d.document.getElementById('dosubmit');form.click();return false;}, function(){window.top.art.dialog({id:'push'}).close()});
 }
 function confirm_delete(){
@@ -171,7 +171,7 @@ function confirm_delete(){
 }
 function view_comment(id, name) {
 	window.top.art.dialog({id:'view_comment'}).close();
-	window.top.art.dialog({yesText:'<?php echo L('dialog_close');?>',title:'<?php echo L('view_comment');?>Ôºö'+name,id:'view_comment',iframe:'index.php?m=comment&c=comment_admin&a=lists&show_center_id=1&commentid='+id,width:'800',height:'500'}, function(){window.top.art.dialog({id:'edit'}).close()});
+	window.top.art.dialog({yesText:'<?php echo L('dialog_close');?>',title:'<?php echo L('view_comment');?>£∫'+name,id:'view_comment',iframe:'index.php?m=comment&c=comment_admin&a=lists&show_center_id=1&commentid='+id,width:'800',height:'500'}, function(){window.top.art.dialog({id:'edit'}).close()});
 }
 function reject_check(type) {
 	if(type==1) {

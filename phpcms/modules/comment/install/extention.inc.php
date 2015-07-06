@@ -6,5 +6,5 @@ $mid = $menu_db->insert(array('name'=>'comment_manage', 'parentid'=>'821', 'm'=>
 $menu_db->insert(array('name'=>'comment_check', 'parentid'=>$mid, 'm'=>'comment', 'c'=>'check', 'a'=>'checks', 'data'=>'', 'listorder'=>0, 'display'=>'1'));
 $menu_db->insert(array('name'=>'comment_list', 'parentid'=>$parentid, 'm'=>'comment', 'c'=>'comment_admin', 'a'=>'lists', 'data'=>'', 'listorder'=>0, 'display'=>'0'));
 
-$language = array('comment'=>'璇勮', 'comment_mange'=>'璇勮绠＄悊', 'comment_check'=>'璇勮瀹℃牳', 'comment_list'=>'璇勮鍒楄〃');
+$language = array('comment'=>'评论', 'comment_mange'=>'评论管理', 'comment_check'=>'评论审核', 'comment_list'=>'评论列表');
 ?>

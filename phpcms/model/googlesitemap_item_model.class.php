@@ -9,10 +9,10 @@ class googlesitemap_item_model extends model {
 	
 	/**
      *@access   public
-     *@param    string  $loc        ä½ç½®
-     *@param    string  $lastmod    æ—¥æœŸæ ¼å¼ YYYY-MM-DD
-     *@param    string  $changefreq æ›´æ–°é¢‘ç‡çš„å•ä½ (always, hourly, daily, weekly, monthly, yearly, never)
-     *@param    string  $priority   æ›´æ–°é¢‘ç‡ 0-1
+     *@param    string  $loc        Î»ÖÃ
+     *@param    string  $lastmod    ÈÕÆÚ¸ñÊ½ YYYY-MM-DD
+     *@param    string  $changefreq ¸üĞÂÆµÂÊµÄµ¥Î» (always, hourly, daily, weekly, monthly, yearly, never)
+     *@param    string  $priority   ¸üĞÂÆµÂÊ 0-1
      */
     function google_sitemap_item($loc, $lastmod = '', $changefreq = '', $priority = '')
     {

@@ -68,13 +68,13 @@ if (is_array($directory)){
 
 	function install(id) {
 		window.top.art.dialog({id:'install'}).close();
-		window.top.art.dialog({title:'<?php echo L('module_istall')?>', id:'install', iframe:'?m=admin&c=module&a=install&module='+id, width:'500px', height:'260px'}, function(){var d = window.top.art.dialog({id:'install'}).data.iframe;// 浣跨敤鍐呯疆鎺ュ彛鑾峰彇iframe瀵硅薄
+		window.top.art.dialog({title:'<?php echo L('module_istall')?>', id:'install', iframe:'?m=admin&c=module&a=install&module='+id, width:'500px', height:'260px'}, function(){var d = window.top.art.dialog({id:'install'}).data.iframe;// 使用内置接口获取iframe对象
 		var form = d.document.getElementById('dosubmit');form.click();return false;}, function(){window.top.art.dialog({id:'install'}).close()});
 	}
 
 function uninstall(id) {
 	window.top.art.dialog({id:'install'}).close();
-	window.top.art.dialog({title:'<?php echo L('module_unistall', '', 'admin')?>', id:'install', iframe:'?m=admin&c=module&a=uninstall&module='+id, width:'500px', height:'260px'}, function(){var d = window.top.art.dialog({id:'install'}).data.iframe;// 浣跨敤鍐呯疆鎺ュ彛鑾峰彇iframe瀵硅薄
+	window.top.art.dialog({title:'<?php echo L('module_unistall', '', 'admin')?>', id:'install', iframe:'?m=admin&c=module&a=uninstall&module='+id, width:'500px', height:'260px'}, function(){var d = window.top.art.dialog({id:'install'}).data.iframe;// 使用内置接口获取iframe对象
 	var form = d.document.getElementById('dosubmit');form.click();return false;}, function(){window.top.art.dialog({id:'install'}).close()});
 }
 

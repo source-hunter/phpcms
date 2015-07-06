@@ -1,29 +1,29 @@
 /**
- * ä¼šå‘˜ä¸­å¿ƒå…¬ç”¨js
+ * »áÔ±ÖĞĞÄ¹«ÓÃjs
  *
  */
 
 /**
- * éšè—html element
+ * Òş²Øhtml element
  */
 function hide_element(name) {
 	$('#'+name+'').fadeOut("slow");
 }
 
 /**
- * æ˜¾ç¤ºhtml element
+ * ÏÔÊ¾html element
  */
 function show_element(name) {
 	$('#'+name+'').fadeIn("slow");
 }
 
 $(document).ready(function(){
-ã€€ã€€$("input.input-text").blur(function () { this.className='input-text'; } );
-ã€€ã€€$(":text").focus(function(){this.className='input-focus';});
+¡¡¡¡$("input.input-text").blur(function () { this.className='input-text'; } );
+¡¡¡¡$(":text").focus(function(){this.className='input-focus';});
 });
 
 /**
- * urlè·³è½¬
+ * urlÌø×ª
  */
 function redirect(url) {
 	if(url.indexOf('://') == -1 && url.substr(0, 1) != '/' && url.substr(0, 1) != '?') url = $('base').attr('href')+url;
@@ -48,12 +48,12 @@ function change_images(uploadid,returnid){
 	$('#'+returnid+'_tips').css('display','none');
 	$.each( contents, function(i, n) {
 		var ids = parseInt(Math.random() * 10000 + 10*i); 
-		str += "<div id='image"+ids+"'><input type='text' name='"+returnid+"_url[]' value='"+n+"' style='width:360px;' ondblclick='image_priview(this.value);' class='input-text'> <input type='text' name='"+returnid+"_alt[]' value='å›¾ç‰‡è¯´æ˜"+(i+1)+"' style='width:100px;' class='input-text' onfocus=\"if(this.value == this.defaultValue) this.value = ''\" onblur=\"if(this.value.replace(' ','') == '') this.value = this.defaultValue;\"> <a href=\"javascript:remove_div('image"+ids+"')\">ç§»é™¤</a> </div><div class='bk10'></div>";
+		str += "<div id='image"+ids+"'><input type='text' name='"+returnid+"_url[]' value='"+n+"' style='width:360px;' ondblclick='image_priview(this.value);' class='input-text'> <input type='text' name='"+returnid+"_alt[]' value='Í¼Æ¬ËµÃ÷"+(i+1)+"' style='width:100px;' class='input-text' onfocus=\"if(this.value == this.defaultValue) this.value = ''\" onblur=\"if(this.value.replace(' ','') == '') this.value = this.defaultValue;\"> <a href=\"javascript:remove_div('image"+ids+"')\">ÒÆ³ı</a> </div><div class='bk10'></div>";
 		});
 	$('#'+returnid).html(str);
 }
 function image_priview(img) {
-	window.top.art.dialog({title:'å›¾ç‰‡æŸ¥çœ‹',fixed:true, content:'<img src="'+img+'" />',id:'image_priview',time:5});
+	window.top.art.dialog({title:'Í¼Æ¬²é¿´',fixed:true, content:'<img src="'+img+'" />',id:'image_priview',time:5});
 }
 
 function remove_div(id) {
@@ -65,7 +65,7 @@ function select_catids() {
 
 }
 
-//å•†ä¸šç”¨æˆ·ä¼šæ·»åŠ  numï¼Œæ™®é€šç”¨æˆ·é»˜è®¤ä¸º5
+//ÉÌÒµÓÃ»§»áÌí¼Ó num£¬ÆÕÍ¨ÓÃ»§Ä¬ÈÏÎª5
 function transact(update,fromfiled,tofiled, num) {
 	if(update=='delete') {
 		var fieldvalue = $('#'+tofiled).val();
@@ -80,22 +80,22 @@ function transact(update,fromfiled,tofiled, num) {
 		var have_exists = 0;
 		var len = $("#"+tofiled+" option").size();
 		if(len>=num) {
-			alert('æœ€å¤šæ·»åŠ  '+num+' é¡¹');
+			alert('×î¶àÌí¼Ó '+num+' Ïî');
 			return false;
 		}
 		$("#"+tofiled+" option").each(function() {
 		   if($(this).val() == fieldvalue){
 			have_exists = 1;
-			alert('å·²ç»æ·»åŠ åˆ°åˆ—è¡¨ä¸­');
+			alert('ÒÑ¾­Ìí¼Óµ½ÁĞ±íÖĞ');
 			return false;
 		   }
 		});
 		if(have_exists==0) {
 			obj = $('#'+fromfiled+' option:selected');
 			text = obj.text();
-			text = text.replace('â”‚', '');
-			text = text.replace('â”œ ', '');
-			text = text.replace('â”” ', '');
+			text = text.replace('©¦', '');
+			text = text.replace('©À ', '');
+			text = text.replace('©¸ ', '');
 			text = text.trim();
 			fieldvalue = "<option value='"+fieldvalue+"'>"+text+"</option>"
 			$('#'+tofiled).append(fieldvalue);

@@ -82,40 +82,40 @@ include $this->admin_tpl('header','admin');
 
 
 	<tr>
-		<th><?php echo L('allowview')?>ï¼š</th>
+		<th><?php echo L('allowview')?>£º</th>
 		<td><input name="subject[allowview]" type="radio" value="1" checked>&nbsp;<?php echo L('allow')?>&nbsp;&nbsp;<input
 			name="subject[allowview]" type="radio" value="0">&nbsp;<?php echo L('not_allow')?></td>
 	</tr>
 	<tr>
-		<th><?php echo L('allowguest')?>ï¼š</th>
+		<th><?php echo L('allowguest')?>£º</th>
 		<td><input name="subject[allowguest]" type="radio" value="1" <?php if($allowguest == 1) {?>checked<?php }?>>&nbsp;<?php echo L('yes')?>&nbsp;&nbsp;<input
 			name="subject[allowguest]" type="radio" value="0" <?php if($allowguest == 0) {?>checked<?php }?>>&nbsp;<?php echo L('no')?></td>
 	</tr>
 	<tr>
-		<th><?php echo L('credit')?>ï¼š</th>
+		<th><?php echo L('credit')?>£º</th>
 		<td><input name="subject[credit]" type="text" value="<?php echo $credit;?>" size='5'></td>
 	</tr>
 	
 	<tr>
-		<th><?php echo L('interval')?>ï¼š </th>
-		<td> <input type="text" name="subject[interval]" value="<?php echo $interval;?>" size='5' /> <?php echo L('more_ip')?>ï¼Œ<font color=red>0</font> <?php echo L('one_ip')?></td>
+		<th><?php echo L('interval')?>£º </th>
+		<td> <input type="text" name="subject[interval]" value="<?php echo $interval;?>" size='5' /> <?php echo L('more_ip')?>£¬<font color=red>0</font> <?php echo L('one_ip')?></td>
 	</tr>
 	
 	<tr>
-		<th><?php echo L('vote_style')?>ï¼š</th>
+		<th><?php echo L('vote_style')?>£º</th>
 		<td>
 		<?php echo form::select($template_list, $default_style, 'name="vote_subject[style]" id="style" onchange="load_file_list(this.value)"', L('please_select'))?> 
 		</td>
 	</tr>
 	
 	<tr>
-		<th><?php echo L('template')?>ï¼š</th>
+		<th><?php echo L('template')?>£º</th>
 		<td id="show_template">
 		<?php echo form::select_template($default_style, 'vote', $vote_tp_template, 'name="vote_subject[vote_tp_template]"', 'vote_tp');?>
 		</td>
 	</tr>
 	<tr>
-		<th><?php echo L('enabled')?>ï¼š</th>
+		<th><?php echo L('enabled')?>£º</th>
 		<td><input name="subject[enabled]" type="radio" value="1" <?php if($enabled == 1) {?>checked<?php }?>>&nbsp;<?php echo L('yes')?>&nbsp;&nbsp;<input
 			name="subject[enabled]" type="radio" value="0" <?php if($enabled == 0) {?>checked<?php }?>>&nbsp;<?php echo L('no')?></td>
 	</tr>

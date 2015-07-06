@@ -1,20 +1,20 @@
 <?php
 /**
- * è§†é¢‘é€šçŸ¥æŽ¥å£
+ * ÊÓÆµÍ¨Öª½Ó¿Ú
  */
 defined('IN_PHPCMS') or exit('No permission resources.'); 
 
 $video_setting = getcache('video','video');
 
-//æ–°å¢žï¼Œè·³è½¬å®Œå–„èµ„æ–™  -- å¢žåŠ äººï¼šwgq
+//ÐÂÔö£¬Ìø×ªÍêÉÆ×ÊÁÏ  -- Ôö¼ÓÈË£ºwgq
 $pc_hash = htmlspecialchars($_GET['pc_hash']);
 if(!empty($_GET['do_complete']) && !empty($_GET['uid']) && !empty($_GET['snid'])){
-	//éªŒè¯sndaid
+	//ÑéÖ¤sndaid
 	$sndaid = intval($_GET['snid']);
 	if(empty($sndaid)){
-		showmessage("è¯·é€šæ­£å¸¸è·¯å¾„è®¿é—®ç½‘ç«™ï¼",APP_PATH);
+		showmessage("ÇëÍ¨Õý³£Â·¾¶·ÃÎÊÍøÕ¾£¡",APP_PATH);
 	}
-	showmessage("è¯·å®Œå–„æ³¨å†Œä¿¡æ¯èµ„æ–™ï¼",APP_PATH.'index.php?m=video&c=video&a=complete_info&uid='.intval($_GET['uid']).'&snid='.$sndaid.'&pc_hash='.$pc_hash);
+	showmessage("ÇëÍêÉÆ×¢²áÐÅÏ¢×ÊÁÏ£¡",APP_PATH.'index.php?m=video&c=video&a=complete_info&uid='.intval($_GET['uid']).'&snid='.$sndaid.'&pc_hash='.$pc_hash);
 }
 
 if(!empty($_GET['skey']) && !empty($_GET['sn'])){

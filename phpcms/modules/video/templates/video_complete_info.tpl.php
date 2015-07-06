@@ -9,13 +9,13 @@
 <!--
 $(function(){
 	$.formValidator.initConfig({autotip:true,formid:"myform",onerror:function(msg){}});
-	$("#companyname").formValidator({onshow:"<?php echo L('input').L('ÂÖ¨Âè∏ÂêçÁß∞');?>",onfocus:"<?php echo L('ÂÖ¨Âè∏ÂêçÁß∞‰∏çËÉΩÁ©∫');?>"}).inputValidator({min:1,max:999,onerror:"<?php echo L('ÂÖ¨Âè∏ÂêçÁß∞‰∏çËÉΩ‰∏∫Á©∫');?>"});
-	$("#address").formValidator({onshow:"<?php echo L('input').L('ÂÖ¨Âè∏Âú∞ÂùÄ');?>",onfocus:"<?php echo L('ËÅîÁ≥ªÂú∞ÂùÄ‰∏çËÉΩÁ©∫');?>"}).inputValidator({min:1,max:999,onerror:"<?php echo L('ËÅîÁ≥ªÂú∞ÂùÄ‰∏çËÉΩ‰∏∫Á©∫');?>"});
-	$("#telephone").formValidator({onshow:"<?php echo L('input').L('ËÅîÁ≥ªÁîµËØù');?>",onfocus:"<?php echo L('ËÅîÁ≥ªÁîµËØù‰∏çËÉΩÁ©∫');?>"}).inputValidator({min:1,max:999,onerror:"<?php echo L('ËÅîÁ≥ªÁîµËØù‰∏çËÉΩ‰∏∫Á©∫');?>"});
-	$("#contact_name").formValidator({onshow:"<?php echo L('input').L('ËÅîÁ≥ª‰∫∫');?>",onfocus:"<?php echo L('ËÅîÁ≥ª‰∫∫‰∏çËÉΩÁ©∫');?>"}).inputValidator({min:1,max:999,onerror:"<?php echo L('ËÅîÁ≥ª‰∫∫‰∏çËÉΩ‰∏∫Á©∫');?>"});
-	$("#contact_telephone").formValidator({onshow:"<?php echo L('input').L('ËÅîÁ≥ªÊñπÂºè ');?>",onfocus:"<?php echo L('ËÅîÁ≥ªÊñπÂºè‰∏çËÉΩ‰∏∫Á©∫');?>"}).inputValidator({min:1,max:999,onerror:"<?php echo L('ËÅîÁ≥ªÊñπÂºè‰∏çËÉΩ‰∏∫Á©∫');?>"});
-	$("#contact_mobile").formValidator({onshow:"<?php echo L('input').L('ÊâãÊú∫‰∏çËÉΩ‰∏∫Á©∫');?>",onfocus:"<?php echo L('ÊâãÊú∫‰∏çËÉΩ‰∏∫Á©∫');?>"}).inputValidator({min:1,max:999,onerror:"<?php echo L('ÊâãÊú∫‰∏çËÉΩ‰∏∫Á©∫');?>"});
-	$("#email").formValidator({onshow:"ËØ∑ËæìÂÖ•E-mail",onfocus:"ËØ∑ËæìÂÖ•E-mail",oncorrect:"E-mailÊ†ºÂºèÊ≠£Á°Æ"}).regexValidator({regexp:"email",datatype:"enum",onerror:"E-mailÊ†ºÂºèÈîôËØØ"});
+	$("#companyname").formValidator({onshow:"<?php echo L('input').L('π´Àæ√˚≥∆');?>",onfocus:"<?php echo L('π´Àæ√˚≥∆≤ªƒ‹ø’');?>"}).inputValidator({min:1,max:999,onerror:"<?php echo L('π´Àæ√˚≥∆≤ªƒ‹Œ™ø’');?>"});
+	$("#address").formValidator({onshow:"<?php echo L('input').L('π´Àæµÿ÷∑');?>",onfocus:"<?php echo L('¡™œµµÿ÷∑≤ªƒ‹ø’');?>"}).inputValidator({min:1,max:999,onerror:"<?php echo L('¡™œµµÿ÷∑≤ªƒ‹Œ™ø’');?>"});
+	$("#telephone").formValidator({onshow:"<?php echo L('input').L('¡™œµµÁª∞');?>",onfocus:"<?php echo L('¡™œµµÁª∞≤ªƒ‹ø’');?>"}).inputValidator({min:1,max:999,onerror:"<?php echo L('¡™œµµÁª∞≤ªƒ‹Œ™ø’');?>"});
+	$("#contact_name").formValidator({onshow:"<?php echo L('input').L('¡™œµ»À');?>",onfocus:"<?php echo L('¡™œµ»À≤ªƒ‹ø’');?>"}).inputValidator({min:1,max:999,onerror:"<?php echo L('¡™œµ»À≤ªƒ‹Œ™ø’');?>"});
+	$("#contact_telephone").formValidator({onshow:"<?php echo L('input').L('¡™œµ∑Ω Ω ');?>",onfocus:"<?php echo L('¡™œµ∑Ω Ω≤ªƒ‹Œ™ø’');?>"}).inputValidator({min:1,max:999,onerror:"<?php echo L('¡™œµ∑Ω Ω≤ªƒ‹Œ™ø’');?>"});
+	$("#contact_mobile").formValidator({onshow:"<?php echo L('input').L(' ÷ª˙≤ªƒ‹Œ™ø’');?>",onfocus:"<?php echo L(' ÷ª˙≤ªƒ‹Œ™ø’');?>"}).inputValidator({min:1,max:999,onerror:"<?php echo L(' ÷ª˙≤ªƒ‹Œ™ø’');?>"});
+	$("#email").formValidator({onshow:"«Î ‰»ÎE-mail",onfocus:"«Î ‰»ÎE-mail",oncorrect:"E-mail∏Ò Ω’˝»∑"}).regexValidator({regexp:"email",datatype:"enum",onerror:"E-mail∏Ò Ω¥ÌŒÛ"});
 })
 //-->
 </script>
@@ -28,48 +28,48 @@ $(function(){
 <input type="hidden" name="info[uid]" id="uid" value="<?php echo $uid;?>">
 <input type="hidden" name="info[snid]" id="snid" value="<?php echo $snid;?>">
 <fieldset>
-	<legend><?php echo L('Âçï‰ΩçËµÑÊñô');?></legend>
+	<legend><?php echo L('µ•Œª◊ ¡œ');?></legend>
 <table width="100%" class="table_form">
 	<tr>
-		<td  width="120"><?php echo L('ÂÖ¨Âè∏ÂêçÁß∞');?></td> 
+		<td  width="120"><?php echo L('π´Àæ√˚≥∆');?></td> 
 		<td><input name="info[companyname]"  type="text" id="companyname"  size="40" value="<?php echo $complete_info['companyname'];?>"> </td>
 	</tr>
 	<tr>
-		<td  width="120"><?php echo L('ÁîµËØù');?></td> 
+		<td  width="120"><?php echo L('µÁª∞');?></td> 
 		<td><input type="text" name="info[telephone]" size="20" value="<?php echo $complete_info['telephone'];?>" id="telephone"></td>
 	</tr>
 	<tr>
-		<td  width="120"><?php echo L('ËÅîÁ≥ªÂú∞ÂùÄ');?> </td> 
+		<td  width="120"><?php echo L('¡™œµµÿ÷∑');?> </td> 
 		<td><input type="text" name="info[address]" size="40" value="<?php echo $complete_info['address'];?>" id="address"></td>
 	</tr>
 	<tr>
-		<td  width="120"><?php echo L('ÁΩëÂùÄ');?> </td> 
+		<td  width="120"><?php echo L('Õ¯÷∑');?> </td> 
 		<td> <input type="text" name="info[website]" size="40" value="<?php echo $complete_info['website'];?>" id="website"></td>
 	</tr>
 	<tr>
-		<td  width="120"><?php echo L('‰∏öÂä°ÁÆÄ‰ªã');?> </td> 
+		<td  width="120"><?php echo L('“µŒÒºÚΩÈ');?> </td> 
 		<td> <textarea name="info[description]" id="description" style="width:400px;height:46px;"><?php echo $complete_info['description'];?></textarea></td>
 	</tr> 
 </table>
 </fieldset>
 <br>
 <fieldset>
-	<legend><?php echo L('ËÅîÁ≥ª‰∫∫ËµÑÊñô');?></legend>
+	<legend><?php echo L('¡™œµ»À◊ ¡œ');?></legend>
 <table width="100%" class="table_form">
 	<tr>
-		<td  width="120"><?php echo L('ËÅîÁ≥ª‰∫∫');?></td> 
+		<td  width="120"><?php echo L('¡™œµ»À');?></td> 
 		<td><input name="info[contact_name]"  type="text" id="contact_name"  size="40" value="<?php echo $complete_info['contact_name'];?>"> </td>
 	</tr>
 	<tr>
-		<td  width="120"><?php echo L('ËÅîÁ≥ªÁîµËØù');?></td> 
+		<td  width="120"><?php echo L('¡™œµµÁª∞');?></td> 
 		<td><input type="text" name="info[contact_telephone]" size="40" value="<?php echo $complete_info['contact_telephone'];?>" id="contact_telephone"></td>
 	</tr>
 	<tr>
-		<td  width="120"><?php echo L('ÁîµÂ≠ê‰ø°ÁÆ±');?></td> 
+		<td  width="120"><?php echo L('µÁ◊”–≈œ‰');?></td> 
 		<td><input type="text" name="info[email]" size="40" value="<?php echo $complete_info['email'];?>" id="email"></td>
 	</tr>
 	<tr>
-		<td  width="120"><?php echo L('ÊâãÊú∫');?> </td> 
+		<td  width="120"><?php echo L(' ÷ª˙');?> </td> 
 		<td><input type="text" name="info[mobile]" size="20" value="<?php echo $complete_info['mobile'];?>" id="mobile"></td>
 	</tr>
 	<tr>

@@ -3,8 +3,8 @@ defined('IN_PHPCMS') or exit('Access Denied');
 defined('INSTALL') or exit('Access Denied');
 
 $module = 'wap';
-$modulename = '鎵嬫満闂ㄦ埛';
-$introduce = '鐙珛妯″潡';
+$modulename = '手机门户';
+$introduce = '独立模块';
 $author = 'phpcms Team';
 $authorsite = 'http://www.phpcms.cn';
 $authoremail = '';

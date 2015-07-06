@@ -7,7 +7,7 @@ include $this->admin_tpl('header');?>
 		$.formValidator.initConfig({formid:"myform",autotip:true,onerror:function(msg,obj){window.top.art.dialog({content:msg,lock:true,width:'200',height:'50'}, function(){this.close();$(obj).focus();})}});
 		$("#modelid").formValidator({onshow:"<?php echo L('select_model');?>",onfocus:"<?php echo L('select_model');?>",oncorrect:"<?php echo L('input_right');?>"}).inputValidator({min:1,onerror:"<?php echo L('select_model');?>"}).defaultPassed();
 		$("#catname").formValidator({onshow:"<?php echo L('input_catname');?>",onfocus:"<?php echo L('input_catname');?>",oncorrect:"<?php echo L('input_right');?>"}).inputValidator({min:1,onerror:"<?php echo L('input_catname');?>"}).defaultPassed();
-		$("#catdir").formValidator({onshow:"<?php echo L('input_dirname');?>",onfocus:"<?php echo L('input_dirname');?>"}).regexValidator({regexp:"^([a-zA-Z0-9„ÄÅ-]|[_]){0,30}$",onerror:"<?php echo L('enter_the_correct_catname');?>"}).inputValidator({min:1,onerror:"<?php echo L('input_dirname');?>"}).ajaxValidator({type : "get",url : "",data :"m=admin&c=category&a=public_check_catdir&old_dir=<?php echo $catdir;?>",datatype : "html",cached:false,getdata:{parentid:'parentid'},async:'false',success : function(data){	if( data == "1" ){return true;}else{return false;}},buttons: $("#dosubmit"),onerror : "<?php echo L('catname_have_exists');?>",onwait : "<?php echo L('connecting');?>"}).defaultPassed();
+		$("#catdir").formValidator({onshow:"<?php echo L('input_dirname');?>",onfocus:"<?php echo L('input_dirname');?>"}).regexValidator({regexp:"^([a-zA-Z0-9°¢-]|[_]){0,30}$",onerror:"<?php echo L('enter_the_correct_catname');?>"}).inputValidator({min:1,onerror:"<?php echo L('input_dirname');?>"}).ajaxValidator({type : "get",url : "",data :"m=admin&c=category&a=public_check_catdir&old_dir=<?php echo $catdir;?>",datatype : "html",cached:false,getdata:{parentid:'parentid'},async:'false',success : function(data){	if( data == "1" ){return true;}else{return false;}},buttons: $("#dosubmit"),onerror : "<?php echo L('catname_have_exists');?>",onwait : "<?php echo L('connecting');?>"}).defaultPassed();
 		$("#url").formValidator({onshow:" ",onfocus:"<?php echo L('domain_name_format');?>",tipcss:{width:'300px'},empty:true}).inputValidator({onerror:"<?php echo L('domain_name_format');?>"}).regexValidator({regexp:"http:\/\/(.+)\/$",onerror:"<?php echo L('domain_end_string');?>"});
 		$("#template_list").formValidator({onshow:"<?php echo L('template_setting');?>",onfocus:"<?php echo L('template_setting');?>",oncorrect:"<?php echo L('input_right');?>"}).inputValidator({min:1,onerror:"<?php echo L('template_setting');?>"}).defaultPassed();
 	})
@@ -30,7 +30,7 @@ include $this->admin_tpl('header');?>
 
 <table width="100%" class="table_form ">
 		<tr>
-        <th width="200"><?php echo L('select_model')?>Ôºö</th>
+        <th width="200"><?php echo L('select_model')?>£∫</th>
         <td>
 		 <?php
 			$category_items = getcache('category_items_'.$modelid,'commons');
@@ -47,31 +47,31 @@ include $this->admin_tpl('header');?>
 		</td>
       </tr>
       <tr>
-        <th width="200"><?php echo L('parent_category')?>Ôºö</th>
+        <th width="200"><?php echo L('parent_category')?>£∫</th>
         <td>
 		<?php echo form::select_category('category_content_'.$this->siteid,$parentid,'name="info[parentid]" id="parentid"',L('please_select_parent_category'),0,-1);?> 
 		</td>
       </tr>
       <tr>
-        <th><?php echo L('catname')?>Ôºö</th>
+        <th><?php echo L('catname')?>£∫</th>
         <td><input type="text" name="info[catname]" id="catname" class="input-text" value="<?php echo $catname;?>"></td>
       </tr>
 	<tr>
-        <th><?php echo L('catdir')?>Ôºö</th>
+        <th><?php echo L('catdir')?>£∫</th>
         <td><input type="text" name="info[catdir]" id="catdir" class="input-text" value="<?php echo $catdir;?>"></td>
       </tr>
 	<tr>
-        <th><?php echo L('catgory_img')?>Ôºö</th>
+        <th><?php echo L('catgory_img')?>£∫</th>
         <td><?php echo form::images('info[image]', 'image', $image, 'content');?></td>
       </tr>
 	<tr>
-        <th><?php echo L('description')?>Ôºö</th>
+        <th><?php echo L('description')?>£∫</th>
         <td>
 		<textarea name="info[description]" maxlength="255" style="width:300px;height:60px;"><?php echo $description;?></textarea>
 		</td>
       </tr>
 	 <tr>
-      <th><?php echo L('workflow');?>Ôºö</th>
+      <th><?php echo L('workflow');?>£∫</th>
       <td>
 	  <?php
 		$workflows = getcache('workflow_'.$this->siteid,'commons');
@@ -89,7 +89,7 @@ include $this->admin_tpl('header');?>
 	  </td>
     </tr>
 <tr>
-     <th><?php echo L('ismenu');?>Ôºö</th>
+     <th><?php echo L('ismenu');?>£∫</th>
       <td>
 	  <input type='radio' name='info[ismenu]' value='1' <?php if($ismenu) echo 'checked';?>> <?php echo L('yes');?>&nbsp;&nbsp;&nbsp;&nbsp;
 	  <input type='radio' name='info[ismenu]' value='0' <?php if(!$ismenu) echo 'checked';?>> <?php echo L('no');?></td>
@@ -101,21 +101,21 @@ include $this->admin_tpl('header');?>
 <div id="div_setting_2" class="contentList pad-10 hidden">
 <table width="100%" class="table_form">
 	<tr>
-      <th width="200"><?php echo L('html_category');?>Ôºö</th>
+      <th width="200"><?php echo L('html_category');?>£∫</th>
       <td>
 	  <input type='radio' name='setting[ishtml]' value='1' <?php if($setting['ishtml']) echo 'checked';?> onClick="$('#category_php_ruleid').css('display','none');$('#category_html_ruleid').css('display','');$('#tr_domain').css('display','');"> <?php echo L('yes');?>&nbsp;&nbsp;&nbsp;&nbsp;
 	  <input type='radio' name='setting[ishtml]' value='0' <?php if(!$setting['ishtml']) echo 'checked';?>  onClick="$('#category_php_ruleid').css('display','');$('#category_html_ruleid').css('display','none');$('#tr_domain').css('display','none');"> <?php echo L('no');?>
 	  </td>
     </tr>
 	<tr>
-      <th><?php echo L('html_show');?>Ôºö</th>
+      <th><?php echo L('html_show');?>£∫</th>
       <td>
 	  <input type='radio' name='setting[content_ishtml]' value='1' <?php if($setting['content_ishtml']) echo 'checked';?> onClick="$('#show_php_ruleid').css('display','none');$('#show_html_ruleid').css('display','')"> <?php echo L('yes');?>&nbsp;&nbsp;&nbsp;&nbsp;
 	  <input type='radio' name='setting[content_ishtml]' value='0' <?php if(!$setting['content_ishtml']) echo 'checked';?>  onClick="$('#show_php_ruleid').css('display','');$('#show_html_ruleid').css('display','none')"> <?php echo L('no');?>
 	  </td>
     </tr>
 	<tr>
-      <th><?php echo L('category_urlrules');?>Ôºö</th>
+      <th><?php echo L('category_urlrules');?>£∫</th>
       <td><div id="category_php_ruleid" style="display:<?php if($setting['ishtml']) echo 'none';?>">
 	<?php
 		echo form::urlrule('content','category',0,$setting['category_ruleid'],'name="category_php_ruleid"');
@@ -130,7 +130,7 @@ include $this->admin_tpl('header');?>
     </tr>
 	
 	<tr>
-      <th><?php echo L('show_urlrules');?>Ôºö</th>
+      <th><?php echo L('show_urlrules');?>£∫</th>
       <td><div id="show_php_ruleid" style="display:<?php if($setting['content_ishtml']) echo 'none';?>">
 	  <?php
 		echo form::urlrule('content','show',0,$setting['show_ruleid'],'name="show_php_ruleid"');
@@ -144,14 +144,14 @@ include $this->admin_tpl('header');?>
 	</td>
     </tr>
 <tr>
-     <th><?php echo L('create_to_rootdir');?>Ôºö</th>
+     <th><?php echo L('create_to_rootdir');?>£∫</th>
       <td>
 	  <input type='radio' name='setting[create_to_html_root]' value='1' <?php if($setting['create_to_html_root']) echo 'checked';?> > <?php echo L('yes');?>&nbsp;&nbsp;&nbsp;&nbsp;
 	  <input type='radio' name='setting[create_to_html_root]' value='0' <?php if(!$setting['create_to_html_root']) echo 'checked';?> > <?php echo L('no');?>
-	  Ôºà<?php echo L('create_to_rootdir_tips');?>Ôºâ</td>
+	  £®<?php echo L('create_to_rootdir_tips');?>£©</td>
     </tr>
     <tr id="tr_domain" style="display:<?php if(!$setting['ishtml']) echo 'none';?>">
-        <th><?php echo L('domain')?>Ôºö</th>
+        <th><?php echo L('domain')?>£∫</th>
         <td><input type="text" name="info[url]" id="url" class="input-text" size="50" value="<?php if(preg_match('/^http:\/\/([a-z0-9\-\.]+)\/$/i',$url)) echo $url;?>"></td>
       </tr>
 </table>
@@ -159,33 +159,33 @@ include $this->admin_tpl('header');?>
 <div id="div_setting_3" class="contentList pad-10 hidden">
 <table width="100%" class="table_form ">
 <tr>
-  <th width="200"><?php echo L('available_styles');?>Ôºö</th>
+  <th width="200"><?php echo L('available_styles');?>£∫</th>
         <td>
 		<?php echo form::select($template_list, $setting['template_list'], 'name="setting[template_list]" id="template_list" onchange="load_file_list(this.value)"', L('please_select'))?> 
 		</td>
 </tr>
 		<tr>
-        <th width="200"><?php echo L('category_index_tpl')?>Ôºö</th>
+        <th width="200"><?php echo L('category_index_tpl')?>£∫</th>
  <td  id="category_template">
 		</td>      </tr>
 	  <tr>
-        <th width="200"><?php echo L('category_list_tpl')?>Ôºö</th>
+        <th width="200"><?php echo L('category_list_tpl')?>£∫</th>
         <td  id="list_template">
 		</td>
       </tr>
 	  <tr>
-        <th width="200"><?php echo L('content_tpl')?>Ôºö</th>
+        <th width="200"><?php echo L('content_tpl')?>£∫</th>
         <td  id="show_template">
 		</td>
       </tr>
 	  
-	  <!--Ê®°ÁâàÂ∫îÁî®Âà∞Â≠êÊ†èÁõÆÈÖçÁΩÆ-->
+	  <!--ƒ£∞Ê”¶”√µΩ◊”¿∏ƒø≈‰÷√-->
 	  <tr>
-        <th width="200"><?php echo 'Ê®°ÊùøÂ∫îÁî®Âà∞Â≠êÊ†èÁõÆ';?></th>
+        <th width="200"><?php echo 'ƒ£∞Â”¶”√µΩ◊”¿∏ƒø';?></th>
         <td><input type='radio' name='template_child' value='1'> <?php echo L('yes');?>&nbsp;&nbsp;&nbsp;&nbsp;
           <input type='radio' name='template_child' value='0' checked> <?php echo L('no');?></td></td>
       </tr>
-	  <!--end Ê®°ÁâàÂ∫îÁî®Âà∞Â≠êÊ†èÁõÆÈÖçÁΩÆ-->
+	  <!--end ƒ£∞Ê”¶”√µΩ◊”¿∏ƒø≈‰÷√-->
 	  
 </table>
 </div>
@@ -208,7 +208,7 @@ include $this->admin_tpl('header');?>
 <div id="div_setting_5" class="contentList pad-10 hidden">
 <table width="100%" >
 		<tr>
-        <th width="200"><?php echo L('role_private')?>Ôºö</th>
+        <th width="200"><?php echo L('role_private')?>£∫</th>
         <td>
 			<table width="100%" class="table-list">
 			  <thead>
@@ -244,7 +244,7 @@ include $this->admin_tpl('header');?>
 		</tr>
 
 	  <tr>
-        <th width="200"><?php echo L('group_private')?>Ôºö</th>
+        <th width="200"><?php echo L('group_private')?>£∫</th>
         <td>
 			<table width="100%" class="table-list">
 			  <thead>

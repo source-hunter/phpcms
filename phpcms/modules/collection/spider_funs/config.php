@@ -1,8 +1,8 @@
 <?php
 defined('IN_PHPCMS') or exit('No permission resources.');
 $spider_funs = array(
-'trim'=>'è¿‡æ»¤ç©ºæ ¼',
-'spider_photos'=>'å¤„ç†ä¸ºç»„å›¾',
-'spider_downurls'=>'å¤„ç†ä¸ºä¸‹è½½åˆ—è¡¨',
-'spider_keywords'=>'èŽ·å–å…³é”®å­—',
+'trim'=>'¹ýÂË¿Õ¸ñ',
+'spider_photos'=>'´¦ÀíÎª×éÍ¼',
+'spider_downurls'=>'´¦ÀíÎªÏÂÔØÁÐ±í',
+'spider_keywords'=>'»ñÈ¡¹Ø¼ü×Ö',
 );

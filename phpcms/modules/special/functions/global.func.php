@@ -1,7 +1,7 @@
 <?php 
 /**
- * ç”Ÿæˆcss
- * @param array $param csså‚æ•°
+ * Éú³Écss
+ * @param array $param css²ÎÊı
  */
 function get_css($param = array()) {
 	if (!isset($param) || empty($param)) return false;
@@ -21,13 +21,13 @@ function get_css($param = array()) {
 }
 
 /**
- * å†…å®¹é¡µurl
- * @param $contentid æ–‡ç« ID
- * @param $page å½“å‰é¡µ
- * @param $addtime æ–‡ç« å‘å¸ƒæ—¶é—´
- * @param $type è¿”å›è·¯å¾„çš„æ ¼å¼ï¼ˆ.html|.phpï¼‰
- * @param $site_info ç«™ç‚¹ä¿¡æ¯
- * @param $type ç±»å‹ é™æ€åœ°å€ $type = 'html', åŠ¨æ€åœ°å€ $type='php'
+ * ÄÚÈİÒ³url
+ * @param $contentid ÎÄÕÂID
+ * @param $page µ±Ç°Ò³
+ * @param $addtime ÎÄÕÂ·¢²¼Ê±¼ä
+ * @param $type ·µ»ØÂ·¾¶µÄ¸ñÊ½£¨.html|.php£©
+ * @param $site_info Õ¾µãĞÅÏ¢
+ * @param $type ÀàĞÍ ¾²Ì¬µØÖ· $type = 'html', ¶¯Ì¬µØÖ· $type='php'
  */
 function content_url($contentid = 0, $page = 1, $addtime, $type = 'html', $site_info = '') {
 	if (!$contentid) return '';
@@ -94,7 +94,7 @@ function get_pic_content($pics) {
 	$r2 = $db->get_one(array('id'=>$id));
 	$rs = array_merge($r,$r2);
 
-	//å†æ¬¡é‡æ–°èµ‹å€¼ï¼Œä»¥æ•°æ®åº“ä¸ºå‡†
+	//ÔÙ´ÎÖØĞÂ¸³Öµ£¬ÒÔÊı¾İ¿âÎª×¼
 	$catid = $CATEGORYS[$r['catid']]['catid'];
 	$modelid = $CATEGORYS[$catid]['modelid'];
 		

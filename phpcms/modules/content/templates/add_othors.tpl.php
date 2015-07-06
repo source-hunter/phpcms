@@ -50,7 +50,7 @@ include $this->admin_tpl('header','admin');
 		var relation_ids = window.top.$('#relation').val();
 		var sid = 'v'+id;
 		$(obj).attr('class','line_fbffe4');
-		var str = "<li id='"+sid+"'>Â·<input type='hidden' name='othor_catid["+id+"]'><span>"+title+"</span><a href='javascript:;' class='close' onclick=\"remove_id('"+sid+"')\"></a></li>";
+		var str = "<li id='"+sid+"'>¡¤<input type='hidden' name='othor_catid["+id+"]'><span>"+title+"</span><a href='javascript:;' class='close' onclick=\"remove_id('"+sid+"')\"></a></li>";
 
 		window.top.$('#add_othors_text').append(str);
 		$('#catname').append(str);
@@ -65,7 +65,7 @@ include $this->admin_tpl('header','admin');
 function change_siteid(siteid) {
 		$("#load_catgory").load("?m=content&c=content&a=public_getsite_categorys&siteid="+siteid);
 }
-//ç§»é™¤ID
+//ÒÆ³ýID
 function remove_id(id) {
 	$('#'+id).remove();
 	window.top.$('#'+id).remove();

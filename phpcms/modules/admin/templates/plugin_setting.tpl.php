@@ -45,6 +45,6 @@ function loadfile(data) {
 	$("#"+data).load('?m=admin&c=plugin&a=config&pluginid=<?php echo $pluginid?>&module='+data
 	+'&pc_hash=<?php echo $_SESSION['pc_hash']?>');
 }
-new SwapTab(".tabBut","li","#tab-content",".contentList","on");//æŽ’è¡ŒTAB	
+new SwapTab(".tabBut","li","#tab-content",".contentList","on");//ÅÅÐÐTAB	
 </script>
 </html>

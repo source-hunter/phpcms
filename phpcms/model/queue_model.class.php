@@ -10,10 +10,10 @@ class queue_model extends model {
 	}
 		
 	/**
-	 * 娣诲姞鍚屾闃熷垪
-	 * @param string $type  鎿嶄綔绫诲瀷{add:娣诲姞,edit:淇敼,del:鍒犻櫎}
-	 * @param string $path 鏂囨。鍦板潃
-	 * @param integer $siteid 绔欑偣ID
+	 * 添加同步队列
+	 * @param string $type  操作类型{add:添加,edit:修改,del:删除}
+	 * @param string $path 文档地址
+	 * @param integer $siteid 站点ID
 	 */
 	final public function add_queue($type = 'add', $path, $siteid = '') {
 		if (empty($siteid)) $siteid = get_siteid();

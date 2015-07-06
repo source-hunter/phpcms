@@ -9,8 +9,8 @@ class block_tag {
 	}
 	
 	/**
-	 * PCæ ‡ç­¾ä¸­è°ƒç”¨æ•°æ®
-	 * @param array $data é…ç½®æ•°æ®
+	 * PC±êÇ©ÖĞµ÷ÓÃÊı¾İ
+	 * @param array $data ÅäÖÃÊı¾İ
 	 */
 	public function pc_tag($data) {
 		$siteid = isset($data['siteid']) && intval($data['siteid']) ? intval($data['siteid']) : get_siteid();
@@ -39,9 +39,9 @@ class block_tag {
 	}
 	
 	/**
-	 * ç”Ÿæˆæ¨¡æ¿è¿”å›è·¯å¾„
-	 * @param integer $id ç¢ç‰‡IDå·
-	 * @param string $template é£æ ¼
+	 * Éú³ÉÄ£°å·µ»ØÂ·¾¶
+	 * @param integer $id ËéÆ¬IDºÅ
+	 * @param string $template ·ç¸ñ
 	 */
 	public function template_url($id, $template = '') {
 		$filepath = CACHE_PATH.'caches_template'.DIRECTORY_SEPARATOR.'block'.DIRECTORY_SEPARATOR.$id.'.php';

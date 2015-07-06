@@ -18,7 +18,7 @@ include $this->admin_tpl('header','admin');
 <table cellpadding="2" cellspacing="1" class="table_form" width="100%">
 
 	<tr>
-		<th width="80"><?php echo L('sendto')?>ï¼š</th>
+		<th width="80"><?php echo L('sendto')?>£º</th>
 		<td>
 		<input name="info[type]" type="radio" value="1" checked="checked" style="border:0" onclick="$('#groupid').show();$('#roleid').hide()" class="radio_style">
 	<?php echo L('group')?>&nbsp;&nbsp;&nbsp;&nbsp;
@@ -26,7 +26,7 @@ include $this->admin_tpl('header','admin');
 	</tr>
 	
 	<tr>
-		<th width="80"><?php echo L('group')?>ï¼š</th>
+		<th width="80"><?php echo L('group')?>£º</th>
 		<td>
 		
 		<select name="info[groupid]" id="groupid">
@@ -55,13 +55,13 @@ include $this->admin_tpl('header','admin');
 	</tr>
 	
 	<tr>
-		<th width="80"><?php echo L('subject')?>ï¼š</th>
+		<th width="80"><?php echo L('subject')?>£º</th>
 		<td><input type="text" name="info[subject]" id="subject"
 			size="30" class="input-text"></td>
 	</tr>  
  
 	<tr>
-		<th><?php echo L('content')?>ï¼š</th>
+		<th><?php echo L('content')?>£º</th>
 		<td><textarea name="info[content]" id="content" cols="50"
 			rows="6"></textarea></td>
 	</tr> 

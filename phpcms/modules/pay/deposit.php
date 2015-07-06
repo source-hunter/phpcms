@@ -91,7 +91,7 @@ class deposit extends foreground {
 	}
 	
 	/*
-	 * å……å€¼æ–¹å¼æ”¯ä»˜
+	 * ³äÖµ·½Ê½Ö§¸¶
 	 */
 	public function pay_recharge() {
 		if(isset($_POST['dosubmit'])) {

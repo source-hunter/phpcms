@@ -15,7 +15,7 @@
 			{pc:content  action="lists" catid="$catid" order="id DESC" num="3"}
                 <ul class="list">
                 {loop $data $k $v}
-                	<li>Â·<a href="{$v[url]}" title="{$v[title]}" target="_blank"{title_style($v[style])}>{str_cut($v[title], 60)}</a></li>
+                	<li>¡¤<a href="{$v[url]}" title="{$v[title]}" target="_blank"{title_style($v[style])}>{str_cut($v[title], 60)}</a></li>
                 {/loop}
                 </ul>
              {/pc}
@@ -45,13 +45,13 @@
         </div>
          {/pc}
     </div>
- <!--ä¸‹é¢è¿™éƒ¨åˆ†ä»£ç æ˜¯å¹¿å‘Šä»£ç ï¼Œå¯é€šè¿‡åˆ é™¤æ³¨é‡Šçš„æ–¹æ³•æ˜¾ç¤ºå‡ºæ¥-->
+ <!--ÏÂÃæÕâ²¿·Ö´úÂëÊÇ¹ã¸æ´úÂë£¬¿ÉÍ¨¹ıÉ¾³ı×¢ÊÍµÄ·½·¨ÏÔÊ¾³öÀ´-->
  <!-- 
     <div class="ads">
     	<div class="col-left"><script language="javascript" src="{APP_PATH}caches/poster_js/4.js"></script></div>
         <div class="col-auto">
-        	<div class="left">æ¨å¹¿é“¾æ¥</div>
-            <div class="right">è¿™é‡Œæ”¾å¹¿å‘Š</div>
+        	<div class="left">ÍÆ¹ãÁ´½Ó</div>
+            <div class="right">ÕâÀï·Å¹ã¸æ</div>
         </div>
   </div>
   -->
@@ -61,7 +61,7 @@
 	{loop subcat($catid) $v}
 	{php if($v['type']!=0) continue;}
         <div class="box cat-area" {if $j%2==1}style="margin-right:10px"{/if}>
-        		<h5 class="title-1">{$v[catname]}<a href="{$v[url]}" class="more">æ›´å¤š>></a></h5>
+        		<h5 class="title-1">{$v[catname]}<a href="{$v[url]}" class="more">¸ü¶à>></a></h5>
              <div class="content">
              	
 				{pc:content action="lists" catid="$v[catid]" thumb="1" num="1" order="id DESC"}
@@ -89,7 +89,7 @@
   </div>
     <div class="col-auto">
         <div class="box">
-            <h5 class="title-2">é¢‘é“æ€»æ’è¡Œ</h5>
+            <h5 class="title-2">ÆµµÀ×ÜÅÅĞĞ</h5>
             <ul class="content digg">
             {pc:content action="hits" catid="$catid" num="10" order="views DESC" cache="3600"}
 				{loop $data $v}
@@ -100,7 +100,7 @@
         </div>
         <div class="bk10"></div>
         <div class="box">
-            <h5 class="title-2">é¢‘é“æœ¬æœˆæ’è¡Œ</h5>
+            <h5 class="title-2">ÆµµÀ±¾ÔÂÅÅĞĞ</h5>
             <ul class="content rank">
             {pc:content action="hits" catid="$catid" num="8" order="monthviews DESC" cache="3600"}
 				{loop $data $v}

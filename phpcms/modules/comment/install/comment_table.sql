@@ -1,8 +1,8 @@
 DROP TABLE IF EXISTS `phpcms_comment_table`;
 CREATE TABLE IF NOT EXISTS `phpcms_comment_table` (
-  `tableid` mediumint(8) NOT NULL auto_increment COMMENT 'è¡¨IDå·',
-  `total` int(10) unsigned default '0' COMMENT 'æ•°æ®æ€»é‡',
-  `creat_at` int(10) default '0' COMMENT 'åˆ›å»ºæ—¶é—´',
+  `tableid` mediumint(8) NOT NULL auto_increment COMMENT '±íIDºÅ',
+  `total` int(10) unsigned default '0' COMMENT 'Êı¾İ×ÜÁ¿',
+  `creat_at` int(10) default '0' COMMENT '´´½¨Ê±¼ä',
   PRIMARY KEY  (`tableid`)
 ) TYPE=MyISAM;
 INSERT INTO `phpcms_comment_table` (`tableid`, `total`, `creat_at`) VALUES (1, 0, 0);

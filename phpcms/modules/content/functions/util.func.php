@@ -1,11 +1,11 @@
 <?php
 /**
- * 鍒嗛〉鍑芥暟
+ * 分页函数
  * 
- * @param $num 淇℃伅鎬绘暟
- * @param $curr_page 褰撳墠鍒嗛〉
- * @param $pageurls 閾炬帴鍦板潃
- * @return 鍒嗛〉
+ * @param $num 信息总数
+ * @param $curr_page 当前分页
+ * @param $pageurls 链接地址
+ * @return 分页
  */
 function content_pages($num, $curr_page,$pageurls) {
 	$multipage = '';

@@ -10,8 +10,8 @@ class type_model extends model {
 	}
 	
 	/**
-	 * 璇存槑: 鏌ヨ瀵瑰簲妯″潡涓嬬殑鍒嗙被
-	 * @param $m  妯″潡鍚嶇О
+	 * 说明: 查询对应模块下的分类
+	 * @param $m  模块名称
 	 */
 	function get_types($siteid){
 		if(!ROUTE_M) return FALSE;

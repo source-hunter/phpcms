@@ -1,7 +1,7 @@
 <?php
 /**
  * 
- * æ›´æ–°ç¼“å­˜ç±»
+ * ¸üĞÂ»º´æÀà
  *
  */
 
@@ -16,9 +16,9 @@ class cache_api {
 	}
 	
 	/**
-	 * æ›´æ–°ç¼“å­˜
-	 * @param string $model æ–¹æ³•å
-	 * @param string $param å‚æ•°
+	 * ¸üĞÂ»º´æ
+	 * @param string $model ·½·¨Ãû
+	 * @param string $param ²ÎÊı
 	 */
 	public function cache($model = '', $param = '') {
 		if (file_exists(PC_PATH.'model'.DIRECTORY_SEPARATOR.$model.'_model.class.php')) {
@@ -35,7 +35,7 @@ class cache_api {
 	
 	
 	/**
-	 * æ›´æ–°ç«™ç‚¹ç¼“å­˜æ–¹æ³•
+	 * ¸üĞÂÕ¾µã»º´æ·½·¨
 	 */
 	public function cache_site() {
 		$site = pc_base::load_app_class('sites', 'admin');
@@ -43,7 +43,7 @@ class cache_api {
 	}
 	
 	/**
-	 * æ›´æ–°æ ç›®ç¼“å­˜æ–¹æ³•
+	 * ¸üĞÂÀ¸Ä¿»º´æ·½·¨
 	 */
 	public function category() {
 		$categorys = array();
@@ -88,7 +88,7 @@ class cache_api {
 	}
 	
 	/**
-	 * æ›´æ–°ä¸‹è½½æœåŠ¡å™¨ç¼“å­˜æ–¹æ³•
+	 * ¸üĞÂÏÂÔØ·şÎñÆ÷»º´æ·½·¨
 	 */
 	public function downservers () {
 		$infos = $this->db->select();
@@ -100,7 +100,7 @@ class cache_api {
 	}
 	
 	/**
-	 * æ›´æ–°æ•æ„Ÿè¯ç¼“å­˜æ–¹æ³•
+	 * ¸üĞÂÃô¸Ğ´Ê»º´æ·½·¨
 	 */
 	public function badword() {
 		$infos = $this->db->select('','badid,badword,replaceword,level','','badid ASC');
@@ -109,7 +109,7 @@ class cache_api {
 	}
 	
 	/**
-	 * æ›´æ–°ipç¦æ­¢ç¼“å­˜æ–¹æ³•
+	 * ¸üĞÂip½ûÖ¹»º´æ·½·¨
 	 */
 	public function ipbanned() {
 		$infos = $this->db->select('', '`ip`,`expires`', '', 'ipbannedid desc');
@@ -118,7 +118,7 @@ class cache_api {
 	}
 	
 	/**
-	 * æ›´æ–°å…³è”é“¾æ¥ç¼“å­˜æ–¹æ³•
+	 * ¸üĞÂ¹ØÁªÁ´½Ó»º´æ·½·¨
 	 */
 	public function keylink() {
 		$infos = $this->db->select('','word,url','','keylinkid ASC');
@@ -133,7 +133,7 @@ class cache_api {
 	}
 	
 	/**
-	 * æ›´æ–°è”åŠ¨èœå•ç¼“å­˜æ–¹æ³•
+	 * ¸üĞÂÁª¶¯²Ëµ¥»º´æ·½·¨
 	 */
 	public function linkage() {
 		$infos = $this->db->select(array('keyid'=>0));
@@ -150,8 +150,8 @@ class cache_api {
 	}
 	
 	/**
-	 * å­èœå•åˆ—è¡¨
-	 * @param intval $keyid èœå•id
+	 * ×Ó²Ëµ¥ÁĞ±í
+	 * @param intval $keyid ²Ëµ¥id
 	 */
 	public function submenulist($keyid=0) {
 		$keyid = intval($keyid);
@@ -165,7 +165,7 @@ class cache_api {
 	}
 	
 	/**
-	 * æ›´æ–°æ¨èä½ç¼“å­˜æ–¹æ³•
+	 * ¸üĞÂÍÆ¼öÎ»»º´æ·½·¨
 	 */
 	public function position () {
 		$infos = $this->db->select('','*',1000,'listorder DESC');
@@ -177,7 +177,7 @@ class cache_api {
 	}
 	
 	/**
-	 * æ›´æ–°æŠ•ç¥¨é…ç½®
+	 * ¸üĞÂÍ¶Æ±ÅäÖÃ
 	 */
 	public function vote_setting() {
 		$m_db = pc_base::load_model('module_model');
@@ -187,7 +187,7 @@ class cache_api {
 	}
 	
 	/**
-	 * æ›´æ–°å‹æƒ…é“¾æ¥é…ç½®
+	 * ¸üĞÂÓÑÇéÁ´½ÓÅäÖÃ
 	 */
 	public function link_setting() {
 		$m_db = pc_base::load_model('module_model');
@@ -197,7 +197,7 @@ class cache_api {
 	}
 	
 	/**
-	 * æ›´æ–°ç®¡ç†å‘˜è§’è‰²ç¼“å­˜æ–¹æ³•
+	 * ¸üĞÂ¹ÜÀíÔ±½ÇÉ«»º´æ·½·¨
 	 */
 	public function admin_role() {
 		$infos = $this->db->select(array('disabled'=>'0'), $data = '`roleid`,`rolename`', '', 'roleid ASC');
@@ -210,7 +210,7 @@ class cache_api {
 	}
 	
 	/**
-	 * æ›´æ–°ç®¡ç†å‘˜è§’è‰²ç¼“å­˜æ–¹æ³•
+	 * ¸üĞÂ¹ÜÀíÔ±½ÇÉ«»º´æ·½·¨
 	 */
 	public function cache_siteid($role) {
 		$priv_db = pc_base::load_model('admin_role_priv_model');
@@ -229,7 +229,7 @@ class cache_api {
 	}
 	
 	/**
-	 * æ›´æ–°urlè§„åˆ™ç¼“å­˜æ–¹æ³•
+	 * ¸üĞÂurl¹æÔò»º´æ·½·¨
 	 */
 	public function urlrule() {
 		$datas = $this->db->select('','*','','','','urlruleid');
@@ -242,7 +242,7 @@ class cache_api {
 	}
 	
 	/**
-	 * æ›´æ–°æ¨¡å—ç¼“å­˜æ–¹æ³•
+	 * ¸üĞÂÄ£¿é»º´æ·½·¨
 	 */
 	public function module() {
 		$modules = array();
@@ -252,13 +252,13 @@ class cache_api {
 	}
 	
 	/**
-	 * æ›´æ–°æ¨¡å‹ç¼“å­˜æ–¹æ³•
+	 * ¸üĞÂÄ£ĞÍ»º´æ·½·¨
 	 */
 	public function sitemodel() {
 		define('MODEL_PATH', PC_PATH.'modules'.DIRECTORY_SEPARATOR.'content'.DIRECTORY_SEPARATOR.'fields'.DIRECTORY_SEPARATOR);
 		define('CACHE_MODEL_PATH', PHPCMS_PATH.'caches'.DIRECTORY_SEPARATOR.'caches_model'.DIRECTORY_SEPARATOR.'caches_data'.DIRECTORY_SEPARATOR);
 		require MODEL_PATH.'fields.inc.php';
-		//æ›´æ–°å†…å®¹æ¨¡å‹ç±»ï¼šè¡¨å•ç”Ÿæˆã€å…¥åº“ã€æ›´æ–°ã€è¾“å‡º
+		//¸üĞÂÄÚÈİÄ£ĞÍÀà£º±íµ¥Éú³É¡¢Èë¿â¡¢¸üĞÂ¡¢Êä³ö
 		$classtypes = array('form','input','update','output');
 		foreach($classtypes as $classtype) {
 			$cache_data = file_get_contents(MODEL_PATH.'content_'.$classtype.'.class.php');
@@ -272,7 +272,7 @@ class cache_api {
 			file_put_contents(CACHE_MODEL_PATH.'content_'.$classtype.'.class.php',$cache_data);
 			chmod(CACHE_MODEL_PATH.'content_'.$classtype.'.class.php',0777);
 		}
-		//æ›´æ–°æ¨¡å‹æ•°æ®ç¼“å­˜
+		//¸üĞÂÄ£ĞÍÊı¾İ»º´æ
 		$model_array = array();
 		$datas = $this->db->select(array('type'=>0));
 		foreach ($datas as $r) {
@@ -284,7 +284,7 @@ class cache_api {
 	}
 	
 	/**
-	 * æ›´æ–°æ¨¡å‹å­—æ®µç¼“å­˜æ–¹æ³•
+	 * ¸üĞÂÄ£ĞÍ×Ö¶Î»º´æ·½·¨
 	 */
 	public function sitemodel_field($modelid) {
 		$field_array = array();
@@ -300,7 +300,7 @@ class cache_api {
 	}
 	
 	/**
-	 * æ›´æ–°ç±»åˆ«ç¼“å­˜æ–¹æ³•
+	 * ¸üĞÂÀà±ğ»º´æ·½·¨
 	 */
 	public function type($param = '') {
 		$datas = array();
@@ -317,7 +317,7 @@ class cache_api {
 	}
 	
 	/**
-	 * æ›´æ–°å·¥ä½œæµç¼“å­˜æ–¹æ³•
+	 * ¸üĞÂ¹¤×÷Á÷»º´æ·½·¨
 	 */
 	public function workflow() {
 		$datas = array();
@@ -330,7 +330,7 @@ class cache_api {
 	}
 	
 	/**
-	 * æ›´æ–°æ•°æ®æºç¼“å­˜æ–¹æ³•
+	 * ¸üĞÂÊı¾İÔ´»º´æ·½·¨
 	 */
 	public function dbsource() {
 		$db = pc_base::load_model('dbsource_model');
@@ -347,7 +347,7 @@ class cache_api {
 	}
 	
 	/**
-	 * æ›´æ–°ä¼šå‘˜ç»„ç¼“å­˜æ–¹æ³•
+	 * ¸üĞÂ»áÔ±×é»º´æ·½·¨
 	 */
 	public function member_group() {
 		$grouplist = $this->db->listinfo('', '', 1, 100, 'groupid');
@@ -356,7 +356,7 @@ class cache_api {
 	}
 	
 	/**
-	 * æ›´æ–°ä¼šå‘˜é…ç½®ç¼“å­˜æ–¹æ³•
+	 * ¸üĞÂ»áÔ±ÅäÖÃ»º´æ·½·¨
 	 */
 	public function member_setting() {
 		$this->db = pc_base::load_model('module_model');
@@ -367,11 +367,11 @@ class cache_api {
 	}
 	
 	/**
-	 * æ›´æ–°ä¼šå‘˜æ¨¡å‹ç¼“å­˜æ–¹æ³•
+	 * ¸üĞÂ»áÔ±Ä£ĞÍ»º´æ·½·¨
 	 */
 	public function membermodel() {
 		define('MEMBER_MODEL_PATH',PC_PATH.'modules'.DIRECTORY_SEPARATOR.'member'.DIRECTORY_SEPARATOR.'fields'.DIRECTORY_SEPARATOR);
-		//æ¨¡å‹ç¼“å­˜è·¯å¾„
+		//Ä£ĞÍ»º´æÂ·¾¶
 		define('MEMBER_CACHE_MODEL_PATH',PHPCMS_PATH.'caches'.DIRECTORY_SEPARATOR.'caches_model'.DIRECTORY_SEPARATOR.'caches_data'.DIRECTORY_SEPARATOR);
 		
 		$sitemodel_db = pc_base::load_model('sitemodel_model');
@@ -379,7 +379,7 @@ class cache_api {
 		setcache('member_model', $data, 'commons');
 		
 		require MEMBER_MODEL_PATH.'fields.inc.php';
-		//æ›´æ–°å†…å®¹æ¨¡å‹ç±»ï¼šè¡¨å•ç”Ÿæˆã€å…¥åº“ã€æ›´æ–°ã€è¾“å‡º
+		//¸üĞÂÄÚÈİÄ£ĞÍÀà£º±íµ¥Éú³É¡¢Èë¿â¡¢¸üĞÂ¡¢Êä³ö
 		$classtypes = array('form','input','update','output');
 		foreach($classtypes as $classtype) {
 			$cache_data = file_get_contents(MEMBER_MODEL_PATH.'member_'.$classtype.'.class.php');
@@ -398,7 +398,7 @@ class cache_api {
 	}
 	
 	/**
-	 * æ›´æ–°ä¼šå‘˜æ¨¡å‹å­—æ®µç¼“å­˜æ–¹æ³•
+	 * ¸üĞÂ»áÔ±Ä£ĞÍ×Ö¶Î»º´æ·½·¨
 	 */
 	public function member_model_field() {
 		$member_model = getcache('member_model', 'commons');
@@ -417,7 +417,7 @@ class cache_api {
 	}
 	
 	/**
-	 * æ›´æ–°æœç´¢é…ç½®ç¼“å­˜æ–¹æ³•
+	 * ¸üĞÂËÑË÷ÅäÖÃ»º´æ·½·¨
 	 */
 	public function search_setting() {	
 		$this->db = pc_base::load_model('module_model');
@@ -428,7 +428,7 @@ class cache_api {
 	}
 	
 	/**
-	 * æ›´æ–°æœç´¢ç±»å‹ç¼“å­˜æ–¹æ³•
+	 * ¸üĞÂËÑË÷ÀàĞÍ»º´æ·½·¨
 	 */
 	public function search_type() {
 		$sitelist = getcache('sitelist','commons');
@@ -451,14 +451,14 @@ class cache_api {
 				$search_model[$_value['typedir']]['name'] = $_value['name'];
 			}
 			setcache('type_module_'.$siteid,$datas,'search');
-			//æœç´¢headerå¤´ä¸­ä½¿ç”¨ç±»å‹ç¼“å­˜
+			//ËÑË÷headerÍ·ÖĞÊ¹ÓÃÀàĞÍ»º´æ
 			setcache('search_model_'.$siteid,$search_model,'search');
 		}
 		return true;
 	}
 	
 	/**
-	 * æ›´æ–°ä¸“é¢˜ç¼“å­˜æ–¹æ³•
+	 * ¸üĞÂ×¨Ìâ»º´æ·½·¨
 	 */
 	public function special() {
 		$specials = array();
@@ -471,7 +471,7 @@ class cache_api {
 	}
 	
 	/**
-	 * æ›´æ–°ç½‘ç«™é…ç½®æ–¹æ³•
+	 * ¸üĞÂÍøÕ¾ÅäÖÃ·½·¨
 	 */
 	public function setting() {
 		$this->db = pc_base::load_model('module_model');
@@ -482,7 +482,7 @@ class cache_api {
 	}
 	
 	/**
-	 * æ›´æ–°æ•°æ®æºæ¨¡å‹ç¼“å­˜æ–¹æ³•
+	 * ¸üĞÂÊı¾İÔ´Ä£ĞÍ»º´æ·½·¨
 	 */
 	public function database() {
 		$module = $M = array();
@@ -500,7 +500,7 @@ class cache_api {
 	}
 	
 	/**
-	 * æ ¹æ®æ•°æ®åº“è®°å½•æ›´æ–°ç¼“å­˜
+	 * ¸ù¾İÊı¾İ¿â¼ÇÂ¼¸üĞÂ»º´æ
 	 */
 	public function cache2database() {
 		$cache = pc_base::load_model('cache_model');
@@ -537,7 +537,7 @@ class cache_api {
 	}
 	
 	/**
-	 * æ›´æ–°åˆ é™¤ç¼“å­˜æ–‡ä»¶æ–¹æ³•
+	 * ¸üĞÂÉ¾³ı»º´æÎÄ¼ş·½·¨
 	 */
 	public function del_file() {
 		$path = PHPCMS_PATH.'caches'.DIRECTORY_SEPARATOR.'caches_template'.DIRECTORY_SEPARATOR;
@@ -563,7 +563,7 @@ class cache_api {
 	}
 
 	/**
-	 * æ›´æ–°æ¥æºç¼“å­˜æ–¹æ³•
+	 * ¸üĞÂÀ´Ô´»º´æ·½·¨
 	 */
 	public function copyfrom() {
 		$infos = $this->db->select('','*','','listorder DESC','','id');
@@ -571,7 +571,7 @@ class cache_api {
 		return true;
 	}
 	/**
-	 * åŒæ­¥è§†é¢‘æ¨¡å‹æ ç›®
+	 * Í¬²½ÊÓÆµÄ£ĞÍÀ¸Ä¿
 	 */
 	public function video_category_tb() {
 		if (module_exists('video')) {

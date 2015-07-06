@@ -1,14 +1,14 @@
 <?php
 class import_test {
 	/**
-	 * é€šç”¨æ•°æ®è½¬æ¢ç¨‹åº
+	 * Í¨ÓÃÊý¾Ý×ª»»³ÌÐò
 	 * 
 	 * @param $timestamp
 	 * @param $showtime
 	 */
 	 var $con;
 	 /*
-	 *	æµ‹è¯•æ•°æ®åº“è¿žæŽ¥
+	 *	²âÊÔÊý¾Ý¿âÁ¬½Ó
  	 */
 	public static function testdb($dbtype, $dbhost, $dbuser, $dbpw, $dbname) {
 			global $con;
@@ -20,7 +20,7 @@ class import_test {
 			$db_conf['import_array']['password']= $dbpw;
 			$db_conf['import_array']['database']= $dbname;
 			//$db_conf['import_array']['charset']= $import_info[dbcharset];
-			//è¿”å›žä¸€ä¸ªå½“å‰é…ç½®æ‰€éœ€è¦çš„æ•°æ®åº“è¿žæŽ¥  
+			//·µ»ØÒ»¸öµ±Ç°ÅäÖÃËùÐèÒªµÄÊý¾Ý¿âÁ¬½Ó  
 			pc_base::load_sys_class('db_factory');
 			$thisdb = db_factory::get_instance($db_conf)->get_database('import_array');
 			$link = $thisdb->connect();

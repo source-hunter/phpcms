@@ -1,9 +1,9 @@
 <?php 
 /**
-* è½¬åŒ– \ ä¸º /
+* ×ª»¯ \ Îª /
 * 
-* @param	string	$path	è·¯å¾„
-* @return	string	è·¯å¾„
+* @param	string	$path	Â·¾¶
+* @return	string	Â·¾¶
 */
 function dir_path($path) {
 	$path = str_replace('\\', '/', $path);
@@ -11,11 +11,11 @@ function dir_path($path) {
 	return $path;
 }
 /**
-* åˆ›å»ºç›®å½•
+* ´´½¨Ä¿Â¼
 * 
-* @param	string	$path	è·¯å¾„
-* @param	string	$mode	å±žæ€§
-* @return	string	å¦‚æžœå·²ç»å­˜åœ¨åˆ™è¿”å›žtrueï¼Œå¦åˆ™ä¸ºflase
+* @param	string	$path	Â·¾¶
+* @param	string	$mode	ÊôÐÔ
+* @return	string	Èç¹ûÒÑ¾­´æÔÚÔò·µ»Øtrue£¬·ñÔòÎªflase
 */
 function dir_create($path, $mode = 0777) {
 	if(is_dir($path)) return TRUE;
@@ -33,11 +33,11 @@ function dir_create($path, $mode = 0777) {
 	return is_dir($path);
 }
 /**
-* æ‹·è´ç›®å½•åŠä¸‹é¢æ‰€æœ‰æ–‡ä»¶
+* ¿½±´Ä¿Â¼¼°ÏÂÃæËùÓÐÎÄ¼þ
 * 
-* @param	string	$fromdir	åŽŸè·¯å¾„
-* @param	string	$todir		ç›®æ ‡è·¯å¾„
-* @return	string	å¦‚æžœç›®æ ‡è·¯å¾„ä¸å­˜åœ¨åˆ™è¿”å›žfalseï¼Œå¦åˆ™ä¸ºtrue
+* @param	string	$fromdir	Ô­Â·¾¶
+* @param	string	$todir		Ä¿±êÂ·¾¶
+* @return	string	Èç¹ûÄ¿±êÂ·¾¶²»´æÔÚÔò·µ»Øfalse£¬·ñÔòÎªtrue
 */
 function dir_copy($fromdir, $todir) {
 	$fromdir = dir_path($fromdir);
@@ -59,13 +59,13 @@ function dir_copy($fromdir, $todir) {
     return TRUE;
 }
 /**
-* è½¬æ¢ç›®å½•ä¸‹é¢çš„æ‰€æœ‰æ–‡ä»¶ç¼–ç æ ¼å¼
+* ×ª»»Ä¿Â¼ÏÂÃæµÄËùÓÐÎÄ¼þ±àÂë¸ñÊ½
 * 
-* @param	string	$in_charset		åŽŸå­—ç¬¦é›†
-* @param	string	$out_charset	ç›®æ ‡å­—ç¬¦é›†
-* @param	string	$dir			ç›®å½•åœ°å€
-* @param	string	$fileexts		è½¬æ¢çš„æ–‡ä»¶æ ¼å¼
-* @return	string	å¦‚æžœåŽŸå­—ç¬¦é›†å’Œç›®æ ‡å­—ç¬¦é›†ç›¸åŒåˆ™è¿”å›žfalseï¼Œå¦åˆ™ä¸ºtrue
+* @param	string	$in_charset		Ô­×Ö·û¼¯
+* @param	string	$out_charset	Ä¿±ê×Ö·û¼¯
+* @param	string	$dir			Ä¿Â¼µØÖ·
+* @param	string	$fileexts		×ª»»µÄÎÄ¼þ¸ñÊ½
+* @return	string	Èç¹ûÔ­×Ö·û¼¯ºÍÄ¿±ê×Ö·û¼¯ÏàÍ¬Ôò·µ»Øfalse£¬·ñÔòÎªtrue
 */
 function dir_iconv($in_charset, $out_charset, $dir, $fileexts = 'php|html|htm|shtml|shtm|js|txt|xml') {
 	if($in_charset == $out_charset) return false;
@@ -78,12 +78,12 @@ function dir_iconv($in_charset, $out_charset, $dir, $fileexts = 'php|html|htm|sh
 	return true;
 }
 /**
-* åˆ—å‡ºç›®å½•ä¸‹æ‰€æœ‰æ–‡ä»¶
+* ÁÐ³öÄ¿Â¼ÏÂËùÓÐÎÄ¼þ
 * 
-* @param	string	$path		è·¯å¾„
-* @param	string	$exts		æ‰©å±•å
-* @param	array	$list		å¢žåŠ çš„æ–‡ä»¶åˆ—è¡¨
-* @return	array	æ‰€æœ‰æ»¡è¶³æ¡ä»¶çš„æ–‡ä»¶
+* @param	string	$path		Â·¾¶
+* @param	string	$exts		À©Õ¹Ãû
+* @param	array	$list		Ôö¼ÓµÄÎÄ¼þÁÐ±í
+* @return	array	ËùÓÐÂú×ãÌõ¼þµÄÎÄ¼þ
 */
 function dir_list($path, $exts = '', $list= array()) {
 	$path = dir_path($path);
@@ -99,12 +99,12 @@ function dir_list($path, $exts = '', $list= array()) {
 	return $list;
 }
 /**
-* è®¾ç½®ç›®å½•ä¸‹é¢çš„æ‰€æœ‰æ–‡ä»¶çš„è®¿é—®å’Œä¿®æ”¹æ—¶é—´
+* ÉèÖÃÄ¿Â¼ÏÂÃæµÄËùÓÐÎÄ¼þµÄ·ÃÎÊºÍÐÞ¸ÄÊ±¼ä
 * 
-* @param	string	$path		è·¯å¾„
-* @param	int		$mtime		ä¿®æ”¹æ—¶é—´
-* @param	int		$atime		è®¿é—®æ—¶é—´
-* @return	array	ä¸æ˜¯ç›®å½•æ—¶è¿”å›žfalseï¼Œå¦åˆ™è¿”å›ž true
+* @param	string	$path		Â·¾¶
+* @param	int		$mtime		ÐÞ¸ÄÊ±¼ä
+* @param	int		$atime		·ÃÎÊÊ±¼ä
+* @return	array	²»ÊÇÄ¿Â¼Ê±·µ»Øfalse£¬·ñÔò·µ»Ø true
 */
 function dir_touch($path, $mtime = TIME, $atime = TIME) {
 	if (!is_dir($path)) return false;
@@ -117,12 +117,12 @@ function dir_touch($path, $mtime = TIME, $atime = TIME) {
 	return true;
 }
 /**
-* ç›®å½•åˆ—è¡¨
+* Ä¿Â¼ÁÐ±í
 * 
-* @param	string	$dir		è·¯å¾„
-* @param	int		$parentid	çˆ¶id
-* @param	array	$dirs		ä¼ å…¥çš„ç›®å½•
-* @return	array	è¿”å›žç›®å½•åˆ—è¡¨
+* @param	string	$dir		Â·¾¶
+* @param	int		$parentid	¸¸id
+* @param	array	$dirs		´«ÈëµÄÄ¿Â¼
+* @return	array	·µ»ØÄ¿Â¼ÁÐ±í
 */
 function dir_tree($dir, $parentid = 0, $dirs = array()) {
 	global $id;
@@ -139,10 +139,10 @@ function dir_tree($dir, $parentid = 0, $dirs = array()) {
 }
 
 /**
-* åˆ é™¤ç›®å½•åŠç›®å½•ä¸‹é¢çš„æ‰€æœ‰æ–‡ä»¶
+* É¾³ýÄ¿Â¼¼°Ä¿Â¼ÏÂÃæµÄËùÓÐÎÄ¼þ
 * 
-* @param	string	$dir		è·¯å¾„
-* @return	bool	å¦‚æžœæˆåŠŸåˆ™è¿”å›ž TRUEï¼Œå¤±è´¥åˆ™è¿”å›ž FALSE
+* @param	string	$dir		Â·¾¶
+* @return	bool	Èç¹û³É¹¦Ôò·µ»Ø TRUE£¬Ê§°ÜÔò·µ»Ø FALSE
 */
 function dir_delete($dir) {
 	$dir = dir_path($dir);

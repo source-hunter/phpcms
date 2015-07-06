@@ -67,10 +67,10 @@ if(is_array($infos)){
 	var form = d.document.getElementById('dosubmit');form.click();return false;}, function(){window.top.art.dialog({id:'edit'}).close()});
 }
 
-//é¢„è§ˆè§†é¢‘
+//Ô¤ÀÀÊÓÆµ
 function preview(thumb, name) {
 	window.top.art.dialog({id:'preview'}).close();
-	window.top.art.dialog({title:'é¢„è§ˆ '+name+' ',id:'preview',iframe:'?m=admin&c=position&a=preview&thumb='+thumb,width:'530',height:'400'}, '', function(){window.top.art.dialog({id:'preview'}).close()});
+	window.top.art.dialog({title:'Ô¤ÀÀ '+name+' ',id:'preview',iframe:'?m=admin&c=position&a=preview&thumb='+thumb,width:'530',height:'400'}, '', function(){window.top.art.dialog({id:'preview'}).close()});
 }
 //-->
 </script>

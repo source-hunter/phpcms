@@ -3,8 +3,8 @@ defined('IN_PHPCMS') or exit('Access Denied');
 defined('INSTALL') or exit('Access Denied');
 
 $module = 'tag';
-$modulename = '鏍囩鍚戝';
-$introduce = '鐙珛妯″潡';
+$modulename = '标签向导';
+$introduce = '独立模块';
 $author = 'phpcms Team';
 $authorsite = 'http://www.phpcms.cn';
 $authoremail = '';

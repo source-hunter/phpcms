@@ -1,39 +1,39 @@
 <?php
-$LANG['add_search_type'] = 'æ·»åŠ æœç´¢åˆ†ç±»';
+$LANG['add_search_type'] = 'Ìí¼ÓËÑË÷·ÖÀà';
 
-$LANG['select_model_name'] = 'æ‰€å±æ¨¡å‹';
-$LANG['select_module_name'] = 'æ‰€å±æ¨¡å—';
-$LANG['type_name'] = 'ç±»å‹åç§°';
-$LANG['description'] = 'æè¿°';
+$LANG['select_model_name'] = 'ËùÊôÄ£ĞÍ';
+$LANG['select_module_name'] = 'ËùÊôÄ£¿é';
+$LANG['type_name'] = 'ÀàĞÍÃû³Æ';
+$LANG['description'] = 'ÃèÊö';
 
-$LANG['re_index_note'] = '1ã€é‡å»ºç´¢å¼•å°†ä¼šæ¸…ç©ºåŸæœ‰çš„æ‰€æœ‰çš„ç´¢å¼•å†…å®¹ , æ¯è½®æ›´æ–°';
-$LANG['tiao'] = 'æ¡';
-$LANG['confirm_reindex'] = 'ç¡®è®¤é‡å»ºç´¢å¼•';
-$LANG['basic_setting'] = 'åŸºæœ¬é…ç½®';
-$LANG['sphinx_setting'] = 'sphinxå…¨æ–‡ç´¢å¼•é…ç½®';
-$LANG['enable_search'] = 'æ˜¯å¦å¯ç”¨å…¨ç«™æœç´¢';
-$LANG['relationenble'] = 'æ˜¯å¦å¯ç”¨ç›¸å…³æœç´¢';
-$LANG['relationenble_note'] = 'ï¼ˆæ­¤é¡¹åŠŸèƒ½ä¼šå¢å¤§æ•°æ®åº“å‹åŠ›ï¼‰';
-$LANG['suggestenable'] = 'æ˜¯å¦å¯ç”¨å»ºè®®æœç´¢';
-$LANG['suggestenable_note'] = 'ï¼ˆæç¤ºæ•°æ®æ¥æºgoogleï¼‰';
-$LANG['sphinxenable'] = 'æ˜¯å¦å¯ç”¨sphinxå…¨æ–‡ç´¢å¼•';
-$LANG['host'] = 'æœåŠ¡å™¨ä¸»æœºåœ°å€';
-$LANG['port'] = 'æœåŠ¡å™¨ç«¯å£å·';
-$LANG['testing'] = 'æµ‹è¯•ä¸­...';
-$LANG['testsuccess'] = 'é“¾æ¥æˆåŠŸ';
-$LANG['hostempty'] = 'ä¸»æœºåä¸ºç©º';
-$LANG['portempty'] = 'ç«¯å£ä¸ºç©º';
-$LANG['test'] = 'æµ‹è¯•';
-$LANG['sort'] = 'æ’åº';
-$LANG['catname'] = 'ç±»åˆ«åç§°';
-$LANG['modulename'] = 'æ‰€å±æ¨¡å—';
-$LANG['modlename'] = 'æ‰€å±æ¨¡å‹';
-$LANG['catdescription'] = 'ç±»åˆ«æè¿°';
-$LANG['opreration'] = 'ç®¡ç†æ“ä½œ';
-$LANG['modify'] = 'ä¿®æ”¹';
-$LANG['content_module'] = 'å†…å®¹æ¨¡å—';
-$LANG['edit_cat'] = 'ç¼–è¾‘åˆ†ç±»';
-$LANG['searh_notice'] = 'æ³¨æ„ï¼šå…¨æ–‡æ£€ç´¢æ¨¡å—éœ€è¦mysqlå¼€å¯å…¨æ–‡ç´¢å¼•åŠŸèƒ½ï¼Œ<br />å¼€å¯æ–¹æ³•ï¼šä¿®æ”¹mysqlé…ç½®æ–‡ä»¶ï¼šwindowæœåŠ¡å™¨ä¸ºmy.iniï¼ŒlinuxæœåŠ¡å™¨ä¸ºmy.cnfï¼Œåœ¨ [mysqld] åé¢åŠ å…¥ä¸€è¡Œâ€œft_min_word_len=1â€ï¼Œç„¶åé‡å¯Mysqlã€‚
+$LANG['re_index_note'] = '1¡¢ÖØ½¨Ë÷Òı½«»áÇå¿ÕÔ­ÓĞµÄËùÓĞµÄË÷ÒıÄÚÈİ , Ã¿ÂÖ¸üĞÂ';
+$LANG['tiao'] = 'Ìõ';
+$LANG['confirm_reindex'] = 'È·ÈÏÖØ½¨Ë÷Òı';
+$LANG['basic_setting'] = '»ù±¾ÅäÖÃ';
+$LANG['sphinx_setting'] = 'sphinxÈ«ÎÄË÷ÒıÅäÖÃ';
+$LANG['enable_search'] = 'ÊÇ·ñÆôÓÃÈ«Õ¾ËÑË÷';
+$LANG['relationenble'] = 'ÊÇ·ñÆôÓÃÏà¹ØËÑË÷';
+$LANG['relationenble_note'] = '£¨´ËÏî¹¦ÄÜ»áÔö´óÊı¾İ¿âÑ¹Á¦£©';
+$LANG['suggestenable'] = 'ÊÇ·ñÆôÓÃ½¨ÒéËÑË÷';
+$LANG['suggestenable_note'] = '£¨ÌáÊ¾Êı¾İÀ´Ô´google£©';
+$LANG['sphinxenable'] = 'ÊÇ·ñÆôÓÃsphinxÈ«ÎÄË÷Òı';
+$LANG['host'] = '·şÎñÆ÷Ö÷»úµØÖ·';
+$LANG['port'] = '·şÎñÆ÷¶Ë¿ÚºÅ';
+$LANG['testing'] = '²âÊÔÖĞ...';
+$LANG['testsuccess'] = 'Á´½Ó³É¹¦';
+$LANG['hostempty'] = 'Ö÷»úÃûÎª¿Õ';
+$LANG['portempty'] = '¶Ë¿ÚÎª¿Õ';
+$LANG['test'] = '²âÊÔ';
+$LANG['sort'] = 'ÅÅĞò';
+$LANG['catname'] = 'Àà±ğÃû³Æ';
+$LANG['modulename'] = 'ËùÊôÄ£¿é';
+$LANG['modlename'] = 'ËùÊôÄ£ĞÍ';
+$LANG['catdescription'] = 'Àà±ğÃèÊö';
+$LANG['opreration'] = '¹ÜÀí²Ù×÷';
+$LANG['modify'] = 'ĞŞ¸Ä';
+$LANG['content_module'] = 'ÄÚÈİÄ£¿é';
+$LANG['edit_cat'] = '±à¼­·ÖÀà';
+$LANG['searh_notice'] = '×¢Òâ£ºÈ«ÎÄ¼ìË÷Ä£¿éĞèÒªmysql¿ªÆôÈ«ÎÄË÷Òı¹¦ÄÜ£¬<br />¿ªÆô·½·¨£ºĞŞ¸ÄmysqlÅäÖÃÎÄ¼ş£ºwindow·şÎñÆ÷Îªmy.ini£¬linux·şÎñÆ÷Îªmy.cnf£¬ÔÚ [mysqld] ºóÃæ¼ÓÈëÒ»ĞĞ¡°ft_min_word_len=1¡±£¬È»ºóÖØÆôMysql¡£
 
 ';
 ?>

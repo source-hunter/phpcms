@@ -1,6 +1,6 @@
 <?php
 defined('IN_PHPCMS') or exit('No permission resources.');
-//æ¨¡åž‹ç¼“å­˜è·¯å¾„
+//Ä£ÐÍ»º´æÂ·¾¶
 define('CACHE_MODEL_PATH',PHPCMS_PATH.'caches'.DIRECTORY_SEPARATOR.'caches_model'.DIRECTORY_SEPARATOR.'caches_data'.DIRECTORY_SEPARATOR);
 
 pc_base::load_app_class('admin', 'admin', 0);
@@ -10,10 +10,10 @@ class node extends admin {
 
 	private $db,$siteid;
 	
-	//HTMLæ ‡ç­¾
+	//HTML±êÇ©
 	private static $html_tag = array("<p([^>]*)>(.*)</p>[|]"=>'<p>', "<a([^>]*)>(.*)</a>[|]"=>'<a>',"<script([^>]*)>(.*)</script>[|]"=>'<script>', "<iframe([^>]*)>(.*)</iframe>[|]"=>'<iframe>', "<table([^>]*)>(.*)</table>[|]"=>'<table>', "<span([^>]*)>(.*)</span>[|]"=>'<span>', "<b([^>]*)>(.*)</b>[|]"=>'<b>', "<img([^>]*)>[|]"=>'<img>', "<object([^>]*)>(.*)</object>[|]"=>'<object>', "<embed([^>]*)>(.*)</embed>[|]"=>'<embed>', "<param([^>]*)>(.*)</param>[|]"=>'<param>', '<div([^>]*)>[|]'=>'<div>', '</div>[|]'=>'</div>', '<!--([^>]*)-->[|]'=>'<!-- -->');
 	
-	//ç½‘å€ç±»åž‹
+	//ÍøÖ·ÀàÐÍ
 	private $url_list_type = array();
 	
 	function __construct() {
@@ -69,7 +69,7 @@ class node extends admin {
 		
 	}
 
-	//ä¿®æ”¹é‡‡é›†é…ç½®
+	//ÐÞ¸Ä²É¼¯ÅäÖÃ
 	public function edit() {
 		$nodeid = isset($_GET['nodeid']) ? intval($_GET['nodeid']) : showmessage(L('illegal_parameters'), HTTP_REFERER);
 		$data = $this->db->get_one(array('nodeid'=>$nodeid));
@@ -118,7 +118,7 @@ class node extends admin {
 		}
 	}
 	
-	//å¤åˆ¶é‡‡é›†
+	//¸´ÖÆ²É¼¯
 	public function copy() {
 		$nodeid = isset($_GET['nodeid']) ? intval($_GET['nodeid']) : showmessage(L('illegal_parameters'), HTTP_REFERER);
 		if ($data = $this->db->get_one(array('nodeid'=>$nodeid))) {
@@ -144,7 +144,7 @@ class node extends admin {
 		}
 	}
 	
-	//å¯¼å…¥é‡‡é›†ç‚¹
+	//µ¼Èë²É¼¯µã
 	public function node_import() {
 		if (isset($_POST['dosubmit'])) {
 			$filename = $_FILES['file']['tmp_name'];
@@ -174,7 +174,7 @@ class node extends admin {
 		}
 	}
 	
-	//å¯¼å‡ºé‡‡é›†é…ç½®
+	//µ¼³ö²É¼¯ÅäÖÃ
 	public function export() {
 		$nodeid = isset($_GET['nodeid']) ? intval($_GET['nodeid']) : showmessage(L('illegal_parameters'), HTTP_REFERER);
 		if ($data = $this->db->get_one(array('nodeid'=>$nodeid))) {
@@ -190,7 +190,7 @@ class node extends admin {
 		}
 	}
 	
-	//URLé…ç½®æ˜¾ç¤ºç»“æžœ
+	//URLÅäÖÃÏÔÊ¾½á¹û
 	public function public_url() {
 		$sourcetype = isset($_GET['sourcetype']) && intval($_GET['sourcetype']) ? intval($_GET['sourcetype']) : showmessage(L('illegal_parameters'));
 		$pagesize_start = isset($_GET['pagesize_start']) && intval($_GET['pagesize_start']) ? intval($_GET['pagesize_start']) : 1;
@@ -201,7 +201,7 @@ class node extends admin {
 		include $this->admin_tpl('node_public_url');
 	}
 	
-	//åˆ é™¤é‡‡é›†èŠ‚ç‚¹
+	//É¾³ý²É¼¯½Úµã
 	public function del() {
 		if (isset($_POST['dosubmit'])) {
 			$nodeid = isset($_POST['nodeid']) ? $_POST['nodeid'] : showmessage(L('illegal_parameters'), HTTP_REFERER);
@@ -222,7 +222,7 @@ class node extends admin {
 		}
 	}
 	
-	//æµ‹è¯•æ–‡ç« URLé‡‡é›†
+	//²âÊÔÎÄÕÂURL²É¼¯
 	public function public_test() {
 		$nodeid = isset($_GET['nodeid']) ? intval($_GET['nodeid']) : showmessage(L('illegal_parameters'), HTTP_REFERER);
 		pc_base::load_app_class('collection', '', 0);
@@ -238,7 +238,7 @@ class node extends admin {
 		}
 	}
 	
-	//æµ‹è¯•æ–‡ç« å†…å®¹é‡‡é›†
+	//²âÊÔÎÄÕÂÄÚÈÝ²É¼¯
 	public function public_test_content() {
 		$url = isset($_GET['url']) ? urldecode($_GET['url']) : exit('0');
 		$nodeid = isset($_GET['nodeid']) ? intval($_GET['nodeid']) : showmessage(L('illegal_parameters'), HTTP_REFERER);
@@ -246,7 +246,7 @@ class node extends admin {
 		if ($data = $this->db->get_one(array('nodeid'=>$nodeid))) {
 			$contents = collection::get_content($url, $data);
 			foreach ($contents as $_key=>$_content) {
-				if(trim($_content)=='') $contents[$_key] = 'â—†â—†â—†â—†â—†â—†â—†â—†â—†â—†'.$_key.' emptyâ—†â—†â—†â—†â—†â—†â—†â—†â—†â—†';
+				if(trim($_content)=='') $contents[$_key] = '¡ô¡ô¡ô¡ô¡ô¡ô¡ô¡ô¡ô¡ô'.$_key.' empty¡ô¡ô¡ô¡ô¡ô¡ô¡ô¡ô¡ô¡ô';
 			}
 			print_r($contents);
 		} else {
@@ -254,7 +254,7 @@ class node extends admin {
 		}
 	}
 	
-	//é‡‡é›†èŠ‚ç‚¹åéªŒè¯
+	//²É¼¯½ÚµãÃûÑéÖ¤
 	public function public_name() {
 		$name = isset($_GET['name']) && trim($_GET['name']) ? (pc_base::load_config('system', 'charset') == 'gbk' ? iconv('utf-8', 'gbk', trim($_GET['name'])) : trim($_GET['name'])) : exit('0');
 		$nodeid = isset($_GET['nodeid']) && intval($_GET['nodeid']) ? intval($_GET['nodeid']) : '';
@@ -272,7 +272,7 @@ class node extends admin {
 		}
 	}
 	
-	//é‡‡é›†ç½‘å€
+	//²É¼¯ÍøÖ·
 	public function col_url_list() {
 		$nodeid = isset($_GET['nodeid']) ? intval($_GET['nodeid']) : showmessage(L('illegal_parameters'), HTTP_REFERER);
 		if ($data = $this->db->get_one(array('nodeid'=>$nodeid))) {
@@ -312,12 +312,12 @@ class node extends admin {
 		}
 	}
 	
-	//é‡‡é›†æ–‡ç« 
+	//²É¼¯ÎÄÕÂ
 	public function col_content() {
 		$nodeid = isset($_GET['nodeid']) ? intval($_GET['nodeid']) : showmessage(L('illegal_parameters'), HTTP_REFERER);
 		if ($data = $this->db->get_one(array('nodeid'=>$nodeid))) {
 			$content_db = pc_base::load_model('collection_content_model');
-			//æ›´æ–°é™„ä»¶çŠ¶æ€
+			//¸üÐÂ¸½¼þ×´Ì¬
 			$attach_status = false;
 			if(pc_base::load_config('system','attachment_stat')) {
 				$this->attachment_db = pc_base::load_model('attachment_model');
@@ -334,7 +334,7 @@ class node extends admin {
 				foreach ($list as $v) {
 					$GLOBALS['downloadfiles'] = array();
 					$html = collection::get_content($v['url'], $data);
-					//æ›´æ–°é™„ä»¶çŠ¶æ€
+					//¸üÐÂ¸½¼þ×´Ì¬
 					if($attach_status) {
 						$this->attachment_db->api_update($GLOBALS['downloadfiles'],'cj-'.$v['id'],1);
 					}
@@ -354,7 +354,7 @@ class node extends admin {
 		}
 	}
 	
-	//æ–‡ç« åˆ—è¡¨
+	//ÎÄÕÂÁÐ±í
 	public function publist() {
 		$nodeid = isset($_GET['nodeid']) ? intval($_GET['nodeid']) : showmessage(L('illegal_parameters'), HTTP_REFERER);
 		$node = $this->db->get_one(array('nodeid'=>$nodeid), 'name');
@@ -371,7 +371,7 @@ class node extends admin {
 		include $this->admin_tpl('publist');
 	}
 	
-	//å¯¼å…¥æ–‡ç« 
+	//µ¼ÈëÎÄÕÂ
 	public function import() {
 		$nodeid = isset($_GET['nodeid']) ? intval($_GET['nodeid']) : showmessage(L('illegal_parameters'), HTTP_REFERER);
 		$id = isset($_GET['id']) ? $_GET['id'] : '';
@@ -387,7 +387,7 @@ class node extends admin {
 		include $this->admin_tpl('import_program');
 	}
 	
-	//åˆ é™¤æ–‡ç« 
+	//É¾³ýÎÄÕÂ
 	public function content_del() {
 		$id = isset($_GET['id']) ? $_GET['id'] : '';
 		$history = isset($_GET['history']) ? $_GET['history'] : '';
@@ -405,7 +405,7 @@ class node extends admin {
 				$history_db->delete("md5 in ('$md5')");
 			}
 			$collection_content_db->delete("id in ('$ids')");
-			//åŒæ—¶åˆ é™¤å…³è”é™„ä»¶
+			//Í¬Ê±É¾³ý¹ØÁª¸½¼þ
 			if(!empty($del_array)) {
 				$attachment = pc_base::load_model('attachment_model');
 				foreach ($del_array as $id) {
@@ -416,7 +416,7 @@ class node extends admin {
 		}
 	}
 	
-	//æ·»åŠ å¯¼å…¥æ–¹æ¡ˆ
+	//Ìí¼Óµ¼Èë·½°¸
 	public function import_program_add() {
 		$nodeid = isset($_GET['nodeid']) ? intval($_GET['nodeid']) : showmessage(L('illegal_parameters'), HTTP_REFERER);
 		$ids = isset($_GET['ids']) ? $_GET['ids'] : '';
@@ -425,7 +425,7 @@ class node extends admin {
 		
 		include dirname(__FILE__).DIRECTORY_SEPARATOR.'spider_funs'.DIRECTORY_SEPARATOR.'config.php';
 		
-		//è¯»å–æ ç›®ç¼“å­˜
+		//¶ÁÈ¡À¸Ä¿»º´æ
 		$catlist = getcache('category_content_'.$this->siteid, 'commons');
 		$cat = $catlist[$catid];
 		$cat['setting'] = string2array($cat['setting']);
@@ -463,7 +463,7 @@ class node extends admin {
 		}
 		
 		
-		//è¯»å–æ•°æ®æ¨¡åž‹ç¼“å­˜
+		//¶ÁÈ¡Êý¾ÝÄ£ÐÍ»º´æ
 		$model = getcache('model_field_'.$cat['modelid'], 'model');
 		if (empty($model)) showmessage(L('model_does_not_exist_please_update_the_cache_model'));
 		$node_data = $this->db->get_one(array('nodeid'=>$nodeid), "customize_config");
@@ -487,7 +487,7 @@ class node extends admin {
 		}
 	}
 	
-	//å¯¼å…¥æ–‡ç« åˆ°æ¨¡åž‹
+	//µ¼ÈëÎÄÕÂµ½Ä£ÐÍ
 	public function import_content() {
 		$nodeid = isset($_GET['nodeid']) ? intval($_GET['nodeid']) : showmessage(L('illegal_parameters'), HTTP_REFERER);
 		$programid = isset($_GET['programid']) ? intval($_GET['programid']) : showmessage(L('illegal_parameters'), HTTP_REFERER);
@@ -499,7 +499,7 @@ class node extends admin {
 		$program_db = pc_base::load_model('collection_program_model');
 		$collection_content_db = pc_base::load_model('collection_content_model');
 		$content_db = pc_base::load_model('content_model');
-		//æ›´æ–°é™„ä»¶çŠ¶æ€
+		//¸üÐÂ¸½¼þ×´Ì¬
 		$attach_status = false;
 		if(pc_base::load_config('system','attachment_stat')) {
 			$attachment_db = pc_base::load_model('attachment_model');
@@ -535,7 +535,7 @@ class node extends admin {
 		$content_db->set_model($program['modelid']);
 		$coll_contentid = array();
 		
-		//åŠ è½½æ‰€æœ‰çš„å¤„ç†å‡½æ•°
+		//¼ÓÔØËùÓÐµÄ´¦Àíº¯Êý
 		$funcs_file_list = glob(dirname(__FILE__).DIRECTORY_SEPARATOR.'spider_funs'.DIRECTORY_SEPARATOR.'*.php');
 		foreach ($funcs_file_list as $v) {
 			include $v;
@@ -557,7 +557,7 @@ class node extends admin {
 			if ($contentid) {
 				$coll_contentid[] = $v['id'];
 				$i++;
-				//æ›´æ–°é™„ä»¶çŠ¶æ€,å°†é‡‡é›†å…³è”é‡ç½®åˆ°å†…å®¹å…³è”
+				//¸üÐÂ¸½¼þ×´Ì¬,½«²É¼¯¹ØÁªÖØÖÃµ½ÄÚÈÝ¹ØÁª
 				if($attach_status) {
 					$datas = $att_index_db->select(array('keyid'=>'cj-'.$v['id']),'*',100,'','','aid');
 					if(!empty($datas)) {

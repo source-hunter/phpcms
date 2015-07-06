@@ -1,6 +1,6 @@
 <?php
 /**
- *  position_api.class.php æ¨èè‡³æ ç›®æ¥å£ç±»
+ *  position_api.class.php ÍÆ¼öÖÁÀ¸Ä¿½Ó¿ÚÀà
  *
  * @copyright			(C) 2005-2010 PHPCMS
  * @license				http://www.phpcms.cn/license/
@@ -10,16 +10,16 @@
 defined('IN_PHPCMS') or exit('No permission resources.');
 
 class push_api {
- 	private $db, $pos_data; //æ•°æ®è°ƒç”¨å±æ€§
+ 	private $db, $pos_data; //Êı¾İµ÷ÓÃÊôĞÔ
  	
 	public function __construct() {
-		$this->db = pc_base::load_model('content_model');  //åŠ è½½æ•°æ®æ¨¡å‹
+		$this->db = pc_base::load_model('content_model');  //¼ÓÔØÊı¾İÄ£ĞÍ
 	}
 	
 	/**
-	 * æ¥å£å¤„ç†æ–¹æ³•
-	 * @param array $param å±æ€§ è¯·æ±‚æ—¶ï¼Œä¸ºæ¨¡å‹ã€æ ç›®æ•°ç»„ã€‚æäº¤æ·»åŠ ä¸ºäºŒç»´ä¿¡æ¯æ•°æ® ã€‚ä¾‹ï¼šarray(1=>array('title'=>'å¤šå‘å‘é€æ–¹æ³•', ....))
-	 * @param array $arr å‚æ•° è¡¨å•æ•°æ®ï¼Œåªåœ¨è¯·æ±‚æ·»åŠ æ—¶ä¼ é€’ã€‚ ä¾‹ï¼šarray('modelid'=>1, 'catid'=>12); 
+	 * ½Ó¿Ú´¦Àí·½·¨
+	 * @param array $param ÊôĞÔ ÇëÇóÊ±£¬ÎªÄ£ĞÍ¡¢À¸Ä¿Êı×é¡£Ìá½»Ìí¼ÓÎª¶şÎ¬ĞÅÏ¢Êı¾İ ¡£Àı£ºarray(1=>array('title'=>'¶à·¢·¢ËÍ·½·¨', ....))
+	 * @param array $arr ²ÎÊı ±íµ¥Êı¾İ£¬Ö»ÔÚÇëÇóÌí¼ÓÊ±´«µİ¡£ Àı£ºarray('modelid'=>1, 'catid'=>12); 
 	 */
 	public function category_list($param = array(), $arr = array()) {
 		if ($arr['dosubmit']) {
@@ -76,7 +76,7 @@ class push_api {
 			$siteid = get_siteid();
 			$this->categorys = getcache('category_content_'.$siteid,'commons');
 			$tree = pc_base::load_sys_class('tree');
-			$tree->icon = array('&nbsp;&nbsp;&nbsp;â”‚ ','&nbsp;&nbsp;&nbsp;â”œâ”€ ','&nbsp;&nbsp;&nbsp;â””â”€ ');
+			$tree->icon = array('&nbsp;&nbsp;&nbsp;©¦ ','&nbsp;&nbsp;&nbsp;©À©¤ ','&nbsp;&nbsp;&nbsp;©¸©¤ ');
 			$tree->nbsp = '&nbsp;&nbsp;&nbsp;';
 			$categorys = array();
 			$this->catids_string = array();

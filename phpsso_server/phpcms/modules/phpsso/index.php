@@ -11,12 +11,12 @@ class index extends phpsso {
 	public function __construct() {
 		parent::__construct();
 		$this->config = pc_base::load_config('system');
-		/*åˆ¤æ–­åº”ç”¨å­—ç¬¦é›†å’Œphpssoå­—ç¬¦é›†æ˜¯å¦ç›¸åŒï¼Œå¦‚æžœä¸ç›¸åŒï¼Œè½¬æ¢ç”¨æˆ·åä¸ºphpssoæ‰€ç”¨å­—ç¬¦é›†*/
+		/*ÅÐ¶ÏÓ¦ÓÃ×Ö·û¼¯ºÍphpsso×Ö·û¼¯ÊÇ·ñÏàÍ¬£¬Èç¹û²»ÏàÍ¬£¬×ª»»ÓÃ»§ÃûÎªphpssoËùÓÃ×Ö·û¼¯*/
 		$this->username = isset($this->data['username']) ? $this->data['username'] : '';
 
 		if ($this->username && CHARSET != $this->applist[$this->appid]['charset']) {
-			if($this->applist[$this->appid]['charset'] == 'utf-8') {	//åˆ¤æ–­åº”ç”¨å­—ç¬¦é›†æ˜¯å¦ä¸ºutf-8ç¼–ç 
-				//åº”ç”¨å­—ç¬¦é›†å¦‚æžœæ˜¯utf-8ï¼Œå¹¶ä¸”ç”¨æˆ·åæ˜¯utf-8ç¼–ç ï¼Œè½¬æ¢ç”¨æˆ·åä¸ºphpssoå­—ç¬¦é›†ï¼Œå¦‚æžœä¸ºè‹±æ–‡ï¼Œis_utf8è¿”å›žfalseï¼Œä¸è¿›è¡Œè½¬æ¢
+			if($this->applist[$this->appid]['charset'] == 'utf-8') {	//ÅÐ¶ÏÓ¦ÓÃ×Ö·û¼¯ÊÇ·ñÎªutf-8±àÂë
+				//Ó¦ÓÃ×Ö·û¼¯Èç¹ûÊÇutf-8£¬²¢ÇÒÓÃ»§ÃûÊÇutf-8±àÂë£¬×ª»»ÓÃ»§ÃûÎªphpsso×Ö·û¼¯£¬Èç¹ûÎªÓ¢ÎÄ£¬is_utf8·µ»Øfalse£¬²»½øÐÐ×ª»»
 				if(is_utf8($this->username)) {
 					$this->username = iconv($this->applist[$this->appid]['charset'], CHARSET, $this->username);
 				}
@@ -29,11 +29,11 @@ class index extends phpsso {
 	}
 	
 	/**
-	 * ç”¨æˆ·æ³¨å†Œ
-	 * @param string $username 	ç”¨æˆ·å
-	 * @param string $password 	å¯†ç 
+	 * ÓÃ»§×¢²á
+	 * @param string $username 	ÓÃ»§Ãû
+	 * @param string $password 	ÃÜÂë
 	 * @param string $email		email
-	 * @return int {-1:ç”¨æˆ·åå·²ç»å­˜åœ¨ ;-2:emailå·²å­˜åœ¨;-4:ç”¨æˆ·åç¦æ­¢æ³¨å†Œ;-5:é‚®ç®±ç¦æ­¢æ³¨å†Œ;-6:ucæ³¨å†Œå¤±è´¥;int(uid):æˆåŠŸ}
+	 * @return int {-1:ÓÃ»§ÃûÒÑ¾­´æÔÚ ;-2:emailÒÑ´æÔÚ;-4:ÓÃ»§Ãû½ûÖ¹×¢²á;-5:ÓÊÏä½ûÖ¹×¢²á;-6:uc×¢²áÊ§°Ü;int(uid):³É¹¦}
 	 */
 	public function register() {
 		$this->random = isset($this->data['random']) && !empty($this->data['random']) ? $this->data['random'] : create_randomstr(6);
@@ -58,7 +58,7 @@ class index extends phpsso {
 			exit('-5');
 		}
 		
-		//UCenterä¼šå‘˜æ³¨å†Œ
+		//UCenter»áÔ±×¢²á
 		$ucuserid = 0;
 		if ($this->config['ucuse']) {
 			pc_base::load_config('uc_config');
@@ -106,22 +106,22 @@ class index extends phpsso {
 					'ucuserid'=>$ucuserid
 					);
 		$uid = $this->db->insert($data, 1);
-		/*æ’å…¥æ¶ˆæ¯é˜Ÿåˆ—*/
+		/*²åÈëÏûÏ¢¶ÓÁÐ*/
 		$noticedata = $data;
 		$noticedata['uid'] = $uid;
 		messagequeue::add('member_add', $noticedata);
-		exit("$uid");	//exit($uid) ä¸å¯ä»¥If status is an integer, that value will also be used as the exit status. 
+		exit("$uid");	//exit($uid) ²»¿ÉÒÔIf status is an integer, that value will also be used as the exit status. 
 	}
 	
 	/**
-	 * ç¼–è¾‘ç”¨æˆ·ï¼Œå¯ä»¥ä¸ä¼ å…¥æ—§å¯†ç å’Œæ–°å¯†ç 
-	 * å¦‚æžœä¼ å…¥æ–°å¯†ç ï¼Œåˆ™ä¿®æ”¹å¯†ç ä¸ºæ–°å¯†ç 
-	 * @param string $username		ç”¨æˆ·å
-	 * @param string $password		æ—§å¯†ç 
-	 * @param string $newpassword	æ–°å¯†ç 
+	 * ±à¼­ÓÃ»§£¬¿ÉÒÔ²»´«Èë¾ÉÃÜÂëºÍÐÂÃÜÂë
+	 * Èç¹û´«ÈëÐÂÃÜÂë£¬ÔòÐÞ¸ÄÃÜÂëÎªÐÂÃÜÂë
+	 * @param string $username		ÓÃ»§Ãû
+	 * @param string $password		¾ÉÃÜÂë
+	 * @param string $newpassword	ÐÂÃÜÂë
 	 * @param string $email			email
-	 * @param string $random		å¯†ç éšæœºæ•°
-	 * @return int {-1:ç”¨æˆ·ä¸å­˜åœ¨;-2:æ—§å¯†ç é”™è¯¯;-3:emailå·²ç»å­˜åœ¨ ;1:æˆåŠŸ;0:æœªä½œä¿®æ”¹}
+	 * @param string $random		ÃÜÂëËæ»úÊý
+	 * @return int {-1:ÓÃ»§²»´æÔÚ;-2:¾ÉÃÜÂë´íÎó;-3:emailÒÑ¾­´æÔÚ ;1:³É¹¦;0:Î´×÷ÐÞ¸Ä}
 	 */
 	public function edit() {
 		$this->email = isset($this->data['email']) ? $this->data['email'] : '';
@@ -164,13 +164,13 @@ class index extends phpsso {
 
 		if (!empty($data)) {
 			
-			//ucenteréƒ¨ä»½
+			//ucenter²¿·Ý
 			if ($this->config['ucuse']) {
 				pc_base::load_config('uc_config');
 				require_once PHPCMS_PATH.'api/uc_client/client.php';
 				$r = uc_user_edit($userinfo['username'], '', (isset($this->data['newpassword']) && !empty($this->data['newpassword']) ? $this->data['newpassword'] : ''), $data['email'],1);
 				if ($r != 1) {
-				 //{-1:ç”¨æˆ·ä¸å­˜åœ¨;-2:æ—§å¯†ç é”™è¯¯;-3:emailå·²ç»å­˜åœ¨ ;1:æˆåŠŸ;0:æœªä½œä¿®æ”¹}
+				 //{-1:ÓÃ»§²»´æÔÚ;-2:¾ÉÃÜÂë´íÎó;-3:emailÒÑ¾­´æÔÚ ;1:³É¹¦;0:Î´×÷ÐÞ¸Ä}
 					switch ($r) {
 						case '-1':
 							exit('-2');
@@ -188,7 +188,7 @@ class index extends phpsso {
 			}
 			if (empty($data['email'])) unset($data['email']);
 		
-			/*æ’å…¥æ¶ˆæ¯é˜Ÿåˆ—*/
+			/*²åÈëÏûÏ¢¶ÓÁÐ*/
 			$noticedata = $data;
 			$noticedata['uid'] = $userinfo['uid'];
 			messagequeue::add('member_edit', $noticedata);
@@ -204,9 +204,9 @@ class index extends phpsso {
 	}
 
 	/**
-	 * åˆ é™¤ç”¨æˆ·
-	 * @param string {$uid:ç”¨æˆ·id;$username:ç”¨æˆ·å;$email:email}
-	 * @return array {-1:åˆ é™¤å¤±è´¥;>0:åˆ é™¤æˆåŠŸ}
+	 * É¾³ýÓÃ»§
+	 * @param string {$uid:ÓÃ»§id;$username:ÓÃ»§Ãû;$email:email}
+	 * @return array {-1:É¾³ýÊ§°Ü;>0:É¾³ý³É¹¦}
 	 */
 	public function delete() {
 		$this->uid = isset($this->data['uid']) ? $this->data['uid'] : '';
@@ -215,7 +215,7 @@ class index extends phpsso {
 		if($this->uid > 0 || is_array($this->uid)) {
 			$where = to_sqls($this->uid, '', 'uid');
 			
-			//ucenteréƒ¨ä»½
+			//ucenter²¿·Ý
 			if ($this->config['ucuse']) {
 				pc_base::load_config('uc_config');
 				require_once PHPCMS_PATH.'api/uc_client/client.php';
@@ -235,7 +235,7 @@ class index extends phpsso {
 				
 			}
 			
-			/*æ’å…¥æ¶ˆæ¯é˜Ÿåˆ—*/
+			/*²åÈëÏûÏ¢¶ÓÁÐ*/
 			$noticedata['uids'] = $this->uid;
 			messagequeue::add('member_delete', $noticedata);
 			
@@ -253,9 +253,9 @@ class index extends phpsso {
 	}
 
 	/**
-	 * èŽ·å–ç”¨æˆ·ä¿¡æ¯
-	 * @param string {$uid:ç”¨æˆ·id;$username:ç”¨æˆ·å;$email:email}
-	 * @return array {-1:ç”¨æˆ·ä¸å­˜åœ¨;array(userinfo):ç”¨æˆ·ä¿¡æ¯}
+	 * »ñÈ¡ÓÃ»§ÐÅÏ¢
+	 * @param string {$uid:ÓÃ»§id;$username:ÓÃ»§Ãû;$email:email}
+	 * @return array {-1:ÓÃ»§²»´æÔÚ;array(userinfo):ÓÃ»§ÐÅÏ¢}
 	 */
 	public function getuserinfo($is_return = 0) {
 		$this->uid = isset($this->data['uid']) ? $this->data['uid'] : '';
@@ -281,10 +281,10 @@ class index extends phpsso {
 	}
 
 	/**
-	 * ç”¨æˆ·ç™»å½•
-	 * @param string $username	ç”¨æˆ·å
-	 * @param string $password	å¯†ç 
-	 * @return array {-2;å¯†ç é”™è¯¯;-1:ç”¨æˆ·ä¸å­˜åœ¨;array(userinfo):ç”¨æˆ·ä¿¡æ¯}
+	 * ÓÃ»§µÇÂ¼
+	 * @param string $username	ÓÃ»§Ãû
+	 * @param string $password	ÃÜÂë
+	 * @return array {-2;ÃÜÂë´íÎó;-1:ÓÃ»§²»´æÔÚ;array(userinfo):ÓÃ»§ÐÅÏ¢}
 	 */
 	public function login() {
 		$this->password = isset($this->data['password']) ? $this->data['password'] : '';
@@ -302,33 +302,33 @@ class index extends phpsso {
 		}
 		
 		if($userinfo) {
-			//ucenterç™»é™†éƒ¨ä»½
+			//ucenterµÇÂ½²¿·Ý
 			if ($this->config['ucuse']) {
-				if($uid == -1) {	//ucä¸å­˜åœ¨è¯¥ç”¨æˆ·ï¼Œè°ƒç”¨æ³¨å†ŒæŽ¥å£æ³¨å†Œç”¨æˆ·
+				if($uid == -1) {	//uc²»´æÔÚ¸ÃÓÃ»§£¬µ÷ÓÃ×¢²á½Ó¿Ú×¢²áÓÃ»§
 					$uid = uc_user_register($this->username , $this->password, $userinfo['email'], $userinfo['random']);
 					if($uid >0) {
 						$this->db->update(array('ucuserid'=>$uid), array('username'=>$this->username));
 					}
 				}
 			}
-		} else {	//ç”¨æˆ·åœ¨phpssoä¸­ä¸å­˜åœ¨
-			//ucenterç™»é™†éƒ¨ä»½
+		} else {	//ÓÃ»§ÔÚphpssoÖÐ²»´æÔÚ
+			//ucenterµÇÂ½²¿·Ý
 			if ($this->config['ucuse']) {
-				if ($uid < 0) {	//ç”¨æˆ·ä¸å­˜åœ¨æˆ–è€…å¯†ç é”™è¯¯
+				if ($uid < 0) {	//ÓÃ»§²»´æÔÚ»òÕßÃÜÂë´íÎó
 					exit('-1');
 				}  else {
-					//å½“å‰ä½¿ç”¨åªåœ¨ucä¸­å­˜åœ¨ï¼Œåœ¨PHPSSOä¸­æ˜¯ä¸å­˜åœ¨çš„ã€‚éœ€è¦è¿›è¡Œæ³¨å†Œã€‚
+					//µ±Ç°Ê¹ÓÃÖ»ÔÚucÖÐ´æÔÚ£¬ÔÚPHPSSOÖÐÊÇ²»´æÔÚµÄ¡£ÐèÒª½øÐÐ×¢²á¡£
 					pc_base::load_sys_class('uc_model', 'model', 0);
 					$db_config = get_uc_database();
 					$uc_db = new uc_model($db_config);
 
-					//èŽ·å–UCä¸­ç”¨æˆ·çš„ä¿¡æ¯
+					//»ñÈ¡UCÖÐÓÃ»§µÄÐÅÏ¢
 					$r = $uc_db->get_one(array('uid'=>$uid));
 					$datas = $data = array('username'=>$r['username'], 'password'=>$r['password'], 'random'=>$r['salt'], 'email'=>$r['email'], 'regip'=>$r['regip'], 'regdate'=>$r['regdate'],  'lastdate'=>$r['lastlogindate'], 'appname'=>'ucenter', 'type'=>'app');
 					$datas['ucuserid'] = $uid;
 					$datas['lastip'] = $r['lastloginip'];
 					if ($data['uid'] = $this->db->insert($datas, true)) {
-						//å‘æ‰€æœ‰çš„åº”ç”¨ä¸­å‘å¸ƒæ–°ç”¨æˆ·æ³¨å†Œé€šçŸ¥
+						//ÏòËùÓÐµÄÓ¦ÓÃÖÐ·¢²¼ÐÂÓÃ»§×¢²áÍ¨Öª
 						messagequeue::add('member_add', $data);
 					}
 					$userinfo = $data;
@@ -338,18 +338,18 @@ class index extends phpsso {
 			}	
 		}
 			
-		//å¦‚æžœå¼€å¯phpcms_2008_sp4å…¼å®¹æ¨¡å¼ï¼Œæ ¹æ®sp4è§„åˆ™éªŒè¯å¯†ç ï¼Œå¦‚æžœä¸æˆåŠŸå†æ ¹æ®phpssoè§„åˆ™éªŒè¯å¯†ç 
+		//Èç¹û¿ªÆôphpcms_2008_sp4¼æÈÝÄ£Ê½£¬¸ù¾Ýsp4¹æÔòÑéÖ¤ÃÜÂë£¬Èç¹û²»³É¹¦ÔÙ¸ù¾Ýphpsso¹æÔòÑéÖ¤ÃÜÂë
 		$setting_sp4 = getcache('settings_sp4', 'admin');
 		if($setting_sp4['sp4use']) {
 			if(!empty($userinfo) && $userinfo['password'] == md5($setting_sp4['sp4_password_key'].$this->password)) {
-				//ç™»å½•æˆåŠŸæ›´æ–°ç”¨æˆ·æœ€è¿‘ç™»å½•æ—¶é—´å’Œip
+				//µÇÂ¼³É¹¦¸üÐÂÓÃ»§×î½üµÇÂ¼Ê±¼äºÍip
 				$this->db->update(array('lastdate'=>SYS_TIME, 'lastip'=>ip()), array('uid'=>$userinfo['uid']));
 				exit(serialize($userinfo));
 			}
 		}
 		
 		if(!empty($userinfo) && $userinfo['password'] == create_password($this->password, $userinfo['random'])) {
-			//ç™»å½•æˆåŠŸæ›´æ–°ç”¨æˆ·æœ€è¿‘ç™»å½•æ—¶é—´å’Œip
+			//µÇÂ¼³É¹¦¸üÐÂÓÃ»§×î½üµÇÂ¼Ê±¼äºÍip
 			$this->db->update(array('lastdate'=>SYS_TIME, 'lastip'=>ip()), array('uid'=>$userinfo['uid']));
 			exit(serialize($userinfo));
 		} else {
@@ -359,18 +359,18 @@ class index extends phpsso {
 	}
 	
 	/**
-	 * åŒæ­¥ç™»é™†
-	 * @param string $uid	ç”¨æˆ·id
-	 * @return string javascriptç”¨æˆ·åŒæ­¥ç™»é™†js
+	 * Í¬²½µÇÂ½
+	 * @param string $uid	ÓÃ»§id
+	 * @return string javascriptÓÃ»§Í¬²½µÇÂ½js
 	 */
 	public function synlogin() {
-		//åˆ¤æ–­æœ¬åº”ç”¨æ˜¯å¦å¼€å¯åŒæ­¥ç™»é™†
+		//ÅÐ¶Ï±¾Ó¦ÓÃÊÇ·ñ¿ªÆôÍ¬²½µÇÂ½
 		if($this->applist[$this->appid]['synlogin']) {
 			$this->uid = isset($this->data['uid']) ? $this->data['uid'] : '';
 			$this->password = isset($this->data['password']) ? $this->data['password'] : '';
 		
 			$res = '';
-			//ucenterç™»é™†éƒ¨ä»½
+			//ucenterµÇÂ½²¿·Ý
 			if ($this->config['ucuse']) {
 				pc_base::load_config('uc_config');
 				require_once PHPCMS_PATH.'api/uc_client/client.php';
@@ -392,13 +392,13 @@ class index extends phpsso {
 	}
 
 	/**
-	 * åŒæ­¥é€€å‡º
-	 * @return string javascriptç”¨æˆ·åŒæ­¥é€€å‡ºjs
+	 * Í¬²½ÍË³ö
+	 * @return string javascriptÓÃ»§Í¬²½ÍË³öjs
 	 */
 	public function synlogout() {
 		if($this->applist[$this->appid]['synlogin']) {
 			$res = '';
-			//ucenterç™»é™†éƒ¨ä»½
+			//ucenterµÇÂ½²¿·Ý
 			if ($this->config['ucuse']) {
 				pc_base::load_config('uc_config');
 				require_once PHPCMS_PATH.'api/uc_client/client.php';
@@ -418,7 +418,7 @@ class index extends phpsso {
 	}
 	
 	/**
-	 * èŽ·å–åº”ç”¨åˆ—è¡¨
+	 * »ñÈ¡Ó¦ÓÃÁÐ±í
 	 */
 	public function getapplist() {
 		$applist = getcache('applist', 'admin');
@@ -429,7 +429,7 @@ class index extends phpsso {
 	}
 	
 	/**
-	 * èŽ·å–ç§¯åˆ†å…‘æ¢è§„åˆ™
+	 * »ñÈ¡»ý·Ö¶Ò»»¹æÔò
 	 */
 	public function getcredit($return='') {
 		$creditcache = getcache('creditlist', 'admin');
@@ -446,13 +446,13 @@ class index extends phpsso {
 	}
 
 	/**
-	 * å…‘æ¢ç§¯åˆ†
+	 * ¶Ò»»»ý·Ö
 	 * @param int $uid			phpssouid
-	 * @param int $from			æœ¬ç³»ç»Ÿç§¯åˆ†ç±»åž‹id
-	 * @param int $toappid 		ç›®æ ‡ç³»ç»Ÿåº”ç”¨appid
-	 * @param int $to			ç›®æ ‡ç³»ç»Ÿç§¯åˆ†ç±»åž‹id
-	 * @param int $credit		æœ¬ç³»ç»Ÿæ‰£é™¤ç§¯åˆ†æ•°
-	 * @return bool 			{1:æˆåŠŸ;0:å¤±è´¥}
+	 * @param int $from			±¾ÏµÍ³»ý·ÖÀàÐÍid
+	 * @param int $toappid 		Ä¿±êÏµÍ³Ó¦ÓÃappid
+	 * @param int $to			Ä¿±êÏµÍ³»ý·ÖÀàÐÍid
+	 * @param int $credit		±¾ÏµÍ³¿Û³ý»ý·ÖÊý
+	 * @return bool 			{1:³É¹¦;0:Ê§°Ü}
 	 */
 	public function changecredit() {
 		$this->uid = isset($this->data['uid']) ? $this->data['uid'] : exit('0');
@@ -462,10 +462,10 @@ class index extends phpsso {
 		$this->credit = isset($this->data['credit']) ? $this->data['credit'] : exit('0');
 		$this->appname = $this->applist[$this->appid]['name'];
 		$outcredit = $this->getcredit(1);
-		//ç›®æ ‡ç³»ç»Ÿç§¯åˆ†å¢žåŠ æ•°
+		//Ä¿±êÏµÍ³»ý·ÖÔö¼ÓÊý
 		$this->credit = floor($this->credit * $outcredit[$this->from.'_'.$this->to]['torate'] / $outcredit[$this->from.'_'.$this->to]['fromrate']);
 			
-		/*æ’å…¥æ¶ˆæ¯é˜Ÿåˆ—*/
+		/*²åÈëÏûÏ¢¶ÓÁÐ*/
 		$noticedata['appname'] = $this->appname;
 		$noticedata['uid'] = $this->uid;
 		$noticedata['toappid'] = $this->toappid;
@@ -476,9 +476,9 @@ class index extends phpsso {
 	}
 	
 	/**
-	 * æ£€æŸ¥ç”¨æˆ·å
-	 * @param string $username	ç”¨æˆ·å
-	 * @return int {-4ï¼šç”¨æˆ·åç¦æ­¢æ³¨å†Œ;-1:ç”¨æˆ·åå·²ç»å­˜åœ¨ ;1:æˆåŠŸ}
+	 * ¼ì²éÓÃ»§Ãû
+	 * @param string $username	ÓÃ»§Ãû
+	 * @return int {-4£ºÓÃ»§Ãû½ûÖ¹×¢²á;-1:ÓÃ»§ÃûÒÑ¾­´æÔÚ ;1:³É¹¦}
 	 */
 	public function checkname($is_return=0) {
 		if(empty($this->username)) {
@@ -488,7 +488,7 @@ class index extends phpsso {
 				exit('-1');
 			}
 		}
-		//éžæ³•å…³é”®è¯åˆ¤æ–­
+		//·Ç·¨¹Ø¼ü´ÊÅÐ¶Ï
 		$denyusername = $this->settings['denyusername'];
 		if(is_array($denyusername)) {
 			$denyusername = implode("|", $denyusername);
@@ -502,7 +502,7 @@ class index extends phpsso {
 			}
 		}
 		
-		//UCenteréƒ¨åˆ†
+		//UCenter²¿·Ö
 		if ($this->config['ucuse']) {
 			pc_base::load_config('uc_config');
 			require_once PHPCMS_PATH.'api/uc_client/client.php';
@@ -523,9 +523,9 @@ class index extends phpsso {
 	}
 	
 	/**
-	 * æ£€æŸ¥email
+	 * ¼ì²éemail
 	 * @param string $email	email
-	 * @return int {-1:emailå·²ç»å­˜åœ¨ ;-5:é‚®ç®±ç¦æ­¢æ³¨å†Œ;1:æˆåŠŸ}
+	 * @return int {-1:emailÒÑ¾­´æÔÚ ;-5:ÓÊÏä½ûÖ¹×¢²á;1:³É¹¦}
 	 */
 	public function checkemail($is_return=0) {
 		$this->email = isset($this->email) ? $this->email : isset($this->data['email']) ? $this->data['email'] : '';
@@ -536,7 +536,7 @@ class index extends phpsso {
 				exit('-1');
 			}
 		}
-		//éžæ³•å…³é”®è¯åˆ¤æ–­
+		//·Ç·¨¹Ø¼ü´ÊÅÐ¶Ï
 		$denyemail = $this->settings['denyemail'];
 		if(is_array($denyemail)) {
 			$denyemail = implode("|", $denyemail);
@@ -550,7 +550,7 @@ class index extends phpsso {
 			}
 		}
 		
-		//UCenteréƒ¨åˆ†
+		//UCenter²¿·Ö
 		if ($this->config['ucuse']) {
 			pc_base::load_config('uc_config');
 			require_once PHPCMS_PATH.'api/uc_client/client.php';
@@ -569,12 +569,12 @@ class index extends phpsso {
 	}
 	
 	/**
-	 *  ä¸Šä¼ å¤´åƒå¤„ç†
-	 *  ä¼ å…¥å¤´åƒåŽ‹ç¼©åŒ…ï¼Œè§£åŽ‹åˆ°æŒ‡å®šæ–‡ä»¶å¤¹åŽåˆ é™¤éžå›¾ç‰‡æ–‡ä»¶
+	 *  ÉÏ´«Í·Ïñ´¦Àí
+	 *  ´«ÈëÍ·ÏñÑ¹Ëõ°ü£¬½âÑ¹µ½Ö¸¶¨ÎÄ¼þ¼ÐºóÉ¾³ý·ÇÍ¼Æ¬ÎÄ¼þ
 	 */
 	public function uploadavatar() {
 		
-		//æ ¹æ®ç”¨æˆ·idåˆ›å»ºæ–‡ä»¶å¤¹
+		//¸ù¾ÝÓÃ»§id´´½¨ÎÄ¼þ¼Ð
 		if(isset($this->data['uid']) && isset($this->data['avatardata'])) {
 			$this->uid = intval($this->data['uid']);
 			$this->avatardata = $this->data['avatardata'];
@@ -585,13 +585,13 @@ class index extends phpsso {
 		$dir1 = ceil($this->uid / 10000);
 		$dir2 = ceil($this->uid % 10000 / 1000);
 		
-		//åˆ›å»ºå›¾ç‰‡å­˜å‚¨æ–‡ä»¶å¤¹
+		//´´½¨Í¼Æ¬´æ´¢ÎÄ¼þ¼Ð
 		$avatarfile = pc_base::load_config('system', 'upload_path').'avatar/';
 		$dir = $avatarfile.$dir1.'/'.$dir2.'/'.$this->uid.'/';
 		if(!file_exists($dir)) {
 			mkdir($dir, 0777, true);
 		}
-		//å­˜å‚¨flashpostå›¾ç‰‡
+		//´æ´¢flashpostÍ¼Æ¬
 		$filename = $dir.'180x180.jpg';
 
 		$fp = fopen($filename, 'w');
@@ -631,11 +631,11 @@ class index extends phpsso {
 	}
 
 	/**
-	 *  åˆ é™¤ç”¨æˆ·å¤´åƒ
-	 *  @return {0:å¤±è´¥;1:æˆåŠŸ}
+	 *  É¾³ýÓÃ»§Í·Ïñ
+	 *  @return {0:Ê§°Ü;1:³É¹¦}
 	 */
 	public function deleteavatar() {
-		//æ ¹æ®ç”¨æˆ·idåˆ›å»ºæ–‡ä»¶å¤¹
+		//¸ù¾ÝÓÃ»§id´´½¨ÎÄ¼þ¼Ð
 		if(isset($this->data['uid'])) {
 			$this->uid = $this->data['uid'];
 		} else {
@@ -645,7 +645,7 @@ class index extends phpsso {
 		$dir1 = ceil($this->uid / 10000);
 		$dir2 = ceil($this->uid % 10000 / 1000);
 		
-		//å›¾ç‰‡å­˜å‚¨æ–‡ä»¶å¤¹
+		//Í¼Æ¬´æ´¢ÎÄ¼þ¼Ð
 		$avatarfile = pc_base::load_config('system', 'upload_path').'avatar/';
 		$dir = $avatarfile.$dir1.'/'.$dir2.'/'.$this->uid.'/';
 		$this->db->update(array('avatar'=>0), array('uid'=>$this->uid));

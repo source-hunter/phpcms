@@ -7,7 +7,7 @@
      {php $type_arr = $data;}
   	 {/pc}
 	<div class="col-left"> 
-    <div class="crumbs"><a href="{siteurl($siteid)}">缃戠珯棣栭〉</a><span> &gt; </span><a href="{APP_PATH}index.php?m={ROUTE_M}&siteid={$siteid}">鍙嬫儏閾炬帴</a><span> &gt; </span>{$type_arr[name]}</div>
+    <div class="crumbs"><a href="{siteurl($siteid)}">网站首页</a><span> &gt; </span><a href="{APP_PATH}index.php?m={ROUTE_M}&siteid={$siteid}">友情链接</a><span> &gt; </span>{$type_arr[name]}</div>
     <div class="box boxsbg cboxs">
      
  	 	<h5>{$type_arr[name]} </h5>
@@ -31,11 +31,11 @@
     </div>
     <!--right_bar-->
     <div class="col-auto">
-    	<!--骞垮憡228x90-->
+    	<!--广告228x90-->
         <div class="box">
-            <h5 class="title-2">鍙嬫儏閾炬帴鍒嗙被</h5>
+            <h5 class="title-2">友情链接分类</h5>
             <div class="tag_a">
-            <a href="{APP_PATH}index.php?m=link&c=index&a=list_type&type_id=0&siteid={$siteid}" title="榛樿鍒嗙被">榛樿鍒嗙被</a>
+            <a href="{APP_PATH}index.php?m=link&c=index&a=list_type&type_id=0&siteid={$siteid}" title="默认分类">默认分类</a>
             {pc:link action="type_lists" listorder="desc" siteid="$siteid"}
             {loop $data $type_v}
             <a href="{APP_PATH}index.php?m=link&c=index&a=list_type&type_id={$type_v[typeid]}&siteid={$siteid}" title="{$type_v[name]}">{$type_v[name]}</a>

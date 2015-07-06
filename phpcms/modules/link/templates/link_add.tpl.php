@@ -19,9 +19,9 @@ include $this->admin_tpl('header','admin');
 
 
 	<tr>
-		<th width="20%"><?php echo L('typeid')?>ï¼š</th>
+		<th width="20%"><?php echo L('typeid')?>£º</th>
 		<td><select name="link[typeid]" id="">
-		<option value="0">é»˜è®¤åˆ†ç±»</option>
+		<option value="0">Ä¬ÈÏ·ÖÀà</option>
 		<?php
 		  $i=0;
 		  foreach($types as $typeid=>$type){
@@ -33,7 +33,7 @@ include $this->admin_tpl('header','admin');
 	</tr>
 	
 	<tr>
-		<th width="100"><?php echo L('link_type')?>ï¼š</th>
+		<th width="100"><?php echo L('link_type')?>£º</th>
 		<td>
 		<input name="link[linktype]" type="radio" value="1" checked="checked" style="border:0" onclick="$('#logolink').show()" class="radio_style">
 	<?php echo L('logo_link')?>&nbsp;&nbsp;&nbsp;&nbsp;
@@ -43,44 +43,44 @@ include $this->admin_tpl('header','admin');
 	</tr>
 	
 	<tr>
-		<th width="100"><?php echo L('link_name')?>ï¼š</th>
+		<th width="100"><?php echo L('link_name')?>£º</th>
 		<td><input type="text" name="link[name]" id="link_name"
 			size="30" class="input-text"></td>
 	</tr>
 	
 	<tr>
-		<th width="100"><?php echo L('url')?>ï¼š</th>
+		<th width="100"><?php echo L('url')?>£º</th>
 		<td><input type="text" name="link[url]" id="link_url"
 			size="30" class="input-text"></td>
 	</tr>
 	
 	<tr id="logolink">
-		<th width="100"><?php echo L('logo')?>ï¼š</th>
+		<th width="100"><?php echo L('logo')?>£º</th>
 		<td><?php echo form::images('link[logo]', 'logo', '', 'link')?></td>
 	</tr>
 	
 	<tr>
-		<th width="100"><?php echo L('username')?>ï¼š</th>
+		<th width="100"><?php echo L('username')?>£º</th>
 		<td><input type="text" name="link[username]" id="link_username"
 			size="30" class="input-text"></td>
 	</tr>
 
  
 	<tr>
-		<th><?php echo L('web_description')?>ï¼š</th>
+		<th><?php echo L('web_description')?>£º</th>
 		<td><textarea name="link[introduce]" id="introduce" cols="50"
 			rows="6"></textarea></td>
 	</tr>
 
  
 	<tr>
-		<th><?php echo L('elite')?>ï¼š</th>
+		<th><?php echo L('elite')?>£º</th>
 		<td><input name="link[elite]" type="radio" value="1" >&nbsp;<?php echo L('yes')?>&nbsp;&nbsp;<input
 			name="link[elite]" type="radio" value="0" checked>&nbsp;<?php echo L('no')?></td>
 	</tr>
 	 
 	<tr>
-		<th><?php echo L('passed')?>ï¼š</th>
+		<th><?php echo L('passed')?>£º</th>
 		<td><input name="link[passed]" type="radio" value="1" checked>&nbsp;<?php echo L('yes')?>&nbsp;&nbsp;<input
 			name="link[passed]" type="radio" value="0">&nbsp;<?php echo L('no')?></td>
 	</tr>

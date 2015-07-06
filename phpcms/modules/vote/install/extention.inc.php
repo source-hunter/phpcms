@@ -11,5 +11,5 @@ $menu_db->insert(array('name'=>'statistics_vote', 'parentid'=>$parentid, 'm'=>'v
 $menu_db->insert(array('name'=>'statistics_userlist', 'parentid'=>$parentid, 'm'=>'vote', 'c'=>'vote', 'a'=>'statistics_userlist', 'data'=>'', 'listorder'=>0, 'display'=>'0'));
 $menu_db->insert(array('name'=>'create_js', 'parentid'=>$parentid, 'm'=>'vote', 'c'=>'vote', 'a'=>'create_js', 'data'=>'', 'listorder'=>0, 'display'=>'1'));
 
-$language = array('vote'=>'鎶曠エ', 'add_vote'=>'娣诲姞鎶曠エ', 'edit_vote'=>'缂栬緫鎶曠エ','delete_vote'=>'鍒犻櫎鎶曠エ', 'vote_setting'=>'鎶曠エ閰嶇疆', 'statistics_vote'=>'鏌ョ湅缁熻', 'statistics_userlist'=>'浼氬憳缁熻','create_js'=>'鏇存柊JS');
+$language = array('vote'=>'投票', 'add_vote'=>'添加投票', 'edit_vote'=>'编辑投票','delete_vote'=>'删除投票', 'vote_setting'=>'投票配置', 'statistics_vote'=>'查看统计', 'statistics_userlist'=>'会员统计','create_js'=>'更新JS');
 ?>

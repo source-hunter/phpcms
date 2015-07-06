@@ -4,7 +4,7 @@ include $this->admin_tpl('header', 'admin');
 ?>
 <div class="pad-lr-10">
 
- <div class="comment_button"><a href="?m=comment&c=comment_admin&a=lists&show_center_id=1&commentid=<?php echo $commentid?>&hot=0"<?php if (empty($hot)) {?> class="on"<?php }?>>æœ€æ–°</a> <a href="?m=comment&c=comment_admin&a=lists&show_center_id=1&commentid=<?php echo $commentid?>&hot=1"<?php if ($hot==1) {?> class="on"<?php }?>>æœ€çƒ­</a></div> 	
+ <div class="comment_button"><a href="?m=comment&c=comment_admin&a=lists&show_center_id=1&commentid=<?php echo $commentid?>&hot=0"<?php if (empty($hot)) {?> class="on"<?php }?>>×îÐÂ</a> <a href="?m=comment&c=comment_admin&a=lists&show_center_id=1&commentid=<?php echo $commentid?>&hot=1"<?php if ($hot==1) {?> class="on"<?php }?>>×îÈÈ</a></div> 	
  <div class="btn"><label for="check_box"><?php echo L('select_all')?>/<?php echo L('cancel')?></label></div>
  
  <form action="?" method="get">
@@ -19,7 +19,7 @@ include $this->admin_tpl('header', 'admin');
 ?>
 <div  id="tbody_<?php echo $v['id']?>">
 <h5 class="title fn" ><span class="rt"><input  class="button"  type="button" value="<?php echo L('delete')?>" onclick="check(<?php echo $v['id']?>, -1, '<?php echo $v['commentid']?>')" />
-</span><input type="checkbox" name="id[]" value="<?php echo $v['id']?>"><?php echo direction($v['direction'])?> <?php echo $v['username']?> (<?php echo $v['ip']?>) <?php echo L('chez')?> <?php echo format::date($v['creat_at'], 1)?> <?php echo L('release')?> <?php echo L('support')?>ï¼š<?php echo $v['support']?></h5>
+</span><input type="checkbox" name="id[]" value="<?php echo $v['id']?>"><?php echo direction($v['direction'])?> <?php echo $v['username']?> (<?php echo $v['ip']?>) <?php echo L('chez')?> <?php echo format::date($v['creat_at'], 1)?> <?php echo L('release')?> <?php echo L('support')?>£º<?php echo $v['support']?></h5>
     <div class="content">
     	<pre><?php echo $v['content']?></pre>
     </div>

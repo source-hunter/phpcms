@@ -2,7 +2,7 @@
 <link href="{CSS_PATH}table_form.css" rel="stylesheet" type="text/css" />
 <link href="{CSS_PATH}dialog.css" rel="stylesheet" type="text/css" />
 <div class="box">
-    <h5>è¡¨å•å‘å¯¼</h5>
+    <h5>±íµ¥Ïòµ¼</h5>
     <div class="content">
 				<form method="post" action="{APP_PATH}index.php?m=formguide&c=index&a=show&formid={$formid}"{if $no_allowed} target="member_login"{/if} name="myform" id="myform">
 <table class="table_form" width="100%" cellspacing="0">
@@ -23,7 +23,7 @@
 {/loop}
 <tr>
 <td></td>
-<td><div class="submit ib"><input type="submit"{if $no_allowed} disabled=""{/if} name="dosubmit" id="dosubmit" value=" æäº¤ "></div> {if $no_allowed}æ‚¨è¿˜æ²¡æœ‰<a href="{APP_PATH}index.php?m=member&c=index&alogin&forward={urlencode(HTTP_REFERER)}" style="color:red">ç™»å½•</a>æˆ–<a href="" style="color:red">æ³¨å†Œ</a>ç½‘ç«™ï¼Œè¯·ç™»å½•åŽæäº¤è¡¨å•{/if}</td>
+<td><div class="submit ib"><input type="submit"{if $no_allowed} disabled=""{/if} name="dosubmit" id="dosubmit" value=" Ìá½» "></div> {if $no_allowed}Äú»¹Ã»ÓÐ<a href="{APP_PATH}index.php?m=member&c=index&alogin&forward={urlencode(HTTP_REFERER)}" style="color:red">µÇÂ¼</a>»ò<a href="" style="color:red">×¢²á</a>ÍøÕ¾£¬ÇëµÇÂ¼ºóÌá½»±íµ¥{/if}</td>
 </tr>
 	</tbody>
 </table>

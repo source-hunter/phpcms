@@ -1,12 +1,12 @@
 <?php 
 
 /**
- * è·å–è§†é¢‘æ¨¡å‹çš„æ ç›®
+ * »ñÈ¡ÊÓÆµÄ£ĞÍµÄÀ¸Ä¿
  **/
 function video_categorys() {
 	$siteid = isset($_GET['siteid']) ? intval($_GET['siteid']) : 1;
-	$sitemodel_field = pc_base::load_model('sitemodel_field_model'); //åŠ è½½æ¨¡å‹å­—æ®µæ•°æ®åº“ç±»
-	$result = $sitemodel_field->select(array('formtype'=>'video', 'siteid'=>$siteid), 'modelid'); //æœç´¢ç«™ç‚¹ä¸‹çš„è§†é¢‘æ¨¡å‹
+	$sitemodel_field = pc_base::load_model('sitemodel_field_model'); //¼ÓÔØÄ£ĞÍ×Ö¶ÎÊı¾İ¿âÀà
+	$result = $sitemodel_field->select(array('formtype'=>'video', 'siteid'=>$siteid), 'modelid'); //ËÑË÷Õ¾µãÏÂµÄÊÓÆµÄ£ĞÍ
 	if (is_array($result)) {
 		$models = '';
 		foreach ($result as $r) {
@@ -14,15 +14,15 @@ function video_categorys() {
 		}
 	}
 	$models = substr(trim($models), 0, -1);
-	$cat_db = pc_base::load_model('category_model'); //åŠ è½½æ ç›®æ•°æ®åº“ç±»
+	$cat_db = pc_base::load_model('category_model'); //¼ÓÔØÀ¸Ä¿Êı¾İ¿âÀà
 	$where = '`modelid` IN ('.$models.') AND `type`=0 AND `siteid`=\''.$siteid.'\'';
 	$result = $cat_db->select($where, '`catid`, `catname`, `parentid`, `siteid`, `child`', '', '`listorder` ASC, `catid` ASC', '', 'catid');
 	return $result;
 }
 
 /**
- * è·å–æ¨¡å‹ä¸‹çš„è§†é¢‘å­—æ®µåç§°
- * @param int $catid æ ç›®id
+ * »ñÈ¡Ä£ĞÍÏÂµÄÊÓÆµ×Ö¶ÎÃû³Æ
+ * @param int $catid À¸Ä¿id
  */
 function get_video_field($catid = 0) {
 	static $categorys;

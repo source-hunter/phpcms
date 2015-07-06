@@ -1,6 +1,6 @@
 <?php
 defined('IN_PHPCMS') or exit('No permission resources.');
-//æ¨¡å‹ç¼“å­˜è·¯å¾„
+//Ä£ĞÍ»º´æÂ·¾¶
 define('CACHE_MODEL_PATH',CACHE_PATH.'caches_model'.DIRECTORY_SEPARATOR.'caches_data'.DIRECTORY_SEPARATOR);
 pc_base::load_app_func('util','content');
 class index {
@@ -11,7 +11,7 @@ class index {
 		$this->_username = param::get_cookie('_username');
 		$this->_groupid = param::get_cookie('_groupid');
 	}
-	//é¦–é¡µ
+	//Ê×Ò³
 	public function init() {
 		if(isset($_GET['siteid'])) {
 			$siteid = intval($_GET['siteid']);
@@ -30,7 +30,7 @@ class index {
 		$CATEGORYS = getcache('category_content_'.$siteid,'commons');
 		include template('content','index',$default_style);
 	}
-	//å†…å®¹é¡µ
+	//ÄÚÈİÒ³
 	public function show() {
 		$catid = intval($_GET['catid']);
 		$id = intval($_GET['id']);
@@ -62,7 +62,7 @@ class index {
 		$r2 = $this->db->get_one(array('id'=>$id));
 		$rs = $r2 ? array_merge($r,$r2) : $r;
 
-		//å†æ¬¡é‡æ–°èµ‹å€¼ï¼Œä»¥æ•°æ®åº“ä¸ºå‡†
+		//ÔÙ´ÎÖØĞÂ¸³Öµ£¬ÒÔÊı¾İ¿âÎª×¼
 		$catid = $CATEGORYS[$r['catid']]['catid'];
 		$modelid = $CATEGORYS[$catid]['modelid'];
 		
@@ -71,7 +71,7 @@ class index {
 		$data = $content_output->get($rs);
 		extract($data);
 		
-		//æ£€æŸ¥æ–‡ç« ä¼šå‘˜ç»„æƒé™
+		//¼ì²éÎÄÕÂ»áÔ±×éÈ¨ÏŞ
 		if($groupids_view && is_array($groupids_view)) {
 			$_groupid = param::get_cookie('_groupid');
 			$_groupid = intval($_groupid);
@@ -81,7 +81,7 @@ class index {
 			}
 			if(!in_array($_groupid,$groupids_view)) showmessage(L('no_priv'));
 		} else {
-			//æ ¹æ®æ ç›®è®¿é—®æƒé™åˆ¤æ–­æƒé™
+			//¸ù¾İÀ¸Ä¿·ÃÎÊÈ¨ÏŞÅĞ¶ÏÈ¨ÏŞ
 			$_priv_data = $this->_category_priv($catid);
 			if($_priv_data=='-1') {
 				$forward = urlencode(get_url());
@@ -95,7 +95,7 @@ class index {
 		} else {
 			$allow_comment = 0;
 		}
-		//é˜…è¯»æ”¶è´¹ ç±»å‹
+		//ÔÄ¶ÁÊÕ·Ñ ÀàĞÍ
 		$paytype = $rs['paytype'];
 		$readpoint = $rs['readpoint'];
 		$allow_visitor = 1;
@@ -105,7 +105,7 @@ class index {
 				$paytype = $this->category_setting['paytype'];
 			}
 			
-			//æ£€æŸ¥æ˜¯å¦æ”¯ä»˜è¿‡
+			//¼ì²éÊÇ·ñÖ§¸¶¹ı
 			$allow_visitor = self::_check_payment($catid.'_'.$id,$paytype);
 			if(!$allow_visitor) {
 				$http_referer = urlencode(get_url());
@@ -114,7 +114,7 @@ class index {
 				$allow_visitor = 1;
 			}
 		}
-		//æœ€é¡¶çº§æ ç›®ID
+		//×î¶¥¼¶À¸Ä¿ID
 		$arrparentid = explode(',', $CAT['arrparentid']);
 		$top_parentid = $arrparentid[1] ? $arrparentid[1] : $catid;
 		
@@ -132,13 +132,13 @@ class index {
 		}
 		$pages = $titles = '';
 		if($rs['paginationtype']==1) {
-			//è‡ªåŠ¨åˆ†é¡µ
+			//×Ô¶¯·ÖÒ³
 			if($maxcharperpage < 10) $maxcharperpage = 500;
 			$contentpage = pc_base::load_app_class('contentpage');
 			$content = $contentpage->get_data($content,$maxcharperpage);
 		}
 		if($rs['paginationtype']!=0) {
-			//æ‰‹åŠ¨åˆ†é¡µ
+			//ÊÖ¶¯·ÖÒ³
 			$CONTENT_POS = strpos($content, '[page]');
 			if($CONTENT_POS !== false) {
 				$this->url = pc_base::load_app_class('url', 'content');
@@ -163,9 +163,9 @@ class index {
 						}
 					}
 				}
-				//å½“ä¸å­˜åœ¨ [/page]æ—¶ï¼Œåˆ™ä½¿ç”¨ä¸‹é¢åˆ†é¡µ
+				//µ±²»´æÔÚ [/page]Ê±£¬ÔòÊ¹ÓÃÏÂÃæ·ÖÒ³
 				$pages = content_pages($pagenumber,$page, $pageurls);
-				//åˆ¤æ–­[page]å‡ºç°çš„ä½ç½®æ˜¯å¦åœ¨ç¬¬ä¸€ä½ 
+				//ÅĞ¶Ï[page]³öÏÖµÄÎ»ÖÃÊÇ·ñÔÚµÚÒ»Î» 
 				if($CONTENT_POS<7) {
 					$content = $contents[$page];
 				} else {
@@ -188,9 +188,9 @@ class index {
 			}
 		}
 		$this->db->table_name = $tablename;
-		//ä¸Šä¸€é¡µ
+		//ÉÏÒ»Ò³
 		$previous_page = $this->db->get_one("`catid` = '$catid' AND `id`<'$id' AND `status`=99",'*','id DESC');
-		//ä¸‹ä¸€é¡µ
+		//ÏÂÒ»Ò³
 		$next_page = $this->db->get_one("`catid`= '$catid' AND `id`>'$id' AND `status`=99",'*','id ASC');
 
 		if(empty($previous_page)) {
@@ -202,7 +202,7 @@ class index {
 		}
 		include template('content',$template);
 	}
-	//åˆ—è¡¨é¡µ
+	//ÁĞ±íÒ³
 	public function lists() {
 		$catid = $_GET['catid'] = intval($_GET['catid']);
 		$_priv_data = $this->_category_priv($catid);
@@ -240,14 +240,14 @@ class index {
 			$top_parentid = $arrparentid[1] ? $arrparentid[1] : $catid;
 			$array_child = array();
 			$self_array = explode(',', $arrchildid);
-			//è·å–ä¸€çº§æ ç›®ids
+			//»ñÈ¡Ò»¼¶À¸Ä¿ids
 			foreach ($self_array as $arr) {
 				if($arr!=$catid && $CATEGORYS[$arr][parentid]==$catid) {
 					$array_child[] = $arr;
 				}
 			}
 			$arrchildid = implode(',', $array_child);
-			//URLè§„åˆ™
+			//URL¹æÔò
 			$urlrules = getcache('urlrules','commons');
 			$urlrules = str_replace('|', '~',$urlrules[$category_ruleid]);
 			$tmp_urls = explode('~',$urlrules);
@@ -264,7 +264,7 @@ class index {
 			$GLOBALS['URL_ARRAY']['catid'] = $catid;
 			include template('content',$template);
 		} else {
-		//å•ç½‘é¡µ
+		//µ¥ÍøÒ³
 			$this->page_db = pc_base::load_model('page_model');
 			$r = $this->page_db->get_one(array('catid'=>$catid));
 			if($r) extract($r);
@@ -279,10 +279,10 @@ class index {
 		}
 	}
 	
-	//JSON è¾“å‡º
+	//JSON Êä³ö
 	public function json_list() {
 		if($_GET['type']=='keyword' && $_GET['modelid'] && $_GET['keywords']) {
-		//æ ¹æ®å…³é”®å­—æœç´¢
+		//¸ù¾İ¹Ø¼ü×ÖËÑË÷
 			$modelid = intval($_GET['modelid']);
 			$id = intval($_GET['id']);
 
@@ -306,7 +306,7 @@ class index {
 					if(count($data)==0) exit('0');
 					echo json_encode($data);
 				} else {
-					//æ²¡æœ‰æ•°æ®
+					//Ã»ÓĞÊı¾İ
 					exit('0');
 				}
 			}
@@ -316,7 +316,7 @@ class index {
 	
 	
 	/**
-	 * æ£€æŸ¥æ”¯ä»˜çŠ¶æ€
+	 * ¼ì²éÖ§¸¶×´Ì¬
 	 */
 	protected function _check_payment($flag,$paytype) {
 		$_userid = $this->_userid;
@@ -334,7 +334,7 @@ class index {
 	}
 	
 	/**
-	 * æ£€æŸ¥é˜…è¯»æƒé™
+	 * ¼ì²éÔÄ¶ÁÈ¨ÏŞ
 	 *
 	 */
 	protected function _category_priv($catid) {

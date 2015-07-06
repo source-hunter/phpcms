@@ -4,193 +4,193 @@
 Add a new file(.lang.php) with your module name at /phpcms/languages/
 translation save at the array:$LANG
 */
-$LANG['trade_sn'] = 'æ”¯ä»˜å•å·';
-$LANG['addtime'] = 'è®¢å•æ—¶é—´';
-$LANG['to'] = 'è‡³';
-$LANG['confirm_pay'] = 'ç¡®è®¤å¹¶æ”¯ä»˜';
-$LANG['usernote'] = 'å¤‡æ³¨';
-$LANG['adminnote'] = 'ç®¡ç†å‘˜æ“ä½œ';
-$LANG['user_balance'] = 'ç”¨æˆ·ä½™é¢ï¼š';
-$LANG['yuan'] = '&nbsp;å…ƒ';
-$LANG['dian'] = '&nbsp;ç‚¹';
-$LANG['trade_succ'] = 'æˆåŠŸ';
-$LANG['checking'] = 'éªŒè¯ä¸­..';
-$LANG['user_not_exist'] = 'è¯¥ç”¨æˆ·ä¸å­˜åœ¨';
+$LANG['trade_sn'] = 'Ö§¸¶µ¥ºÅ';
+$LANG['addtime'] = '¶©µ¥Ê±¼ä';
+$LANG['to'] = 'ÖÁ';
+$LANG['confirm_pay'] = 'È·ÈÏ²¢Ö§¸¶';
+$LANG['usernote'] = '±¸×¢';
+$LANG['adminnote'] = '¹ÜÀíÔ±²Ù×÷';
+$LANG['user_balance'] = 'ÓÃ»§Óà¶î£º';
+$LANG['yuan'] = '&nbsp;Ôª';
+$LANG['dian'] = '&nbsp;µã';
+$LANG['trade_succ'] = '³É¹¦';
+$LANG['checking'] = 'ÑéÖ¤ÖĞ..';
+$LANG['user_not_exist'] = '¸ÃÓÃ»§²»´æÔÚ';
 
-$LANG['input_price_to_change'] = 'è¾“å…¥ä¿®æ”¹æ•°é‡ï¼ˆèµ„é‡‘æˆ–è€…ç‚¹æ•°ï¼‰';
-$LANG['number'] = 'æ•°é‡ ';
-$LANG['must_be_price'] = 'å¿…é¡»ä¸ºé‡‘é¢ï¼Œæœ€å¤šä¿ç•™ä¸¤ä½å°æ•°';
-$LANG['reason_of_modify'] = 'è¦ä¿®æ”¹çš„ç†ç”±';
+$LANG['input_price_to_change'] = 'ÊäÈëĞŞ¸ÄÊıÁ¿£¨×Ê½ğ»òÕßµãÊı£©';
+$LANG['number'] = 'ÊıÁ¿ ';
+$LANG['must_be_price'] = '±ØĞëÎª½ğ¶î£¬×î¶à±£ÁôÁ½Î»Ğ¡Êı';
+$LANG['reason_of_modify'] = 'ÒªĞŞ¸ÄµÄÀíÓÉ';
 
 //modify_deposit.php
-$LANG['recharge_type'] = 'å……å€¼ç±»å‹';
-$LANG['capital'] = 'èµ„é‡‘';
-$LANG['point'] = 'ç‚¹æ•°';
-$LANG['recharge_quota'] = 'å……å€¼é¢åº¦';
-$LANG['increase'] = 'å¢åŠ ';
-$LANG['reduce'] = 'å‡å°‘';
-$LANG['trading'] = 'äº¤æ˜“';
-$LANG['op_notice'] = 'æé†’æ“ä½œ';
-$LANG['op_sendsms'] = 'å‘é€çŸ­æ¶ˆæ¯é€šçŸ¥ä¼šå‘˜';
-$LANG['op_sendemail'] = 'å‘é€e-mailé€šçŸ¥ä¼šå‘˜';
-$LANG['send_account_changes_notice'] = 'è´¦æˆ·å˜æ›´é€šçŸ¥';
-$LANG['background_operation'] = 'åå°æ“ä½œ';
-$LANG['account_changes_notice_tips'] = 'å°Šæ•¬çš„{username},æ‚¨å¥½ï¼<br/>æ‚¨çš„è´¦æˆ·äº{time}å‘ç”Ÿå˜åŠ¨,æ“ä½œï¼š{op},ç†ç”±:{note},å½“å‰ä½™é¢ï¼š{amount}å…ƒï¼Œ{point}ç§¯åˆ†ã€‚';
+$LANG['recharge_type'] = '³äÖµÀàĞÍ';
+$LANG['capital'] = '×Ê½ğ';
+$LANG['point'] = 'µãÊı';
+$LANG['recharge_quota'] = '³äÖµ¶î¶È';
+$LANG['increase'] = 'Ôö¼Ó';
+$LANG['reduce'] = '¼õÉÙ';
+$LANG['trading'] = '½»Ò×';
+$LANG['op_notice'] = 'ÌáĞÑ²Ù×÷';
+$LANG['op_sendsms'] = '·¢ËÍ¶ÌÏûÏ¢Í¨Öª»áÔ±';
+$LANG['op_sendemail'] = '·¢ËÍe-mailÍ¨Öª»áÔ±';
+$LANG['send_account_changes_notice'] = 'ÕË»§±ä¸üÍ¨Öª';
+$LANG['background_operation'] = 'ºóÌ¨²Ù×÷';
+$LANG['account_changes_notice_tips'] = '×ğ¾´µÄ{username},ÄúºÃ£¡<br/>ÄúµÄÕË»§ÓÚ{time}·¢Éú±ä¶¯,²Ù×÷£º{op},ÀíÓÉ:{note},µ±Ç°Óà¶î£º{amount}Ôª£¬{point}»ı·Ö¡£';
 
 //payment.php
-$LANG['basic_config'] = 'åŸºæœ¬è®¾ç½®';
-$LANG['contact_email'] = 'è”ç³»é‚®ç®±';
-$LANG['contact_phone'] = 'è”ç³»ç”µè¯';
-$LANG['order_info'] = 'è®¢å•ä¿¡æ¯';
-$LANG['order_sn'] = 'æ”¯ä»˜å•å·';
-$LANG['order_name'] = 'åç§°';
-$LANG['order_price'] = 'è®¢å•ä»·æ ¼';
-$LANG['order_discount'] = 'äº¤æ˜“åŠ ä»·/æ¶¨ä»·';
-$LANG['order_addtime'] = 'è®¢å•ç”Ÿæˆæ—¶é—´';
-$LANG['order_ip'] = 'è®¢å•ç”ŸæˆIP';
-$LANG['payment_type'] = 'æ”¯ä»˜ç±»å‹';
-$LANG['order'] = 'è®¢å•';
-$LANG['disount_notice'] = 'è¦ç»™é¡¾å®¢ä¾¿å®œ10å…ƒ,é™ä»·è¯·è¾“å…¥â€œ-10â€';
+$LANG['basic_config'] = '»ù±¾ÉèÖÃ';
+$LANG['contact_email'] = 'ÁªÏµÓÊÏä';
+$LANG['contact_phone'] = 'ÁªÏµµç»°';
+$LANG['order_info'] = '¶©µ¥ĞÅÏ¢';
+$LANG['order_sn'] = 'Ö§¸¶µ¥ºÅ';
+$LANG['order_name'] = 'Ãû³Æ';
+$LANG['order_price'] = '¶©µ¥¼Û¸ñ';
+$LANG['order_discount'] = '½»Ò×¼Ó¼Û/ÕÇ¼Û';
+$LANG['order_addtime'] = '¶©µ¥Éú³ÉÊ±¼ä';
+$LANG['order_ip'] = '¶©µ¥Éú³ÉIP';
+$LANG['payment_type'] = 'Ö§¸¶ÀàĞÍ';
+$LANG['order'] = '¶©µ¥';
+$LANG['disount_notice'] = 'Òª¸ø¹Ë¿Í±ãÒË10Ôª,½µ¼ÛÇëÊäÈë¡°-10¡±';
 
-$LANG['discount'] = 'è®¢å•æ”¹ä»·';
-$LANG['recharge'] = 'åœ¨çº¿å……å€¼';
-$LANG['offline'] = 'çº¿ä¸‹æ”¯ä»˜';
-$LANG['online'] = 'åœ¨çº¿æ”¯ä»˜';
-$LANG['selfincome'] = 'è‡ªåŠ©è·å–';
+$LANG['discount'] = '¶©µ¥¸Ä¼Û';
+$LANG['recharge'] = 'ÔÚÏß³äÖµ';
+$LANG['offline'] = 'ÏßÏÂÖ§¸¶';
+$LANG['online'] = 'ÔÚÏßÖ§¸¶';
+$LANG['selfincome'] = '×ÔÖú»ñÈ¡';
 
-$LANG['order_time'] = 'æ”¯ä»˜æ—¶é—´';
-$LANG['business_mode'] = 'ä¸šåŠ¡æ–¹å¼';
-$LANG['payment_mode'] = 'æ”¯ä»˜æ–¹å¼';
-$LANG['deposit_amount'] = 'å­˜å…¥é‡‘é¢';
-$LANG['pay_status'] = 'ä»˜æ¬¾çŠ¶æ€';
-$LANG['pay_btn'] = 'ä»˜æ¬¾';
+$LANG['order_time'] = 'Ö§¸¶Ê±¼ä';
+$LANG['business_mode'] = 'ÒµÎñ·½Ê½';
+$LANG['payment_mode'] = 'Ö§¸¶·½Ê½';
+$LANG['deposit_amount'] = '´æÈë½ğ¶î';
+$LANG['pay_status'] = '¸¶¿î×´Ì¬';
+$LANG['pay_btn'] = '¸¶¿î';
 
-$LANG['name'] = 'åç§°';
-$LANG['desc'] = 'æè¿°';
-$LANG['pay_factorage'] = 'æ”¯ä»˜æ‰‹ç»­è´¹';
-$LANG['pay_method_rate'] = 'æŒ‰æ¯”ä¾‹æ”¶è´¹';
-$LANG['pay_method_fix'] = 'å›ºå®šè´¹ç”¨';
-$LANG['pay_rate'] = 'è´¹ç‡';
-$LANG['pay_fix'] = 'é‡‘é¢';
-$LANG['pay_method_rate_desc'] = 'è¯´æ˜ï¼šé¡¾å®¢å°†æ”¯ä»˜è®¢å•æ€»é‡‘é¢ä¹˜ä»¥æ­¤è´¹ç‡ä½œä¸ºæ‰‹ç»­è´¹ï¼›';
-$LANG['pay_method_fix_desc'] = 'è¯´æ˜ï¼šé¡¾å®¢æ¯ç¬”è®¢å•éœ€è¦æ”¯ä»˜çš„æ‰‹ç»­è´¹ï¼›';
+$LANG['name'] = 'Ãû³Æ';
+$LANG['desc'] = 'ÃèÊö';
+$LANG['pay_factorage'] = 'Ö§¸¶ÊÖĞø·Ñ';
+$LANG['pay_method_rate'] = '°´±ÈÀıÊÕ·Ñ';
+$LANG['pay_method_fix'] = '¹Ì¶¨·ÑÓÃ';
+$LANG['pay_rate'] = '·ÑÂÊ';
+$LANG['pay_fix'] = '½ğ¶î';
+$LANG['pay_method_rate_desc'] = 'ËµÃ÷£º¹Ë¿Í½«Ö§¸¶¶©µ¥×Ü½ğ¶î³ËÒÔ´Ë·ÑÂÊ×÷ÎªÊÖĞø·Ñ£»';
+$LANG['pay_method_fix_desc'] = 'ËµÃ÷£º¹Ë¿ÍÃ¿±Ê¶©µ¥ĞèÒªÖ§¸¶µÄÊÖĞø·Ñ£»';
 
-$LANG['parameter_config'] = 'å‚æ•°è®¾ç½®';
-$LANG['plus_version'] = 'æ’ä»¶ç‰ˆæœ¬';
-$LANG['plus_author'] = 'æ’ä»¶ä½œè€…';
-$LANG['plus_site'] = 'æ’ä»¶ç½‘å€';
+$LANG['parameter_config'] = '²ÎÊıÉèÖÃ';
+$LANG['plus_version'] = '²å¼ş°æ±¾';
+$LANG['plus_author'] = '²å¼ş×÷Õß';
+$LANG['plus_site'] = '²å¼şÍøÖ·';
 
-$LANG['plus_install'] = 'å®‰è£…';
-$LANG['plus_uninstall'] = 'å¸è½½';
+$LANG['plus_install'] = '°²×°';
+$LANG['plus_uninstall'] = 'Ğ¶ÔØ';
 
-$LANG['check_confirm'] = 'ç¡®è®¤è¦é€šè¿‡è®¢å•  {sn} å®¡æ ¸ï¼Ÿ';
-$LANG['check_passed'] = 'å®¡æ ¸é€šè¿‡';
+$LANG['check_confirm'] = 'È·ÈÏÒªÍ¨¹ı¶©µ¥  {sn} ÉóºË£¿';
+$LANG['check_passed'] = 'ÉóºËÍ¨¹ı';
 
-$LANG['change_price'] = 'æ”¹ä»·';
-$LANG['check'] = 'å®¡æ ¸';
-$LANG['closed'] = 'å…³é—­';
+$LANG['change_price'] = '¸Ä¼Û';
+$LANG['check'] = 'ÉóºË';
+$LANG['closed'] = '¹Ø±Õ';
 
-$LANG['thispage'] = 'æœ¬é¡µ';
-$LANG['finance'] = 'è´¢åŠ¡';
-$LANG['totalize'] = 'æ€»è®¡';
-$LANG['amount'] = 'é‡‘é¢';
-$LANG['total'] = 'æ€»';
-$LANG['bi'] = 'ç¬”';
-$LANG['trade_succ'] = 'æˆåŠŸ';
-$LANG['transactions'] = 'äº¤æ˜“é‡';
-$LANG['trade'] = 'äº¤æ˜“';
-$LANG['trade_record_del'] = 'ç¡®è®¤åˆ é™¤è¯¥è®°å½•ï¼Ÿ';
+$LANG['thispage'] = '±¾Ò³';
+$LANG['finance'] = '²ÆÎñ';
+$LANG['totalize'] = '×Ü¼Æ';
+$LANG['amount'] = '½ğ¶î';
+$LANG['total'] = '×Ü';
+$LANG['bi'] = '±Ê';
+$LANG['trade_succ'] = '³É¹¦';
+$LANG['transactions'] = '½»Ò×Á¿';
+$LANG['trade'] = '½»Ò×';
+$LANG['trade_record_del'] = 'È·ÈÏÉ¾³ı¸Ã¼ÇÂ¼£¿';
 
 /******************error & notice********************/
 
-$LANG['illegal_sign'] = 'ç­¾åé”™è¯¯';
-$LANG['illegal_notice'] = 'é€šçŸ¥é”™è¯¯';
-$LANG['illegal_return'] = 'ä¿¡æ¯è¿”å›é”™è¯¯';
-$LANG['illegal_pay_method'] = 'æ”¯ä»˜æ–¹å¼é”™è¯¯';
-$LANG['illegal_creat_sn'] = 'è®¢å•å·ç”Ÿæˆé”™è¯¯';
+$LANG['illegal_sign'] = 'Ç©Ãû´íÎó';
+$LANG['illegal_notice'] = 'Í¨Öª´íÎó';
+$LANG['illegal_return'] = 'ĞÅÏ¢·µ»Ø´íÎó';
+$LANG['illegal_pay_method'] = 'Ö§¸¶·½Ê½´íÎó';
+$LANG['illegal_creat_sn'] = '¶©µ¥ºÅÉú³É´íÎó';
 
 
-$LANG['pay_success'] = 'æ­å–œæ‚¨ï¼Œæ”¯ä»˜æˆåŠŸ';
-$LANG['pay_failed'] = 'æ”¯ä»˜å¤±è´¥ï¼Œè¯·è”ç³»ç®¡ç†å‘˜';
-$LANG['payment_failed'] = 'æ”¯ä»˜æ–¹å¼å‘ç”Ÿé”™è¯¯';
-$LANG['order_closed_or_finish'] = 'è®¢å•å·²å®Œæˆæˆ–è¯¥å·²ç»å…³é—­';
-$LANG['state_change_succ'] = 'çŠ¶æ€ä¿®æ”¹å®Œæˆ';
+$LANG['pay_success'] = '¹§Ï²Äú£¬Ö§¸¶³É¹¦';
+$LANG['pay_failed'] = 'Ö§¸¶Ê§°Ü£¬ÇëÁªÏµ¹ÜÀíÔ±';
+$LANG['payment_failed'] = 'Ö§¸¶·½Ê½·¢Éú´íÎó';
+$LANG['order_closed_or_finish'] = '¶©µ¥ÒÑÍê³É»ò¸ÃÒÑ¾­¹Ø±Õ';
+$LANG['state_change_succ'] = '×´Ì¬ĞŞ¸ÄÍê³É';
 
-$LANG['delete_succ'] = 'åˆ é™¤æˆåŠŸ';
-$LANG['public_discount_succ'] = 'æ“ä½œæˆåŠŸ';
-$LANG['admin_recharge'] = 'åå°å……å€¼';
+$LANG['delete_succ'] = 'É¾³ı³É¹¦';
+$LANG['public_discount_succ'] = '²Ù×÷³É¹¦';
+$LANG['admin_recharge'] = 'ºóÌ¨³äÖµ';
 
 /******************pay status********************/
-$LANG['all_status'] = 'å…¨éƒ¨çŠ¶æ€';
+$LANG['all_status'] = 'È«²¿×´Ì¬';
 
-$LANG['unpay'] = '<font color="red" class="onError">äº¤æ˜“æœªæ”¯ä»˜</font>';
-$LANG['succ'] = '<font color="green" class="onCorrect">äº¤æ˜“æˆåŠŸ</font>';
-$LANG['failed'] = 'äº¤æ˜“å¤±è´¥';
-$LANG['error'] = 'äº¤æ˜“é”™è¯¯';
-$LANG['progress'] = '<font color="orange" class="onTime">äº¤æ˜“å¤„ç†ä¸­</font>';
-$LANG['timeout'] = 'äº¤æ˜“è¶…æ—¶';
-$LANG['cancel'] = 'äº¤æ˜“å–æ¶ˆ';
-$LANG['waitting'] = '<font color="orange" class="onTime">ç­‰å¾…ä»˜æ¬¾</font>';
+$LANG['unpay'] = '<font color="red" class="onError">½»Ò×Î´Ö§¸¶</font>';
+$LANG['succ'] = '<font color="green" class="onCorrect">½»Ò×³É¹¦</font>';
+$LANG['failed'] = '½»Ò×Ê§°Ü';
+$LANG['error'] = '½»Ò×´íÎó';
+$LANG['progress'] = '<font color="orange" class="onTime">½»Ò×´¦ÀíÖĞ</font>';
+$LANG['timeout'] = '½»Ò×³¬Ê±';
+$LANG['cancel'] = '½»Ò×È¡Ïû';
+$LANG['waitting'] = '<font color="orange" class="onTime">µÈ´ı¸¶¿î</font>';
 
-$LANG['select']['unpay'] = 'äº¤æ˜“æœªæ”¯ä»˜';
-$LANG['select']['succ'] = 'äº¤æ˜“æˆåŠŸ';
-$LANG['select']['progress'] = 'äº¤æ˜“å¤„ç†ä¸­';
-$LANG['select']['cancel'] = 'äº¤æ˜“å–æ¶ˆ';
+$LANG['select']['unpay'] = '½»Ò×Î´Ö§¸¶';
+$LANG['select']['succ'] = '½»Ò×³É¹¦';
+$LANG['select']['progress'] = '½»Ò×´¦ÀíÖĞ';
+$LANG['select']['cancel'] = '½»Ò×È¡Ïû';
 
 /*************pay plus language***************/
 
-$LANG['alipay'] = 'æ”¯ä»˜å®';
-$LANG['alipay_account'] = 'æ”¯ä»˜å®å¸æˆ·';
-$LANG['alipay_tip'] = 'æ”¯ä»˜å®æ˜¯å›½å†…é¢†å…ˆçš„ç‹¬ç«‹ç¬¬ä¸‰æ–¹æ”¯ä»˜å¹³å°ï¼Œç”±é˜¿é‡Œå·´å·´é›†å›¢åˆ›åŠã€‚è‡´åŠ›äºä¸ºä¸­å›½ç”µå­å•†åŠ¡æä¾›â€œç®€å•ã€å®‰å…¨ã€å¿«é€Ÿâ€çš„åœ¨çº¿æ”¯ä»˜è§£å†³æ–¹æ¡ˆã€‚';
-$LANG['alipay_key'] = 'äº¤æ˜“å®‰å…¨æ ¡éªŒç (key)';
-$LANG['alipay_partner'] = 'åˆä½œè€…èº«ä»½(parterID)';
-$LANG['service_type'] = 'é€‰æ‹©æ¥å£ç±»å‹';
+$LANG['alipay'] = 'Ö§¸¶±¦';
+$LANG['alipay_account'] = 'Ö§¸¶±¦ÕÊ»§';
+$LANG['alipay_tip'] = 'Ö§¸¶±¦ÊÇ¹úÄÚÁìÏÈµÄ¶ÀÁ¢µÚÈı·½Ö§¸¶Æ½Ì¨£¬ÓÉ°¢Àï°Í°Í¼¯ÍÅ´´°ì¡£ÖÂÁ¦ÓÚÎªÖĞ¹úµç×ÓÉÌÎñÌá¹©¡°¼òµ¥¡¢°²È«¡¢¿ìËÙ¡±µÄÔÚÏßÖ§¸¶½â¾ö·½°¸¡£';
+$LANG['alipay_key'] = '½»Ò×°²È«Ğ£ÑéÂë(key)';
+$LANG['alipay_partner'] = 'ºÏ×÷ÕßÉí·İ(parterID)';
+$LANG['service_type'] = 'Ñ¡Ôñ½Ó¿ÚÀàĞÍ';
 
-$LANG['tenpay_account'] = 'è´¢ä»˜é€šå®¢æˆ·å·';
-$LANG['tenpay_privateKey'] = 'è´¢ä»˜é€šç§é’¥';
-$LANG['tenpay_authtype'] = 'é€‰æ‹©æ¥å£ç±»å‹';
+$LANG['tenpay_account'] = '²Æ¸¶Í¨¿Í»§ºÅ';
+$LANG['tenpay_privateKey'] = '²Æ¸¶Í¨Ë½Ô¿';
+$LANG['tenpay_authtype'] = 'Ñ¡Ôñ½Ó¿ÚÀàĞÍ';
 
-$LANG['chinabank'] = 'ç½‘é“¶åœ¨çº¿';
-$LANG['chinabank_tip'] = 'ç½‘é“¶åœ¨çº¿ä¸ä¸­å›½é“¶è¡Œã€ä¸­å›½å·¥å•†é“¶è¡Œã€ä¸­å›½å†œä¸šé“¶è¡Œã€ä¸­å›½å»ºè®¾é“¶è¡Œã€æ‹›å•†é“¶è¡Œç­‰å›½å†…å„å¤§é“¶è¡Œï¼Œä»¥åŠVISAã€MasterCardã€JCBç­‰å›½é™…ä¿¡ç”¨å¡ç»„ç»‡ä¿æŒäº†é•¿æœŸã€ç´§å¯†ã€è‰¯å¥½çš„åˆä½œå…³ç³»ã€‚<a href="http://www.chinabank.com.cn" target="_blank"><font color="red">ç«‹å³åœ¨çº¿ç”³è¯·</font>';
-$LANG['chinabank_account'] = 'ç½‘é“¶åœ¨çº¿å•†æˆ·å·';
-$LANG['chinabank_key'] = 'ç½‘é“¶åœ¨çº¿MD5ç§é’¥';
+$LANG['chinabank'] = 'ÍøÒøÔÚÏß';
+$LANG['chinabank_tip'] = 'ÍøÒøÔÚÏßÓëÖĞ¹úÒøĞĞ¡¢ÖĞ¹ú¹¤ÉÌÒøĞĞ¡¢ÖĞ¹úÅ©ÒµÒøĞĞ¡¢ÖĞ¹ú½¨ÉèÒøĞĞ¡¢ÕĞÉÌÒøĞĞµÈ¹úÄÚ¸÷´óÒøĞĞ£¬ÒÔ¼°VISA¡¢MasterCard¡¢JCBµÈ¹ú¼ÊĞÅÓÃ¿¨×éÖ¯±£³ÖÁË³¤ÆÚ¡¢½ôÃÜ¡¢Á¼ºÃµÄºÏ×÷¹ØÏµ¡£<a href="http://www.chinabank.com.cn" target="_blank"><font color="red">Á¢¼´ÔÚÏßÉêÇë</font>';
+$LANG['chinabank_account'] = 'ÍøÒøÔÚÏßÉÌ»§ºÅ';
+$LANG['chinabank_key'] = 'ÍøÒøÔÚÏßMD5Ë½Ô¿';
 
-$LANG['sndapay'] = 'ç››ä»˜é€š';
-$LANG['sndapay_tip'] = 'ç››ä»˜é€šæ˜¯ç››å¤§ç½‘ç»œåˆ›åŠçš„ä¸­å›½é¢†å…ˆçš„åœ¨çº¿æ”¯ä»˜å¹³å°ï¼Œè‡´åŠ›äºä¸ºäº’è”ç½‘ç”¨æˆ·å’Œä¼ä¸šæä¾›ä¾¿æ·ã€å®‰å…¨çš„æ”¯ä»˜æœåŠ¡ã€‚é€šè¿‡ä¸å„å¤§é“¶è¡Œã€é€šä¿¡æœåŠ¡å•†ç­‰ç­¾çº¦åˆä½œï¼Œæä¾›å…·å¤‡ç›¸å½“å®åŠ›å’Œä¿¡èª‰ä¿éšœçš„æ”¯ä»˜æœåŠ¡ã€‚<a href="http://www.shengpay.com/HomePage.aspx?tag=phpcms" target="_blank"><font color="red">ç«‹å³åœ¨çº¿ç”³è¯·</font>';
-$LANG['sndapay_account'] = 'ç››å¤§æ”¯ä»˜å•†æˆ·å·';
-$LANG['sndapay_key'] = 'ç››å¤§æ”¯ä»˜å¯†é’¥';
+$LANG['sndapay'] = 'Ê¢¸¶Í¨';
+$LANG['sndapay_tip'] = 'Ê¢¸¶Í¨ÊÇÊ¢´óÍøÂç´´°ìµÄÖĞ¹úÁìÏÈµÄÔÚÏßÖ§¸¶Æ½Ì¨£¬ÖÂÁ¦ÓÚÎª»¥ÁªÍøÓÃ»§ºÍÆóÒµÌá¹©±ã½İ¡¢°²È«µÄÖ§¸¶·şÎñ¡£Í¨¹ıÓë¸÷´óÒøĞĞ¡¢Í¨ĞÅ·şÎñÉÌµÈÇ©Ô¼ºÏ×÷£¬Ìá¹©¾ß±¸Ïàµ±ÊµÁ¦ºÍĞÅÓş±£ÕÏµÄÖ§¸¶·şÎñ¡£<a href="http://www.shengpay.com/HomePage.aspx?tag=phpcms" target="_blank"><font color="red">Á¢¼´ÔÚÏßÉêÇë</font>';
+$LANG['sndapay_account'] = 'Ê¢´óÖ§¸¶ÉÌ»§ºÅ';
+$LANG['sndapay_key'] = 'Ê¢´óÖ§¸¶ÃÜÔ¿';
 
 
-$LANG['service_type_range'][0] = 'ä½¿ç”¨æ‹…ä¿äº¤æ˜“æ¥å£';
-$LANG['service_type_range'][1] = 'ä½¿ç”¨æ ‡å‡†åŒæ¥å£';
-$LANG['service_type_range'][2] = 'ä½¿ç”¨å³æ—¶åˆ°è´¦äº¤æ˜“æ¥å£';
+$LANG['service_type_range'][0] = 'Ê¹ÓÃµ£±£½»Ò×½Ó¿Ú';
+$LANG['service_type_range'][1] = 'Ê¹ÓÃ±ê×¼Ë«½Ó¿Ú';
+$LANG['service_type_range'][2] = 'Ê¹ÓÃ¼´Ê±µ½ÕË½»Ò×½Ó¿Ú';
 
-$LANG['userid'] = 'ç”¨æˆ·ID';
-$LANG['op'] = 'æ“ä½œäºº';
-$LANG['expenditure_patterns'] = 'æ¶ˆè´¹ç±»å‹';
-$LANG['money'] = 'é‡‘é’±';
-$LANG['point'] = 'ç§¯åˆ†';
-$LANG['from'] = 'ä»';
-$LANG['content_of_consumption'] = 'æ¶ˆè´¹å†…å®¹';
-$LANG['empdisposetime'] = 'æ¶ˆè´¹æ—¶é—´';
-$LANG['consumption_quantity'] = 'æ¶ˆè´¹æ•°é‡';
-$LANG['self'] = 'è‡ªèº«';
-$LANG['wrong_time_over_time_to_time_less_than'] = 'é”™è¯¯çš„æ—¶é—´æ ¼å¼ï¼Œç»“æŸæ—¶é—´å°äºå¼€å§‹æ—¶é—´ï¼';
+$LANG['userid'] = 'ÓÃ»§ID';
+$LANG['op'] = '²Ù×÷ÈË';
+$LANG['expenditure_patterns'] = 'Ïû·ÑÀàĞÍ';
+$LANG['money'] = '½ğÇ®';
+$LANG['point'] = '»ı·Ö';
+$LANG['from'] = '´Ó';
+$LANG['content_of_consumption'] = 'Ïû·ÑÄÚÈİ';
+$LANG['empdisposetime'] = 'Ïû·ÑÊ±¼ä';
+$LANG['consumption_quantity'] = 'Ïû·ÑÊıÁ¿';
+$LANG['self'] = '×ÔÉí';
+$LANG['wrong_time_over_time_to_time_less_than'] = '´íÎóµÄÊ±¼ä¸ñÊ½£¬½áÊøÊ±¼äĞ¡ÓÚ¿ªÊ¼Ê±¼ä£¡';
 
-$LANG['spend_msg_1'] = 'è¯·å¯¹æ¶ˆè´¹å†…å®¹è¿›è¡Œæè¿°ã€‚';
-$LANG['spend_msg_2'] = 'è¯·è¾“å…¥æ¶ˆè´¹é‡‘é¢ã€‚';
-$LANG['spend_msg_3'] = 'ç”¨æˆ·ä¸èƒ½ä¸ºç©ºã€‚';
-$LANG['spend_msg_6'] = 'è´¦æˆ·ä½™é¢ä¸è¶³ã€‚';
-$LANG['spend_msg_7'] = 'æ¶ˆè´¹ç±»å‹ä¸ºç©ºã€‚';
-$LANG['spend_msg_8'] = 'æ•°æ®å­˜å…¥æ•°æ®åº“æ—¶å‡ºé”™ã€‚';
-$LANG['bank_transfer'] = 'é“¶è¡Œè½¬è´¦';
-$LANG['transfer'] = 'é“¶è¡Œæ±‡æ¬¾/è½¬è´¦';
-$LANG['dsa'] = 'DSA ç­¾åæ–¹æ³•å¾…åç»­å¼€å‘ï¼Œè¯·å…ˆä½¿ç”¨MD5ç­¾åæ–¹å¼';
-$LANG['alipay_error'] = 'æ”¯ä»˜å®æš‚ä¸æ”¯æŒ{sign_type}ç±»å‹çš„ç­¾åæ–¹å¼';
-$LANG['execute_date'] = 'æ‰§è¡Œæ—¥æœŸ';
-$LANG['query_stat'] = 'æŸ¥è¯¢ç»Ÿè®¡';
-$LANG['total_transactions'] = 'æ€»äº¤æ˜“æ•°';
-$LANG['transactions_success'] = 'æˆåŠŸäº¤æ˜“';
-$LANG['pay_tip'] = 'æˆ‘ä»¬ç›®å‰æ”¯æŒçš„æ±‡æ¬¾æ–¹å¼ï¼Œè¯·æ ¹æ®æ‚¨é€‰æ‹©çš„æ”¯ä»˜æ–¹å¼æ¥é€‰æ‹©é“¶è¡Œæ±‡æ¬¾ã€‚æ±‡æ¬¾ä»¥åï¼Œè¯·ç«‹å³é€šçŸ¥æˆ‘ä»¬ã€‚';
-$LANG['configure'] = 'é…ç½®';
+$LANG['spend_msg_1'] = 'Çë¶ÔÏû·ÑÄÚÈİ½øĞĞÃèÊö¡£';
+$LANG['spend_msg_2'] = 'ÇëÊäÈëÏû·Ñ½ğ¶î¡£';
+$LANG['spend_msg_3'] = 'ÓÃ»§²»ÄÜÎª¿Õ¡£';
+$LANG['spend_msg_6'] = 'ÕË»§Óà¶î²»×ã¡£';
+$LANG['spend_msg_7'] = 'Ïû·ÑÀàĞÍÎª¿Õ¡£';
+$LANG['spend_msg_8'] = 'Êı¾İ´æÈëÊı¾İ¿âÊ±³ö´í¡£';
+$LANG['bank_transfer'] = 'ÒøĞĞ×ªÕË';
+$LANG['transfer'] = 'ÒøĞĞ»ã¿î/×ªÕË';
+$LANG['dsa'] = 'DSA Ç©Ãû·½·¨´ıºóĞø¿ª·¢£¬ÇëÏÈÊ¹ÓÃMD5Ç©Ãû·½Ê½';
+$LANG['alipay_error'] = 'Ö§¸¶±¦Ôİ²»Ö§³Ö{sign_type}ÀàĞÍµÄÇ©Ãû·½Ê½';
+$LANG['execute_date'] = 'Ö´ĞĞÈÕÆÚ';
+$LANG['query_stat'] = '²éÑ¯Í³¼Æ';
+$LANG['total_transactions'] = '×Ü½»Ò×Êı';
+$LANG['transactions_success'] = '³É¹¦½»Ò×';
+$LANG['pay_tip'] = 'ÎÒÃÇÄ¿Ç°Ö§³ÖµÄ»ã¿î·½Ê½£¬Çë¸ù¾İÄúÑ¡ÔñµÄÖ§¸¶·½Ê½À´Ñ¡ÔñÒøĞĞ»ã¿î¡£»ã¿îÒÔºó£¬ÇëÁ¢¼´Í¨ÖªÎÒÃÇ¡£';
+$LANG['configure'] = 'ÅäÖÃ';
 ?>

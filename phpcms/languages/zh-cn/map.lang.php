@@ -6,13 +6,13 @@ translation save at the array:$LANG
 */
 //info_setting.phpcredits
 
-$LANG['addmark'] = 'ç‚¹å‡»æ ‡æ³¨ä½ç½®';
-$LANG['editmark'] = 'ä¿®æ”¹æ ‡æ³¨ä½ç½®';
-$LANG['mapmark'] = 'åœ°å›¾æ ‡æ³¨';
-$LANG['api_addmark'] = 'æ·»åŠ æ ‡æ³¨';
-$LANG['api_resetmap'] = 'é‡ç½®åœ°å›¾';
-$LANG['api_changecity'] = 'æ›´æ¢åŸŽå¸‚';
-$LANG['api_citylist'] = 'åŸŽå¸‚åˆ—è¡¨';
-$LANG['api_inputcity'] = 'è¾“å…¥åŸŽå¸‚å';
-$LANG['api_citysear_submit'] = 'ç¡®å®š';
+$LANG['addmark'] = 'µã»÷±ê×¢Î»ÖÃ';
+$LANG['editmark'] = 'ÐÞ¸Ä±ê×¢Î»ÖÃ';
+$LANG['mapmark'] = 'µØÍ¼±ê×¢';
+$LANG['api_addmark'] = 'Ìí¼Ó±ê×¢';
+$LANG['api_resetmap'] = 'ÖØÖÃµØÍ¼';
+$LANG['api_changecity'] = '¸ü»»³ÇÊÐ';
+$LANG['api_citylist'] = '³ÇÊÐÁÐ±í';
+$LANG['api_inputcity'] = 'ÊäÈë³ÇÊÐÃû';
+$LANG['api_citysear_submit'] = 'È·¶¨';
 ?>

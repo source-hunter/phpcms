@@ -2,7 +2,7 @@
 defined('IN_PHPCMS') or exit('No permission resources.');
 
 class role_cat {
-	//æ•°æ®åº“è¿žæŽ¥
+	//Êý¾Ý¿âÁ¬½Ó
 	static $db;
 	
 	private static function _connect() {
@@ -10,9 +10,9 @@ class role_cat {
 	}
 	
 	/**
-	 * èŽ·å–è§’è‰²é…ç½®æƒé™
-	 * @param integer $roleid  è§’è‰²ID
-	 * @param integer $siteid  ç«™ç‚¹ID
+	 * »ñÈ¡½ÇÉ«ÅäÖÃÈ¨ÏÞ
+	 * @param integer $roleid  ½ÇÉ«ID
+	 * @param integer $siteid  Õ¾µãID
 	 */
 	public static function get_roleid($roleid, $siteid) {
 		if (empty(self::$db)) {
@@ -30,9 +30,9 @@ class role_cat {
 	}
 	
 	/**
-	 * èŽ·å–ç«™ç‚¹æ ç›®åˆ—è¡¨
-	 * @param integer $siteid  ç«™ç‚¹ID
-	 * @return array()         è¿”å›žä¸ºæ•°ç»„
+	 * »ñÈ¡Õ¾µãÀ¸Ä¿ÁÐ±í
+	 * @param integer $siteid  Õ¾µãID
+	 * @return array()         ·µ»ØÎªÊý×é
 	 */
 	public static function get_category($siteid) {
 		$category = getcache('category_content_'.$siteid, 'commons');
@@ -43,16 +43,16 @@ class role_cat {
 	}
 	
 	/**
-	 * æ›´æ–°æ•°æ®åº“ä¿¡æ¯ 
-	 * @param integer $roleid   è§’è‰²ID
-	 * @param integer $siteid   ç«™ç‚¹ID
-	 * @param array $data       éœ€è¦æ›´æ–°çš„æ•°æ®
+	 * ¸üÐÂÊý¾Ý¿âÐÅÏ¢ 
+	 * @param integer $roleid   ½ÇÉ«ID
+	 * @param integer $siteid   Õ¾µãID
+	 * @param array $data       ÐèÒª¸üÐÂµÄÊý¾Ý
 	 */
 	public static function updata_priv($roleid, $siteid, $data) {
 		if (empty(self::$db)) {
 			self::_connect();
 		}
-		//åˆ é™¤è¯¥è§’è‰²å½“å‰çš„æƒé™
+		//É¾³ý¸Ã½ÇÉ«µ±Ç°µÄÈ¨ÏÞ
 		self::$db->delete(array('roleid'=>$roleid, 'siteid'=>$siteid, 'is_admin'=>1));
 		foreach ($data as $k=>$v) {
 			if (is_array($v) && !empty($v[0])) {

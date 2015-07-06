@@ -2,7 +2,7 @@
 
 /**
  * 
- * æ ¼å¼åŒ–url
+ * ¸ñÊ½»¯url
  */
 function format_url($path) {
 	if (!$path) return IMG_PATH.'nopic.jpg';
@@ -15,8 +15,8 @@ function format_url($path) {
 
 /**
  * Function ISHTML
- * åˆ¤æ–­å†…å®¹æ˜¯å¦éœ€è¦ç”Ÿæˆé™æ€
- * @param int $catid æ ç›®id
+ * ÅĞ¶ÏÄÚÈİÊÇ·ñĞèÒªÉú³É¾²Ì¬
+ * @param int $catid À¸Ä¿id
  */
 function ishtml($catid = 0) {
 	static $ishtml, $catid_siteid;

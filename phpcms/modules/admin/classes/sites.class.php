@@ -1,19 +1,19 @@
 <?php
 /**
- * ç«™ç‚¹å¯¹å¤–æ¥å£
+ * Õ¾µã¶ÔÍâ½Ó¿Ú
  * @author chenzhouyu
  *
  */
 class sites {
-	//æ•°æ®åº“è¿æ¥
+	//Êı¾İ¿âÁ¬½Ó
 	private $db;
 	public function __construct() {
 		$this->db = pc_base::load_model('site_model');
 	}
 	
 	/**
-	 * è·å–ç«™ç‚¹åˆ—è¡¨
-	 * @param string $roleid è§’è‰²ID ç•™ç©ºä¸ºè·å–æ‰€æœ‰ç«™ç‚¹åˆ—è¡¨
+	 * »ñÈ¡Õ¾µãÁĞ±í
+	 * @param string $roleid ½ÇÉ«ID Áô¿ÕÎª»ñÈ¡ËùÓĞÕ¾µãÁĞ±í
 	 */
 	public function get_list($roleid='') {
 		$roleid = intval($roleid);
@@ -33,15 +33,15 @@ class sites {
 	}
 	
 	/**
-	 * æŒ‰IDè·å–ç«™ç‚¹ä¿¡æ¯
-	 * @param integer $siteid ç«™ç‚¹IDå·
+	 * °´ID»ñÈ¡Õ¾µãĞÅÏ¢
+	 * @param integer $siteid Õ¾µãIDºÅ
 	 */
 	public function get_by_id($siteid) {
 		return siteinfo($siteid);
 	}
 	
 	/**
-	 * è®¾ç½®ç«™ç‚¹ç¼“å­˜
+	 * ÉèÖÃÕ¾µã»º´æ
 	 */
 	public function set_cache() {
 		$list = $this->db->select();
@@ -54,7 +54,7 @@ class sites {
 	}
 	
 	/**
-	 * PCæ ‡ç­¾ä¸­è°ƒç”¨ç«™ç‚¹åˆ—è¡¨
+	 * PC±êÇ©ÖĞµ÷ÓÃÕ¾µãÁĞ±í
 	 */
 	public function pc_tag_list() {
 		$list = $this->db->select('', 'siteid,name');
@@ -66,8 +66,8 @@ class sites {
 	}
 	
 	/**
-	 * æŒ‰è§’è‰²IDè·å–ç«™ç‚¹åˆ—è¡¨
-	 * @param string $roleid è§’è‰²ID
+	 * °´½ÇÉ«ID»ñÈ¡Õ¾µãÁĞ±í
+	 * @param string $roleid ½ÇÉ«ID
 	 */	
 	
 	public function get_role_siteid($roleid) {

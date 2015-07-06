@@ -13,14 +13,14 @@
 			$setting = getcache('weibo_var','plugins');			
 			if(!isset($_REQUEST['oauth_verifier']) || $_REQUEST['oauth_verifier'] == '') {
 				if($this->auth_db->get_one(array('source'=>'sina'))) {
-					$txt = 'æˆæƒæˆåŠŸï¼Œ<a href="?m=admin&c=plugin&a=config&pluginid='.$this->pluginid.'&module=removeauth&pc_hash='.$_SESSION['pc_hash'].'">è§£é™¤ç»‘å®š</a>';
+					$txt = 'ÊÚÈ¨³É¹¦£¬<a href="?m=admin&c=plugin&a=config&pluginid='.$this->pluginid.'&module=removeauth&pc_hash='.$_SESSION['pc_hash'].'">½â³ı°ó¶¨</a>';
 				} else {
 					$o = new WeiboOAuth( $setting['wb_akey'] , $setting['wb_skey']);
 					$keys = $o->getRequestToken();
 					print_r($keys);
 					$aurl = $o->getAuthorizeURL( $keys['oauth_token'] ,false , get_url());
 					$_SESSION['keys'] = $keys;
-					$txt = '<a href="'.$aurl.'">ç‚¹å‡»è¿›è¡Œæˆæƒ</a>';
+					$txt = '<a href="'.$aurl.'">µã»÷½øĞĞÊÚÈ¨</a>';
 				}
 				
 			} else {
@@ -30,7 +30,7 @@
 				$ms  = $c->home_timeline(); // done
 				$me = $c->verify_credentials();	
 				$this->auth_db->insert(array('uid'=>$me['id'],'token'=>$last_key['oauth_token'],'tsecret'=>$last_key['oauth_token_secret'],'source'=>'sina'));
-				$txt = 'æˆæƒæˆåŠŸï¼Œ'.$me['name'].'<a href="?m=admin&c=plugin&a=config&pluginid='.$this->pluginid.'&module=removeauth&pc_hash='.$_SESSION['pc_hash'].'">è§£é™¤ç»‘å®š</a>';
+				$txt = 'ÊÚÈ¨³É¹¦£¬'.$me['name'].'<a href="?m=admin&c=plugin&a=config&pluginid='.$this->pluginid.'&module=removeauth&pc_hash='.$_SESSION['pc_hash'].'">½â³ı°ó¶¨</a>';
 			}
 			include $this->op->plugin_tpl('oauth',PLUGIN_ID);
 		}

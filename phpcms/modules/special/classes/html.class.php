@@ -1,6 +1,6 @@
 <?php
 /**
- * html.class.php ç”Ÿæˆé™æ€ç±»
+ * html.class.php Éú³É¾²Ì¬Àà
  */
 defined('IN_PHPCMS') or exit('No permission resources.');
 
@@ -8,9 +8,9 @@ class html {
 	private $db, $type_db, $c_db, $data_db, $site, $queue;
 	
 	public function __construct() {
-		$this->db = pc_base::load_model('special_model'); //ä¸“é¢˜æ•°æ®æ¨¡å‹
-		$this->type_db = pc_base::load_model('type_model'); //ä¸“é¢˜åˆ†ç±»æ•°æ®æ¨¡å‹
-		$this->c_db = pc_base::load_model('special_content_model'); //ä¸“é¢˜å†…å®¹æ•°æ®æ¨¡å‹
+		$this->db = pc_base::load_model('special_model'); //×¨ÌâÊı¾İÄ£ĞÍ
+		$this->type_db = pc_base::load_model('type_model'); //×¨Ìâ·ÖÀàÊı¾İÄ£ĞÍ
+		$this->c_db = pc_base::load_model('special_content_model'); //×¨ÌâÄÚÈİÊı¾İÄ£ĞÍ
 		$this->data_db = pc_base::load_model('special_c_data_model'); 
 		$this->site = pc_base::load_app_class('sites', 'admin');
 		$this->queue = pc_base::load_model('queue_model');
@@ -18,9 +18,9 @@ class html {
 	}
 	
 	/**
-	 * ç”Ÿæˆæ–‡ç« é™æ€é¡µ
-	 * @param intval $contentid æ–‡ç« ID
-	 * @return string	è¿”å›æ–‡ç« çš„url
+	 * Éú³ÉÎÄÕÂ¾²Ì¬Ò³
+	 * @param intval $contentid ÎÄÕÂID
+	 * @return string	·µ»ØÎÄÕÂµÄurl
 	 */
 	public function _create_content($contentid = 0) {
 		if (!$contentid) return false;
@@ -32,7 +32,7 @@ class html {
 		$arr_content = $this->data_db->get_one(array('id'=>$contentid));
 		@extract($r);
 		$title = strip_tags($title);
-		if ($arr_content['paginationtype']) {			//æ–‡ç« ä½¿ç”¨åˆ†é¡µæ—¶
+		if ($arr_content['paginationtype']) {			//ÎÄÕÂÊ¹ÓÃ·ÖÒ³Ê±
 			if($arr_content['paginationtype']==1) {
 				if (strpos($arr_content['content'], '[/page]')!==false) {
 					$arr_content['content'] = preg_replace("|\[page\](.*)\[/page\]|U", '', $arr_content['content']);
@@ -40,8 +40,8 @@ class html {
 				if (strpos($arr_content['content'], '[page]')!==false) {
 					$arr_content['content'] = str_replace('[page]', '', $data['content']);
 				}
-				$contentpage = pc_base::load_app_class('contentpage', 'content'); //è°ƒç”¨è‡ªåŠ¨åˆ†é¡µç±»
-				$arr_content['content'] = $contentpage->get_data($arr_content['content'], $arr_content['maxcharperpage']); //è‡ªåŠ¨åˆ†é¡µï¼Œè‡ªåŠ¨æ·»åŠ ä¸Š[page]
+				$contentpage = pc_base::load_app_class('contentpage', 'content'); //µ÷ÓÃ×Ô¶¯·ÖÒ³Àà
+				$arr_content['content'] = $contentpage->get_data($arr_content['content'], $arr_content['maxcharperpage']); //×Ô¶¯·ÖÒ³£¬×Ô¶¯Ìí¼ÓÉÏ[page]
 			} 
 		} else {
 			if (strpos($arr_content['content'], '[/page]')!==false) {
@@ -51,9 +51,9 @@ class html {
 				$arr_content['content'] = str_replace('[page]', '', $arr_content['content']);
 			}
 		}
-		$template = $arr_content['show_template'] ? $arr_content['show_template'] : 'show'; //è°ƒç”¨æ¨¡æ¿
+		$template = $arr_content['show_template'] ? $arr_content['show_template'] : 'show'; //µ÷ÓÃÄ£°å
 		
-		//åˆ†ç«™æ—¶ï¼Œè®¡ç®—åˆ†ç«™è·¯å¾„
+		//·ÖÕ¾Ê±£¬¼ÆËã·ÖÕ¾Â·¾¶
 		if ($s_info['siteid']>1) {
 			$site_info = $this->site->get_by_id($s_info['siteid']);
 		}
@@ -84,7 +84,7 @@ class html {
 			$currentpage = $filesize = 0;
 			for ($i=1; $i<=$pagenumber; $i++) {
 				$currentpage++;
-				//åˆ¤æ–­[page]å‡ºç°çš„ä½ç½®æ˜¯å¦åœ¨ç¬¬ä¸€ä½ 
+				//ÅĞ¶Ï[page]³öÏÖµÄÎ»ÖÃÊÇ·ñÔÚµÚÒ»Î» 
 				if($CONTENT_POS<7) {
 					$content = $contents[$currentpage];
 				} else {
@@ -111,9 +111,9 @@ class html {
 				$SEO = seo($s_info['siteid'], '', $title);
 				$file = $file_url[1];
 				
-				//å¦‚æœæ˜¯åˆ†ç«™çš„æ–‡ä»¶ï¼Œå°†æ–‡ä»¶å†™å…¥åˆ°ä¿¡æ¯é˜Ÿåˆ—ä¸­
+				//Èç¹ûÊÇ·ÖÕ¾µÄÎÄ¼ş£¬½«ÎÄ¼şĞ´Èëµ½ĞÅÏ¢¶ÓÁĞÖĞ
 				$this->queue->add_queue('add', $file, $siteid);
-				$file = PHPCMS_PATH.$file; //ç”Ÿæˆæ–‡ä»¶çš„è·¯å¾„
+				$file = PHPCMS_PATH.$file; //Éú³ÉÎÄ¼şµÄÂ·¾¶
 				
 				ob_start();
 				include template('special', $template);
@@ -127,22 +127,22 @@ class html {
 			$urls = content_url($contentid, $page, $inputtime, 'html', $site_info);
 			$file = $urls[1];
 			
-			//å¦‚æœæ˜¯åˆ†ç«™çš„æ–‡ä»¶ï¼Œå°†æ–‡ä»¶å†™å…¥åˆ°ä¿¡æ¯é˜Ÿåˆ—ä¸­
+			//Èç¹ûÊÇ·ÖÕ¾µÄÎÄ¼ş£¬½«ÎÄ¼şĞ´Èëµ½ĞÅÏ¢¶ÓÁĞÖĞ
 			$this->queue->add_queue('add', $file, $siteid);
 			$file = PHPCMS_PATH.$file;
 			ob_start();
 			include template('special', $template);
 			$this->create_html($file);
 		}
-		//$this->_index($specialid, 20, 5);  //æ›´æ–°ä¸“é¢˜é¦–é¡µ
-		//$this->_list($typeid, 20, 5); 		//æ›´æ–°æ‰€åœ¨çš„åˆ†ç±»é¡µ
+		//$this->_index($specialid, 20, 5);  //¸üĞÂ×¨ÌâÊ×Ò³
+		//$this->_list($typeid, 20, 5); 		//¸üĞÂËùÔÚµÄ·ÖÀàÒ³
 		return $urls;
 	}
 	
 	/**
-	 * ç”Ÿæˆé™æ€æ–‡ä»¶
-	 * @param string $file æ–‡ä»¶è·¯å¾„
-	 * @return boolen/intval æˆåŠŸè¿”å›ç”Ÿæˆæ–‡ä»¶çš„å¤§å°
+	 * Éú³É¾²Ì¬ÎÄ¼ş
+	 * @param string $file ÎÄ¼şÂ·¾¶
+	 * @return boolen/intval ³É¹¦·µ»ØÉú³ÉÎÄ¼şµÄ´óĞ¡
 	 */
 	private function create_html($file) {
 		$data = ob_get_contents();
@@ -155,11 +155,11 @@ class html {
 	}
 	
 	/**
-	 * ç”Ÿæˆä¸“é¢˜é¦–é¡µ
-	 * @param intval $specialid ä¸“é¢˜ID
-	 * @param intval $pagesize æ¯é¡µä¸ªæ•°
-	 * @param intval $pages_num æœ€å¤§æ›´æ–°é¡µæ•°
-	 * @return boolen/intval æˆåŠŸè¿”å›ç”Ÿæˆæ–‡ä»¶çš„å¤§å°
+	 * Éú³É×¨ÌâÊ×Ò³
+	 * @param intval $specialid ×¨ÌâID
+	 * @param intval $pagesize Ã¿Ò³¸öÊı
+	 * @param intval $pages_num ×î´ó¸üĞÂÒ³Êı
+	 * @return boolen/intval ³É¹¦·µ»ØÉú³ÉÎÄ¼şµÄ´óĞ¡
 	 */
 	public function _index($specialid = 0, $pagesize = 20, $pages_num = 0) {
 		pc_base::load_app_func('global', 'special');
@@ -181,7 +181,7 @@ class html {
 			$voteid = $vote_info[1];
 		}
 		$commentid = id_encode('special', $id, $siteid);
-		//åˆ†ç«™æ—¶è®¡ç®—è·¯å¾„
+		//·ÖÕ¾Ê±¼ÆËãÂ·¾¶
 		if ($siteid>1) {
 			$site_info = $this->site->get_by_id($siteid);
 			$file = pc_base::load_config('system', 'html_root').'/'.$site_info['dirname'].'/special/'.$filename.'/index.html';
@@ -204,7 +204,7 @@ class html {
 			for ($i=1; $i<=$pages_num; $i++) {
 				if ($i==1) $file_root = $file;
 				else $file_root = str_replace('index', 'index-'.$i, $file);
-				$this->queue->add_queue('add', $file_root, $siteid); //æ·»åŠ è‡³ä¿¡æ¯é˜Ÿåˆ—
+				$this->queue->add_queue('add', $file_root, $siteid); //Ìí¼ÓÖÁĞÅÏ¢¶ÓÁĞ
 				$file_root = PHPCMS_PATH.$file_root;
 				ob_start();
 				include template('special', $template);
@@ -212,7 +212,7 @@ class html {
 			}
 			return true;
 		} else {
-			$this->queue->add_queue('add', $file, $siteid); //æ·»åŠ è‡³ä¿¡æ¯é˜Ÿåˆ—
+			$this->queue->add_queue('add', $file, $siteid); //Ìí¼ÓÖÁĞÅÏ¢¶ÓÁĞ
 			$file = PHPCMS_PATH.$file;
 			ob_start();
 			include template('special', $template, $style);
@@ -221,13 +221,13 @@ class html {
 	}
 	
 	/**
-	 * ç”Ÿæˆåˆ—è¡¨é¡µ
+	 * Éú³ÉÁĞ±íÒ³
 	 */
 	public function create_list($page = 1) {
 		$siteid = get_siteid();
 		$site_info = $this->site->get_by_id($siteid);
 		define('URLRULE', $site_info['domain'].substr(pc_base::load_config('system', 'html_root'), 1).'/special/index.html~'.$site_info['domain'].substr(pc_base::load_config('system', 'html_root'), 1).'/special/index-{$page}.html');
-		//åˆ†ç«™æ—¶è®¡ç®—è·¯å¾„
+		//·ÖÕ¾Ê±¼ÆËãÂ·¾¶
 		if ($siteid>1) {
 			if ($page==1) $file = pc_base::load_config('system', 'html_root').'/'.$site_info['dirname'].'/special/index.html';
 			else $file = pc_base::load_config('system', 'html_root').'/'.$site_info['dirname'].'/special/index-'.$page.'.html';
@@ -243,9 +243,9 @@ class html {
 	}
 	
 	/**
-	 * ç”Ÿæˆåˆ†ç±»é¡µ
-	 * @param intval $typeid åˆ†ç±»ID
-	 * @param intval $page é¡µæ•°
+	 * Éú³É·ÖÀàÒ³
+	 * @param intval $typeid ·ÖÀàID
+	 * @param intval $page Ò³Êı
 	 */
 	public function create_type($typeid = 0, $page = 1) {
 		if (!$typeid) return false;
@@ -273,10 +273,10 @@ class html {
 	}
 	
 	/**
-	 * ç”Ÿæˆåˆ†ç±»é™æ€é¡µ
-	 * @param intval $typeid åˆ†ç±»ID
-	 * @param intval $pagesize æ¯é¡µç¯‡æ•°
-	 * @param intval $pages æœ€å¤§æ›´æ–°é¡µæ•°
+	 * Éú³É·ÖÀà¾²Ì¬Ò³
+	 * @param intval $typeid ·ÖÀàID
+	 * @param intval $pagesize Ã¿Ò³ÆªÊı
+	 * @param intval $pages ×î´ó¸üĞÂÒ³Êı
  	 */
 	public function _list($typeid = 0, $pagesize = 20, $pages = 0) {
 		if (!$typeid) return false;

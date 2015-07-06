@@ -5,7 +5,7 @@
 <div class="pad-10">
 <div class="explain-col search-form">
 <?php if($config_flag) {
-	echo "<img src='".IMG_PATH."icon/right.png' width='64' height='64'> ".L('閰嶇疆姝ｇ‘锛屾偍鍙互姝ｅ父浣跨敤瑙嗛鑱氬悎骞冲彴浜嗭紒');
+	echo "<img src='".IMG_PATH."icon/right.png' width='64' height='64'> ".L('配置正确，您可以正常使用视频聚合平台了！');
 } else {
 ?>
 <font color="#cc0000"><?php echo "<img src='".IMG_PATH."icon/error.png' width='64' height='64'> ".L('subscribe_notic');?></font>
@@ -31,7 +31,7 @@
 	
 	<tr>
 		<td  width="120"><?php echo L('video_api_url');?> </td> 
-		<td><?php echo APP_PATH;?>api.php?op=video_api  (鑱氬悎骞冲彴鐨勫洖璋冨湴鍧�)</td>
+		<td><?php echo APP_PATH;?>api.php?op=video_api  (聚合平台的回调地址)</td>
 	</tr>
 </table>
 </fieldset>

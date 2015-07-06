@@ -16,7 +16,7 @@ class address extends admin {
 		set_time_limit(120);
 		$old_attachment_path = isset($_POST['old_attachment_path']) && trim($_POST['old_attachment_path']) ? trim($_POST['old_attachment_path']) : showmessage(L('old_attachment_address_empty'));
 		$new_attachment_path = isset($_POST['new_attachment_path']) && trim($_POST['new_attachment_path']) ? trim($_POST['new_attachment_path']) : showmessage(L('new_attachment_address_empty'));
-		//è·å–æ•°æ®è¡¨åˆ—è¡¨
+		//»ñÈ¡Êı¾İ±íÁĞ±í
 		$db = pc_base::load_model('site_model');
 		$r = $db->query("show tables");
 		$r = $db->fetch_array($db_list);
@@ -24,7 +24,7 @@ class address extends admin {
 			$v = array_pop($v);
 			if (strpos($v, $db->db_tablepre)===false) continue;
 			$table_name = str_replace($db->db_tablepre, '', $v);
-			//è·å–æ¯ä¸ªè¡¨çš„æ•°æ®è¡¨ç»“æ„
+			//»ñÈ¡Ã¿¸ö±íµÄÊı¾İ±í½á¹¹
 			if (!$modle_table_db = pc_base::load_model($table_name.'_model')) {
 				$modle_table_db = $db;
 			}
@@ -32,7 +32,7 @@ class address extends admin {
 			if ($s) {
 				$sql = '';
 				foreach ($s as $key=>$val) {
-					//å¯¹æ•°æ®è¡¨è¿›è¡Œè¿‡æ»¤ï¼Œåªæœ‰CHARã€TEXTæˆ–mediumtextç±»å‹çš„å­—æ®µæ‰å¯ä»¥ä¿å­˜ä¸‹é™„ä»¶çš„åœ°å€ã€‚
+					//¶ÔÊı¾İ±í½øĞĞ¹ıÂË£¬Ö»ÓĞCHAR¡¢TEXT»òmediumtextÀàĞÍµÄ×Ö¶Î²Å¿ÉÒÔ±£´æÏÂ¸½¼şµÄµØÖ·¡£
 					if (preg_match('/(char|text|mediumtext)+/i', $val)) {
 						$sql .= !empty($sql) ? ", `$key`=replace(`$key`, '$old_attachment_path', '$new_attachment_path')" : "`$key`=replace(`$key`, '$old_attachment_path', '$new_attachment_path')";
 					}

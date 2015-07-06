@@ -80,7 +80,7 @@ $siteid = $this->siteid;
 		var relation_ids = $('#relation').val();
 		var sid = 'v'+id;
 		$(obj).attr('class','line_fbffe4');
-		var str = "<li id='"+sid+"'>Â·<span>"+title+"</span><a href='javascript:;' class='close' onclick=\"remove_id('"+sid+"')\"></a></li>";
+		var str = "<li id='"+sid+"'>¡¤<span>"+title+"</span><a href='javascript:;' class='close' onclick=\"remove_id('"+sid+"')\"></a></li>";
 		$('#catname').append(str);
 		if(relation_ids =='' ) {
 			$('#relation').val(id);
@@ -94,7 +94,7 @@ function change_siteid(siteid) {
 		$("#load_catgory").load("?m=content&c=content&a=public_getsite_categorys&siteid="+siteid);
 		$("#siteid").val(siteid);
 }
-//ç§»é™¤ID
+//ÒÆ³ýID
 function remove_id(id) {
 	$('#'+id).remove();
 }

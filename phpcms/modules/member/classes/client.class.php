@@ -4,9 +4,9 @@ class client {
 
 	private $ps_api_url, $ps_auth_key, $ps_vsersion;
 	/**
-	 * ææ„å‡½æ•°
-	 * @param $ps_api_url æ¥å£åŸŸå
-	 * @param $ps_auth_key åŠ å¯†å¯†åŒ™
+	 * Îö¹¹º¯Êı
+	 * @param $ps_api_url ½Ó¿ÚÓòÃû
+	 * @param $ps_auth_key ¼ÓÃÜÃÜ³×
 	 */
 	public function __construct($ps_api_url='127.0.0.1', $ps_auth_key='', $ps_vsersion='1') {
 		$this->ps_api_url = $ps_api_url;
@@ -15,13 +15,13 @@ class client {
 	}
 	
 	/**
-	 * ç”¨æˆ·æ³¨å†Œ
-	 * @param string $username 	ç”¨æˆ·å
-	 * @param string $password 	å¯†ç 
+	 * ÓÃ»§×¢²á
+	 * @param string $username 	ÓÃ»§Ãû
+	 * @param string $password 	ÃÜÂë
 	 * @param string $email		email
-	 * @param string $regip		æ³¨å†Œip
-	 * @param string $random	å¯†ç éšæœºæ•°
-	 * @return int {-1:ç”¨æˆ·åå·²ç»å­˜åœ¨ ;-2:emailå·²å­˜åœ¨;-3:emailæ ¼å¼é”™è¯¯;-4:ç”¨æˆ·åç¦æ­¢æ³¨å†Œ;-5:é‚®ç®±ç¦æ­¢æ³¨å†Œï¼›int(uid):æˆåŠŸ}
+	 * @param string $regip		×¢²áip
+	 * @param string $random	ÃÜÂëËæ»úÊı
+	 * @return int {-1:ÓÃ»§ÃûÒÑ¾­´æÔÚ ;-2:emailÒÑ´æÔÚ;-3:email¸ñÊ½´íÎó;-4:ÓÃ»§Ãû½ûÖ¹×¢²á;-5:ÓÊÏä½ûÖ¹×¢²á£»int(uid):³É¹¦}
 	 */
 	public function ps_member_register($username, $password, $email, $regip='', $random='') {
 		if(!$this->_is_email($email)) {
@@ -31,11 +31,11 @@ class client {
 		return $this->_ps_send('register', array('username'=>$username, 'password'=>$password, 'email'=>$email, 'regip'=>$regip, 'random'=>$random));
 	}
 	/**
-	 * ç”¨æˆ·ç™»é™†
-	 * @param string $username 	ç”¨æˆ·å
-	 * @param string $password 	å¯†ç 
+	 * ÓÃ»§µÇÂ½
+	 * @param string $username 	ÓÃ»§Ãû
+	 * @param string $password 	ÃÜÂë
 	 * @param int $isemail	email
-	 * @return int {-2;å¯†ç é”™è¯¯;-1:ç”¨æˆ·åä¸å­˜åœ¨;array(userinfo):ç”¨æˆ·ä¿¡æ¯}
+	 * @return int {-2;ÃÜÂë´íÎó;-1:ÓÃ»§Ãû²»´æÔÚ;array(userinfo):ÓÃ»§ĞÅÏ¢}
 	 */
 	public function ps_member_login($username, $password, $isemail=0) {
 		if($isemail) {
@@ -50,9 +50,9 @@ class client {
 	}
 	
 	/**
-	 * åŒæ­¥ç™»é™†
+	 * Í¬²½µÇÂ½
 	 * @param string $uid
-	 * @return string javascriptç”¨æˆ·åŒæ­¥ç™»é™†js
+	 * @return string javascriptÓÃ»§Í¬²½µÇÂ½js
 	 */
 	public function ps_member_synlogin($uid) {
 		$uid = intval($uid);
@@ -60,23 +60,23 @@ class client {
 	}
 
 	/**
-	 * åŒæ­¥é€€å‡º
+	 * Í¬²½ÍË³ö
 	 * @param string $uid
-	 * @return string javascriptç”¨æˆ·åŒæ­¥é€€å‡ºjs
+	 * @return string javascriptÓÃ»§Í¬²½ÍË³öjs
 	 */
 	public function ps_member_synlogout() {
 		return $this->_ps_send('synlogout', array());
 	}
 	
 	/**
-	 * ç¼–è¾‘ç”¨æˆ·
-	 * @param string $username		ç”¨æˆ·å
+	 * ±à¼­ÓÃ»§
+	 * @param string $username		ÓÃ»§Ãû
 	 * @param string $email			email
-	 * @param string $password		æ—§å¯†ç 
-	 * @param string $newpassword	æ–°å¯†ç 
-	 * @param int $uid				phpssoç”¨æˆ·uid
-	 * @param string $random	 	å¯†ç éšæœºæ•°
-	 * @return int {-1:ç”¨æˆ·ä¸å­˜åœ¨;-2:æ—§å¯†ç é”™è¯¯;-3:emailå·²ç»å­˜åœ¨ ;-4:emailæ ¼å¼é”™è¯¯;1:æˆåŠŸ;0:æœªä½œä¿®æ”¹,-5:å‚æ•°æ ¼å¼é”™è¯¯}
+	 * @param string $password		¾ÉÃÜÂë
+	 * @param string $newpassword	ĞÂÃÜÂë
+	 * @param int $uid				phpssoÓÃ»§uid
+	 * @param string $random	 	ÃÜÂëËæ»úÊı
+	 * @return int {-1:ÓÃ»§²»´æÔÚ;-2:¾ÉÃÜÂë´íÎó;-3:emailÒÑ¾­´æÔÚ ;-4:email¸ñÊ½´íÎó;1:³É¹¦;0:Î´×÷ĞŞ¸Ä,-5:²ÎÊı¸ñÊ½´íÎó}
 	 */
 	public function ps_member_edit($username, $email, $password='', $newpassword='', $uid='', $random='') {
 		if($email && !$this->_is_email($email)) {
@@ -89,19 +89,19 @@ class client {
 	}
 
 	/**
-	 * åˆ é™¤ç”¨æˆ·å¤´åƒ
-	 * @param int $uid				phpssoç”¨æˆ·uid
-	 * @return int {1:æˆåŠŸ;0:å¤±è´¥}
+	 * É¾³ıÓÃ»§Í·Ïñ
+	 * @param int $uid				phpssoÓÃ»§uid
+	 * @return int {1:³É¹¦;0:Ê§°Ü}
 	 */
 	public function ps_deleteavatar($uid) {
 		return $this->_ps_send('deleteavatar', array('uid'=>$uid));
 	}
 	
 	/**
-	 * è·å–ç”¨æˆ·ä¿¡æ¯
-	 * @param $mix ç”¨æˆ·id/ç”¨æˆ·å/email
-	 * @param $type {1:ç”¨æˆ·id;2:ç”¨æˆ·å;3:email}
-	 * @return $mix {-1:ç”¨æˆ·ä¸å­˜åœ¨;userinfo:ç”¨æˆ·ä¿¡æ¯}
+	 * »ñÈ¡ÓÃ»§ĞÅÏ¢
+	 * @param $mix ÓÃ»§id/ÓÃ»§Ãû/email
+	 * @param $type {1:ÓÃ»§id;2:ÓÃ»§Ãû;3:email}
+	 * @return $mix {-1:ÓÃ»§²»´æÔÚ;userinfo:ÓÃ»§ĞÅÏ¢}
 	 */
 	public function ps_get_member_info($mix, $type=1) {
 		if($type==1) {
@@ -122,9 +122,9 @@ class client {
 	}
 
 	/**
-	 * åˆ é™¤ç”¨æˆ·
-	 * @param mix {1:ç”¨æˆ·id;2:ç”¨æˆ·å;3:email} å¦‚æœæ˜¯ç”¨æˆ·idå¯ä»¥ä¸ºæ•°ç»„
-	 * @return int {-1:ç”¨æˆ·ä¸å­˜åœ¨;1:åˆ é™¤æˆåŠŸ}
+	 * É¾³ıÓÃ»§
+	 * @param mix {1:ÓÃ»§id;2:ÓÃ»§Ãû;3:email} Èç¹ûÊÇÓÃ»§id¿ÉÒÔÎªÊı×é
+	 * @return int {-1:ÓÃ»§²»´æÔÚ;1:É¾³ı³É¹¦}
 	 */
 	public function ps_delete_member($mix, $type=1) {
 		if($type==1) {
@@ -141,55 +141,55 @@ class client {
 	}
 	
 	/**
-	 * æ£€æŸ¥ç”¨æˆ·æ˜¯å¦å¯ä»¥æ³¨å†Œ
+	 * ¼ì²éÓÃ»§ÊÇ·ñ¿ÉÒÔ×¢²á
 	 * @param string $username
-	 * @return int {-4ï¼šç”¨æˆ·åç¦æ­¢æ³¨å†Œ;-1:ç”¨æˆ·åå·²ç»å­˜åœ¨ ;1:æˆåŠŸ}
+	 * @return int {-4£ºÓÃ»§Ãû½ûÖ¹×¢²á;-1:ÓÃ»§ÃûÒÑ¾­´æÔÚ ;1:³É¹¦}
 	 */
 	public function ps_checkname($username) {
 		return $this->_ps_send('checkname', array('username'=>$username));
 	}
 
 	/**
-	 * æ£€æŸ¥é‚®ç®±æ˜¯å¦å¯ä»¥æ³¨å†Œ
+	 * ¼ì²éÓÊÏäÊÇ·ñ¿ÉÒÔ×¢²á
 	 * @param string $email
-	 * @return int {-1:emailå·²ç»å­˜åœ¨ ;-5:é‚®ç®±ç¦æ­¢æ³¨å†Œ;1:æˆåŠŸ}
+	 * @return int {-1:emailÒÑ¾­´æÔÚ ;-5:ÓÊÏä½ûÖ¹×¢²á;1:³É¹¦}
 	 */
 	public function ps_checkemail($email) {
 		return $this->_ps_send('checkemail', array('email'=>$email));
 	}
 	
 	/**
-	 * è·å–åº”ç”¨åˆ—è¡¨ä¿¡æ¯
+	 * »ñÈ¡Ó¦ÓÃÁĞ±íĞÅÏ¢
 	 */
 	public function ps_getapplist() {
 		return $this->_ps_send('getapplist', array());
 	}
 
 	/**
-	 * è·å–ç§¯åˆ†å…‘æ¢æ¯”ä¾‹åˆ—è¡¨
+	 * »ñÈ¡»ı·Ö¶Ò»»±ÈÀıÁĞ±í
 	 */
 	public function ps_getcreditlist() {
 		return $this->_ps_send('getcredit', array());
 	}
 
 	/**
-	 * å…‘æ¢ç§¯åˆ†
-	 * ç”¨äºä½•å…¶ä»–åº”ç”¨ä¹‹é—´ç§¯åˆ†å…‘æ¢
+	 * ¶Ò»»»ı·Ö
+	 * ÓÃÓÚºÎÆäËûÓ¦ÓÃÖ®¼ä»ı·Ö¶Ò»»
 	 * @param int $uid			phpssouid
-	 * @param int $from			æœ¬ç³»ç»Ÿç§¯åˆ†ç±»å‹id
-	 * @param int $toappid 		ç›®æ ‡ç³»ç»Ÿåº”ç”¨appid
-	 * @param int $to			ç›®æ ‡ç³»ç»Ÿç§¯åˆ†ç±»å‹id
-	 * @param int $credit		æœ¬ç³»ç»Ÿæ‰£é™¤ç§¯åˆ†æ•°
-	 * @return bool 			{1:æˆåŠŸ;0:å¤±è´¥}
+	 * @param int $from			±¾ÏµÍ³»ı·ÖÀàĞÍid
+	 * @param int $toappid 		Ä¿±êÏµÍ³Ó¦ÓÃappid
+	 * @param int $to			Ä¿±êÏµÍ³»ı·ÖÀàĞÍid
+	 * @param int $credit		±¾ÏµÍ³¿Û³ı»ı·ÖÊı
+	 * @return bool 			{1:³É¹¦;0:Ê§°Ü}
 	 */
 	public function ps_changecredit($uid, $from, $toappid, $to, $credit) {
 		return $this->_ps_send('changecredit', array('uid'=>$uid, 'from'=>$from, 'toappid'=>$toappid, 'to'=>$to, 'credit'=>$credit));
 	}
 	
 	/**
-	 * æ ¹æ®phpsso uidè·å–å¤´åƒurl
-	 * @param int $uid ç”¨æˆ·id
-	 * @return array å››ä¸ªå°ºå¯¸ç”¨æˆ·å¤´åƒæ•°ç»„
+	 * ¸ù¾İphpsso uid»ñÈ¡Í·Ïñurl
+	 * @param int $uid ÓÃ»§id
+	 * @return array ËÄ¸ö³ß´çÓÃ»§Í·ÏñÊı×é
 	 */
 	public function ps_getavatar($uid) {
 		$dir1 = ceil($uid / 10000);
@@ -200,8 +200,8 @@ class client {
 	}
 
 	/**
-	 * è·å–ä¸Šä¼ å¤´åƒflashçš„htmlä»£ç 
-	 * @param int $uid ç”¨æˆ·id
+	 * »ñÈ¡ÉÏ´«Í·ÏñflashµÄhtml´úÂë
+	 * @param int $uid ÓÃ»§id
 	 */
 	public function ps_getavatar_upload_html($uid) {
 		$auth_data = $this->auth_data(array('uid'=>$uid, 'ps_auth_key'=>$this->ps_auth_key), '', $this->ps_auth_key);
@@ -242,13 +242,13 @@ EOF;
 		return $str;
 	}
 	/**
-	* å­—ç¬¦ä¸²åŠ å¯†ã€è§£å¯†å‡½æ•°
+	* ×Ö·û´®¼ÓÃÜ¡¢½âÃÜº¯Êı
 	*
 	*
-	* @param	string	$txt		å­—ç¬¦ä¸²
-	* @param	string	$operation	ENCODEä¸ºåŠ å¯†ï¼ŒDECODEä¸ºè§£å¯†ï¼Œå¯é€‰å‚æ•°ï¼Œé»˜è®¤ä¸ºENCODEï¼Œ
-	* @param	string	$key		å¯†é’¥ï¼šæ•°å­—ã€å­—æ¯ã€ä¸‹åˆ’çº¿
-	* @param	string	$expiry		è¿‡æœŸæ—¶é—´
+	* @param	string	$txt		×Ö·û´®
+	* @param	string	$operation	ENCODEÎª¼ÓÃÜ£¬DECODEÎª½âÃÜ£¬¿ÉÑ¡²ÎÊı£¬Ä¬ÈÏÎªENCODE£¬
+	* @param	string	$key		ÃÜÔ¿£ºÊı×Ö¡¢×ÖÄ¸¡¢ÏÂ»®Ïß
+	* @param	string	$expiry		¹ıÆÚÊ±¼ä
 	* @return	string
 	*/
 	function sys_auth($string, $operation = 'ENCODE', $key = '', $expiry = 0) {
@@ -300,11 +300,11 @@ EOF;
 	}
 
 	/**
-	* å°†æ•°ç»„è½¬æ¢ä¸ºå­—ç¬¦ä¸²
+	* ½«Êı×é×ª»»Îª×Ö·û´®
 	*
-	* @param	array	$data		æ•°ç»„
-	* @param	bool	$isformdata	å¦‚æœä¸º0ï¼Œåˆ™ä¸ä½¿ç”¨new_stripslasheså¤„ç†ï¼Œå¯é€‰å‚æ•°ï¼Œé»˜è®¤ä¸º1
-	* @return	string	è¿”å›å­—ç¬¦ä¸²ï¼Œå¦‚æœï¼Œdataä¸ºç©ºï¼Œåˆ™è¿”å›ç©º
+	* @param	array	$data		Êı×é
+	* @param	bool	$isformdata	Èç¹ûÎª0£¬Ôò²»Ê¹ÓÃnew_stripslashes´¦Àí£¬¿ÉÑ¡²ÎÊı£¬Ä¬ÈÏÎª1
+	* @return	string	·µ»Ø×Ö·û´®£¬Èç¹û£¬dataÎª¿Õ£¬Ôò·µ»Ø¿Õ
 	*/
 	public function array2string($data, $isformdata = 1) {
 		if($data == '') return '';
@@ -333,24 +333,24 @@ EOF;
 	}
 	
 	/**
-	 * å‘é€æ•°æ®
-	 * @param $action æ“ä½œ
-	 * @param $data æ•°æ®
+	 * ·¢ËÍÊı¾İ
+	 * @param $action ²Ù×÷
+	 * @param $data Êı¾İ
 	 */
 	private function _ps_send($action, $data = null) {
  		return $this->_ps_post($this->ps_api_url."/index.php?m=phpsso&c=index&a=".$action, 500000, $this->auth_data($data));
 	}
 	
 	/**
-	 *  postæ•°æ®
-	 *  @param string $url		postçš„url
-	 *  @param int $limit		è¿”å›çš„æ•°æ®çš„é•¿åº¦
-	 *  @param string $post		postæ•°æ®ï¼Œå­—ç¬¦ä¸²å½¢å¼username='dalarge'&password='123456'
-	 *  @param string $cookie	æ¨¡æ‹Ÿ cookieï¼Œå­—ç¬¦ä¸²å½¢å¼username='dalarge'&password='123456'
-	 *  @param string $ip		ipåœ°å€
-	 *  @param int $timeout		è¿æ¥è¶…æ—¶æ—¶é—´
-	 *  @param bool $block		æ˜¯å¦ä¸ºé˜»å¡æ¨¡å¼
-	 *  @return string			è¿”å›å­—ç¬¦ä¸²
+	 *  postÊı¾İ
+	 *  @param string $url		postµÄurl
+	 *  @param int $limit		·µ»ØµÄÊı¾İµÄ³¤¶È
+	 *  @param string $post		postÊı¾İ£¬×Ö·û´®ĞÎÊ½username='dalarge'&password='123456'
+	 *  @param string $cookie	Ä£Äâ cookie£¬×Ö·û´®ĞÎÊ½username='dalarge'&password='123456'
+	 *  @param string $ip		ipµØÖ·
+	 *  @param int $timeout		Á¬½Ó³¬Ê±Ê±¼ä
+	 *  @param bool $block		ÊÇ·ñÎª×èÈûÄ£Ê½
+	 *  @return string			·µ»Ø×Ö·û´®
 	 */
 	
 	private function _ps_post($url, $limit = 0, $post = '', $cookie = '', $ip = '', $timeout = 15, $block = true) {
@@ -407,7 +407,7 @@ EOF;
 		}
 		@fclose($fp);
 		
-		//éƒ¨åˆ†è™šæ‹Ÿä¸»æœºè¿”å›æ•°å€¼æœ‰è¯¯ï¼Œæš‚ä¸ç¡®å®šåŸå› ï¼Œè¿‡æ»¤è¿”å›æ•°æ®æ ¼å¼
+		//²¿·ÖĞéÄâÖ÷»ú·µ»ØÊıÖµÓĞÎó£¬Ôİ²»È·¶¨Ô­Òò£¬¹ıÂË·µ»ØÊı¾İ¸ñÊ½
 		$return_arr = explode("\n", $return);
 		if(isset($return_arr[1])) {
 			$return = trim($return_arr[1]);
@@ -418,7 +418,7 @@ EOF;
 	}
 
 	/**
-	 * è¿‡æ»¤å­—ç¬¦ä¸²
+	 * ¹ıÂË×Ö·û´®
 	 * @param $string
 	 */
 	private function _ps_stripslashes($string) {
@@ -432,7 +432,7 @@ EOF;
 	
 	
 	/**
-	 * è·å–å½“å‰é¡µé¢å®Œæ•´URLåœ°å€
+	 * »ñÈ¡µ±Ç°Ò³ÃæÍêÕûURLµØÖ·
 	 */
 	private function _get_url() {
 		$sys_protocal = isset($_SERVER['SERVER_PORT']) && $_SERVER['SERVER_PORT'] == '443' ? 'https://' : 'http://';
@@ -442,7 +442,7 @@ EOF;
 		return $sys_protocal.(isset($_SERVER['HTTP_HOST']) ? $_SERVER['HTTP_HOST'] : '').$relate_url;
 	}
 	/**
-	 * å®‰å…¨è¿‡æ»¤å‡½æ•°
+	 * °²È«¹ıÂËº¯Êı
 	 *
 	 * @param $string
 	 * @return string
@@ -465,7 +465,7 @@ EOF;
 	}
 	
 	/**
-	 * åˆ¤æ–­emailæ ¼å¼æ˜¯å¦æ­£ç¡®
+	 * ÅĞ¶Ïemail¸ñÊ½ÊÇ·ñÕıÈ·
 	 * @param $string email
 	 */
 	private function _is_email($email) {

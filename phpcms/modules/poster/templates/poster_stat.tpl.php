@@ -5,7 +5,7 @@ include $this->admin_tpl('header','admin');
 <div class="subnav">
   <h2 class="title-1 line-x f14 fb blue lh28"><?php echo L('ads_module')?></h2>  
 <div class="content-menu ib-a blue line-x">
-<a class="add fb" href="?m=poster&c=poster&a=init&spaceid=<?php echo $info['spaceid'];?>"><em><?php echo L('ad_list')?></em></a>ã€€<a class="on" href="?m=poster&c=space"><em><?php echo L('space_list')?></em></a></div>
+<a class="add fb" href="?m=poster&c=poster&a=init&spaceid=<?php echo $info['spaceid'];?>"><em><?php echo L('ad_list')?></em></a>¡¡<a class="on" href="?m=poster&c=space"><em><?php echo L('space_list')?></em></a></div>
 </div>
 <div class="pad-lr-10">
 <div class="col-tab">
@@ -18,7 +18,7 @@ include $this->admin_tpl('header','admin');
 <input name='range' type='radio' value='2' onclick="redirect('?m=poster&c=poster&a=stat&id=<?php echo $_GET['id']?>&click=<?php echo $_GET['click']?>&pc_hash=<?php echo $_GET['pc_hash']?>&group=<?php echo $_GET['group']?>&range='+this.value)" <?php if($_GET['range']==2) {?>checked<?php }?>> <?php echo L('yesterday')?>
 <input name='range' type='radio' value='7' onclick="redirect('?m=poster&c=poster&a=stat&id=<?php echo $_GET['id']?>&click=<?php echo $_GET['click']?>&pc_hash=<?php echo $_GET['pc_hash']?>&group=<?php echo $_GET['group']?>&range='+this.value)" <?php if($_GET['range']==7) {?>checked<?php }?>> <?php echo L('one_week')?>
 <input name='range' type='radio' value='14' onclick="redirect('?m=poster&c=poster&a=stat&id=<?php echo $_GET['id']?>&click=<?php echo $_GET['click']?>&pc_hash=<?php echo $_GET['pc_hash']?>&group=<?php echo $_GET['group']?>&range='+this.value)" <?php if($_GET['range']==14) {?>checked<?php }?>> <?php echo L('two_week')?>
-<input name='range' type='radio' value='30' onclick="redirect('?m=poster&c=poster&a=stat&id=<?php echo $_GET['id']?>&click=<?php echo $_GET['click']?>&pc_hash=<?php echo $_GET['pc_hash']?>&group=<?php echo $_GET['group']?>&range='+this.value)" <?php if($_GET['range']==30) {?>checked<?php }?>> <?php echo L('one_month')?> <font color="red"><?php echo L('history_select')?>ï¼š</font><select name="year" onchange="if(this.value!=''){location='?m=poster&c=poster&a=stat&id=<?php echo $_GET['id']?>&click=<?php echo $_GET['click']?>&pc_hash=<?php echo $_GET['pc_hash']?>&group=<?php echo $_GET['group']?>&year='+this.value;}">
+<input name='range' type='radio' value='30' onclick="redirect('?m=poster&c=poster&a=stat&id=<?php echo $_GET['id']?>&click=<?php echo $_GET['click']?>&pc_hash=<?php echo $_GET['pc_hash']?>&group=<?php echo $_GET['group']?>&range='+this.value)" <?php if($_GET['range']==30) {?>checked<?php }?>> <?php echo L('one_month')?> <font color="red"><?php echo L('history_select')?>£º</font><select name="year" onchange="if(this.value!=''){location='?m=poster&c=poster&a=stat&id=<?php echo $_GET['id']?>&click=<?php echo $_GET['click']?>&pc_hash=<?php echo $_GET['pc_hash']?>&group=<?php echo $_GET['group']?>&year='+this.value;}">
 <?php echo $selectstr;?></select></li>
         </ul>
             <div class="content pad-10">
@@ -62,9 +62,9 @@ if(is_array($data)){
           <tr>
            <td width="24" align="center"><?php echo intval($k+1);?></td>
            <td style="padding:5px;"><div><span>
-           <b>IPï¼š<?php echo $v['ip']?></b> ( <b><?php echo $v['area']?></b> )</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo L('come_from')?>ï¼š <a href="<?php echo $v['referer']?>" target="_blank">
+           <b>IP£º<?php echo $v['ip']?></b> ( <b><?php echo $v['area']?></b> )</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo L('come_from')?>£º <a href="<?php echo $v['referer']?>" target="_blank">
           <?php echo $v['referer']?></a></div>
-         <div><span class="item"><?php echo L('visit_time')?>ï¼š<em><?php echo format::date($v['clicktime'], 1);?></em></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo L('operate')?>ï¼š<?php if($v['type']) { echo L('click'); } else { echo L('show'); }?></div></td>
+         <div><span class="item"><?php echo L('visit_time')?>£º<em><?php echo format::date($v['clicktime'], 1);?></em></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo L('operate')?>£º<?php if($v['type']) { echo L('click'); } else { echo L('show'); }?></div></td>
          </tr>
         <?php } }?>
        </table>

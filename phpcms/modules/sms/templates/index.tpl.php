@@ -15,15 +15,15 @@
 </form>
 <div class="btn text-l">
 <?php if(!empty($this->smsapi->userid)) {?>
-<span class="font-fixh green"><?php echo L('account')?></span> ï¼š <span class="font-fixh"><?php echo $this->smsapi->userid?></span> ï¼Œ <span class="font-fixh green"><?php echo L('smsnumber')?></span> ï¼š </span><span class="font-fixh"><?php echo $smsinfo_arr['surplus']?></span> <span class="font-fixh green"><?php echo L('item')?></span>
+<span class="font-fixh green"><?php echo L('account')?></span> £º <span class="font-fixh"><?php echo $this->smsapi->userid?></span> £¬ <span class="font-fixh green"><?php echo L('smsnumber')?></span> £º </span><span class="font-fixh"><?php echo $smsinfo_arr['surplus']?></span> <span class="font-fixh green"><?php echo L('item')?></span>
 
 <?php } else {?>
-<span class="font-fixh green">æœªç»‘å®šå¹³å°è´¦æˆ·ï¼Œè¯·ç‚¹å‡»<a href="index.php?m=sms&c=sms&a=sms_setting&menuid=1539&pc_hash=<?php echo $_GET['pc_hash'];?>"><span class="font-fixh">å¹³å°è®¾ç½®</span></a>ç»‘å®šã€‚</span>
+<span class="font-fixh green">Î´°ó¶¨Æ½Ì¨ÕË»§£¬Çëµã»÷<a href="index.php?m=sms&c=sms&a=sms_setting&menuid=1539&pc_hash=<?php echo $_GET['pc_hash'];?>"><span class="font-fixh">Æ½Ì¨ÉèÖÃ</span></a>°ó¶¨¡£</span>
 <?php }?>
 </div><br>
 
 <div class="btn text-l">
-<span class="font-fixh green">å½“å‰æœåŠ¡å™¨IPä¸º ï¼š <span class="font-fixh"><?php echo $_SERVER["SERVER_ADDR"];?></span> <?php if(!empty($smsinfo_arr['allow_send_ip']) &&!in_array($_SERVER["SERVER_ADDR"],$smsinfo_arr['allow_send_ip'])) echo 'å½“å‰æœåŠ¡å™¨æ‰€åœ¨IPä¸å…è®¸å‘é€çŸ­ä¿¡';?>
+<span class="font-fixh green">µ±Ç°·þÎñÆ÷IPÎª £º <span class="font-fixh"><?php echo $_SERVER["SERVER_ADDR"];?></span> <?php if(!empty($smsinfo_arr['allow_send_ip']) &&!in_array($_SERVER["SERVER_ADDR"],$smsinfo_arr['allow_send_ip'])) echo 'µ±Ç°·þÎñÆ÷ËùÔÚIP²»ÔÊÐí·¢ËÍ¶ÌÐÅ';?>
 </div>
 <br>
     <table width="100%" cellspacing="0">
@@ -55,7 +55,7 @@
     </tbody>
     </table>
 <div class="explain-col search-form">
-å¼€å¯ä¼šå‘˜æ³¨å†ŒçŸ­ä¿¡éªŒè¯æ–¹æ³•ï¼šåŽå°->ç”¨æˆ·->ä¼šå‘˜æ¨¡å—é…ç½®->æ‰‹æœºå¼ºåˆ¶éªŒè¯æ–¹å¼ é€‰æ‹© <font color="red">æ˜¯</font>
+¿ªÆô»áÔ±×¢²á¶ÌÐÅÑéÖ¤·½·¨£ººóÌ¨->ÓÃ»§->»áÔ±Ä£¿éÅäÖÃ->ÊÖ»úÇ¿ÖÆÑéÖ¤·½Ê½ Ñ¡Ôñ <font color="red">ÊÇ</font>
 </div>
 </div>
 </div>

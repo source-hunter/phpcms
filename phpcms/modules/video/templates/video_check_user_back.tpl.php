@@ -9,29 +9,29 @@
 <!--
 $(function(){
 	$.formValidator.initConfig({autotip:true,formid:"myform",onerror:function(msg){}});
-	 $("#email").formValidator({onshow:"è¯·è¾“å…¥E-mail",onfocus:"è¯·è¾“å…¥E-mail",oncorrect:"E-mailæ ¼å¼æ­£ç¡®"}).regexValidator({regexp:"email",datatype:"enum",onerror:"E-mailæ ¼å¼é”™è¯¯"});
+	 $("#email").formValidator({onshow:"ÇëÊäÈëE-mail",onfocus:"ÇëÊäÈëE-mail",oncorrect:"E-mail¸ñÊ½ÕıÈ·"}).regexValidator({regexp:"email",datatype:"enum",onerror:"E-mail¸ñÊ½´íÎó"});
 })
 //-->
 </script>
 <div class="pad-10">
 <div class="explain-col search-form">
-<font color="#cc0000"><?php echo L('1ã€å½“å‰åŸŸåå·²ç»ç™»è®°ï¼Œè¯·è¾“å…¥åˆå§‹å®Œå–„èµ„æ–™æ—¶å¡«å†™çš„EMAILï¼Œè¿›è¡ŒéªŒè¯ç éªŒè¯ï¼<br> 2ã€ä½ ä¹Ÿå¯ä»¥ç›´æ¥å¡«å†™å¯¹åº”çš„é…ç½®ä¿¡æ¯ï¼Œè¿›è¡Œæäº¤ï¼');?></font>
+<font color="#cc0000"><?php echo L('1¡¢µ±Ç°ÓòÃûÒÑ¾­µÇ¼Ç£¬ÇëÊäÈë³õÊ¼ÍêÉÆ×ÊÁÏÊ±ÌîĞ´µÄEMAIL£¬½øĞĞÑéÖ¤ÂëÑéÖ¤£¡<br> 2¡¢ÄãÒ²¿ÉÒÔÖ±½ÓÌîĞ´¶ÔÓ¦µÄÅäÖÃĞÅÏ¢£¬½øĞĞÌá½»£¡');?></font>
 </div>
 
 <div class="common-form">
 <form name="myform" action="?m=video&c=video&a=check_user_back&pc_hash=<?php echo $_GET['pc_hash'];?>" method="post" id="myform">
 <fieldset>
-	<legend><?php echo L('å¼€é€šæ–¹å¼1ï¼šé‚®ç®±éªŒè¯');?></legend>
+	<legend><?php echo L('¿ªÍ¨·½Ê½1£ºÓÊÏäÑéÖ¤');?></legend>
 <table width="100%" class="table_form">
 	<tr>
 		<td  width="120"><?php echo L('email');?></td> 
 		<td>
 		<input name="email"  type="text" id="email"  size="40" value="">
-		<input type="button" onclick="send_code()" value="<?php echo L('å‘é€éªŒè¯ç ')?>" class="button" name="sendcode" id="sendcode"> 
+		<input type="button" onclick="send_code()" value="<?php echo L('·¢ËÍÑéÖ¤Âë')?>" class="button" name="sendcode" id="sendcode"> 
 		</td>
 	</tr>
 	<tr>
-		<td  width="120"><?php echo L('éªŒè¯ç ');?><div id="all"></div>  </td> 
+		<td  width="120"><?php echo L('ÑéÖ¤Âë');?><div id="all"></div>  </td> 
 		<td><input type="text" name="code" size="40" value="" id="code"></td>
 	</tr> 
 	<tr>
@@ -43,11 +43,11 @@ $(function(){
 
 </form>
 
-<!--å¡«å†™skey_sn-->
+<!--ÌîĞ´skey_sn-->
 <br>
 <form name="myform2" action="?m=video&c=video&a=setting&pc_hash=<?php echo $_GET['pc_hash'];?>" method="post" id="myform2">
 <fieldset>
-	<legend><?php echo L('å¼€é€šæ–¹å¼2ï¼šé…ç½®å®Œå–„');?></legend>
+	<legend><?php echo L('¿ªÍ¨·½Ê½2£ºÅäÖÃÍêÉÆ');?></legend>
 <table width="100%" class="table_form">
 	<tr>
 		<td  width="120"><?php echo L('vms_sn');?></td> 
@@ -77,15 +77,15 @@ function send_code() {
 	var email = $("#email").val(); 
 	var pc_hash = "<?php echo $_GET['pc_hash'];?>";
 	if(email==''){
-		alert('email ä¸èƒ½ä¸ºç©ºï¼');return false;
+		alert('email ²»ÄÜÎª¿Õ£¡');return false;
 	}
 	$.get('?m=video&c=video&a=send_code&pc_hash='+pc_hash,{ email:email,random:Math.random()}, function(data){
 		if(data==1) { 
 			$("#sendcode").attr("disabled", true);
-			$("#sendcode").val('éªŒè¯ç å·²å‘é€!');
-			alert('éªŒè¯ç å‘é€æˆåŠŸï¼Œè¯·æŸ¥æ”¶ï¼'); 
+			$("#sendcode").val('ÑéÖ¤ÂëÒÑ·¢ËÍ!');
+			alert('ÑéÖ¤Âë·¢ËÍ³É¹¦£¬Çë²éÊÕ£¡'); 
 		}else{
-  			alert("éªŒè¯ç å‘é€å¤±è´¥ï¼Œè¯·æ£€æµ‹é‚®ç®±æ˜¯å¦æ­£ç¡®ï¼");
+  			alert("ÑéÖ¤Âë·¢ËÍÊ§°Ü£¬Çë¼ì²âÓÊÏäÊÇ·ñÕıÈ·£¡");
 		}
 	}); 
 } 

@@ -27,7 +27,7 @@
             </div>
             <div class="bk10"></div>
         	<div class="box extend">
-            	<div class="col-left">äº‰è®®</div>
+            	<div class="col-left">ÕùÒé</div>
                 <div class="col-auto">
 				{pc:block pos="index_block_1"}{/pc}
 				</div>
@@ -36,7 +36,7 @@
         </div>
         <div class="bk10"></div>
         <div class="box">
-        		<h5>å›¾ç‰‡æ–°é—»</h5>
+        		<h5>Í¼Æ¬ĞÂÎÅ</h5>
           {pc:content  action="position" posid="12" thumb="1" order="listorder DESC" num="10"}
             <ul class="content news-photo picbig">
              {loop $data $r}
@@ -54,7 +54,7 @@
         {loop subcat(0,0,0,$siteid) $r}
         {php $num++}
         <div class="box cat-area" {if $num%2!=0}style=" margin-right:10px"{/if}>
-        		<h5 class="title-1">{$r[catname]}<a href="{$r[url]}" class="more">æ›´å¤š>></a></h5>
+        		<h5 class="title-1">{$r[catname]}<a href="{$r[url]}" class="more">¸ü¶à>></a></h5>
              <div class="content">
              {pc:content  action="lists" catid="$r[catid]" order="updatetime DESC" thumb="1" num="1" return="info"}
              {loop $info $v}
@@ -69,7 +69,7 @@
 
                 <ul class="list lh24 f14">
                 {loop $info $v}
-                	<li>Â·<a href="{$v['url']}" target="_blank" title="{$v['title']}"{title_style($v[style])}>{str_cut($v['title'],40)}</a></li>
+                	<li>¡¤<a href="{$v['url']}" target="_blank" title="{$v['title']}"{title_style($v[style])}>{str_cut($v['title'],40)}</a></li>
                 {/loop}
                 </ul>
                 {/pc}
@@ -80,7 +80,7 @@
     </div>
     <div class="col-auto">
     	<div class="box">
-        	 <h5 class="title-2">å…¬å‘Š<a href="" class="more">&nbsp;</a></h5>
+        	 <h5 class="title-2">¹«¸æ<a href="" class="more">&nbsp;</a></h5>
              <div class="content">
                 {pc:announce  action="lists" siteid="$siteid" num="2"}
                 <ul class="list lh24 f14">
@@ -93,7 +93,7 @@
         </div>
         <div class="bk10"></div>
         <div class="box">
-        	<h5 class="title-2">ä¸“é¢˜<a href="{APP_PATH}index.php?m=special&c=index&a=special&siteid={$siteid}" class="more">æ›´å¤š>></a></h5>
+        	<h5 class="title-2">×¨Ìâ<a href="{APP_PATH}index.php?m=special&c=index&a=special&siteid={$siteid}" class="more">¸ü¶à>></a></h5>
             <div class="content special">
             {pc:special  action="lists" siteid="$siteid" elite="1" listorder="3" num="2"}
             {loop $data $r}
@@ -108,7 +108,7 @@
         </div>
         <div class="bk10"></div>
         <div class="box">
-            <h5 class="title-2"><span class="rt fn f12 tab SwapTab"><span class="fb">çƒ­ç‚¹</span> | <span >è¯„è®º</span> | <span>å…³æ³¨</span></span>æ’è¡Œ</h5>
+            <h5 class="title-2"><span class="rt fn f12 tab SwapTab"><span class="fb">ÈÈµã</span> | <span >ÆÀÂÛ</span> | <span>¹Ø×¢</span></span>ÅÅĞĞ</h5>
             <div class="tab-content">
             <ul class="content digg">
 			{pc:content action="hits" catid="6" num="10" order="views DESC"}
@@ -134,7 +134,7 @@
             </div>
         </div><div class="bk10"></div>
         <div class="box">
-            <h5 class="title-2">è°ƒæŸ¥é—®å·<a href="{APP_PATH}index.php?m=vote&c=index&siteid={$siteid}" class="more">æ›´å¤š>></a></h5>
+            <h5 class="title-2">µ÷²éÎÊ¾í<a href="{APP_PATH}index.php?m=vote&c=index&siteid={$siteid}" class="more">¸ü¶à>></a></h5>
  
 <script language="javascript" src="{APP_PATH}index.php?m=vote&c=index&a=show&action=js&subjectid=1&type=3"></script>
         </div>
@@ -142,7 +142,7 @@
     <div class="bk10"></div>
 	
 	<div class="box blogroll ylink">
-    	<h5><a href="{APP_PATH}index.php?m=link&siteid={$siteid}" hidefocus="true" class="rt">æ›´å¤š>></a>å‹æƒ…é“¾æ¥<a href="{APP_PATH}index.php?m=link&c=index&a=register&siteid={$siteid}" class="red">ç”³è¯·é“¾æ¥</a></h5>
+    	<h5><a href="{APP_PATH}index.php?m=link&siteid={$siteid}" hidefocus="true" class="rt">¸ü¶à>></a>ÓÑÇéÁ´½Ó<a href="{APP_PATH}index.php?m=link&c=index&a=register&siteid={$siteid}" class="red">ÉêÇëÁ´½Ó</a></h5>
         <div class="bk10"></div>
 	<ul class="colli imgul">
         {pc:link  action="type_list" siteid="$siteid" linktype="1" order="listorder DESC" num="8" return="pic_link"}
@@ -167,8 +167,8 @@
 </div>
 <script type="text/javascript"> 
 $(function(){
-	new slide("#main-slide","cur",310,260,1);//ç„¦ç‚¹å›¾
-	new SwapTab(".SwapTab","span",".tab-content","ul","fb");//æ’è¡ŒTAB
+	new slide("#main-slide","cur",310,260,1);//½¹µãÍ¼
+	new SwapTab(".SwapTab","span",".tab-content","ul","fb");//ÅÅĞĞTAB
 })
 </script>
 {template "content","footer"}

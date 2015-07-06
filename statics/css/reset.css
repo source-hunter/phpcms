@@ -14,7 +14,7 @@ a:hover{text-decoration:underline;}
 .red, .red a, a.red{color:red;}.green{color:#0E774A}
 select optgroup{color:#CAC8BB;}
 header{ display:block}
-/*閫氱敤鏍峰紡*/
+/*通用样式*/
 .hidden{display:none;}.invisible{visibility:hidden;}
 .ib,.ib-a a{display:inline-block;zoom:1;*display:inline;}
 .clear:after,.main:after{content:".";display:block;height:0;clear:both;visibility:hidden;}.clear,.main{display:inline-block;}/* Hides from IE-mac \*/* html .clear,* html .main{height:1%;}.clear,.main{display:block;}

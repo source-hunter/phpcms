@@ -5,7 +5,7 @@ include $this->admin_tpl('header', 'admin');
 
 <div class="subnav">
     <div class="content-menu ib-a blue line-x">
-    <?php if(isset($big_menu)) echo '<a class="add fb" href="'.$big_menu[0].'"><em>'.$big_menu[1].'</em></a>銆�';?>
+    <?php if(isset($big_menu)) echo '<a class="add fb" href="'.$big_menu[0].'"><em>'.$big_menu[1].'</em></a>　';?>
     <?php echo admin::submenu($_GET['menuid'],$big_menu); ?><span>|</span><a href="javascript:window.top.art.dialog({id:'setting',iframe:'?m=poster&c=space&a=setting', title:'<?php echo L('module_setting')?>', width:'540', height:'320'}, function(){var d = window.top.art.dialog({id:'setting'}).data.iframe;var form = d.document.getElementById('dosubmit');form.click();return false;}, function(){window.top.art.dialog({id:'setting'}).close()});void(0);"><em><?php echo L('module_setting')?></em></a>
     </div>
 </div>
@@ -69,7 +69,7 @@ if(is_array($infos)){
 <!--
 	function edit(id, name) {
 	window.top.art.dialog({id:'edit'}).close();
-	window.top.art.dialog({title:'<?php echo L('edit_ads')?>--'+name, id:'edit', iframe:'?m=poster&c=poster&a=edit&id='+id ,width:'600px',height:'430px'}, function(){var d = window.top.art.dialog({id:'edit'}).data.iframe;// 浣跨敤鍐呯疆鎺ュ彛鑾峰彇iframe瀵硅薄
+	window.top.art.dialog({title:'<?php echo L('edit_ads')?>--'+name, id:'edit', iframe:'?m=poster&c=poster&a=edit&id='+id ,width:'600px',height:'430px'}, function(){var d = window.top.art.dialog({id:'edit'}).data.iframe;// 使用内置接口获取iframe对象
 	var form = d.document.getElementById('dosubmit');form.click();return false;}, function(){window.top.art.dialog({id:'edit'}).close()});
 }
 //-->

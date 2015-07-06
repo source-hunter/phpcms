@@ -20,4 +20,4 @@ CREATE TABLE IF NOT EXISTS `phpcms_wap_type` (
   PRIMARY KEY (`typeid`)
 ) TYPE=MyISAM;
 
-INSERT INTO `phpcms_wap` (`siteid`, `sitename`, `logo`, `domain`, `setting`, `status`) VALUES(1, 'PHPCMS鎵嬫満闂ㄦ埛', '/statics/images/wap/wlogo.gif', '', 'array (\n  ''listnum'' => ''10'',\n  ''thumb_w'' => ''220'',\n  ''thumb_h'' => ''0'',\n  ''c_num'' => ''1000'',\n  ''index_template'' => ''index'',\n  ''category_template'' => ''category'',\n  ''list_template'' => ''list'',\n  ''show_template'' => ''show'',\n)', 0);
+INSERT INTO `phpcms_wap` (`siteid`, `sitename`, `logo`, `domain`, `setting`, `status`) VALUES(1, 'PHPCMS手机门户', '/statics/images/wap/wlogo.gif', '', 'array (\n  ''listnum'' => ''10'',\n  ''thumb_w'' => ''220'',\n  ''thumb_h'' => ''0'',\n  ''c_num'' => ''1000'',\n  ''index_template'' => ''index'',\n  ''category_template'' => ''category'',\n  ''list_template'' => ''list'',\n  ''show_template'' => ''show'',\n)', 0);

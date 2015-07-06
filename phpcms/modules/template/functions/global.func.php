@@ -1,8 +1,8 @@
 <?php
 defined('IN_PHPCMS') or exit('No permission resources.');
 /**
- * ç”Ÿæˆæ¨¡æ¿ä¸­æ‰€æœ‰PCæ ‡ç­¾çš„MD5
- * @param $file æ¨¡æ¿æ–‡ä»¶åœ°å€
+ * Éú³ÉÄ£°åÖĞËùÓĞPC±êÇ©µÄMD5
+ * @param $file Ä£°åÎÄ¼şµØÖ·
  */
 function tag_md5($file) {
 	$data = file_get_contents($file);
@@ -18,9 +18,9 @@ function tag_md5($file) {
 }
 
 /**
- * ç”Ÿæˆpcæ ‡ç­¾
- * @param $op æ“ä½œå
- * @param $data æ•°æ®
+ * Éú³Épc±êÇ©
+ * @param $op ²Ù×÷Ãû
+ * @param $data Êı¾İ
  */
 function creat_pc_tag($op, $data) {
 	$str = '{pc:'.$op.' ';
@@ -35,12 +35,12 @@ function creat_pc_tag($op, $data) {
 }
 
 /**
- * æ›¿æ¢æ¨¡æ¿ä¸­çš„PCæ ‡ç­¾
- * @param $filepath æ–‡ä»¶åœ°å€
- * @param $old_tag è€PCæ ‡ç­¾
- * @param $new_tag æ–°PCæ ‡ç­¾
- * @param $style é£æ ¼
- * @param $dir ç›®å½•å
+ * Ìæ»»Ä£°åÖĞµÄPC±êÇ©
+ * @param $filepath ÎÄ¼şµØÖ·
+ * @param $old_tag ÀÏPC±êÇ©
+ * @param $new_tag ĞÂPC±êÇ©
+ * @param $style ·ç¸ñ
+ * @param $dir Ä¿Â¼Ãû
  */
 function replace_pc_tag($filepath, $old_tag, $new_tag, $style, $dir) {
 	if (file_exists($filepath)) {
@@ -54,10 +54,10 @@ function replace_pc_tag($filepath, $old_tag, $new_tag, $style, $dir) {
 }
 
 /**
- * ç”Ÿæˆæ¨¡æ¿ä¸´æ—¶æ–‡ä»¶
- * @param $filepath æ–‡ä»¶åœ°å€
- * @param $style é£æ ¼
- * @param $dir ç›®å½•å
+ * Éú³ÉÄ£°åÁÙÊ±ÎÄ¼ş
+ * @param $filepath ÎÄ¼şµØÖ·
+ * @param $style ·ç¸ñ
+ * @param $dir Ä¿Â¼Ãû
  */
 function creat_template_bak($filepath, $style, $dir) {
 	$filename = basename($filepath);
@@ -66,12 +66,12 @@ function creat_template_bak($filepath, $style, $dir) {
 }
 
 /**
- * ç”Ÿæˆæ ‡ç­¾é€‰é¡¹
- * @param $id HTML IDå·
- * @param $data ç”Ÿæˆæ¡ä»¶
- * @param $value å½“å‰å€¼
- * @param $op æ“ä½œå
- * @return html è¿”å›HTMLä»£ç 
+ * Éú³É±êÇ©Ñ¡Ïî
+ * @param $id HTML IDºÅ
+ * @param $data Éú³ÉÌõ¼ş
+ * @param $value µ±Ç°Öµ
+ * @param $op ²Ù×÷Ãû
+ * @return html ·µ»ØHTML´úÂë
  */
 function creat_form($id, $data, $value = '', $op = '') {
 	pc_base::load_sys_class('form', '', 0);
@@ -140,9 +140,9 @@ function creat_form($id, $data, $value = '', $op = '') {
 			break;
 	}
 	if (!empty($data['validator'])) {
-		$str .= '<script type="text/javascript">$(function(){$("#'.$id.'").formValidator({onshow:"'.L('input').$data['name'].'ã€‚",onfocus:"'.L('input').$data['name'].'ã€‚"'.($data['empty'] ? ',empty:true' : '').'})';
+		$str .= '<script type="text/javascript">$(function(){$("#'.$id.'").formValidator({onshow:"'.L('input').$data['name'].'¡£",onfocus:"'.L('input').$data['name'].'¡£"'.($data['empty'] ? ',empty:true' : '').'})';
 		if ($data['htmltype'] != 'select' && (isset($data['validator']['min']) || isset($data['validator']['max']))) {
-			$str .= ".inputValidator({".(isset($data['validator']['min']) ? 'min:'.$data['validator']['min'].',' : '').(isset($data['validator']['max']) ? 'max:'.$data['validator']['max'].',' : '')." onerror:'".$data['name'].L('should', '', 'template').(isset($data['validator']['min']) ? ' '.L('is_greater_than', '', 'template').$data['validator']['min'].L('lambda', '', 'template') : '').(isset($data['validator']['max']) ? ' '.L('less_than', '', 'template').$data['validator']['max'].L('lambda', '', 'template') : '')."ã€‚'})";
+			$str .= ".inputValidator({".(isset($data['validator']['min']) ? 'min:'.$data['validator']['min'].',' : '').(isset($data['validator']['max']) ? 'max:'.$data['validator']['max'].',' : '')." onerror:'".$data['name'].L('should', '', 'template').(isset($data['validator']['min']) ? ' '.L('is_greater_than', '', 'template').$data['validator']['min'].L('lambda', '', 'template') : '').(isset($data['validator']['max']) ? ' '.L('less_than', '', 'template').$data['validator']['max'].L('lambda', '', 'template') : '')."¡£'})";
 			
 		}
 		if ($data['htmltype'] != 'checkbox' && $data['htmltype'] != 'radio' && isset($data['validator']['reg'])) {
@@ -154,8 +154,8 @@ function creat_form($id, $data, $value = '', $op = '') {
 }
 
 /**
- * ç¼–è¾‘PCæ ‡ç­¾æ—¶ï¼Œç”Ÿæˆè·³è½¬URLåœ°å€
- * @param $action æ“ä½œ
+ * ±à¼­PC±êÇ©Ê±£¬Éú³ÉÌø×ªURLµØÖ·
+ * @param $action ²Ù×÷
  */
 function creat_url($action) {
 	$url = '';
@@ -167,11 +167,11 @@ function creat_url($action) {
 }
 
 /**
- * ç”Ÿæˆå¯è§†åŒ–æ¨¡æ¿
- * @param $html æ¨¡æ¿ä»£ç 
- * @param $style é£æ ¼
- * @param $dir ç›®å½•
- * @param $file æ–‡ä»¶å
+ * Éú³É¿ÉÊÓ»¯Ä£°å
+ * @param $html Ä£°å´úÂë
+ * @param $style ·ç¸ñ
+ * @param $dir Ä¿Â¼
+ * @param $file ÎÄ¼şÃû
  */
 function visualization($html, $style = '', $dir = '', $file = '') {
 	$change = "<link href=\"".CSS_PATH."dialog.css\" rel=\"stylesheet\" type=\"text/css\" />

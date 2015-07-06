@@ -4,7 +4,7 @@ include $this->admin_tpl('header','admin');?>
 <div class="subnav">
   <h2 class="title-1 line-x f14 fb blue lh28"><?php echo L('model_manage');?>--<?php echo $r['name'];?><?php echo L('field_manage');?></h2>
 <div class="content-menu ib-a blue line-x"><a class="add fb" href="?m=content&c=sitemodel_field&a=add&modelid=<?php echo $modelid?>&menuid=<?php echo $_GET['menuid']?>"><em><?php echo L('add_field');?></em></a>
-ã€€<a class="on" href="?m=content&c=sitemodel_field&a=init&modelid=<?php echo $modelid?>&menuid=<?php echo $_GET['menuid']?>"><em><?php echo L('manage_field');?></em></a><span>|</span><a href="?m=content&c=sitemodel_field&a=public_priview&modelid=<?php echo $modelid?>&menuid=<?php echo $_GET['menuid']?>" target="_blank"><em><?php echo L('priview_modelfield');?></em></a>
+¡¡<a class="on" href="?m=content&c=sitemodel_field&a=init&modelid=<?php echo $modelid?>&menuid=<?php echo $_GET['menuid']?>"><em><?php echo L('manage_field');?></em></a><span>|</span><a href="?m=content&c=sitemodel_field&a=public_priview&modelid=<?php echo $modelid?>&menuid=<?php echo $_GET['menuid']?>" target="_blank"><em><?php echo L('priview_modelfield');?></em></a>
 </div></div>
 <div class="pad-lr-10">
 <form name="myform" action="?m=content&c=sitemodel_field&a=listorder" method="post">

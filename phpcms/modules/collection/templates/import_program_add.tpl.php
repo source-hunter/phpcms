@@ -25,26 +25,26 @@
 	
 		<table width="100%" class="table_form">
 			<tr>
-			<td width="120"><?php echo L('category')?>ï¼š</td> 
+			<td width="120"><?php echo L('category')?>£º</td> 
 			<td>
 			<?php echo $cat['catname'];?>
 			</td>
 		</tr>
 		<tr>
-			<td width="120"><?php echo L('the_withdrawal_of_the_summary')?>ï¼š</td> 
+			<td width="120"><?php echo L('the_withdrawal_of_the_summary')?>£º</td> 
 			<td>
 			<label><input name="add_introduce" type="checkbox"  value="1"><?php echo L('if_the_contents_of_intercepted')?></label><input type="text" name="introcude_length" value="200" size="3"><?php echo L('characters_to_a_summary_of_contents')?>
 			</td>
 		</tr>
 		<tr>
-			<td width="120"><?php echo L('the_withdrawal_of_thumbnails')?>ï¼š</td> 
+			<td width="120"><?php echo L('the_withdrawal_of_thumbnails')?>£º</td> 
 			<td>
 			<label><input type='checkbox' name='auto_thumb' value="1"><?php echo L('whether_access_to_the_content_of')?></label><input type="text" name="auto_thumb_no" value="1" size="2" class=""><?php echo L('picture_a_caption_pictures')?>
 			
 			</td>
 		</tr>
 		<tr>
-			<td width="120"><?php echo L('import_article_state')?>ï¼š</td> 
+			<td width="120"><?php echo L('import_article_state')?>£º</td> 
 			<td>
 			<?php if(!empty($cat['setting']['workflowid'])) {echo form::radio(array('1'=>L('pendingtrial'), '99'=>L('fantaoboys')), '1', 'name="content_status"');} else {echo form::radio(array('99'=>L('fantaoboys')), '99', 'name="content_status"');}?>
 			</td>

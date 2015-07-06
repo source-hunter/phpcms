@@ -12,7 +12,7 @@
 		<td>
 		<div class="explain-col">
 				
-				<?php echo L('regtime')?>ï¼š
+				<?php echo L('regtime')?>£º
 				<?php echo form::date('start_time', $start_time)?>-
 				<?php echo form::date('end_time', $end_time)?>
 				<?php if($_SESSION['roleid'] == 1) {?>
@@ -105,7 +105,7 @@
 <!--
 function edit(id, name) {
 	window.top.art.dialog({id:'edit'}).close();
-	window.top.art.dialog({title:'<?php echo L('edit').L('member')?>ã€Š'+name+'ã€‹',id:'edit',iframe:'?m=member&c=member&a=edit&userid='+id,width:'700',height:'500'}, function(){var d = window.top.art.dialog({id:'edit'}).data.iframe;d.document.getElementById('dosubmit').click();return false;}, function(){window.top.art.dialog({id:'edit'}).close()});
+	window.top.art.dialog({title:'<?php echo L('edit').L('member')?>¡¶'+name+'¡·',id:'edit',iframe:'?m=member&c=member&a=edit&userid='+id,width:'700',height:'500'}, function(){var d = window.top.art.dialog({id:'edit'}).data.iframe;d.document.getElementById('dosubmit').click();return false;}, function(){window.top.art.dialog({id:'edit'}).close()});
 }
 function move() {
 	var ids='';

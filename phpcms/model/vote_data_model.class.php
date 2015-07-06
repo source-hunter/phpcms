@@ -10,8 +10,8 @@ class vote_data_model extends model {
 	}
 	
 	/**
-	 * 璇存槑: 鏌ヨ 璇ユ姇绁ㄧ殑 鎶曠エ淇℃伅
-	 * @param $subjectid 鎶曠エID 
+	 * 说明: 查询 该投票的 投票信息
+	 * @param $subjectid 投票ID 
 	 */
 	function get_vote_data($subjectid)
 	{

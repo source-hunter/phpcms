@@ -1,6 +1,6 @@
 <?php 
 /**
- *  special_api.class.php ä¸“é¢˜æŽ¥å£ç±»
+ *  special_api.class.php ×¨Ìâ½Ó¿ÚÀà
  *
  * @copyright			(C) 2005-2010 PHPCMS
  * @license				http://www.phpcms.cn/license/
@@ -15,17 +15,17 @@ class special_api {
 	public $pages;
 	
 	public function __construct() {
-		$this->db = pc_base::load_model('special_model'); //ä¸“é¢˜æ•°æ®æ¨¡åž‹
-		$this->type_db = pc_base::load_model('type_model'); //ä¸“é¢˜åˆ†ç±»æ•°æ®æ¨¡åž‹
-		$this->c_db = pc_base::load_model('special_content_model'); //ä¸“é¢˜å†…å®¹æ•°æ®æ¨¡åž‹
+		$this->db = pc_base::load_model('special_model'); //×¨ÌâÊý¾ÝÄ£ÐÍ
+		$this->type_db = pc_base::load_model('type_model'); //×¨Ìâ·ÖÀàÊý¾ÝÄ£ÐÍ
+		$this->c_db = pc_base::load_model('special_content_model'); //×¨ÌâÄÚÈÝÊý¾ÝÄ£ÐÍ
 		$this->data_db = pc_base::load_model('special_c_data_model'); 
 	}
 	
 	/**
-	 * æ›´æ–°åˆ†ç±»
-	 * @param intval $pid ä¸“é¢˜ID
-	 * @param string $type åˆ†ç±»å­—ç¬¦ä¸² æ¯è¡Œä¸€ä¸ªåˆ†ç±»ã€‚æ ¼å¼ä¸ºï¼šåˆ†ç±»å|åˆ†ç±»ç›®å½•ï¼Œä¾‹:æœ€æ–°æ–°é—»|news last
-	 * @param string $a æ·»åŠ æ—¶ç›´æŽ¥åŠ å…¥åˆ°æ•°æ®åº“ï¼Œä¿®æ”¹æ˜¯éœ€è¦åˆ¤æ–­ã€‚
+	 * ¸üÐÂ·ÖÀà
+	 * @param intval $pid ×¨ÌâID
+	 * @param string $type ·ÖÀà×Ö·û´® Ã¿ÐÐÒ»¸ö·ÖÀà¡£¸ñÊ½Îª£º·ÖÀàÃû|·ÖÀàÄ¿Â¼£¬Àý:×îÐÂÐÂÎÅ|news last
+	 * @param string $a Ìí¼ÓÊ±Ö±½Ó¼ÓÈëµ½Êý¾Ý¿â£¬ÐÞ¸ÄÊÇÐèÒªÅÐ¶Ï¡£
 	 * @return boolen
 	 */
 	public function _update_type($specialid, $type, $a = 'add') {
@@ -35,7 +35,7 @@ class special_api {
 		$app_path = substr(APP_PATH, 0, -1);
 		foreach ($type as $k => $v) {
 			if (!$v['name'] || !$v['typedir']) continue;
-			//æ·»åŠ æ—¶ï¼Œæ— éœ€åˆ¤æ–­ç›´æŽ¥åŠ åˆ°æ•°æ®è¡¨ä¸­ï¼Œä¿®æ”¹æ—¶åº”åˆ¤æ–­æ˜¯å¦ä¸ºæ–°æ·»åŠ ã€ä¿®æ”¹è¿˜æ˜¯åˆ é™¤
+			//Ìí¼ÓÊ±£¬ÎÞÐèÅÐ¶ÏÖ±½Ó¼Óµ½Êý¾Ý±íÖÐ£¬ÐÞ¸ÄÊ±Ó¦ÅÐ¶ÏÊÇ·ñÎªÐÂÌí¼Ó¡¢ÐÞ¸Ä»¹ÊÇÉ¾³ý
 			$siteid = get_siteid();
 			if ($a == 'add' && !$v['del']) {
 				$typeid = $this->type_db->insert(array('siteid'=>$siteid, 'module'=>'special', 'name'=>$v['name'], 'listorder'=>$v['listorder'], 'typedir'=>$v['typedir'], 'parentid'=>$specialid, 'listorder'=>$k), true);
@@ -98,11 +98,11 @@ class special_api {
 	}
 	
 	/**
-	 * è°ƒå–å†…å®¹ä¿¡æ¯
-	 * @param intval $modelid æ¨¡åž‹ID
-	 * @param string $where sqlè¯­å¥
-	 * @param intval $page åˆ†é¡µ
-	 * @return array è¿”å›žè°ƒå–çš„æ•°æ® 
+	 * µ÷È¡ÄÚÈÝÐÅÏ¢
+	 * @param intval $modelid Ä£ÐÍID
+	 * @param string $where sqlÓï¾ä
+	 * @param intval $page ·ÖÒ³
+	 * @return array ·µ»Øµ÷È¡µÄÊý¾Ý 
 	 */
 	public function _get_import_data($modelid = 0, $where = '', $page) {
 		$c = pc_base::load_model('content_model');
@@ -114,10 +114,10 @@ class special_api {
 	}
 	
 	/**
-	 * ä¿¡æ¯æŽ¨èè‡³ä¸“é¢˜æŽ¥å£
-	 * @param array $param å±žæ€§ è¯·æ±‚æ—¶ï¼Œä¸ºæ¨¡åž‹ã€æ ç›®æ•°ç»„ã€‚ ä¾‹ï¼šarray('modelid'=>1, 'catid'=>12); æäº¤æ·»åŠ ä¸ºäºŒç»´ä¿¡æ¯æ•°æ® ã€‚ä¾‹ï¼šarray(1=>array('title'=>'å¤šå‘å‘é€æ–¹æ³•', ....))
-	 * @param array $arr å‚æ•° è¡¨å•æ•°æ®ï¼Œåªåœ¨è¯·æ±‚æ·»åŠ æ—¶ä¼ é€’ã€‚
-	 * @return è¿”å›žä¸“é¢˜çš„ä¸‹æ‹‰åˆ—è¡¨ 
+	 * ÐÅÏ¢ÍÆ¼öÖÁ×¨Ìâ½Ó¿Ú
+	 * @param array $param ÊôÐÔ ÇëÇóÊ±£¬ÎªÄ£ÐÍ¡¢À¸Ä¿Êý×é¡£ Àý£ºarray('modelid'=>1, 'catid'=>12); Ìá½»Ìí¼ÓÎª¶þÎ¬ÐÅÏ¢Êý¾Ý ¡£Àý£ºarray(1=>array('title'=>'¶à·¢·¢ËÍ·½·¨', ....))
+	 * @param array $arr ²ÎÊý ±íµ¥Êý¾Ý£¬Ö»ÔÚÇëÇóÌí¼ÓÊ±´«µÝ¡£
+	 * @return ·µ»Ø×¨ÌâµÄÏÂÀ­ÁÐ±í 
 	 */
 	public function _get_special($param = array(), $arr = array()) {
 		if ($arr['dosubmit']) {
@@ -158,8 +158,8 @@ class special_api {
 	}
 	
 	/**
-	 * èŽ·å–åˆ†ç±»
-	 * @param intval $specialid ä¸“é¢˜ID
+	 * »ñÈ¡·ÖÀà
+	 * @param intval $specialid ×¨ÌâID
 	 */
 	public function _get_type($specialid = 0) {
 		$type_db = pc_base::load_model('type_model');
@@ -173,9 +173,9 @@ class special_api {
 	}
 	
 	/**
-	 * è°ƒå–ä¸“é¢˜çš„é™„å±žåˆ†ç±»
-	 * @param intval $specialid ä¸“é¢˜ID
-	 * @return array ä¸“é¢˜çš„é™„å±žåˆ†ç±»
+	 * µ÷È¡×¨ÌâµÄ¸½Êô·ÖÀà
+	 * @param intval $specialid ×¨ÌâID
+	 * @return array ×¨ÌâµÄ¸½Êô·ÖÀà
 	 */
 	public function _get_types($specialid = 0) {
 		if (!$specialid) return false;
@@ -188,27 +188,27 @@ class special_api {
 	}
 
 	/**
-	 * åˆ é™¤ä¸“é¢˜ æ‰§è¡Œåˆ é™¤æ“ä½œçš„æ–¹æ³•ï¼ŒåŒæ—¶åˆ é™¤ä¸“é¢˜ä¸‹çš„åˆ†ç±»ã€ä¿¡æ¯ã€åŠç”Ÿæˆé™æ€æ–‡ä»¶å’Œå›¾ç‰‡
-	 * @param intval $id ä¸“é¢˜ID
+	 * É¾³ý×¨Ìâ Ö´ÐÐÉ¾³ý²Ù×÷µÄ·½·¨£¬Í¬Ê±É¾³ý×¨ÌâÏÂµÄ·ÖÀà¡¢ÐÅÏ¢¡¢¼°Éú³É¾²Ì¬ÎÄ¼þºÍÍ¼Æ¬
+	 * @param intval $id ×¨ÌâID
 	 * @return boolen 
 	 */
 	public function _del_special($id = 0) {
 		$id = intval($id);
 		if (!$id) return false;
 		
-		//æ£€æŸ¥ä¸“é¢˜ä¸‹æ˜¯å¦æœ‰ä¿¡æ¯
+		//¼ì²é×¨ÌâÏÂÊÇ·ñÓÐÐÅÏ¢
 		$rs = $this->c_db->select(array('specialid'=>$id), 'id');
 
 		$info = $this->db->get_one(array('id'=>$id, 'siteid'=>get_siteid()), 'siteid, ispage, filename, ishtml');
 		
-		//æœ‰ä¿¡æ¯æ—¶ï¼Œå¾ªçŽ¯åˆ é™¤
+		//ÓÐÐÅÏ¢Ê±£¬Ñ­»·É¾³ý
 		if (is_array($rs) && !empty($rs)) {
 			foreach ($rs as $r) {
 				$this->_delete_content($r['id'], $info['siteid'], $info['ishtml']);
 			}
 		}
 
-		//åˆ é™¤ä¸“é¢˜çš„é™„å±žåˆ†ç±»
+		//É¾³ý×¨ÌâµÄ¸½Êô·ÖÀà
 		$type_info = $this->type_db->select(array('module'=>'special', 'parentid'=>$id, 'siteid'=>get_siteid()), '`typeid`');
 		if (is_array($type_info) && !empty($type_info)) {
 			foreach ($type_info as $t) {
@@ -245,7 +245,7 @@ class special_api {
 			}
 		} else {
 			if ($info['ishtml']) {
-				dir_delete(PHPCMS_PATH.pc_base::load_config('system', 'html_root').DIRECTORY_SEPARATOR.'special'.DIRECTORY_SEPARATOR.$info['filename']); //åˆ é™¤ä¸“é¢˜ç›®å½•
+				dir_delete(PHPCMS_PATH.pc_base::load_config('system', 'html_root').DIRECTORY_SEPARATOR.'special'.DIRECTORY_SEPARATOR.$info['filename']); //É¾³ý×¨ÌâÄ¿Â¼
 			}
 		}
 		if(pc_base::load_config('system','attachment_stat')) {
@@ -257,12 +257,12 @@ class special_api {
 	}
 	
 	/**
-	 * å¯¼å…¥çš„æ•°æ®æ·»åŠ åˆ°æ•°æ®è¡¨
-	 * @param intval $modelid	 æ¨¡åž‹ID
-	 * @param intval $specialid	 ä¿¡æ¯çš„æ‰€å±žä¸“é¢˜ID
-	 * @param intval $id 		 ä¿¡æ¯çš„ID
-	 * @param intval $typeid 	 ä¿¡æ¯çš„åˆ†ç±»ID
-	 * @param intval $listorder	 ä¿¡æ¯çš„æŽ’åº
+	 * µ¼ÈëµÄÊý¾ÝÌí¼Óµ½Êý¾Ý±í
+	 * @param intval $modelid	 Ä£ÐÍID
+	 * @param intval $specialid	 ÐÅÏ¢µÄËùÊô×¨ÌâID
+	 * @param intval $id 		 ÐÅÏ¢µÄID
+	 * @param intval $typeid 	 ÐÅÏ¢µÄ·ÖÀàID
+	 * @param intval $listorder	 ÐÅÏ¢µÄÅÅÐò
 	 */
 	public function _import($modelid, $specialid, $id, $typeid, $listorder = 0) {
 		if (!$specialid || !$id || !$typeid) return false;
@@ -285,10 +285,10 @@ class special_api {
 	}
 	
 	/**
-	 * åˆ é™¤ä¸“é¢˜åˆ†ç±»
-	 * @param intval $typeid ä¸“é¢˜é™„å±žåˆ†ç±»ID
-	 * @param intval $siteid ç«™ç‚¹ID
-	 * @param intval $ishtml ä¸“é¢˜æ˜¯å¦ç”Ÿæˆé™æ€
+	 * É¾³ý×¨Ìâ·ÖÀà
+	 * @param intval $typeid ×¨Ìâ¸½Êô·ÖÀàID
+	 * @param intval $siteid Õ¾µãID
+	 * @param intval $ishtml ×¨ÌâÊÇ·ñÉú³É¾²Ì¬
 	 */
 	private function delete_type($typeid = 0, $siteid = 0, $ishtml = 0) {
 		$typeid = intval($typeid);
@@ -308,8 +308,8 @@ class special_api {
 					if (!file_exists(PHPCMS_PATH.$file)) {
 						break;
 					} else {
-						$queue->add_queue('del', $file, $siteid); //å¹¶åŠ å…¥åˆ°æ¶ˆæ¯é˜Ÿåˆ—ä¸­ï¼Œä¾¿ä»¥å…¶ä»–ç«™ç‚¹åˆ é™¤æ–‡ä»¶
-						unlink(PHPCMS_PATH.$file);	//åˆ é™¤ç”Ÿæˆçš„é™æ€æ–‡ä»¶
+						$queue->add_queue('del', $file, $siteid); //²¢¼ÓÈëµ½ÏûÏ¢¶ÓÁÐÖÐ£¬±ãÒÔÆäËûÕ¾µãÉ¾³ýÎÄ¼þ
+						unlink(PHPCMS_PATH.$file);	//É¾³ýÉú³ÉµÄ¾²Ì¬ÎÄ¼þ
 					}
 				}
 			} else {
@@ -319,20 +319,20 @@ class special_api {
 					if (!file_exists(PHPCMS_PATH.$file)) {
 						break;
 					} else {
-						unlink(PHPCMS_PATH.$file);	//åˆ é™¤ç”Ÿæˆçš„é™æ€æ–‡ä»¶
+						unlink(PHPCMS_PATH.$file);	//É¾³ýÉú³ÉµÄ¾²Ì¬ÎÄ¼þ
 					}
 				}
 			}
 		}
-		$this->type_db->delete(array('typeid'=>$typeid)); //åˆ é™¤æ•°æ®è¡¨è®°å½•
+		$this->type_db->delete(array('typeid'=>$typeid)); //É¾³ýÊý¾Ý±í¼ÇÂ¼
 		return true;
 	}
 	
 	/**
-	 * åˆ é™¤ä¸“é¢˜ä¿¡æ¯ï¼ŒåŒæ—¶åˆ é™¤ä¸“é¢˜çš„ä¿¡æ¯ï¼ŒåŠç›¸å…³çš„é™æ€æ–‡ä»¶ã€å›¾ç‰‡
-	 * @param intval $cid ä¸“é¢˜ä¿¡æ¯ID
-	 * @param intval $siteid æ‰€å±žç«™ç‚¹
-	 * @param intval $ishtml ä¸“é¢˜æ˜¯å¦ç”Ÿæˆé™æ€
+	 * É¾³ý×¨ÌâÐÅÏ¢£¬Í¬Ê±É¾³ý×¨ÌâµÄÐÅÏ¢£¬¼°Ïà¹ØµÄ¾²Ì¬ÎÄ¼þ¡¢Í¼Æ¬
+	 * @param intval $cid ×¨ÌâÐÅÏ¢ID
+	 * @param intval $siteid ËùÊôÕ¾µã
+	 * @param intval $ishtml ×¨ÌâÊÇ·ñÉú³É¾²Ì¬
 	 */
 	public function _delete_content($cid = 0, $siteid = 0, $ishtml = 0) {
 		$info = $this->c_db->get_one(array('id'=>$cid), 'inputtime, isdata');
@@ -351,8 +351,8 @@ class special_api {
 						if (!file_exists(PHPCMS_PATH.$file[1])) {
 							break;
 						} else {
-							$queue->add_queue('del', $file[1], $siteid); //å¹¶åŠ å…¥åˆ°æ¶ˆæ¯é˜Ÿåˆ—ä¸­ï¼Œä¾¿ä»¥å…¶ä»–ç«™ç‚¹åˆ é™¤æ–‡ä»¶
-							unlink(PHPCMS_PATH.$file[1]);	//åˆ é™¤ç”Ÿæˆçš„é™æ€æ–‡ä»¶
+							$queue->add_queue('del', $file[1], $siteid); //²¢¼ÓÈëµ½ÏûÏ¢¶ÓÁÐÖÐ£¬±ãÒÔÆäËûÕ¾µãÉ¾³ýÎÄ¼þ
+							unlink(PHPCMS_PATH.$file[1]);	//É¾³ýÉú³ÉµÄ¾²Ì¬ÎÄ¼þ
 						}
 					}
 				} else {
@@ -361,31 +361,31 @@ class special_api {
 						if (!file_exists(PHPCMS_PATH.$file[1])) {
 							break;
 						} else {
-							unlink(PHPCMS_PATH.$file[1]);	//åˆ é™¤ç”Ÿæˆçš„é™æ€æ–‡ä»¶
+							unlink(PHPCMS_PATH.$file[1]);	//É¾³ýÉú³ÉµÄ¾²Ì¬ÎÄ¼þ
 						}
 					}
 				}
 			}
 			
-			//åˆ é™¤å…¨ç«™æœç´¢æ•°æ®
+			//É¾³ýÈ«Õ¾ËÑË÷Êý¾Ý
 			$this->search_api($cid, '', '', 'delete');
 			
-			// åˆ é™¤æ•°æ®ç»Ÿè®¡è¡¨æ•°æ®
+			// É¾³ýÊý¾ÝÍ³¼Æ±íÊý¾Ý
 			$count = pc_base::load_model('hits_model');
 			$hitsid = 'special-c-'.$info['specialid'].'-'.$cid;
 			$count->delete(array('hitsid'=>$hitsid));
 			
-			//åˆ é™¤ä¿¡æ¯å†…å®¹è¡¨ä¸­çš„æ•°æ®
+			//É¾³ýÐÅÏ¢ÄÚÈÝ±íÖÐµÄÊý¾Ý
 			$this->data_db->delete(array('id'=>$cid));
 		}
-		$this->c_db->delete(array('id'=>$cid)); //åˆ é™¤ä¿¡æ¯è¡¨ä¸­çš„æ•°æ®
+		$this->c_db->delete(array('id'=>$cid)); //É¾³ýÐÅÏ¢±íÖÐµÄÊý¾Ý
 		return true;
 	}
 	
 	/**
 	 * Function importfalbum
-	 * å°†ä¸“è¾‘è½½å…¥åˆ°ä¸“é¢˜
-	 * @param array $info ä¸“è¾‘è¯¦ç»†ä¿¡æ¯
+	 * ½«×¨¼­ÔØÈëµ½×¨Ìâ
+	 * @param array $info ×¨¼­ÏêÏ¸ÐÅÏ¢
 	 */
 	public function importfalbum($info = array()) {
 		static $siteid,$sitelists;
@@ -413,12 +413,12 @@ class special_api {
 						'createtime' => SYS_TIME,
 						'isvideo' => 1,
 					);
-			//å°†æ•°æ®æ’å…¥åˆ°ä¸“é¢˜è¡¨ä¸­
+			//½«Êý¾Ý²åÈëµ½×¨Ìâ±íÖÐ
 			$arr = new_html_special_chars($arr);
 			$specialid = $this->db->insert($arr, true);
 			$url = $sitelists[$siteid]['domain'].'index.php?m=special&c=index&id='.$specialid;
 			$this->db->update(array('url'=>$url), array('id'=>$specialid));
-			//ç»„åˆå­åˆ†ç±»æ•°ç»„
+			//×éºÏ×Ó·ÖÀàÊý×é
 			$letters = gbk_to_pinyin($info['title']);
 			$type_info = array(
 							'siteid' => $siteid,
@@ -439,11 +439,11 @@ class special_api {
 	}
 	
 	/**
-	 * æ·»åŠ åˆ°å…¨ç«™æœç´¢
-	 * @param intval $id æ–‡ç« ID
-	 * @param array $data æ•°ç»„
-	 * @param string $title æ ‡é¢˜
-	 * @param string $action åŠ¨ä½œ
+	 * Ìí¼Óµ½È«Õ¾ËÑË÷
+	 * @param intval $id ÎÄÕÂID
+	 * @param array $data Êý×é
+	 * @param string $title ±êÌâ
+	 * @param string $action ¶¯×÷
 	 */
 	private function search_api($id = 0, $data = array(), $title, $action = 'update') {
 		$this->search_db = pc_base::load_model('search_model');

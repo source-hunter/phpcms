@@ -1,5 +1,5 @@
 <?php
 $LANG['keyword_manage'] = '';
-$LANG['keyword_name'] = 'å…³é”®è¯';
-$LANG['remove_all_selected']			=	'åˆ é™¤é€‰å®šçš„æ•æ„Ÿè¯';
+$LANG['keyword_name'] = '¹Ø¼ü´Ê';
+$LANG['remove_all_selected']			=	'É¾³ýÑ¡¶¨µÄÃô¸Ð´Ê';
 ?>

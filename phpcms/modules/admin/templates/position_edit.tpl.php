@@ -41,7 +41,7 @@ $(function(){
 <td><input type="text" name="info[extention]" id="extention" class="input-text" size="30" value="<?php echo $extention?>"></input></td>
 </tr> 
 <tr>
-<td><?php echo L('上传对应图')?></td> 
+<td><?php echo L('�ϴ���Ӧͼ')?></td> 
 <td><?php echo form::images('info[thumb]', 'thumb', $info['thumb'], 'thumb','','30')?></td>
 </tr> 
 </table>

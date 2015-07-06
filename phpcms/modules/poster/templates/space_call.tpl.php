@@ -7,7 +7,7 @@ include $this->admin_tpl('header', 'admin');
 <h2 class="title-1 f14 lh28">(<?php echo $r['name'];?>)<?php echo L('get_code_space')?></h2>
 <div class="bk10"></div>
 <div class="explain-col">
-<strong><?php echo L('explain')?>ï¼š</strong><br />
+<strong><?php echo L('explain')?>£º</strong><br />
 <?php echo L('notice')?>
 </div>
 <div class="bk10"></div>

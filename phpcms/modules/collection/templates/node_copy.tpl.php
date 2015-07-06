@@ -12,13 +12,13 @@ $(document).ready(function() {
 <div class="common-form">
 	<table width="100%" class="table_form">
 		<tr>
-			<td width="120"><?php echo L('had_collected_from_the_roll')?>ï¼š</td> 
+			<td width="120"><?php echo L('had_collected_from_the_roll')?>£º</td> 
 			<td>
 			<?php if(isset($data['name'])) echo $data['name']?>
 			</td>
 		</tr>
 		<tr>
-			<td width="120"><?php echo L('the_new_gathering')?>ï¼š</td> 
+			<td width="120"><?php echo L('the_new_gathering')?>£º</td> 
 			<td>
 			<input type="text" name="name" id="name"  class="input-text" value="" />
 			</td>

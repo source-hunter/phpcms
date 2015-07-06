@@ -37,7 +37,7 @@ class applications extends admin {
 				showmessage(L('application_url').L('exist'));
 			}
 			if ($this->db->insert(array('name'=>$name,'url'=>$url, 'authkey'=>$authkey, 'type'=>$type, 'ip'=>$ip, 'apifilename'=>$apifilename, 'charset'=>$charset, 'synlogin'=>$synlogin))) {
-				/*å†™å…¥åº”ç”¨åˆ—è¡¨ç¼“å­˜*/
+				/*Ğ´ÈëÓ¦ÓÃÁĞ±í»º´æ*/
 				$applist = $this->db->listinfo('', '', 1, 100, 'appid');
 				setcache('applist', $applist);
 				
@@ -53,7 +53,7 @@ class applications extends admin {
 		$appid = isset($_GET['appid']) && intval($_GET['appid']) ? intval($_GET['appid']) : showmessage(L('illegal_parameters'), HTTP_REFERER);
 		if ($r = $this->db->get_one(array('appid'=>$appid))) {
 			if ($this->db->delete(array('appid'=>$appid))) {
-				/*å†™å…¥åº”ç”¨åˆ—è¡¨ç¼“å­˜*/
+				/*Ğ´ÈëÓ¦ÓÃÁĞ±í»º´æ*/
 				$applist = $this->db->listinfo('', '', 1, 100, 'appid');
 				setcache('applist', $applist);
 				
@@ -86,7 +86,7 @@ class applications extends admin {
 					showmessage(L('application_url').L('exist'));
 				}
 				if ($this->db->update(array('name'=>$name,'url'=>$url, 'authkey'=>$authkey, 'type'=>$type, 'ip'=>$ip, 'apifilename'=>$apifilename, 'charset'=>$charset, 'synlogin'=>$synlogin), array('appid'=>$appid))) {
-					/*å†™å…¥åº”ç”¨åˆ—è¡¨ç¼“å­˜*/
+					/*Ğ´ÈëÓ¦ÓÃÁĞ±í»º´æ*/
 					$applist = $this->db->listinfo('', '', 1, 100, 'appid');
 					setcache('applist', $applist);
 					
@@ -137,14 +137,14 @@ class applications extends admin {
 		$appid = isset($_GET['appid']) && intval($_GET['appid']) ? intval($_GET['appid']) : exit('0');
 		$applist = getcache('applist');
 		if(empty($applist)) {
-			/*å†™å…¥åº”ç”¨åˆ—è¡¨ç¼“å­˜*/
+			/*Ğ´ÈëÓ¦ÓÃÁĞ±í»º´æ*/
 			$applist = $this->db->listinfo('', '', 1, 100, 'appid');
 			setcache('applist', $applist);
 		}
 
 		if (!empty($applist)) {
 			$param = sys_auth('action=check_status', 'ENCODE', $applist[$appid]['authkey']);
-			//å¦‚æœå¡«å†™ipåˆ™é€šä¿¡åœ°å€ä¸ºipåœ°å€ï¼Œæ­¤æ—¶ç»‘å®šäº†å¤šä¸ªè™šæ‹Ÿä¸»æœºæœ‰å¯èƒ½å‡ºç°é”™è¯¯
+			//Èç¹ûÌîĞ´ipÔòÍ¨ĞÅµØÖ·ÎªipµØÖ·£¬´ËÊ±°ó¶¨ÁË¶à¸öĞéÄâÖ÷»úÓĞ¿ÉÄÜ³öÏÖ´íÎó
 			$appurl = !empty($applist[$appid]['ip']) ? 'http://'.$applist[$appid]['ip'].'/api/' : $applist[$appid]['url'];
 			$url = $appurl.$applist[$appid]['apifilename'];
 			if (strpos($url, '?')) {

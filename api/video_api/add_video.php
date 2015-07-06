@@ -4,67 +4,67 @@ defined('IN_PHPCMS') or exit('No permission resources.');
 
 /**
  * 
- * è§†é¢‘æ·»åŠ æŽ¥æ”¶æŽ¥å£ åœ¨vmsç³»ç»Ÿä¸­æ·»åŠ è§†é¢‘ã€å¯¼å…¥ku6è§†é¢‘æ—¶ï¼Œä¼šè°ƒç”¨æ­¤æŽ¥å£åŒæ­¥è¿™äº›è§†é¢‘
+ * ÊÓÆµÌí¼Ó½ÓÊÕ½Ó¿Ú ÔÚvmsÏµÍ³ÖÐÌí¼ÓÊÓÆµ¡¢µ¼Èëku6ÊÓÆµÊ±£¬»áµ÷ÓÃ´Ë½Ó¿ÚÍ¬²½ÕâÐ©ÊÓÆµ
  * 
  * @author				chenxuewang
  * @link				http://www.phpcms.cn http://www.ku6.cn
- * @copyright			CopyRight (c) 2006-2012 é…·æºœç½‘ï¼ˆåŒ—äº¬ï¼‰ç§‘æŠ€æœ‰é™å…¬å¸
+ * @copyright			CopyRight (c) 2006-2012 ¿áÁïÍø£¨±±¾©£©¿Æ¼¼ÓÐÏÞ¹«Ë¾
  * @license			http://www.phpcms.cn/license/
  * 
  * 
  * *************************************
  *              			           *
- *                 å‚æ•°è¯´æ˜Ž            *
+ *                 ²ÎÊýËµÃ÷            *
  *                                     *
  * ************************************* 
  * 
  * title, description, tag, vid, picpath, size, timelen, status, playnum, catid, posid
  * 
- * title, è§†é¢‘æ ‡é¢˜
+ * title, ÊÓÆµ±êÌâ
  * 
- * descrption è§†é¢‘ç®€ä»‹
+ * descrption ÊÓÆµ¼ò½é
  * 
- * tag è§†é¢‘æ ‡ç­¾
+ * tag ÊÓÆµ±êÇ©
  * 
- * vidï¼Œè§†é¢‘vidï¼Œè§†é¢‘çš„å”¯ä¸€çš„æ ‡ç¤ºç¬¦ã€‚åŒºåˆ†è§†é¢‘
+ * vid£¬ÊÓÆµvid£¬ÊÓÆµµÄÎ¨Ò»µÄ±êÊ¾·û¡£Çø·ÖÊÓÆµ
  * 
- * picpath è§†é¢‘ç¼©ç•¥å›¾
+ * picpath ÊÓÆµËõÂÔÍ¼
  * 
- * size è§†é¢‘å¤§å°
+ * size ÊÓÆµ´óÐ¡
  * 
- * timelen è§†é¢‘æ’­æ”¾æ—¶é•¿
+ * timelen ÊÓÆµ²¥·ÅÊ±³¤
  * 
- * status è§†é¢‘ç›®å‰çš„çŠ¶æ€
+ * status ÊÓÆµÄ¿Ç°µÄ×´Ì¬
  * 
- * playnum è§†é¢‘æ’­æ”¾æ¬¡æ•°
+ * playnum ÊÓÆµ²¥·Å´ÎÊý
  * 
- * catid å¯¼å…¥åˆ°æœ¬ç³»ç»Ÿæ ç›®ID å¯¼å…¥è¿‡æ¥çš„è§†é¢‘ï¼Œé¦–å…ˆå‘å¸ƒä¸ºå†…å®¹ï¼ŒåŒæ—¶å°†è§†é¢‘æ”¾å…¥è§†é¢‘åº“ä¸­ä¾›ä»¥åŽä½¿ç”¨
+ * catid µ¼Èëµ½±¾ÏµÍ³À¸Ä¿ID µ¼Èë¹ýÀ´µÄÊÓÆµ£¬Ê×ÏÈ·¢²¼ÎªÄÚÈÝ£¬Í¬Ê±½«ÊÓÆµ·ÅÈëÊÓÆµ¿âÖÐ¹©ÒÔºóÊ¹ÓÃ
  * 
- * posid æœ¬ç³»ç»ŸæŽ¨èä½ID å¯ä»¥ä¸ºç©ºï¼Œä¸ä¸ºç©ºæ—¶ï¼Œéœ€è¦å°†è§†é¢‘æ·»åŠ åˆ°æŽ¨èä½è¡¨ä¸­
+ * posid ±¾ÏµÍ³ÍÆ¼öÎ»ID ¿ÉÒÔÎª¿Õ£¬²»Îª¿ÕÊ±£¬ÐèÒª½«ÊÓÆµÌí¼Óµ½ÍÆ¼öÎ»±íÖÐ
  * 
  * 
  * ************************************
  *              			          *
- *                 è¿” å›ž å€¼           *
+ *                 ·µ »Ø Öµ           *
  *                                    *
  * ************************************ 
  * 
- * æŽ¥å£æ‰§è¡ŒåŽï¼Œåº”è¿”å›žç›¸åº”çš„å€¼é€šçŸ¥vmsç³»ç»Ÿ
- * è¿”å›žå€¼æ ¼å¼ jsonæ•°æ®ï¼Œarray('msg'=>'Add Success', 'code'=>'100')
+ * ½Ó¿ÚÖ´ÐÐºó£¬Ó¦·µ»ØÏàÓ¦µÄÖµÍ¨ÖªvmsÏµÍ³
+ * ·µ»ØÖµ¸ñÊ½ jsonÊý¾Ý£¬array('msg'=>'Add Success', 'code'=>'100')
  */
 
-//åŠ è½½æ•°æ®æ¨¡åž‹
+//¼ÓÔØÊý¾ÝÄ£ÐÍ
 $video_store_db = pc_base::load_model('video_store_model');
 $content = pc_base::load_model('content_model');
 $cat_db = pc_base::load_model('category_model');
 $model_field = pc_base::load_model('sitemodel_field_model');
 $video_setting = getcache('video', 'video');
-//åŠ è½½v.class
+//¼ÓÔØv.class
 pc_base::load_app_func('global', 'video');
 pc_base::load_app_class('v', 'video', 0);
 $v = new v($db);
 
-//éªŒè¯ä¿¡æ¯
+//ÑéÖ¤ÐÅÏ¢
 $data = $video_data = array();
 $data['catid'] = intval($_POST['catid']);
 if (!$data['catid']) {
@@ -92,8 +92,8 @@ if (!$video_data['vid']) {
 	exit;
 }
 
-//å…ˆå°†è§†é¢‘åŠ å…¥åˆ°è§†é¢‘åº“ä¸­ï¼Œå¹¶å–å¾—videoid
-//åˆ¤æ–­vidæ˜¯å¦å·²ç»å­˜åœ¨è§†é¢‘åº“ä¸­
+//ÏÈ½«ÊÓÆµ¼ÓÈëµ½ÊÓÆµ¿âÖÐ£¬²¢È¡µÃvideoid
+//ÅÐ¶ÏvidÊÇ·ñÒÑ¾­´æÔÚÊÓÆµ¿âÖÐ
 if (!$video_store = $video_store_db->get_one(array('vid'=>$video_data['vid']))) {
 	$video_data['status'] = $_POST['ku6status'] ? intval($_POST['ku6status']) : 1;
 	$video_data['picpath'] = safe_replace( format_url($_POST['picpath']) );
@@ -110,10 +110,10 @@ if (!$cat_info) {
 	echo json_encode(array('msg'=>'Add Success', 'code'=>'200'));
 	exit;
 }
-//æ ¹æ®æ ç›®ä¿¡æ¯å–å¾—ç«™ç‚¹idåŠæ¨¡åž‹id
+//¸ù¾ÝÀ¸Ä¿ÐÅÏ¢È¡µÃÕ¾µãid¼°Ä£ÐÍid
 $siteid = $cat_info['siteid'];
 $modelid = $cat_info['modelid'];
-//æ ¹æ®æ¨¡åž‹idï¼Œå¾—åˆ°è§†é¢‘å­—æ®µå
+//¸ù¾ÝÄ£ÐÍid£¬µÃµ½ÊÓÆµ×Ö¶ÎÃû
 $r = $model_field->get_one(array('modelid'=>$modelid, 'formtype'=>'video'), 'field');
 $fieldname = $r['field'];
 if ($_POST['posid']) {
@@ -121,19 +121,19 @@ if ($_POST['posid']) {
 }
 $data['thumb'] = safe_replace( format_url($_POST['picpath']) );
 $data[$fieldname] = 1;
-//ç»„åˆPOSTæ•°æ®
+//×éºÏPOSTÊý¾Ý
 $_POST[$fieldname.'_video'][1] = array('videoid'=>$videoid, 'listorder'=>1);
 $data['status'] = ($video_data['status'] == 21 || $_POST['status']==1) ? 99 : 1;
-//è°ƒç”¨å†…å®¹æ¨¡åž‹
+//µ÷ÓÃÄÚÈÝÄ£ÐÍ
 if (strtolower(CHARSET)!='utf-8') {
 	$data = array_iconv($data, 'utf-8', 'gbk');
 }
 $content->set_model($modelid); 
 $cid = $content->add_content($data);
-//æ›´æ–°å¯¹åº”å…³ç³»
+//¸üÐÂ¶ÔÓ¦¹ØÏµ
 //$content_video_db = pc_base::load_model('video_content_model');
 //$content_video_db->insert(array('contentid'=>$cid, 'videoid'=>$videoid, 'modelid'=>$modelid, 'listorder'=>1));
-//æ›´æ–°ç‚¹å‡»æ¬¡æ•° 
+//¸üÐÂµã»÷´ÎÊý 
 if ($_POST['playnum']) {
 	$views = intval($_POST['playnum']);
 	$hitsid = 'c-'.$modelid.'-'.$cid;

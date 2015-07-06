@@ -17,15 +17,15 @@ include $this->admin_tpl('header','admin');
 	<legend><?php echo L('basic_configuration')?></legend>
 	<table width="100%"  class="table_form">
   <tr>
-    <th width="120"><?php echo L('model_name')?>ï¼š</th>
+    <th width="120"><?php echo L('model_name')?>£º</th>
     <td class="y-bg"><input type="text" class="input-text" name="info[modelname]" id="name" size="30" /></td>
   </tr>
   <tr>
-    <th><?php echo L('model_tablename')?>ï¼š</th>
+    <th><?php echo L('model_tablename')?>£º</th>
     <td class="y-bg"><input type="text" class="input-text" name="info[tablename]" id="tablename" size="30" /></td>
   </tr>
     <tr>
-    <th><?php echo L('description')?>ï¼š</th>
+    <th><?php echo L('description')?>£º</th>
     <td class="y-bg"><input type="text" class="input-text" name="info[description]" id="description"  size="30"/></td>
   </tr>
   <tr>
@@ -41,23 +41,23 @@ include $this->admin_tpl('header','admin');
 	<legend><?php echo L('template_setting')?></legend>
 	<table width="100%"  class="table_form">
  <tr>
-  <th width="200"><?php echo L('available_styles');?>ï¼š</th>
+  <th width="200"><?php echo L('available_styles');?>£º</th>
         <td>
 		<?php echo form::select($style_list, '', 'name="default_style" id="default_style" onchange="load_file_list(this.value)"', L('please_select'))?> 
 		</td>
 </tr>
 		<tr>
-        <th width="200"><?php echo L('category_index_tpl')?>ï¼š</th>
+        <th width="200"><?php echo L('category_index_tpl')?>£º</th>
         <td  id="category_template">
 		</td>
       </tr>
 	  <tr>
-        <th width="200"><?php echo L('category_list_tpl')?>ï¼š</th>
+        <th width="200"><?php echo L('category_list_tpl')?>£º</th>
         <td  id="list_template">
 		</td>
       </tr>
 	  <tr>
-        <th width="200"><?php echo L('content_tpl')?>ï¼š</th>
+        <th width="200"><?php echo L('content_tpl')?>£º</th>
         <td  id="show_template">
 		</td>
       </tr>

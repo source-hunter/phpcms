@@ -16,11 +16,11 @@ class keylink extends admin {
 	}
 	
 	/**
-	 * éªŒè¯æ•°æ®æœ‰æ•ˆæ€§
+	 * ÑéÖ¤Êı¾İÓĞĞ§ĞÔ
 	 */
 	public function public_name() {
 			$word = isset($_GET['word']) && trim($_GET['word']) ? (CHARSET == 'gbk' ? iconv('utf-8', 'gbk', trim($_GET['word'])) : trim($_GET['word'])) : exit('0');
-			//ä¿®æ”¹æ£€æµ‹
+			//ĞŞ¸Ä¼ì²â
 			$keylinkid = isset($_GET['keylinkid']) && intval($_GET['keylinkid']) ? intval($_GET['keylinkid']) : '';
 	 		$data = array();
 			if ($keylinkid) {
@@ -29,7 +29,7 @@ class keylink extends admin {
 					exit('1');
 				}
 			}
-			//æ·»åŠ æ£€æµ‹
+			//Ìí¼Ó¼ì²â
 			if ($this->db->get_one(array('word'=>$word), 'keylinkid')) {
 				exit('0');
 				} else {
@@ -38,13 +38,13 @@ class keylink extends admin {
 		}
 		
 	/**
-	 * å…³è”è¯æ·»åŠ 
+	 * ¹ØÁª´ÊÌí¼Ó
 	 */
 	function add() {
 		if(isset($_POST['dosubmit'])){
 				if(empty($_POST['info']['word']) || empty($_POST['info']['url']))return false;
 				$this->db->insert($_POST['info']);
-				$this->public_cache_file();//æ›´æ–°ç¼“å­˜ 
+				$this->public_cache_file();//¸üĞÂ»º´æ 
 				showmessage(L('operation_success'),'?m=admin&c=keylink&a=add','', 'add');
 			}else{
 				$show_validator = $show_scroll = $show_header = true;
@@ -53,14 +53,14 @@ class keylink extends admin {
 	} 
 	
 	/**
-	 * å…³è”è¯ä¿®æ”¹
+	 * ¹ØÁª´ÊĞŞ¸Ä
 	 */
 	function edit() {
 		if(isset($_POST['dosubmit'])){
 			$keylinkid = intval($_GET['keylinkid']);
 			if(empty($_POST['info']['word']) || empty($_POST['info']['url']))return false;
  			$this->db->update($_POST['info'],array('keylinkid'=>$keylinkid));
-			$this->public_cache_file();//æ›´æ–°ç¼“å­˜
+			$this->public_cache_file();//¸üĞÂ»º´æ
 			showmessage(L('operation_success'),'?m=admin&c=keylink&a=edit','', 'edit');
 		}else{
 			$show_validator = $show_scroll = $show_header = true;
@@ -71,20 +71,20 @@ class keylink extends admin {
 		}	 
 	}
 	/**
-	 * å…³è”è¯åˆ é™¤
+	 * ¹ØÁª´ÊÉ¾³ı
 	 */
 	function delete() {
  		if(is_array($_POST['keylinkid'])){
 			foreach($_POST['keylinkid'] as $keylinkid_arr) {
 				$this->db->delete(array('keylinkid'=>$keylinkid_arr));
 			}
-			$this->public_cache_file();//æ›´æ–°ç¼“å­˜
+			$this->public_cache_file();//¸üĞÂ»º´æ
 			showmessage(L('operation_success'),'?m=admin&c=keylink');	
 		} else {
 			$keylinkid = intval($_GET['keylinkid']);
 			if($keylinkid < 1) return false;
 			$result = $this->db->delete(array('keylinkid'=>$keylinkid));
-			$this->public_cache_file();//æ›´æ–°ç¼“å­˜
+			$this->public_cache_file();//¸üĞÂ»º´æ
 			if($result){
 				showmessage(L('operation_success'),'?m=admin&c=keylink');
 			}else {
@@ -93,7 +93,7 @@ class keylink extends admin {
 		}
 	}
 	/**
-	 * ç”Ÿæˆç¼“å­˜
+	 * Éú³É»º´æ
 	 */
 	public function public_cache_file() {
 		$infos = $this->db->select('','word,url','','keylinkid ASC');

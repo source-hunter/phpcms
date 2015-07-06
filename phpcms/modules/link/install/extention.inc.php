@@ -12,7 +12,7 @@ $menu_db->insert(array('name'=>'check_register', 'parentid'=>$parentid, 'm'=>'li
 
 $link_db = pc_base::load_model('link_model');
 $link_db->insert(array('siteid'=>1,'typeid'=>$typeid,'linktype'=>'1','name'=>'PHPCMS','url'=>'http://www.phpcms.cn','logo'=>'http://www.phpcms.cn/images/logo_88_31.gif','passed'=>1,'addtime'=>SYS_TIME)); 
-$link_db->insert(array('siteid'=>1,'typeid'=>$typeid,'linktype'=>'1','name'=>'ç››å¤§åœ¨çº¿','url'=>'http://www.sdo.com','logo'=>'http://www.snda.com/cn/logo/comp_logo_sdo.gif','passed'=>1,'addtime'=>SYS_TIME));
+$link_db->insert(array('siteid'=>1,'typeid'=>$typeid,'linktype'=>'1','name'=>'Ê¢´óÔÚÏß','url'=>'http://www.sdo.com','logo'=>'http://www.snda.com/cn/logo/comp_logo_sdo.gif','passed'=>1,'addtime'=>SYS_TIME));
 
-$language = array('link'=>'å‹æƒ…é“¾æŽ¥', 'add_link'=>'æ·»åŠ å‹æƒ…é“¾æŽ¥', 'edit_link'=>'ç¼–è¾‘å‹æƒ…é“¾æŽ¥', 'delete_link'=>'åˆ é™¤å‹æƒ…é“¾æŽ¥', 'link_setting'=>'æ¨¡å—é…ç½®', 'add_type'=>'æ·»åŠ ç±»åˆ«', 'list_type'=>'åˆ†ç±»ç®¡ç†', 'check_register'=>'å®¡æ ¸ç”³è¯·');
+$language = array('link'=>'ÓÑÇéÁ´½Ó', 'add_link'=>'Ìí¼ÓÓÑÇéÁ´½Ó', 'edit_link'=>'±à¼­ÓÑÇéÁ´½Ó', 'delete_link'=>'É¾³ýÓÑÇéÁ´½Ó', 'link_setting'=>'Ä£¿éÅäÖÃ', 'add_type'=>'Ìí¼ÓÀà±ð', 'list_type'=>'·ÖÀà¹ÜÀí', 'check_register'=>'ÉóºËÉêÇë');
 ?>

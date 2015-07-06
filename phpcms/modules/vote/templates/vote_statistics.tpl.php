@@ -25,7 +25,7 @@ include $this->admin_tpl('header', 'admin');
 $i = 1;
 if(is_array($options)){
 foreach($options as $info){
-	//没有人投票则 百分比都为 0%
+	//û����ͶƱ�� �ٷֱȶ�Ϊ 0%
 	if($vote_data['total']==0){
 		$per=0;
 	}else{

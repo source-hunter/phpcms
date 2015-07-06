@@ -4,9 +4,9 @@ class index {
 	
 	function __construct() {
 		pc_base::load_app_func('global');
-		$this->vote = pc_base::load_model('vote_subject_model');//æŠ•ç¥¨æ ‡é¢˜
-		$this->vote_option = pc_base::load_model('vote_option_model');//æŠ•ç¥¨é€‰é¡¹
-		$this->vote_data = pc_base::load_model('vote_data_model'); //æŠ•ç¥¨ç»Ÿè®¡çš„æ•°æ®æ¨¡åž‹
+		$this->vote = pc_base::load_model('vote_subject_model');//Í¶Æ±±êÌâ
+		$this->vote_option = pc_base::load_model('vote_option_model');//Í¶Æ±Ñ¡Ïî
+		$this->vote_data = pc_base::load_model('vote_data_model'); //Í¶Æ±Í³¼ÆµÄÊý¾ÝÄ£ÐÍ
 		$this->username = param::get_cookie('_username');
 		$this->userid = param::get_cookie('_userid'); 
 		$this->groupid = param::get_cookie('_groupid'); 
@@ -26,7 +26,7 @@ class index {
 	}
 	
 	 /**
-	 *	æŠ•ç¥¨åˆ—è¡¨é¡µ
+	 *	Í¶Æ±ÁÐ±íÒ³
 	 */
 	public function lists() {
  		$siteid = SITEID;
@@ -38,18 +38,18 @@ class index {
 	}
 	
 	/**
-	 * æŠ•ç¥¨æ˜¾ç¤ºé¡µ
+	 * Í¶Æ±ÏÔÊ¾Ò³
 	 */
 	public function show(){
-		$type = intval($_GET['type']);//è°ƒç”¨æ–¹å¼ID
+		$type = intval($_GET['type']);//µ÷ÓÃ·½Ê½ID
 		$subjectid = abs(intval($_GET['subjectid']));
 		if(!$subjectid) showmessage(L('vote_novote'),'blank');
- 		//å–å‡ºæŠ•ç¥¨æ ‡é¢˜
+ 		//È¡³öÍ¶Æ±±êÌâ
 		$subject_arr = $this->vote->get_subject($subjectid);
 		
 		$siteid = $subject_arr['siteid'];
 
-		//å¢žåŠ åˆ¤æ–­ï¼Œé˜²æ­¢æ¨¡æ¿è°ƒç”¨ä¸å­˜åœ¨æŠ•ç¥¨æ—¶jsæŠ¥é”™ wangtiecheng
+		//Ôö¼ÓÅÐ¶Ï£¬·ÀÖ¹Ä£°åµ÷ÓÃ²»´æÔÚÍ¶Æ±Ê±js±¨´í wangtiecheng
 		if(!is_array($subject_arr)) {
 			if(isset($_GET['action']) && $_GET['action'] == 'js') {
 				exit;
@@ -58,20 +58,20 @@ class index {
 			}
 		}
 		extract($subject_arr);
-		//æ˜¾ç¤ºæ¨¡ç‰ˆ
+		//ÏÔÊ¾Ä£°æ
 		$template = $template ? $template: 'vote_tp';
- 		//èŽ·å–æŠ•ç¥¨é€‰é¡¹
+ 		//»ñÈ¡Í¶Æ±Ñ¡Ïî
 		$options = $this->vote_option->get_options($subjectid);
 		
-		//æ–°å»ºä¸€æ•°ç»„ç”¨æ¥å­˜æ–°ç»„åˆæ•°æ®
+		//ÐÂ½¨Ò»Êý×éÓÃÀ´´æÐÂ×éºÏÊý¾Ý
         $total = 0;
         $vote_data =array();
-		$vote_data['total'] = 0 ;//æ‰€æœ‰æŠ•ç¥¨é€‰é¡¹æ€»æ•°
-		$vote_data['votes'] = 0 ;//æŠ•ç¥¨äººæ•°
+		$vote_data['total'] = 0 ;//ËùÓÐÍ¶Æ±Ñ¡Ïî×ÜÊý
+		$vote_data['votes'] = 0 ;//Í¶Æ±ÈËÊý
 		
-		//èŽ·å–æŠ•ç¥¨ç»“æžœä¿¡æ¯
+		//»ñÈ¡Í¶Æ±½á¹ûÐÅÏ¢
         $infos = $this->vote_data->select(array('subjectid'=>$subjectid),'data');	
-		//å¾ªçŽ¯æ¯ä¸ªä¼šå‘˜çš„æŠ•ç¥¨è®°å½•
+		//Ñ­»·Ã¿¸ö»áÔ±µÄÍ¶Æ±¼ÇÂ¼
 		foreach($infos as $subjectid_arr) {
 				extract($subjectid_arr);
  				$arr = string2array($data);
@@ -84,7 +84,7 @@ class index {
  		$vote_data['total'] = $total ;
  		
  		
-		//å–å‡ºæŠ•ç¥¨æ—¶é—´ï¼Œå¦‚æžœå½“å‰æ—¶é—´ä¸åœ¨æŠ•ç¥¨æ—¶é—´èŒƒå›´å†…ï¼Œåˆ™é€‰é¡¹å˜ç°ä¸å¯é€‰
+		//È¡³öÍ¶Æ±Ê±¼ä£¬Èç¹ûµ±Ç°Ê±¼ä²»ÔÚÍ¶Æ±Ê±¼ä·¶Î§ÄÚ£¬ÔòÑ¡Ïî±ä»Ò²»¿ÉÑ¡
 		if(date("Y-m-d",SYS_TIME)>$todate || date("Y-m-d",SYS_TIME)<$fromdate){
 			$check_status = 'disabled';
 			$display = 'display:none;';
@@ -93,18 +93,18 @@ class index {
  		}
  		
  		
-  		//JSè°ƒç”¨ 
+  		//JSµ÷ÓÃ 
 		if($_GET['action']=='js'){
 		 	if(!function_exists('ob_gzhandler')) ob_clean();
 			ob_start();
  			//$template = 'submit';
  			$template = $subject_arr['template'];
- 			//æ ¹æ®TYPEå€¼ï¼Œåˆ¤æ–­è°ƒç”¨æ¨¡ç‰ˆ
+ 			//¸ù¾ÝTYPEÖµ£¬ÅÐ¶Ïµ÷ÓÃÄ£°æ
  			switch ($type){
-				case 3://é¦–é¡µã€æ ç›®é¡µè°ƒç”¨
+				case 3://Ê×Ò³¡¢À¸Ä¿Ò³µ÷ÓÃ
 				$true_template = 'vote_tp_3';
 				break; 
-				case 2://å†…å®¹é¡µè°ƒç”¨
+				case 2://ÄÚÈÝÒ³µ÷ÓÃ
 				$true_template = 'vote_tp_2';	
 				break;
 				default:
@@ -116,9 +116,9 @@ class index {
 			exit(format_js($data));
 		}
 		
- 		//SEOè®¾ç½® 
+ 		//SEOÉèÖÃ 
 		$SEO = seo(SITEID, '', $subject, $description, $subject);
- 		//å‰å°æŠ•ç¥¨åˆ—è¡¨è°ƒç”¨é»˜è®¤é¡µé¢,ä»¥å…é¡µé¢æ ·å¼é”™ä¹±.
+ 		//Ç°Ì¨Í¶Æ±ÁÐ±íµ÷ÓÃÄ¬ÈÏÒ³Ãæ,ÒÔÃâÒ³ÃæÑùÊ½´íÂÒ.
  		if($_GET['show_type']==1){
  			include template('vote', 'vote_tp');
  		}else {
@@ -128,14 +128,14 @@ class index {
 	} 
 	
 	/**
-	 * å¤„ç†æŠ•ç¥¨
+	 * ´¦ÀíÍ¶Æ±
 	 */
 	public function post(){
 		$subjectid = intval($_POST['subjectid']);
 		if(!$subjectid)	showmessage(L('vote_novote'),'blank');
-		//å½“å‰ç«™ç‚¹
+		//µ±Ç°Õ¾µã
 		$siteid = SITEID;
-		//åˆ¤æ–­æ˜¯å¦å·²æŠ•è¿‡ç¥¨,æˆ–è€…å°šæœªåˆ°ç¬¬äºŒæ¬¡æŠ•ç¥¨æœŸ
+		//ÅÐ¶ÏÊÇ·ñÒÑÍ¶¹ýÆ±,»òÕßÉÐÎ´µ½µÚ¶þ´ÎÍ¶Æ±ÆÚ
 		$return = $this->check($subjectid);
  		switch ($return) {
 		case 0:
@@ -152,42 +152,42 @@ class index {
   		foreach($_POST['radio'] as $radio){
   			$data_arr[$radio]='1';
   		}
-  		$new_data = array2string($data_arr);//è½¬æˆå­—ç¬¦ä¸²å­˜å…¥æ•°æ®åº“ä¸­  
-  		//æ·»åŠ åˆ°æ•°æ®åº“
+  		$new_data = array2string($data_arr);//×ª³É×Ö·û´®´æÈëÊý¾Ý¿âÖÐ  
+  		//Ìí¼Óµ½Êý¾Ý¿â
 		$this->vote_data->insert(array('userid'=>$this->userid,'username'=>$this->username,'subjectid'=>$subjectid,'time'=>$time,'ip'=>$this->ip,'data'=>$new_data));
- 		//æŸ¥è¯¢æŠ•ç¥¨å¥–åŠ±ç‚¹æ•°ï¼Œå¹¶æ›´æ–°ä¼šå‘˜ç‚¹æ•°
+ 		//²éÑ¯Í¶Æ±½±ÀøµãÊý£¬²¢¸üÐÂ»áÔ±µãÊý
  		$vote_arr = $this->vote->get_one(array('subjectid'=>$subjectid));
   		pc_base::load_app_class('receipts','pay',0);
 		receipts::point($vote_arr['credit'],$this->userid, $this->username, '','selfincome',L('vote_post_point'));
- 		//æ›´æ–°æŠ•ç¥¨äººæ•° 
+ 		//¸üÐÂÍ¶Æ±ÈËÊý 
  		$this->vote->update(array('votenumber'=>'+=1'),array('subjectid'=>$subjectid));
 		showmessage(L('vote_votesucceed'), "?m=vote&c=index&a=result&subjectid=$subjectid&siteid=$siteid");
 	}
 	
 	/**
 	 * 
-	 * æŠ•ç¥¨ç»“æžœæ˜¾ç¤º 
+	 * Í¶Æ±½á¹ûÏÔÊ¾ 
 	 */
 	public function result(){
 		$siteid = SITEID;
 		$subjectid = abs(intval($_GET['subjectid']));
 		if(!$subjectid)	showmessage(L('vote_novote'),'blank');
-		//å–å‡ºæŠ•ç¥¨æ ‡é¢˜
+		//È¡³öÍ¶Æ±±êÌâ
 		$subject_arr = $this->vote->get_subject($subjectid);
 		if(!is_array($subject_arr)) showmessage(L('vote_novote'),'blank');
 		extract($subject_arr);
-		//èŽ·å–æŠ•ç¥¨é€‰é¡¹
+		//»ñÈ¡Í¶Æ±Ñ¡Ïî
 		$options = $this->vote_option->get_options($subjectid);
 		
-		//æ–°å»ºä¸€æ•°ç»„ç”¨æ¥å­˜æ–°ç»„åˆæ•°æ®
+		//ÐÂ½¨Ò»Êý×éÓÃÀ´´æÐÂ×éºÏÊý¾Ý
         $total = 0;
         $vote_data =array();
-		$vote_data['total'] = 0 ;//æ‰€æœ‰æŠ•ç¥¨é€‰é¡¹æ€»æ•°
-		$vote_data['votes'] = 0 ;//æŠ•ç¥¨äººæ•°
+		$vote_data['total'] = 0 ;//ËùÓÐÍ¶Æ±Ñ¡Ïî×ÜÊý
+		$vote_data['votes'] = 0 ;//Í¶Æ±ÈËÊý
 		
-		//èŽ·å–æŠ•ç¥¨ç»“æžœä¿¡æ¯
+		//»ñÈ¡Í¶Æ±½á¹ûÐÅÏ¢
         $infos = $this->vote_data->select(array('subjectid'=>$subjectid),'data');	
-		//å¾ªçŽ¯æ¯ä¸ªä¼šå‘˜çš„æŠ•ç¥¨è®°å½•
+		//Ñ­»·Ã¿¸ö»áÔ±µÄÍ¶Æ±¼ÇÂ¼
 		foreach($infos as $subjectid_arr) {
 				extract($subjectid_arr);
  				$arr = string2array($data);
@@ -198,19 +198,19 @@ class index {
 				$vote_data['votes']++ ;
 		}
  		$vote_data['total'] = $total ;
- 		//SEOè®¾ç½® 
+ 		//SEOÉèÖÃ 
 		$SEO = seo(SITEID, '', $subject, $description, $subject);
    		include template('vote','vote_result');
 	}
 	
 	/**
 	 * 
-	 * æŠ•ç¥¨å‰æ£€æµ‹
-	 * @param $subjectid æŠ•ç¥¨ID 
-	 * @return è¿”å›žå€¼ (1:å¯æŠ•ç¥¨  0: å¤šæŠ•,æ—¶é—´æ®µå†…ä¸å¯æŠ•ç¥¨  -1:å•æŠ•,å·²æŠ•ç¥¨,ä¸å¯é‡å¤æŠ•ç¥¨)
+	 * Í¶Æ±Ç°¼ì²â
+	 * @param $subjectid Í¶Æ±ID 
+	 * @return ·µ»ØÖµ (1:¿ÉÍ¶Æ±  0: ¶àÍ¶,Ê±¼ä¶ÎÄÚ²»¿ÉÍ¶Æ±  -1:µ¥Í¶,ÒÑÍ¶Æ±,²»¿ÉÖØ¸´Í¶Æ±)
 	 */
 	public function check($subjectid){
-		//æŸ¥è¯¢æœ¬æŠ•ç¥¨é…ç½®
+		//²éÑ¯±¾Í¶Æ±ÅäÖÃ
  		$siteid = SITEID;
 		$subject_arr = $this->vote->get_subject($subjectid);
 		if($subject_arr['enabled']==0){
@@ -219,16 +219,16 @@ class index {
  		if(date("Y-m-d",SYS_TIME)>$subject_arr['todate']){
 			showmessage(L('vote_votepassed'),"?m=vote&c=index&a=result&subjectid=$subjectid&siteid=$siteid");
  		}
- 		//æ¸¸å®¢æ˜¯å¦å¯ä»¥æŠ•ç¥¨
+ 		//ÓÎ¿ÍÊÇ·ñ¿ÉÒÔÍ¶Æ±
 		if($subject_arr['allowguest']==0 ){
 			if(!$this->username){
 				showmessage(L('vote_votenoguest'),"?m=vote&c=index&a=result&subjectid=$subjectid&siteid=$siteid");
  			}elseif($this->groupid == '7'){
-				showmessage('å¯¹ä¸èµ·ï¼Œä¸å…è®¸é‚®ä»¶å¾…éªŒè¯ç”¨æˆ·æŠ•ç¥¨ï¼',"?m=vote&c=index&a=result&subjectid=$subjectid&siteid=$siteid");
+				showmessage('¶Ô²»Æð£¬²»ÔÊÐíÓÊ¼þ´ýÑéÖ¤ÓÃ»§Í¶Æ±£¡',"?m=vote&c=index&a=result&subjectid=$subjectid&siteid=$siteid");
 			}
  		}
 		
- 		//æ˜¯å¦æœ‰æŠ•ç¥¨è®°å½• 
+ 		//ÊÇ·ñÓÐÍ¶Æ±¼ÇÂ¼ 
 		$user_info = $this->vote_data->select(array('subjectid'=>$subjectid,'ip'=>$this->ip,'username'=>$this->username),'*','1',' time DESC'); 
 		if(!$user_info){
 			return 1;

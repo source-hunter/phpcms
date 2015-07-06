@@ -1,7 +1,7 @@
 {template 'special', 'header_video'} 
 <div class="clr ct zt_pg">
 	<div class="mgt10 w960 bnr"><img src="{$banner}" ></div>
-	<div class="crumbs"><a href="">é¦–é¡µ</a><span> &gt; </span> <a href="{APP_PATH}index.php?m=special&c=index&a=special">ä¸“é¢˜</a> <span> &gt; </span> <a href="{$url}">{$title}</a> </div>
+	<div class="crumbs"><a href="">Ê×Ò³</a><span> &gt; </span> <a href="{APP_PATH}index.php?m=special&c=index&a=special">×¨Ìâ</a> <span> &gt; </span> <a href="{$url}">{$title}</a> </div>
         <div class="box">
           <div class="nav2"><h5>{$info[name]}</h5></div>
           <div class="clr bct yct">
@@ -16,7 +16,7 @@
  					  <a href="{$r[url]}" target="_blank"><img src="{$r[thumb]}" width="120" height="75"></a>
 					  </div>
                     <div class="lh21"><a href="{$r[url]}" title="{$r[title]}" target="_blank">{str_cut($r[title],18,false)}</a></div>
-                      <div class="sz"><span class="shows">æ’­æ”¾æ•°ï¼š<cite>{get_views('c-'.$CATEGORYS[$v[catid]][modelid].'-'.$v['id'])}</cite></span><span>è¯„è®ºï¼š<cite>{get_comments(id_encode("content_$v[catid]",$v[id],$siteid))}</cite></span></div>
+                      <div class="sz"><span class="shows">²¥·ÅÊý£º<cite>{get_views('c-'.$CATEGORYS[$v[catid]][modelid].'-'.$v['id'])}</cite></span><span>ÆÀÂÛ£º<cite>{get_comments(id_encode("content_$v[catid]",$v[id],$siteid))}</cite></span></div>
                   </div>
                 </li>
 			{/loop}

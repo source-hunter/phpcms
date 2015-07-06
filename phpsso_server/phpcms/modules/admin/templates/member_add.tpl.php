@@ -64,15 +64,15 @@ $(function(){
 <form method=post action="?m=admin&c=member&a=add" id='myform'>
 <table width="100%"  class="table_form">
 	<tr>
-	<th width="80" ><?php echo L('username')?>ï¼š</th>
+	<th width="80" ><?php echo L('username')?>£º</th>
 	<td class="y-bg"><input type="text" name="username" id="username" class="input-text"></td>
 	</tr>
 	<tr>
-	<th><?php echo L('password')?>ï¼š</th>
+	<th><?php echo L('password')?>£º</th>
 	<td class="y-bg"><input type="password" class="input-text" name="password" id="password" value="" /></td>
 	</tr>
 	<tr>
-	<th><?php echo L('email')?>ï¼š</th>
+	<th><?php echo L('email')?>£º</th>
 	<td class="y-bg"><input type="text" name="email" id="email" class="input-text" ></td>
 	</tr>
 </table>

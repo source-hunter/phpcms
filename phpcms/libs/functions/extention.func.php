@@ -1,6 +1,6 @@
 <?php
 /**
- *  extention.func.php 鐢ㄦ埛鑷畾涔夊嚱鏁板簱
+ *  extention.func.php 用户自定义函数库
  *
  * @copyright			(C) 2005-2010 PHPCMS
  * @license				http://www.phpcms.cn/license/

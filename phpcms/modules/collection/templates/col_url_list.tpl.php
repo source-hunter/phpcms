@@ -6,8 +6,8 @@
 <li class="on" id="tab_1"><?php echo L('url_list')?></li>
 </ul>
 <div class="content pad-10" id="show_div_1" style="height:auto">
-<b><?php echo L('url_list')?></b>ï¼š<?php echo $url_list;?><br><br>
-<?php echo L('in_all')?>ï¼š <?php echo $total?> <?php echo L('all_count_msg')?>ï¼š<?php echo $re;?><?php echo L('import_num_msg')?><?php echo $total-$re;?>
+<b><?php echo L('url_list')?></b>£º<?php echo $url_list;?><br><br>
+<?php echo L('in_all')?>£º <?php echo $total?> <?php echo L('all_count_msg')?>£º<?php echo $re;?><?php echo L('import_num_msg')?><?php echo $total-$re;?>
 <br><br>
 <?php if (is_array($url))foreach ($url as $v):?>
 <?php echo $v['title'].'<br>'.$v['url'];?>

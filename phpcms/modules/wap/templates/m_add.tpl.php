@@ -33,11 +33,11 @@ include $this->admin_tpl('header', 'admin');
  <table width="100%"  class="table_form">  
     <tr>
     <th width="120"><?php echo L('wap_listnum')?></th>
-    <td class="y-bg"><input type="text" class="input-text" name="setting[listnum]" id="listnum" size="10" value="10"/> æ¡</td>
+    <td class="y-bg"><input type="text" class="input-text" name="setting[listnum]" id="listnum" size="10" value="10"/> Ìõ</td>
     </tr>
     <tr>
     <th width="120"><?php echo L('wap_thumb')?></th>
-    <td class="y-bg"><input type="text" class="input-text" name="setting[thumb_w]" id="thumb_w" size="5" value="220"/>pxã€€*ã€€<input type="text" class="input-text" name="setting[thumb_h]" id="thumb_h" size="5" value="0"/>px</td>
+    <td class="y-bg"><input type="text" class="input-text" name="setting[thumb_w]" id="thumb_w" size="5" value="220"/>px¡¡*¡¡<input type="text" class="input-text" name="setting[thumb_h]" id="thumb_h" size="5" value="0"/>px</td>
     </tr>
     <tr>
     <th width="120"><?php echo L('wap_content_page')?></th>

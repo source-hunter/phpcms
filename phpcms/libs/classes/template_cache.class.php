@@ -1,15 +1,15 @@
 <?php
 /**
- *  æ¨¡æ¿è§£æç¼“å­˜
+ *  Ä£°å½âÎö»º´æ
  */
 final class template_cache {
 	
 	/**
-	 * ç¼–è¯‘æ¨¡æ¿
+	 * ±àÒëÄ£°å
 	 *
-	 * @param $module	æ¨¡å—åç§°
-	 * @param $template	æ¨¡æ¿æ–‡ä»¶å
-	 * @param $istag	æ˜¯å¦ä¸ºæ ‡ç­¾æ¨¡æ¿
+	 * @param $module	Ä£¿éÃû³Æ
+	 * @param $template	Ä£°åÎÄ¼şÃû
+	 * @param $istag	ÊÇ·ñÎª±êÇ©Ä£°å
 	 * @return unknown
 	 */
 	
@@ -45,11 +45,11 @@ final class template_cache {
 	}
 	
 	/**
-	 * æ›´æ–°æ¨¡æ¿ç¼“å­˜
+	 * ¸üĞÂÄ£°å»º´æ
 	 *
-	 * @param $tplfile	æ¨¡æ¿åŸæ–‡ä»¶è·¯å¾„
-	 * @param $compiledtplfile	ç¼–è¯‘å®Œæˆåï¼Œå†™å…¥æ–‡ä»¶å
-	 * @return $strlen é•¿åº¦
+	 * @param $tplfile	Ä£°åÔ­ÎÄ¼şÂ·¾¶
+	 * @param $compiledtplfile	±àÒëÍê³Éºó£¬Ğ´ÈëÎÄ¼şÃû
+	 * @return $strlen ³¤¶È
 	 */
 	public function template_refresh($tplfile, $compiledtplfile) {
 		$str = @file_get_contents ($tplfile);
@@ -61,9 +61,9 @@ final class template_cache {
 	
 
 	/**
-	 * è§£ææ¨¡æ¿
+	 * ½âÎöÄ£°å
 	 *
-	 * @param $str	æ¨¡æ¿å†…å®¹
+	 * @param $str	Ä£°åÄÚÈİ
 	 * @return ture
 	 */
 	public function template_parse($str) {
@@ -74,7 +74,7 @@ final class template_cache {
 		$str = preg_replace ( "/\{else\}/", "<?php } else { ?>", $str );
 		$str = preg_replace ( "/\{elseif\s+(.+?)\}/", "<?php } elseif (\\1) { ?>", $str );
 		$str = preg_replace ( "/\{\/if\}/", "<?php } ?>", $str );
-		//for å¾ªç¯
+		//for Ñ­»·
 		$str = preg_replace("/\{for\s+(.+?)\}/","<?php for(\\1) { ?>",$str);
 		$str = preg_replace("/\{\/for\}/","<?php } ?>",$str);
 		//++ --
@@ -97,20 +97,20 @@ final class template_cache {
 	}
 
 	/**
-	 * è½¬ä¹‰ // ä¸º /
+	 * ×ªÒå // Îª /
 	 *
-	 * @param $var	è½¬ä¹‰çš„å­—ç¬¦
-	 * @return è½¬ä¹‰åçš„å­—ç¬¦
+	 * @param $var	×ªÒåµÄ×Ö·û
+	 * @return ×ªÒåºóµÄ×Ö·û
 	 */
 	public function addquote($var) {
 		return str_replace ( "\\\"", "\"", preg_replace ( "/\[([a-zA-Z0-9_\-\.\x7f-\xff]+)\]/s", "['\\1']", $var ) );
 	}
 	
 	/**
-	 * è§£æPCæ ‡ç­¾
-	 * @param string $op æ“ä½œæ–¹å¼
-	 * @param string $data å‚æ•°
-	 * @param string $html åŒ¹é…åˆ°çš„æ‰€æœ‰çš„HTMLä»£ç 
+	 * ½âÎöPC±êÇ©
+	 * @param string $op ²Ù×÷·½Ê½
+	 * @param string $data ²ÎÊı
+	 * @param string $html Æ¥Åäµ½µÄËùÓĞµÄHTML´úÂë
 	 */
 	public static function pc_tag($op, $data, $html) {
 		preg_match_all("/([a-z]+)\=[\"]?([^\"]+)[\"]?/i", stripslashes($data), $matches, PREG_SET_ORDER);
@@ -118,7 +118,7 @@ final class template_cache {
 		$tools = array('json', 'xml', 'block', 'get');
 		$datas = array();
 		$tag_id = md5(stripslashes($html));
-		//å¯è§†åŒ–æ¡ä»¶
+		//¿ÉÊÓ»¯Ìõ¼ş
 		$str_datas = 'op='.$op.'&tag_md5='.$tag_id;
 		foreach ($matches as $v) {
 			$str_datas .= $str_datas ? "&$v[1]=".($op == 'block' && strpos($v[2], '$') === 0 ? $v[2] : urlencode($v[2])) : "$v[1]=".(strpos($v[2], '$') === 0 ? $v[2] : urlencode($v[2]));
@@ -217,15 +217,15 @@ final class template_cache {
 	}
 	
 	/**
-	 * PCæ ‡ç­¾ç»“æŸ
+	 * PC±êÇ©½áÊø
 	 */
 	static private function end_pc_tag() {
 		return '<?php if(defined(\'IN_ADMIN\') && !defined(\'HTML\')) {echo \'</div>\';}?>';
 	}
 	
 	/**
-	 * è½¬æ¢æ•°æ®ä¸ºHTMLä»£ç 
-	 * @param array $data æ•°ç»„
+	 * ×ª»»Êı¾İÎªHTML´úÂë
+	 * @param array $data Êı×é
 	 */
 	private static function arr_to_html($data) {
 		if (is_array($data)) {

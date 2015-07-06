@@ -1,12 +1,12 @@
 <?php
 defined('IN_ADMIN') or exit('No permission resources.');
 
-$field_type				= 'varchar'; //å­—æ®µæ•°æ®åº“ç±»åž‹	
-$field_basic_table		= 1; //æ˜¯å¦å…è®¸ä½œä¸ºä¸»è¡¨å­—æ®µ
-$field_allow_index		= 0; //æ˜¯å¦å…è®¸å»ºç«‹ç´¢å¼•
-$field_minlength		= 1; //å­—ç¬¦é•¿åº¦é»˜è®¤æœ€å°å€¼
-$field_maxlength		= 80; //å­—ç¬¦é•¿åº¦é»˜è®¤æœ€å¤§å€¼
-$field_allow_search		= 1; //ä½œä¸ºæœç´¢æ¡ä»¶
-$field_allow_fulltext	= 1; //ä½œä¸ºå…¨ç«™æœç´¢ä¿¡æ¯
-$field_allow_isunique	= 0; //æ˜¯å¦å…è®¸å€¼å”¯ä¸€
+$field_type				= 'varchar'; //×Ö¶ÎÊý¾Ý¿âÀàÐÍ	
+$field_basic_table		= 1; //ÊÇ·ñÔÊÐí×÷ÎªÖ÷±í×Ö¶Î
+$field_allow_index		= 0; //ÊÇ·ñÔÊÐí½¨Á¢Ë÷Òý
+$field_minlength		= 1; //×Ö·û³¤¶ÈÄ¬ÈÏ×îÐ¡Öµ
+$field_maxlength		= 80; //×Ö·û³¤¶ÈÄ¬ÈÏ×î´óÖµ
+$field_allow_search		= 1; //×÷ÎªËÑË÷Ìõ¼þ
+$field_allow_fulltext	= 1; //×÷ÎªÈ«Õ¾ËÑË÷ÐÅÏ¢
+$field_allow_isunique	= 0; //ÊÇ·ñÔÊÐíÖµÎ¨Ò»
 ?>

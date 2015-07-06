@@ -31,7 +31,7 @@ class dbsource_admin extends admin {
 			if (!preg_match('/^\\w+$/i', $name)) {
 				showmessage(L('data_source_of_the_letters_and_figures'));
 			}
-			//æ£€å¯Ÿæ•°æ®æºåæ˜¯å¦å·²ç»å­˜åœ¨
+			//¼ì²ìÊý¾ÝÔ´ÃûÊÇ·ñÒÑ¾­´æÔÚ
 			if ($this->db->get_one(array('siteid'=>$siteid, 'name'=>$name), 'id')) {
 				showmessage(L('dbsource_name').L('exists'));
 			}

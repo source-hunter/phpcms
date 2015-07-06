@@ -13,7 +13,7 @@ class plugin extends admin {
 	}
 	
 	/**
-	 * åº”ç”¨é…ç½®ä¿¡æ¯
+	 * Ó¦ÓÃÅäÖÃĞÅÏ¢
 	 */
 	public function init() {
 		$show_validator = true;
@@ -33,7 +33,7 @@ class plugin extends admin {
 	}
 	
 	/**
-	 * åº”ç”¨å¯¼å…¥\å®‰è£…
+	 * Ó¦ÓÃµ¼Èë\°²×°
 	 */
 	 
 	public function import() {
@@ -80,7 +80,7 @@ class plugin extends admin {
 		}
 	}
 	/**
-	 * åº”ç”¨åˆ é™¤ç¨‹åº
+	 * Ó¦ÓÃÉ¾³ı³ÌĞò
 	 */
 	public function delete() {
 		if(isset($_POST['dosubmit'])) {
@@ -124,7 +124,7 @@ class plugin extends admin {
 	}
 	
 	/**
-	 * åº”ç”¨å®‰è£…
+	 * Ó¦ÓÃ°²×°
 	 */	
 	public function install() {
 		$op_status = FALSE;
@@ -168,13 +168,13 @@ class plugin extends admin {
 		} 
 		
 		if($op_status) {	
-			//å‘æ’ä»¶è¡¨ä¸­æ’å…¥æ•°æ®
+			//Ïò²å¼ş±íÖĞ²åÈëÊı¾İ
 			
 			$plugin = array('name'=>new_addslashes($plugin_data['plugin']['name']),'identification'=>$plugin_data['identification'],'appid'=>$plugin_data['appid'],'description'=>new_addslashes($plugin_data['plugin']['description']),'dir'=>$plugin_data['dir'],'copyright'=>new_addslashes($plugin_data['plugin']['copyright']),'setting'=>array2string($plugin_data['plugin']['setting']),'iframe'=>array2string($plugin_data['plugin']['iframe']),'version'=>$plugin_data['plugin']['version'],'disable'=>'0');
 			
 			$pluginid = $this->db->insert($plugin,TRUE);
 			
-			//å‘æ’ä»¶å˜é‡è¡¨ä¸­æ’å…¥æ•°æ®
+			//Ïò²å¼ş±äÁ¿±íÖĞ²åÈëÊı¾İ
 			if(is_array($plugin_data['plugin_var'])) {
 				foreach($plugin_data['plugin_var'] as $config) {
 					$plugin_var = array();
@@ -197,14 +197,14 @@ class plugin extends admin {
 	}	
 	
 	/**
-	 * åº”ç”¨å‡çº§
+	 * Ó¦ÓÃÉı¼¶
 	 */		
 	public function upgrade() {
 		//TODO		
 	}
 	
 	/**
-	 * åº”ç”¨æ’åº
+	 * Ó¦ÓÃÅÅĞò
 	 */
 	public function listorder() {
 		if(isset($_POST['dosubmit'])) {
@@ -251,7 +251,7 @@ class plugin extends admin {
 		}
 	}
 	/**
-	 * åº”ç”¨ä¸­å¿ƒ
+	 * Ó¦ÓÃÖĞĞÄ
 	 * Enter description here ...
 	 */ 
 	public function appcenter() {
@@ -276,7 +276,7 @@ class plugin extends admin {
 	}
 	
 	/**
-	 * æ˜¾ç¤ºåº”ç”¨è¯¦æƒ…
+	 * ÏÔÊ¾Ó¦ÓÃÏêÇé
 	 */
 	public function appcenter_detail() {
 		$data = array();
@@ -292,7 +292,7 @@ class plugin extends admin {
 	}
 	
 	/**
-	 * åœ¨çº¿å®‰è£…
+	 * ÔÚÏß°²×°
 	 */
 	public function install_online() {
 		$data = array();
@@ -300,14 +300,14 @@ class plugin extends admin {
 		$data = file_get_contents('http://open.phpcms.cn/index.php?m=open&c=api&a=get_detail_byappid&id='.$id);
 		$data = array_iconv(json_decode($data, true),'utf-8',CHARSET);
 		
-		//å¦‚æœä¸ºiframeç±»å‹åº”ç”¨ï¼Œæ— éœ€ä¸‹è½½å‹ç¼©åŒ…ï¼Œä¹‹é—´åˆ›å»ºæ’ä»¶æ–‡ä»¶å¤¹
+		//Èç¹ûÎªiframeÀàĞÍÓ¦ÓÃ£¬ÎŞĞèÏÂÔØÑ¹Ëõ°ü£¬Ö®¼ä´´½¨²å¼şÎÄ¼ş¼Ğ
 		if(!empty($data['iframe'])) {
 			$appdirname = PC_PATH.'plugin'.DIRECTORY_SEPARATOR.$data['appenname'];
 			if(!file_exists($appdirname)) {
 				if(!mkdir($appdirname)) {
 					showmessage(L('plugin_mkdir_fail', '', 'plugin'));
 				} else {
-					//åˆ›å»ºå®‰è£…ã€é…ç½®æ–‡ä»¶
+					//´´½¨°²×°¡¢ÅäÖÃÎÄ¼ş
 					$installdata = <<<EOF
 <?php 
 	defined('IN_PHPCMS') or exit('No permission resources.');
@@ -332,14 +332,14 @@ return array (
 		  'uninstallfile' => 'uninstall.php',
 		  'iframe' => array('width'=>'960','height'=>'640','url'=>'$data[iframe]'),		  
 	),
-   'plugin_var'=> array(   array('title'=>'å®½åº¦','description'=>'','fieldname'=>'width','fieldtype'=>'text','value'=>'960','formattribute'=>'style="width:50px"','listorder'=>'1',),		array('title'=>'é«˜åº¦','description'=>'','fieldname'=>'height','fieldtype'=>'text','value'=>'640','formattribute'=>'style="width:50px"','listorder'=>'2',),   
+   'plugin_var'=> array(   array('title'=>'¿í¶È','description'=>'','fieldname'=>'width','fieldtype'=>'text','value'=>'960','formattribute'=>'style="width:50px"','listorder'=>'1',),		array('title'=>'¸ß¶È','description'=>'','fieldname'=>'height','fieldtype'=>'text','value'=>'640','formattribute'=>'style="width:50px"','listorder'=>'2',),   
 	),	
 );
 ?>				
 EOF;
 					$cfgres = @file_put_contents($appdirname.DIRECTORY_SEPARATOR.'plugin_'.$data['appenname'].'.cfg.php', $cfgdata);
 					
-					//æ£€æŸ¥é…ç½®æ–‡ä»¶æ˜¯å¦å†™å…¥æˆåŠŸ
+					//¼ì²éÅäÖÃÎÄ¼şÊÇ·ñĞ´Èë³É¹¦
 					if($installres*$uninstallres*$cfgres > 0) {
 						showmessage(L('plugin_configure_success', '', 'plugin'), 'index.php?m=admin&c=plugin&a=import&dir='.$data['appenname']);
 					} else {
@@ -350,48 +350,48 @@ EOF;
 				showmessage(L('plugin_allready_exists', '', 'plugin'));
 			}
 		} else {	
-			//è¿œç¨‹å‹ç¼©åŒ…åœ°å€
+			//Ô¶³ÌÑ¹Ëõ°üµØÖ·
 			$upgradezip_url = $data['downurl'];
 			if(empty($upgradezip_url)) {
 				showmessage(L('download_fail', '', 'plugin'), 'index.php?m=admin&c=plugin&a=appcenter');
 			}
 			
-			//åˆ›å»ºç¼“å­˜æ–‡ä»¶å¤¹
+			//´´½¨»º´æÎÄ¼ş¼Ğ
 			if(!file_exists(CACHE_PATH.'caches_open')) {
 				@mkdir(CACHE_PATH.'caches_open');
 			}
-			//ä¿å­˜åˆ°æœ¬åœ°åœ°å€
+			//±£´æµ½±¾µØµØÖ·
 			$upgradezip_path = CACHE_PATH.'caches_open'.DIRECTORY_SEPARATOR.$data['id'].'.zip';
-			//è§£å‹è·¯å¾„
+			//½âÑ¹Â·¾¶
 			$upgradezip_source_path = CACHE_PATH.'caches_open'.DIRECTORY_SEPARATOR.$data['id'];
 				
-			//ä¸‹è½½å‹ç¼©åŒ…
+			//ÏÂÔØÑ¹Ëõ°ü
 			@file_put_contents($upgradezip_path, @file_get_contents($upgradezip_url));
-			//è§£å‹ç¼©
+			//½âÑ¹Ëõ
 			pc_base::load_app_class('pclzip', 'upgrade', 0);
 			$archive = new PclZip($upgradezip_path);
 	
 			if($archive->extract(PCLZIP_OPT_PATH, $upgradezip_source_path, PCLZIP_OPT_REPLACE_NEWER) == 0) {
 				die("Error : ".$archive->errorInfo(true));
 			}
-			//åˆ é™¤å‹ç¼©åŒ…
+			//É¾³ıÑ¹Ëõ°ü
 			@unlink($upgradezip_path);
 			
-			//æ‹·è´gbk/uploadæ–‡ä»¶å¤¹åˆ°æ ¹ç›®å½•
+			//¿½±´gbk/uploadÎÄ¼ş¼Ğµ½¸ùÄ¿Â¼
 			$copy_from = $upgradezip_source_path.DIRECTORY_SEPARATOR.CHARSET;
-			//åŠ¨æ€ç¨‹åºè·¯å¾„
+			//¶¯Ì¬³ÌĞòÂ·¾¶
 			$copy_to_pcpath = PC_PATH.'plugin';
-			//é™æ€ç¨‹åºè·¯å¾„
+			//¾²Ì¬³ÌĞòÂ·¾¶
 			$copy_to_staticspath = PHPCMS_PATH.'statics'.DIRECTORY_SEPARATOR.'plugin';
 
-			//åº”ç”¨æ–‡ä»¶å¤¹åç§°
+			//Ó¦ÓÃÎÄ¼ş¼ĞÃû³Æ
 			$appdirname = $data['appenname'];
 	
 			$this->copyfailnum = 0;
 			$this->copydir($copy_from.DIRECTORY_SEPARATOR.'phpcms'.DIRECTORY_SEPARATOR.'plugin', $copy_to_pcpath, $_GET['cover']);
 			$this->copydir($copy_from.DIRECTORY_SEPARATOR.'statics'.DIRECTORY_SEPARATOR.'plugin', $copy_to_staticspath, $_GET['cover']);
 			$this->deletedir($copy_from);
-			//æ£€æŸ¥æ–‡ä»¶æ“ä½œæƒé™ï¼Œæ˜¯å¦å¤åˆ¶æˆåŠŸ
+			//¼ì²éÎÄ¼ş²Ù×÷È¨ÏŞ£¬ÊÇ·ñ¸´ÖÆ³É¹¦
 			if($this->copyfailnum > 0) {
 				showmessage(L('download_fail', '', 'plugin'), 'index.php?m=admin&c=plugin&a=appcenter');	
 			} else {
@@ -401,7 +401,7 @@ EOF;
 	}
 		
 	/**
-	 * å¼‚æ­¥æ–¹å¼è°ƒç”¨è¯¦æƒ…
+	 * Òì²½·½Ê½µ÷ÓÃÏêÇé
 	 * Enter description here ...
 	 */
 	public function public_appcenter_ajx_detail() {
@@ -413,7 +413,7 @@ EOF;
 	}
 	
 	/**
-	 * é…ç½®åº”ç”¨.
+	 * ÅäÖÃÓ¦ÓÃ.
 	 */
 	public function config() {
 		if(isset($_POST['dosubmit'])) {
@@ -458,7 +458,7 @@ EOF;
 		}
 	}
 	/**
-	 * å¼€å¯/å…³é—­æ’ä»¶
+	 * ¿ªÆô/¹Ø±Õ²å¼ş
 	 * Enter description here ...
 	 */
 	public function status() {
@@ -470,7 +470,7 @@ EOF;
 	}
 	
 	/**
-	 * è®¾ç½®å­—æ®µç¼“å­˜
+	 * ÉèÖÃ×Ö¶Î»º´æ
 	 * @param int $pluginid
 	 */
 	private function set_var_cache($pluginid) {
@@ -484,7 +484,7 @@ EOF;
 	}
 	
 	/**
-	 * è®¾ç½®ç¼“å­˜
+	 * ÉèÖÃ»º´æ
 	 * @param int $pluginid
 	 */
 	private function set_cache($pluginid) {
@@ -495,7 +495,7 @@ EOF;
 	}
 
 	/**
-	 * è®¾ç½®hookç¼“å­˜
+	 * ÉèÖÃhook»º´æ
 	 */
 	function set_hook_cache() {
 		if($info = $this->db->select(array('disable'=>1),'*','','listorder DESC')) {
@@ -511,7 +511,7 @@ EOF;
 	}
 	
 	/**
-	 * åˆ›å»ºé…ç½®è¡¨å•
+	 * ´´½¨ÅäÖÃ±íµ¥
 	 * @param array $data
 	 */
 	private function creatconfigform($data) {
@@ -523,7 +523,7 @@ EOF;
 	}
 	
 	/**
-	 * åˆ›å»ºé…ç½®è¡¨å•å­—æ®µ
+	 * ´´½¨ÅäÖÃ±íµ¥×Ö¶Î
 	 * @param array $data
 	 */
 	private function creatfield($data) {
@@ -546,8 +546,8 @@ EOF;
 		}
 	}
 	/**
-	 * æ‰§è¡ŒSQL
-	 * @param string $sql è¦æ‰§è¡Œçš„sqlè¯­å¥
+	 * Ö´ĞĞSQL
+	 * @param string $sql ÒªÖ´ĞĞµÄsqlÓï¾ä
 	 */
  	private function _sql_execute($sql) {
 	    $sqls = $this->_sql_split($sql);
@@ -564,8 +564,8 @@ EOF;
 	}	
 	
 	/**
-	 * åˆ†å‰²SQLè¯­å¥
-	 * @param string $sql è¦æ‰§è¡Œçš„sqlè¯­å¥
+	 * ·Ö¸îSQLÓï¾ä
+	 * @param string $sql ÒªÖ´ĞĞµÄsqlÓï¾ä
 	 */	
  	private function _sql_split($sql) {
 		$database = pc_base::load_config('database');
@@ -592,27 +592,27 @@ EOF;
 	}
 				
 	private function copydir($dirfrom, $dirto, $cover='') {
-	    //å¦‚æœé‡åˆ°åŒåæ–‡ä»¶æ— æ³•å¤åˆ¶ï¼Œåˆ™ç›´æ¥é€€å‡º
+	    //Èç¹ûÓöµ½Í¬ÃûÎÄ¼şÎŞ·¨¸´ÖÆ£¬ÔòÖ±½ÓÍË³ö
 	    if(is_file($dirto)){
 	        die(L('have_no_pri').$dirto);
 	    }
-	    //å¦‚æœç›®å½•ä¸å­˜åœ¨ï¼Œåˆ™å»ºç«‹ä¹‹
+	    //Èç¹ûÄ¿Â¼²»´æÔÚ£¬Ôò½¨Á¢Ö®
 	    if(!file_exists($dirto)){
 	        mkdir($dirto);
 	    }
 	    
-	    $handle = opendir($dirfrom); //æ‰“å¼€å½“å‰ç›®å½•
+	    $handle = opendir($dirfrom); //´ò¿ªµ±Ç°Ä¿Â¼
     
-	    //å¾ªç¯è¯»å–æ–‡ä»¶
+	    //Ñ­»·¶ÁÈ¡ÎÄ¼ş
 	    while(false !== ($file = readdir($handle))) {
-	    	if($file != '.' && $file != '..'){ //æ’é™¤"."å’Œ"."
-		        //ç”Ÿæˆæºæ–‡ä»¶å
+	    	if($file != '.' && $file != '..'){ //ÅÅ³ı"."ºÍ"."
+		        //Éú³ÉÔ´ÎÄ¼şÃû
 			    $filefrom = $dirfrom.DIRECTORY_SEPARATOR.$file;
-		     	//ç”Ÿæˆç›®æ ‡æ–‡ä»¶å
+		     	//Éú³ÉÄ¿±êÎÄ¼şÃû
 		        $fileto = $dirto.DIRECTORY_SEPARATOR.$file;
-		        if(is_dir($filefrom)){ //å¦‚æœæ˜¯å­ç›®å½•ï¼Œåˆ™è¿›è¡Œé€’å½’æ“ä½œ
+		        if(is_dir($filefrom)){ //Èç¹ûÊÇ×ÓÄ¿Â¼£¬Ôò½øĞĞµİ¹é²Ù×÷
 		            $this->copydir($filefrom, $fileto, $cover);
-		        } else { //å¦‚æœæ˜¯æ–‡ä»¶ï¼Œåˆ™ç›´æ¥ç”¨copyå‡½æ•°å¤åˆ¶
+		        } else { //Èç¹ûÊÇÎÄ¼ş£¬ÔòÖ±½ÓÓÃcopyº¯Êı¸´ÖÆ
 		        	if(!empty($cover)) {
 						if(!copy($filefrom, $fileto)) {
 							$this->copyfailnum++;
@@ -639,11 +639,11 @@ EOF;
 	        echo " $dirname is not a dir!";
 	        exit(0);
 	    }
-	    $handle = opendir($dirname); //æ‰“å¼€ç›®å½•
+	    $handle = opendir($dirname); //´ò¿ªÄ¿Â¼
 	    while(($file = readdir($handle)) !== false) {
-	        if($file != '.' && $file != '..'){ //æ’é™¤"."å’Œ"."
+	        if($file != '.' && $file != '..'){ //ÅÅ³ı"."ºÍ"."
 	            $dir = $dirname.DIRECTORY_SEPARATOR.$file;
-	            //$diræ˜¯ç›®å½•æ—¶é€’å½’è°ƒç”¨deletedir,æ˜¯æ–‡ä»¶åˆ™ç›´æ¥åˆ é™¤
+	            //$dirÊÇÄ¿Â¼Ê±µİ¹éµ÷ÓÃdeletedir,ÊÇÎÄ¼şÔòÖ±½ÓÉ¾³ı
 	            is_dir($dir) ? $this->deletedir($dir) : unlink($dir);
 	        }
 	    }

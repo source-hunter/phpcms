@@ -28,7 +28,7 @@ $LANG['thumb_list'] = 'includes thumbnail image';
 $LANG['block_site_index'] = 'Homepage';
 $LANG['checkall_content'] = 'Verify contents';
 $LANG['publish_to_othor_category'] = 'Publish to other columns';
-//ÂÜÖÂÆπÊ∑ªÂä†Ë°®ÂçïÈÉ®ÂàÜ
+//ƒ⁄»›ÃÌº”±Ìµ•≤ø∑÷
 $LANG['check_title'] = 'check duplicates';
 $LANG['title_repeat'] = 'Repeat title ';
 $LANG['title_not_repeat'] = 'Not-repeated ';
@@ -71,7 +71,7 @@ $LANG['steps_1'] = 'Level 1';
 $LANG['steps_2'] = 'Level 2';
 $LANG['steps_3'] = 'Level 3';
 $LANG['steps_4'] = 'Level 4';
-$LANG['confirm_delete_model'] = 'Are you sure you want to remove „Äé {message} „Äè? Database table will be removed at the same time';
+$LANG['confirm_delete_model'] = 'Are you sure you want to remove °∫ {message} °ª? Database table will be removed at the same time';
 $LANG['workflow_0'] = 'Rejection';
 $LANG['workflow_1'] = '1 Check';
 $LANG['workflow_2'] = '2 Check';
@@ -123,7 +123,7 @@ $LANG['comment'] = 'Comment';
 $LANG['createhtml'] = 'Generate HTML in batches';
 $LANG['passed_checked'] = 'Approval';
 $LANG['view_comment'] = 'View comment';
-$LANG['copyfrom_tips'] = '‚â°Please select‚â°';
+$LANG['copyfrom_tips'] = '°‘Please select°‘';
 
 $LANG['permission_to_operate'] = 'You do not have permissions';
 $LANG['missing_part_parameters'] = 'Missing column ID';
@@ -131,12 +131,12 @@ $LANG['you_do_not_check'] = 'Please select';
 $LANG['information_does_not_exist'] = 'Info does not exist';
 $LANG['after_a_few_seconds_left'] = 'seconds shut automatically...';
 $LANG['please_add_category'] = 'There is no column, please add one';
-$LANG['need_update_items'] = 'Total update <font color="red">{total}</font>  - Completed <font color="red">{creatednum}</font> itemsÔºà<font color="red">{percent}%</font>Ôºâ';
+$LANG['need_update_items'] = 'Total update <font color="red">{total}</font>  - Completed <font color="red">{creatednum}</font> items£®<font color="red">{percent}%</font>£©';
 $LANG['create_update_success'] = 'Updated completely';
 $LANG['start_update_urls'] = 'Start updating URL...';
 $LANG['updating'] = 'Updating';
-$LANG['have_update_items'] = 'has<font color="red">{total}</font> items - Completed <font color="red">{creatednum}</font> itemsÔºà<font color="red">{percent}%</font>Ôºâ';
-$LANG['have_update_items'] = 'has <font color="red">{total}</font> items - Completed <font color="red">{creatednum}</font> itemsÔºà<font color="red">{percent}%</font>Ôºâ';
+$LANG['have_update_items'] = 'has<font color="red">{total}</font> items - Completed <font color="red">{creatednum}</font> items£®<font color="red">{percent}%</font>£©';
+$LANG['have_update_items'] = 'has <font color="red">{total}</font> items - Completed <font color="red">{creatednum}</font> items£®<font color="red">{percent}%</font>£©';
 $LANG['start_update'] = 'Updating...';
 $LANG['start_update_category'] = 'Start updating column page...';
 $LANG['start_to_end_id'] = '" {page} - {endpage}Page"';
@@ -159,8 +159,8 @@ $LANG['hits'] = 'hits';
 $LANG['keywords'] = 'Keywords';
 $LANG['content'] = 'Content';
 $LANG['c_template'] = 'Template';
-$LANG['explode_keywords'] = 'Use space or ‚Äú,‚Äù to seperate multiple keywords';
-$LANG['search_category'] = 'Input ‚Äúpinyin‚Äùor‚Äúcolumn name‚Äù to quick search';
+$LANG['explode_keywords'] = 'Use space or °∞,°± to seperate multiple keywords';
+$LANG['search_category'] = 'Input °∞pinyin°±or°∞column name°± to quick search';
 $LANG['quick_into'] = 'Quick access';
 $LANG['html_notice'] = '1. Please go to Content > Publishing Manager > Sync publishing point (after set Publishing point and generate static pages ) ';
 $LANG['according_model'] = 'According to the way model updating';
@@ -173,7 +173,7 @@ $LANG['update_all'] = 'Update all info';
 $LANG['submit_start_update'] = 'Updating';
 $LANG['no_limit_model'] = 'All columns';
 $LANG['last_information'] = 'Update to the lastest info';
-$LANG['push_ctrl_to_select'] = 'Hold ‚ÄúCtrl‚Äùor‚ÄúShift‚Äù to select more.Hold ‚ÄúCtrl‚Äù to undo the selection.';
+$LANG['push_ctrl_to_select'] = 'Hold °∞Ctrl°±or°∞Shift°± to select more.Hold °∞Ctrl°± to undo the selection.';
 $LANG['update_time_from'] = 'Update publishing date from';
 $LANG['to'] = 'to';
 $LANG['in_information'] = '`information';
@@ -291,7 +291,7 @@ $LANG['cancel_the_picture'] = 'Cancel';
 $LANG['model_table_not_exists'] = 'Model is disabled or the content of model does not exist.';
 
 
-//ÂâçÂè∞ÈÉ®ÂàÜ
+//«∞Ã®≤ø∑÷
 $LANG['info_does_not_exists'] = 'Information does not exist anymore or is not yet approved by administrators';
 $LANG['first_page'] = 'First page';
 $LANG['last_page'] = 'Last page';

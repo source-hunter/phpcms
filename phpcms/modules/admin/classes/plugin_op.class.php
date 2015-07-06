@@ -1,7 +1,7 @@
 <?php
 defined('IN_PHPCMS') or exit('No permission resources.');
 
-//å®šä¹‰åœ¨åŽå°
+//¶¨ÒåÔÚºóÌ¨
 define('IN_ADMIN',true);
 class plugin_op {
 	private $db,$db_var;
@@ -10,15 +10,15 @@ class plugin_op {
 		$this->db = pc_base::load_model('plugin_var_model');
 	}
 	/**
-	 * æ’ä»¶åŽå°æ¨¡æ¿åŠ è½½
+	 * ²å¼þºóÌ¨Ä£°å¼ÓÔØ
 	 */	
 	public function plugin_tpl($file,$identification) {
 		return PC_PATH.'plugin'.DIRECTORY_SEPARATOR.$identification.DIRECTORY_SEPARATOR.'templates'.DIRECTORY_SEPARATOR.'admin'.DIRECTORY_SEPARATOR.$file.'.tpl.php';
 	}
 	
 	/**
-	 * èŽ·å–æ’ä»¶è‡ªå®šä¹‰å˜é‡ä¿¡æ¯
-	 * @param  $pluginid æ’ä»¶id
+	 * »ñÈ¡²å¼þ×Ô¶¨Òå±äÁ¿ÐÅÏ¢
+	 * @param  $pluginid ²å¼þid
 	 */
 	public function getpluginvar($pluginid){
 		if(empty($pluginid)) return flase;
@@ -31,8 +31,8 @@ class plugin_op {
 	}
 	
 	/**
-	 * èŽ·å–æ’ä»¶é…ç½®
-	 * @param  $pluginid æ’ä»¶id
+	 * »ñÈ¡²å¼þÅäÖÃ
+	 * @param  $pluginid ²å¼þid
 	 */
 	function getplugincfg($pluginid) {
 		$info = $this->db->get_one(array('pluginid'=>$pluginid));

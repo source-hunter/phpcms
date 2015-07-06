@@ -1,12 +1,12 @@
 <?php
 /**
- *  index.php PHPCMS å…¥å£
+ *  index.php PHPCMS Èë¿Ú
  *
  * @copyright			(C) 2005-2010 PHPCMS
  * @license				http://www.phpcms.cn/license/
  * @lastmodify			2010-6-1
  */
- //PHPCMSæ ¹ç›®å½•
+ //PHPCMS¸ùÄ¿Â¼
 
 define('PHPCMS_PATH', dirname(__FILE__).DIRECTORY_SEPARATOR);
 

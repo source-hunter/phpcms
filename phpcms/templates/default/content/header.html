@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset={CHARSET}" />
 <meta http-equiv="X-UA-Compatible" content="IE=7" />
 <title>{if isset($SEO['title']) && !empty($SEO['title'])}{$SEO['title']}{/if}{$SEO['site_title']}</title>
 <meta name="keywords" content="{$SEO['keyword']}">
@@ -54,7 +54,7 @@ $(function(){
 				<input type="hidden" name="a" value="init"/>
 				<input type="hidden" name="typeid" value="{$typeid}" id="typeid"/>
 				<input type="hidden" name="siteid" value="{$siteid}" id="siteid"/>
-                <input type="text" class="text" name="q" id="q"/><input type="submit" value="æœ ç´¢" class="button" />
+                <input type="text" class="text" name="q" id="q"/><input type="submit" value="ËÑ Ë÷" class="button" />
             </form>
         </div>
     </div>
@@ -65,7 +65,7 @@ $(function(){
     	<map>
     	{pc:content action="category" catid="0" num="25" siteid="$siteid" order="listorder ASC"}
         	<ul class="nav-site">
-			<li><a href="{siteurl($siteid)}"><span>é¦–é¡µ</span></a></li>
+			<li><a href="{siteurl($siteid)}"><span>Ê×Ò³</span></a></li>
 			{loop $data $r}
 			<li class="line">|</li>
 			<li><a href="{$r[url]}"><span>{$r[catname]}</span></a></li>
@@ -83,8 +83,8 @@ $(function(){
 			<a href="{$r[url]}">{$r[catname]}</a><span> | </span>
 			{/loop}
         {/pc}
-		<a href="{APP_PATH}index.php?m=video&c=index&a=album">è§†é¢‘ä¸“è¾‘</a> <span> | </span>
-    	{if $modelid}<a href="{APP_PATH}index.php?m=content&c=search&catid={$catid}">æœç´¢</a>{/if}
+		<a href="{APP_PATH}index.php?m=video&c=index&a=album">ÊÓÆµ×¨¼­</a> <span> | </span>
+    	{if $modelid}<a href="{APP_PATH}index.php?m=content&c=search&catid={$catid}">ËÑË÷</a>{/if}
     </div>
 	{/if}
 </div>

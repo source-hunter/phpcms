@@ -3,7 +3,7 @@
 	{template 'member', 'account_manage_left'}
 	<div class="col-auto">
 		<div class="col-1 ">
-			<h5 class="title">{L('memberinfo')}Ôºö</h5>
+			<h5 class="title">{L('memberinfo')}£∫</h5>
 			<div class="content">
 			<div class="col-1 member-info">
 			<div class="content">
@@ -11,12 +11,12 @@
 					<img src="{$avatar[90]}" width="60" height="60" onerror="this.src='{$phpsso_api_url}/statics/images/member/nophoto.gif'">
 				</div>
 				<div class="col-auto">
-					<h5>{if $memberinfo['vip']}<img src="{IMG_PATH}icon/vip.gif">{elseif $memberinfo['overduedate']}<img src="{IMG_PATH}icon/vip-expired.gif" title="{L('overdue')}Ôºå{L('overduedate')}Ôºö{format::date($memberinfo['overduedate'],1)}">{/if}
-					{if $memberinfo['nickname']} {$memberinfo['nickname']} {else} {$memberinfo['username']}{/if} {if $memberinfo['email']}Ôºà{$memberinfo['email']}Ôºâ{/if}</h5>
+					<h5>{if $memberinfo['vip']}<img src="{IMG_PATH}icon/vip.gif">{elseif $memberinfo['overduedate']}<img src="{IMG_PATH}icon/vip-expired.gif" title="{L('overdue')}£¨{L('overduedate')}£∫{format::date($memberinfo['overduedate'],1)}">{/if}
+					{if $memberinfo['nickname']} {$memberinfo['nickname']} {else} {$memberinfo['username']}{/if} {if $memberinfo['email']}£®{$memberinfo['email']}£©{/if}</h5>
 					<p class="blue">
-					{L('member_group')}Ôºö{$memberinfo['groupname']}Ôºå
-					{L('account_remain')}Ôºö<font style="color:#F00; font-size:22px;font-family:Georgia,Arial; font-weight:700">{$memberinfo[amount]}</font> {L('unit_yuan')}Ôºå
-					{L('point')}Ôºö<font style="color:#F00; font-size:12px;font-family:Georgia,Arial; font-weight:700">{$memberinfo[point]}</font> {L('unit_point')}{if $memberinfo['vip']}Ôºåvip{L('overduedate')}Ôºö<font style="color:#F00; font-size:12px;font-family:Georgia,Arial; font-weight:700">{format::date($memberinfo['overduedate'],1)}</font>{/if}
+					{L('member_group')}£∫{$memberinfo['groupname']}£¨
+					{L('account_remain')}£∫<font style="color:#F00; font-size:22px;font-family:Georgia,Arial; font-weight:700">{$memberinfo[amount]}</font> {L('unit_yuan')}£¨
+					{L('point')}£∫<font style="color:#F00; font-size:12px;font-family:Georgia,Arial; font-weight:700">{$memberinfo[point]}</font> {L('unit_point')}{if $memberinfo['vip']}£¨vip{L('overduedate')}£∫<font style="color:#F00; font-size:12px;font-family:Georgia,Arial; font-weight:700">{format::date($memberinfo['overduedate'],1)}</font>{/if}
 					</p>
 				</div>
 			</div>
@@ -47,7 +47,7 @@
 ">{$grouplist[$groupid]['price_m']}/{L('month')}<br /><input type="radio" name='upgrade_type' value="2
 ">{$grouplist[$groupid]['price_d']}/{L('day')}</td>
 						<td align="center"><input type="text" name="upgrade_date" id="upgrade_date" class="input-text" size="4"><font color="red" id="unit">{L('year')}</font></td>
-						<td align="center"><span id="cost">0</span> {L('unit_yuan')}<span id="pay" style="display:none">Ôºå<a href="index.php?m=pay&c=deposit&a=pay"><font color="red" id="unit">ÁÇπÂáªÂÖÖÂÄº</font></a></span></td>
+						<td align="center"><span id="cost">0</span> {L('unit_yuan')}<span id="pay" style="display:none">£¨<a href="index.php?m=pay&c=deposit&a=pay"><font color="red" id="unit">µ„ª˜≥‰÷µ</font></a></span></td>
 						<td align="center"><input name="dosubmit" type="submit" id="dosubmit" value="{L('buy')}" class="button"></td>
 						</tr>
 					</tbody>
@@ -104,7 +104,7 @@ $(document).ready(function() {
 						<td align="left">{$v['description']}</td>
 						<td align="center">
 						{$v['price_y']}/{L('year')}<br />{$v['price_m']}/{L('month')}<br />{$v['price_d']}/{L('day')}</td>
-						<td align="center"><a href="index.php?m=member&c=index&a=account_manage_upgrade&groupid={$v['groupid']}">ÂçáÁ∫ß</a></td>
+						<td align="center"><a href="index.php?m=member&c=index&a=account_manage_upgrade&groupid={$v['groupid']}">…˝º∂</a></td>
 						</tr>
 						{/if}
 						{/loop}

@@ -10,7 +10,7 @@ class menu extends admin {
 	
 	function init () {
 		$tree = pc_base::load_sys_class('tree');
-		$tree->icon = array('&nbsp;&nbsp;&nbsp;â”‚ ','&nbsp;&nbsp;&nbsp;â”œâ”€ ','&nbsp;&nbsp;&nbsp;â””â”€ ');
+		$tree->icon = array('&nbsp;&nbsp;&nbsp;©¦ ','&nbsp;&nbsp;&nbsp;©À©¤ ','&nbsp;&nbsp;&nbsp;©¸©¤ ');
 		$tree->nbsp = '&nbsp;&nbsp;&nbsp;';
 		$userid = $_SESSION['userid'];
 		$admin_username = param::get_cookie('admin_username');
@@ -38,7 +38,7 @@ class menu extends admin {
 	function add() {
 		if(isset($_POST['dosubmit'])) {
 			$this->db->insert($_POST['info']);
-			//å¼€å‘è¿‡ç¨‹ä¸­ç”¨äºè‡ªåŠ¨åˆ›å»ºè¯­è¨€åŒ…
+			//¿ª·¢¹ı³ÌÖĞÓÃÓÚ×Ô¶¯´´½¨ÓïÑÔ°ü
 			$file = PC_PATH.'languages'.DIRECTORY_SEPARATOR.'zh-cn'.DIRECTORY_SEPARATOR.'system_menu.lang.php';
 			if(file_exists($file)) {
 				$content = file_get_contents($file);
@@ -52,7 +52,7 @@ class menu extends admin {
 				$data = "<?php\r\n\$LANG['$key'] = '$_POST[language]';\r\n?>";
 				file_put_contents($file,$data);
 			}
-			//ç»“æŸ
+			//½áÊø
 			showmessage(L('add_success'));
 		} else {
 			$show_validator = '';
@@ -84,7 +84,7 @@ class menu extends admin {
 			//print_r($_POST['info']);exit;
 			$r = $this->db->get_one(array('id'=>$id));
 			$this->db->update($_POST['info'],array('id'=>$id));
-			//ä¿®æ”¹è¯­è¨€æ–‡ä»¶
+			//ĞŞ¸ÄÓïÑÔÎÄ¼ş
 			$file = PC_PATH.'languages'.DIRECTORY_SEPARATOR.'zh-cn'.DIRECTORY_SEPARATOR.'system_menu.lang.php';
 			require $file;
 			$key = $_POST['info']['name'];
@@ -100,7 +100,7 @@ class menu extends admin {
 			}
 			$this->update_menu_models($id, $r, $_POST['info']);
 			
-			//ç»“æŸè¯­è¨€æ–‡ä»¶ä¿®æ”¹
+			//½áÊøÓïÑÔÎÄ¼şĞŞ¸Ä
 			showmessage(L('operation_success'));
 		} else {
 			$show_validator = $array = $r = '';
@@ -123,7 +123,7 @@ class menu extends admin {
 	}
 	
 	/**
-	 * æ’åº
+	 * ÅÅĞò
 	 */
 	function listorder() {
 		if(isset($_POST['dosubmit'])) {
@@ -137,21 +137,21 @@ class menu extends admin {
 	}
 	
 	/**
-	 * æ›´æ–°èœå•çš„æ‰€å±æ¨¡å¼
-	 * @param $id INT èœå•çš„ID
-	 * @param $old_data è¯¥èœå•çš„è€æ•°æ®
-	 * @param $new_data èœå•çš„æ–°æ•°æ®
+	 * ¸üĞÂ²Ëµ¥µÄËùÊôÄ£Ê½
+	 * @param $id INT ²Ëµ¥µÄID
+	 * @param $old_data ¸Ã²Ëµ¥µÄÀÏÊı¾İ
+	 * @param $new_data ²Ëµ¥µÄĞÂÊı¾İ
 	 **/
 	private function update_menu_models($id, $old_data, $new_data) {
 		$models_config = pc_base::load_config('model_config');
 		if (is_array($models_config)) {
 			foreach ($models_config as $_k => $_m) { 
 				if (!isset($new_data[$_k])) $new_data[$_k] = 0;
-				if ($old_data[$_k]==$new_data[$_k]) continue; //æ•°æ®æ²¡æœ‰å˜åŒ–æ—¶ç»§ç»­æ‰§è¡Œä¸‹ä¸€é¡¹
+				if ($old_data[$_k]==$new_data[$_k]) continue; //Êı¾İÃ»ÓĞ±ä»¯Ê±¼ÌĞøÖ´ĞĞÏÂÒ»Ïî
 				$r = $this->db->get_one(array('id'=>$id), 'parentid');
 				$this->db->update(array($_k=>$new_data[$_k]), array('id'=>$id));
 				if ($new_data[$_k] && $r['parentid']) {
-					$this->update_parent_menu_models($r['parentid'], $_k); //å¦‚æœè®¾ç½®æ‰€å±æ¨¡å¼ï¼Œæ›´æ–°çˆ¶çº§èœå•çš„æ‰€å±æ¨¡å¼
+					$this->update_parent_menu_models($r['parentid'], $_k); //Èç¹ûÉèÖÃËùÊôÄ£Ê½£¬¸üĞÂ¸¸¼¶²Ëµ¥µÄËùÊôÄ£Ê½
 				}
 			}
 		}
@@ -159,14 +159,14 @@ class menu extends admin {
 	}
 
 	/**
-	 * æ›´æ–°çˆ¶çº§èœå•çš„æ‰€å±æ¨¡å¼
-	 * @param $id int èœå•ID
-	 * @param $field  ä¿®æ”¹å­—æ®µå
+	 * ¸üĞÂ¸¸¼¶²Ëµ¥µÄËùÊôÄ£Ê½
+	 * @param $id int ²Ëµ¥ID
+	 * @param $field  ĞŞ¸Ä×Ö¶ÎÃû
 	 */
 	private function update_parent_menu_models($id, $field) {
 		$id = intval($id);
 		$r = $this->db->get_one(array('id'=>$id), 'parentid');
-		$this->db->update(array($field=>1), array('id'=>$id)); //ä¿®æ”¹çˆ¶çº§çš„æ‰€å±æ¨¡å¼ï¼Œç„¶ååˆ¤æ–­çˆ¶çº§æ˜¯å¦å­˜åœ¨çˆ¶çº§
+		$this->db->update(array($field=>1), array('id'=>$id)); //ĞŞ¸Ä¸¸¼¶µÄËùÊôÄ£Ê½£¬È»ºóÅĞ¶Ï¸¸¼¶ÊÇ·ñ´æÔÚ¸¸¼¶
 		if ($r['parentid']) {
 			$this->update_parent_menu_models($r['parentid'], $field);
 		}

@@ -7,23 +7,23 @@
 <div class="main">
 <!--left_bar-->
 <div class="col-left">
-<div class="crumbs"><a href="{siteurl($siteid)}">ç½‘ç«™é¦–é¡µ</a><span> &gt; </span><a href="{APP_PATH}index.php?m={ROUTE_M}&siteid={$siteid}">å‹æƒ…é“¾æ¥</a><span> &gt; </span>{$type_arr[name]}</div>
+<div class="crumbs"><a href="{siteurl($siteid)}">ÍøÕ¾Ê×Ò³</a><span> &gt; </span><a href="{APP_PATH}index.php?m={ROUTE_M}&siteid={$siteid}">ÓÑÇéÁ´½Ó</a><span> &gt; </span>{$type_arr[name]}</div>
 <div>
 
 <form action="{APP_PATH}index.php?m=link&c=index&a=register&siteid={$siteid}" method="post" name="myform" id="myform">
 <table cellspacing="1" cellpadding="0" class="table_form">
-<caption>ç”³è¯·å‹æƒ…é“¾æ¥</caption>
+<caption>ÉêÇëÓÑÇéÁ´½Ó</caption>
 <tbody><tr> 
-<th width='60'>é“¾æ¥ç±»å‹</th>
-<td width="300"><input type="radio" onclick="$('#logolink').hide()" checked="checked" value="0" name="linktype" class="radio_style"> æ–‡å­—é“¾æ¥
-<input type="radio" onclick="$('#logolink').show()" value="1" name="linktype" class="radio_style"> Logoé“¾æ¥
+<th width='60'>Á´½ÓÀàĞÍ</th>
+<td width="300"><input type="radio" onclick="$('#logolink').hide()" checked="checked" value="0" name="linktype" class="radio_style"> ÎÄ×ÖÁ´½Ó
+<input type="radio" onclick="$('#logolink').show()" value="1" name="linktype" class="radio_style"> LogoÁ´½Ó
 </td>
 </tr>
 <tr> 
-<th>æ‰€å±åˆ†ç±»</th>
+<th>ËùÊô·ÖÀà</th>
 <td>
 <select  style="width: 36%;" id="typeid" name="typeid">
-<option value="0">é»˜è®¤åˆ†ç±»</option>
+<option value="0">Ä¬ÈÏ·ÖÀà</option>
 {loop $types $type_arr}
 <option value="{$type_arr['typeid']}">{$type_arr['name']}</option>
 {/loop}
@@ -31,26 +31,26 @@
 </td>
 </tr>
 <tr> 
-<th>ç½‘ç«™åç§°</th>
+<th>ÍøÕ¾Ãû³Æ</th>
 <td><input type="text" value="" id="name" name="name" class="input-text"></td>
 </tr>
 <tr> 
-<th>ç½‘ç«™åœ°å€</th>
+<th>ÍøÕ¾µØÖ·</th>
 <td><input type="text" size="40" value="" name="url" id="url" class="input-text"></td>
 </tr>
 <tr style="display: none;" id="logolink"> 
-<th>Logoåœ°å€</th>
+<th>LogoµØÖ·</th>
 <td><input type="text" size="40" value="" name="logo" id="logo" class="input-text"></td>
 </tr>
 {if $setting['enablecheckcode']=='1'}
 <tr>
-       <th>éªŒè¯ç ï¼š</th>
+       <th>ÑéÖ¤Âë£º</th>
        <td><input name="code" type="text" id="code" size="10"  class="input-text"/> {form::checkcode('code_img','4','14',110,30)}</td>
 </tr>
 {/if}
 <tr> 
 <th></th>
-<td><input type="submit" value=" ç”³ è¯· " name="dosubmit" class="button"> <input type="reset" value=" å– æ¶ˆ " name="reset" class="button"> </td>
+<td><input type="submit" value=" Éê Çë " name="dosubmit" class="button"> <input type="reset" value=" È¡ Ïû " name="reset" class="button"> </td>
 </tr> 
 </tbody></table>
 </form>
@@ -59,11 +59,11 @@
     </div>
     <!--right_bar-->
     <div class="col-auto">
-    	<!--å¹¿å‘Š228x90-->
+    	<!--¹ã¸æ228x90-->
         <div class="box">
-            <h5 class="title-2">å‹æƒ…é“¾æ¥åˆ†ç±»</h5>
+            <h5 class="title-2">ÓÑÇéÁ´½Ó·ÖÀà</h5>
             <div class="tag_a">
-            <a href="{APP_PATH}index.php?m=link&c=index&a=list_type&type_id=0&siteid={$siteid}" title="é»˜è®¤åˆ†ç±»">é»˜è®¤åˆ†ç±»</a>
+            <a href="{APP_PATH}index.php?m=link&c=index&a=list_type&type_id=0&siteid={$siteid}" title="Ä¬ÈÏ·ÖÀà">Ä¬ÈÏ·ÖÀà</a>
 	            {pc:link action="type_lists" listorder="desc" siteid="$siteid"}
 	            {loop $data $type_v}
 	            <a href="{APP_PATH}index.php?m=link&c=index&a=list_type&type_id={$type_v[typeid]}&siteid={$siteid}" title="{$type_v[name]}">{$type_v[name]}</a>
@@ -74,7 +74,7 @@
          
         <div class="bk10"></div>
          <div class="box">
-            <h5 class="title-2">æœ¬ç«™LOGOï¼š</h5>
+            <h5 class="title-2">±¾Õ¾LOGO£º</h5>
             <div class="tag_a pad-lr-10">
 	        {pc:block pos="3"}
 			{/pc}
@@ -82,7 +82,7 @@
         </div>
         <div class="bk10"></div>
         <div class="box">
-            <h5 class="title-2">åˆä½œè”ç³»æ–¹å¼</h5>
+            <h5 class="title-2">ºÏ×÷ÁªÏµ·½Ê½</h5>
             <div class="tag_a pad-lr-10">
 	        {pc:block pos="2"}
 			{/pc}
@@ -90,7 +90,7 @@
         </div>
         <div class="bk10"></div>
          <div class="box">
-            <h5 class="title-2">é“¾æ¥è¦æ±‚</h5>
+            <h5 class="title-2">Á´½ÓÒªÇó</h5>
             <div class="tag_a pad-lr-10">
 	        {pc:block pos="1"}
 			{/pc}
@@ -107,9 +107,9 @@
 <!--
 	$(function(){
 	$.formValidator.initConfig({autotip:true,formid:"myform",onerror:function(msg){}});
-	$("#name").formValidator({onshow:"è¯·è¾“å…¥ç½‘ç«™åç§°",onfocus:"è¯·è¾“å…¥ç½‘ç«™åç§°"}).inputValidator({min:1,max:999,onerror:"ç½‘ç«™åç§°ä¸èƒ½ä¸ºç©º"});
- 	$("#url").formValidator({onshow:"è¯·è¾“å…¥ç½‘ç«™ç½‘å€",onfocus:"è¯·è¾“å…¥ç½‘ç«™ç½‘å€"}).inputValidator({min:1,onerror:"è¯·è¾“å…¥ç½‘ç«™ç½‘å€"}).regexValidator({regexp:"^http:\/\/[A-Za-z0-9]+\.[A-Za-z0-9]+[\/=\?%\-&]*([^<>])*$",onerror:"æ ¼å¼åº”è¯¥ä¸ºhttp://www.phpcms.cn/"})
- 	$("#code").formValidator({onshow:"è¯·è¾“å…¥éªŒè¯ç ",onfocus:"éªŒè¯ç ä¸èƒ½ä¸ºç©º"}).inputValidator({min:1,max:999,onerror:"éªŒè¯ç ä¸èƒ½ä¸ºç©º"}).ajaxValidator({
+	$("#name").formValidator({onshow:"ÇëÊäÈëÍøÕ¾Ãû³Æ",onfocus:"ÇëÊäÈëÍøÕ¾Ãû³Æ"}).inputValidator({min:1,max:999,onerror:"ÍøÕ¾Ãû³Æ²»ÄÜÎª¿Õ"});
+ 	$("#url").formValidator({onshow:"ÇëÊäÈëÍøÕ¾ÍøÖ·",onfocus:"ÇëÊäÈëÍøÕ¾ÍøÖ·"}).inputValidator({min:1,onerror:"ÇëÊäÈëÍøÕ¾ÍøÖ·"}).regexValidator({regexp:"^http:\/\/[A-Za-z0-9]+\.[A-Za-z0-9]+[\/=\?%\-&]*([^<>])*$",onerror:"¸ñÊ½Ó¦¸ÃÎªhttp://www.phpcms.cn/"})
+ 	$("#code").formValidator({onshow:"ÇëÊäÈëÑéÖ¤Âë",onfocus:"ÑéÖ¤Âë²»ÄÜÎª¿Õ"}).inputValidator({min:1,max:999,onerror:"ÑéÖ¤Âë²»ÄÜÎª¿Õ"}).ajaxValidator({
 	    type : "get",
 		url : "",
 		data :"m=pay&c=deposit&a=public_checkcode",
@@ -126,8 +126,8 @@
 			}
 		},
 		buttons: $("#dosubmit"),
-		onerror : "éªŒè¯ç é”™è¯¯",
-		onwait : "éªŒè¯ä¸­"
+		onerror : "ÑéÖ¤Âë´íÎó",
+		onwait : "ÑéÖ¤ÖĞ"
 	});
  	})
 //-->

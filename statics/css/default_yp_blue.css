@@ -21,7 +21,7 @@ a.blue,.blue a,.cat-data dd a{color:#0966be}
 .ypbox p .reg,.func-btn a span{ background:url(../images/yp/func_icon.png) no-repeat;padding-left:20px}
 .ypbox{zoom:1;border:1px solid #d3d3d3; font-size:12px; margin-bottom:8px; background: url(../images/yp/login_bg.png) repeat-x left 1px; height:180px}
 .ypbox h5{ font-size:12px; font-weight:normal; padding:0px 10px 8px}
-.ypbox p{ padding:0 10px 5px 0;border-top:1px dashed #CCC; margin:0 10px; font-family:"ÂÆã‰Ωì"}
+.ypbox p{ padding:0 10px 5px 0;border-top:1px dashed #CCC; margin:0 10px; font-family:"ÀŒÃÂ"}
 .ypbox p .reg{background-position:left -123px; padding-left:20px}
 .login-form{padding:6px 0 5px;}
 .login-form li{ padding:4px 0 4px 16px}
@@ -43,13 +43,13 @@ a.blue,.blue a,.cat-data dd a{color:#0966be}
 .func-btn a.i4 span{background-position:left -94px}
 .func-btn a.i5 span{background-position:left -124px}
 
-.announce{ font-family:"ÂÆã‰Ωì"; color:#999; border:1px solid #d8d8d8; height:46px}
+.announce{ font-family:"ÀŒÃÂ"; color:#999; border:1px solid #d8d8d8; height:46px}
 .announce dt{float:left; width:18px; padding:5px 3px 0; border-right:1px solid #d8d8d8; height:41px; background-color:#f6f6f6; font-weight:700; text-align:center; color:#484848}
 .announce dd{overflow:hidden;_zoom:1;_float:left; line-height:18px; padding:5px 0 0 5px}
 
 .category-main{overflow:visible; position:relative;}
 .category-main .cat-name{ position:absolute; top:-1px; left:-33px; border:1px solid #C3D4E7; border-right:none; background:#fff url(../images/yp/cat_name.png) no-repeat; height:83px; width:32px; text-indent:-200px; overflow:hidden}
-.cat-top-nav{background-color:#eaf1f9; height:30px; margin:1px 1px 0 0; line-height:30px; font-family:"ÂÆã‰Ωì"; padding-left:12px}
+.cat-top-nav{background-color:#eaf1f9; height:30px; margin:1px 1px 0 0; line-height:30px; font-family:"ÀŒÃÂ"; padding-left:12px}
 .cat-top-nav span{color:#c7c7c7; }
 .cat-content{ padding:10px 8px}
 .cat-item{width:319px; padding:0 5px; position:relative; height:75px; vertical-align:top;z-index:1}
@@ -90,7 +90,7 @@ a.blue,.blue a,.cat-data dd a{color:#0966be}
 .generic .sub-box .list li{ line-height:20px}
 .generic .news-photo li {width: 132px}
 
-/*ÂúÜËßí*/
+/*‘≤Ω«*/
 .fillet{position: relative}
 .fillet span.o1,
 	.fillet span.o2,
@@ -100,7 +100,7 @@ a.blue,.blue a,.cat-data dd a{color:#0966be}
 	.fillet span.o2{background-position: right top; top:-1px;*top:-5px; right:-1px}
 	.fillet span.o3{background-position: left -4px; bottom:-1px;*bottom:4px; left:-1px}
 	.fillet span.o4{background-position: right -4px; bottom:-1px;*bottom:4px; right:-1px;}
-/*ËìùËâ≤ÂúÜËßí*/
+/*¿∂…´‘≤Ω«*/
 	.fillet-blue span.o1{background-position: left -8px; top:-1px; left:-1px}
 	.fillet-blue span.o2{background-position: right -8px; top:-1px; right:-1px}
 	.fillet-blue span.o3{background-position: left -12px; bottom:-1px; left:-1px}
@@ -153,7 +153,7 @@ a.blue,.blue a,.cat-data dd a{color:#0966be}
 .selectlist a:hover{ background-color:#f5f8fc}
 
 .show-box{ padding:1px; position:relative; margin-top:-1px}
-.show-box h1{ background-color:#eaf0f7; font-size:20px; font-family:"Èªë‰Ωì"; font-weight:normal; text-align:center; height:38px; line-height:38px}
+.show-box h1{ background-color:#eaf0f7; font-size:20px; font-family:"∫⁄ÃÂ"; font-weight:normal; text-align:center; height:38px; line-height:38px}
 .show-box-pic{ width:315px; float:left; padding:12px 0}
 .show-info{ padding:16px  0 16px 24px;font-size:14px; line-height:24px}
 .show-info span{ color:#999}
@@ -236,7 +236,7 @@ a.blue,.blue a,.cat-data dd a{color:#0966be}
 
 .compare{position:relative; margin-top:-1px}
 .compare .products-para caption{height:auto; line-height:normal;background:none; padding:0}
-.compare .products-para caption .title{font-family: "Èªë‰Ωì";font-size: 20px;font-weight: normal; margin:1px;background:#EAF0F7; padding:6px 7px; text-align:center}
+.compare .products-para caption .title{font-family: "∫⁄ÃÂ";font-size: 20px;font-weight: normal; margin:1px;background:#EAF0F7; padding:6px 7px; text-align:center}
 .compare .products-para tr.title td,.compare .products-para tr.title th{ background-color:#e7eff7}
 .compare .products-para tr.title td{ font-weight:700; text-align:center}
 .compare .products-para tr.title td a{ color:#0966BE}

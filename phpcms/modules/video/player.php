@@ -22,7 +22,7 @@ class player extends admin {
 	
 	/**
 	 * 
-	 * è§†é¢‘åˆ—è¡¨
+	 * ÊÓÆµÁÐ±í
 	 */
 	public function init() {
 		$infos = $this->player_list(1);
@@ -31,7 +31,7 @@ class player extends admin {
 	
 	/**
 	 * function edit
-	 * ä¿®æ”¹æ’­æ”¾å™¨å±žæ€§
+	 * ÐÞ¸Ä²¥·ÅÆ÷ÊôÐÔ
 	 */
 	public function edit() {
 		if (isset($_POST['dosubmit'])) {

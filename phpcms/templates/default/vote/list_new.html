@@ -2,21 +2,21 @@
 <link href="{CSS_PATH}vote.css" rel="stylesheet" type="text/css" />
 <div class="main votesss">
 <div class="vote_listt col-left">
-<div class="crumbs"><a href="{siteurl($siteid)}">首页</a><span> &gt; </span><a href="{APP_PATH}index.php?m=vote&c=index&a=lists&siteid={$siteid}">投票</a> </div>
-    	<div class="tit"> <h5>投票列表</h5></div>
+<div class="crumbs"><a href="{siteurl($siteid)}">��ҳ</a><span> &gt; </span><a href="{APP_PATH}index.php?m=vote&c=index&a=lists&siteid={$siteid}">ͶƱ</a> </div>
+    	<div class="tit"> <h5>ͶƱ�б�</h5></div>
 {pc:vote action="lists" order="subjectid desc" siteid="$siteid" num="12" page="$page"}
         <ul class="wrap icon3j">
         {loop $data $r}
-        <li><a title="{$r[subject]}" target="_blank" href="{APP_PATH}index.php?m=vote&c=index&a=show&show_type=1&subjectid={$r['subjectid']}&siteid={$siteid}">{$r[subject]}</a><span><font color="#1E50A0">(投票数: {$r[votenumber]})</font></span></li>
+        <li><a title="{$r[subject]}" target="_blank" href="{APP_PATH}index.php?m=vote&c=index&a=show&show_type=1&subjectid={$r['subjectid']}&siteid={$siteid}">{$r[subject]}</a><span><font color="#1E50A0">(ͶƱ��: {$r[votenumber]})</font></span></li>
         {/loop}
         </ul>
         <div id="pages" class="text-c">{$pages}</div>
 {/pc}
     </div>
 <div class="col-auto">
-    	<!--广告228x90-->
+    	<!--���228x90-->
         <div class="box">
-            <h5 class="title-2">热门投票</h5>
+            <h5 class="title-2">����ͶƱ</h5>
             <div class="tag_a">
 {pc:vote action="hits" siteid="$siteid" num="10" order="DESC"}
 <ul class="wrap icon3j mg_t10">

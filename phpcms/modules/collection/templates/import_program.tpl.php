@@ -7,7 +7,7 @@
 	
 		<table width="100%" class="table_form">
 			<tr>
-			<td width="120"><?php echo L('category')?>ï¼š</td> 
+			<td width="120"><?php echo L('category')?>£º</td> 
 			<td>
 			<?php echo form::select_category('', '', 'name="catid"', L('please_choose'), 0, 0, 1)?>
 			</td>

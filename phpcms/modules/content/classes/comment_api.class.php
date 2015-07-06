@@ -8,23 +8,23 @@ class comment_api {
 	}
 	
 	/**
-	 * 鑾峰彇璇勮淇℃伅
-	 * @param $module      妯″瀷
-	 * @param $contentid   鏂囩珷ID
-	 * @param $siteid      绔欑偣ID
+	 * 获取评论信息
+	 * @param $module      模型
+	 * @param $contentid   文章ID
+	 * @param $siteid      站点ID
 	 */
 	function get_info($module, $contentid, $siteid) {
 		list($module, $catid) = explode('_', $module);
 		if (empty($contentid) || empty($catid)) {
 			return false;
 		}
-		//鍒ゆ柇鏍忕洰鏄惁瀛樺湪 s
+		//判断栏目是否存在 s
 		$CATEGORYS = getcache('category_content_'.$siteid,'commons');
  		if(!$CATEGORYS[$catid]){
  			return false;
 		}
 		
-		//鍒ゆ柇妯″瀷鏄惁瀛樺湪
+		//判断模型是否存在
 		$this_modelid = $CATEGORYS[$catid]['modelid'];
 		$MODEL = getcache('model','commons'); 
 		if(!$MODEL[$this_modelid]){

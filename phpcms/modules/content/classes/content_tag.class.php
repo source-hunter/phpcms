@@ -6,7 +6,7 @@ class content_tag {
 		$this->position = pc_base::load_model('position_data_model');
 	}
 	/**
-	 * åˆå§‹åŒ–æ¨¡å‹
+	 * ³õÊ¼»¯Ä£ĞÍ
 	 * @param $catid
 	 */
 	public function set_modelid($catid) {
@@ -30,7 +30,7 @@ class content_tag {
 		}
 	}
 	/**
-	 * åˆ†é¡µç»Ÿè®¡
+	 * ·ÖÒ³Í³¼Æ
 	 * @param $data
 	 */
 	public function count($data) {
@@ -54,7 +54,7 @@ class content_tag {
 	}
 	
 	/**
-	 * åˆ—è¡¨é¡µæ ‡ç­¾
+	 * ÁĞ±íÒ³±êÇ©
 	 * @param $data
 	 */
 	public function lists($data) {
@@ -77,7 +77,7 @@ class content_tag {
 
 		$return = $this->db->select($sql, '*', $data['limit'], $order, '', 'id');
 						
-		//è°ƒç”¨å‰¯è¡¨çš„æ•°æ®
+		//µ÷ÓÃ¸±±íµÄÊı¾İ
 		if (isset($data['moreinfo']) && intval($data['moreinfo']) == 1) {
 			$ids = array();
 			foreach ($return as $v) {
@@ -102,7 +102,7 @@ class content_tag {
 	}
 	
 	/**
-	 * ç›¸å…³æ–‡ç« æ ‡ç­¾
+	 * Ïà¹ØÎÄÕÂ±êÇ©
 	 * @param $data
 	 */
 	public function relation($data) {
@@ -146,7 +146,7 @@ class content_tag {
 	}
 	
 	/**
-	 * æ’è¡Œæ¦œæ ‡ç­¾
+	 * ÅÅĞĞ°ñ±êÇ©
 	 * @param $data
 	 */
 	public function hits($data) {
@@ -195,7 +195,7 @@ class content_tag {
 		return $array;
 	}
 	/**
-	 * æ ç›®æ ‡ç­¾
+	 * À¸Ä¿±êÇ©
 	 * @param $data
 	 */
 	public function category($data) {
@@ -220,7 +220,7 @@ class content_tag {
 	}
 	
 	/**
-	 * æ¨èä½
+	 * ÍÆ¼öÎ»
 	 * @param $data
 	 */
 	public function position($data) {
@@ -263,7 +263,7 @@ class content_tag {
 		return $array;
 	}
 	/**
-	 * å¯è§†åŒ–æ ‡ç­¾
+	 * ¿ÉÊÓ»¯±êÇ©
 	 */
 	public function pc_tag() {
 		$positionlist = getcache('position','commons');

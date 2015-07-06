@@ -24,13 +24,13 @@ class attachment {
 		$this->upload_dir = $upload_dir;
 	}
 	/**
-	 * é™„ä»¶ä¸Šä¼ æ–¹æ³•
-	 * @param $field ä¸Šä¼ å­—æ®µ
-	 * @param $alowexts å…è®¸ä¸Šä¼ ç±»å‹
-	 * @param $maxsize æœ€å¤§ä¸Šä¼ å¤§å°
-	 * @param $overwrite æ˜¯å¦è¦†ç›–åŸæœ‰æ–‡ä»¶
-	 * @param $thumb_setting ç¼©ç•¥å›¾è®¾ç½®
-	 * @param $watermark_enable  æ˜¯å¦æ·»åŠ æ°´å°
+	 * ¸½¼şÉÏ´«·½·¨
+	 * @param $field ÉÏ´«×Ö¶Î
+	 * @param $alowexts ÔÊĞíÉÏ´«ÀàĞÍ
+	 * @param $maxsize ×î´óÉÏ´«´óĞ¡
+	 * @param $overwrite ÊÇ·ñ¸²¸ÇÔ­ÓĞÎÄ¼ş
+	 * @param $thumb_setting ËõÂÔÍ¼ÉèÖÃ
+	 * @param $watermark_enable  ÊÇ·ñÌí¼ÓË®Ó¡
 	 */
 	function upload($field, $alowexts = '', $maxsize = 0, $overwrite = 0,$thumb_setting = array(), $watermark_enable = 1) {
 		if(!isset($_FILES[$field])) {
@@ -131,13 +131,13 @@ class attachment {
 	}
 	
 	/**
-	 * é™„ä»¶ä¸‹è½½
+	 * ¸½¼şÏÂÔØ
 	 * Enter description here ...
-	 * @param $field é¢„ç•™å­—æ®µ
-	 * @param $value ä¼ å…¥ä¸‹è½½å†…å®¹
-	 * @param $watermark æ˜¯å¦åŠ å…¥æ°´å°
-	 * @param $ext ä¸‹è½½æ‰©å±•å
-	 * @param $absurl ç»å¯¹è·¯å¾„
+	 * @param $field Ô¤Áô×Ö¶Î
+	 * @param $value ´«ÈëÏÂÔØÄÚÈİ
+	 * @param $watermark ÊÇ·ñ¼ÓÈëË®Ó¡
+	 * @param $ext ÏÂÔØÀ©Õ¹Ãû
+	 * @param $absurl ¾ø¶ÔÂ·¾¶
 	 * @param $basehref 
 	 */
 	function download($field, $value,$watermark = '0',$ext = 'gif|jpg|jpeg|bmp|png', $absurl = '', $basehref = '')
@@ -186,8 +186,8 @@ class attachment {
 		return str_replace($oldpath, $newpath, $value);
 	}	
 	/**
-	 * é™„ä»¶åˆ é™¤æ–¹æ³•
-	 * @param $where åˆ é™¤sqlè¯­å¥
+	 * ¸½¼şÉ¾³ı·½·¨
+	 * @param $where É¾³ısqlÓï¾ä
 	 */
 	function delete($where) {
 		$this->att_db = pc_base::load_model('attachment_model');
@@ -202,8 +202,8 @@ class attachment {
 	}
 	
 	/**
-	 * é™„ä»¶æ·»åŠ å¦‚æ•°æ®åº“
-	 * @param $uploadedfile é™„ä»¶ä¿¡æ¯
+	 * ¸½¼şÌí¼ÓÈçÊı¾İ¿â
+	 * @param $uploadedfile ¸½¼şĞÅÏ¢
 	 */
 	function add($uploadedfile) {
 		$this->att_db = pc_base::load_model('attachment_model');
@@ -226,8 +226,8 @@ class attachment {
 		$this->userid = $userid;
 	}
 	/**
-	 * è·å–ç¼©ç•¥å›¾åœ°å€..
-	 * @param $image å›¾ç‰‡è·¯å¾„
+	 * »ñÈ¡ËõÂÔÍ¼µØÖ·..
+	 * @param $image Í¼Æ¬Â·¾¶
 	 */
 	function get_thumb($image){
 		return str_replace('.', '_thumb.', $image);
@@ -235,16 +235,16 @@ class attachment {
 
 
 	/**
-	 * è·å–é™„ä»¶åç§°
-	 * @param $fileext é™„ä»¶æ‰©å±•å
+	 * »ñÈ¡¸½¼şÃû³Æ
+	 * @param $fileext ¸½¼şÀ©Õ¹Ãû
 	 */
 	function getname($fileext){
 		return date('Ymdhis').rand(100, 999).'.'.$fileext;
 	}
 
 	/**
-	 * è¿”å›é™„ä»¶å¤§å°
-	 * @param $filesize å›¾ç‰‡å¤§å°
+	 * ·µ»Ø¸½¼ş´óĞ¡
+	 * @param $filesize Í¼Æ¬´óĞ¡
 	 */
 	
 	function size($filesize) {
@@ -260,22 +260,22 @@ class attachment {
 		return $filesize;
 	}
 	/**
-	* åˆ¤æ–­æ–‡ä»¶æ˜¯å¦æ˜¯é€šè¿‡ HTTP POST ä¸Šä¼ çš„
+	* ÅĞ¶ÏÎÄ¼şÊÇ·ñÊÇÍ¨¹ı HTTP POST ÉÏ´«µÄ
 	*
-	* @param	string	$file	æ–‡ä»¶åœ°å€
-	* @return	bool	æ‰€ç»™å‡ºçš„æ–‡ä»¶æ˜¯é€šè¿‡ HTTP POST ä¸Šä¼ çš„åˆ™è¿”å› TRUE
+	* @param	string	$file	ÎÄ¼şµØÖ·
+	* @return	bool	Ëù¸ø³öµÄÎÄ¼şÊÇÍ¨¹ı HTTP POST ÉÏ´«µÄÔò·µ»Ø TRUE
 	*/
 	function isuploadedfile($file) {
 		return is_uploaded_file($file) || is_uploaded_file(str_replace('\\\\', '\\', $file));
 	}
 	
 	/**
-	* è¡¥å…¨ç½‘å€
+	* ²¹È«ÍøÖ·
 	*
-	* @param	string	$surl		æºåœ°å€
-	* @param	string	$absurl		ç›¸å¯¹åœ°å€
-	* @param	string	$basehref	ç½‘å€
-	* @return	string	ç½‘å€
+	* @param	string	$surl		Ô´µØÖ·
+	* @param	string	$absurl		Ïà¶ÔµØÖ·
+	* @param	string	$basehref	ÍøÖ·
+	* @return	string	ÍøÖ·
 	*/
 	function fillurl($surl, $absurl, $basehref = '') {
 		if($basehref != '') {
@@ -344,7 +344,7 @@ class attachment {
 	}
 
 	/**
-	 * æ˜¯å¦å…è®¸ä¸Šä¼ 
+	 * ÊÇ·ñÔÊĞíÉÏ´«
 	 */
 	function is_allow_upload() {
         if($_groupid == 1) return true;
@@ -354,7 +354,7 @@ class attachment {
 	}
 	
 	/**
-	 * è¿”å›é”™è¯¯ä¿¡æ¯
+	 * ·µ»Ø´íÎóĞÅÏ¢
 	 */
 	function error() {
 		$UPLOAD_ERROR = array(
@@ -378,10 +378,10 @@ class attachment {
 	}
 	
 	/**
-	 * ckç¼–è¾‘å™¨è¿”å›
+	 * ck±à¼­Æ÷·µ»Ø
 	 * @param $fn 
-	 * @param $fileurl è·¯å¾„
-	 * @param $message æ˜¾ç¤ºä¿¡æ¯
+	 * @param $fileurl Â·¾¶
+	 * @param $message ÏÔÊ¾ĞÅÏ¢
 	 */
 	
 	function mkhtml($fn,$fileurl,$message) {
@@ -389,7 +389,7 @@ class attachment {
 		exit($str);
 	}
 	/**
-	 * flashä¸Šä¼ è°ƒè¯•æ–¹æ³•
+	 * flashÉÏ´«µ÷ÊÔ·½·¨
 	 * @param $id
 	 */
 	function uploaderror($id = 0)	{
@@ -397,8 +397,8 @@ class attachment {
 	}
 	
 	/**
-	 * è·å–ç«™ç‚¹é…ç½®ä¿¡æ¯
-	 * @param  $siteid ç«™ç‚¹id
+	 * »ñÈ¡Õ¾µãÅäÖÃĞÅÏ¢
+	 * @param  $siteid Õ¾µãid
 	 */
 	private function _get_site_setting($siteid) {
 		$siteinfo = getcache('sitelist', 'commons');

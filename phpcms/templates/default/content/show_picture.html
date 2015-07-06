@@ -5,15 +5,15 @@
 
 </style>
 <div class="main photo-channel">
-	<div class="crumbs"><a href="{siteurl($siteid)}">é¦–é¡µ</a><span> > {catpos($catid)}</div>
+	<div class="crumbs"><a href="{siteurl($siteid)}">Ê×Ò³</a><span> > {catpos($catid)}</div>
     <div id="Article">
         	<h1>{$title}<br />
-			<span>{$inputtime}&nbsp;&nbsp;&nbsp;æ¥æºï¼š{$copyfrom}&nbsp;&nbsp;&nbsp;è¯„è®ºï¼š<a href="#comment_iframe" id="comment">0</a></span></h1>
+			<span>{$inputtime}&nbsp;&nbsp;&nbsp;À´Ô´£º{$copyfrom}&nbsp;&nbsp;&nbsp;ÆÀÂÛ£º<a href="#comment_iframe" id="comment">0</a></span></h1>
 <div class="tool">
 		<a name="pic"></a>
-        <a class="up" href="javascript:;" title="ä¸Šä¸€å¼ " onclick="showpic('pre')"><span>ä¸Šä¸€å¼ </span></a><a class="next" href="javascript:;" onclick="showpic('next')" title="ä¸‹ä¸€å¼ "><span>ä¸‹ä¸€å¼ </span></a><span class="stat" id="picnum"></span>
-        <div class="Article-Tool"><span id='favorite'><a href="javascript:;" onclick="add_favorite('{$title}');" class="t6">æ”¶è—</a></span>&nbsp;&nbsp;åˆ†äº«åˆ°ï¼š
-		<img src="http://v.t.qq.com/share/images/s/weiboicon16.png" style="padding-bottom:3px;" onclick="postToWb();" class="cu" title="åˆ†äº«åˆ°è…¾è®¯å¾®åš"/><script type="text/javascript">
+        <a class="up" href="javascript:;" title="ÉÏÒ»ÕÅ" onclick="showpic('pre')"><span>ÉÏÒ»ÕÅ</span></a><a class="next" href="javascript:;" onclick="showpic('next')" title="ÏÂÒ»ÕÅ"><span>ÏÂÒ»ÕÅ</span></a><span class="stat" id="picnum"></span>
+        <div class="Article-Tool"><span id='favorite'><a href="javascript:;" onclick="add_favorite('{$title}');" class="t6">ÊÕ²Ø</a></span>&nbsp;&nbsp;·ÖÏíµ½£º
+		<img src="http://v.t.qq.com/share/images/s/weiboicon16.png" style="padding-bottom:3px;" onclick="postToWb();" class="cu" title="·ÖÏíµ½ÌÚÑ¶Î¢²©"/><script type="text/javascript">
 	function postToWb(){
 		var _t = encodeURI(document.title);
 		var _url = encodeURIComponent(document.location);
@@ -24,23 +24,23 @@
 		window.open( _u,'', 'width=700, height=680, top=0, left=0, toolbar=no, menubar=no, scrollbars=no, location=yes, resizable=no, status=no' );
 	}
 </script>
-          <script type="text/javascript">document.write('<a href="http://v.t.sina.com.cn/share/share.php?url='+encodeURIComponent(location.href)+'&appkey=3172366919&title='+encodeURIComponent('{new_addslashes($title)}')+'" title="åˆ†äº«åˆ°æ–°æµªå¾®åš" class="t1" target="_blank">&nbsp;</a>');</script>
-		  <script type="text/javascript">document.write('<a href="http://www.douban.com/recommend/?url='+encodeURIComponent(location.href)+'&title='+encodeURIComponent('{new_addslashes($title)}')+'" title="åˆ†äº«åˆ°è±†ç“£" class="t2" target="_blank">&nbsp;</a>');</script>
-		  <script type="text/javascript">document.write('<a href="http://share.renren.com/share/buttonshare.do?link='+encodeURIComponent(location.href)+'&title='+encodeURIComponent('{new_addslashes($title)}')+'" title="åˆ†äº«åˆ°äººäºº" class="t3" target="_blank">&nbsp;</a>');</script>
-		  <script type="text/javascript">document.write('<a href="http://www.kaixin001.com/repaste/share.php?rtitle='+encodeURIComponent('{new_addslashes($title)}')+'&rurl='+encodeURIComponent(location.href)+'&rcontent=" title="åˆ†äº«åˆ°å¼€å¿ƒç½‘" class="t4" target="_blank">&nbsp;</a>');</script>
-		  <script type="text/javascript">document.write('<a href="http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url='+encodeURIComponent(location.href)+'" title="åˆ†äº«åˆ°QQç©ºé—´" class="t5" target="_blank">&nbsp;</a>');</script></div>
+          <script type="text/javascript">document.write('<a href="http://v.t.sina.com.cn/share/share.php?url='+encodeURIComponent(location.href)+'&appkey=3172366919&title='+encodeURIComponent('{new_addslashes($title)}')+'" title="·ÖÏíµ½ĞÂÀËÎ¢²©" class="t1" target="_blank">&nbsp;</a>');</script>
+		  <script type="text/javascript">document.write('<a href="http://www.douban.com/recommend/?url='+encodeURIComponent(location.href)+'&title='+encodeURIComponent('{new_addslashes($title)}')+'" title="·ÖÏíµ½¶¹°ê" class="t2" target="_blank">&nbsp;</a>');</script>
+		  <script type="text/javascript">document.write('<a href="http://share.renren.com/share/buttonshare.do?link='+encodeURIComponent(location.href)+'&title='+encodeURIComponent('{new_addslashes($title)}')+'" title="·ÖÏíµ½ÈËÈË" class="t3" target="_blank">&nbsp;</a>');</script>
+		  <script type="text/javascript">document.write('<a href="http://www.kaixin001.com/repaste/share.php?rtitle='+encodeURIComponent('{new_addslashes($title)}')+'&rurl='+encodeURIComponent(location.href)+'&rcontent=" title="·ÖÏíµ½¿ªĞÄÍø" class="t4" target="_blank">&nbsp;</a>');</script>
+		  <script type="text/javascript">document.write('<a href="http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url='+encodeURIComponent(location.href)+'" title="·ÖÏíµ½QQ¿Õ¼ä" class="t5" target="_blank">&nbsp;</a>');</script></div>
 </div>
     <div class="big-pic" style="height:650px;">
 		<div id="big-pic"></div>
-    	<div class="photo_prev"><a id="photoPrev" title="&lt;ä¸Šä¸€é¡µ" class="btn_pphoto" target="_self" hidefocus="true" href="javascript:;" onclick="showpic('pre');"></a></div>
-        <div class="photo_next"><a id="photoNext" title="ä¸‹ä¸€é¡µ&gt;"class="btn_nphoto" target="_self" hidefocus="true" href="javascript:;" onclick="showpic('next')"></a></div>
-        <a href="javascript:;" class="max" onclick="showpic('big');">æŸ¥çœ‹åŸå›¾</a>
+    	<div class="photo_prev"><a id="photoPrev" title="&lt;ÉÏÒ»Ò³" class="btn_pphoto" target="_self" hidefocus="true" href="javascript:;" onclick="showpic('pre');"></a></div>
+        <div class="photo_next"><a id="photoNext" title="ÏÂÒ»Ò³&gt;"class="btn_nphoto" target="_self" hidefocus="true" href="javascript:;" onclick="showpic('next')"></a></div>
+        <a href="javascript:;" class="max" onclick="showpic('big');">²é¿´Ô­Í¼</a>
         
         <div id="endSelect" style="display: none;">
 			<div id="endSelClose" onclick="$('#endSelect').hide();"></div>
 			<div class="bg"></div>
 			<div class="E_Cont">
-				<p>æ‚¨å·²ç»æµè§ˆå®Œæ‰€æœ‰å›¾ç‰‡</p>
+				<p>ÄúÒÑ¾­ä¯ÀÀÍêËùÓĞÍ¼Æ¬</p>
 				<p><a id="rePlayBut" href="javascript:void(0)" onclick="showpic('next', 1);"></a><a id="nextPicsBut" href="{$next_page[url]}"></a></p>	
 			</div>
 		</div>
@@ -49,7 +49,7 @@
 
     <div class="list-pic">
         <div class="pre picbig">
-        	<div class="img-wrap"><a href="{$previous_page[url]}"><img src="{thumb($previous_page[thumb], 100, 137, 0)}" title="{$previous_page[title]}"></a></div><a href="{$previous_page[url]}">&lt;ä¸Šä¸€ç»„</a>
+        	<div class="img-wrap"><a href="{$previous_page[url]}"><img src="{thumb($previous_page[thumb], 100, 137, 0)}" title="{$previous_page[title]}"></a></div><a href="{$previous_page[url]}">&lt;ÉÏÒ»×é</a>
         </div>
         <a href="javascript:;" onclick="showpic('pre')" class="pre-bnt"><span></span></a>
 		<div class="cont" style="position:relative">
@@ -61,7 +61,7 @@
 		</div>
         <a href="javascript:;" onclick="showpic('next')" class="next-bnt"><span></span></a>
         <div class="next picbig">
-        	<div class="img-wrap"><a href="{$next_page[url]}" title="{$next_page[title]}"><img src="{thumb($next_page[thumb], 100, 137, 0)}"></a></div><a href="{$next_page[url]}">ä¸‹ä¸€ç»„&gt;</a>
+        	<div class="img-wrap"><a href="{$next_page[url]}" title="{$next_page[title]}"><img src="{thumb($next_page[thumb], 100, 137, 0)}"></a></div><a href="{$next_page[url]}">ÏÂÒ»×é&gt;</a>
         </div>
     </div>
             <div class="text" id="picinfo"></div>
@@ -71,7 +71,7 @@
   </div>
   <div class="bk10"></div>
 	<div class="relevance">
-	<h5>ç›¸å…³å›¾é›†</h5>
+	<h5>Ïà¹ØÍ¼¼¯</h5>
 		{pc:content action="relation" relation="$relation" id="$id" catid="$catid" num="6" keywords="$rs[keywords]"}
 			<ul class="photo-list">
 				{loop $data $r}
@@ -92,9 +92,9 @@
 	function add_favorite(title) {
 		$.getJSON('{APP_PATH}api.php?op=add_favorite&title='+encodeURIComponent(title)+'&url='+encodeURIComponent(location.href)+'&'+Math.random()+'&callback=?', function(data){
 			if(data.status==1)	{
-				$("#favorite").html('æ”¶è—æˆåŠŸ');
+				$("#favorite").html('ÊÕ²Ø³É¹¦');
 			} else {
-				alert('è¯·ç™»å½•');
+				alert('ÇëµÇÂ¼');
 			}
 		});
 	}

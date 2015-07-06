@@ -3,7 +3,7 @@ defined('IN_PHPCMS') or exit('No permission resources.');
 
 pc_base::load_app_class('admin','admin',0);
 pc_base::load_sys_class('push_factory', '', 0);
-//æƒé™åˆ¤æ–­ï¼Œæ ¹æ®æ ç›®é‡Œé¢çš„æƒé™è®¾ç½®æ£€æŸ¥	
+//È¨ÏŞÅĞ¶Ï£¬¸ù¾İÀ¸Ä¿ÀïÃæµÄÈ¨ÏŞÉèÖÃ¼ì²é	
 if((isset($_GET['catid']) || isset($_POST['catid'])) && $_SESSION['roleid'] != 1) {
 	$catid = isset($_GET['catid']) ? intval($_GET['catid']) : intval($_POST['catid']);
 	$this->priv_db = pc_base::load_model('category_priv_model');
@@ -25,7 +25,7 @@ class push extends admin {
 	}
 	
 	/**
-	 * æ¨é€é€‰æ‹©ç•Œé¢
+	 * ÍÆËÍÑ¡Ôñ½çÃæ
 	 */
 	public function init() {
 		if ($_POST['dosubmit']) {

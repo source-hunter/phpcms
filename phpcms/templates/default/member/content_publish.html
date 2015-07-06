@@ -26,13 +26,13 @@
 				//-->
 				</script>
 					<tr>
-						<th>{L('please_select_cat')}ï¼š</th>
+						<th>{L('please_select_cat')}£º</th>
 						<td>{form::select_category('', $catid, 'name="info[catid]" onchange="javascript:c_c(this.value);"','','',0,1,$siteid,'1')}</td>
 					</tr>
 				{/if}
 					{loop $forminfos $k $v}
 					<tr>
-						<th width="100">{if $v['star']} <font color="red">*</font>{/if} {$v['name']}ï¼š</th> 
+						<th width="100">{if $v['star']} <font color="red">*</font>{/if} {$v['name']}£º</th> 
 						<td>{$v['form']}{if $v['tips']}{$v['tips']}{/if}</td>
 					</tr>
 					{/loop}
@@ -54,7 +54,7 @@
 <div class="clear"></div>
 <script type="text/javascript"> 
 <!--
-//åªèƒ½æ”¾åˆ°æœ€ä¸‹é¢
+//Ö»ÄÜ·Åµ½×îÏÂÃæ
 $(function(){
 	$.formValidator.initConfig({formid:"myform",autotip:true,onerror:function(msg,obj){window.top.art.dialog({content:msg,lock:true,width:'200',height:'50'}, 	function(){$(obj).focus();
 	boxid = $(obj).attr('id');

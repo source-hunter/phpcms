@@ -73,9 +73,9 @@ $(function(){
 	$(":checkbox[name='protocol']").formValidator({tipid:"protocoltip",onshow:"{L('read_protocol')}",onfocus:"{L('read_protocol')}"}).inputValidator({min:1,onerror:"{L('read_protocol')}"});
 	
 	{if $member_setting['mobile_checktype']=='2' && $sms_setting['sms_enable']=='1'}
-	$("#mobile").formValidator({onshow:"è¯·è¾“å…¥æ‰‹æœºå·ç ",onfocus:"è¯·è¾“å…¥æ‰‹æœºå·ç "}).inputValidator({min:1,max:11,onerror:"è¯·è¾“å…¥æ­£ç¡®çš„æ‰‹æœºå·ç "});
+	$("#mobile").formValidator({onshow:"ÇëÊäÈëÊÖ»úºÅÂë",onfocus:"ÇëÊäÈëÊÖ»úºÅÂë"}).inputValidator({min:1,max:11,onerror:"ÇëÊäÈëÕıÈ·µÄÊÖ»úºÅÂë"});
 	{/if}
-	$("#mobile_verify").formValidator({onshow:"è¯·è¾“å…¥æ‰‹æœºæ”¶åˆ°çš„éªŒè¯ç ",onfocus:"è¯·è¾“å…¥æ‰‹æœºæ”¶åˆ°çš„éªŒè¯ç "}).inputValidator({min:1,onerror:"è¯·è¾“å…¥æ‰‹æœºæ”¶åˆ°çš„éªŒè¯ç "}).ajaxValidator({
+	$("#mobile_verify").formValidator({onshow:"ÇëÊäÈëÊÖ»úÊÕµ½µÄÑéÖ¤Âë",onfocus:"ÇëÊäÈëÊÖ»úÊÕµ½µÄÑéÖ¤Âë"}).inputValidator({min:1,onerror:"ÇëÊäÈëÊÖ»úÊÕµ½µÄÑéÖ¤Âë"}).ajaxValidator({
 					type : "get",
 					url : "api.php",
 					data :"op=sms_idcheck&action=id_code",
@@ -92,8 +92,8 @@ $(function(){
 						}
 					},
 					buttons: $("#dosubmit"),
-					onerror : "éªŒè¯ç é”™è¯¯",
-					onwait : "è¯·ç¨å€™..."
+					onerror : "ÑéÖ¤Âë´íÎó",
+					onwait : "ÇëÉÔºò..."
 				});
 
 	{$formValidator}
@@ -231,7 +231,7 @@ function show_protocol() {
 	<div class="col-left form-login form-reg">
 
 		{if $member_setting['choosemodel'] && count($modellist)>1}
-		<!--æ˜¯å¦å¼€å¯é€‰æ‹©ä¼šå‘˜æ¨¡å‹é€‰é¡¹-->
+		<!--ÊÇ·ñ¿ªÆôÑ¡Ôñ»áÔ±Ä£ĞÍÑ¡Ïî-->
     	<div class="point">
             <div class="content">
 				<strong class="title">{L('notice')}</strong>
@@ -241,7 +241,7 @@ function show_protocol() {
             <span class="o1"></span><span class="o2"></span><span class="o3"></span><span class="o4"></span>
         </div>
 
-		<div class="input"><label>{L('member_model')}ï¼š</label>
+		<div class="input"><label>{L('member_model')}£º</label>
 			{loop $modellist $k $v}
 			<label class="type"><input name="modelid" type="radio" value="{$k}" {if $k==$modelid}checked{/if} onclick="changemodel($(this).val())" />{$v['name']}</label>
 			{/loop}
@@ -252,13 +252,13 @@ function show_protocol() {
 			{/loop}
 		{/if}
 
-    	<div class="input"><label>{L('username')}ï¼š</label><input type="text" id="username" name="username" size="36" class="input-text"></div>
-        <div class="input"><label>{L('password')}ï¼š</label><input type="password" id="password" name="password" size="36" class="input-text"></div>
-        <div class="input"><label>{L('cofirmpwd')}ï¼š</label><input type="password" name="pwdconfirm" id="pwdconfirm" size="36" class="input-text"></div>
-        <div class="input"><label>{L('email')}ï¼š</label><input type="text" id="email" name="email" size="36" class="input-text"></div>
-		<div class="input"><label>{L('nickname')}ï¼š</label><input type="text" id="nickname" name="nickname" size="36" class="input-text"></div>
+    	<div class="input"><label>{L('username')}£º</label><input type="text" id="username" name="username" size="36" class="input-text"></div>
+        <div class="input"><label>{L('password')}£º</label><input type="password" id="password" name="password" size="36" class="input-text"></div>
+        <div class="input"><label>{L('cofirmpwd')}£º</label><input type="password" name="pwdconfirm" id="pwdconfirm" size="36" class="input-text"></div>
+        <div class="input"><label>{L('email')}£º</label><input type="text" id="email" name="email" size="36" class="input-text"></div>
+		<div class="input"><label>{L('nickname')}£º</label><input type="text" id="nickname" name="nickname" size="36" class="input-text"></div>
 		{if $member_setting['choosemodel']}
-			<!--æ˜¯å¦å¼€å¯é€‰æ‹©ä¼šå‘˜æ¨¡å‹é€‰é¡¹-->
+			<!--ÊÇ·ñ¿ªÆôÑ¡Ôñ»áÔ±Ä£ĞÍÑ¡Ïî-->
 			<script language="JavaScript">
 			<!--
 				function changemodel(modelid) {
@@ -268,20 +268,20 @@ function show_protocol() {
 			</script>
 
 			{loop $forminfos $k $v}
-				<div class="input"><label>{if $v['isbase']}<font color=red>*</font>{/if} {$v['name']}ï¼š{if $v['tips']}<br />({$v['tips']}){/if}</label><div class="form">{$v['form']}</div></div>
+				<div class="input"><label>{if $v['isbase']}<font color=red>*</font>{/if} {$v['name']}£º{if $v['tips']}<br />({$v['tips']}){/if}</label><div class="form">{$v['form']}</div></div>
 			{/loop}
 		{/if}
 		
 		
 		{if $sms_setting['sms_enable']=='1'}
-		<div class="input"><label>{L('checkcode')}ï¼š</label><input type="text" id="code" name="code" size="10" class="input-text">{form::checkcode('code_img', '5', '14', 120, 26)}</div>
+		<div class="input"><label>{L('checkcode')}£º</label><input type="text" id="code" name="code" size="10" class="input-text">{form::checkcode('code_img', '5', '14', 120, 26)}</div>
 
-		<div class="input"><label> æ‰‹æœºå·ç ï¼š</label><div class="form"><div id="mobile_div"><input type="text" name="mobile" id="mobile" value="" size="15" class="input-text" title="æ­¤æœåŠ¡å…è´¹,éªŒè¯ç å°†ä»¥çŸ­ä¿¡å…è´¹å‘é€åˆ°æ‚¨çš„æ‰‹æœº"> 
-			<div class="submit"><button onclick="get_verify()" type="button" class="hqyz">è·å–çŸ­ä¿¡éªŒè¯ç </button></div> <span id="mobileTip"></span>
+		<div class="input"><label> ÊÖ»úºÅÂë£º</label><div class="form"><div id="mobile_div"><input type="text" name="mobile" id="mobile" value="" size="15" class="input-text" title="´Ë·şÎñÃâ·Ñ,ÑéÖ¤Âë½«ÒÔ¶ÌĞÅÃâ·Ñ·¢ËÍµ½ÄúµÄÊÖ»ú"> 
+			<div class="submit"><button onclick="get_verify()" type="button" class="hqyz">»ñÈ¡¶ÌĞÅÑéÖ¤Âë</button></div> <span id="mobileTip"></span>
 			<br>
 			</div>
-			<div id="mobile_send_div" style="display:none">æ­¤æœåŠ¡å…è´¹,éªŒè¯ç å·²å‘é€åˆ°<span id="mobile_send"></span>ï¼Œ<span id="edit_mobile" style="display:none"><a href="javascript:void();" onclick="edit_mobile()">ä¿®æ”¹å·ç </a>ï¼Œ</span> å¦‚æœè¶…è¿‡120ç§’æœªæ”¶åˆ°éªŒè¯ç ï¼Œæ‚¨å¯ä»¥å…è´¹é‡æ–°è·å–ã€‚<br><br>
-			<div class="submit"><button type="button" id="GetVerify" onclick="get_verify()" class="hqyz">é‡è·çŸ­ä¿¡éªŒè¯ç </button></div> <br><br></div> 
+			<div id="mobile_send_div" style="display:none">´Ë·şÎñÃâ·Ñ,ÑéÖ¤ÂëÒÑ·¢ËÍµ½<span id="mobile_send"></span>£¬<span id="edit_mobile" style="display:none"><a href="javascript:void();" onclick="edit_mobile()">ĞŞ¸ÄºÅÂë</a>£¬</span> Èç¹û³¬¹ı120ÃëÎ´ÊÕµ½ÑéÖ¤Âë£¬Äú¿ÉÒÔÃâ·ÑÖØĞÂ»ñÈ¡¡£<br><br>
+			<div class="submit"><button type="button" id="GetVerify" onclick="get_verify()" class="hqyz">ÖØ»ñ¶ÌĞÅÑéÖ¤Âë</button></div> <br><br></div> 
 			<script language="JavaScript">
 			<!--
 				var times = 120;
@@ -289,14 +289,14 @@ function show_protocol() {
 				function get_verify() {
 					var session_code = $('#code').val();
 					if(session_code=='') {
-						alert('è¯·è¾“å…¥éªŒè¯ç ');
+						alert('ÇëÊäÈëÑéÖ¤Âë');
 						$('#code').focus();
 						return false;
 					}
 					var mobile = $("#mobile").val();
 					var partten = /^1[3-9]\d{9}$/;
 					if(!partten.test(mobile)){
-						alert("è¯·è¾“å…¥æ­£ç¡®çš„æ‰‹æœºå·ç ");
+						alert("ÇëÊäÈëÕıÈ·µÄÊÖ»úºÅÂë");
 						$('#mobile').focus();
 						return false;
 					}
@@ -310,28 +310,28 @@ function show_protocol() {
 							$("#GetVerify").attr("disabled", true);
 							isinerval = setInterval("CountDown()", 1000);
 						} else if(data=="-1") {
-							alert("ä½ ä»Šå¤©è·å–éªŒè¯ç æ¬¡æ•°å·²è¾¾åˆ°ä¸Šé™");
+							alert("Äã½ñÌì»ñÈ¡ÑéÖ¤Âë´ÎÊıÒÑ´ïµ½ÉÏÏŞ");
 						} else if(data=="-100") {
 							$('#code').val('');
-							alert("éªŒè¯ç å·²å¤±æ•ˆï¼Œè¯·ç‚¹å‡»å›¾ç‰‡éªŒè¯ç è·å–æ–°çš„éªŒè¯ç ï¼");
+							alert("ÑéÖ¤ÂëÒÑÊ§Ğ§£¬Çëµã»÷Í¼Æ¬ÑéÖ¤Âë»ñÈ¡ĞÂµÄÑéÖ¤Âë£¡");
 							$('#code').focus();
 						} else if(data=="-101") {
-							alert("éªŒè¯ç é”™è¯¯ï¼");
+							alert("ÑéÖ¤Âë´íÎó£¡");
 							$('#code').focus();
 						} else {
-							alert("çŸ­ä¿¡å‘é€å¤±è´¥");
+							alert("¶ÌĞÅ·¢ËÍÊ§°Ü");
 						}
 					});
 					
 				}
 				function CountDown() {
 					if (times < 1) {
-						$("#GetVerify").html("è·å–çŸ­ä¿¡éªŒè¯ç ").attr("disabled", false);
+						$("#GetVerify").html("»ñÈ¡¶ÌĞÅÑéÖ¤Âë").attr("disabled", false);
 						$("#edit_mobile").css("display","");
 						clearInterval(isinerval);
 						return;
 					}
-					$("#GetVerify").html(times+"ç§’åé‡è·éªŒè¯ç ");
+					$("#GetVerify").html(times+"ÃëºóÖØ»ñÑéÖ¤Âë");
 					times--;
 				}
 				function edit_mobile() {
@@ -341,16 +341,16 @@ function show_protocol() {
 			//-->
 			</script>
 		    </div></div>
-			<div class="input"><label>çŸ­ä¿¡æ ¡éªŒç ï¼š</label><input type="text" name="mobile_verify" id="mobile_verify" value="" size="14" class="input-text"></div>	
+			<div class="input"><label>¶ÌĞÅĞ£ÑéÂë£º</label><input type="text" name="mobile_verify" id="mobile_verify" value="" size="14" class="input-text"></div>	
 		
 		{/if}
 		
 		{if $member_setting['enablcodecheck']=='1' && $sms_setting['sms_enable']!='1'}
-		<div class="input"><label>{L('checkcode')}ï¼š</label><input type="text" id="code" name="code" size="10" class="input-text">{form::checkcode('code_img', '5', '14', 120, 26)}</div>
+		<div class="input"><label>{L('checkcode')}£º</label><input type="text" id="code" name="code" size="10" class="input-text">{form::checkcode('code_img', '5', '14', 120, 26)}</div>
 		{/if}
 		
 		
-		<!-- æ³¨é‡ŠéªŒè¯ç 
+		<!-- ×¢ÊÍÑéÖ¤Âë
         
 		-->
         	<div class="reg">
@@ -362,17 +362,17 @@ function show_protocol() {
 {elseif isset($_GET['t']) && $_GET['t']==2}
 <div class="col-left form-login form-reg">
 {php $emailurl = param::get_cookie('email') ? str_replace('@', '',strstr(param::get_cookie('email'), '@')) : '';}
-{param::get_cookie('_username')} {L('hellow')}ï¼Œ{L('login_email_authentication')} {if $emailurl} {L('please_click')}<a href="http://mail.{$emailurl}">{L('login_email')}</a><br><br>
-å¦‚æœæ²¡æœ‰æ”¶åˆ°é‚®ä»¶ï¼Œè¯·ç‚¹å‡»<a onclick="$('#send_newemail').show()"><font color="red">è¿™é‡Œ</font></a>æ›´æ¢é‚®ç®±è¯•è¯•<br><br>
+{param::get_cookie('_username')} {L('hellow')}£¬{L('login_email_authentication')} {if $emailurl} {L('please_click')}<a href="http://mail.{$emailurl}">{L('login_email')}</a><br><br>
+Èç¹ûÃ»ÓĞÊÕµ½ÓÊ¼ş£¬Çëµã»÷<a onclick="$('#send_newemail').show()"><font color="red">ÕâÀï</font></a>¸ü»»ÓÊÏäÊÔÊÔ<br><br>
 <div style="display:none" id="send_newemail">
 <input type="text" id="newemail" name="newemail" size="36" class="input-text"> 
-<div class="submit"><input type="submit" name="dosubmit" value="é‡æ–°å‘é€æ–°é‚®ç®±éªŒè¯" onclick="javascript:send_newmail();"></div></div>
+<div class="submit"><input type="submit" name="dosubmit" value="ÖØĞÂ·¢ËÍĞÂÓÊÏäÑéÖ¤" onclick="javascript:send_newmail();"></div></div>
 <script language="JavaScript">
 function send_newmail() {
 	//var mail_type = $('input[checkbox=mail_type][checked]').val();
 	var newemail = $('#newemail').val();
  $.post('?m=member&c=index&a=send_newmail&newemail='+newemail,{},function(data){
- 	if(data=='1'){alert('å‘é€æˆåŠŸï¼Œè¯·æŸ¥çœ‹éªŒè¯ï¼');}else if(data=='-1'){alert('é‚®ç®±å·²è¢«å ç”¨ï¼');}else{alert('å‘é€é”™è¯¯ï¼Œè¯·è”ç³»ç®¡ç†å‘˜ï¼');}
+ 	if(data=='1'){alert('·¢ËÍ³É¹¦£¬Çë²é¿´ÑéÖ¤£¡');}else if(data=='-1'){alert('ÓÊÏäÒÑ±»Õ¼ÓÃ£¡');}else{alert('·¢ËÍ´íÎó£¬ÇëÁªÏµ¹ÜÀíÔ±£¡');}
 	});
 } 
 </script>
@@ -380,7 +380,7 @@ function send_newmail() {
 </div>
 {elseif isset($_GET['t']) && $_GET['t']==3}
 <div class="col-left form-login form-reg">
-{param::get_cookie('_username')} {L('hellow')}ï¼Œ{L('please_wait_administrator_verify')}
+{param::get_cookie('_username')} {L('hellow')}£¬{L('please_wait_administrator_verify')}
 </div>
 {else}
 <script language="JavaScript">

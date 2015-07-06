@@ -24,11 +24,11 @@
   <tbody>
   <tr>
     <th width="80"><?php echo L('total').L('transactions')?></th>
-    <td class="y-bg"><?php echo L('money')?>&nbsp;&nbsp;<span class="font-fixh green"><?php echo $total_amount_num?></span> <?php echo L('bi')?>ï¼ˆ<?php echo L('trade_succ').L('trade')?>&nbsp;&nbsp;<span class="font-fixh"><?php echo $total_amount_num_succ?></span> <?php echo L('bi')?>ï¼‰<br/><?php echo L('point')?>&nbsp;&nbsp;<span class="font-fixh green"><?php echo $total_point_num?></span> <?php echo L('bi')?>ï¼ˆ<?php echo L('trade_succ').L('trade')?>&nbsp;&nbsp;<span class="font-fixh"><?php echo $total_point_num_succ?></span> <?php echo L('bi')?>ï¼‰</td>
+    <td class="y-bg"><?php echo L('money')?>&nbsp;&nbsp;<span class="font-fixh green"><?php echo $total_amount_num?></span> <?php echo L('bi')?>£¨<?php echo L('trade_succ').L('trade')?>&nbsp;&nbsp;<span class="font-fixh"><?php echo $total_amount_num_succ?></span> <?php echo L('bi')?>£©<br/><?php echo L('point')?>&nbsp;&nbsp;<span class="font-fixh green"><?php echo $total_point_num?></span> <?php echo L('bi')?>£¨<?php echo L('trade_succ').L('trade')?>&nbsp;&nbsp;<span class="font-fixh"><?php echo $total_point_num_succ?></span> <?php echo L('bi')?>£©</td>
   </tr>   
   <tr>
     <th width="80"><?php echo L('total').L('amount')?></th>
-    <td class="y-bg"><span class="font-fixh green"><?php echo $total_amount?></span> <?php echo L('yuan')?>ï¼ˆ<?php echo L('trade_succ').L('trade')?>&nbsp;&nbsp;<span class="font-fixh"><?php echo $total_amount_succ?></span><?php echo L('yuan')?>ï¼‰<br/><span class="font-fixh green"><?php echo $total_point?></span><?php echo L('dian')?>ï¼ˆ<?php echo L('trade_succ').L('trade')?>&nbsp;&nbsp;<span class="font-fixh"><?php echo $total_point_succ?></span><?php echo L('dian')?>ï¼‰</td>
+    <td class="y-bg"><span class="font-fixh green"><?php echo $total_amount?></span> <?php echo L('yuan')?>£¨<?php echo L('trade_succ').L('trade')?>&nbsp;&nbsp;<span class="font-fixh"><?php echo $total_amount_succ?></span><?php echo L('yuan')?>£©<br/><span class="font-fixh green"><?php echo $total_point?></span><?php echo L('dian')?>£¨<?php echo L('trade_succ').L('trade')?>&nbsp;&nbsp;<span class="font-fixh"><?php echo $total_point_succ?></span><?php echo L('dian')?>£©</td>
   </tr>
 </table>
 </fieldset>
@@ -39,12 +39,12 @@
   <tbody>
   <?php if($num) {?>
   <tr>
-    <th width="80"><?php echo L('total_transactions')?>ï¼š</th>
-    <td class="y-bg"><?php echo L('money')?>ï¼š<span class="font-fixh green"><?php echo $amount_num?></span> <?php echo L('bi')?>ï¼ˆ<?php echo L('transactions_success')?>ï¼š<span class="font-fixh"><?php echo $amount_num_succ?></span> <?php echo L('bi')?>ï¼‰<br/><?php echo L('point')?>ï¼š<span class="font-fixh green"><?php echo $point_num?></span> <?php echo L('bi')?>ï¼ˆ<?php echo L('transactions_success')?>ï¼š<span class="font-fixh"><?php echo $point_num_succ?></span> <?php echo L('bi')?>ï¼‰</td>
+    <th width="80"><?php echo L('total_transactions')?>£º</th>
+    <td class="y-bg"><?php echo L('money')?>£º<span class="font-fixh green"><?php echo $amount_num?></span> <?php echo L('bi')?>£¨<?php echo L('transactions_success')?>£º<span class="font-fixh"><?php echo $amount_num_succ?></span> <?php echo L('bi')?>£©<br/><?php echo L('point')?>£º<span class="font-fixh green"><?php echo $point_num?></span> <?php echo L('bi')?>£¨<?php echo L('transactions_success')?>£º<span class="font-fixh"><?php echo $point_num_succ?></span> <?php echo L('bi')?>£©</td>
   </tr>   
   <tr>
-    <th width="80"><?php echo L('total').L('amount')?>ï¼š</th>
-    <td class="y-bg"><span class="font-fixh green"><?php echo $amount?></span><?php echo L('yuan')?>ï¼ˆ<?php echo L('transactions_success')?>ï¼š<span class="font-fixh"><?php echo $amount_succ?></span><?php echo L('yuan')?>ï¼‰<br/><span class="font-fixh green"><?php echo $point?></span><?php echo L('dian')?>ï¼ˆ<?php echo L('transactions_success')?>ï¼š<span class="font-fixh"><?php echo $point_succ?></span><?php echo L('dian')?>ï¼‰</td>
+    <th width="80"><?php echo L('total').L('amount')?>£º</th>
+    <td class="y-bg"><span class="font-fixh green"><?php echo $amount?></span><?php echo L('yuan')?>£¨<?php echo L('transactions_success')?>£º<span class="font-fixh"><?php echo $amount_succ?></span><?php echo L('yuan')?>£©<br/><span class="font-fixh green"><?php echo $point?></span><?php echo L('dian')?>£¨<?php echo L('transactions_success')?>£º<span class="font-fixh"><?php echo $point_succ?></span><?php echo L('dian')?>£©</td>
   </tr>
   <?php }?>
 </table>

@@ -18,10 +18,10 @@
 <a href="javascript:void(0);" onclick="video_vv_trend()"><?php echo L('vv_trend');?></a>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
  
-<?php echo L('æ—¶é—´æ®µæŸ¥çœ‹ç»Ÿè®¡');?>  <?php echo form::date('start_time',$start_time)?>  è‡³ <?php echo form::date('end_time',$end_time)?> <input type="submit" value="<?php echo L('search')?>" class="button" name="dosubmit"> 
+<?php echo L('Ê±¼ä¶Î²é¿´Í³¼Æ');?>  <?php echo form::date('start_time',$start_time)?>  ÖÁ <?php echo form::date('end_time',$end_time)?> <input type="submit" value="<?php echo L('search')?>" class="button" name="dosubmit"> 
 
 &nbsp;&nbsp;&nbsp;
-<?php echo L('search_video');?> ï¼š 
+<?php echo L('search_video');?> £º 
 <select name="search_type" id="search_type">
 <option value="2" <?php if ($_GET['type']==2) {?>selected<?php }?>><?php echo L('video_title')?></option>
 <option value="1" <?php if ($_GET['type']==1) {?>selected<?php }?>><?php echo L('video_id');?></option>
@@ -59,7 +59,7 @@ if(is_array($infos)){
 	<td align="center"><?php echo $info['yestoday_vv'];?></td>
 	<td align="center"><?php echo $info['week_vv'];?></td>
 	<td align="center"><?php echo $info['month_vv'];?></td>
-	<td align="center"><a href="javascript:void(0);" onclick="view_video_stat('<?php echo $info['vid']?>','<?php echo $info['title'];?>')"><?php echo L('æŸ¥çœ‹è¯¦æƒ…')?></a>  </td>
+	<td align="center"><a href="javascript:void(0);" onclick="view_video_stat('<?php echo $info['vid']?>','<?php echo $info['title'];?>')"><?php echo L('²é¿´ÏêÇé')?></a>  </td>
 	</tr>
 <?php 
 	}
@@ -78,13 +78,13 @@ if(is_array($infos)){
 <script type="text/javascript">
 <!--
 function view_video_stat(vid,title) {
-	window.top.art.dialog({title:title+' è§†é¢‘è¿‘30æ—¥æ’­æ”¾é‡èµ°åŠ¿å›¾', id:'view', iframe:'?m=video&c=stat&a=show_video_stat&vid='+vid ,width:'780px',height:'450px'});
+	window.top.art.dialog({title:title+' ÊÓÆµ½ü30ÈÕ²¥·ÅÁ¿×ßÊÆÍ¼', id:'view', iframe:'?m=video&c=stat&a=show_video_stat&vid='+vid ,width:'780px',height:'450px'});
 }
-//æ€»ä½“è¶‹åŠ¿å›¾
+//×ÜÌåÇ÷ÊÆÍ¼
 function video_vv_trend() {
-	window.top.art.dialog({title:'è¿‘20æ—¥è§†é¢‘æ€»ä½“æ’­æ”¾é‡èµ°åŠ¿å›¾', id:'view', iframe:'?m=video&c=stat&a=vv_trend' ,width:'890px',height:'450px'});
+	window.top.art.dialog({title:'½ü20ÈÕÊÓÆµ×ÜÌå²¥·ÅÁ¿×ßÊÆÍ¼', id:'view', iframe:'?m=video&c=stat&a=vv_trend' ,width:'890px',height:'450px'});
 }
-//æäº¤æŒ‡å®šURL
+//Ìá½»Ö¸¶¨URL
 function search_video_stat(){
 	document.searchform.action = "<?php ECHO APP_PATH;?>index.php?m=video&c=stat&a=search_video_stat";
 	document.searchform.method = "post";

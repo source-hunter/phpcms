@@ -1,5 +1,5 @@
 <?php
-$LANG['add_keylink']				=	'æ·»åŠ å…³è”é“¾æŽ¥';
-$LANG['keylink_name']				=	'å…³é”®è¯';
-$LANG['link_address']				=	'è”æŽ¥';
+$LANG['add_keylink']				=	'Ìí¼Ó¹ØÁªÁ´½Ó';
+$LANG['keylink_name']				=	'¹Ø¼ü´Ê';
+$LANG['link_address']				=	'Áª½Ó';
 ?>

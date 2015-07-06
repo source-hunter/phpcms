@@ -1,17 +1,17 @@
 <?php
 class form {
 	/**
-	 * ç¼–è¾‘å™¨
+	 * ±à¼­Æ÷
 	 * @param int $textareaid
 	 * @param int $toolbar 
-	 * @param string $module æ¨¡å—åç§°
-	 * @param int $catid æ ç›®id
-	 * @param int $color ç¼–è¾‘å™¨é¢œè‰²
-	 * @param boole $allowupload  æ˜¯å¦å…è®¸ä¸Šä¼ 
-	 * @param boole $allowbrowser æ˜¯å¦å…è®¸æµè§ˆæ–‡ä»¶
-	 * @param string $alowuploadexts å…è®¸ä¸Šä¼ ç±»å‹
-	 * @param string $height ç¼–è¾‘å™¨é«˜åº¦
-	 * @param string $disabled_page æ˜¯å¦ç¦ç”¨åˆ†é¡µå’Œå­æ ‡é¢˜
+	 * @param string $module Ä£¿éÃû³Æ
+	 * @param int $catid À¸Ä¿id
+	 * @param int $color ±à¼­Æ÷ÑÕÉ«
+	 * @param boole $allowupload  ÊÇ·ñÔÊĞíÉÏ´«
+	 * @param boole $allowbrowser ÊÇ·ñÔÊĞíä¯ÀÀÎÄ¼ş
+	 * @param string $alowuploadexts ÔÊĞíÉÏ´«ÀàĞÍ
+	 * @param string $height ±à¼­Æ÷¸ß¶È
+	 * @param string $disabled_page ÊÇ·ñ½ûÓÃ·ÖÒ³ºÍ×Ó±êÌâ
 	 */
 	public static function editor($textareaid = 'content', $toolbar = 'basic', $module = '', $catid = '', $color = '', $allowupload = 0, $allowbrowser = 1,$alowuploadexts = '',$height = 200,$disabled_page = 0, $allowuploadnum = '10') {
 		$str ='';
@@ -75,7 +75,7 @@ class form {
 		}
 		$ext_str .= "<div id='page_title_div'>
 		<table cellpadding='0' cellspacing='1' border='0'><tr><td class='title'>".L('subtitle')."<span id='msg_page_title_value'></span></td><td>
-		<a class='close' href='javascript:;' onclick='javascript:$(\"#page_title_div\").hide();'><span>Ã—</span></a></td>
+		<a class='close' href='javascript:;' onclick='javascript:$(\"#page_title_div\").hide();'><span>¡Á</span></a></td>
 		<tr><td colspan='2'><input name='page_title_value' id='page_title_value' class='input-text' value='' size='30'>&nbsp;<input type='button' class='button' value='".L('submit')."' onclick=insert_page_title(\"$textareaid\",1)></td></tr>
 		</table></div>";
 		$ext_str .= "</div>";
@@ -86,17 +86,17 @@ class form {
 	
 	/**
 	 * 
-	 * @param string $name è¡¨å•åç§°
-	 * @param int $id è¡¨å•id
-	 * @param string $value è¡¨å•é»˜è®¤å€¼
-	 * @param string $moudle æ¨¡å—åç§°
-	 * @param int $catid æ ç›®id
-	 * @param int $size è¡¨å•å¤§å°
-	 * @param string $class è¡¨å•é£æ ¼
-	 * @param string $ext è¡¨å•æ‰©å±•å±æ€§ å¦‚æœ jsäº‹ä»¶ç­‰
-	 * @param string $alowexts å…è®¸å›¾ç‰‡æ ¼å¼
+	 * @param string $name ±íµ¥Ãû³Æ
+	 * @param int $id ±íµ¥id
+	 * @param string $value ±íµ¥Ä¬ÈÏÖµ
+	 * @param string $moudle Ä£¿éÃû³Æ
+	 * @param int $catid À¸Ä¿id
+	 * @param int $size ±íµ¥´óĞ¡
+	 * @param string $class ±íµ¥·ç¸ñ
+	 * @param string $ext ±íµ¥À©Õ¹ÊôĞÔ Èç¹û jsÊÂ¼şµÈ
+	 * @param string $alowexts ÔÊĞíÍ¼Æ¬¸ñÊ½
 	 * @param array $thumb_setting 
-	 * @param int $watermark_setting  0æˆ–1
+	 * @param int $watermark_setting  0»ò1
 	 */
 	public static function images($name, $id = '', $value = '', $moudle='', $catid='', $size = 50, $class = '', $ext = '', $alowexts = '',$thumb_setting = array(),$watermark_setting = 0 ) {
 		if(!$id) $id = $name;
@@ -115,15 +115,15 @@ class form {
 
 	/**
 	 * 
-	 * @param string $name è¡¨å•åç§°
-	 * @param int $id è¡¨å•id
-	 * @param string $value è¡¨å•é»˜è®¤å€¼
-	 * @param string $moudle æ¨¡å—åç§°
-	 * @param int $catid æ ç›®id
-	 * @param int $size è¡¨å•å¤§å°
-	 * @param string $class è¡¨å•é£æ ¼
-	 * @param string $ext è¡¨å•æ‰©å±•å±æ€§ å¦‚æœ jsäº‹ä»¶ç­‰
-	 * @param string $alowexts å…è®¸ä¸Šä¼ çš„æ–‡ä»¶æ ¼å¼
+	 * @param string $name ±íµ¥Ãû³Æ
+	 * @param int $id ±íµ¥id
+	 * @param string $value ±íµ¥Ä¬ÈÏÖµ
+	 * @param string $moudle Ä£¿éÃû³Æ
+	 * @param int $catid À¸Ä¿id
+	 * @param int $size ±íµ¥´óĞ¡
+	 * @param string $class ±íµ¥·ç¸ñ
+	 * @param string $ext ±íµ¥À©Õ¹ÊôĞÔ Èç¹û jsÊÂ¼şµÈ
+	 * @param string $alowexts ÔÊĞíÉÏ´«µÄÎÄ¼ş¸ñÊ½
 	 * @param array $file_setting 
 	 */
 	public static function upfiles($name, $id = '', $value = '', $moudle='', $catid='', $size = 50, $class = '', $ext = '', $alowexts = '',$file_setting = array() ) {
@@ -141,13 +141,13 @@ class form {
 	}
 	
 	/**
-	 * æ—¥æœŸæ—¶é—´æ§ä»¶
+	 * ÈÕÆÚÊ±¼ä¿Ø¼ş
 	 * 
-	 * @param $name æ§ä»¶nameï¼Œid
-	 * @param $value é€‰ä¸­å€¼
-	 * @param $isdatetime æ˜¯å¦æ˜¾ç¤ºæ—¶é—´
-	 * @param $loadjs æ˜¯å¦é‡å¤åŠ è½½jsï¼Œé˜²æ­¢é¡µé¢ç¨‹åºåŠ è½½ä¸è§„åˆ™å¯¼è‡´çš„æ§ä»¶æ— æ³•æ˜¾ç¤º
-	 * @param $showweek æ˜¯å¦æ˜¾ç¤ºå‘¨ï¼Œä½¿ç”¨ï¼Œtrue | false
+	 * @param $name ¿Ø¼şname£¬id
+	 * @param $value Ñ¡ÖĞÖµ
+	 * @param $isdatetime ÊÇ·ñÏÔÊ¾Ê±¼ä
+	 * @param $loadjs ÊÇ·ñÖØ¸´¼ÓÔØjs£¬·ÀÖ¹Ò³Ãæ³ÌĞò¼ÓÔØ²»¹æÔòµ¼ÖÂµÄ¿Ø¼şÎŞ·¨ÏÔÊ¾
+	 * @param $showweek ÊÇ·ñÏÔÊ¾ÖÜ£¬Ê¹ÓÃ£¬true | false
 	 */
 	public static function date($name, $value = '', $isdatetime = 0, $loadjs = 0, $showweek = 'true', $timesystem = 1) {
 		if($value == '0000-00-00 00:00:00') $value = '';
@@ -191,15 +191,15 @@ class form {
 	}
 
 	/**
-	 * æ ç›®é€‰æ‹©
-	 * @param string $file æ ç›®ç¼“å­˜æ–‡ä»¶å
-	 * @param intval/array $catid åˆ«é€‰ä¸­çš„IDï¼Œå¤šé€‰æ˜¯å¯ä»¥æ˜¯æ•°ç»„
-	 * @param string $str å±æ€§
-	 * @param string $default_option é»˜è®¤é€‰é¡¹
-	 * @param intval $modelid æŒ‰æ‰€å±æ¨¡å‹ç­›é€‰
-	 * @param intval $type æ ç›®ç±»å‹
-	 * @param intval $onlysub åªå¯é€‰æ‹©å­æ ç›®
-	 * @param intval $siteid å¦‚æœè®¾ç½®äº†siteid é‚£ä¹ˆåˆ™æŒ‰ç…§siteidå–
+	 * À¸Ä¿Ñ¡Ôñ
+	 * @param string $file À¸Ä¿»º´æÎÄ¼şÃû
+	 * @param intval/array $catid ±ğÑ¡ÖĞµÄID£¬¶àÑ¡ÊÇ¿ÉÒÔÊÇÊı×é
+	 * @param string $str ÊôĞÔ
+	 * @param string $default_option Ä¬ÈÏÑ¡Ïî
+	 * @param intval $modelid °´ËùÊôÄ£ĞÍÉ¸Ñ¡
+	 * @param intval $type À¸Ä¿ÀàĞÍ
+	 * @param intval $onlysub Ö»¿ÉÑ¡Ôñ×ÓÀ¸Ä¿
+	 * @param intval $siteid Èç¹ûÉèÖÃÁËsiteid ÄÇÃ´Ôò°´ÕÕsiteidÈ¡
 	 */
 	public static function select_category($file = '',$catid = 0, $str = '', $default_option = '', $modelid = 0, $type = -1, $onlysub = 0,$siteid = 0,$is_push = 0) {
 		$tree = pc_base::load_sys_class('tree');
@@ -210,14 +210,14 @@ class form {
 		$result = getcache($file,'commons');
 		$string = '<select '.$str.'>';
 		if($default_option) $string .= "<option value='0'>$default_option</option>";
-		//åŠ è½½æƒé™è¡¨æ¨¡å‹ ,è·å–ä¼šå‘˜ç»„IDå€¼,ä»¥å¤‡ä¸‹é¢æŠ•å…¥åˆ¤æ–­ç”¨
+		//¼ÓÔØÈ¨ÏŞ±íÄ£ĞÍ ,»ñÈ¡»áÔ±×éIDÖµ,ÒÔ±¸ÏÂÃæÍ¶ÈëÅĞ¶ÏÓÃ
 		if($is_push=='1'){
 			$priv = pc_base::load_model('category_priv_model');
 			$user_groupid = param::get_cookie('_groupid') ? param::get_cookie('_groupid') : 8;
 		}
 		if (is_array($result)) {
 			foreach($result as $r) {
- 				//æ£€æŸ¥å½“å‰ä¼šå‘˜ç»„ï¼Œåœ¨è¯¥æ ç›®å¤„æ˜¯å¦å…è®¸æŠ•ç¨¿ï¼Ÿ
+ 				//¼ì²éµ±Ç°»áÔ±×é£¬ÔÚ¸ÃÀ¸Ä¿´¦ÊÇ·ñÔÊĞíÍ¶¸å£¿
 				if($is_push=='1' and $r['child']=='0'){
 					$sql = array('catid'=>$r['catid'],'roleid'=>$user_groupid,'action'=>'add');
 					$array = $priv->get_one($sql);
@@ -269,7 +269,7 @@ class form {
 		return $string;
 	}
 	/**
-	 * ä¸‹æ‹‰é€‰æ‹©æ¡†
+	 * ÏÂÀ­Ñ¡Ôñ¿ò
 	 */
 	public static function select($array = array(), $id = 0, $str = '', $default_option = '') {
 		$string = '<select '.$str.'>';
@@ -287,13 +287,13 @@ class form {
 	}
 	
 	/**
-	 * å¤é€‰æ¡†
+	 * ¸´Ñ¡¿ò
 	 * 
-	 * @param $array é€‰é¡¹ äºŒç»´æ•°ç»„
-	 * @param $id é»˜è®¤é€‰ä¸­å€¼ï¼Œå¤šä¸ªç”¨ 'é€—å·'åˆ†å‰²
-	 * @param $str å±æ€§
-	 * @param $defaultvalue æ˜¯å¦å¢åŠ é»˜è®¤å€¼ é»˜è®¤å€¼ä¸º -99
-	 * @param $width å®½åº¦
+	 * @param $array Ñ¡Ïî ¶şÎ¬Êı×é
+	 * @param $id Ä¬ÈÏÑ¡ÖĞÖµ£¬¶à¸öÓÃ '¶ººÅ'·Ö¸î
+	 * @param $str ÊôĞÔ
+	 * @param $defaultvalue ÊÇ·ñÔö¼ÓÄ¬ÈÏÖµ Ä¬ÈÏÖµÎª -99
+	 * @param $width ¿í¶È
 	 */
 	public static function checkbox($array = array(), $id = '', $str = '', $defaultvalue = '', $width = 0, $field = '') {
 		$string = '';
@@ -313,11 +313,11 @@ class form {
 	}
 
 	/**
-	 * å•é€‰æ¡†
+	 * µ¥Ñ¡¿ò
 	 * 
-	 * @param $array é€‰é¡¹ äºŒç»´æ•°ç»„
-	 * @param $id é»˜è®¤é€‰ä¸­å€¼
-	 * @param $str å±æ€§
+	 * @param $array Ñ¡Ïî ¶şÎ¬Êı×é
+	 * @param $id Ä¬ÈÏÑ¡ÖĞÖµ
+	 * @param $str ÊôĞÔ
 	 */
 	public static function radio($array = array(), $id = 0, $str = '', $width = 0, $field = '') {
 		$string = '';
@@ -330,13 +330,13 @@ class form {
 		return $string;
 	}
 	/**
-	 * æ¨¡æ¿é€‰æ‹©
+	 * Ä£°åÑ¡Ôñ
 	 * 
-	 * @param $style  é£æ ¼
-	 * @param $module æ¨¡å—
-	 * @param $id é»˜è®¤é€‰ä¸­å€¼
-	 * @param $str å±æ€§
-	 * @param $pre æ¨¡æ¿å‰ç¼€
+	 * @param $style  ·ç¸ñ
+	 * @param $module Ä£¿é
+	 * @param $id Ä¬ÈÏÑ¡ÖĞÖµ
+	 * @param $str ÊôĞÔ
+	 * @param $pre Ä£°åÇ°×º
 	 */
 	public static function select_template($style, $module, $id = '', $str = '', $pre = '') {
 		$tpl_root = pc_base::load_config('system', 'tpl_root');
@@ -369,28 +369,28 @@ class form {
 	}
 	
 	/**
-	 * éªŒè¯ç 
-	 * @param string $id            ç”Ÿæˆçš„éªŒè¯ç ID
-	 * @param integer $code_len     ç”Ÿæˆå¤šå°‘ä½éªŒè¯ç 
-	 * @param integer $font_size    éªŒè¯ç å­—ä½“å¤§å°
-	 * @param integer $width        éªŒè¯å›¾ç‰‡çš„å®½
-	 * @param integer $height       éªŒè¯ç å›¾ç‰‡çš„é«˜
-	 * @param string $font          ä½¿ç”¨ä»€ä¹ˆå­—ä½“ï¼Œè®¾ç½®å­—ä½“çš„URL
-	 * @param string $font_color    å­—ä½“ä½¿ç”¨ä»€ä¹ˆé¢œè‰²
-	 * @param string $background    èƒŒæ™¯ä½¿ç”¨ä»€ä¹ˆé¢œè‰²
+	 * ÑéÖ¤Âë
+	 * @param string $id            Éú³ÉµÄÑéÖ¤ÂëID
+	 * @param integer $code_len     Éú³É¶àÉÙÎ»ÑéÖ¤Âë
+	 * @param integer $font_size    ÑéÖ¤Âë×ÖÌå´óĞ¡
+	 * @param integer $width        ÑéÖ¤Í¼Æ¬µÄ¿í
+	 * @param integer $height       ÑéÖ¤ÂëÍ¼Æ¬µÄ¸ß
+	 * @param string $font          Ê¹ÓÃÊ²Ã´×ÖÌå£¬ÉèÖÃ×ÖÌåµÄURL
+	 * @param string $font_color    ×ÖÌåÊ¹ÓÃÊ²Ã´ÑÕÉ«
+	 * @param string $background    ±³¾°Ê¹ÓÃÊ²Ã´ÑÕÉ«
 	 */
 	public static function checkcode($id = 'checkcode',$code_len = 4, $font_size = 20, $width = 130, $height = 50, $font = '', $font_color = '', $background = '') {
 		return "<img id='$id' onclick='this.src=this.src+\"&\"+Math.random()' src='".SITE_PROTOCOL.SITE_URL.WEB_PATH."api.php?op=checkcode&code_len=$code_len&font_size=$font_size&width=$width&height=$height&font_color=".urlencode($font_color)."&background=".urlencode($background)."'>";
 	}
 	/**
-	 * url  è§„åˆ™è°ƒç”¨
+	 * url  ¹æÔòµ÷ÓÃ
 	 * 
-	 * @param $module æ¨¡å—
-	 * @param $file æ–‡ä»¶å
-	 * @param $ishtml æ˜¯å¦ä¸ºé™æ€è§„åˆ™
-	 * @param $id é€‰ä¸­å€¼
-	 * @param $str è¡¨å•å±æ€§
-	 * @param $default_option é»˜è®¤é€‰é¡¹
+	 * @param $module Ä£¿é
+	 * @param $file ÎÄ¼şÃû
+	 * @param $ishtml ÊÇ·ñÎª¾²Ì¬¹æÔò
+	 * @param $id Ñ¡ÖĞÖµ
+	 * @param $str ±íµ¥ÊôĞÔ
+	 * @param $default_option Ä¬ÈÏÑ¡Ïî
 	 */
 	public static function urlrule($module, $file, $ishtml, $id, $str = '', $default_option = '') {
 		if(!$module) $module = 'content';

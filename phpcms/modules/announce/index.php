@@ -10,7 +10,7 @@ class index {
 	}
 	
 	/**
-	 * 灞曠ず鍏憡
+	 * 展示公告
 	 */
 	public function show() {
 		if(!isset($_GET['aid'])) {

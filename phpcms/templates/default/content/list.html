@@ -2,11 +2,11 @@
 <!--main-->
 <div class="main">
 	<div class="col-left">
-    	<div class="crumbs"><a href="{siteurl($siteid)}">é¦–é¡µ</a><span> > </span>{catpos($catid)} åˆ—è¡¨</div>
+    	<div class="crumbs"><a href="{siteurl($siteid)}">Ê×Ò³</a><span> > </span>{catpos($catid)} ÁĞ±í</div>
     	{pc:content action="lists" catid="$catid" num="25" order="id DESC" page="$page"}
         <ul class="list lh24 f14">
 {loop $data $r}
-	<li><span class="rt">{date('Y-m-d H:i:s',$r[inputtime])}</span>Â·<a href="{$r[url]}" target="_blank"{title_style($r[style])}>{$r[title]}</a></li>
+	<li><span class="rt">{date('Y-m-d H:i:s',$r[inputtime])}</span>¡¤<a href="{$r[url]}" target="_blank"{title_style($r[style])}>{$r[title]}</a></li>
 	{if $n%5==0}<li class="bk20 hr"></li>{/if}
 {/loop}
         </ul>
@@ -15,7 +15,7 @@
   </div>
     <div class="col-auto">
         <div class="box">
-            <h5 class="title-2">é¢‘é“æ€»æ’è¡Œ</h5>
+            <h5 class="title-2">ÆµµÀ×ÜÅÅĞĞ</h5>
              {pc:content action="hits" catid="$catid" num="10" order="views DESC" cache="3600"}
             <ul class="content digg">
 				{loop $data $r}
@@ -26,7 +26,7 @@
         </div>
         <div class="bk10"></div>
         <div class="box">
-            <h5 class="title-2">é¢‘é“æœ¬æœˆæ’è¡Œ</h5>
+            <h5 class="title-2">ÆµµÀ±¾ÔÂÅÅĞĞ</h5>
              {pc:content action="hits" catid="$catid" num="8" order="monthviews DESC" cache="3600"}
             <ul class="content rank">
 				{loop $data $r}

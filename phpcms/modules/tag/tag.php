@@ -11,7 +11,7 @@ class tag extends admin {
 	}
 	
 	/**
-	 * æ ‡ç­¾å‘å¯¼åˆ—è¡¨
+	 * ±êÇ©Ïòµ¼ÁĞ±í
 	 */
 	public function init() {
 		$big_menu = array('javascript:window.top.art.dialog({id:\'add\',iframe:\'?m=tag&c=tag&a=add\', title:\''.L('add_tag').'\', width:\'700\', height:\'500\', lock:true}, function(){var d = window.top.art.dialog({id:\'add\'}).data.iframe;var form = d.document.getElementById(\'dosubmit\');form.click();return false;}, function(){window.top.art.dialog({id:\'add\'}).close()});void(0);', L('add_tag'));
@@ -22,7 +22,7 @@ class tag extends admin {
 	}
 
 	/**
-	 * æ·»åŠ æ ‡ç­¾å‘å¯¼
+	 * Ìí¼Ó±êÇ©Ïòµ¼
 	 */
 	public function add() {
 		pc_base::load_app_func('global', 'dbsource');
@@ -32,12 +32,12 @@ class tag extends admin {
 			$num = isset($_POST['num']) && intval($_POST['num']) ? intval($_POST['num']) : 0;
 			$type = isset($_POST['type']) && intval($_POST['type']) ? intval($_POST['type']) : 0;
 			$ac = isset($_GET['ac']) && !empty($_GET['ac']) ? trim($_GET['ac']) : '';
-			//æ£€æŸ¥åç§°æ˜¯å¦å·²ç»å­˜åœ¨
+			//¼ì²éÃû³ÆÊÇ·ñÒÑ¾­´æÔÚ
 			if ($this->db->get_one(array('name'=>$name)))  {
 				showmessage(L('name').L('exists'));
 			}
 			$siteid = $this->get_siteid();
-			if ($type == '1') { //è‡ªå®šä¹‰SQL
+			if ($type == '1') { //×Ô¶¨ÒåSQL
 				$sql = isset($_POST['data']) && trim($_POST['data']) ? trim($_POST['data']) : showmessage(L('custom_sql').L('empty'));
 				$data['sql'] = $sql;
 				$tag = '{pc:get sql="'.$sql.'" ';
@@ -55,7 +55,7 @@ class tag extends admin {
 					$tag .= 'return="'.$_POST['return'].'"';
 				}
 				$tag .= '}';
-			} elseif ($type == 0) { //æ¨¡å‹é…ç½®
+			} elseif ($type == 0) { //Ä£ĞÍÅäÖÃ
 				$module = isset($_POST['module']) && trim($_POST['module']) ? trim($_POST['module']) : showmessage(L('please_select_model'));
 				$action = isset($_POST['action']) && trim($_POST['action']) ? trim($_POST['action']) : showmessage(L('please_select_action'));
 				$html = pc_tag_class($module);
@@ -93,7 +93,7 @@ class tag extends admin {
 					$tag .= ' cache="'.$cache.'" ';
 				}
 				$tag .= '}';
-			} else { //ç¢ç‰‡
+			} else { //ËéÆ¬
 				$data = isset($_POST['block']) && trim($_POST['block']) ? trim($_POST['block']) : showmessage(L('block_name_not_empty'));
 				$tag = '{pc:block pos="'.$data.'"}';
 			}
@@ -128,7 +128,7 @@ class tag extends admin {
 	}
 
 	/**
-	 * ä¿®æ”¹æ ‡ç­¾å‘å¯¼
+	 * ĞŞ¸Ä±êÇ©Ïòµ¼
 	 */
 	public function edit() {
 		$id = isset($_GET['id']) && intval($_GET['id']) ? intval($_GET['id']) :  showmessage(L('illegal_parameters'), HTTP_REFERER);
@@ -141,14 +141,14 @@ class tag extends admin {
 			$cache = isset($_POST['cache']) && intval($_POST['cache']) ? intval($_POST['cache']) : 0;
 			$num = isset($_POST['num']) && intval($_POST['num']) ? intval($_POST['num']) : 0;
 			$type = isset($_POST['type']) && intval($_POST['type']) ? intval($_POST['type']) : 0;
-			//æ£€æŸ¥åç§°æ˜¯å¦å·²ç»å­˜åœ¨
+			//¼ì²éÃû³ÆÊÇ·ñÒÑ¾­´æÔÚ
 			if ($edit_data['name'] != $name) {
 				if ($this->db->get_one(array('name'=>$name), 'id'))  {
 					showmessage(L('name').L('exists'));
 				}
 			}
 			$siteid = $this->get_siteid();
-			if ($type == '1') { //è‡ªå®šä¹‰SQL
+			if ($type == '1') { //×Ô¶¨ÒåSQL
 				$sql = isset($_POST['data']) && trim($_POST['data']) ? trim($_POST['data']) : showmessage(L('custom_sql').L('empty'));
 				$data['sql'] = $sql;
 				$tag = '{pc:get sql="'.$sql.'" ';
@@ -166,7 +166,7 @@ class tag extends admin {
 					$tag .= 'return="'.$_POST['return'].'"';
 				}
 				$tag .= '}';
-			} elseif ($type == 0) { //æ¨¡å‹é…ç½®
+			} elseif ($type == 0) { //Ä£ĞÍÅäÖÃ
 				$module = isset($_POST['module']) && trim($_POST['module']) ? trim($_POST['module']) : showmessage(L('please_select_model'));
 				$action = isset($_POST['action']) && trim($_POST['action']) ? trim($_POST['action']) : showmessage(L('please_select_action'));
 				$html = pc_tag_class($module);
@@ -204,7 +204,7 @@ class tag extends admin {
 					$tag .= ' cache="'.$cache.'" ';
 				}
 				$tag .= '}';
-			} else { //ç¢ç‰‡
+			} else { //ËéÆ¬
 				$data = isset($_POST['block']) && trim($_POST['block']) ? trim($_POST['block']) : showmessage(L('block_name_not_empty'));
 				$tag = '{pc:block pos="'.$data.'"}';
 			}
@@ -235,7 +235,7 @@ class tag extends admin {
 	}
 	
 	/**
-	 * æ ‡ç­¾å‘å¯¼åˆ—è¡¨
+	 * ±êÇ©Ïòµ¼ÁĞ±í
 	 */
 	public function lists() {
 		$page = isset($_POST['page']) && intval($_POST['page']) ? intval($_POST['page']) : 1;
@@ -245,7 +245,7 @@ class tag extends admin {
 	}
 
 	/**
-	 * åˆ é™¤æ ‡ç­¾å‘å¯¼
+	 * É¾³ı±êÇ©Ïòµ¼
 	 */
 	public function del() {
 		$id = isset($_GET['id']) ? $_GET['id'] : '';
@@ -272,7 +272,7 @@ class tag extends admin {
 	}
 
 	/**
-	 * æ£€éªŒæ˜¯å¦é‡å
+	 * ¼ìÑéÊÇ·ñÖØÃû
 	 */
 	public function public_name() {
 		$name = isset($_GET['name']) && trim($_GET['name']) ? (pc_base::load_config('system', 'charset') == 'gbk' ? iconv('utf-8', 'gbk', trim($_GET['name'])) : trim($_GET['name'])) : exit('0');

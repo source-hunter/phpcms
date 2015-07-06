@@ -1,7 +1,7 @@
 <?php
 define('CODETABLEDIR', dirname(__FILE__).DIRECTORY_SEPARATOR.'encoding'.DIRECTORY_SEPARATOR);
 /**
- * utf8è½¬gbk
+ * utf8×ªgbk
  * @param $utfstr
  */
 function utf8_to_gbk($utfstr) {
@@ -41,7 +41,7 @@ function utf8_to_gbk($utfstr) {
 	return $okstr;
 }
 /**
- * gbkè½¬utf8
+ * gbk×ªutf8
  * @param $gbstr
  */
 function gbk_to_utf8($gbstr) {
@@ -73,7 +73,7 @@ function gbk_to_utf8($gbstr) {
 	return $ret;
 }
 /**
- * ç¹ä½“è½¬ç®€ä½“
+ * ·±Ìå×ª¼òÌå
  * @param  $Text
  */
 function big5_to_gbk($Text) {
@@ -90,7 +90,7 @@ function big5_to_gbk($Text) {
 		if($h >= 0x80) {
 			$l = ord($Text[$i+1]);
 			if($h==161 && $l==64) {
-				$gbstr = 'ã€€';
+				$gbstr = '¡¡';
 			} else {
 				$p = ($h-160)*510+($l-1)*2;
 				$gbstr = $BIG5_DATA[$p].$BIG5_DATA[$p+1];
@@ -103,7 +103,7 @@ function big5_to_gbk($Text) {
 	return $Text;
 }
 /**
- * ç®€ä½“è½¬ç¹ä½“
+ * ¼òÌå×ª·±Ìå
  * @param  $Text
  */
 function gbk_to_big5($Text) {
@@ -120,7 +120,7 @@ function gbk_to_big5($Text) {
 		if($h >= 0x80) {
 			$l = ord($Text[$i+1]);
 			if($h==161 && $l==64) {
-				$big = 'ã€€';
+				$big = '¡¡';
 			} else {
 				$p = ($h-160)*510+($l-1)*2;
 				$big = $GB_DATA[$p].$GB_DATA[$p+1];
@@ -133,7 +133,7 @@ function gbk_to_big5($Text) {
 	return $Text;
 }
 /**
- * unicodeè½¬utf8
+ * unicode×ªutf8
  * @param  $c
  */
 function unicode_to_utf8($c) {
@@ -156,7 +156,7 @@ function unicode_to_utf8($c) {
 	return $str;
 }
 /**
- * utf8è½¬unicode
+ * utf8×ªunicode
  * @param  $c
  */
 function utf8_to_unicode($c) {
@@ -182,7 +182,7 @@ function utf8_to_unicode($c) {
 }
 
 /**
- * Asciiè½¬æ‹¼éŸ³
+ * Ascii×ªÆ´Òô
  * @param $asc
  * @param $pyarr
  */
@@ -196,7 +196,7 @@ function asc_to_pinyin($asc,&$pyarr) {
 	}
 }
 /**
- * gbkè½¬æ‹¼éŸ³
+ * gbk×ªÆ´Òô
  * @param $txt
  */
 function gbk_to_pinyin($txt) {

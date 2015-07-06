@@ -14,14 +14,14 @@ class content extends admin {
 	}
 	
 	/**
-	 * æ·»åŠ ä¿¡æ¯
+	 * Ìí¼ÓĞÅÏ¢
 	 */
 	public function add() {
 		$_GET['specialid'] = intval($_GET['specialid']);
 		if (!$_GET['specialid']) showmessage(L('illegal_action'), HTTP_REFERER);
 		if ($_POST['dosubmit'] || $_POST['dosubmit_continue']) {
-			$info = $this->check($_POST['info'], 'info', 'add', $_POST['data']['content']); //éªŒè¯æ•°æ®çš„åˆæ³•æ€§
-			//å¤„ç†å¤–éƒ¨é“¾æ¥æƒ…å†µ
+			$info = $this->check($_POST['info'], 'info', 'add', $_POST['data']['content']); //ÑéÖ¤Êı¾İµÄºÏ·¨ĞÔ
+			//´¦ÀíÍâ²¿Á´½ÓÇé¿ö
 			if ($info['islink']) {
 				$info['url'] = $_POST['linkurl'];
 				$info['isdata'] = 0;
@@ -29,17 +29,17 @@ class content extends admin {
 				$info['isdata'] = 1;
 			} 
 			$info['specialid'] = $_GET['specialid'];
-			//å°†åŸºç¡€æ•°æ®æ·»åŠ åˆ°åŸºç¡€è¡¨ï¼Œå¹¶è¿”å›ID
+			//½«»ù´¡Êı¾İÌí¼Óµ½»ù´¡±í£¬²¢·µ»ØID
 			$contentid = $this->db->insert($info, true);
 			
-			// å‘æ•°æ®ç»Ÿè®¡è¡¨æ·»åŠ æ•°æ®
+			// ÏòÊı¾İÍ³¼Æ±íÌí¼ÓÊı¾İ
 			$count = pc_base::load_model('hits_model');
 			$hitsid = 'special-c-'.$info['specialid'].'-'.$contentid;
 			$count->insert(array('hitsid'=>$hitsid));
-			//å¦‚æœä¸æ˜¯å¤–éƒ¨é“¾æ¥ï¼Œå°†å†…å®¹åŠ åˆ°dataè¡¨ä¸­
+			//Èç¹û²»ÊÇÍâ²¿Á´½Ó£¬½«ÄÚÈİ¼Óµ½data±íÖĞ
 			$html = pc_base::load_app_class('html');
 			if ($info['isdata']) {
-				$data = $this->check($_POST['data'], 'data'); //éªŒè¯æ•°æ®çš„åˆæ³•æ€§
+				$data = $this->check($_POST['data'], 'data'); //ÑéÖ¤Êı¾İµÄºÏ·¨ĞÔ
 				$data['id'] = $contentid;
 				$this->data_db->insert($data);
 				$searchid = $this->search_api($contentid, $data, $info['title'], 'update', $info['inputtime']);
@@ -48,7 +48,7 @@ class content extends admin {
 			}
 			$html->_index($_GET['specialid'], 20, 5);
 			$html->_list($info['typeid'], 20, 5);
-			//æ›´æ–°é™„ä»¶çŠ¶æ€
+			//¸üĞÂ¸½¼ş×´Ì¬
 			if(pc_base::load_config('system','attachment_stat')) {
 				$this->attachment_db = pc_base::load_model('attachment_model');
 				if ($info['thunb']) {
@@ -64,7 +64,7 @@ class content extends admin {
 			foreach ($rs as $r) {
 				$types[$r['typeid']] = $r['name'];
 			}
-			//è·å–ç«™ç‚¹æ¨¡æ¿ä¿¡æ¯
+			//»ñÈ¡Õ¾µãÄ£°åĞÅÏ¢
 			pc_base::load_app_func('global', 'admin');
 			$template_list = template_list(get_siteid(), 0);
 			foreach ($template_list as $k=>$v) {
@@ -79,19 +79,19 @@ class content extends admin {
 	}
 	
 	/**
-	 * ä¿¡æ¯ä¿®æ”¹
+	 * ĞÅÏ¢ĞŞ¸Ä
 	 */
 	public function edit() {
 		$_GET['specialid'] = intval($_GET['specialid']);
 		$_GET['id'] = intval($_GET['id']);
 		if (!$_GET['specialid'] || !$_GET['id']) showmessage(L('illegal_action'), HTTP_REFERER);
 		if (isset($_POST['dosubmit']) || isset($_POST['dosubmit_continue'])) {
-			$info = $this->check($_POST['info'], 'info', 'edit', $_POST['data']['content']); //éªŒè¯æ•°æ®çš„åˆæ³•æ€§
-			//å¤„ç†å¤–éƒ¨é“¾æ¥æ›´æ¢æƒ…å†µ
+			$info = $this->check($_POST['info'], 'info', 'edit', $_POST['data']['content']); //ÑéÖ¤Êı¾İµÄºÏ·¨ĞÔ
+			//´¦ÀíÍâ²¿Á´½Ó¸ü»»Çé¿ö
 			$r = $this->db->get_one(array('id'=>$_GET['id'], 'specialid'=>$_GET['specialid']));
 			
-			if ($r['islink']!=$info['islink']) { //å½“å¤–éƒ¨é“¾æ¥å’ŒåŸæ¥å·®åˆ«æ—¶è¿›è¡Œæ“ä½œ
-				// å‘æ•°æ®ç»Ÿè®¡è¡¨æ·»åŠ æ•°æ®
+			if ($r['islink']!=$info['islink']) { //µ±Íâ²¿Á´½ÓºÍÔ­À´²î±ğÊ±½øĞĞ²Ù×÷
+				// ÏòÊı¾İÍ³¼Æ±íÌí¼ÓÊı¾İ
 				$count = pc_base::load_model('hits_model');
 				$hitsid = 'special-c-'.$_GET['specialid'].'-'.$_GET['id'];
 				$count->delete(array('hitsid'=>$hitsid));
@@ -106,7 +106,7 @@ class content extends admin {
 					$count->insert(array('hitsid'=>$hitsid));
 				} 
 			}
-			//å¤„ç†å¤–éƒ¨é“¾æ¥æƒ…å†µ
+			//´¦ÀíÍâ²¿Á´½ÓÇé¿ö
 			if ($info['islink']) {
 				$info['url'] = $_POST['linkurl'];
 				$info['isdata'] = 0;
@@ -127,7 +127,7 @@ class content extends admin {
 				$this->db->update(array('url'=>$info['url']), array('id'=>$_GET['id'], 'specialid'=>$_GET['specialid']));
 			}
 			$this->db->update($info, array('id'=>$_GET['id'], 'specialid'=>$_GET['specialid']));
-			//æ›´æ–°é™„ä»¶çŠ¶æ€
+			//¸üĞÂ¸½¼ş×´Ì¬
 			if(pc_base::load_config('system','attachment_stat')) {
 				$this->attachment_db = pc_base::load_model('attachment_model');
 				if ($info['thumb']) {
@@ -146,7 +146,7 @@ class content extends admin {
 			foreach ($rs as $r) {
 				$types[$r['typeid']] = $r['name'];
 			}
-			//è·å–ç«™ç‚¹æ¨¡æ¿ä¿¡æ¯
+			//»ñÈ¡Õ¾µãÄ£°åĞÅÏ¢
 			pc_base::load_app_func('global', 'admin');
 			$template_list = template_list($this->siteid, 0);
 			foreach ($template_list as $k=>$v) {
@@ -161,7 +161,7 @@ class content extends admin {
 	}
 	
 	/**
-	 * æ£€æŸ¥è¡¨é¢˜æ˜¯å¦é‡å¤
+	 * ¼ì²é±íÌâÊÇ·ñÖØ¸´
 	 */
 	public function public_check_title() {
 		if ($_GET['data']=='' || (!$_GET['specialid'])) return '';
@@ -178,7 +178,7 @@ class content extends admin {
 	}
 	
 	/**
-	 * ä¿¡æ¯åˆ—è¡¨
+	 * ĞÅÏ¢ÁĞ±í
 	 */
 	public function init() {
 		$_GET['specialid'] = intval($_GET['specialid']);
@@ -192,7 +192,7 @@ class content extends admin {
 	}
 	
 	/**
-	 * ä¿¡æ¯æ’åº ä¿¡æ¯è°ƒç”¨æ—¶æŒ‰æ’åºä»å°åˆ°å¤§æ’åˆ—
+	 * ĞÅÏ¢ÅÅĞò ĞÅÏ¢µ÷ÓÃÊ±°´ÅÅĞò´ÓĞ¡µ½´óÅÅÁĞ
 	 */
 	public function listorder() {
 		$_GET['specialid'] = intval($_GET['specialid']);
@@ -204,7 +204,7 @@ class content extends admin {
 	}
 	
 	/**
-	 * åˆ é™¤ä¿¡æ¯
+	 * É¾³ıĞÅÏ¢
 	 */
 	public function delete() {
 		if (!isset($_POST['id']) || empty($_POST['id']) || !$_GET['specialid']) {
@@ -237,11 +237,11 @@ class content extends admin {
 	}
 	
 	/**
-	 * æ·»åŠ åˆ°å…¨ç«™æœç´¢
-	 * @param intval $id æ–‡ç« ID
-	 * @param array $data æ•°ç»„
-	 * @param string $title æ ‡é¢˜
-	 * @param string $action åŠ¨ä½œ
+	 * Ìí¼Óµ½È«Õ¾ËÑË÷
+	 * @param intval $id ÎÄÕÂID
+	 * @param array $data Êı×é
+	 * @param string $title ±êÌâ
+	 * @param string $action ¶¯×÷
 	 */
 	private function search_api($id = 0, $data = array(), $title, $action = 'update', $addtime) {
 		$this->search_db = pc_base::load_model('search_model');
@@ -257,11 +257,11 @@ class content extends admin {
 	}
 	
 	/**
-	 * è¡¨å•éªŒè¯
-	 * @param array $data è¡¨å•æ•°æ®
-	 * @param string $type æŒ‰æ•°æ®è¡¨æ•°æ®åˆ¤æ–­
-	 * @param string $action åœ¨æ·»åŠ æ—¶ä¼šåŠ ä¸Šé»˜è®¤æ•°æ®
-	 * @return array æ•°æ®æ£€éªŒåè¿”å›çš„æ•°ç»„
+	 * ±íµ¥ÑéÖ¤
+	 * @param array $data ±íµ¥Êı¾İ
+	 * @param string $type °´Êı¾İ±íÊı¾İÅĞ¶Ï
+	 * @param string $action ÔÚÌí¼ÓÊ±»á¼ÓÉÏÄ¬ÈÏÊı¾İ
+	 * @return array Êı¾İ¼ìÑéºó·µ»ØµÄÊı×é
 	 */
 	private function check($data = array(), $type = 'info', $action = 'add', $content = '') {
 		if ($type == 'info') {
@@ -277,14 +277,14 @@ class content extends admin {
 				$data['style'] .= 'font-weight:bold;';
 			}
 			
-			//æˆªå–ç®€ä»‹
+			//½ØÈ¡¼ò½é
 			if ($_POST['add_introduce'] && $data['description']=='' && !empty($content)) {
 				$content = stripslashes($content);
 				$introcude_length = intval($_POST['introcude_length']);
 				$data['description'] = str_cut(str_replace(array("\r\n","\t"), '', strip_tags($content)),$introcude_length);
 			}
 			
-			//è‡ªåŠ¨æå–ç¼©ç•¥å›¾
+			//×Ô¶¯ÌáÈ¡ËõÂÔÍ¼
 			if (isset($_POST['auto_thumb']) && $data['thumb'] == '' && !empty($content)) {
 					$content = stripslashes($content);
 					$auto_thumb_no = intval($_POST['auto_thumb_no']) - 1;

@@ -21,10 +21,10 @@ class attachment_model extends model {
 		return $aid;
 	}
 	/**
-	 * é™„ä»¶æ›´æ–°æ¥å£.
-	 * @param string $content å¯ä¼ å…¥ç©ºï¼Œhtmlï¼Œæ•°ç»„å½¢å¼urlï¼Œurlåœ°å€ï¼Œä¼ å…¥ç©ºæ—¶ï¼Œä»¥cookieæ–¹å¼è®°å½•ã€‚
-	 * @param string ä¼ å…¥é™„ä»¶å…³ç³»è¡¨ä¸­çš„ç»„è£…id
-	 * @isurl intval ä¸ºæœ¬åœ°åœ°å€æ—¶è®¾ä¸º1,ä»¥cookieå½¢å¼ç®¡ç†æ—¶è®¾ç½®ä¸º2
+	 * ¸½¼ş¸üĞÂ½Ó¿Ú.
+	 * @param string $content ¿É´«Èë¿Õ£¬html£¬Êı×éĞÎÊ½url£¬urlµØÖ·£¬´«Èë¿ÕÊ±£¬ÒÔcookie·½Ê½¼ÇÂ¼¡£
+	 * @param string ´«Èë¸½¼ş¹ØÏµ±íÖĞµÄ×é×°id
+	 * @isurl intval Îª±¾µØµØÖ·Ê±ÉèÎª1,ÒÔcookieĞÎÊ½¹ÜÀíÊ±ÉèÖÃÎª2
 	 */
 	public function api_update($content, $keyid, $isurl = 0) {
 		if(pc_base::load_config('system','attachment_stat') == 0) return false;
@@ -70,7 +70,7 @@ class attachment_model extends model {
 		return true;
 	}
 	/*
-	 * cookie æ–¹å¼å…³è”é™„ä»¶
+	 * cookie ·½Ê½¹ØÁª¸½¼ş
 	 */
 	private function api_update_cookie($keyid) {
 		if(pc_base::load_config('system','attachment_stat') == 0) return false;
@@ -89,8 +89,8 @@ class attachment_model extends model {
 		}		
 	}
 	/*
-	 * é™„ä»¶åˆ é™¤æ¥å£
-	 * @param string ä¼ å…¥é™„ä»¶å…³ç³»è¡¨ä¸­çš„ç»„è£…id
+	 * ¸½¼şÉ¾³ı½Ó¿Ú
+	 * @param string ´«Èë¸½¼ş¹ØÏµ±íÖĞµÄ×é×°id
 	 */
 	public function api_delete($keyid) {
 		if(pc_base::load_config('system','attachment_stat') == 0) return false;

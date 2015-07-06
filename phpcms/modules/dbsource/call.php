@@ -10,7 +10,7 @@ class call  {
 		$id = isset($_GET['id']) && intval($_GET['id']) ? intval($_GET['id']) : exit();
 		if ($data = $this->db->get_one(array('id'=>$id))) {
 			if (!$str = tpl_cache('dbsource_'.$id,$data['cache'])) {
-				if ($data['type'] == 1) { //鑷畾涔塖QL璋冪敤
+				if ($data['type'] == 1) { //自定义SQL调用
 					$get_db = pc_base::load_model("get_model");
 					$sql = $data['data'].(!empty($data['num']) ? " LIMIT $data[num]" : '');
 					$r= $get_db->query($sql);

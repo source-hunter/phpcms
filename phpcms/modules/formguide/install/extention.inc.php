@@ -14,5 +14,5 @@ $menu_db->insert(array('name'=>'add_public_field', 'parentid'=>$parentid, 'm'=>'
 $menu_db->insert(array('name'=>'list_public_field', 'parentid'=>$parentid, 'm'=>'formguide', 'c'=>'formguide_field', 'a'=>'init', 'data'=>'', 'listorder'=>0, 'display'=>'1'));
 $menu_db->insert(array('name'=>'module_setting', 'parentid'=>$parentid, 'm'=>'formguide', 'c'=>'formguide', 'a'=>'setting', 'data'=>'', 'listorder'=>0, 'display'=>'0'));
 
-$language = array('formguide'=>'琛ㄥ崟鍚戝', 'formguide_add'=>'娣诲姞琛ㄥ崟鍚戝', 'formguide_edit'=>'淇敼琛ㄥ崟鍚戝', 'form_info_list'=>'淇℃伅鍒楄〃', 'formguide_disabled'=>'绂佺敤琛ㄥ崟', 'formguide_delete'=>'鍒犻櫎琛ㄥ崟', 'formguide_stat'=>'琛ㄥ崟缁熻', 'add_public_field'=>'娣诲姞鍏叡瀛楁', 'list_public_field'=>'绠＄悊鍏叡瀛楁', 'module_setting'=>'妯″潡閰嶇疆');
+$language = array('formguide'=>'表单向导', 'formguide_add'=>'添加表单向导', 'formguide_edit'=>'修改表单向导', 'form_info_list'=>'信息列表', 'formguide_disabled'=>'禁用表单', 'formguide_delete'=>'删除表单', 'formguide_stat'=>'表单统计', 'add_public_field'=>'添加公共字段', 'list_public_field'=>'管理公共字段', 'module_setting'=>'模块配置');
 ?>

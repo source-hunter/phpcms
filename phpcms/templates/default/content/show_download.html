@@ -3,7 +3,7 @@
 <div class="main">
 	<!--left_bar-->
 	<div class="col-left">
-    <div class="crumbs"><a href="{siteurl($siteid)}">é¦–é¡µ</a><span> &gt; </span>{catpos($catid)}{$title}</div>
+    <div class="crumbs"><a href="{siteurl($siteid)}">Ê×Ò³</a><span> &gt; </span>{catpos($catid)}{$title}</div>
         <div class="box boxsbg">
         	<div class="contents">
       <table cellspacing="1" cellpadding="0" align="center" class="down_info">
@@ -11,42 +11,42 @@
         <h5>{$title}</h5>
         </caption>
         <tbody><tr>
-          <th>æˆæƒå½¢å¼ï¼š</th>
+          <th>ÊÚÈ¨ĞÎÊ½£º</th>
           <td>{$copytype}</td>
           <td width="260" rowspan="7" align="center" valign="middle">{if $thumb}<img src="{$thumb}" width="250" height="220" />{/if}</td>
         </tr>
         <tr>
-          <th>æ›´æ–°æ—¶é—´ï¼š</th>
+          <th>¸üĞÂÊ±¼ä£º</th>
           <td>{$updatetime}</td>
         </tr>
         <tr>
-          <th>è½¯ä»¶è¯­è¨€ï¼š</th>
+          <th>Èí¼şÓïÑÔ£º</th>
           <td>{$language}</td>
         </tr>
         <tr>
-          <th>è½¯ä»¶å¹³å°ï¼š</th>
+          <th>Èí¼şÆ½Ì¨£º</th>
           <td>{$systems}</td>
         </tr>
         <tr>
-          <th>è½¯ä»¶ç±»åˆ«ï¼š</th>
+          <th>Èí¼şÀà±ğ£º</th>
           <td> {$classtype}</td>
         </tr>
         <tr>
-          <th>æ–‡ä»¶å¤§å°ï¼š</th>
+          <th>ÎÄ¼ş´óĞ¡£º</th>
           <td> {$filesize}</td>
         </tr>
         <tr>
-          <th>è¯„è®ºç­‰çº§ï¼š</th>
+          <th>ÆÀÂÛµÈ¼¶£º</th>
           <td class="c_orange"> {$stars}</td>
         </tr>
 <tr>
-          <th>æµè§ˆæ¬¡æ•°ï¼š</th>
-          <td colspan="2"><span id="hits"></span>ï¼ˆä»Šæ—¥ï¼š<span id="todaydowns"></span>ï¼Œæœ¬å‘¨ï¼š<span id="weekdowns"></span>ï¼Œæœ¬æœˆï¼š<span id="monthdowns"></span>ï¼‰</td>
+          <th>ä¯ÀÀ´ÎÊı£º</th>
+          <td colspan="2"><span id="hits"></span>£¨½ñÈÕ£º<span id="todaydowns"></span>£¬±¾ÖÜ£º<span id="weekdowns"></span>£¬±¾ÔÂ£º<span id="monthdowns"></span>£©</td>
         </tr>
       </tbody></table>
-      <h5 class="tit">è½¯ä»¶ç®€ä»‹</h5>
+      <h5 class="tit">Èí¼ş¼ò½é</h5>
       <div class="down_intro"><h4 class="tits">{$title}</h4>{$content}</div>
-      <h5 class="tit">ä¸‹è½½åœ°å€</h5>
+      <h5 class="tit">ÏÂÔØµØÖ·</h5>
       <div class="down_address divl wrap">
         	<ul class="l xz_a wrap blue">
 			{loop $downfile $r}
@@ -61,8 +61,8 @@
 	  </div>
 	              </div>
       <div class="bk10"></div>
-      <div class="Article-Tool">åˆ†äº«åˆ°ï¼š
-	  <img src="http://v.t.qq.com/share/images/s/weiboicon16.png" style="padding-bottom:3px;" onclick="postToWb();" class="cu" title="åˆ†äº«åˆ°è…¾è®¯å¾®åš"/><script type="text/javascript">
+      <div class="Article-Tool">·ÖÏíµ½£º
+	  <img src="http://v.t.qq.com/share/images/s/weiboicon16.png" style="padding-bottom:3px;" onclick="postToWb();" class="cu" title="·ÖÏíµ½ÌÚÑ¶Î¢²©"/><script type="text/javascript">
 	function postToWb(){
 		var _t = encodeURI(document.title);
 		var _url = encodeURIComponent(document.location);
@@ -73,13 +73,13 @@
 		window.open( _u,'', 'width=700, height=680, top=0, left=0, toolbar=no, menubar=no, scrollbars=no, location=yes, resizable=no, status=no' );
 	}
 </script>
-          <script type="text/javascript">document.write('<a href="http://v.t.sina.com.cn/share/share.php?url='+encodeURIComponent(location.href)+'&appkey=3172366919&title='+encodeURIComponent('{new_addslashes($title)}')+'" title="åˆ†äº«åˆ°æ–°æµªå¾®åš" class="t1" target="_blank">&nbsp;</a>');</script>
-		  <script type="text/javascript">document.write('<a href="http://www.douban.com/recommend/?url='+encodeURIComponent(location.href)+'&title='+encodeURIComponent('{new_addslashes($title)}')+'" title="åˆ†äº«åˆ°è±†ç“£" class="t2" target="_blank">&nbsp;</a>');</script>
-		  <script type="text/javascript">document.write('<a href="http://share.renren.com/share/buttonshare.do?link='+encodeURIComponent(location.href)+'&title='+encodeURIComponent('{new_addslashes($title)}')+'" title="åˆ†äº«åˆ°äººäºº" class="t3" target="_blank">&nbsp;</a>');</script>
-		  <script type="text/javascript">document.write('<a href="http://www.kaixin001.com/repaste/share.php?rtitle='+encodeURIComponent('{new_addslashes($title)}')+'&rurl='+encodeURIComponent(location.href)+'&rcontent=" title="åˆ†äº«åˆ°å¼€å¿ƒç½‘" class="t4" target="_blank">&nbsp;</a>');</script>
-		  <script type="text/javascript">document.write('<a href="http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url='+encodeURIComponent(location.href)+'" title="åˆ†äº«åˆ°QQç©ºé—´" class="t5" target="_blank">&nbsp;</a>');</script>
+          <script type="text/javascript">document.write('<a href="http://v.t.sina.com.cn/share/share.php?url='+encodeURIComponent(location.href)+'&appkey=3172366919&title='+encodeURIComponent('{new_addslashes($title)}')+'" title="·ÖÏíµ½ĞÂÀËÎ¢²©" class="t1" target="_blank">&nbsp;</a>');</script>
+		  <script type="text/javascript">document.write('<a href="http://www.douban.com/recommend/?url='+encodeURIComponent(location.href)+'&title='+encodeURIComponent('{new_addslashes($title)}')+'" title="·ÖÏíµ½¶¹°ê" class="t2" target="_blank">&nbsp;</a>');</script>
+		  <script type="text/javascript">document.write('<a href="http://share.renren.com/share/buttonshare.do?link='+encodeURIComponent(location.href)+'&title='+encodeURIComponent('{new_addslashes($title)}')+'" title="·ÖÏíµ½ÈËÈË" class="t3" target="_blank">&nbsp;</a>');</script>
+		  <script type="text/javascript">document.write('<a href="http://www.kaixin001.com/repaste/share.php?rtitle='+encodeURIComponent('{new_addslashes($title)}')+'&rurl='+encodeURIComponent(location.href)+'&rcontent=" title="·ÖÏíµ½¿ªĞÄÍø" class="t4" target="_blank">&nbsp;</a>');</script>
+		  <script type="text/javascript">document.write('<a href="http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url='+encodeURIComponent(location.href)+'" title="·ÖÏíµ½QQ¿Õ¼ä" class="t5" target="_blank">&nbsp;</a>');</script>
       </div>
-      <!--è¯„è®º-->
+      <!--ÆÀÂÛ-->
       <div class="bk10"></div>
       {if $allow_comment && module_exists('comment')}
    <iframe src="{APP_PATH}index.php?m=comment&c=index&a=init&commentid={id_encode("content_$catid",$id,$siteid)}&iframe=1" width="100%" height="100%" id="comment_iframe" frameborder="0" scrolling="no"></iframe>
@@ -87,10 +87,10 @@
     </div>
     <!--right_bar-->
     <div class="col-auto">
-    	<!--å¹¿å‘Š228x162-->
+    	<!--¹ã¸æ228x162-->
     	<div class="brd mg_b10"><script language="javascript" src="{APP_PATH}index.php?m=poster&c=index&a=show_poster&id=6"></script></div>
         <div class="box">
-            <h5 class="title-2">ä¸‹è½½æ’è¡Œ</h5>
+            <h5 class="title-2">ÏÂÔØÅÅĞĞ</h5>
             <ul class="content digg">
 			{pc:content action="hits" catid="$catid" num="10" order="views DESC" cache="3600"}
 				{loop $data $r}
@@ -101,12 +101,12 @@
         </div>
         <div class="bk10"></div>
         <div class="box">
-            <h5 class="title-2">ç›¸å…³ä¸‹è½½</h5>
+            <h5 class="title-2">Ïà¹ØÏÂÔØ</h5>
             <div class="content">
 			    <ul class="list uls fs12">
 					{pc:content action="relation" relation="$relation" catid="$catid" num="5" keywords="$rs[keywords]"}
 					{loop $data $r}
-						<li><span>({date('m-d',$r[inputtime])})</span>Â·<a href="{$r[url]}" target="_blank">{$r[title]}</a></li>
+						<li><span>({date('m-d',$r[inputtime])})</span>¡¤<a href="{$r[url]}" target="_blank">{$r[title]}</a></li>
 					{/loop}
 					{/pc}
                 </ul>
@@ -114,7 +114,7 @@
         </div>
         <div class="bk10"></div>
         <div class="box">
-            <h5 class="title-2">æ¨èä¸‹è½½</h5>
+            <h5 class="title-2">ÍÆ¼öÏÂÔØ</h5>
             <ul class="content digg">
             	{pc:content  action="position" posid="5" order="listorder DESC" num="4"}
         	 	{loop $data $r}        
@@ -124,7 +124,7 @@
             </ul>
         </div>
         <div class="bk10"></div>
-        <!--å¹¿å‘Š228x170-->
+        <!--¹ã¸æ228x170-->
     	<div class="brd mg_b10"><script language="javascript" src="{APP_PATH}index.php?m=poster&c=index&a=show_poster&id=7"></script></div>
     </div>
 </div>

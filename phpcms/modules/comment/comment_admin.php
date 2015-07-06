@@ -148,15 +148,15 @@ class comment_admin extends admin {
 			if (is_array($ids)) {
 				foreach ($ids as $id) {
 					$comment_info = $this->comment_data_db->get_one(array('id'=>$id), 'commentid, userid, username');
-					//åˆ¤æ–­æ€»æ•°æ˜¯å¦ä¸º0 
+					//ÅĞ¶Ï×ÜÊıÊÇ·ñÎª0 
  					$comment_allinfo = $this->comment_db->get_one(array('commentid'=>$comment_info['commentid']),'*');
 					if($comment_allinfo['total']<=0){
-						showmessage('è¯„è®ºç»Ÿè®¡ä¸æ­£å¸¸ï¼Œè¯·è¿”å›æ£€æŸ¥ï¼', HTTP_REFERER);
+						showmessage('ÆÀÂÛÍ³¼Æ²»Õı³££¬Çë·µ»Ø¼ì²é£¡', HTTP_REFERER);
 					}
 					$this->comment_db->update(array('total'=>'-=1'), array('commentid'=>$comment_info['commentid']));
 					$this->comment_data_db->delete(array('id'=>$id));
 
-					//å½“è¯„è®ºIDä¸ä¸ºç©ºï¼Œç«™ç‚¹é…ç½®äº†åˆ é™¤çš„ç‚¹æ•°ï¼Œæ”¯ä»˜æ¨¡å—å­˜åœ¨çš„æ—¶å€™ï¼Œåˆ é™¤ç”¨æˆ·çš„ç‚¹æ•°ã€‚
+					//µ±ÆÀÂÛID²»Îª¿Õ£¬Õ¾µãÅäÖÃÁËÉ¾³ıµÄµãÊı£¬Ö§¸¶Ä£¿é´æÔÚµÄÊ±ºò£¬É¾³ıÓÃ»§µÄµãÊı¡£
 					if (!empty($comment_info['userid']) && !empty($site['del_point']) && module_exists('pay')) {
 						pc_base::load_app_class('spend', 'pay', 0);
 						$op_userid = param::get_cookie('userid');
@@ -168,15 +168,15 @@ class comment_admin extends admin {
 			} elseif (is_numeric($ids)) {
 				$id = intval($ids);
 				$comment_info = $this->comment_data_db->get_one(array('id'=>$id), 'commentid, userid, username');
-				//åˆ¤æ–­æ€»æ•°æ˜¯å¦ä¸º0 
+				//ÅĞ¶Ï×ÜÊıÊÇ·ñÎª0 
 				$comment_allinfo = $this->comment_db->get_one(array('commentid'=>$comment_info['commentid']),'*');
 				if($comment_allinfo['total']<=0){
-					showmessage('è¯„è®ºç»Ÿè®¡ä¸æ­£å¸¸ï¼Œè¯·è¿”å›æ£€æŸ¥ï¼', HTTP_REFERER);
+					showmessage('ÆÀÂÛÍ³¼Æ²»Õı³££¬Çë·µ»Ø¼ì²é£¡', HTTP_REFERER);
 				}
 				$this->comment_db->update(array('total'=>'-=1'), array('commentid'=>$comment_info['commentid']));
 				$this->comment_data_db->delete(array('id'=>$id));
 
-				//å½“è¯„è®ºIDä¸ä¸ºç©ºï¼Œç«™ç‚¹é…ç½®äº†åˆ é™¤çš„ç‚¹æ•°ï¼Œæ”¯ä»˜æ¨¡å—å­˜åœ¨çš„æ—¶å€™ï¼Œåˆ é™¤ç”¨æˆ·çš„ç‚¹æ•°ã€‚
+				//µ±ÆÀÂÛID²»Îª¿Õ£¬Õ¾µãÅäÖÃÁËÉ¾³ıµÄµãÊı£¬Ö§¸¶Ä£¿é´æÔÚµÄÊ±ºò£¬É¾³ıÓÃ»§µÄµãÊı¡£
 				if (!empty($comment_info['userid']) && !empty($site['del_point']) && module_exists('pay')) {
 					pc_base::load_app_class('spend', 'pay', 0);
 					$op_userid = param::get_cookie('userid');

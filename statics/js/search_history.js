@@ -6,7 +6,7 @@ $(document).ready(function() {
 	if(search_history!=null && search_history!='') {
 		search_s = search_history.split(",");
 		var exists = in_array(q+'|'+typeid, search_s);
-		//ä¸å­˜åœ¨
+		//²»´æÔÚ
 		if(exists==-1) {
 			if(search_s.length > 5) {
 				search_history = search_history.replace(search_s[0]+',', "");
@@ -14,7 +14,7 @@ $(document).ready(function() {
 			search_history += ','+q+'|'+typeid;
 		}
 		
-		//æœç´¢å†å²
+		//ËÑË÷ÀúÊ·
 		var history_html = '';
 		for(i=0;i<search_s.length;i++) {
 			var j = search_s.length - i - 1;

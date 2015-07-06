@@ -7,39 +7,39 @@ include $this->admin_tpl('header', 'admin');
 <table class="table_form" width="100%" cellspacing="0">
 <tbody>
 	<tr>
-		<th width="200"><strong><?php echo L('template_file_name')?>ï¼š</strong></th>
+		<th width="200"><strong><?php echo L('template_file_name')?>£º</strong></th>
 		<td><?php echo $template?><input type="hidden" value="<?php echo $template?>" name="template"></td>
 	</tr>
 	<tr>
-		<th><strong><?php echo L('name_cn')?>ï¼š</strong></th>
+		<th><strong><?php echo L('name_cn')?>£º</strong></th>
 		<td><input type="text" size="20" value="<?php echo $info['name']?>" name="info[name]"></td>
 	</tr>
 	<tr>
-		<th><strong><?php echo L('show_this_param')?>ï¼š</strong></th>
+		<th><strong><?php echo L('show_this_param')?>£º</strong></th>
 		<td><label><input type="radio" value="align"<?php if ($info['align']=='align'){?> checked<?php }?> name="info[align]" onclick="$('#choose_select').show();"> <?php echo L('lightbox')?></label> <label><input type="radio" value="scroll"<?php if ($info['align']=='scroll'){?> checked<?php }?> name="info[align]" onclick="$('#choose_select').show();"> <?php echo L('rolling')?></label></td>
 	</tr>
 	<tr id="choose_select" style="display:<?php if ($info['align']=='') {?>none<?php }?>">
-		<th><strong><?php echo L('this_param_selected')?>ï¼š</strong></th>
+		<th><strong><?php echo L('this_param_selected')?>£º</strong></th>
 		<td><label><input type="radio" value="1" name="info[select]"<?php if(!isset($info) || $info['select']==1) {?> checked<?php }?>> <?php echo L('yes')?></label> <label><input type="radio" value="0" name="info[select]"<?php if(!isset($info) || $info['select']==0) {?> checked<?php }?>> <?php echo L('no')?></label></td>
 	</tr>
 	<tr>
-		<th><strong><?php echo L('is_set_space')?>ï¼š</strong></th>
+		<th><strong><?php echo L('is_set_space')?>£º</strong></th>
 		<td><input type="radio" value="1" name="info[padding]"<?php if(!isset($info) || $info['padding']==1) {?> checked<?php }?>> <?php echo L('yes')?> <input type="radio" value="0" name="info[padding]"<?php if(!isset($info) || $info['padding']==0) {?> checked<?php }?>> <?php echo L('no')?></td>
 	</tr>
 	<tr>
-		<th><strong><?php echo L('is_set_size')?>ï¼š</strong></th>
+		<th><strong><?php echo L('is_set_size')?>£º</strong></th>
 		<td><input type="radio" value="1" name="info[size]"<?php if(!isset($info) || $info['size']==1) {?> checked<?php }?>> <?php echo L('yes')?> <input type="radio" value="0" name="info[size]"<?php if(!isset($info) || $info['size']==0) {?> checked<?php }?>> <?php echo L('no')?></td>
 	</tr>
 	<tr>
-		<th><strong><?php echo L('space_poster')?>ï¼š</strong></th>
+		<th><strong><?php echo L('space_poster')?>£º</strong></th>
 		<td><input type="radio" value="1" name="info[option]"<?php if(!isset($info) || $info['option']==1) {?> checked<?php }?>> <?php echo L('all_list')?> <input type="radio" value="0" name="info[option]"<?php if(!isset($info) || $info['option']==0) {?> checked<?php }?>> <?php echo L('only_one')?></td>
 	</tr>
 	<tr>
-		<th><strong><?php echo L('is_used_type')?>ï¼š</strong></th>
+		<th><strong><?php echo L('is_used_type')?>£º</strong></th>
 		<td><label><input type="checkbox" value="images" name="info[type][]"<?php if (is_array($info['type']) && in_array('images', $info['type'])) {?> checked<?php }?>> <?php echo L('photo')?></label> <label><input type="checkbox" value="flash" name="info[type][]"<?php if (is_array($info['type']) && in_array('flash', $info['type'])) {?> checked<?php }?>> <?php echo L('flash')?></label> <label><input type="checkbox" value="text" name="info[type][]"<?php if (is_array($info['type']) && in_array('text', $info['type'])) {?> checked<?php }?>> <?php echo L('title')?></label></td>
 	</tr>
 	<tr>
-		<th><strong><?php echo L('max_add_param')?>ï¼š</strong></th>
+		<th><strong><?php echo L('max_add_param')?>£º</strong></th>
 		<td><input type="text" size="10" value="<?php echo $info['num']?>" name="info[num]"></td>
 	</tr>
 	</tbody>

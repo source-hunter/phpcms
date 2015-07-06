@@ -50,10 +50,10 @@ $(function(){
 			<td> 
 				<?php echo L('yes')?>&nbsp;<input type="radio" name="info[mobile_checktype]"  class="input-radio" <?php if($member_setting['mobile_checktype']=='2') {?>checked<?php }?> value='2' <?php if($sms_disabled) {?>disabled<?php }?> onclick="$('#sendsms_titleid').hide();">&nbsp;
 				<?php echo L('no')?><input type="radio" name="info[mobile_checktype]"  class="input-radio" <?php if($member_setting['mobile_checktype']=='0' ||$sms_disabled ) {?>checked<?php }?> value='0' onclick="$('#sendsms_titleid').hide();">
-				&nbsp;&nbsp;&nbsp;&nbsp;<a href="?m=sms&c=sms&a=sms_setting"><font color=red>鐭俊骞冲彴閰嶇疆</font></a>
+				&nbsp;&nbsp;&nbsp;&nbsp;<a href="?m=sms&c=sms&a=sms_setting"><font color=red>短信平台配置</font></a>
 			</td>
 		</tr>
-		<!--閰嶇疆鐢ㄦ埛鑷彂鐭俊鎻愮ず淇℃伅锛岄渶瑕佺粨鍚圥HPCMS鐢宠璁板綍-->
+		<!--配置用户自发短信提示信息，需要结合PHPCMS申请记录-->
 		
 		
 		<tr id="sendsms_titleid" <?php if($member_setting['mobile_checktype']!='1'){?> style="display: none; " <?php }?>>

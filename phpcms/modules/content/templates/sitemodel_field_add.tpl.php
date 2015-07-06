@@ -34,7 +34,7 @@ $(function(){
 <div class="subnav">
   <h2 class="title-1 line-x f14 fb blue lh28"><?php echo L('model_manage');?>--<?php echo $m_r['name'].L('field_manage');?></h2>
 <div class="content-menu ib-a blue line-x"><a class="add fb" href="?m=content&c=sitemodel_field&a=add&modelid=<?php echo $modelid?>&menuid=<?php echo $_GET['menuid']?>"><em><?php echo L('add_field');?></em></a>
-ã€€<a href="?m=content&c=sitemodel_field&a=init&modelid=<?php echo $modelid?>&menuid=<?php echo $_GET['menuid']?>"><em><?php echo L('manage_field');?></em></a><span>|</span></div>
+¡¡<a href="?m=content&c=sitemodel_field&a=init&modelid=<?php echo $modelid?>&menuid=<?php echo $_GET['menuid']?>"><em><?php echo L('manage_field');?></em></a><span>|</span></div>
   <div class="bk10"></div>
 </div>
 <form name="myform" id="myform" action="?m=content&c=sitemodel_field&a=add" method="post">
@@ -84,7 +84,7 @@ $(function(){
 
 	<tr> 
       <th><strong><?php echo L('string_size');?></strong><br /><?php echo L('string_size_tips');?></th>
-      <td><?php echo L('minlength');?>ï¼š<input type="text" name="info[minlength]" id="field_minlength" value="0" size="5" class="input-text"> <?php echo L('maxlength');?>ï¼š<input type="text" name="info[maxlength]" id="field_maxlength" value="" size="5" class="input-text"></td>
+      <td><?php echo L('minlength');?>£º<input type="text" name="info[minlength]" id="field_minlength" value="0" size="5" class="input-text"> <?php echo L('maxlength');?>£º<input type="text" name="info[maxlength]" id="field_maxlength" value="" size="5" class="input-text"></td>
     </tr>
 	<tr> 
       <th><strong><?php echo L('data_preg');?></strong><br /><?php echo L('data_preg_tips');?></th>

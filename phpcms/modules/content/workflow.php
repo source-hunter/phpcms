@@ -100,10 +100,10 @@ class workflow extends admin {
 			extract($r);
 			$setting = string2array($setting);
 
-			$checkadmin1 = $this->implode_ids($setting[1],'ã€');
-			$checkadmin2 = $this->implode_ids($setting[2],'ã€');
-			$checkadmin3 = $this->implode_ids($setting[3],'ã€');
-			$checkadmin4 = $this->implode_ids($setting[4],'ã€');
+			$checkadmin1 = $this->implode_ids($setting[1],'¡¢');
+			$checkadmin2 = $this->implode_ids($setting[2],'¡¢');
+			$checkadmin3 = $this->implode_ids($setting[3],'¡¢');
+			$checkadmin4 = $this->implode_ids($setting[4],'¡¢');
 			
 			include $this->admin_tpl('workflow_view');
 	}
@@ -125,7 +125,7 @@ class workflow extends admin {
 		return true;
 	}
 	/**
-	 * ç”¨é€—å·åˆ†éš”æ•°ç»„
+	 * ÓÃ¶ººÅ·Ö¸ôÊı×é
 	 */
 	private function implode_ids($array, $flags = ',') {
 		if(empty($array)) return true;

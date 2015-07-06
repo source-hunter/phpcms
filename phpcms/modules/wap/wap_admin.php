@@ -87,7 +87,7 @@ class wap_admin extends admin {
 	
 	function type_manage() {
 		$tree = pc_base::load_sys_class('tree');
-		$tree->icon = array('&nbsp;&nbsp;&nbsp;â”‚ ','&nbsp;&nbsp;&nbsp;â”œâ”€ ','&nbsp;&nbsp;&nbsp;â””â”€ ');
+		$tree->icon = array('&nbsp;&nbsp;&nbsp;©¦ ','&nbsp;&nbsp;&nbsp;©À©¤ ','&nbsp;&nbsp;&nbsp;©¸©¤ ');
 		$tree->nbsp = '&nbsp;&nbsp;&nbsp;';		
 		$siteid = intval($_GET['siteid']);
 		if($siteid==0) showmessage(L('parameter_error'),HTTP_REFERER);

@@ -1,28 +1,28 @@
 <?php
 /**
- * ä¼šå‘˜ç¼“å­˜æ“ä½œ
+ * »áÔ±»º´æ²Ù×÷
  *
  */
 class member_cache {
 	
 	/**
-	 * æ›´æ–°æ¨¡å‹ç¼“å­˜
+	 * ¸üĞÂÄ£ĞÍ»º´æ
 	 */
 	public static function update_cache_model() {
 		$sitemodel_db = pc_base::load_model('sitemodel_model');
 		$data = $sitemodel_db->select(array('type'=>2), "*", 1000, 'sort', '', 'modelid');
 		setcache('member_model', $data, 'commons');
 		if(!defined('MODEL_PATH')) {
-			//æ¨¡å‹åŸå‹å­˜å‚¨è·¯å¾„
+			//Ä£ĞÍÔ­ĞÍ´æ´¢Â·¾¶
 			define('MODEL_PATH',PC_PATH.'modules'.DIRECTORY_SEPARATOR.'member'.DIRECTORY_SEPARATOR.'fields'.DIRECTORY_SEPARATOR);
 		}
 		if(!defined('CACHE_MODEL_PATH')) {
-			//æ¨¡å‹ç¼“å­˜è·¯å¾„
+			//Ä£ĞÍ»º´æÂ·¾¶
 			define('CACHE_MODEL_PATH',PHPCMS_PATH.'caches'.DIRECTORY_SEPARATOR.'caches_model'.DIRECTORY_SEPARATOR.'caches_data'.DIRECTORY_SEPARATOR);
 		}
 
 		require MODEL_PATH.'fields.inc.php';
-		//æ›´æ–°å†…å®¹æ¨¡å‹ç±»ï¼šè¡¨å•ç”Ÿæˆã€å…¥åº“ã€æ›´æ–°ã€è¾“å‡º
+		//¸üĞÂÄÚÈİÄ£ĞÍÀà£º±íµ¥Éú³É¡¢Èë¿â¡¢¸üĞÂ¡¢Êä³ö
 		$classtypes = array('form','input','update','output');
 		foreach($classtypes as $classtype) {
 			$cache_data = file_get_contents(MODEL_PATH.'member_'.$classtype.'.class.php');

@@ -49,10 +49,10 @@ include $this->admin_tpl('header');
     </tr>
 	<tr> 
       <th width="20%"><?php echo L('urlrule_func')?> :</th>
-       <td><?php echo L('complete_part_path');?>ï¼š <input type="text" name="f1" value="{$categorydir}" size="15" class="input-botton">ï¼Œ<?php echo L('category_path');?>ï¼š<input type="text" name="f1" value="{$catdir}" size="10" class="input-botton">
+       <td><?php echo L('complete_part_path');?>£º <input type="text" name="f1" value="{$categorydir}" size="15" class="input-botton">£¬<?php echo L('category_path');?>£º<input type="text" name="f1" value="{$catdir}" size="10" class="input-botton">
 	   <div class="bk6"></div>
 
-<?php echo L('year');?>ï¼š<input type="text" name="f1" value="{$year}" size="7" class="input-botton"> <?php echo L('month');?>ï¼š<input type="text" name="f1" value="{$month}" size="9" class="input-botton">ï¼Œ<?php echo L('day');?>ï¼š<input type="text" name="f1" value="{$day}" size="7" class="input-botton"> IDï¼š<input type="text" name="f1" value="{$id}" size="4" class="input-botton">ï¼Œ <?php echo L('paging');?>ï¼š<input type="text" name="f1" value="{$page}" size="7" class="input-botton">
+<?php echo L('year');?>£º<input type="text" name="f1" value="{$year}" size="7" class="input-botton"> <?php echo L('month');?>£º<input type="text" name="f1" value="{$month}" size="9" class="input-botton">£¬<?php echo L('day');?>£º<input type="text" name="f1" value="{$day}" size="7" class="input-botton"> ID£º<input type="text" name="f1" value="{$id}" size="4" class="input-botton">£¬ <?php echo L('paging');?>£º<input type="text" name="f1" value="{$page}" size="7" class="input-botton">
 	</td>
     </tr>
 	  <input type="submit" name="dosubmit" id="dosubmit" class="dialog" value=" <?php echo L('submit')?> ">

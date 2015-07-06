@@ -20,15 +20,15 @@ $(function(){
 <form action="?m=admin&c=administrator&a=edit&id=<?php echo $id?>" method="post" id="myform">
 <table width="100%"  class="table_form">
 <tr>
-<th width="80" ><?php echo L('username')?>ï¼š</th>
+<th width="80" ><?php echo L('username')?>£º</th>
 <td class="y-bg"><?php echo $data['username']?></td>
 </tr>
 <tr>
-<th><?php echo L('password')?>ï¼š</th>
+<th><?php echo L('password')?>£º</th>
 <td class="y-bg"><input type="password" class="input-text" name="password" value="" id="password" /></td>
 </tr>
 <tr>
-<th><?php echo L('subminiature_tube')?>ï¼š</th>
+<th><?php echo L('subminiature_tube')?>£º</th>
 <td class="y-bg"><input type="checkbox" name="issuper" value="1" <?php if ($data['issuper']) {echo 'checked';}?> /> <?php echo L('yes')?></td>
 </tr>
 </table>

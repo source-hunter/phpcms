@@ -14,27 +14,27 @@ include $this->admin_tpl('header','admin');
 <form action="?m=search&c=search_type&a=add" method="post" id="myform">
 	<table width="100%"  class="table_form">
 	<tr>
-    <th width="120"><?php echo L('select_module_name')?>ï¼š</th>
+    <th width="120"><?php echo L('select_module_name')?>£º</th>
     <td class="y-bg"><?php echo form::select($module_data,$_GET['module'],'name="module" onchange="change_module(this.value)"')?></td>
   </tr>
   <?php if($_GET['module'] == 'content') {?>
   <tr id="modelid_display">
-    <th width="120"><?php echo L('select_model_name')?>ï¼š</th>
+    <th width="120"><?php echo L('select_model_name')?>£º</th>
     <td class="y-bg"><?php echo form::select($model_data,'','name="info[modelid]"')?></td>
   </tr>
   <?php }?>
   <?php if($_GET['module'] == 'yp') {?>
   <tr id="yp_modelid_display">
-    <th width="120"><?php echo L('select_model_name')?>ï¼š</th>
+    <th width="120"><?php echo L('select_model_name')?>£º</th>
     <td class="y-bg"><?php echo form::select($yp_model_data,'','name="info[yp_modelid]"')?></td>
   </tr>
   <?php }?>
   <tr>
-    <th width="120"><?php echo L('type_name')?>ï¼š</th>
+    <th width="120"><?php echo L('type_name')?>£º</th>
     <td class="y-bg"><input type="text" class="input-text" name="info[name]" id="name" size="30" /></td>
   </tr>
     <tr>
-    <th><?php echo L('description')?>ï¼š</th>
+    <th><?php echo L('description')?>£º</th>
     <td class="y-bg"><textarea name="info[description]" maxlength="255" style="width:300px;height:60px;"></textarea></td>
   </tr>
 </table>
