@@ -97,7 +97,7 @@ class index extends foreground {
 				$userinfo['mobile'] = isset($_POST['mobile']) ? $_POST['mobile'] : '';
 			} 
 			if($userinfo['mobile']!=""){
-				if(!preg_match('/^1([0-9]{9})/',$userinfo['mobile'])) {
+				if(!preg_match('/^1([0-9]{10})$/',$userinfo['mobile'])) {
 					showmessage('请提供正确的手机号码！', HTTP_REFERER);
 				}
 			} 
@@ -117,7 +117,7 @@ class index extends foreground {
 				$model_field_cache = getcache('model_field_'.$userinfo['modelid'],'model');
 				if(isset($model_field_cache['mobile']) && $model_field_cache['mobile']['disabled']==0) {
 					$mobile = $_POST['info']['mobile'];
-					if(!preg_match('/^1([0-9]{10})/',$mobile)) showmessage(L('input_right_mobile'));
+					if(!preg_match('/^1([0-9]{10})$/',$mobile)) showmessage(L('input_right_mobile'));
 					$sms_report_db = pc_base::load_model('sms_report_model');
 					$posttime = SYS_TIME-300;
 					$where = "`mobile`='$mobile' AND `posttime`>'$posttime'";
@@ -126,7 +126,14 @@ class index extends foreground {
 				}
 				$userinfo['groupid'] = $this->_get_usergroup_bypoint($userinfo['point']);
 			}
-			
+			//附表信息验证 通过模型获取会员信息
+			if($member_setting['choosemodel']) {
+				require_once CACHE_MODEL_PATH.'member_input.class.php';
+		        require_once CACHE_MODEL_PATH.'member_update.class.php';
+				$member_input = new member_input($userinfo['modelid']);		
+				$_POST['info'] = array_map('new_html_special_chars',$_POST['info']);
+				$user_model_info = $member_input->get($_POST['info']);				        				
+			}
 			if(pc_base::load_config('system', 'phpsso')) {
 				$this->_init_phpsso();
 				$status = $this->client->ps_member_register($userinfo['username'], $userinfo['password'], $userinfo['email'], $userinfo['regip'], $userinfo['encrypt']);
@@ -137,15 +144,7 @@ class index extends foreground {
 					$userinfo['password'] = password($userinfo['password'], $userinfo['encrypt']);
 					$userid = $this->db->insert($userinfo, 1);
 					if($member_setting['choosemodel']) {	//如果开启选择模型
-						//通过模型获取会员信息					
-						require_once CACHE_MODEL_PATH.'member_input.class.php';
-				        require_once CACHE_MODEL_PATH.'member_update.class.php';
-						$member_input = new member_input($userinfo['modelid']);
-						
-						$_POST['info'] = array_map('new_html_special_chars',$_POST['info']);
-						$user_model_info = $member_input->get($_POST['info']);
 						$user_model_info['userid'] = $userid;
-	
 						//插入会员模型数据
 						$this->db->set_model($userinfo['modelid']);
 						$this->db->insert($user_model_info);
@@ -469,7 +468,7 @@ class index extends foreground {
 			} else {
 				$email = '';
 			}
-			if(!is_password($_POST['info']['newpassword'])) {
+			if(!is_password($_POST['info']['newpassword']) || is_badword($_POST['info']['newpassword'])) {
 				showmessage(L('password_format_incorrect'), HTTP_REFERER);
 			}
 			$newpassword = password($_POST['info']['newpassword'], $this->memberinfo['encrypt']);
@@ -1572,7 +1571,7 @@ class index extends foreground {
 		if(empty($phone) || empty($msg) || empty($sms_key) || empty($sms_pid)){
 			return false;
 		}
-		if(!preg_match('/^1([0-9]{9})/',$phone)) {
+		if(!preg_match('/^1([0-9]{10})$/',$phone)) {
 			return false;
 		}
 		//判断是否PHPCMS请求的接口
@@ -1701,11 +1700,13 @@ class index extends foreground {
 			if($r['email']=='') {
 				$_SESSION['userid'] = '';
 				$_SESSION['code'] = '';
-				showmessage("该账号没有绑定手机号码，请选择其他方式找回！");
+				showmessage("该账号没有绑定邮箱，请选择其他方式找回！");
 			} else {
 				$_SESSION['userid'] = $r['userid'];
 				$_SESSION['email'] = $r['email'];
 			}
+			$_SESSION['emc'] = "";
+			$_SESSION['emc_times']=0;
 			$email_arr = explode('@',$r['email']);
 			include template('member', 'forget_password_username');
 		} elseif(isset($_POST['dosubmit']) && $step==3) {

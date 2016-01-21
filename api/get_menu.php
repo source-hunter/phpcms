@@ -30,6 +30,7 @@ function ajax_getlist() {
 	$infos = getcache($cachefile,$path);
 	$where_id = intval($_GET['parentid']);
 	$parent_menu_name = ($where_id==0) ? '' : trim($infos[$where_id][$key]);
+	is_array($infos)?null:$infos = array();
 	foreach($infos AS $k=>$v) {
 		if($v['parentid'] == $where_id) {
 			if ($v['parentid']) $parentid = $infos[$v['parentid']]['parentid'];

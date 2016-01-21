@@ -1,10 +1,10 @@
 <?php
 /**
- *  mysql.class.php 数据库实现类
+ *  db_mysqli.class.php MYSQLI数据库实现类
  *
- * @copyright			(C) 2005-2014 PHPCMS
+ * @copyright			(C) 2005-2015 PHPCMS
  * @license				http://www.phpcms.cn/license/
- * @lastmodify			2014-12-05
+ * @lastmodify			2015-12-29
  */
 
 final class db_mysqli {
@@ -77,7 +77,7 @@ final class db_mysqli {
 		if(!is_object($this->link)) {
 			$this->connect();
 		}
-		$this->lastqueryid = $this->link->query($sql) or $this->halt(mysql_error(), $sql);
+		$this->lastqueryid = $this->link->query($sql) or $this->halt($this->link->error, $sql);
 		$this->querycount++;
 		return $this->lastqueryid;
 	}
@@ -149,10 +149,10 @@ final class db_mysqli {
 	/**
 	 * 遍历查询结果集
 	 * @param $type		返回结果集类型	
-	 * 					MYSQL_ASSOC，MYSQL_NUM 和 MYSQL_BOTH
+	 * 					MYSQLI_ASSOC, MYSQLI_NUM, or MYSQLI_BOTH
 	 * @return array
 	 */
-	public function fetch_next($type=MYSQL_ASSOC) {
+	public function fetch_next($type=MYSQLI_ASSOC) {
 		$res = $this->lastqueryid->fetch_array($type);
 		if(!$res) {
 			$this->free_result();
@@ -210,6 +210,9 @@ final class db_mysqli {
 	 * @return int 
 	 */
 	public function insert_id() {
+		if(!is_object($this->link)) {
+			$this->connect();
+		}
 		return $this->link->insert_id;
 	}
 	
@@ -288,6 +291,9 @@ final class db_mysqli {
 	 * @return int
 	 */
 	public function affected_rows() {
+		if(!is_object($this->link)) {
+			$this->connect();
+		}
 		return $this->link->affected_rows;
 	}
 	
@@ -381,11 +387,17 @@ final class db_mysqli {
 	}
 
 	public function error() {
-		return (($this->link) ? $this->link->error : mysqli_error());
+		if(!is_object($this->link)) {
+			$this->connect();
+		}
+		return $this->link->error;
 	}
 
 	public function errno() {
-		return intval(($this->link) ? $this->link->errno : mysqli_errno());
+		if(!is_object($this->link)) {
+			$this->connect();
+		}
+		return intval($this->link->errno);
 	}
 
 	public function version() {
@@ -401,7 +413,14 @@ final class db_mysqli {
 		}
 		$this->link = null;
 	}
-	
+
+	public function escape($str){
+		if(!is_object($this->link)) {
+			$this->connect();
+		}
+		return $this->link->real_escape_string($str);
+	}
+
 	public function halt($message = '', $sql = '') {
 		if($this->config['debug']) {
 			$this->errormsg = "<b>MySQL Query : </b> $sql <br /><b> MySQL Error : </b>".$this->error()." <br /> <b>MySQL Errno : </b>".$this->errno()." <br /><b> Message : </b> $message <br /><a href='http://faq.phpcms.cn/?errno=".$this->errno()."&msg=".urlencode($this->error())."' target='_blank' style='color:red'>Need Help?</a>";

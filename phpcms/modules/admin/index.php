@@ -209,7 +209,7 @@ class index extends admin {
 		$logintime = $r['lastlogintime'];
 		$loginip = $r['lastloginip'];
 		$sysinfo = get_sysinfo();
-		$sysinfo['mysqlv'] = mysql_get_server_info();
+		$sysinfo['mysqlv'] = $this->db->version();
 		$show_header = $show_pc_hash = 1;
 		/*¼ì²â¿ò¼ÜÄ¿Â¼¿ÉÐ´ÐÔ*/
 		$pc_writeable = is_writable(PC_PATH.'base.php');
