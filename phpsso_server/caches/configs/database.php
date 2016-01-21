@@ -3,6 +3,7 @@
 return array (
 	'default' => array (
 		'hostname' => 'localhost',
+		'port' => 3306,
 		'database' => 'phpsso',
 		'username' => '',
 		'password' => '',

@@ -553,6 +553,8 @@ function tpl_cache($name,$times = 0) {
  * @param $timeout 过期时间
  */
 function setcache($name, $data, $filepath='', $type='file', $config='', $timeout=0) {
+	if(!preg_match("/^[a-zA-Z0-9_-]+$/", $name)) return false;
+	if($filepath!="" && !preg_match("/^[a-zA-Z0-9_-]+$/", $filepath)) return false;
 	pc_base::load_sys_class('cache_factory','',0);
 	if($config) {
 		$cacheconfig = pc_base::load_config('cache');
@@ -571,6 +573,8 @@ function setcache($name, $data, $filepath='', $type='file', $config='', $timeout
  * @param string $config 配置名称
  */
 function getcache($name, $filepath='', $type='file', $config='') {
+	if(!preg_match("/^[a-zA-Z0-9_-]+$/", $name)) return false;
+	if($filepath!="" && !preg_match("/^[a-zA-Z0-9_-]+$/", $filepath)) return false;
 	pc_base::load_sys_class('cache_factory','',0);
 	if($config) {
 		$cacheconfig = pc_base::load_config('cache');
@@ -589,6 +593,8 @@ function getcache($name, $filepath='', $type='file', $config='') {
  * @param $config 配置名称
  */
 function delcache($name, $filepath='', $type='file', $config='') {
+	if(!preg_match("/^[a-zA-Z0-9_-]+$/", $name)) return false;
+	if($filepath!="" && !preg_match("/^[a-zA-Z0-9_-]+$/", $filepath)) return false;
 	pc_base::load_sys_class('cache_factory','',0);
 	if($config) {
 		$cacheconfig = pc_base::load_config('cache');
@@ -606,6 +612,8 @@ function delcache($name, $filepath='', $type='file', $config='') {
  * @param string $config 配置名称
  */
 function getcacheinfo($name, $filepath='', $type='file', $config='') {
+	if(!preg_match("/^[a-zA-Z0-9_-]+$/", $name)) return false;
+	if($filepath!="" && !preg_match("/^[a-zA-Z0-9_-]+$/", $filepath)) return false;
 	pc_base::load_sys_class('cache_factory');
 	if($config) {
 		$cacheconfig = pc_base::load_config('cache');
